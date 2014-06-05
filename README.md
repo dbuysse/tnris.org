@@ -8,6 +8,7 @@ Mockups for tnris.org redesign
   - ruby
   - sass (`gem install sass`)
   - nodejs
+  - gulp (`npm install -g gulp`)
 
 
 ## Setup

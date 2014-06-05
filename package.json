@@ -18,6 +18,7 @@
   "homepage": "https://github.com/tnris/site-mockup",
   "devDependencies": {
     "gulp-ruby-sass": "^0.5.0",
-    "gulp-connect": "^2.0.5"
+    "gulp-connect": "^2.0.5",
+    "gulp": "^3.7.0"
   }
 }

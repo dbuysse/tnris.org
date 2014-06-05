@@ -8,7 +8,7 @@ var sass = require('gulp-ruby-sass');
 gulp.task('default', ['watch', 'connect']);
 
 gulp.task('watch', function () {
-  gulp.watch('scss/', ['scss']);
+  gulp.watch('scss/*.scss', ['scss']);
 });
 
 

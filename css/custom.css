@@ -1,4 +1,9 @@
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-family: serif; }
+
 h1 {
-  color: orange; }
+  color: black; }
 
 /*# sourceMappingURL=custom.css.map */

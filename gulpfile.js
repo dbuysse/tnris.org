@@ -5,10 +5,10 @@ var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 
 
-gulp.task('default', ['watch', 'connect']);
+gulp.task('default', ['scss', 'watch', 'connect']);
 
 gulp.task('watch', function () {
-  gulp.watch('scss/*.scss', ['scss']);
+  gulp.watch('scss/**/*.scss', ['scss']);
 });
 
 
@@ -18,6 +18,6 @@ gulp.task('connect', function() {
 
 gulp.task('scss', function () {
   return gulp.src('scss/*.scss')
-    .pipe(sass({sourcemap: true}))
+    .pipe(sass())
     .pipe(gulp.dest('css'));
 });

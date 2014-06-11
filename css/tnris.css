@@ -1,0 +1,84 @@
+#dataSpot h4 {
+  margin-top: -50px;
+  padding-left: 20px;
+  padding-top: 20px;
+  color: white;
+  background-image: linear-gradient(to top, #222222, transparent);
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  height: 50px; }
+
+/* Colors */
+/* Media Queries */
+.blah {
+  color: white; }
+
+/* Headers */
+h1, h2, h3, h4 {
+  font-family: "pragmatica-web-condensed",sans-serif;
+  font-weight: 400; }
+
+h2 {
+  font-size: 25px;
+  color: #ab4209; }
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 100px;
+  padding-bottom: 20px;
+  font-family: 'Open Sans', sans-serif; }
+
+.jumbotron {
+  padding: 0px; }
+
+.navbar-fixed-top {
+  top: 50px; }
+
+.title-header {
+  height: 50px;
+  position: fixed;
+  top: 0;
+  background: #1e8dc1;
+  color: white;
+  width: 100%; }
+  .title-header a.navbar-brand {
+    color: white;
+    text-transform: uppercase;
+    background: url(../images/sm_logo_white.png) 0 0 no-repeat;
+    padding-left: 100px;
+    font-family: "pragmatica-web-condensed",sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-indent: -9999px; }
+
+/* Buttons */
+.btn-tnris {
+  color: white;
+  background-color: #ab4209;
+  border-color: #80310a;
+  padding-left: 50px;
+  padding-right: 50px; }
+
+/* Nav bar */
+.navbar-nav > li > a {
+  font-weight: 100; }
+
+/* Nav bar Form */
+form.navbar-form input.form-control {
+  width: 300px; }
+form.navbar-form button.btn {
+  margin-left: -40px;
+  width: 20px;
+  background: transparent; }
+
+/* Updates */
+/* Media Breaks */
+@media screen and (min-width: 485px) {
+  .title-header a.navbar-brand {
+    text-indent: normal; } }
+@media (min-width: 604px) {
+  .title-header a.navbar-brand {
+    font-size: 22px; } }

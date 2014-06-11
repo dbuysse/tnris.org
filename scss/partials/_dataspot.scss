@@ -1,0 +1,16 @@
+// _dataspotlight.scss
+
+#dataSpot {
+	h4 {
+		margin-top: -50px;
+		padding-left: 20px;
+		padding-top: 20px;
+		color: white;
+		background-image: linear-gradient(to top, #222, transparent);
+		display: block;
+		width: 100%;
+		position: relative;
+		z-index: 1000;
+		height: 50px;
+	}
+}

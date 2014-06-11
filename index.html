@@ -14,7 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/jumbotron.css" rel="stylesheet">
+    <link href="css/tnris.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -27,11 +27,13 @@
   </head>
 
   <body>
-    <div class="container">
+
         <div class="title-header">
-          <a class="navbar-brand" href="http://getbootstrap.com/examples/jumbotron/#">Texas Natural Resources Information System</a>
+          <div class="container">
+            <a class="navbar-brand" href="http://getbootstrap.com/examples/jumbotron/#">Texas Natural Resources Information System</a>
+            <a class="btn btn-tnris pull-right contact" href="http://getbootstrap.com/examples/jumbotron/#" role="button">Contact Us</a>
+          </div>
         </div>
-    </div>
 
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -48,7 +50,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="mapsanddata">Maps &amp; Data</a></li>
-            <li><a href="programs">Projects</a></li>
+            <li><a href="programs">Programs</a></li>
             <li><a href="about">About</a></li>
             <li><a href="gio">Geographic Information Office</a></li>             
           </ul>
@@ -56,7 +58,9 @@
             <div class="form-group">
               <input type="text" placeholder="Site &amp; Data Search" class="form-control">
             </div>
-            <button type="submit" class="btn btn-success">Go</button>
+            <button type="submit" class="btn">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
           </form>
         </div><!--/.nav-collapse -->
       </div>
@@ -73,7 +77,7 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
+        <div id="updates" class="col-md-4">
           <h2>Updates</h2>
           <div class="media">
             <a class="pull-left" href="#">
@@ -105,16 +109,36 @@
               <p>For those who want to revisit interesting presentations from this year’s forum, you can browse them online.</p>
             </div>
           </div>
+          <p class="text-center"><a class="btn btn-tnris" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
         </div>
         <div class="col-md-4">
           <h2>Data Spotlight</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+         <ul id="dataSpot" class="media-list">
+            <li class="media">
+              <a href="#">
+              <img class="media-object" src="images/data_spot_1.jpg" alt="...">
+              </a>
+              <h4>El Paso/Juarez LandSat</h4>
+            </li>
+            <li class="media">
+              <a href="#">
+              <img class="media-object" src="images/data_spot_2.jpg" alt="...">
+            </a>
+              <h4>South Texas LiDAR</h4>
+            </li>
+            <li class="media">
+              <a href="#">
+              <img class="media-object" src="images/data_spot_3.jpg" alt="...">
+              </a>
+              <h4>Texas At Night</h4>
+            </li>
+          </ul>
+          <p class="text-center"><a class="btn btn-tnris" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
        </div>
         <div class="col-md-4">
           <h2>Connect With Us</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
+          <p class="text-center"><a class="btn btn-tnris" href="http://getbootstrap.com/examples/jumbotron/#" role="button">View details »</a></p>
         </div>
       </div>
 
@@ -131,6 +155,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js//bootstrap.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="//use.typekit.net/rat5rkg.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
 </body></html>

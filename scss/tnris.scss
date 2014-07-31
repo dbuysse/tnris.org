@@ -1,20 +1,67 @@
+@import "partials/variables";
 @import "bourbon/bourbon";
 @import "partials/dataspot";
-@import "partials/testing";
 
-/* Colors */
-$auburn: #ab4209;
-$auburnoutline: #80310a;
 
-/* Media Queries */
-$break-med: 604px;
-$break-topsmall: 485px;
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
 
-.blah {color: white;}
+/* Custom Columns */
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-5ths {
+        width: 20%;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+    }
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+body {
+  padding-top: 100px;	
+  font-family: $opensans;
+  font-weight: 100;
+}
+
+.jumbotron {
+  padding: 0px;
+  background: url(../images/bg/bluegrid.jpg) 0 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #eaf3ff;
+
+  a.btn {
+  	position: absolute;
+  	display: block;
+  }
+}
 
 /* Headers */
 h1, h2, h3, h4 {
-	font-family: "pragmatica-web-condensed",sans-serif;
+	font-family: $pragmatica;
 	font-weight: 400;
 }
 
@@ -23,17 +70,37 @@ h2 {
 	color: $auburn;
 }
 
-/* Move down content because we have a fixed navbar that is 50px tall */
-body {
-  padding-top: 100px;
-  padding-bottom: 20px;
-  font-family: 'Open Sans', sans-serif;
+
+
+/* Buttons */
+.btn-tnris {
+	color: white;
+	background-color: $auburn;
+	border-color: $auburnoutline;
+	padding-left: 50px;
+	padding-right: 50px;
+	box-shadow: inset $auburnoutline 0 0 7px;
+
+	&:hover {
+		background: $auburnoutline;
+		color: white;
+	}
 }
 
-.jumbotron {
-  padding: 0px;
+.tag {
+	border-radius: 10px;
+	padding: 0 10px;
+	background: $sky;
+	border: 1px solid $tnrisblue;
+	font-weight: 600;
+
+	&:hover {
+		text-decoration: none;
+	}
 }
 
+
+/* Nav bar */
 .navbar-fixed-top {
 	top: 50px;
 }
@@ -45,6 +112,7 @@ body {
 	background: #1e8dc1;
 	color: white;
 	width: 100%;
+	z-index: 1000;
 
 	a.navbar-brand {
 		color: white;
@@ -56,22 +124,54 @@ body {
 		font-size: 16px;
 		letter-spacing: 1px;
    		text-indent: -9999px;
+   		float: left;
+	}
+
+	a.contact {
 	}
 }
 
 
-/* Buttons */
-.btn-tnris {
-	color: white;
-	background-color: $auburn;
-	border-color: $auburnoutline;
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
-/* Nav bar */
 .navbar-nav>li>a {
 	font-weight: 100;
+
+	&.gio {
+		background: url(../images/icons/sm_tx.png) 10px 14px no-repeat;
+		padding-left: 35px;
+
+		&:hover {
+			background-position: 10px -26px;
+		}
+	}
+}
+
+a.navbar-twdb {
+	margin-top: 7px;
+	float: left;
+	display: block;
+	width: 157px;
+	height: 37px;
+	font-size: 10px;
+	color: white;
+	position: relative;
+	overflow: hidden;
+	padding-top: 5px;
+	color: $sky;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	span {
+		display: block;
+		text-indent: -9999px;
+		background: url(../images/twdb-logo.png) 0 0 no-repeat;
+		position: absolute;
+		width: 134px;
+		height: 37px;
+		top: 0;
+		right: 0;
+	}
 }
 
 /* Nav bar Form */
@@ -88,18 +188,85 @@ form.navbar-form  {
 	}
 }
 
-/* Updates */
+/* Quick Nav */
+/**************************************************/
+#quickNav.navbar  {
+	margin-bottom: 0;
+	@include background-image(linear-gradient(to top, #e7e7e7, white, white, white, white, white, transparent));
+	border-bottom: 1px solid #e2e2e2;
 
+	ul {
+		width: 100%;
+	}
 
-/* Media Breaks */
-@media screen and (min-width: $break-topsmall) {
-	.title-header a.navbar-brand {
-		text-indent: normal;
+	li a {
+	font-family: $pragmatica;
+	font-weight: 500;
+	font-size: 18px;
+
+		small {
+			font-family: $opensans;
+			font-weight: 100;
+			font-size: 12px;
+			color: $darkgrey;
+		}
 	}
 }
+
+
+/* Footer */
+#wrap {
+	 min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -250px;
+}
+
+#push, .footer {
+	height: 250px;
+}
+
+.footer {
+	background: $darkgrey;
+	color: white;
+}
+
+/* Updates */
+#updates {
+
+	time {
+	text-transform: uppercase;
+	font-size: 14px;
+	display: block;
+	}
+}
+
+/* Media Breaks */
+@media (min-width: $break-topsmall) {
+	.title-header a.navbar-brand {
+		text-indent: 0;
+	}
+
+}
+
+
 
 @media (min-width: $break-med) {
 	.title-header a.navbar-brand {
 		font-size: 22px;
+	}
+
+	#updates .media {
+		height: 150px;
+	}
+}
+
+
+@media (max-width: $break-large) {
+	
+	/* nav bar */
+	.title-header a.btn.btn-tnris.pull-right.contact {
+		text-indent: -9999px;
+		padding: 6px 12px;
 	}
 }

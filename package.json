@@ -17,8 +17,17 @@
   },
   "homepage": "https://github.com/tnris/site-mockup",
   "devDependencies": {
-    "gulp-ruby-sass": "^0.4.3",
+    "gulp": "^3.7.0",
     "gulp-connect": "^2.0.5",
-    "gulp": "^3.7.0"
+    "gulp-front-matter": "^1.0.0",
+    "gulp-rimraf": "^0.1.0",
+    "gulp-ruby-sass": "^0.4.3",
+    "gulpsmith": "^0.4.3",
+    "lodash": "^2.4.1",
+    "metalsmith": "^0.9.0",
+    "metalsmith-sass": "^0.3.0",
+    "metalsmith-templates": "^0.5.2",
+    "rimraf": "^2.2.8",
+    "swig": "^1.4.1"
   }
 }

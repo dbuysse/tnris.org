@@ -19,15 +19,23 @@ var dirs = {
   templates: './templates'
 };
 
-gulp.task('default', ['scss', 'watch', 'connect']);
+var paths = {
+    scss: dirs.scss + '/**/*.scss',
+    static: dirs.static + '/**/*'
+};
+
+gulp.task('default', ['dist', 'watch', 'connect']);
 
 
 gulp.task('watch', function () {
-  gulp.watch('scss/**/*.scss', ['scss']);
+  gulp.watch(paths.scss, ['dist-scss']);
+  gulp.watch(paths.static, ['dist-static']);
 });
 
 gulp.task('connect', function() {
-  connect.server();
+  connect.server({
+    root: dirs.dist
+  });
 });
 
 gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);
@@ -53,13 +61,13 @@ gulp.task('dist-metal', function () {
 });
 
 gulp.task('dist-scss', function () {
-  return gulp.src(dirs.scss)
+  return gulp.src(paths.scss)
     .pipe(sass())
     .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
 gulp.task('dist-static', function () {
-  return gulp.src(dirs.static + '/**/*')
+  return gulp.src(paths.static)
     .pipe(gulp.dest(dirs.dist));
 });
 

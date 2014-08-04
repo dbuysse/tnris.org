@@ -64,6 +64,11 @@ gulp.task('dist-metal', function () {
             pattern: 'news/*.md',
             sortBy: 'date',
             reverse: true
+           },
+           spotlights: {
+            pattern: 'spotlights/*.md',
+            sortBy: 'date',
+            reverse: true
            }
          }))
          .use(markdown())

@@ -34,25 +34,17 @@
       <div class="col-md-4">
         <h2>Data Spotlight</h2>
         <p class="spotText">A closer look at featured images and data from our expansive catalog</p>
-       <ul id="dataSpot" class="media-list">
-          <li class="media">
-            <a href="#">
-            <img class="media-object" src="images/data_spot_1.jpg" alt="...">
-            <h4>El Paso/Juarez LandSat</h4>
-            </a>
-          </li>
-          <li class="media">
-            <a href="#">
-            <img class="media-object" src="images/data_spot_2.jpg" alt="...">
-            <h4>South Texas LiDAR</h4>
-          </a>
-          </li>
-          <li class="media">
-            <a href="#">
-            <img class="media-object" src="images/data_spot_3.jpg" alt="...">
-            <h4>Texas At Night</h4>
-            </a>
-          </li>
+        <ul id="dataSpot" class="media-list">
+         {% for spotlight in spotlights %}
+           {% if loop.index <= 3 %}
+             <li class="media">
+               <a href="#">
+                 <img class="media-object" src="{{ spotlight.image }}" alt="...">
+                 <h4>{{ spotlight.title }}</h4>
+               </a>
+             </li>
+           {% endif %}
+         {% endfor %}
         </ul>
         <p class="text-center"><a class="btn btn-tnris" href="http://getbootstrap.com/examples/jumbotron/#" role="button">Explore Spotlights »</a></p>
      </div>

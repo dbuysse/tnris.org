@@ -11,6 +11,11 @@ var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var rimraf = require('gulp-rimraf');
 var sass = require('gulp-ruby-sass');
+var swig = require('swig');
+
+// turn off caching swig templates - so changes will propagate if re-run by a
+// watch task
+swig.setDefaults({ cache: false });
 
 var dirs = {
   dist: './.dist',

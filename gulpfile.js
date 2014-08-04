@@ -20,14 +20,17 @@ var dirs = {
 };
 
 var paths = {
-    scss: dirs.scss + '/**/*.scss',
-    static: dirs.static + '/**/*'
+  content: dirs.content + '/**/*.md',
+  scss: dirs.scss + '/**/*.scss',
+  static: dirs.static + '/**/*',
+  templates: dirs.templates + '/**/*'
 };
 
 gulp.task('default', ['dist', 'watch', 'connect']);
 
-
 gulp.task('watch', function () {
+  gulp.watch(paths.content, ['dist-metal']);
+  gulp.watch(paths.templates, ['dist-metal']);
   gulp.watch(paths.scss, ['dist-scss']);
   gulp.watch(paths.static, ['dist-static']);
 });
@@ -42,7 +45,7 @@ gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);
 
 gulp.task('dist-metal', function () {
   gulp.src([
-    dirs.content + '/**/*'
+    paths.content
   ])
     .pipe(gulp_front_matter()).on("data", function(file) {
         _.assign(file, file.frontMatter);

@@ -1,6 +1,6 @@
 ---
 template: news.html
-title: Forum Presentations Now Online
+title: "Forum Keynote: Scott F. Wolter host of 'America Unearthed'"
 date: 2014-07-29
 thumbnail: images/media1.jpg
 abstract: 

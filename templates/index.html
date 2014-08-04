@@ -13,36 +13,20 @@
     <div class="row">
       <div id="updates" class="col-md-4">
         <h2>Latest News</h2>
-        <div class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object" src="images/media1.jpg" alt="...">
-          </a>
-          <div class="media-body">
-            <time>June 3, 2014</time>
-            <h4 class="media-heading">Forum Presentations Now Online</h4>
-            <p>For those who want to revisit interesting presentations from this year’s forum, they are now available to browse online.</p>
-          </div>
-        </div>
+        {% for news_item in news %}
           <div class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object" src="images/media2.jpg" alt="...">
-          </a>
-          <div class="media-body">
-            <time>June 2, 2014</time>
-            <h4 class="media-heading">Forum Thank You and Survey</h4>
-            <p>Let us know what you liked and what can be improved for next year.</p>
+            <a class="pull-left" href="#">
+              <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
+            </a>
+            <div class="media-body">
+              <time>{{ news_item.date|date('Y-m-d') }}</time>
+              <h4 class="media-heading">{{ news_item.title }}</h4>
+              <p>
+                {{ news_item.abstract }}
+              </p>
+            </div>
           </div>
-        </div>
-          <div class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object" src="images/media1.jpg" alt="...">
-          </a>
-          <div class="media-body">
-            <time>June 1, 2014</time>
-            <h4 class="media-heading">Forum Presentations Now Online</h4>
-            <p>For those who want to revisit interesting presentations from this year’s forum, you can browse them online.</p>
-          </div>
-        </div>
+        {% endfor %}
         <p class="text-center"><a class="btn btn-tnris" href="http://getbootstrap.com/examples/jumbotron/#" role="button">More Updates »</a></p>
       </div>
       <div class="col-md-4">

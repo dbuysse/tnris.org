@@ -1,15 +1,16 @@
 'use strict';
 
 var _ = require('lodash');
+var collections = require('metalsmith-collections');
 var connect = require('gulp-connect');
 var gulp = require('gulp');
+var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var rimraf = require('gulp-rimraf');
 var sass = require('gulp-ruby-sass');
-var gulp_front_matter = require('gulp-front-matter');
 
 var dirs = {
   dist: './.dist',
@@ -53,6 +54,13 @@ gulp.task('dist-metal', function () {
       })
     .pipe(
        gulpsmith()
+         .use(collections({
+           news: {
+            pattern: 'news/*.md',
+            sortBy: 'date',
+            reverse: true
+           }
+         }))
          .use(markdown())
          .use(templates({
            engine: 'swig',

@@ -14,18 +14,20 @@
       <div id="updates" class="col-md-4">
         <h2>Latest News</h2>
         {% for news_item in news %}
-          <div class="media">
-            <a class="pull-left" href="#">
-              <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
-            </a>
-            <div class="media-body">
-              <time>{{ news_item.date|date('Y-m-d') }}</time>
-              <h4 class="media-heading">{{ news_item.title }}</h4>
-              <p>
-                {{ news_item.abstract }}
-              </p>
+          {% if loop.index <= 3 %}
+            <div class="media">
+              <a class="pull-left" href="#">
+                <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
+              </a>
+              <div class="media-body">
+                <time>{{ news_item.date|date('Y-m-d') }}</time>
+                <h4 class="media-heading">{{ news_item.title }}</h4>
+                <p>
+                  {{ news_item.abstract }}
+                </p>
+              </div>
             </div>
-          </div>
+          {% endif %}
         {% endfor %}
         <p class="text-center"><a class="btn btn-tnris" href="http://getbootstrap.com/examples/jumbotron/#" role="button">More Updates »</a></p>
       </div>

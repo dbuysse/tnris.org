@@ -12,10 +12,10 @@
     <title>TNRIS - Texas Natural Resources Information System | Public Geographic Data for Texas</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/tnris.css" rel="stylesheet">
+    <link href="{{ url('css/tnris.css') }}" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -108,8 +108,8 @@
   {% endblock footer %}
 
   {% block scripts %}
-    <script src="js/jquery.min.js"></script>
-    <script src="js//bootstrap.min.js"></script>
+    <script src="{{ url('js/jquery.min.js') }}"></script>
+    <script src="{{ url('js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="//use.typekit.net/rat5rkg.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   {% endblock scripts %}

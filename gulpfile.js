@@ -17,18 +17,22 @@ var swig = require('swig');
 // watch task
 swig.setDefaults({ cache: false });
 
+// this is what urls will be prefixed when using {{ url('css/example.css') }}
+// in templates
+var url_prefix = '/';
+
 var dirs = {
   dist: './.dist',
   content: './content',
   scss: './scss',
-  static: 'static',
+  url: 'url',
   templates: './templates'
 };
 
 var paths = {
   content: dirs.content + '/**/*.md',
   scss: dirs.scss + '/**/*.scss',
-  static: dirs.static + '/**/*',
+  url: dirs.url + '/**/*',
   templates: dirs.templates + '/**/*'
 };
 
@@ -38,7 +42,7 @@ gulp.task('watch', function () {
   gulp.watch(paths.content, ['dist-metal']);
   gulp.watch(paths.templates, ['dist-metal']);
   gulp.watch(paths.scss, ['dist-scss']);
-  gulp.watch(paths.static, ['dist-static']);
+  gulp.watch(paths.url, ['dist-url']);
 });
 
 gulp.task('connect', function() {
@@ -47,7 +51,7 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);
+gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-url']);
 
 gulp.task('dist-metal', function () {
   gulp.src([
@@ -72,11 +76,14 @@ gulp.task('dist-metal', function () {
            }
          }))
          .use(markdown())
+         .use(permalinks(':collection/:title'))
          .use(templates({
            engine: 'swig',
-           directory: dirs.templates
+           directory: dirs.templates,
+           url: function (url) {
+             return url_prefix + url;
+           }
          }))
-         .use(permalinks('posts/:title'))
       )
     .pipe(gulp.dest(dirs.dist));
 });
@@ -87,8 +94,8 @@ gulp.task('dist-scss', function () {
     .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
-gulp.task('dist-static', function () {
-  return gulp.src(paths.static)
+gulp.task('dist-url', function () {
+  return gulp.src(paths.url)
     .pipe(gulp.dest(dirs.dist));
 });
 

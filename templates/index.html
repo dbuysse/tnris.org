@@ -16,7 +16,7 @@
         {% for news_item in news %}
           {% if loop.index <= 3 %}
             <div class="media">
-              <a class="pull-left" href="#">
+              <a class="pull-left" href="{{ news_item.path }}">
                 <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
               </a>
               <div class="media-body">
@@ -38,7 +38,7 @@
          {% for spotlight in spotlights %}
            {% if loop.index <= 3 %}
              <li class="media">
-               <a href="#">
+               <a href="{{ spotlight.path }}">
                  <img class="media-object" src="{{ spotlight.image }}" alt="...">
                  <h4>{{ spotlight.title }}</h4>
                </a>

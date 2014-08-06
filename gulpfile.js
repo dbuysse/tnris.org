@@ -9,8 +9,10 @@ var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
+var replace = require('metalsmith-replace');
 var rimraf = require('gulp-rimraf');
 var sass = require('gulp-ruby-sass');
+var scapegoat = require('scapegoat');
 var swig = require('swig');
 
 var based = require('./based');
@@ -61,27 +63,41 @@ gulp.task('dist-metal', function () {
         delete file.frontMatter;
       })
     .pipe(
-       gulpsmith()
-         .use(collections({
-           news: {
-            pattern: 'news/*.md',
-            sortBy: 'date',
-            reverse: true
-           },
-           spotlights: {
-            pattern: 'spotlights/*.md',
-            sortBy: 'date',
-            reverse: true
-           }
-         }))
-         .use(markdown())
-         .use(permalinks(':collection/:title'))
-         .use(crossref())
-         .use(based())
-         .use(templates({
-           engine: 'swig',
-           directory: dirs.templates
-         }))
+      gulpsmith()
+        .use(collections({
+          news: {
+           pattern: 'news/*.md',
+           sortBy: 'date',
+           reverse: true
+          },
+          spotlights: {
+           pattern: 'spotlights/*.md',
+           sortBy: 'date',
+           reverse: true
+          }
+        }))
+        .use(markdown({
+          smartypants: false
+        }))
+        .use(permalinks(':collection/:title'))
+        .use(crossref())
+        .use(based())
+        .use(replace({
+          contents: function(contents) {
+            var str = contents.toString()
+              .replace(/{{.+?}}/, scapegoat.unescape);
+
+            return new Buffer(str);
+          }
+        }))
+        .use(templates({
+          engine: 'swig',
+          inPlace: true
+        }))
+        .use(templates({
+          engine: 'swig',
+          directory: dirs.templates
+        }))
       )
     .pipe(gulp.dest(dirs.dist));
 });

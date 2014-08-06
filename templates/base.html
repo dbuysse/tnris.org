@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)http://getbootstrap.com/examples/jumbotron/ -->
 <html lang="en">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <base href="{{ base }}">
+
     <link rel="shortcut icon" href="favicon.ico">
 
     <title>TNRIS - Texas Natural Resources Information System | Public Geographic Data for Texas</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ url('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{ url('css/tnris.css') }}" rel="stylesheet">
+    <link href="css/tnris.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -32,7 +35,7 @@
     {% block header %}
       <div class="title-header">
         <div class="container">
-          <a class="navbar-brand" href="index.html">Texas Natural Resources Information System</a>
+          <a class="navbar-brand" href="{{ crossref['index'] }}">Texas Natural Resources Information System</a>
           <a class="navbar-twdb hidden-sm hidden-xs" href="#">part of the<span>Texas Water Development Board</span></a>
           <a class="btn btn-tnris pull-right contact" href="#" role="button">Contact Us</a>
         </div>
@@ -51,7 +54,7 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="{{ crossref['index'] }}">Home</a></li>
               <li><a href="mapsanddata">Maps &amp; Data</a></li>
 
           <li class="dropdown">
@@ -108,8 +111,8 @@
   {% endblock footer %}
 
   {% block scripts %}
-    <script src="{{ url('js/jquery.min.js') }}"></script>
-    <script src="{{ url('js/bootstrap.min.js') }}"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//use.typekit.net/rat5rkg.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   {% endblock scripts %}

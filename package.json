@@ -30,6 +30,6 @@
     "metalsmith-permalinks": "^0.3.2",
     "metalsmith-templates": "^0.5.2",
     "rimraf": "^2.2.8",
-    "swig": "^1.4.1"
+    "swig": "^1.4.2"
   }
 }

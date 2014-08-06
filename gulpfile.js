@@ -13,13 +13,12 @@ var rimraf = require('gulp-rimraf');
 var sass = require('gulp-ruby-sass');
 var swig = require('swig');
 
+var based = require('./based');
+var crossref = require('./crossref');
+
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task
 swig.setDefaults({ cache: false });
-
-// this is what urls will be prefixed when using {{ url('css/example.css') }}
-// in templates
-var url_prefix = '/';
 
 var dirs = {
   dist: './.dist',
@@ -77,12 +76,11 @@ gulp.task('dist-metal', function () {
          }))
          .use(markdown())
          .use(permalinks(':collection/:title'))
+         .use(crossref())
+         .use(based())
          .use(templates({
            engine: 'swig',
-           directory: dirs.templates,
-           url: function (url) {
-             return url_prefix + url;
-           }
+           directory: dirs.templates
          }))
       )
     .pipe(gulp.dest(dirs.dist));

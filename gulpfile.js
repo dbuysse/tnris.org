@@ -25,14 +25,14 @@ var dirs = {
   dist: './.dist',
   content: './content',
   scss: './scss',
-  url: 'url',
+  static: 'static',
   templates: './templates'
 };
 
 var paths = {
   content: dirs.content + '/**/*.md',
   scss: dirs.scss + '/**/*.scss',
-  url: dirs.url + '/**/*',
+  static: dirs.static + '/**/*',
   templates: dirs.templates + '/**/*'
 };
 
@@ -42,7 +42,7 @@ gulp.task('watch', function () {
   gulp.watch(paths.content, ['dist-metal']);
   gulp.watch(paths.templates, ['dist-metal']);
   gulp.watch(paths.scss, ['dist-scss']);
-  gulp.watch(paths.url, ['dist-url']);
+  gulp.watch(paths.static, ['dist-static']);
 });
 
 gulp.task('connect', function() {
@@ -51,7 +51,7 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-url']);
+gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);
 
 gulp.task('dist-metal', function () {
   gulp.src([
@@ -94,8 +94,8 @@ gulp.task('dist-scss', function () {
     .pipe(gulp.dest(dirs.dist + '/css'));
 });
 
-gulp.task('dist-url', function () {
-  return gulp.src(paths.url)
+gulp.task('dist-static', function () {
+  return gulp.src(paths.static)
     .pipe(gulp.dest(dirs.dist));
 });
 

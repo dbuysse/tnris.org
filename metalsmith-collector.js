@@ -7,18 +7,13 @@ var path = require('path');
 
 module.exports = collector;
 
-function collector(opts) {
-  opts = "string" === typeof opts ? {pattern: opts} : opts || {};
-  opts.pattern = opts.pattern || '*';
-  opts.default = {
-    sortBy: 'date',
-    reverse: true
-  };
+function collector(options) {
+  options = normalize(options);
 
   return function(files, metalsmith, done){
     var collectionsObj = {};
 
-    var matcher = new Matcher(opts.pattern);
+    var matcher = new Matcher(options.pattern);
 
     Object.keys(files).forEach(function(filename){
       var d = dirSplit(filename);
@@ -26,8 +21,8 @@ function collector(opts) {
       var subpath = d[1];
 
       if (matcher.match(subpath)) {
-        var pattern = dir === 'root' ? opts.pattern : dir + '/' + opts.pattern;
-        collectionsObj[dir] = extend({'pattern': pattern}, opts.default);
+        var pattern = dir === 'root' ? options.pattern : dir + '/' + options.pattern;
+        collectionsObj[dir] = extend({'pattern': pattern}, options.default);
       }
     });
 
@@ -45,4 +40,16 @@ function dirSplit(filename) {
   }
 
   return [split[0], split.slice(1).join(path.sep)];
+}
+
+
+function normalize(options) {
+  options = "string" === typeof options ? {pattern: options} : options || {};
+  options.pattern = options.pattern || '*';
+  options.default = {
+    sortBy: 'date',
+    reverse: true
+  };
+
+  return options;
 }

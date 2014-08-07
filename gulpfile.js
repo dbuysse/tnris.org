@@ -1,7 +1,6 @@
 'use strict';
 
 var _ = require('lodash');
-var collections = require('metalsmith-collections');
 var connect = require('gulp-connect');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
@@ -16,6 +15,7 @@ var scapegoat = require('scapegoat');
 var swig = require('swig');
 
 var based = require('./based');
+var collector = require('./collector');
 var crossref = require('./crossref');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
@@ -64,18 +64,7 @@ gulp.task('dist-metal', function () {
       })
     .pipe(
       gulpsmith()
-        .use(collections({
-          news: {
-           pattern: 'news/*.md',
-           sortBy: 'date',
-           reverse: true
-          },
-          spotlights: {
-           pattern: 'spotlights/*.md',
-           sortBy: 'date',
-           reverse: true
-          }
-        }))
+        .use(collector('*.md'))
         .use(markdown({
           smartypants: false
         }))

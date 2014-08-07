@@ -70,7 +70,10 @@ gulp.task('dist-metal', function () {
         .use(markdown({
           smartypants: false
         }))
-        .use(permalinks(':collection/:title'))
+        .use(permalinks({
+          pattern: ':collection/:date/:title',
+          date: 'YYYY-MM-DD'
+        }))
         .use(crossref())
         .use(based())
         .use(replace({

@@ -1,5 +1,6 @@
 'use strict';
 
+
 module.exports = crossref;
 
 function crossref() {
@@ -9,11 +10,13 @@ function crossref() {
     var crossref = {};
     Object.keys(files).forEach(function(filename){
       var file = files[filename];
-      if (file.path === '') {
-        crossref.index = '';
-      } else {
-        crossref[file.path] = filename;
+      var key = file.preserved;
+      var value = file.path;
+      if (key === '') {
+        key = 'index';
+        value = '';
       }
+      crossref[key] = value;
     });
     metalsmith.data.crossref = crossref;
   };

@@ -6,6 +6,7 @@ var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
+var path = require('path');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var replace = require('metalsmith-replace');
@@ -18,6 +19,7 @@ var autodate = require('./metalsmith-autodate');
 var based = require('./metalsmith-based');
 var collector = require('./metalsmith-collector');
 var crossref = require('./metalsmith-crossref');
+var each = require('./metalsmith-each');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task
@@ -65,13 +67,19 @@ gulp.task('dist-metal', function () {
       })
     .pipe(
       gulpsmith()
+        .use(each(function(file, filename) {
+          file.preserved = filename.slice(0, -1 * path.extname(filename).length);
+        }))
         .use(collector('*.md'))
         .use(autodate('YYYY-MM-DD'))
         .use(markdown({
           smartypants: false
         }))
+        .use(each(function(file, filename) {
+          file.urlEnd = file.withoutDate || file.preserved;
+        }))
         .use(permalinks({
-          pattern: ':collection/:date/:title',
+          pattern: ':collection/:date/:urlEnd',
           date: 'YYYY-MM-DD'
         }))
         .use(crossref())

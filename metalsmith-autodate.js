@@ -13,7 +13,9 @@ function autodate(options) {
 
     Object.keys(files).forEach(function(filepath){
       var file = files[filepath];
-      var filename = path.basename(filepath);
+      var dirname = path.dirname(filepath);
+      var filename = path.basename(file.preserved);
+      var withoutDate = filename;
 
       if (filename.length > options.format.length) {
         var test = filename.substr(0, options.format.length);
@@ -23,9 +25,15 @@ function autodate(options) {
             throw new Error("Date-named file '" + filepath + "' has a non-matching date attribute: " + stringify(file.date, options.format));
           }
 
-          file.date = file.date || m.toDate();
+          file.date = m.toDate();
+
+          withoutDate = filename.substr(options.format.length);
+          if (withoutDate.match(/^[-.]/)) {
+            withoutDate = withoutDate.substr(1);
+          }
         }
       }
+      file.withoutDate = withoutDate;
     });
   };
 }

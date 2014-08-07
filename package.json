@@ -32,6 +32,7 @@
     "metalsmith-replace": "0.0.6",
     "metalsmith-templates": "^0.5.2",
     "minimatch": "^1.0.0",
+    "moment": "^2.8.1",
     "rimraf": "^2.2.8",
     "scapegoat": "^0.1.0",
     "swig": "^1.4.2"

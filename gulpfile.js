@@ -14,6 +14,7 @@ var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var swig = require('swig');
 
+var autodate = require('./metalsmith-autodate');
 var based = require('./metalsmith-based');
 var collector = require('./metalsmith-collector');
 var crossref = require('./metalsmith-crossref');
@@ -65,6 +66,7 @@ gulp.task('dist-metal', function () {
     .pipe(
       gulpsmith()
         .use(collector('*.md'))
+        .use(autodate('YYYY-MM-DD'))
         .use(markdown({
           smartypants: false
         }))

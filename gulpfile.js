@@ -14,9 +14,9 @@ var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var swig = require('swig');
 
-var based = require('./based');
-var collector = require('./collector');
-var crossref = require('./crossref');
+var based = require('./metalsmith-based');
+var collector = require('./metalsmith-collector');
+var crossref = require('./metalsmith-crossref');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task

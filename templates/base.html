@@ -96,10 +96,16 @@
         </div><!--/.nav-collapse -->
       </div>
     {% endblock quick_nav %}
+    
+    {% block topcontent %}
+    {% endblock topcontent %}
 
-
-    {% block contents %}
-    {% endblock contents %}
+     <div id="contentMain" class="container">
+      {% block contents %}
+      {% endblock contents %}
+      <hr>
+     <div id="push"></div>
+    </div>
    </div> <!-- full wrapper -->
 
   {% block footer %}

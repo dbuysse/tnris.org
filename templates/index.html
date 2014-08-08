@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block contents %}
+{% block topcontent %}
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
@@ -8,7 +8,11 @@
       <!-- <a class="btn btn-primary btn-lg" role="button">Learn more »</a> -->
     </div>
   </div>
-  <div class="container">
+{% endblock topcontent %}
+
+
+{% block contents %}
+
     <!-- Example row of columns -->
     <div class="row">
       <div id="updates" class="col-md-4">
@@ -20,8 +24,9 @@
                 <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
               </a>
               <div class="media-body">
-                <time>{{ news_item.date|date('Y-m-d') }}</time>
-                <h4 class="media-heading">{{ news_item.title }}</h4>
+                <time>{{ news_item.date|date('F jS, Y') }}</time>
+                <h4 class="media-heading">
+                <a href="{{ news_item.path }}">{{ news_item.title }}</a></h4>
                 <p>
                   {{ news_item.abstract }}
                 </p>
@@ -29,7 +34,7 @@
             </div>
           {% endif %}
         {% endfor %}
-        <p class="text-center"><a class="btn btn-tnris" href="http://getbootstrap.com/examples/jumbotron/#" role="button">More Updates »</a></p>
+        <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">More Updates »</a></p>
       </div>
       <div class="col-md-4">
         <h2>Data Spotlight</h2>
@@ -53,8 +58,4 @@
         <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p>
       </div>
     </div>
-
-    <hr>
-     <div id="push"></div>
-  </div>
 {% endblock contents %}

@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 
 {% block contents %}
+	
+  <time>{{ date|date('F jS, Y') }}</time>
+  <h2>{{ title }}</h2>
   {{ contents|safe }}
 {% endblock contents %}

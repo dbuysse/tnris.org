@@ -2,12 +2,11 @@
 template: news.html
 title: "Forum Keynote: Scott F. Wolter host of 'America Unearthed'"
 thumbnail: images/media1.jpg
+mainimage: images/updates/image002.jpg
 abstract: 
     TNRIS is pleased to announce Forensic geologist Scott Wolter as a keynote
     speaker at the 2014 GIS Forum! 
 ---
-
-## {{ title + "hi" }}
 
 TNRIS is pleased to announce Forensic geologist Scott Wolter as a keynote
 speaker at the 2014 GIS Forum! Wolter is the host of History’s H2 network’s hit
@@ -28,6 +27,8 @@ Petrographic Services since 1990. He has been the principal petrographer in more
 than 5,000 material forensic investigations throughout the world, including the
 evaluation of fire-damaged concrete from the Pentagon following the attacks of
 September 11, 2001.
+
+![El Paso at Night](images/data_spot_3.jpg)
 
 Books and other TV projects: Akhenaten to the Founding Fathers: The Mysteries of
 the Hooked X

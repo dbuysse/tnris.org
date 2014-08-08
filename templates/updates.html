@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block contents %}
+        <h2>All Updates</h2>
+		{{ contents|safe }}
+        {% for news_item in news %}
+          {% if loop.index <= 10 %}
+            <div class="media">
+              <div class="media-body">
+                <h2 class="media-heading">
+                <a href="{{ news_item.path }}">{{ news_item.title }}</a></h2>
+
+                <time>{{ news_item.date|date('F jS, Y') }}</time>
+                {% if news_item.mainimage %}
+              <img class="media-object" src="{{ news_item.mainimage }}" alt="...">
+              
+          {% endif %}
+                <p>
+                  {{ news_item.contents | safe }}
+                </p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+
+{% endblock contents %}

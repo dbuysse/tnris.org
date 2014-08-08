@@ -1,7 +1,6 @@
 'use strict';
 
 var _ = require('lodash');
-var connect = require('gulp-connect');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
@@ -14,6 +13,7 @@ var rimraf = require('gulp-rimraf');
 var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var swig = require('swig');
+var webserver = require('gulp-webserver');
 
 var autodate = require('./metalsmith-autodate');
 var based = require('./metalsmith-based');
@@ -40,7 +40,7 @@ var paths = {
   templates: dirs.templates + '/**/*'
 };
 
-gulp.task('default', ['dist', 'watch', 'connect']);
+gulp.task('default', ['dist', 'watch', 'webserver']);
 
 gulp.task('watch', function () {
   gulp.watch(paths.content, ['dist-metal']);
@@ -49,10 +49,12 @@ gulp.task('watch', function () {
   gulp.watch(paths.static, ['dist-static']);
 });
 
-gulp.task('connect', function() {
-  connect.server({
-    root: dirs.dist
-  });
+gulp.task('webserver', function() {
+  gulp.src(dirs.dist)
+    .pipe(webserver({
+      livereload: true,
+      open: true
+    }));
 });
 
 gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);

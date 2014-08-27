@@ -49,9 +49,10 @@ body {
 
 .jumbotron {
   padding: 0px;
-  background: url(../images/bg/bluegrid.jpg) 0 0;
+ // background: url(../images/bg/bluegrid.jpg) 0 0;
+ background: none;
   margin-bottom: 0;
-  border-bottom: 1px solid #eaf3ff;
+ // border-bottom: 1px solid #eaf3ff;
 
   a.btn {
   	position: absolute;
@@ -77,9 +78,10 @@ h2 {
 	color: white;
 	background-color: $auburn;
 	border-color: $auburnoutline;
-	padding-left: 50px;
-	padding-right: 50px;
+	// padding-left: 50px;
+	// padding-right: 50px;
 	box-shadow: inset $auburnoutline 0 0 7px;
+	margin-top: 8px;
 
 	&:hover {
 		background: $auburnoutline;
@@ -174,17 +176,25 @@ a.navbar-twdb {
 	}
 }
 
-/* Nav bar Form */
-form.navbar-form  {
+#mainNav {
+	height: 50px;
+	overflow: hidden;
+}
 
-	input.form-control {
-		width: 300px;
+/* Nav bar Form */
+#mainNav form.navbar-form  {
+
+	&.searchForm {
+
 	}
 
+	input.form-control {
+		}
+
 	button.btn {
-	margin-left: -40px;
-	width: 20px;
-	background: transparent;
+		margin-left: -40px;
+		width: 20px;
+		background: transparent;
 	}
 }
 
@@ -192,23 +202,82 @@ form.navbar-form  {
 /**************************************************/
 #quickNav.navbar  {
 	margin-bottom: 0;
-	@include background-image(linear-gradient(to top, #e7e7e7, white, white, white, white, white, transparent));
-	border-bottom: 1px solid #e2e2e2;
+	// @include background-image(linear-gradient(to top, #e7e7e7, white, white, white, white, white, transparent));
+	// border-bottom: 1px solid #e2e2e2;
+	position: relative;
+	z-index: 0;
 
-	ul {
+	ul.nav {
 		width: 100%;
+	}
+
+	.nav>li>a:hover {
+		background-color: none !important;
 	}
 
 	li a {
 	font-family: $pragmatica;
 	font-weight: 500;
 	font-size: 18px;
+	padding-left: 50px;
+
+		&:hover {
+			background-color: none;
+		}
+
+		.iconContainer {
+			width: 50px;
+			height: 40px;
+			margin-left: -50px;
+			float: left;
+			position: relative;
+			background: url(../images/icons/quicknav.png) 0 0 no-repeat;
+		}
+
+		&.downloaddata-quick {
+			
+			.iconContainer {
+			background-position: 0 -6px;
+			}
+
+		}
+
+		&.orderdata-quick {
+
+			.iconContainer {
+			background-position: 0 -45px;
+			}
+		}
+
+		&.wms-quick {
+			.iconContainer {
+			background-position: 0 -85px;
+			}	
+		}
+
+		&.training-quick {
+			color: #8a8e1d;
+
+			.iconContainer {
+			background-position: 0 -125px;
+			}
+		}
+
+		&.hpids-quick {
+			color: #ba2025;
+
+			.iconContainer {
+			background-position: 0 -165px;
+			}
+		}
 
 		small {
 			font-family: $opensans;
 			font-weight: 100;
-			font-size: 12px;
+			font-size: 11px;
 			color: $darkgrey;
+			display: block;
+			margin-top: -4px;
 		}
 	}
 }
@@ -224,6 +293,10 @@ form.navbar-form  {
 
 #push, .footer {
 	height: 250px;
+}
+
+.push {
+	border: none;
 }
 
 .footer {
@@ -249,7 +322,6 @@ form.navbar-form  {
 }
 
 
-
 @media (min-width: $break-med) {
 	.title-header a.navbar-brand {
 		font-size: 22px;
@@ -257,6 +329,10 @@ form.navbar-form  {
 
 	#updates .media {
 		height: 150px;
+
+		p {
+
+		}
 	}
 }
 
@@ -267,5 +343,34 @@ form.navbar-form  {
 	.title-header a.btn.btn-tnris.pull-right.contact {
 		text-indent: -9999px;
 		padding: 6px 12px;
+	}
+}
+
+/* News Template - Single Page */
+author {
+	text-transform: uppercase;
+}
+
+.article {
+
+	.byline {
+		margin-bottom: 5px;
+	}
+
+	h2.headline {
+	margin-top: 0;
+	font-size: 30px;
+	}
+
+	img {
+		margin-bottom: 15px;
+	}
+}
+
+#allUpdates .article {
+	border-bottom: 1px solid #eeeeee;
+
+	&:last-child {
+		border-bottom: none;
 	}
 }

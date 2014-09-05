@@ -18,7 +18,7 @@
     "url": "https://github.com/tnris/site-mockup/issues"
   },
   "homepage": "https://github.com/tnris/site-mockup",
-  "devDependencies": {
+  "dependencies": {
     "extend": "^1.3.0",
     "gulp": "^3.7.0",
     "gulp-front-matter": "^1.0.0",

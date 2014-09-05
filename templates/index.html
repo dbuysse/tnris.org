@@ -1,5 +1,18 @@
 {% extends "base.html" %}
-
+ {% block quick_nav %}
+      <!-- Quick Nav Bar -->
+      <div id="quickNav" class="navbar navbar-static-top" role="navigation">
+        <div class="container">
+          <ul class="nav navbar-nav row">
+            <li class="col-xs-5ths"><a class="downloaddata-quick" href="#"><div class="iconContainer"></div> Download Data <small class="hidden-xs hidden-sm">Access digital data directly</a></small></li>
+            <li class="col-xs-5ths"><a class="orderdata-quick" href="#"><div class="iconContainer"></div> Order Data <small class="hidden-xs hidden-sm">Custom Data Requests</small></a></li>
+            <li class="col-xs-5ths"><a class="wms-quick" href="#"><div class="iconContainer"></div> Web Map Services <small class="hidden-xs hidden-sm">Connect to WMS layers</small></a></li>
+            <li class="col-xs-5ths"><a class="training-quick" href="#"><div class="iconContainer"></div> Training <small class="hidden-xs hidden-sm">Expand your GIS skills</small></a></li>
+            <li class="col-xs-5ths"><a class="hpids-quick" href="#"><div class="iconContainer"></div> HPIDS <small class="hidden-xs hidden-sm">High Priority Imagery &amp; Data Sets</small></a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+  {% endblock quick_nav %}
 {% block topcontent %}
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
@@ -56,6 +69,44 @@
       <div class="col-md-4">
         <h2>Connect With Us</h2>
         <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p>
+        
+        <a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="">Tweets by @TNRIS</a>
+<a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="">Tweets by @TNRIS</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
     </div>
+
+
+
 {% endblock contents %}
+
+{% block contents-two %}
+    <div id="highlights" class="row">
+
+    <div class="container">
+      <h3 class="text-center">Providing the Highest Level of Geographic Data Services to the People of Texas</h3>
+      <div class="col-md-4">
+        <div class="highlightBox">
+          <img class="img-responsive"  src="images/highlights/forum.jpg">
+          <h4>Research &amp; Distribution</h4>
+          <p>Let our hands-on team of data specialists assist you with physical map products and other datasets unavailable online.</p>
+        </div>
+      </div>
+      <div class="col-md-4">        
+        <div class="highlightBox">
+          <img class="img-responsive"  src="images/highlights/elpaso.jpg">
+          <h4>Geographic Information Office</h4>
+          <p>TNRIS is the key coordinator of the State of Texas’s G.I.O (Geographic Information Office), an inter-agency initiative to collaborate and facilitate the effective use of G.I.S. in state and local government.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="highlightBox">
+          <img class="img-responsive" src="images/highlights/forum.jpg">
+          <h4>Texas GIS Forum</h4>
+          <p>Our annual gathering of the Texas GIS community, showcasing the latest innovations and talent in the field.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock contents-two %}

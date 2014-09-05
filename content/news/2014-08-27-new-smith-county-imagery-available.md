@@ -20,7 +20,7 @@ tags: stratmap, hpids
 <p style="background: #222222; color: white; padding: 10px;"><strong>Preview</strong> both the natural color and infrared products by swiping the circle handles over the imagery.</p>
 
 
-<div style="float: right; padding: 20px; padding-top: 0; border: 1px #ccc solid; color #999; width: 300px; background: #f2f2f2; margin-left: 20px; margin-bottom: 20px;">
+<div class="dataBox">
 <h2>Data Access</h2>
 	<p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
 	<p><strong>To access the services in ArcGIS you can use the following URL</strong></p>

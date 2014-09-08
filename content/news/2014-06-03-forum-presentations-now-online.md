@@ -8,7 +8,5 @@ abstract:
     forum, they are now available to browse online.
 ---
 
-Test link please ignore: [link]({{ crossref['spotlights/south-texas-lidar'] }})
-
 For those who want to revisit interesting presentations from this year’s forum,
 they are now available to browse online.

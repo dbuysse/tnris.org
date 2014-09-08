@@ -1,6 +1,7 @@
 @import "partials/variables";
 @import "bourbon/bourbon";
 @import "partials/dataspot";
+@import "partials/mapsanddata";
 
 
 * {
@@ -42,7 +43,6 @@ html, body {
 /* Move down content because we have a fixed navbar that is 50px tall */
 
 body {
-  padding-top: 100px;	
   font-family: $opensans;
   font-weight: 100;
 }
@@ -102,14 +102,9 @@ h2 {
 
 
 /* Nav bar */
-.navbar-fixed-top {
-	top: 50px;
-}
 
 .title-header {
 	height: 50px;
-	position: fixed;
-	top: 0;
 	background: #1e8dc1;
 	color: white;
 	width: 100%;
@@ -117,7 +112,6 @@ h2 {
 
 	a.navbar-brand {
 		color: white;
-		text-transform: uppercase;
 		background: url(../images/sm_logo_white.png) 0 0 no-repeat;
 		padding-left: 100px;
 		font-family: "pragmatica-web-condensed",sans-serif;
@@ -183,9 +177,40 @@ a.navbar-twdb {
 }
 
 #mainNav {
-	height: 50px;
-	overflow: hidden;
+	height: 51px;
+	width: 100%;
+	z-index: 2000;
+	border-radius: 0;
+
+	&.affix {
+		top: 0;
+	}
 }
+
+/* navbar dropdown */
+
+.inverse-dropdown {
+  background-color: #222;
+  border-color: #080808;
+  &>li>a{
+    color: #999;
+    font-size: 18px;
+
+    small {
+    	font-size: 12px;
+    font-weight: 100;
+    }
+
+    &:hover{
+      color: #fff;
+      background-color: #000;
+    }
+  }
+  &>.divider {
+    background-color: #000;
+  }
+}
+
 
 /* Nav bar Form */
 #mainNav form.navbar-form  {
@@ -212,6 +237,7 @@ a.navbar-twdb {
 	// border-bottom: 1px solid #e2e2e2;
 	position: relative;
 	z-index: 0;
+	margin-top: -20px;
 
 	ul.nav {
 		width: 100%;
@@ -408,9 +434,14 @@ author {
 
 #highlights h3 {
 	font-weight: 100;
-	color: $tnrisblue;
+	font-size: 30px;
 }
 
 .highlightBox img {
 	border-radius: 10px;
+}
+
+/* Common Page Elements */
+.mainBlurb {
+	font-size: 18px;
 }

@@ -1,0 +1,120 @@
+{% extends "base.html" %} {% block contents %}
+
+<div class="row">
+    <div id="dataPageContent" class="col-md-9">
+        <h1>{{ title }}</h1>
+        <div class="mainBlurb">{{ contents|safe }}</div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Data Search &amp; Download</h3>
+                <p>The Quickest Way to search and download TNRIS data.</p>
+                <p>Note: What isn’t available online can be obtained through the Research &amp; Distribution Center</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Research &amp; Distribution (RDC)</h3>
+                <p>Our staff of data and map specialists provide direct customer service and assistance with custom requests.</p>
+                <p>Data not available online is found here.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Web Mapping Services</h3>
+                <p>Data sets optimized for access through WMS.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Custom Map Creation</h3>
+                <p>Our trained cartographers can help you map what you need</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Educational Resources</h3>
+                <p>Online tools to help you through basic GIS needs.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>Developers</h3>
+                <p>TNRIS incorporates many open source technologies that are available to developers with interest</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="mainDataList" class="col-md-3">
+        <h2>Data by Category</h2>
+        <ul>
+            <li><a href="#">Addresses (3)</a>
+            </li>
+            <li><a href="#">Aerial Photography (11)</a>
+            </li>
+            <li><a href="#">
+                Bioscience (4)</a>
+            </li>
+            <li><a href="#">
+                Boundary Data (13)</a>
+            </li>
+            <li><a href="#">
+                Cadastre (5)</a>
+            </li>
+            <li><a href="#">
+                Climate and Weather (3)</a>
+            </li>
+            <li><a href="#">
+                Demographic (3)</a>
+            </li>
+            <li><a href="#">
+                Economy (3)</a>
+            </li>
+            <li><a href="#">
+                Elevation and Terrain Data (11)</a>
+            </li>
+            <li><a href="#">
+                Energy (7)</a>
+            </li>
+            <li><a href="#">
+                Environment (4)</a>
+            </li>
+            <li><a href="#">
+                Farming (4)</a>
+            </li>
+            <li><a href="#">
+                Geoscience (15)</a>
+            </li>
+            <li><a href="#">
+                Health (6)</a>
+            </li>
+            <li><a href="#">
+                History (3)</a>
+            </li>
+            <li><a href="#">
+                Indices (8)</a>
+            </li>
+            <li><a href="#">
+                Location (8)</a>
+            </li>
+            <li><a href="#">
+                Planning (7)</a>
+            </li>
+            <li><a href="#">
+                Political (6)</a>
+            </li>
+            <li><a href="#">
+                Recreation (7)</a>
+            </li>
+            <li><a href="#">
+                Society (9)</a>
+            </li>
+            <li><a href="#">
+                Transportation (5)</a>
+            </li>
+            <li><a href="#">
+                Utilities (4)</a>
+            </li>
+            <li><a href="#">
+                Water (9)</a>
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+
+{% endblock contents %}

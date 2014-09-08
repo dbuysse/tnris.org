@@ -28,7 +28,7 @@
 
     <!-- Example row of columns -->
     <div class="row">
-      <div id="updates" class="col-md-4">
+      <div id="updates" class="col-md-5">
         <h2>Latest News</h2>
         {% for news_item in news %}
           {% if loop.index <= 3 %}
@@ -50,9 +50,15 @@
         <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">More Updates »</a></p>
       </div>
       <div class="col-md-4">
+        <h2>Connect With Us</h2>
+        <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p>
+        <a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="507648696595382272" data-tweet-limit="1">Tweets by @TNRIS</a>
+      </div>
+      <div class="col-md-3">
+        <div id="dataSpot">
         <h2>Data Spotlight</h2>
         <p class="spotText">A closer look at featured images and data from our expansive catalog</p>
-        <ul id="dataSpot" class="media-list">
+        <ul class="media-list">
          {% for spotlight in spotlights %}
            {% if loop.index <= 3 %}
              <li class="media">
@@ -64,13 +70,9 @@
            {% endif %}
          {% endfor %}
         </ul>
-        <p class="text-center"><a class="btn btn-tnris" href="http://getbootstrap.com/examples/jumbotron/#" role="button">Explore Spotlights »</a></p>
+        <p class="text-center"><a href="http://getbootstrap.com/examples/jumbotron/#" role="button">Explore Spotlights »</a></p>
+        </div>
      </div>
-      <div class="col-md-4">
-        <h2>Connect With Us</h2>
-        <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p>
-        <a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="507648696595382272" data-tweet-limit="1">Tweets by @TNRIS</a>
-      </div>
     </div>
 
 

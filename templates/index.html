@@ -6,7 +6,7 @@
           <ul class="nav navbar-nav row">
             <li class="col-xs-5ths"><a class="downloaddata-quick" href="#"><div class="iconContainer"></div> Download Data <small class="hidden-xs hidden-sm">Access digital data directly</a></small></li>
             <li class="col-xs-5ths"><a class="orderdata-quick" href="#"><div class="iconContainer"></div> Order Data <small class="hidden-xs hidden-sm">Custom Data Requests</small></a></li>
-            <li class="col-xs-5ths"><a class="wms-quick" href="#"><div class="iconContainer"></div> Web Map Services <small class="hidden-xs hidden-sm">Connect to WMS layers</small></a></li>
+            <li class="col-xs-5ths"><a class="wms-quick" href="#"><div class="iconContainer"></div> Web Map Services <small class="hidden-xs hidden-sm">Load WMS layers</small></a></li>
             <li class="col-xs-5ths"><a class="training-quick" href="#"><div class="iconContainer"></div> Training <small class="hidden-xs hidden-sm">Expand your GIS skills</small></a></li>
             <li class="col-xs-5ths"><a class="hpids-quick" href="#"><div class="iconContainer"></div> HPIDS <small class="hidden-xs hidden-sm">High Priority Imagery &amp; Data Sets</small></a></li>
           </ul>
@@ -28,10 +28,10 @@
 
     <!-- Example row of columns -->
     <div class="row">
-      <div id="updates" class="col-md-5">
+      <div id="updates" class="col-md-5 col-sm-12">
         <h2>Latest News</h2>
         {% for news_item in news %}
-          {% if loop.index <= 3 %}
+          {% if loop.index <= 4 %}
             <div class="media">
               <a class="pull-left" href="{{ news_item.path }}">
                 <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
@@ -49,20 +49,20 @@
         {% endfor %}
         <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">More Updates »</a></p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 col-sm-8">
         <h2>Connect With Us</h2>
-        <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p>
         <a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="507648696595382272" data-tweet-limit="1">Tweets by @TNRIS</a>
+        <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p>
         <h2>Low-cost GIS Training</h2>
         <p>Our training program has the classes you need to enhance your geospatial knowledge.</p>
-        <ul>
-          <li><a href="#">Fundamentals of ArcGIS</a></li>
-          <li><a href="#">Arc Hydro: GIS for Water Resources</a></li>
-          <li><a href="#">Converting ArcGIS Data to Google Earth</a></li>
+        <ul class="trainingFront">
+          <li><strong>March 15, 2014</strong><br><a href="#">Fundamentals of ArcGIS</a></li>
+          <li><strong>March 20, 2014</strong><br><a href="#">Arc Hydro: GIS for Water Resources</a></li>
+          <li><strong>March 27, 2014</strong><br><a href="#">Converting ArcGIS Data to Google Earth</a></li>
         </ul>
         <a href="#"> >>> See the full course listing</a>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-4">
         <div id="dataSpot">
         <h2>Data Spotlight</h2>
         <p class="spotText">A closer look at featured images and data from our expansive catalog</p>
@@ -88,25 +88,26 @@
 {% endblock contents %}
 
 {% block contents-two %}
-    <div id="highlights" class="row">
+<div id="highlights">
+  <div class="container">
+    <div class="row">
 
-    <div class="container">
       <h3 class="text-center">Providing the Highest Level of Geographic Data Services to the People of Texas</h3>
-      <div class="col-md-4">
+      <div class="col-sm-4">
         <div class="highlightBox">
           <img class="img-responsive"  src="images/highlights/forum.jpg">
           <h4>Research &amp; Distribution</h4>
           <p>Let our hands-on team of data specialists assist you with physical map products and other datasets unavailable online.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-4">
         <div class="highlightBox">
           <img class="img-responsive"  src="images/highlights/elpaso.jpg">
           <h4>Geographic Information Office</h4>
           <p>TNRIS is the key coordinator of the State of Texas’s G.I.O (Geographic Information Office), an inter-agency initiative to collaborate and facilitate the effective use of G.I.S. in state and local government.</p>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-4">
         <div class="highlightBox">
           <img class="img-responsive" src="images/highlights/forum.jpg">
           <h4>Texas GIS Forum</h4>
@@ -114,6 +115,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 
 {% endblock contents-two %}

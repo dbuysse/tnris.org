@@ -24,6 +24,7 @@ html, body {
     width: 20%;
     float: left;
 }
+
 @media (min-width: 768px) {
 .col-sm-5ths {
         width: 20%;
@@ -58,6 +59,26 @@ body {
   	position: absolute;
   	display: block;
   }
+
+
+}
+
+@media (min-width: 767px) {
+  .jumbotron .container {
+  	width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .jumbotron .container {
+  	width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+	.jumbotron .container {
+	width: 1170px;
+	}
 }
 
 /* Headers */
@@ -105,26 +126,25 @@ h2 {
 /* Nav bar */
 
 .title-header {
-	height: 50px;
-	background: #1e8dc1;
-	color: white;
+	height: 25px;
+	// background-image: radial-gradient(80% 50%, $urgentblue, $midsky);
+	background: $tnrisblue;
+	color: $sky;
 	width: 100%;
 	z-index: 1000;
+	font-family: $pragmatica;
+	font-size: 18px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	font-weight: 100;
 
-	a.navbar-brand {
-		color: white;
-		background: url(../images/sm_logo_white.png) 0 0 no-repeat;
-		padding-left: 100px;
-		font-family: "pragmatica-web-condensed",sans-serif;
-		font-weight: 300;
-		font-size: 16px;
-		letter-spacing: 1px;
-   		text-indent: -9999px;
-   		float: left;
+	span {
+		margin-top: 3px;
 	}
 
 	a.contact {
 	color: white;
+	text-shadow: 1px 1px 1px $urgentblue;
 		margin-top: 8px;
 
 		&:hover {
@@ -149,32 +169,29 @@ h2 {
 }
 
 a.navbar-twdb {
-	margin-top: 7px;
-	float: left;
-	display: block;
-	width: 157px;
-	height: 37px;
-	font-size: 10px;
+	font-size: 12px;
 	color: white;
-	position: relative;
+	margin-left: 5px;
+	margin-top: 7px;
 	overflow: hidden;
-	padding-top: 5px;
 	color: $sky;
+	text-transform: uppercase;
 
 	&:hover {
 		text-decoration: none;
+		color: white;
 	}
 
-	span {
-		display: block;
-		text-indent: -9999px;
-		background: url(../images/twdb-logo.png) 0 0 no-repeat;
-		position: absolute;
-		width: 134px;
-		height: 37px;
-		top: 0;
-		right: 0;
-	}
+	// span {
+	// 	display: block;
+	// 	text-indent: -9999px;
+	// 	background: url(../images/twdb-logo.png) 0 0 no-repeat;
+	// 	position: absolute;
+	// 	width: 134px;
+	// 	height: 37px;
+	// 	top: 0;
+	// 	right: 0;
+	// }
 }
 
 #mainNav {
@@ -185,6 +202,35 @@ a.navbar-twdb {
 
 	&.affix {
 		top: 0;
+	}
+}
+
+.navbar-collapse {
+	background: $darkgrey;
+}
+
+#logoCollapse {
+	background: url(../images/sm_logo_white.png) 0 0 no-repeat;
+	width: 80px;
+	height: 36px;
+	float: left;
+	z-index: 30000;
+	text-indent: -9999px;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+
+#aboutContact {
+	margin-top: 8px;
+
+	a {
+		color: white;
+		font-size: 14px;
+
+		&:hover {
+			text-decoration: none;
+			color: $midgrey;
+		}
 	}
 }
 
@@ -213,6 +259,7 @@ a.navbar-twdb {
 }
 
 
+
 /* Nav bar Form */
 #mainNav form.navbar-form  {
 
@@ -223,36 +270,37 @@ a.navbar-twdb {
 	input.form-control {
 		}
 
-	button.btn {
-		margin-left: -40px;
-		width: 20px;
-		background: transparent;
-	}
+	// button.btn {
+	// 	margin-left: -40px;
+	// 	width: 20px;
+	// 	background: transparent;
+	// }
 }
 
 /* Quick Nav */
 /**************************************************/
-#quickNav.navbar  {
+#quickNav  {
+	// margin-top: 75px;
 	margin-bottom: 0;
 	// @include background-image(linear-gradient(to top, #e7e7e7, white, white, white, white, white, transparent));
 	// border-bottom: 1px solid #e2e2e2;
 	position: relative;
 	z-index: 0;
-	margin-top: -20px;
+	// margin-top: -20px;
 
 	ul.nav {
 		width: 100%;
 	}
 
-	.nav>li>a:hover {
-		background-color: none !important;
+	.nav>li>a:hover, .nav>li>a:focus {
+		background: none;
 	}
 
 	li a {
 	font-family: $pragmatica;
 	font-weight: 500;
 	font-size: 18px;
-	padding-left: 50px;
+	padding-left: 40px;
 
 		&:hover {
 			background-color: none;
@@ -264,7 +312,7 @@ a.navbar-twdb {
 			margin-left: -50px;
 			float: left;
 			position: relative;
-			background: url(../images/icons/quicknav.png) 0 0 no-repeat;
+			background: url(../images/icons/quicknav.png)  0 no-repeat;
 		}
 
 		&.downloaddata-quick {
@@ -316,16 +364,22 @@ a.navbar-twdb {
 }
 
 
+#quickNav.navbar .nav>li>a:hover {
+		background-color: none !important;
+}
+
+
 /* Footer */
 #wrap {
 	 min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -250px;
+	margin-bottom: -300px;
+	width: 100%;
 }
 
 #push, .footer {
-	height: 250px;
+	height: 300px;
 }
 
 .push {
@@ -347,35 +401,62 @@ a.navbar-twdb {
 }
 
 /* Media Breaks */
-@media (min-width: $break-topsmall) {
-	.title-header a.navbar-brand {
-		text-indent: 0;
-	}
+// @media (min-width: $break-topsmall) {
+// 	.title-header a.navbar-brand {
+// 		text-indent: 0;
+// 	}
 
-}
-
-
-@media (min-width: $break-med) {
-	.title-header a.navbar-brand {
-		font-size: 22px;
-	}
-
-	#updates .media {
-		height: 150px;
-
-		p {
-
-		}
-	}
-}
+// }
 
 
-@media (max-width: $break-large) {
+// @media (min-width: $break-med) {
+// 	.title-header a.navbar-brand {
+// 		font-size: 28px;
+// 	}
+
+// 	#updates .media {
+// 		height: 150px;
+
+// 		p {
+
+// 		}
+// 	}
+// }
+
+
+// @media (max-width: $break-large) {
 	
-	/* nav bar */
-	.title-header a.btn.btn-tnris.pull-right.contact {
-		text-indent: -9999px;
-		padding: 6px 12px;
+// 	/* nav bar */
+// 	.title-header a.btn.btn-tnris.pull-right.contact {
+// 		text-indent: -9999px;
+// 		padding: 6px 12px;
+// 	}
+// }
+
+ul.trainingFront {
+	margin: 0;
+	padding: 0;
+
+	li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 18px;
+		margin-bottom: 10px;
+				font-weight: 400;
+
+		strong {
+			font-size: 14px;
+			font-weight: 100;
+		}
+
+		a {
+			font-family: $pragmatica;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 }
 
@@ -423,7 +504,7 @@ author {
 
 
 /* Front Page Highlights */
-#highlights.row {
+#highlights {
 	background: $lightgrey;
 }
 

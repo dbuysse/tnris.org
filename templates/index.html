@@ -48,12 +48,23 @@
           {% endif %}
         {% endfor %}
         <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">More Updates »</a></p>
+
+
+
+        {% for catalog_item in datacatalog %}
+          {% if loop.index <= 1 %}
+
+                <a href="{{ catalog_item.path }}">{{ catalog_item.title }}</a></h4>
+          {% endif %}
+        {% endfor %}
+
+
       </div>
       <div class="col-md-4 col-sm-8">
         <h2>Connect With Us</h2>
         <a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="507648696595382272" data-tweet-limit="1">Tweets by @TNRIS</a>
         <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p>
-        <h2>Low-cost GIS Training</h2>
+        <h2>Accessible GIS Training</h2>
         <p>Our training program has the classes you need to enhance your geospatial knowledge.</p>
         <ul class="trainingFront">
           <li><strong>March 15, 2014</strong><br><a href="#">Fundamentals of ArcGIS</a></li>
@@ -63,9 +74,9 @@
         <a href="#"> >>> See the full course listing</a>
       </div>
       <div class="col-md-3 col-sm-4">
-        <div id="dataSpot">
+        <div id="dataSpot" class="col-lg-height">
         <h2>Data Spotlight</h2>
-        <p class="spotText">A closer look at featured images and data from our expansive catalog</p>
+        <p class="spotText">A closer look at featured data and maps from our expansive catalog</p>
         <ul class="media-list">
          {% for spotlight in spotlights %}
            {% if loop.index <= 3 %}
@@ -98,6 +109,7 @@
           <img class="img-responsive"  src="images/highlights/forum.jpg">
           <h4>Research &amp; Distribution</h4>
           <p>Let our hands-on team of data specialists assist you with physical map products and other datasets unavailable online.</p>
+          <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>
       <div class="col-sm-4">
@@ -105,6 +117,7 @@
           <img class="img-responsive"  src="images/highlights/elpaso.jpg">
           <h4>Geographic Information Office</h4>
           <p>TNRIS is the key coordinator of the State of Texas’s G.I.O (Geographic Information Office), an inter-agency initiative to collaborate and facilitate the effective use of G.I.S. in state and local government.</p>
+          <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>
       <div class="col-sm-4">
@@ -112,6 +125,7 @@
           <img class="img-responsive" src="images/highlights/forum.jpg">
           <h4>Texas GIS Forum</h4>
           <p>Our annual gathering of the Texas GIS community, showcasing the latest innovations and talent in the field.</p>
+          <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>
     </div>

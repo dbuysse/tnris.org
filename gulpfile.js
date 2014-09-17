@@ -19,6 +19,7 @@ var autodate = require('./metalsmith-autodate');
 var based = require('./metalsmith-based');
 var collector = require('./metalsmith-collector');
 var crossref = require('./metalsmith-crossref');
+var csv = require('./metalsmith-csv');
 var each = require('./metalsmith-each');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
@@ -35,6 +36,7 @@ var dirs = {
 
 var paths = {
   content: dirs.content + '/**/*.md',
+  catalog: './data-catalog.csv',
   scss: dirs.scss + '/**/*.scss',
   static: dirs.static + '/**/*',
   templates: dirs.templates + '/**/*'
@@ -72,6 +74,7 @@ gulp.task('dist-metal', function () {
         .use(each(function(file, filename) {
           file.preserved = filename.slice(0, -1 * path.extname(filename).length);
         }))
+        .use(csv(paths.catalog))
         .use(collector('*.md'))
         .use(autodate('YYYY-MM-DD'))
         .use(markdown({

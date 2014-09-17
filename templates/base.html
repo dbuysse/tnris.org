@@ -1,145 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<!-- Header -->
 
-    <base href="{{ base }}">
+{% include "./partials/header.html" %}
 
-    <link rel="shortcut icon" href="favicon.ico">
+<!-- end Header -->
 
-    <title>TNRIS - Texas Natural Resources Information System | Public Geographic Data for Texas</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/tnris.css" rel="stylesheet">
-
-    <!-- Styling for image slider -->
-    <link href="css/twentytwenty.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
+<body>
     <div id="wrap">
+        <!-- Fixed navbar -->
 
-      <div class="title-header">
-              <div class="container">
-                <span>Texas Natural Resources Information System</span>
-                <a class="navbar-twdb hidden-xs pull-right" href="#">part of the Texas Water Development Board</a>
-              </div>
-      </div>
+        {% include "./partials/navbar.html" %}
 
-    {% block header %}
+        <!-- end navbar -->
 
-      <!-- Fixed navbar -->
+        {% block quick_nav %} {% endblock quick_nav %} 
 
-      <div id="mainNav" class="navbar navbar-inverse affix-top" data-spy="affix" data-offset-top="25" data-offset-bottom="200"   role="navigation">
-        <div class="container">
-          <div class="row">
-            <a id="logoCollapse" href="{{ crossref['index'] }}">Texas Natural Resources Information System</a>
-            <div class="col-lg-6">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-              </div>
-              <div class="navbar-collapse collapse ">
-                <ul class="nav navbar-nav">
-                  <li><a href="mapsanddata">Maps &amp; Data</a></li>
-                  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown">Programs</a>
-                    <ul class="dropdown-menu inverse-dropdown">
-                      <li><a href="#">StratMap<br><small>Strategic Mapping Program</small></a></li>
-                      <li><a href="#">NFIP<br><small>National Flood Insurance Program</small></a></li>
-                      <li><a href="#">HPIDS<br><small>High Priority Imagery &amp; Data Sets</small></a></li>
-                      <li><a href="#">Education &amp; Training<br><small>Low-cost and accessible GIS training</small></a></li>
-                    </ul>
-                  </li>
-                  <li><a class="gio" href="#">Geographic Information Office</a></li>
-                </ul>
-               </div><!-- .nav-collapse -->
-             </div>
-                <div id="aboutContact" class="col-lg-3">
-                <a href="#">
-                  <span class="glyphicon glyphicon-user"></span> About
-                </a>
-                <a class="btn btn-md contact hidden-xs" href="#" role="button">
-                  <span class="glyphicon glyphicon-comment"></span> Contact Us
-               </a>
-               </div>
-               <div >             
-               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Site &amp; Data Search">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                </span>
-              </div>
-            </div>
-          </div><!-- row -->
+        {% block topcontent %} {% endblock topcontent %}
+        <!-- Main Content -->
+        <div id="contentMain" class="container">
+            {% block contents %} {% endblock contents %}
+
+            <hr class="push">
+            <div id="push"></div>
         </div>
-      </div>
+        <!-- end Main Content -->
 
 
-    {% endblock header %}
+    </div>
+    <!-- full wrapper -->
 
-    {% block quick_nav %}
-    {% endblock quick_nav %}
+    {% block contents-two %} {% endblock contents-two %} 
+
+    {% block footer %} 
+      {% include "./partials/footer.html" %} 
+    {% endblock footer %} 
+
+    {% block scripts %} 
+      {% include "./partials/scripts.html" %} 
+    {% endblock scripts %}
     
-    {% block topcontent %}
-    {% endblock topcontent %}
+</body>
 
-     <div id="contentMain" class="container">
-      {% block contents %}
-      {% endblock contents %}
-
-      <hr class="push">
-     <div id="push"></div>
-    </div> <!-- end Main Content -->
-
-
-   </div> <!-- full wrapper -->
-
-{% block contents-two %}
-{% endblock contents-two %}
-
-
-  {% block footer %}
-    <footer class="footer">
-      <div class="container">
-        <p>© Company 2014</p>
-      </div>
-    </footer>
-  {% endblock footer %}
-
-  {% block scripts %}
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/eventmove.js"></script>
-    <script src="js/twentytwenty.js"></script>
-    <script type="text/javascript" src="//use.typekit.net/rat5rkg.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <script>
-    $(window).load(function() {
-    $("#imageCompare1, #imageCompare2, #imageCompare3, #imageCompare4, #imageCompare5, #imageCompare6, #imageCompare7").twentytwenty({default_offset_pct: .5});
-    });
-    </script>
-  {% endblock scripts %}
-  </body>
 </html>

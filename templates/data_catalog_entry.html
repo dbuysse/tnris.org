@@ -1,17 +1,18 @@
 {% extends "base.html" %} 
 
 {% block contents %}
-<div class="row">
+<!-- <div class="row">
 
         <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li><a href="mapsanddata">Maps &amp; Data</a></li>
   <li><a href="datacatalog/{{ category }}">{{ category }}</a></li>
     <li class="active">{{ title }}</li>
-</ol></div>
+</ol></div> -->
 <div class="row">
     <div id="dataPageContent" class="col-md-9">
-        <h1>{{ title }}</h1>
+        <h2>{{ category }}</h2>
+        <h1>{{ title }} <br><small>{{ tags }}</small></h1>
         <img src="{{ mainimage }}" alt="Sample of {{ title }} data">
         <div class="dataBox">
 <h2>Data Access</h2>
@@ -26,14 +27,7 @@
      <p>Additionally, the orthoimagery files (GeoTIFF, MrSID, JPEG2000) are in the public domain and available from the TNRIS Research and Distribution Center at a nominal fee for the cost of reproduction.</p>
 <p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
 </div>
-        <ul>
-            <li>
-                <strong>Category:</strong> {{ category }}
-            </li>
-
-            <li>
-                <strong>Tags:</strong> {{ tags }}
-            </li>
+        <ul class="pull-left">
             <li>
                 <strong>Date(s):</strong> {{ date_created }}
             </li>
@@ -49,6 +43,8 @@
             <li>
                 <strong>Footprint:</strong> {{ footprint }}
             </li>
+        </ul>
+        <ul class="pull-left">
             <li>
                 <strong>Download Size:</strong> {{ download_size }}
             </li>

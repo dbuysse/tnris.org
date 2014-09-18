@@ -85,14 +85,14 @@ gulp.task('dist-metal', function () {
           }
 
           data.cleanName = data.name.toLowerCase().replace(/\W/g, '-');
-          data.cleanCategory = data.category.toLowerCase().replace(/\W/g, '-');
+          data.cleanCategory = data.category.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-');
           data.filename = 'data-catalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
 
           var file = files[data.filename];
           if (file) {
             file = extend(file, data);
           } else {
-            file= extend(data, {
+            file = extend(data, {
               template: 'data_catalog_entry.html',
               contents: new Buffer('')
             });

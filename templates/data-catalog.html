@@ -1,0 +1,54 @@
+{% extends "base.html" %} 
+
+{% block contents %}
+<div class="row">
+  <div id="dataPageContent" class="col-md-9">
+    {% block catalog_content %}
+      <h1>{{ title }}</h1>
+      <div class="mainBlurb">{{ contents|safe }}</div>
+        {% for name, category in catalog %}
+          <div class="row">
+            <h2>{{name}}</h2>
+            <div class="media col-offset-1 col-xs-12">
+              {% for item in category %}
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="pull-left">
+                      {% if item.thumbnail %}
+                        <a href="{{ item.path }}">
+                          <img class="media-object" src="{{ item.thumbnail }}" alt="...">
+                        </a>
+                      {% endif %}
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">
+                        <a href="{{ item.path }}">{{ item.name }}</a>
+                      </h4>
+                      <p>
+                        {{ item.description }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+    {% endblock catalog_content %}
+  </div>
+
+  {% block category_nav %}
+    <div id="mainDataList" class="col-md-3">
+      <h2>Browse Data by Category</h2>
+      <ul>
+        {% for name, category in catalog %}
+          <li>
+            <a href="#">{{name}} ({{Object.keys(category).length}})</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endblock category_nav %}
+</div>
+
+{% endblock contents %}

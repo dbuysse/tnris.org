@@ -1,6 +1,6 @@
-{% extends "base.html" %} 
+{% extends "data-catalog.html" %}
 
-{% block contents %}
+{% block catalog_content %}
 <!-- <div class="row">
 
         <ol class="breadcrumb">
@@ -10,122 +10,68 @@
     <li class="active">{{ title }}</li>
 </ol></div> -->
 <div class="row">
-    <div id="dataPageContent" class="col-md-9">
-        <h2>{{ category }}</h2>
-        <h1>{{ title }} <br><small>{{ tags }}</small></h1>
-        <img src="{{ mainimage }}" alt="Sample of {{ title }} data">
-        <div class="dataBox">
-<h2>Data Access</h2>
-    <p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
-    <p><strong>To access the services in ArcGIS you can use the following URL</strong></p>
-    <div id="shareLinkContainer" style="display: block;">
-        <div id="shareLinkBox">
+  <div id="dataPageContent" class="col-xs-12">
+    <div class="row">
+      <h2>{{ category }}</h2>
+      <h1>{{ name }} <br><small>{{ tags }}</small></h1>
+     </div>
+    <img src="{{ mainimage }}" alt="Sample of {{ title }} data">
+    <div class="row">
+      <div class="dataBox pull-right">
+        <h2>Data Access</h2>
+        <p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
+        <p><strong>To access the services in ArcGIS you can use the following URL</strong></p>
+        <div id="shareLinkContainer" style="display: block;">
+          <div id="shareLinkBox">
             <input type="text" id="shareUrl" name="shareUrl" value="r.tnris.org/arcgis/services/HPIDS/HPIDS_Smith_2014_NC/ImageServer/WMSServer" readonly="readonly">
             <div class="hint">Press Ctrl-c to copy</div>
+          </div>
         </div>
+        <p>Additionally, the orthoimagery files (GeoTIFF, MrSID, JPEG2000) are in the public domain and available from the TNRIS Research and Distribution Center at a nominal fee for the cost of reproduction.</p>
+        <p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
+      </div>
+      <ul>
+        <li>
+          <strong>Date(s):</strong> {{ date_created }}
+        </li>
+        <li>
+          <strong>Source:</strong> {{ source }}
+        </li>
+        <li>
+          <strong>Available Formats:</strong> {{ available_formats }}
+        </li>
+        <li>
+          <strong>Coverage Availability/Geographic Extent:</strong> {{ coverage_extent }}
+        </li>
+        <li>
+          <strong>Footprint:</strong> {{ footprint }}
+        </li>
+        <li>
+          <strong>Download Size:</strong> {{ download_size }}
+        </li>
+        <li>
+          <strong>Recommended Use:</strong> {{ recommended_use }}
+        </li>
+
+        <li>
+          <strong>Known Issues:</strong> {{ known_issues }}
+        </li>
+        <li>
+          <strong>Alternative Data:</strong> {{ alternative_data }}
+        </li>
+        <li>
+          <strong>Derivative Data:</strong> {{ derivative_data }}
+        </li>
+      </ul>
+      <div class="mainBlurb">
+        <p>
+          {{description}}
+        </p>
+
+        {{ contents|safe }}
+     </div>
     </div>
-     <p>Additionally, the orthoimagery files (GeoTIFF, MrSID, JPEG2000) are in the public domain and available from the TNRIS Research and Distribution Center at a nominal fee for the cost of reproduction.</p>
-<p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
-</div>
-        <ul class="pull-left">
-            <li>
-                <strong>Date(s):</strong> {{ date_created }}
-            </li>
-            <li>
-                <strong>Source:</strong> {{ source }}
-            </li>
-            <li>
-                <strong>Available Formats:</strong> {{ available_formats }}
-            </li>
-            <li>
-                <strong>Coverage Availability/Geographic Extent:</strong> {{ coverage_extent }}
-            </li>
-            <li>
-                <strong>Footprint:</strong> {{ footprint }}
-            </li>
-        </ul>
-        <ul class="pull-left">
-            <li>
-                <strong>Download Size:</strong> {{ download_size }}
-            </li>
-            <li>
-                <strong>Recommended Use:</strong> {{ recommended_use }}
-            </li>
-
-            <li>
-                <strong>Known Issues:</strong> {{ known_issues }}
-            </li>
-            <li>
-                <strong>Alternative Data:</strong> {{ alternative_data }}
-            </li>
-            <li>
-                <strong>Derivative Data:</strong> {{ derivative_data }}
-            </li>
-        </ul>   
-
-        <div class="mainBlurb">{{ contents|safe }}</div>
-
-    </div>
-
-    <div id="mainDataList" class="col-md-3">
-        <h2>Browse Data by Category</h2>
-        <ul>
-            <li><a href="#">Bathymetry (2)</a>
-            </li>
-            <li><a href="#">Boundary (7)</a>
-            </li>
-            <li><a href="#">
-                Compressed Mosaic (4)</a>
-            </li>
-            <li><a href="#">
-                Cultural (13)</a>
-            </li>
-            <li><a href="#">
-                Demographics (5)</a>
-            </li>
-            <li><a href="#">
-                Digital Ortho Quadrangle (DOQQ) (3)</a>
-            </li>
-            <li><a href="#">
-                Digital Raster Graphics (DRG) (3)</a>
-            </li>
-            <li><a href="#">
-                Elevation (3)</a>
-            </li>
-            <li><a href="#">
-                Floodplain (11)</a>
-            </li>
-            <li><a href="#">
-                Geology (7)</a>
-            </li>
-            <li><a href="#">
-                Hydrography (4)</a>
-            </li>
-            <li><a href="#">
-                Imagery (4)</a>
-            </li>
-            <li><a href="#">
-                LandSAT (15)</a>
-            </li>
-            <li><a href="#">
-                LiDAR (6)</a>
-            </li>
-            <li><a href="#">
-                Natural Regions (3)</a>
-            </li>
-            <li><a href="#">
-                Satellite Imagery (8)</a>
-            </li>
-            <li><a href="#">
-                Transportation (8)</a>
-            </li>
-            <li><a href="#">
-                Weather (7)</a>
-            </li>
-        </ul>
-
-
-    </div>
+  </div>
 </div>
 
-{% endblock contents %}
+{% endblock catalog_content %}

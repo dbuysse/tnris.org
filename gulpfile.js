@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var extend = require('extend');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
@@ -19,6 +20,7 @@ var autodate = require('./metalsmith-autodate');
 var based = require('./metalsmith-based');
 var collector = require('./metalsmith-collector');
 var crossref = require('./metalsmith-crossref');
+var csv = require('./metalsmith-csv');
 var each = require('./metalsmith-each');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
@@ -35,6 +37,7 @@ var dirs = {
 
 var paths = {
   content: dirs.content + '/**/*.md',
+  catalog: './data-catalog.csv',
   scss: dirs.scss + '/**/*.scss',
   static: dirs.static + '/**/*',
   templates: dirs.templates + '/**/*'
@@ -69,6 +72,36 @@ gulp.task('dist-metal', function () {
       })
     .pipe(
       gulpsmith()
+        .use(csv(paths.catalog, function parser (data, files, metalsmith) {
+          metalsmith.data.catalog = metalsmith.data.catalog || {};
+          var catalog = metalsmith.data.catalog;
+
+          if (data.keywords) {
+            data.keywords = data.keywords
+              .split(',')
+              .map(function (s) {
+                return s.trim();
+              });
+          }
+
+          data.cleanName = data.name.toLowerCase().replace(/\W/g, '-');
+          data.cleanCategory = data.category.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-');
+          data.filename = 'data-catalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
+
+          var file = files[data.filename];
+          if (file) {
+            file = extend(file, data);
+          } else {
+            file = extend(data, {
+              template: 'data_catalog_entry.html',
+              contents: new Buffer('')
+            });
+          }
+
+          catalog[data.category] = catalog[data.category] || {};
+          catalog[data.category][data.name] = file;
+          files[data.filename] = file;
+        }))
         .use(each(function(file, filename) {
           file.preserved = filename.slice(0, -1 * path.extname(filename).length);
         }))

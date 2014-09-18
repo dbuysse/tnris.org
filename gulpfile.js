@@ -86,7 +86,7 @@ gulp.task('dist-metal', function () {
 
           data.cleanName = data.name.toLowerCase().replace(/\W/g, '-');
           data.cleanCategory = data.category.toLowerCase().replace(/\W/g, '-');
-          data.filename = 'datacatalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
+          data.filename = 'data-catalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
 
           var file = files[data.filename];
           if (file) {

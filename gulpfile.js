@@ -73,7 +73,8 @@ gulp.task('dist-metal', function () {
     .pipe(
       gulpsmith()
         .use(csv(paths.catalog, function parser (data, files, metalsmith) {
-          metalsmith.catalog = metalsmith.catalog || {};
+          metalsmith.data.catalog = metalsmith.data.catalog || {};
+          var catalog = metalsmith.data.catalog;
 
           if (data.keywords) {
             data.keywords = data.keywords
@@ -97,8 +98,8 @@ gulp.task('dist-metal', function () {
             });
           }
 
-          metalsmith.catalog[data.cleanCategory] = metalsmith.catalog[data.cleanCategory] || {};
-          metalsmith.catalog[data.cleanCategory][data.cleanName] = file;
+          catalog[data.category] = catalog[data.category] || {};
+          catalog[data.category][data.name] = file;
           files[data.filename] = file;
         }))
         .use(each(function(file, filename) {

@@ -97,15 +97,15 @@ h2 {
 /* Buttons */
 .btn-tnris {
 	color: white;
-	background-color: $auburn;
-	border-color: $auburnoutline;
+	background-color: $tnrisblue;
+	border-color: $urgentblue;
 	padding-left: 50px;
 	padding-right: 50px;
-	box-shadow: inset $auburnoutline 0 0 7px;
+	box-shadow: inset $urgentblue 0 0 7px;
 	margin-top: 8px;
 
 	&:hover {
-		background: $auburnoutline;
+		background: $urgentblue;
 		color: white;
 	}
 }
@@ -517,7 +517,6 @@ author {
 }
 
 .highlightBox {
-	height: 300px;
 	margin-bottom: 30px;
 	overflow: hidden;
 }

@@ -1,0 +1,75 @@
+{% extends "base.html" %} 
+
+{% block contents %}
+<div id="pageheader"><h1>{{ title }}</h1>
+</div>
+<div class="row">
+
+    <div id="dataPageContent" class="col-md-9">
+        <h2>{{ abstract }}</h2>
+        <br>
+        {{ contents|safe }}
+    </div>
+
+    <div id="mainDataList" class="col-md-3">
+        <h3>Browse Data by Category</h3>
+        <ul>
+            <li><a href="#">Bathymetry (2)</a>
+            </li>
+            <li><a href="#">Boundary (7)</a>
+            </li>
+            <li><a href="#">
+                Compressed Mosaic (4)</a>
+            </li>
+            <li><a href="#">
+                Cultural (13)</a>
+            </li>
+            <li><a href="#">
+                Demographics (5)</a>
+            </li>
+            <li><a href="#">
+                Digital Ortho Quadrangle (DOQQ) (3)</a>
+            </li>
+            <li><a href="#">
+                Digital Raster Graphics (DRG) (3)</a>
+            </li>
+            <li><a href="#">
+                Elevation (3)</a>
+            </li>
+            <li><a href="#">
+                Floodplain (11)</a>
+            </li>
+            <li><a href="#">
+                Geology (7)</a>
+            </li>
+            <li><a href="#">
+                Hydrography (4)</a>
+            </li>
+            <li><a href="#">
+                Imagery (4)</a>
+            </li>
+            <li><a href="#">
+                LandSAT (15)</a>
+            </li>
+            <li><a href="#">
+                LiDAR (6)</a>
+            </li>
+            <li><a href="#">
+                Natural Regions (3)</a>
+            </li>
+            <li><a href="#">
+                Satellite Imagery (8)</a>
+            </li>
+            <li><a href="#">
+                Transportation (8)</a>
+            </li>
+            <li><a href="#">
+                Weather (7)</a>
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+
+{% endblock contents %}

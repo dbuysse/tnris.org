@@ -70,12 +70,12 @@
         <ul class="media-list">
          {% for spotlight in spotlights %}
            {% if loop.index <= 3 %}
-             <li class="media">
+             <div class="media">
                <a href="{{ spotlight.path }}">
                  <img class="media-object" src="{{ spotlight.image }}" alt="...">
                  <h4>{{ spotlight.title }}</h4>
                </a>
-             </li>
+             </div>
            {% endif %}
          {% endfor %}
         </ul>
@@ -94,7 +94,7 @@
     <div class="row">
 
       <h3 class="text-center">Providing the Highest Level of Geographic Data Services to the People of Texas</h3>
-      <div class="col-sm-4">
+      <div class="col-sm-4 col-xs-4">
         <div class="highlightBox">
           <img class="img-responsive"  src="images/highlights/forum.jpg">
           <h4>Research &amp; Distribution</h4>
@@ -102,7 +102,7 @@
           <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-4 col-xs-4">
         <div class="highlightBox">
           <img class="img-responsive"  src="images/highlights/elpaso.jpg">
           <h4>Geographic Information Office</h4>
@@ -110,7 +110,7 @@
           <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-4 col-xs-4">
         <div class="highlightBox">
           <img class="img-responsive" src="images/highlights/forum.jpg">
           <h4>Texas GIS Forum</h4>

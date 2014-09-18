@@ -63,7 +63,13 @@
           <strong>Derivative Data:</strong> {{ derivative_data }}
         </li>
       </ul>
-      <div class="mainBlurb">{{ contents|safe }}</div>
+      <div class="mainBlurb">
+        <p>
+          {{description}}
+        </p>
+
+        {{ contents|safe }}
+     </div>
     </div>
   </div>
 </div>

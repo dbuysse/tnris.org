@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var extend = require('extend');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
@@ -71,10 +72,38 @@ gulp.task('dist-metal', function () {
       })
     .pipe(
       gulpsmith()
+        .use(csv(paths.catalog, function parser (data, files, metalsmith) {
+          metalsmith.catalog = metalsmith.catalog || {};
+
+          if (data.keywords) {
+            data.keywords = data.keywords
+              .split(',')
+              .map(function (s) {
+                return s.trim();
+              });
+          }
+
+          data.cleanName = data.name.toLowerCase().replace(/\W/g, '-');
+          data.cleanCategory = data.category.toLowerCase().replace(/\W/g, '-');
+          data.filename = 'datacatalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
+
+          var file = files[data.filename];
+          if (file) {
+            file = extend(file, data);
+          } else {
+            file= extend(data, {
+              template: 'data_catalog_entry.html',
+              contents: new Buffer('')
+            });
+          }
+
+          metalsmith.catalog[data.cleanCategory] = metalsmith.catalog[data.cleanCategory] || {};
+          metalsmith.catalog[data.cleanCategory][data.cleanName] = file;
+          files[data.filename] = file;
+        }))
         .use(each(function(file, filename) {
           file.preserved = filename.slice(0, -1 * path.extname(filename).length);
         }))
-        .use(csv(paths.catalog))
         .use(collector('*.md'))
         .use(autodate('YYYY-MM-DD'))
         .use(markdown({

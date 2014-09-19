@@ -7,6 +7,7 @@ var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
 var path = require('path');
+var each = require('metalsmith-each');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var replace = require('metalsmith-replace');
@@ -21,7 +22,6 @@ var based = require('./metalsmith-based');
 var collector = require('./metalsmith-collector');
 var crossref = require('./metalsmith-crossref');
 var csv = require('./metalsmith-csv');
-var each = require('./metalsmith-each');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task

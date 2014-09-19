@@ -29,15 +29,15 @@ swig.setDefaults({ cache: false });
 
 var dirs = {
   dist: './.dist',
-  content: './content',
+  markdown: './content/markdown',
   scss: './scss',
   static: 'static',
   templates: './templates'
 };
 
 var paths = {
-  content: dirs.content + '/**/*.md',
-  catalog: './data-catalog.csv',
+  markdown: dirs.markdown + '/**/*.md',
+  catalog: './content/data-catalog.csv',
   scss: dirs.scss + '/**/*.scss',
   static: dirs.static + '/**/*',
   templates: dirs.templates + '/**/*'
@@ -46,7 +46,7 @@ var paths = {
 gulp.task('default', ['dist', 'watch', 'webserver']);
 
 gulp.task('watch', function () {
-  gulp.watch(paths.content, ['dist-metal']);
+  gulp.watch(paths.markdown, ['dist-metal']);
   gulp.watch(paths.templates, ['dist-metal']);
   gulp.watch(paths.scss, ['dist-scss']);
   gulp.watch(paths.static, ['dist-static']);
@@ -64,7 +64,7 @@ gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);
 
 gulp.task('dist-metal', function () {
   gulp.src([
-    paths.content
+    paths.markdown
   ])
     .pipe(gulp_front_matter()).on("data", function(file) {
         _.assign(file, file.frontMatter);

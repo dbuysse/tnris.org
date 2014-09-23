@@ -3,6 +3,7 @@
 vendors:
   - name: GeoVendor MapVendor Vendobjects for Enterprise
     url:  http://geovendor.prise/index.cfxml?sessionId=19293u791478919847891247817861871637131&_=2938271678123
+    thumbnail: images/media1.jpg
   - name: The Vendo Group, LLC
     url:  http://vendorrrrr.io
   - name: Vendacia Solutions

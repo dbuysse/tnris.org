@@ -1,0 +1,36 @@
+{% extends "mapsanddata_sub.html" %} 
+
+{% block contents %}
+<div id="pageheader"><h1>{{ title }}</h1>
+</div>
+<div class="row">
+
+    <div id="dataPageContent" class="col-md-9">
+        <h2>{{ abstract }}</h2>
+        {{ contents|safe }}
+
+
+            {% for wms_service in variables.wms_services %}
+      <div class="service">
+        <h3>
+          {{wms_service.title}}
+        </h3>
+        <ul>
+          {% for service in wms_service.services %}
+            <li>
+              <strong>{{service.name}}</strong> <br>
+              {{service.url}}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock contents %}
+
+
+

@@ -25,4 +25,18 @@ wms_services:
     -  name: Bexar 2
        url: r.tnris.org...
 
+  - title: Bexar 
+    services: 
+    -  name: Bexar 1
+       url: r.tnris.org...
 
+    -  name: Bexar 2
+       url: r.tnris.org...
+
+  - title: Bexar 
+    services: 
+    -  name: Bexar 1
+       url: r.tnris.org...
+
+    -  name: Bexar 2
+       url: r.tnris.org...

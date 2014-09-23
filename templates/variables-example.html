@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block contents %}
+    {{contents|safe}}
+    <ul>
+      {% for vendor in variables.vendors %}
+        <li><a href="{{vendor.url}}">{{vendor.name}}</a></li>
+      {% endfor %}
+    </ul>
+{% endblock contents %}

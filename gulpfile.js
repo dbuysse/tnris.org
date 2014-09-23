@@ -7,6 +7,7 @@ var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
 var path = require('path');
+var each = require('metalsmith-each');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var replace = require('metalsmith-replace');
@@ -21,7 +22,7 @@ var based = require('./metalsmith-based');
 var collector = require('./metalsmith-collector');
 var crossref = require('./metalsmith-crossref');
 var csv = require('./metalsmith-csv');
-var each = require('./metalsmith-each');
+var metadata = require('metalsmith-metadata');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task
@@ -35,18 +36,21 @@ var dirs = {
   templates: './templates'
 };
 
+dirs.markdown = dirs.content + '/markdown';
+
 var paths = {
-  content: dirs.content + '/**/*.md',
-  catalog: './data-catalog.csv',
+  catalog: dirs.content + '/data-catalog.csv',
+  markdown: dirs.markdown + '/**/*.md',
   scss: dirs.scss + '/**/*.scss',
   static: dirs.static + '/**/*',
-  templates: dirs.templates + '/**/*'
+  templates: dirs.templates + '/**/*',
+  variables: dirs.content + '/variables.yaml'
 };
 
 gulp.task('default', ['dist', 'watch', 'webserver']);
 
 gulp.task('watch', function () {
-  gulp.watch(paths.content, ['dist-metal']);
+  gulp.watch(paths.markdown, ['dist-metal']);
   gulp.watch(paths.templates, ['dist-metal']);
   gulp.watch(paths.scss, ['dist-scss']);
   gulp.watch(paths.static, ['dist-static']);
@@ -64,7 +68,8 @@ gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);
 
 gulp.task('dist-metal', function () {
   gulp.src([
-    paths.content
+    paths.markdown,
+    paths.variables
   ])
     .pipe(gulp_front_matter()).on("data", function(file) {
         _.assign(file, file.frontMatter);
@@ -101,6 +106,9 @@ gulp.task('dist-metal', function () {
           catalog[data.category] = catalog[data.category] || {};
           catalog[data.category][data.name] = file;
           files[data.filename] = file;
+        }))
+        .use(metadata({
+          variables: 'variables.yaml'
         }))
         .use(each(function(file, filename) {
           file.preserved = filename.slice(0, -1 * path.extname(filename).length);

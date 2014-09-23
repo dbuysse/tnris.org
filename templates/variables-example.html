@@ -7,4 +7,23 @@
         <li><a href="{{vendor.url}}">{{vendor.name}}</a></li>
       {% endfor %}
     </ul>
+
+    {% for wms_service in variables.wms_services %}
+      <div class="service">
+        <h3>
+          {{wms_service.title}}
+        </h3>
+        <ul>
+          {% for service in wms_service.services %}
+            <li>
+              {{service.name}} <br>
+              {{service.url}}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+
+
+
 {% endblock contents %}

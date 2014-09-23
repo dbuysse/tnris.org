@@ -9,3 +9,19 @@ vendors:
     url:  http://ca.geocities.com/vendacia76XOXO
   - name: Vendor, Vendor and Vendssociates
     url:  http://vendor.vendor/
+
+wms_services:
+  - title: City of Abilene
+    services: 
+    -  name: Abilene...
+       url: r.tnris.org...
+
+  - title: Bexar 
+    services: 
+    -  name: Bexar 1
+       url: r.tnris.org...
+
+    -  name: Bexar 2
+       url: r.tnris.org...
+
+

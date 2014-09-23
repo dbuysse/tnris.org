@@ -56,7 +56,7 @@ gulp.task('watch', function () {
   gulp.watch(paths.static, ['dist-static']);
 });
 
-gulp.task('webserver', function() {
+gulp.task('webserver', ['dist'],  function() {
   gulp.src(dirs.dist)
     .pipe(webserver({
       livereload: true,

@@ -40,6 +40,7 @@ dirs.markdown = dirs.content + '/markdown';
 
 var paths = {
   catalog: dirs.content + '/data-catalog.csv',
+  content: dirs.content + '/**/*',
   markdown: dirs.markdown + '/**/*.md',
   scss: dirs.scss + '/**/*.scss',
   static: dirs.static + '/**/*',
@@ -50,7 +51,7 @@ var paths = {
 gulp.task('default', ['dist', 'watch', 'webserver']);
 
 gulp.task('watch', function () {
-  gulp.watch(paths.markdown, ['dist-metal']);
+  gulp.watch(paths.content, ['dist-metal']);
   gulp.watch(paths.templates, ['dist-metal']);
   gulp.watch(paths.scss, ['dist-scss']);
   gulp.watch(paths.static, ['dist-static']);

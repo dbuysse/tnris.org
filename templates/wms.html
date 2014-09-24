@@ -1,36 +1,42 @@
-{% extends "mapsanddata_sub.html" %} 
+{% extends "mapsanddata.html" %} 
 
-{% block contents %}
-<div id="pageheader"><h1>{{ title }}</h1>
-</div>
-<div class="row">
+  {% block category_nav %}
+    <div class="col-md-3">
+      <h2>Jump to WMS Layers</h2>
+      <ul>
+        {% for wms_service in variables.wms_services %}
+          <li>
+            <a href="#">{{wms_service.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endblock category_nav %}
 
-    <div id="dataPageContent" class="col-md-9">
-        <h2>{{ abstract }}</h2>
-        {{ contents|safe }}
 
-
-            {% for wms_service in variables.wms_services %}
+{% block mapsdata_content %}
+    {% for wms_service in variables.wms_services %}
       <div class="service">
         <h3>
-          {{wms_service.title}}
+          <a href="#">{{wms_service.title}}</a>
         </h3>
-        <ul>
+        {% if wms_service.services %}
+        <ul class="list-group">
           {% for service in wms_service.services %}
-            <li>
+            <li class="list-group-item">
+              <a class="badge"><i class="fa fa-files-o"></i> Copy URL</a>
               <strong>{{service.name}}</strong> <br>
               {{service.url}}
             </li>
-          {% endfor %}
+          {% endfor %} 
         </ul>
+        {% else %}
+        <p><em>None Available</em></p>
+        {% endif %}
+
       </div>
     {% endfor %}
-    </div>
-</div>
-
-
-
-{% endblock contents %}
+{% endblock mapsdata_content %}
 
 
 

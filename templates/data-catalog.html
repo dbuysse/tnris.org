@@ -2,6 +2,20 @@
 
 {% block contents %}
 <div class="row">
+
+  {% block category_nav %}
+    <div id="mainDataList" class="col-md-3">
+      <h2>Browse Data by Category</h2>
+      <ul class="list-group">
+        {% for name, category in catalog %}
+          <li class="list-group-item">
+            <a href="#">{{name}} ({{Object.keys(category).length}})</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endblock category_nav %}
+
   <div id="dataPageContent" class="col-md-9">
     {% block catalog_content %}
       <h1>{{ title }}</h1>
@@ -37,18 +51,7 @@
     {% endblock catalog_content %}
   </div>
 
-  {% block category_nav %}
-    <div id="mainDataList" class="col-md-3">
-      <h2>Browse Data by Category</h2>
-      <ul>
-        {% for name, category in catalog %}
-          <li>
-            <a href="#">{{name}} ({{Object.keys(category).length}})</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% endblock category_nav %}
+
 </div>
 
 {% endblock contents %}

@@ -1,11 +1,25 @@
 {% extends "base.html" %} 
 
 {% block contents %}
-
 <div class="row">
+  {% block category_nav %}
+<!--     <div id="mainDataList" class="col-md-3">
+      <h2>Browse Data by Category</h2>
+      <ul>
+        {% for name, category in catalog %}
+          <li>
+            <a href="#">{{name}} ({{Object.keys(category).length}})</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div> -->
+  {% endblock category_nav %}
     <div id="dataPageContent" class="col-md-9">
         <h1>{{ title }}</h1>
-        <div class="mainBlurb">{{ contents|safe }}</div>
+        <h2>{{ abstract }}</h2>
+         <div class="mainBlurb">{{ contents|safe }}</div>
+         
+        {% block mapsdata_content %}
         <div class="row">
             <div class="col-md-12 col-sm-6">
                 <h2>Data Catalog</h2>
@@ -50,67 +64,11 @@
                 <p>TNRIS incorporates many open source technologies that are available to developers with interest</p>
             </div>
         </div>
+        {% endblock mapsdata_content %}
     </div>
 
-    <div id="mainDataList" class="col-md-3">
-        <h3>Browse Data by Category</h3>
-        <ul>
-            <li><a href="#">Bathymetry (2)</a>
-            </li>
-            <li><a href="#">Boundary (7)</a>
-            </li>
-            <li><a href="#">
-                Compressed Mosaic (4)</a>
-            </li>
-            <li><a href="#">
-                Cultural (13)</a>
-            </li>
-            <li><a href="#">
-                Demographics (5)</a>
-            </li>
-            <li><a href="#">
-                Digital Ortho Quadrangle (DOQQ) (3)</a>
-            </li>
-            <li><a href="#">
-                Digital Raster Graphics (DRG) (3)</a>
-            </li>
-            <li><a href="#">
-                Elevation (3)</a>
-            </li>
-            <li><a href="#">
-                Floodplain (11)</a>
-            </li>
-            <li><a href="#">
-                Geology (7)</a>
-            </li>
-            <li><a href="#">
-                Hydrography (4)</a>
-            </li>
-            <li><a href="#">
-                Imagery (4)</a>
-            </li>
-            <li><a href="#">
-                LandSAT (15)</a>
-            </li>
-            <li><a href="#">
-                LiDAR (6)</a>
-            </li>
-            <li><a href="#">
-                Natural Regions (3)</a>
-            </li>
-            <li><a href="#">
-                Satellite Imagery (8)</a>
-            </li>
-            <li><a href="#">
-                Transportation (8)</a>
-            </li>
-            <li><a href="#">
-                Weather (7)</a>
-            </li>
-        </ul>
 
 
-    </div>
 </div>
 
 {% endblock contents %}

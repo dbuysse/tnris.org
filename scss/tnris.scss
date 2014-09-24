@@ -46,6 +46,16 @@ html, body {
 body {
   font-family: $opensans;
   font-weight: 100;
+  position: relative;
+}
+
+#contentMain {
+	position: relative;
+}
+
+#dataPageContent {
+	position: relative;
+	top: 100px;
 }
 
 .jumbotron {
@@ -384,6 +394,7 @@ a.navbar-twdb {
 	height: 100%;
 	margin-bottom: -300px;
 	width: 100%;
+	position: relative;
 }
 
 #push, .footer {

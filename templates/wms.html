@@ -1,12 +1,12 @@
 {% extends "mapsanddata.html" %} 
 
   {% block category_nav %}
-    <div class="col-md-3">
-      <h2>Jump to WMS Layers</h2>
-      <ul>
+    <div class="col-md-3 wms-nav-container">
+      <ul class="nav nav-stacked affix wms-nav">
+        <lh>Jump to WMS Layers</lh>
         {% for wms_service in variables.wms_services %}
           <li>
-            <a href="#">{{wms_service.title}}</a>
+            <a href="#{{wms_service.anchor}}">{{wms_service.title}}</a>
           </li>
         {% endfor %}
       </ul>
@@ -16,9 +16,9 @@
 
 {% block mapsdata_content %}
     {% for wms_service in variables.wms_services %}
-      <div class="service">
+      <section id="{{wms_service.anchor}}" class="service">
         <h3>
-          <a href="#">{{wms_service.title}}</a>
+          {{wms_service.title}}
         </h3>
         {% if wms_service.services %}
         <ul class="list-group">
@@ -34,7 +34,7 @@
         <p><em>None Available</em></p>
         {% endif %}
 
-      </div>
+      </section>
     {% endfor %}
 {% endblock mapsdata_content %}
 

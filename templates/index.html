@@ -28,7 +28,7 @@
 
     <!-- Example row of columns -->
     <div class="row">
-      <div id="updates" class="col-md-5 col-sm-12">
+      <div id="updates" class="col-md-5 col-sm-12 col-lg-height">
         <h2>Latest News</h2>
         {% for news_item in news %}
           {% if loop.index <= 4 %}
@@ -70,12 +70,12 @@
         <ul class="media-list">
          {% for spotlight in spotlights %}
            {% if loop.index <= 3 %}
-             <div class="media">
+             <li class="media">
                <a href="{{ spotlight.path }}">
                  <img class="media-object" src="{{ spotlight.image }}" alt="...">
                  <h4>{{ spotlight.title }}</h4>
                </a>
-             </div>
+             </li>
            {% endif %}
          {% endfor %}
         </ul>

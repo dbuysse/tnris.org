@@ -23,3 +23,17 @@
 	}
 
 }
+
+.wms-nav {
+	width: 260px;
+
+	li {
+
+		&.active {
+			background: $lightgrey;
+		}
+	}
+
+	&.affix {
+	}
+}

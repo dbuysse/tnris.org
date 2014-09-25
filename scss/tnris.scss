@@ -50,12 +50,6 @@ body {
 }
 
 #contentMain {
-	position: relative;
-}
-
-#dataPageContent {
-	position: relative;
-	top: 100px;
 }
 
 .jumbotron {
@@ -296,7 +290,6 @@ a.navbar-twdb {
 
 
 #quickNav  {
-	margin-top: 54px;
 	margin-bottom: 0;
 	// @include background-image(linear-gradient(to top, #e7e7e7, white, white, white, white, white, transparent));
 	// border-bottom: 1px solid #e2e2e2;
@@ -378,8 +371,8 @@ a.navbar-twdb {
 	}
 }
 
-#mainNav.affix-top + #quickNav {
-	margin-top: 0;
+#mainNav.affix + #quickNav {
+	margin-top: 54px;
 }
 
 #quickNav.navbar .nav>li>a:hover {
@@ -544,4 +537,57 @@ author {
 /* Common Page Elements */
 .mainBlurb {
 	font-size: 18px;
+}
+
+/* Side notes for calling out things
+-------------------------------------------------- */
+ 
+/* Base styles (regardless of theme) */
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+
+	h4 {
+	  margin-top: 0;
+	}
+
+	p:last-child {
+	  margin-bottom: 0;
+	}
+
+	code, .highlight {
+	  background-color: #fff;
+	}
+}
+ 
+/* Themes for different contexts */
+.bs-callout-danger {
+  background-color: #fcf2f2;
+  border-color: #dFb5b4;
+	  h4 {
+	color: #B94A48;
+	}
+}
+.bs-callout-warning {
+  background-color: #fefbed;
+  border-color: #f1e7bc;
+  h4 {
+color: #C09853;
+}
+
+}
+.bs-callout-info {
+  background-color: #f0f7fd;
+  border-color: #d0e3f0;
+   h4 {
+color: #3A87AD;
+}
+}
+
+.list-group-item.danger {
+  background-color: #fcf2f2;
+  border-color: #dFb5b4;
 }

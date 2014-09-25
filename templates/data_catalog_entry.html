@@ -2,76 +2,91 @@
 
 {% block catalog_content %}
     <div class="row">
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="data-catalog">Data Catalog</a></li>
+      <li><a href="datacatalog/{{ category }}">{{ category }}</a></li>
+      <li class="active">{{ title }}</li>
+    </ol>
+  </div>
 
-        <ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="data-catalog">Data Catalog</a></li>
-  <li><a href="datacatalog/{{ category }}">{{ category }}</a></li>
-    <li class="active">{{ title }}</li>
-</ol></div>
-<div class="row">
-  <div id="dataPageContent" class="col-xs-12">
     <div class="row">
-      <h2>{{ category }}</h2>
-      <h1>{{ name }} <br><small>{{ tags }}</small></h1>
-     </div>
-    <img src="{{ mainimage }}" alt="Sample of {{ title }} data">
-    <div class="row">
-      <div class="dataBox pull-right">
-        <h2>Data Access</h2>
-        <p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
+
+        <h1>{{ name }}</h1>
+        <div class="row bs-callout bs-callout-info">
+          <div class="col-md-12">Category: <a href="#">{{ category }}</a> <br> tags: <a href="#">{{ tags }}</a></div>
+
+          <ul class="col-md-6">
+            <li>
+              <strong>Date(s):</strong><br>{{ date_created }}
+            </li>
+            <li>
+              <strong>Source:</strong><br>{{ source }}
+            </li>
+            <li>
+              <strong>Available Formats:</strong>v{{ available_formats }}
+            </li>
+            <li>
+              <strong>Coverage Availability/Geographic Extent:</strong><br>{{ coverage_extent }}
+            </li>
+            <li>
+              <strong>Footprint:</strong><br>{{ footprint }}
+            </li>
+        </ul>
+        <ul class="col-md-6">
+          <li>
+            <strong>Download Size</strong><br>{{ download_size }}
+          </li>
+          <li>
+            <strong>Recommended Use</strong><br>{{ recommended_use }}
+          </li>
+
+          <li>
+            <strong>Known Issues</strong><br>{% if item.known_issues %}{{ known_issues }}{% else %}<em>None</em>{% endif %}
+          </li>
+          <li>
+            <strong>Alternative Data</strong><br>{% if item.alternative_data %}{{ alternative_data }}{% else %}<em>None</em>{% endif %}
+          </li>
+          <li>
+            <strong>Derivative Data</strong><br>{% if item.derivative_data %}{{ derivative_data }}{% else %}<em>None</em>{% endif %}
+          </li>
+        </ul>
+      </div>
+       {% if item.mainimage %}
+        <img src="{{ mainimage }}" alt="Sample of {{ title }} data">
+          <div class="btn-group">
+            <button type="button" class="btn btn-default">Overview</button>
+            <button type="button" class="btn btn-default">1</button>
+            <button type="button" class="btn btn-default">2</button>
+          </div>
+        {% else %}
+        <img src="holder.js/100%x400" alt="No Preview Available">
+        {% endif %}
+        <div class="dataBox pull-right">
+          <h2>Data Access</h2>
+        
+          <p>The <strong>{{ name }}</strong> dataset is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> at a nominal fee for the cost of reproduction. 
+            <To order this data use our order form.</p>
+          <p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
+        </div>
+
+ <!--        <p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
         <p><strong>To access the services in ArcGIS you can use the following URL</strong></p>
         <div id="shareLinkContainer" style="display: block;">
           <div id="shareLinkBox">
             <input type="text" id="shareUrl" name="shareUrl" value="r.tnris.org/arcgis/services/HPIDS/HPIDS_Smith_2014_NC/ImageServer/WMSServer" readonly="readonly">
             <div class="hint">Press Ctrl-c to copy</div>
           </div>
-        </div>
-        <p>Additionally, the orthoimagery files (GeoTIFF, MrSID, JPEG2000) are in the public domain and available from the TNRIS Research and Distribution Center at a nominal fee for the cost of reproduction.</p>
-        <p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
-      </div>
-      <ul>
-        <li>
-          <strong>Date(s):</strong> {{ date_created }}
-        </li>
-        <li>
-          <strong>Source:</strong> {{ source }}
-        </li>
-        <li>
-          <strong>Available Formats:</strong> {{ available_formats }}
-        </li>
-        <li>
-          <strong>Coverage Availability/Geographic Extent:</strong> {{ coverage_extent }}
-        </li>
-        <li>
-          <strong>Footprint:</strong> {{ footprint }}
-        </li>
-        <li>
-          <strong>Download Size:</strong> {{ download_size }}
-        </li>
-        <li>
-          <strong>Recommended Use:</strong> {{ recommended_use }}
-        </li>
+        </div> -->
+ 
+          <div class="mainBlurb">
+            <p>
+              {{description}}
+            </p>
 
-        <li>
-          <strong>Known Issues:</strong> {{ known_issues }}
-        </li>
-        <li>
-          <strong>Alternative Data:</strong> {{ alternative_data }}
-        </li>
-        <li>
-          <strong>Derivative Data:</strong> {{ derivative_data }}
-        </li>
-      </ul>
-      <div class="mainBlurb">
-        <p>
-          {{description}}
-        </p>
-
-        {{ contents|safe }}
-     </div>
+            {{ contents|safe }}
+         </div>
     </div>
-  </div>
 </div>
 
 {% endblock catalog_content %}

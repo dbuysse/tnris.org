@@ -18,16 +18,31 @@
 // }
 
 #dataPageContent {
-	h3 {
-		color: $tnrisblue;
+
+	// position: relative;
+	// top: 100px;
+	h2 {
+		margin-top: 20px;
 	}
 
+	section{
+
+		&.service {
+			padding-top: 50px; 
+			margin-top: -50px;
+		}
+
+	}
 }
 
-.wms-nav {
+.nav-left {
 	width: 260px;
+	top: 150px;
 
 	li {
+		border-bottom: 1px solid $midgrey;
+		padding-left: 0;
+		margin-top: 0;
 
 		&.active {
 			background: $lightgrey;
@@ -36,4 +51,19 @@
 
 	&.affix {
 	}
+}
+
+.list-group {
+
+	.media {
+	margin-top: 0;
+	display: block;
+	overflow: auto;
+	}
+
+	.media-body {
+	display: block;
+	overflow: auto;
+	}
+
 }

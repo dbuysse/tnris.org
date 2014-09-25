@@ -2,8 +2,8 @@
 
   {% block category_nav %}
     <div class="col-md-3 wms-nav-container">
-      <ul class="nav nav-stacked affix wms-nav">
-        <lh>Jump to WMS Layers</lh>
+      <ul class="nav hidden-sm hidden-xs affix nav-left">
+        <lh><h4>Jump to WMS Layers</h4></lh>
         {% for wms_service in variables.wms_services %}
           <li>
             <a href="#{{wms_service.anchor}}">{{wms_service.title}}</a>
@@ -17,21 +17,32 @@
 {% block mapsdata_content %}
     {% for wms_service in variables.wms_services %}
       <section id="{{wms_service.anchor}}" class="service">
-        <h3>
+        <h2>
           {{wms_service.title}}
-        </h3>
+        </h2>
         {% if wms_service.services %}
-        <ul class="list-group">
+                  <ul class="media-list list-group">
           {% for service in wms_service.services %}
-            <li class="list-group-item">
-              <a class="badge"><i class="fa fa-files-o"></i> Copy URL</a>
-              <strong>{{service.name}}</strong> <br>
-              {{service.url}}
+                  <li class="media list-group-item">
+               {% if item.thumbnail %}
+                        <a class="pull-left" href="{{ item.path }}">
+                          <img class="media-object" src="{{ item.thumbnail }}" alt="...">
+                        </a>
+                        {% else %}
+                       <a class="pull-left" href="{{ item.path }}">
+                          <img class="media-object" src="holder.js/50x50" alt="...">
+                        </a>
+                      {% endif %}
+              <a class="badge copy-tip" href="#" data-toggle="tooltip" title="Copy the WMS URL"><i class="fa fa-files-o"></i> Copy URL</a>
+              <h4 class="list-group-item-heading"><a href="#" class="wms-tip" data-toggle="tooltip" title="More about this dataset">{{service.name}}</a> <small>{{service.url}}</small></h4>
+              
             </li>
           {% endfor %} 
         </ul>
         {% else %}
-        <p><em>None Available</em></p>
+        <ul class="list-group">
+          <li class="list-group-item danger"><em>None Available</em></li>
+      </ul>
         {% endif %}
 
       </section>

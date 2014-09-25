@@ -3,37 +3,27 @@
 {% block contents %}
 <div class="row">
 
-  {% block category_nav %}
-    <div id="mainDataList" class="col-md-3">
-      <h2>Browse Data by Category</h2>
-      <ul class="list-group">
-        {% for name, category in catalog %}
-          <li class="list-group-item">
-            <a href="#">{{name}} ({{Object.keys(category).length}})</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% endblock category_nav %}
 
   <div id="dataPageContent" class="col-md-9">
     {% block catalog_content %}
       <h1>{{ title }}</h1>
       <div class="mainBlurb">{{ contents|safe }}</div>
+
         {% for name, category in catalog %}
-          <div class="row">
+          <div class="section">
             <h2>{{name}}</h2>
-            <div class="media col-offset-1 col-xs-12">
+                  <ul class="media-list list-group">
               {% for item in category %}
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="pull-left">
-                      {% if item.thumbnail %}
-                        <a href="{{ item.path }}">
+                  <li class="media list-group-item">
+                     {% if item.thumbnail %}
+                        <a class="pull-left" href="{{ item.path }}">
                           <img class="media-object" src="{{ item.thumbnail }}" alt="...">
                         </a>
+                        {% else %}
+                       <a class="pull-left" href="{{ item.path }}">
+                          <img class="media-object" src="holder.js/100x100" alt="...">
+                        </a>
                       {% endif %}
-                    </div>
                     <div class="media-body">
                       <h4 class="media-heading">
                         <a href="{{ item.path }}">{{ item.name }}</a>
@@ -42,14 +32,25 @@
                         {{ item.description }}
                       </p>
                     </div>
-                  </div>
-                </div>
+                  </li>
               {% endfor %}
-            </div>
+                  </ul>
           </div>
         {% endfor %}
-    {% endblock catalog_content %}
   </div>
+    {% endblock catalog_content %}
+  {% block category_nav %}
+    <div id="mainDataList" class="col-md-3">
+      <ul class="nav hidden-sm hidden-xs affix nav-left">
+      <lh><h4>Browse by Category</h4></lh>
+        {% for name, category in catalog %}
+          <li>
+            <a href="#">{{name}} ({{Object.keys(category).length}})</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endblock category_nav %}
 
 
 </div>

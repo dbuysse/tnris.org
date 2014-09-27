@@ -7,7 +7,7 @@
             <li class="col-xs-5ths"><a class="downloaddata-quick" href="{{crossref['data-catalog']}}"><div class="iconContainer"></div> Download Data <small class="hidden-xs hidden-sm">Access digital data directly</a></small></li>
             <li class="col-xs-5ths"><a class="orderdata-quick" href="#"><div class="iconContainer"></div> Order Data <small class="hidden-xs hidden-sm">Custom Data Requests</small></a></li>
             <li class="col-xs-5ths"><a class="wms-quick" href="mapsanddata/web-mapping-services"><div class="iconContainer"></div> Web Map Services <small class="hidden-xs hidden-sm">Load WMS layers</small></a></li>
-            <li class="col-xs-5ths"><a class="training-quick" href="#"><div class="iconContainer"></div> Training <small class="hidden-xs hidden-sm">Expand your GIS skills</small></a></li>
+            <li class="col-xs-5ths"><a class="training-quick" href="training"><div class="iconContainer"></div> Training <small class="hidden-xs hidden-sm">Expand your GIS skills</small></a></li>
             <li class="col-xs-5ths"><a class="hpids-quick" href="HPIDS"><div class="iconContainer"></div> HPIDS <small class="hidden-xs hidden-sm">High Priority Imagery &amp; Data Sets</small></a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -69,7 +69,7 @@
         <p class="spotText">A closer look at featured data and maps from our expansive catalog</p>
         <ul class="media-list">
          {% for spotlight in spotlights %}
-           {% if loop.index <= 3 %}
+           {% if loop.index <= 4 %}
              <li class="media">
                <a href="{{ spotlight.path }}">
                  <img class="media-object" src="{{ spotlight.image }}" alt="...">

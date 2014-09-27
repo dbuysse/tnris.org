@@ -2,66 +2,86 @@
 
 {% block contents %}
 <div class="row">
-  {% block category_nav %}
-<!--     <div id="mainDataList" class="col-md-3">
-      <h2>Browse Data by Category</h2>
-      <ul>
-        {% for name, category in catalog %}
-          <li>
-            <a href="#">{{name}} ({{Object.keys(category).length}})</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div> -->
-  {% endblock category_nav %}
-    <div id="dataPageContent" class="col-md-9">
+    <div id="dataPageContent" class="col-md-12">
         <h1>{{ title }}</h1>
-        <h2>{{ abstract }}</h2>
-         <div>{{ contents|safe }}</div>
-         
+        <div class="mainBlurb">{{ abstract }}</div>
+         {{ contents|safe }}
         {% block mapsdata_content %}
         <div class="row">
-            <div class="col-md-12 col-sm-6">
-                <h2>Data Catalog</h2>
+            <div class="col-md-6 col-sm-6">
+                <h2>Data Set Catalog</h2>
                 <div class="media">
-                <img class="media-object pull-left" src="http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_historical.jpg">
-                <p>Browse through all available TNRIS datasets, whether available Online or through ordering.</p>
-                <a href="data-catalog" class="btn btn-tnris">Browse the Catalog</a>
-            </div>
+                    <img class="media-object pull-left" src="http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_historical.jpg">
+                    <p>Browse through all available TNRIS datasets, whether available Online or through ordering.</p>
+                    <a href="data-catalog" class="btn btn-tnris btn-lg">Browse the Catalog</a>
+                </div>
             </div>
             <div class="col-md-6 col-sm-6">
-                <h2>Data Search &amp; Download</h2>
-                <div class="media">
-                <img class="media-object pull-left" src="http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_historical.jpg">
-                <p>The Quickest Way to search and download TNRIS data that is available online.</p>
-                <p><strong>Note:</strong> Our Research &amp; Distribution Center has all other data</p>
-                <a href="#" class="btn btn-tnris">Start Downloading</a></div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="media">
                 <h2>Research &amp; Distribution (RDC)</h2>
-                <img class="media-object pull-left" src="http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_custom.jpg"> 
-                <p>Our staff of data and map specialists provide direct customer service and assistance with requests for data not available online.<br><br><br></p>
-                <a href="mapsanddata/research-and-distribution" class="btn btn-tnris">Order Data</a>
+                <div class="media">
+                    <img class="media-object pull-left" src="http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_custom.jpg">
+                    <div class="media-body">
+                        <p>The RDC offers a variety of additional products, support and services from our in-house staff. We provide hands-on assistance and expertise.</p>
+                    </div>
+                    <a href="mapsanddata/research-and-distribution" class="btn btn-tnris btn-lg">Order Data</a>
+                </div>
             </div>
+            <div class="col-md-6 col-sm-6">
+                <h2>Data Download</h2>
+                <div class="media">
+                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
+                    <div class="media-body">
+                        <p>The Quickest Way to search and download TNRIS data that is available online.</p>
+                    </div>
+                    <a href="#" class="btn btn-tnris btn-lg">Start Downloading</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <h2>Data &amp; Mapping Solutions</h2>
+                <div class="media">
+                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
+                    <div class="media-body">
+                        <p>Applying design, communication, and technology skills to provide data solutions and cartographic products, both conventionally and digitally, for internal geospatial development.</p>
+                    </div>
+                    <a href="dms" class="btn btn-tnris btn-lg">Learn More</a>
+                </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <h2>Web Mapping Services</h2>
-                <p>Data sets optimized for access through WMS.</p>
-                <a href="mapsanddata/web-mapping-services" class="btn btn-tnris">View Available WMS</a>
+                <div class="media">
+                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
+                    <div class="media-body">
+                        <p>Data sets optimized for access through WMS.</p>
+                    </div>
+                    <a href="mapsanddata/web-mapping-services" class="btn btn-tnris btn-lg">View Available WMS</a>
+                </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <h2>Custom Map Creation</h2>
-                <p>Our trained staff can help you map what you need</p>
-                <a href="mapsanddata/custom-maps" class="btn btn-tnris">Learn More</a>
+                <div class="media">
+                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
+                    <div class="media-body">
+                <p>Our trained staff can help you create the map you need using TNRIS and public data.</p>
+            </div>
+
+                <a href="mapsanddata/custom-maps" class="btn btn-tnris btn-lg">Learn More</a>
+            </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <h2>Educational Resources</h2>
-                <p>Online tools to help you through basic GIS needs.</p>
+                <div class="media">
+                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
+                    <p>Online tutorials, walkthroughs and more.</p>
+                    <a href="#" class="btn btn-tnris btn-lg">Learn More</a>
+                </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <h2>Developers</h2>
-                <p>TNRIS incorporates many open source technologies that are available to developers with interest</p>
+                <div class="media">
+                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
+                    <p>TNRIS incorporates many open source technologies that are available to developers with interest</p>
+                    <a href="#" class="btn btn-tnris btn-lg">Learn More</a>
+                </div>
             </div>
         </div>
         {% endblock mapsdata_content %}

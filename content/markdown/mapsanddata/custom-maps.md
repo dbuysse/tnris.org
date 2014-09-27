@@ -1,5 +1,5 @@
 ---
-template: mapsanddata_sub.html
+template: page.html
 title: Custom Maps
 abstract: From customized contour maps, historical imagery posters of your hometown, county maps or a high resolution image of your property or favorite city, we can make the map you're looking for.
 ---

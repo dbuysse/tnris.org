@@ -1,16 +1,66 @@
 ---
 # list of vendors
 vendors:
-  - name: GeoVendor MapVendor Vendobjects for Enterprise
-    url: http://geovendor.prise/index.cfxml?sessionId=19293u791478919847891247817861871637131&_=2938271678123
-    thumbnail: images/media1.jpg
-  - name: The Vendo Group, LLC
-    url:  http://vendorrrrr.io
-  - name: Vendacia Solutions
-    url:  http://ca.geocities.com/vendacia76XOXO
-  - name: Vendor, Vendor and Vendssociates
-    url:  http://vendor.vendor/
-
+  - name: Northrop Grumman (Formerly 3001 International)
+    url: http://www.northropgrumman.com
+    thumbnail: images/vendors/northrop_logo.png
+  - name: Aero-Metric
+    url:  http://www.aerometric.com/
+    thumbnail: images/vendors/aerometric_logo.png
+  - name: Bohannan Huston
+    url:  http://www.bhinc.com/
+    thumbnail: images/vendors/bohannan_logo.png
+  - name: Intrado, Inc.
+    url:  http://www.intrado.com/
+    thumbnail: images/vendors/intrado_logo.png
+  - name: Dewberry
+    url:  http://www.dewberry.com/
+    # thumbnail: images/vendors/dewberry_logo.png
+  - name: Digital Globe
+    url:  http://www.digitalglobe.com/
+    # thumbnail: images/vendors/digitalglobe_logo.png
+  - name: Fugro EarthData
+    url:  http://www.fugroearthdata.com/
+    # thumbnail: images/vendors/fugro_logo.png
+  - name: Kucera International
+    url:  http://www.kucerainternational.com/
+    # thumbnail: images/vendors/kucera_logo.png
+  - name: Gorrondonna &amp; Associates
+    url:  http://www.ga-inc.net
+    # thumbnail: images/vendors/ga_logo.png
+  - name: Merrick & Company
+    url:  http://merrick.com/
+    # thumbnail: images/vendors/merrick_logo.png
+  - name: Michael Baker
+    url:  http://www.mbakercorp.com/
+    # thumbnail: images/vendors/mbaker_logo.png
+  - name: MJ Harden
+    url:  http://www2.mjharden.com/
+    # thumbnail: images/vendors/mjharden_logo.png
+  - name: North West Geomatics
+    url:  http://www.nwgeo.com/
+    # thumbnail: images/vendors/northwest_logo.png
+  - name: Atkins
+    url:  http://northamerica.atkinsglobal.com/
+    # thumbnail: images/vendors/atkins_logo.png
+  - name: Photo Science
+    url:  http://www.photoscience.com/
+    # thumbnail: images/vendors/photoscience_logo.png
+  - name: SAM
+    url:  http://sanborn.com/
+    # thumbnail: images/vendors/sanborn_logo.png
+  - name: Surdex
+    url:  http://www.surdex.com/index.aspx
+    # thumbnail: images/vendors/surdex_logo.png
+  - name: GeoDigital (formerly Terrapoint)
+    url:  http://www.surdex.com/index.aspx
+    # thumbnail: images/vendors/geodigital_logo.png
+  - name: URS
+    url:  http://www.surdex.com/index.aspx
+    # thumbnail: images/vendors/urs_logo.png
+  - name: Woolpert
+    url:  http://www.surdex.com/index.aspx
+    # thumbnail: images/vendors/woolpert_logo.png
 # list of WMS Services
 
 wms_services:

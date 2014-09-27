@@ -1,8 +1,15 @@
 ---
 template: data_catalog_entry.html
----
+images:
+ - url: blank.jpg
+   alt: blank description 
+   name: overview
+ - url: blank2
+   alt: 
+   name: 
+thumbnail:
 
-The 6-inch orthoimagery were acquired in early January 2014 during leaf-off conditions. The dataset covers Smith County and adjacent Lake Palestine. Area covered is approximately 1,166 square miles. Four local entities and TNRIS contributed funds to collect the new imagery using the High Priority Imagery and Data Sets (HPIDS) State contract administered by the TNRIS Strategic Mapping Program (StratMap). High resolution 6-inch 4-band (RGBIR) natural color and color infrared orthoimagery.
+---
 
 ###Natural Color/Infra Red Image comparisons
 

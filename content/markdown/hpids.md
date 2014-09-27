@@ -1,37 +1,33 @@
 ---
+title: HPIDS - High Priority Imagery and Datasets Contract
 template: hpids.html
-title: High Priority & Imagery Data Sets
-abstract: 
+abstract: Echo Park try-hard Blue Bottle chillwave consectetur polaroid. Mlkshk esse aute readymade.
 ---
+The Council on Competitive Government (CCG) established a procurement contract designed to strengthen Texas’ capabilities to purchase quality digital map data for both government and the public. The new process employs a state Master Contract commonly known as High Priority Imagery and Datasets (HPIDS).
 
-The Council on Competitive Government (CCG) established a procurement contract designed to strengthen Texas’ capabilities to purchase quality digital map data for both government and the public. The new process employs a state Master Contract commonly known as ** High Priority Imagery and Datasets (HPIDS)**. High Priority Datasets are digital map data layers designed to be used by government agencies and the public.
+New data acquisition projects are determined by identifying type of data required, location, specification, budget and timeline for delivery.  Data acquisition, production and independent quality assurance and quality control (QA/QC) responsibilities are awarded to private geospatial contractors through the Council on Competitive Government (CCG) High Priority Imagery and Data Sets Contract.  After the final deliverables are accepted, the data are placed in the public domain.
 
-The CCG has designated the Texas Water Development Board as the Contract Administrator. Texas Natural Resources Information System (TNRIS) is the state’s clearinghouse for digital maps and geographic data and is is responsible for the success of HPIDS.
+##Benefits
+- #### Strategic Collaboration and Integration
 
-##Strategic Collaboration and Integration
+    Combined professional expertise to enhance project specifications resulting in better data products. Working together generates new ideas for creating smarter geospatial data that can be used by many organizations. If desired, we will help you select the company that will best suit your needs.
 
-Combined professional expertise to enhance project specifications resulting in better data products. Working together generates new ideas for creating smarter geospatial data that can be used by many organizations. If desired, we will help you select the company that will best suit your needs.
+- #### Taxpayer Value
 
-##Taxpayer Value
+    By combining our geospatial projects, we can acquire a larger area at a discounted unit price and reduce duplication.
 
-By combining our geospatial projects, we can acquire a larger area at a discounted unit price and reduce duplication.
+- #### Efficient Purchasing Process
 
-##Efficient Purchasing Process
+    Since the contract with the vendors is already in place, a contract between you and the vendor not required. A statement of work and a purchase order will suffice.
 
-Since the contract with the vendors is already in place, a contract between you and the vendor not required. A statement of work and a purchase order will suffice.
+- #### Project Assistance and Coordination
+    There are several options ranging from self service to full service. We can help you seek additional project partners to expand the area of interest or to share the project cost.
 
-##Project Assistance and Coordination
+- #### Continuous Improvement
+    Each project performed under the HPIDS Contract takes away valuable experiences that help improve data standards and overall project management.
 
-There are several options ranging from self service to full service. We can help you seek additional project partners to expand the area of interest or to share the project cost.
+- #### Increased Opportunity for Cost Sharing
+    By notifying us about a potential project, you may be alerted to another entity interested in purchasing a similar product or area of interest.
 
-##Continuous Improvement
-
-Each project performed under the HPIDS Contract takes away valuable experiences that help improve data standards and overall project management.
-
-##Increased Opportunity for Cost Sharing
-
-By notifying us about a potential project, you may be alerted to another entity interested in purchasing a similar product or area of interest.
-
-##Pre-screened Companies with Geospatial Experience
-
-Each of the 21 companies selected were carefully evaluated for project experience and success. Qualifications include large scale project experience, technology innovation, professional staff, and available resources.
+- #### Pre-screened Companies with Geospatial experience
+    Each of the selected companies were carefully evaluated for project experience and success. Qualifications include large scale project experience, technology innovation, professional staff, and available resources.

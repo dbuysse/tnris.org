@@ -1,10 +1,10 @@
 ---
-template: mapsanddata_sub.html
+template: page.html
 title: Research & Distribution Services (RDC)
-abstract: The RDC offers a variety of additional products, support and services from our in-house staff not available on our website. We provide hands-on service and expertise.
+abstract: The RDC offers a variety of additional products, support and services from our in-house staff. We provide hands-on assistance and expertise.
 ---
 
-#### Some of our services include:
+### Some of our services include:
 
 * Statewide collection, duplication and distribution of USGS topographic, USFWS wetlands, and FEMA Flood Insurance Rate maps
 * Historic map and aerial imagery searches and/or reproductions

@@ -1,13 +1,24 @@
 {% extends "base.html" %}
 
+
 {% block contents %}
 <div class="row">
 	<div class="col-md-9">
-		<h1>{{title}}<br>
-			<small>{{abstract}}</small>
-		</h1>
+		<h1>{{title}}</h1>
+		{% if abstract %}<div class="mainBlurb">{{abstract}}</div>{% endif %}
+		{% if mainimage %}<img class="img-responsive center-block" src="{{ mainimage }}">{% endif %}
 		{{ contents|safe }}
+
+		{% block extracontent %}
+		{% endblock extracontent %}
+
 	</div>
+
+	{% block sidebarLeft %}
+	{% endblock sidebarLeft %}
 </div>
 
 {% endblock contents %}
+
+
+

@@ -1,0 +1,20 @@
+{% extends "page.html" %}
+
+{% block extracontent %}
+
+{% for gio_item in giostories %}
+          {% if loop.index <= 4 %}
+            <div class="media">
+              <div class="media-body">
+                <time>{{ gio_item.date|date('F jS, Y') }}</time>
+                <h4 class="media-heading">
+                <a href="{{ gio_item.path }}">{{ gio_item.title }}</a></h4>
+                <p>
+                  {{ gio_item.abstract }}
+                </p>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+{% endblock extracontent %}

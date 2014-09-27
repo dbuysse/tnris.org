@@ -9,6 +9,7 @@
 }
 html, body {
 	height: 100%;
+	font-size: 15px;
 }
 
 /* Custom Columns */
@@ -50,6 +51,7 @@ body {
 }
 
 #contentMain {
+	background: white;
 }
 
 .jumbotron {
@@ -92,7 +94,6 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-	font-size: 25px;
 	color: $auburn;
 }
 
@@ -296,6 +297,10 @@ a.navbar-twdb {
 	position: relative;
 	z-index: 0;
 
+	.container {
+		background: white;
+	}
+
 	ul.nav {
 		width: 100%;
 	}
@@ -401,6 +406,8 @@ a.navbar-twdb {
 .footer {
 	background: $darkgrey;
 	color: white;
+	position: relative;
+	z-index: 10000;
 }
 
 /* Updates */
@@ -504,7 +511,6 @@ author {
 /* Article Data Box */
 
 .dataBox {
-	float: right; 
 	padding: 20px; 
 	padding-top: 0; 
 	border: 1px #ccc solid; 
@@ -518,6 +524,9 @@ author {
 /* Front Page Highlights */
 #highlights {
 	background: $lightgrey;
+	position: relative;
+	z-index: 10000;
+	border-top: 1px solid $midgrey;
 }
 
 .highlightBox {
@@ -536,7 +545,12 @@ author {
 
 /* Common Page Elements */
 .mainBlurb {
-	font-size: 18px;
+	font-size: 22px;
+	margin-bottom: 10px;
+	font-weight: 500;
+	color: $middarkgrey;
+	font-family: $pragmatica;
+	// max-width: 80%;
 }
 
 /* Side notes for calling out things

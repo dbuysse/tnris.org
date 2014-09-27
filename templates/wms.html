@@ -1,8 +1,12 @@
-{% extends "mapsanddata.html" %} 
+{% extends "data-catalog.html" %} 
 
-  {% block category_nav %}
+
+
+{% block contents %}
+<div class="row">
+  {% block category_nav  %}
     <div class="col-md-3 wms-nav-container">
-      <ul class="nav hidden-sm hidden-xs affix nav-left">
+      <ul class="nav hidden-sm hidden-xs affix nav-cat">
         <lh><h4>Jump to WMS Layers</h4></lh>
         {% for wms_service in variables.wms_services %}
           <li>
@@ -12,16 +16,18 @@
       </ul>
     </div>
   {% endblock category_nav %}
-
-
-{% block mapsdata_content %}
+  <div id="dataPageContent" class="col-md-9">
+    {% block catalog_content %}
+      <h1>{{ title }}</h1>
+      <div class="mainBlurb">{{ abstract }}</div>
+      {{ contents|safe }}
     {% for wms_service in variables.wms_services %}
       <section id="{{wms_service.anchor}}" class="service">
         <h2>
           {{wms_service.title}}
         </h2>
         {% if wms_service.services %}
-                  <ul class="media-list list-group">
+          <ul class="media-list list-group">
           {% for service in wms_service.services %}
                   <li class="media list-group-item">
                {% if item.thumbnail %}
@@ -47,7 +53,10 @@
 
       </section>
     {% endfor %}
-{% endblock mapsdata_content %}
+  </div>
+{% endblock catalog_content %}
 
 
 
+</div>
+  {% endblock contents %}

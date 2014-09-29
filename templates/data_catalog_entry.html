@@ -10,75 +10,107 @@
     </ol>
   </div>
   <div id="catalogEntryContent" class="row">
-        <h1><div class="container">{{ name }}</div></h1>
+      <div id="catalog-main-image">
+        <h1>{{ name }}</h1>
        {% if main_image %}
-        <img src="{{ main_image }}" alt="Sample of {{ title }} data">
+        <img class="img-responsive" src="{{ main_image }}" alt="Sample of {{ title }} data">
           <div class="btn-group">
-            <button type="button" class="btn btn-default">Overview</button>
-            <button type="button" class="btn btn-default">1</button>
-            <button type="button" class="btn btn-default">2</button>
+            <button type="button" class="btn btn-tnris">Overview</button>
+            <button type="button" class="btn btn-tnris">1</button>
+            <button type="button" class="btn btn-tnris">2</button>
           </div>
         {% else %}
-        <img src="holder.js/100%x400" alt="No Preview Available">
+        <img class="img-responsive" src="holder.js/100%x400" alt="No Preview Available"> 
+        <div class="btn-group">
+            <button type="button" class="btn btn-tnris">Overview</button>
+            <button type="button" class="btn btn-tnris">1</button>
+            <button type="button" class="btn btn-tnris">2</button>
+          </div>
         {% endif %}
+          <div class="data-callout">
+            <div class="row">
+              <table>
+                <thead>
+                  <tr>
+                    <th class="col-sm-3">Category:</th>
+                    <th class="col-sm-4">tags:</th>
+                    <th class="col-sm-2">Date(s):</th>
+                    <th class="col-sm-3">Source(s):</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="col-sm-3"><a href="#">{{ category }}</a></td>
+                    <td class="col-sm-4"><a href="#">{{ tags }}</a> </td>
+                    <td class="col-sm-2">{{ date_created }}</td>
+                    <td class="col-sm-3">{{ source }}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+      </div>
   </div>
   <div class="row">
     <div class="col-md-8">
-        <div class="mainBlurb">
-            <p>
-              {{description}}
-            </p>
-          </div>
-            {{ contents|safe }}
-        <section>
-          <h2>Data Access</h2>
-          <p>The <strong>{{ name }}</strong> dataset is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> at a nominal fee for the cost of reproduction. 
-            <To order this data use our order form.</p>
-          <p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
-        </section>
-      </div>
-      <div class="col-md-4">
-          <div id="metadata" class="panel panel-info">
+        <div class="description">
+            <h2>Description</h2>
+            <p>{{description}}</p>
+        </div>
+        <p>{{ contents|safe }}</p>
+         <div id="metadata" class="panel panel-info">
            <div class="panel-heading">
-              <h3>Dataset Features</h3>
+              <h3>More Details</h3>
            </div>
               <div class="panel-body">
-                Category: <a href="#">{{ category }}</a> <br> tags: <a href="#">{{ tags }}</a>
-              <ul>
-                <li>
-                  <strong>Date(s):</strong><br>{{ date_created }}
-                </li>
-                <li>
-                  <strong>Source:</strong><br>{{ source }}
-                </li>
-                <li>
-                  <strong>Available Formats:</strong><br> {{ available_formats }}
-                </li>
-                <li>
-                  <strong>Coverage Availability/Geographic Extent:</strong><br>{{ coverage_extent }}
-                </li>
-                <li>
-                  <strong>Footprint:</strong><br>{{ footprint }}
-                </li>
-              <li>
-                <strong>Download Size:</strong><br>{{ download_size }}
-              </li>
-              <li>
-                <strong>Recommended Use:</strong><br>{{ recommended_use }}
-              </li>
+              <table>
+                  <tbody>
+                  <tr>
+                    <td><strong>Available Formats:</strong></td>
+                    <td>{{ available_formats }}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Coverage Availability <br>/Geographic Extent:</strong></td>
+                    <td>{{ coverage_extent }}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Footprint:</strong></td>
+                    <td>{{ footprint }}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Download Size:</strong></td>
+                    <td>{{ download_size }}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Recommended Use:</strong></td>
+                    <td>{{ recommended_use }}</td>
+                  </tr>
 
-              <li>
-                <strong>Known Issues:</strong><br>{% if known_issues %}{{ known_issues }}{% else %}<em>None</em>{% endif %}
-              </li>
-              <li>
-                <strong>Alternative Data:</strong><br>{% if alternative_data %}{{ alternative_data }}{% else %}<em>None</em>{% endif %}
-              </li>
-              <li>
-                <strong>Derivative Data:</strong><br>{% if derivative_data %}{{ derivative_data }}{% else %}<em>None</em>{% endif %}
-              </li>
-            </ul>
-             </div>
+                  <tr>
+                    <td><strong>Known Issues:</strong></td>
+                    <td>{% if known_issues %}{{ known_issues }}{% else %}<em>None</em>{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Alternative Data:</strong></td>
+                    <td>{% if alternative_data %}{{ alternative_data }}{% else %}<em>None Available</em>{% endif %}</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Derivative Data:</strong></td>
+                    <td>{% if derivative_data %}{{ derivative_data }}{% else %}<em>None Available</em>{% endif %}</td>
+                  </tr>
+            </tbody>
+             </table>
+           </div>
         </div>
+      </div>
+      <div id="data-access" class="col-md-4">
+          <h2>Data Access</h2>
+          <h4>Direct Download</h4>
+          <p>This data is available online through our Data Search & Download</p>
+          <p> <a href="#"  class="btn btn-danger btn-lg center-block">Download Data</a></p>
+          <h4>Custom Ordering</h4>
+          <p>The <strong>{{ name }}</strong> dataset is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> for the cost of reproduction.</p>
+          <p> <a href="#"  class="btn btn-tnris btn-lg center-block">Order Data</a></p>
+         
         </div>
     </div>
 </div>

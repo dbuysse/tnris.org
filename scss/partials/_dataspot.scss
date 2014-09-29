@@ -57,8 +57,8 @@
 
 			h4 {
 				position: absolute;
-				max-width: 70%;
-				background: $tnrisblue;
+				max-width: 80%;
+				@include alpha-attribute('background-color', rgba($tnrisblue, 0.75), white);
 				margin-top: 0;
 				color: white;
 				z-index: 1000;

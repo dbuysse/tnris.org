@@ -11,7 +11,7 @@
   </div>
   <div id="catalogEntryContent" class="row">
         <h1><div class="container">{{ name }}</div></h1>
-       {% if item.main_image %}
+       {% if main_image %}
         <img src="{{ main_image }}" alt="Sample of {{ title }} data">
           <div class="btn-group">
             <button type="button" class="btn btn-default">Overview</button>
@@ -68,13 +68,13 @@
               </li>
 
               <li>
-                <strong>Known Issues:</strong><br>{% if item.known_issues %}{{ known_issues }}{% else %}<em>None</em>{% endif %}
+                <strong>Known Issues:</strong><br>{% if known_issues %}{{ known_issues }}{% else %}<em>None</em>{% endif %}
               </li>
               <li>
-                <strong>Alternative Data:</strong><br>{% if item.alternative_data %}{{ alternative_data }}{% else %}<em>None</em>{% endif %}
+                <strong>Alternative Data:</strong><br>{% if alternative_data %}{{ alternative_data }}{% else %}<em>None</em>{% endif %}
               </li>
               <li>
-                <strong>Derivative Data:</strong><br>{% if item.derivative_data %}{{ derivative_data }}{% else %}<em>None</em>{% endif %}
+                <strong>Derivative Data:</strong><br>{% if derivative_data %}{{ derivative_data }}{% else %}<em>None</em>{% endif %}
               </li>
             </ul>
              </div>

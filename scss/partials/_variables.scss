@@ -20,3 +20,12 @@ $break-med: 604px;
 $break-med-two: 768px;
 $break-topsmall: 485px;
 $break-large: 992px;
+
+/* transparent backgrounds */
+@mixin alpha-attribute($attribute, $color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  #{$attribute}: $solid-color;
+  #{$attribute}: $color;
+}

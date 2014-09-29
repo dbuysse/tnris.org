@@ -1,6 +1,6 @@
-{% extends "data-catalog.html" %}
+{% extends "base.html" %}
 
-{% block catalog_content %}
+{% block contents %}
   <div class="row">
     <ol class="breadcrumb">
       <li><a href="#">Home</a></li>
@@ -9,10 +9,10 @@
       <li class="active">{{ title }}</li>
     </ol>
   </div>
-  <div class=="row">
-      <h1>{{ name }}</h1>
-       {% if item.mainimage %}
-        <img src="{{ mainimage }}" alt="Sample of {{ title }} data">
+  <div id="catalogEntryContent" class="row">
+        <h1><div class="container">{{ name }}</div></h1>
+       {% if item.main_image %}
+        <img src="{{ main_image }}" alt="Sample of {{ title }} data">
           <div class="btn-group">
             <button type="button" class="btn btn-default">Overview</button>
             <button type="button" class="btn btn-default">1</button>
@@ -21,67 +21,68 @@
         {% else %}
         <img src="holder.js/100%x400" alt="No Preview Available">
         {% endif %}
+  </div>
+  <div class="row">
+    <div class="col-md-8">
         <div class="mainBlurb">
             <p>
               {{description}}
             </p>
-
+          </div>
             {{ contents|safe }}
-         </div>
         <section>
           <h2>Data Access</h2>
           <p>The <strong>{{ name }}</strong> dataset is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> at a nominal fee for the cost of reproduction. 
             <To order this data use our order form.</p>
           <p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
         </section>
- 
-  </div>
-</div>
-
-  {% endblock catalog_content %}
-
-  {% block category_nav %}
-  <div class="col-md-3">
-        <div class="panel panel-info">
+      </div>
+      <div class="col-md-4">
+          <div id="metadata" class="panel panel-info">
            <div class="panel-heading">
               <h3>Dataset Features</h3>
            </div>
-          <div class="panel-body">
-            Category: <a href="#">{{ category }}</a> <br> tags: <a href="#">{{ tags }}</a>
-          <ul>
-            <li>
-              <strong>Date(s):</strong><br>{{ date_created }}
-            </li>
-            <li>
-              <strong>Source:</strong><br>{{ source }}
-            </li>
-            <li>
-              <strong>Available Formats:</strong>v{{ available_formats }}
-            </li>
-            <li>
-              <strong>Coverage Availability/Geographic Extent:</strong><br>{{ coverage_extent }}
-            </li>
-            <li>
-              <strong>Footprint:</strong><br>{{ footprint }}
-            </li>
-          <li>
-            <strong>Download Size</strong><br>{{ download_size }}
-          </li>
-          <li>
-            <strong>Recommended Use</strong><br>{{ recommended_use }}
-          </li>
+              <div class="panel-body">
+                Category: <a href="#">{{ category }}</a> <br> tags: <a href="#">{{ tags }}</a>
+              <ul>
+                <li>
+                  <strong>Date(s):</strong><br>{{ date_created }}
+                </li>
+                <li>
+                  <strong>Source:</strong><br>{{ source }}
+                </li>
+                <li>
+                  <strong>Available Formats:</strong><br> {{ available_formats }}
+                </li>
+                <li>
+                  <strong>Coverage Availability/Geographic Extent:</strong><br>{{ coverage_extent }}
+                </li>
+                <li>
+                  <strong>Footprint:</strong><br>{{ footprint }}
+                </li>
+              <li>
+                <strong>Download Size:</strong><br>{{ download_size }}
+              </li>
+              <li>
+                <strong>Recommended Use:</strong><br>{{ recommended_use }}
+              </li>
 
-          <li>
-            <strong>Known Issues</strong><br>{% if item.known_issues %}{{ known_issues }}{% else %}<em>None</em>{% endif %}
-          </li>
-          <li>
-            <strong>Alternative Data</strong><br>{% if item.alternative_data %}{{ alternative_data }}{% else %}<em>None</em>{% endif %}
-          </li>
-          <li>
-            <strong>Derivative Data</strong><br>{% if item.derivative_data %}{{ derivative_data }}{% else %}<em>None</em>{% endif %}
-          </li>
-        </ul>
-         </div>
+              <li>
+                <strong>Known Issues:</strong><br>{% if item.known_issues %}{{ known_issues }}{% else %}<em>None</em>{% endif %}
+              </li>
+              <li>
+                <strong>Alternative Data:</strong><br>{% if item.alternative_data %}{{ alternative_data }}{% else %}<em>None</em>{% endif %}
+              </li>
+              <li>
+                <strong>Derivative Data:</strong><br>{% if item.derivative_data %}{{ derivative_data }}{% else %}<em>None</em>{% endif %}
+              </li>
+            </ul>
+             </div>
         </div>
-  </div>
-  {% endblock category_nav %}
+        </div>
+    </div>
+</div>
+
+  {% endblock contents %}
+
+

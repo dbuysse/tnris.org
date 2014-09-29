@@ -5,7 +5,7 @@
 {% block contents %}
 <div class="row">
   {% block category_nav  %}
-    <div class="col-md-3 wms-nav-container">
+    <div class="col-md-4 wms-nav-container">
       <ul class="nav hidden-sm hidden-xs affix nav-cat">
         <lh><h4>Jump to WMS Layers</h4></lh>
         {% for wms_service in variables.wms_services %}
@@ -16,7 +16,7 @@
       </ul>
     </div>
   {% endblock category_nav %}
-  <div id="dataPageContent" class="col-md-9">
+  <div id="dataPageContent" class="col-md-8">
     {% block catalog_content %}
       <h1>{{ title }}</h1>
       <div class="mainBlurb">{{ abstract }}</div>

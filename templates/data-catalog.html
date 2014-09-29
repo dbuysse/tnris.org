@@ -3,7 +3,7 @@
 {% block contents %}
 <div class="row">
   {% block category_nav %}
-    <div id="mainDataList" class="col-md-3">
+    <div class="col-md-4">
       <ul class="nav hidden-sm hidden-xs affix nav-cat">
       <lh><h4>Browse by Category</h4></lh>
         {% for name, category in catalog %}
@@ -14,7 +14,7 @@
       </ul>
     </div>
   {% endblock category_nav %}
-  <div id="dataPageContent" class="col-md-9">
+  <div id="dataPageContent" class="col-md-8">
     {% block catalog_content %}
       <h1>{{ title }}</h1>
       <div class="mainBlurb">{{ contents|safe }}</div>

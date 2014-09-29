@@ -7,6 +7,8 @@
 
 	// position: relative;
 	// top: 100px;
+
+
 	h2 {
 		margin-top: 20px;
 	}
@@ -21,8 +23,24 @@
 	}
 }
 
+
+#catalogEntryContent {
+		h1 {
+		height: 50px;
+		line-height: 50px;
+		@include alpha-attribute('background-color', rgba($tnrisblue, 0.75), white);
+		color: white;
+		position: relative;
+		z-index: 2000;
+		font-weight: 300;
+		padding: 5px;
+		margin: 0;
+		width: auto;
+		margin-bottom: -50px;
+	}
+}
+
 .nav-cat {
-	width: 260px;
 	top: 150px;
 
 	li {
@@ -52,4 +70,20 @@
 	overflow: auto;
 	}
 
+}
+
+#metadata {
+
+	ul {
+		padding: 0;
+
+		li {
+			list-style: none;
+			padding: 5px 0;
+
+			strong {
+				color: $middarkgrey;
+			}
+		}
+	}
 }

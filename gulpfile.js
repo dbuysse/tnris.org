@@ -56,6 +56,14 @@ swig.setFilter('groupBy', function (input, key) {
   return out;
 });
 
+swig.setFilter('urlize', function(input) {
+  return urlize(input);
+});
+
+function urlize(str) {
+  return str.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-');
+}
+
 var dirs = {
   dist: './.dist',
   content: './content',
@@ -118,8 +126,8 @@ gulp.task('dist-metal', function () {
               });
           }
 
-          data.cleanName = data.name.toLowerCase().replace(/\W/g, '-');
-          data.cleanCategory = data.category.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-');
+          data.cleanName = urlize(data.name);
+          data.cleanCategory = urlize(data.category);
           data.filename = 'data-catalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
 
           var file = files[data.filename];

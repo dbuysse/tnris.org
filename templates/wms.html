@@ -1,62 +1,61 @@
-{% extends "data-catalog.html" %} 
+{% extends "data-catalog.html" %}
 
 
 
 {% block contents %}
-<div class="row">
-  {% block category_nav  %}
-    <div class="col-md-4 wms-nav-container">
-      <ul class="nav hidden-sm hidden-xs affix nav-cat">
-        <lh><h4>Jump to WMS Layers</h4></lh>
-        {% for wms_service in variables.wms_services %}
-          <li>
-            <a href="#{{wms_service.anchor}}">{{wms_service.title}}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% endblock category_nav %}
-  <div id="dataPageContent" class="col-md-8">
-    {% block catalog_content %}
-      <h1>{{ title }}</h1>
-      <div class="mainBlurb">{{ abstract }}</div>
-      {{ contents|safe }}
-    {% for wms_service in variables.wms_services %}
-      <section id="{{wms_service.anchor}}" class="service">
-        <h2>
-          {{wms_service.title}}
-        </h2>
-        {% if wms_service.services %}
-          <ul class="media-list list-group">
-          {% for service in wms_service.services %}
-                  <li class="media list-group-item">
-               {% if item.thumbnail %}
-                        <a class="pull-left" href="{{ item.path }}">
-                          <img class="media-object" src="{{ item.thumbnail }}" alt="...">
-                        </a>
-                        {% else %}
-                       <a class="pull-left" href="{{ item.path }}">
-                          <img class="media-object" src="holder.js/50x50" alt="...">
-                        </a>
-                      {% endif %}
-              <a class="badge copy-tip" href="#" data-toggle="tooltip" title="Copy the WMS URL"><i class="fa fa-files-o"></i> Copy URL</a>
-              <h4 class="list-group-item-heading"><a href="#" class="wms-tip" data-toggle="tooltip" title="More about this dataset">{{service.name}}</a> <small>{{service.url}}</small></h4>
-              
+  <div class="row">
+    {% block category_nav  %}
+      <div class="col-md-4 wms-nav-container">
+        <ul class="nav hidden-sm hidden-xs affix nav-cat">
+          <lh><h4>Jump to WMS Layers</h4></lh>
+          {% for wms_category in catalog|groupBy('wms_category') %}
+            <li>
+              <a href="#{{loop.key|urlize}}">{{loop.key}}</a>
             </li>
-          {% endfor %} 
+          {% endfor %}
         </ul>
-        {% else %}
-        <ul class="list-group">
-          <li class="list-group-item danger"><em>None Available</em></li>
-      </ul>
-        {% endif %}
-
-      </section>
-    {% endfor %}
+      </div>
+    {% endblock category_nav %}
+    <div id="dataPageContent" class="col-md-8">
+      {% block catalog_content %}
+        <h1>{{title}}</h1>
+        <div class="mainBlurb">{{abstract}}</div>
+        {{contents|safe}}
+        {% for wms_category in catalog|groupBy('wms_category') %}
+          {% if loop.key %}
+            <section id="{{loop.key|urlize}}" class="service">
+              <h2>
+                {{loop.key}}
+              </h2>
+              <ul class="media-list list-group">
+                {% for catalog_entry in wms_category %}
+                  <li class="media list-group-item">
+                    {% if catalog_entry.thumbnail %}
+                       <a class="pull-left" href="{{catalog_entry.wms_link}}">
+                         <img class="media-object" src="{{catalog_entry.thumbnail}}" alt="...">
+                       </a>
+                      {% else %}
+                       <a class="pull-left" href="{{catalog_entry.wms_link}}">
+                         <img class="media-object" src="holder.js/50x50" alt="...">
+                       </a>
+                    {% endif %}
+                    <a class="badge copy-tip" href="#" data-toggle="tooltip" title="Copy the WMS URL">
+                      <i class="fa fa-files-o"></i>
+                      Copy URL
+                    </a>
+                    <h4 class="list-group-item-heading">
+                      <a href="#" class="wms-tip" data-toggle="tooltip" title="More about this dataset">
+                          {{catalog_entry.name}}
+                      </a>
+                      <small>{{catalog_entry.wms_link}}</small>
+                    </h4>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endif %}
+        {% endfor %}
+      {% endblock catalog_content %}
+    </div>
   </div>
-{% endblock catalog_content %}
-
-
-
-</div>
-  {% endblock contents %}
+{% endblock contents %}

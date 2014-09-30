@@ -15,16 +15,16 @@
        {% if main_image %}
         <img class="img-responsive" src="{{ main_image }}" alt="Sample of {{ title }} data">
           <div class="btn-group">
-            <button type="button" class="btn btn-tnris">Overview</button>
-            <button type="button" class="btn btn-tnris">1</button>
-            <button type="button" class="btn btn-tnris">2</button>
+            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-camera"></span> Overview</button>
+            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-camera"></span> urban</button>
+            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-camera"></span> natural features</button>
           </div>
         {% else %}
         <img class="img-responsive" src="holder.js/100%x400" alt="No Preview Available"> 
         <div class="btn-group">
-            <button type="button" class="btn btn-tnris">Overview</button>
-            <button type="button" class="btn btn-tnris">1</button>
-            <button type="button" class="btn btn-tnris">2</button>
+            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-camera"></span> Overview</button>
+            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-camera"></span> urban</button>
+            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-camera"></span> natural features</button>
           </div>
         {% endif %}
           <div class="data-callout">
@@ -105,12 +105,22 @@
       <div id="data-access" class="col-md-4">
           <h2>Data Access</h2>
           <h4>Direct Download</h4>
-          <p>This data is available online through our Data Search & Download</p>
+          <p><em>{{ name }}</em> is available online through our Data Search & Download</p>
           <p> <a href="#"  class="btn btn-danger btn-lg center-block">Download Data</a></p>
           <h4>Custom Ordering</h4>
-          <p>The <strong>{{ name }}</strong> dataset is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> for the cost of reproduction.</p>
+          <p><em>{{ name }}</em> is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> for the cost of reproduction.</p>
           <p> <a href="#"  class="btn btn-tnris btn-lg center-block">Order Data</a></p>
-         
+          
+                <h4>Web Mapping Services (WMS)</h4>
+
+                <p><em>{{ name }}</em> is available as a WMS.</p>
+                <p>Copy the URL below and enter it into your program to access.</p>
+            <div class="panel panel-success">
+              <div class="panel-body">
+              <a class="badge copy-tip" href="#" data-toggle="tooltip" title="Copy the WMS URL"><i class="fa fa-files-o"></i> Copy URL</a>
+              {{ wms_link }}
+              </div>
+            </div>
         </div>
     </div>
 </div>

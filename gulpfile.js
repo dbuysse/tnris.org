@@ -28,6 +28,34 @@ var metadata = require('metalsmith-metadata');
 // watch task
 swig.setDefaults({ cache: false });
 
+// patch swig groupBy filter so it doesn't mutate lists - this is a temporary
+// workaround until patch makes it's way into a swig release. 
+// See: https://github.com/paularmstrong/swig/pull/524
+swig.setFilter('groupBy', function (input, key) {
+  if (!_.isArray(input)) {
+    return input;
+  }
+  var out = {};
+
+  _.each(input, function (value) {
+    if (!value.hasOwnProperty(key)) {
+      return;
+    }
+
+    var keyname = value[key],
+      newValue = _.cloneDeep(value);
+    delete newValue[key];
+
+    if (!out[keyname]) {
+      out[keyname] = [];
+    }
+
+    out[keyname].push(newValue);
+  });
+
+  return out;
+});
+
 var dirs = {
   dist: './.dist',
   content: './content',

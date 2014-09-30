@@ -107,7 +107,7 @@ gulp.task('dist-metal', function () {
     .pipe(
       gulpsmith()
         .use(csv(paths.catalog, function parser (data, files, metalsmith) {
-          metalsmith.data.catalog = metalsmith.data.catalog || {};
+          metalsmith.data.catalog = metalsmith.data.catalog || [];
           var catalog = metalsmith.data.catalog;
 
           if (data.keywords) {
@@ -132,9 +132,9 @@ gulp.task('dist-metal', function () {
             });
           }
 
-          catalog[data.category] = catalog[data.category] || {};
-          catalog[data.category][data.name] = file;
           files[data.filename] = file;
+
+          catalog.push(file);
         }))
         .use(metadata({
           variables: 'variables.yaml'

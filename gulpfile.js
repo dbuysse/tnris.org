@@ -28,6 +28,42 @@ var metadata = require('metalsmith-metadata');
 // watch task
 swig.setDefaults({ cache: false });
 
+// patch swig groupBy filter so it doesn't mutate lists - this is a temporary
+// workaround until patch makes it's way into a swig release. 
+// See: https://github.com/paularmstrong/swig/pull/524
+swig.setFilter('groupBy', function (input, key) {
+  if (!_.isArray(input)) {
+    return input;
+  }
+  var out = {};
+
+  _.each(input, function (value) {
+    if (!value.hasOwnProperty(key)) {
+      return;
+    }
+
+    var keyname = value[key],
+      newValue = _.cloneDeep(value);
+    delete newValue[key];
+
+    if (!out[keyname]) {
+      out[keyname] = [];
+    }
+
+    out[keyname].push(newValue);
+  });
+
+  return out;
+});
+
+swig.setFilter('urlize', function(input) {
+  return urlize(input);
+});
+
+function urlize(str) {
+  return str.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-');
+}
+
 var dirs = {
   dist: './.dist',
   content: './content',
@@ -79,7 +115,7 @@ gulp.task('dist-metal', function () {
     .pipe(
       gulpsmith()
         .use(csv(paths.catalog, function parser (data, files, metalsmith) {
-          metalsmith.data.catalog = metalsmith.data.catalog || {};
+          metalsmith.data.catalog = metalsmith.data.catalog || [];
           var catalog = metalsmith.data.catalog;
 
           if (data.keywords) {
@@ -90,8 +126,8 @@ gulp.task('dist-metal', function () {
               });
           }
 
-          data.cleanName = data.name.toLowerCase().replace(/\W/g, '-');
-          data.cleanCategory = data.category.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-');
+          data.cleanName = urlize(data.name);
+          data.cleanCategory = urlize(data.category);
           data.filename = 'data-catalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
 
           var file = files[data.filename];
@@ -104,9 +140,9 @@ gulp.task('dist-metal', function () {
             });
           }
 
-          catalog[data.category] = catalog[data.category] || {};
-          catalog[data.category][data.name] = file;
           files[data.filename] = file;
+
+          catalog.push(file);
         }))
         .use(metadata({
           variables: 'variables.yaml'

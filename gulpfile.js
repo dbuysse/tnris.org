@@ -56,6 +56,10 @@ swig.setFilter('groupBy', function (input, key) {
   return out;
 });
 
+swig.setFilter('sortBy', function (input, key) {
+  return _.sortBy(input, key);
+});
+
 swig.setFilter('urlize', function(input) {
   return urlize(input);
 });

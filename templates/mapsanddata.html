@@ -4,8 +4,10 @@
 <div class="row">
     <div id="dataPageContent" class="col-md-12">
         <h1>{{ title }}</h1>
-        <div class="mainBlurb">{{ abstract }}</div>
-         {{ contents|safe }}
+        <div class="mainBlurb">{{ abstract }}
+{{ contents|safe }}
+        </div>
+         
         {% block mapsdata_content %}
         <div class="row">
             <div class="col-md-6 col-sm-6">
@@ -31,7 +33,7 @@
                 <div class="media">
                     <img class="media-object pull-left" src="holder.js/200x120" alt="...">
                     <div class="media-body">
-                        <p>The Quickest Way to search and download TNRIS data that is available online.</p>
+                        <p>The quickest way to search and download TNRIS data that is available online.</p>
                     </div>
                     <a href="#" class="btn btn-tnris btn-lg">Start Downloading</a>
                 </div>

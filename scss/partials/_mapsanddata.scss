@@ -40,6 +40,7 @@
 		display: block;
 		margin-bottom: 30px;
 		
+
 		h1 {
 		height: 50px;
 		// line-height: 50px;
@@ -54,6 +55,11 @@
 		margin: 0;
 		}
 
+		img {
+			
+		border: 1px solid #cccccc;
+		}
+
 		.btn-primary {
 			background-color: $tnrisblue;
 		}
@@ -62,6 +68,7 @@
 			position: absolute;
 			bottom: 0px;
 			@include alpha-attribute('background-color', rgba($tnrisblue, 0.85), white);
+			@include background(linear-gradient(#135f82, $tnrisblue) top 85%);
 			color: white;
 			padding: 0 20px;
 			padding-top: 0;

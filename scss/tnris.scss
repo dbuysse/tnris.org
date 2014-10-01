@@ -104,10 +104,7 @@ h2 {
 	color: white;
 	background-color: $tnrisblue;
 	border-color: $urgentblue;
-	padding-left: 50px;
-	padding-right: 50px;
 	box-shadow: inset $urgentblue 0 0 7px;
-	margin-top: 8px;
 
 	&:hover {
 		background: $urgentblue;

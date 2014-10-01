@@ -5,8 +5,8 @@
   {% block category_nav %}
     <div class="col-md-4">
       <ul class="nav hidden-sm hidden-xs affix nav-cat">
-      <lh><h4>Browse by Category</h4></lh>
-        {% for category in catalog|groupBy('category') %}
+        <lh><h4>Browse by Category</h4></lh>
+        {% for category in catalog|sortBy('category')|groupBy('category') %}
           <li>
             <a href="#{{category|first['cleanCategory']}}">{{loop.key}} ({{Object.keys(category).length}})</a>
           </li>
@@ -18,7 +18,7 @@
     {% block catalog_content %}
       <h1>{{ title }}</h1>
       <div class="mainBlurb">{{ contents|safe }}</div>
-        {% for category in catalog|groupBy('category') %}
+        {% for category in catalog|sortBy(['category', 'name'])|groupBy('category') %}
           <div class="section">
             <h2 id="{{category|first['cleanCategory']}}">{{loop.key}}</h2>
             <ul class="media-list list-group">

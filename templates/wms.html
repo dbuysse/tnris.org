@@ -8,7 +8,7 @@
       <div class="col-md-4 wms-nav-container">
         <ul class="nav hidden-sm hidden-xs affix nav-cat">
           <lh><h4>Jump to WMS Layers</h4></lh>
-          {% for wms_category in catalog|groupBy('wms_category') %}
+          {% for wms_category in catalog|sortBy('wms_category')|groupBy('wms_category') %}
             <li>
               <a href="#{{loop.key|urlize}}">{{loop.key}}</a>
             </li>
@@ -21,7 +21,7 @@
         <h1>{{title}}</h1>
         <div class="mainBlurb">{{abstract}}</div>
         {{contents|safe}}
-        {% for wms_category in catalog|groupBy('wms_category') %}
+        {% for wms_category in catalog|sortBy(['wms_category', 'name'])|groupBy('wms_category') %}
           {% if loop.key %}
             <section id="{{loop.key|urlize}}" class="service">
               <h2>

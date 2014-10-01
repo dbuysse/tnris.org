@@ -21,6 +21,7 @@ $break-med-two: 768px;
 $break-topsmall: 485px;
 $break-large: 992px;
 
+
 /* transparent backgrounds */
 @mixin alpha-attribute($attribute, $color, $background) {
   $percent: alpha($color) * 100%;

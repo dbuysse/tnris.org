@@ -28,7 +28,7 @@
 img.data-thumb {
 	width: 100px;
 	height: 100px;
-	border: 1px solid $lightgrey;
+	border: 1px solid $midgrey;
 }
 
 .description {
@@ -47,28 +47,24 @@ img.data-thumb {
 		width: 100%;
 		display: block;
 		margin-bottom: 30px;
-		
+		border: 1px solid $midgrey;
 
 		h1 {
 		height: 50px;
-		// line-height: 50px;
-		// position: absolute;
-		// display: block;
-		// width: 100%;
-		// @include alpha-attribute('background-color', rgba($tnrisblue, 0.75), white);
-		// color: white;
 		z-index: 2000;
-		// font-weight: 300;
 		padding: 0 20px;
 		margin: 0;
 		}
 
 		img {
-
-		border: 1px solid $midgrey;
 		}
 
-		.btn-primary {
+		.caption {
+			position: absolute;
+			top: 50px;
+			left: 20px;
+			width: 300px;
+			background: $tnrisblue;
 		}
 
 		.data-callout {
@@ -99,7 +95,7 @@ img.data-thumb {
 
 		.btn-group {
 			position: absolute;
-			top: 70px;
+			top: 20px;
 			left: 20px;
 		}
 }
@@ -176,3 +172,21 @@ img.data-thumb {
 		}
 	}
 
+#catalogEntryContent {
+	h1 {
+		margin-top: 0;
+	}
+}	
+
+
+@media (max-width: $break-med-two) {
+	#catalog-main-image .data-callout {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: $break-topsmall) {
+	#catalog-main-image .data-callout {
+		display: none;
+	}
+}

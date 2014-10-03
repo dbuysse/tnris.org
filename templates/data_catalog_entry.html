@@ -68,7 +68,7 @@
           <h2>Data Access</h2>
           <h4>Data Search &amp; Download</h4>
           <p>Use our online tool to specify the geographic area for which you would like to download the <em>{{ name }}</em> data set.</p>
-          <p> <a href="#"  class="btn btn-tnris btn-lg"><span class="glyphicon glyphicon-search"></span> Launch <span class="hidden-sm hidden-xs hidden-md">Data Search &amp; </span>Download</a></p>
+          <p> <a href="#"  class="btn btn-tnris btn-lg"><span class="glyphicon glyphicon-search"></span> Launch <span class="hidden-sm hidden-xs hidden-md">Data Search &amp; </span>Download </a></p>
           <h4>Direct Download</h4>
           <p>The full <em>{{ name }}</em> data set can be downloaded directly.</p>
           <p> Download the <strong>{{ download_size }}</strong> file here</p>
@@ -81,7 +81,7 @@
 
                 <p><em>{{ name }}</em> is available as an online mapping         service.</p>
                 <p>Copy the URL below and enter it into your program to access.</p>
-                <p>{{ wms_link }}</p>
+                <p><span class="wms-url">{{ wms_link }}</a></p>
           <p> <a href="#"  class="btn btn-info btn-lg"><span class="glyphicon glyphicon-globe"></span> Copy Url</a></p>
               
         </div>
@@ -112,7 +112,7 @@
                   </tr>
                   <tr>
                     <td><strong>Download Size:</strong></td>
-                    <td>{{ download_size }}</td>
+                    <td>{% if download_size %}{{ download_size }}{% else %}<em>N/A - Not Available for Download</em>{% endif %}</td>
                   </tr>
                   <tr>
                     <td><strong>Recommended Use:</strong></td>

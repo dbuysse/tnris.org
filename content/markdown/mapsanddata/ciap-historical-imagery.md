@@ -1,6 +1,6 @@
 ---
 template: news.html
-title: CIAP Historical Imagery
+title: TNRIS Creates High-Resolution Scans of CIAP Historical Imagery
 mainimage: images/maps-and-data/ciap_sample.png
 thumbnail: images/maps-and-data/ciap_th.png
 abstract: 

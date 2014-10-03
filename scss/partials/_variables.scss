@@ -1,15 +1,18 @@
 /* Colors */
-$auburn: #ab4209;
+$auburn: #bf571f;
 $auburnoutline: #80310a;
+$lightblue: #e8f4fa;
 $sky: #acddf4;
 $midsky: #79c9ef;
 $darkgrey: #222222;
 $middarkgrey: #767676;
 $midgrey: #cccccc;
-$lightgrey: #f2f2f2;
+$lightgrey: #f7f7fc;
 $tnrisblue: #1e8dc1;
 $urgentblue: #127cae;
-
+$lightyellow: #f9f8f0;
+$successgreen: #5cb85c;
+$infoblue: #5bc0de;
 
 /* Font */
 $opensans: 'Open Sans', sans-serif;
@@ -30,3 +33,11 @@ $break-large: 992px;
   #{$attribute}: $solid-color;
   #{$attribute}: $color;
 }
+
+/* Box Shadow */
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+      -moz-box-shadow:$top $left $blur $color #{$inset};
+      box-shadow:$top $left $blur $color #{$inset};
+    }

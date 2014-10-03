@@ -1,0 +1,46 @@
+@import "variables";
+
+.forum-date-runner {
+	display: block;
+	height: 20%;
+	background: $darkgrey;
+	color: white;
+	font-family: $pragmatica;
+		font-size: 20px;
+		color: $lightgrey;
+
+	strong {
+		color: white;
+		font-weight: 300;
+		font-size: 28px;
+	}
+}
+
+.forum-links {
+	position: absolute;
+	z-index: 2000;
+	top: 45%;
+	width: 150px;
+	left: 30px;
+
+	a {
+		padding: 10px;
+		width: 100%;
+		background: $darkgrey;
+		color: white;
+		display: block;
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 14px;
+	box-shadow: $middarkgrey 2px 2px 5px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:hover {
+			text-decoration: none;
+			background: $tnrisblue;
+		}
+	}				
+}

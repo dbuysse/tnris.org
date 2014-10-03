@@ -1,6 +1,6 @@
 ---
 template: news.html
-title: CIAP Historical Imagery
+title: TNRIS Creates High-Resolution Scans of CIAP Historical Imagery
 mainimage: images/maps-and-data/ciap_sample.jpg
 imagealt: Old-ass imagery
 thumbnail: images/maps-and-data/ciap_th.png
@@ -18,6 +18,7 @@ Mosaics were created in the Mosaic Pro toolset of ERDAS.  The mosaics are black 
 
 This Imagery project was handled predominately by the TNRIS Internship program. This project created the opportunity for Interns to learn important and valuable skills relating to the GIS industry. In addition to professional practices, interns were trained in several industry software applications. This product afforded the interns the opportunity to produce an important dataset that is distributed to the public.
 
+##Data Access
 These datasets are available for purchase from TNRIS for standard historical imagery pricing.
 
  

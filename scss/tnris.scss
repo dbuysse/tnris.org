@@ -2,7 +2,7 @@
 @import "bourbon/bourbon";
 @import "partials/dataspot";
 @import "partials/mapsanddata";
-
+@import "partials/jumbotron";
 
 * {
 	margin: 0;
@@ -95,6 +95,7 @@ h1, h2, h3, h4 {
 
 h2 {
 	color: $auburn;
+	font-size: 26px;
 }
 
 
@@ -203,7 +204,7 @@ a.navbar-twdb {
 	border-radius: 0;
 
 	&.navbar {
-		margin-bottom: 0;
+		margin-bottom: 0px;
 	}
 
 	&.affix {
@@ -283,6 +284,14 @@ a.navbar-twdb {
 	// }
 }
 
+
+/* Home Top */
+#home-top-content {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+
 /* Quick Nav */
 /**************************************************/
 
@@ -293,64 +302,106 @@ a.navbar-twdb {
 	// border-bottom: 1px solid #e2e2e2;
 	position: relative;
 	z-index: 0;
+	float: left;
+	padding-right: 1%;
+	padding-top: 0px;
 
 	.container {
-		background: white;
+		background: $lightgrey;
 	}
 
-	ul.nav {
-		width: 100%;
+	h3 {
+		margin-top: 0;
+		color: $tnrisblue;
+		font-weight: 300;
+		text-align: center;
+
+		strong {
+			font-weight: 500;
+		}
+	}
+
+	ul {
+	list-style: none;
+		background: $lightgrey;
+
+		li {
+		list-style: none;
+		background: $lightgrey;
+		height: 70px;
+		}
+	}
+
+	.list-group-item {
+		padding: 5px 10px;
 	}
 
 	.nav>li>a:hover, .nav>li>a:focus {
 		background: none;
+		list-style: none;
 	}
 
 	li a {
-	font-family: $pragmatica;
-	font-weight: 500;
-	font-size: 18px;
-	padding-left: 40px;
+		font-family: $pragmatica;
+		font-weight: 500;
+		font-size: 18px;
+		overflow: auto;
+		height: 60px;
+		width: 100%;
 
 		&:hover {
-			background-color: none;
+			text-decoration: none;
 		}
 
 		.iconContainer {
-			width: 50px;
+			width: 40px;
 			height: 40px;
-			margin-left: -50px;
 			float: left;
 			position: relative;
 			background: url(../images/icons/quicknav.png)  0 no-repeat;
+			margin-left: -10px;
 		}
 
 		&.downloaddata-quick {
+			color: $auburn;
 			
 			.iconContainer {
-			background-position: 0 -6px;
+				font-size: 33px;
+				background: none;
+				margin-left: 0;
 			}
 
 		}
 
 		&.orderdata-quick {
 
+			color: $successgreen;
+
 			.iconContainer {
-			background-position: 0 -45px;
+				font-size: 33px;
+				background: none;
+				margin-left: 0;
 			}
 		}
 
 		&.wms-quick {
+
+			color: $infoblue;
+
 			.iconContainer {
-			background-position: 0 -85px;
+				font-size: 33px;
+				background: none;
+				margin-left: 0;
 			}	
 		}
 
 		&.training-quick {
-			color: #8a8e1d;
+			color: $darkgrey;
 
 			.iconContainer {
-			background-position: 0 -125px;
+				font-size: 33px;
+				background: none;
+				margin-left: 0;
 			}
 		}
 
@@ -365,10 +416,9 @@ a.navbar-twdb {
 		small {
 			font-family: $opensans;
 			font-weight: 100;
-			font-size: 11px;
 			color: $darkgrey;
 			display: block;
-			margin-top: -4px;
+			font-size: 12px;
 		}
 	}
 }
@@ -381,6 +431,19 @@ a.navbar-twdb {
 		background-color: none !important;
 }
 
+
+@media (max-width: $break-med-two) {
+	#quicknav ul li.list-group-item {
+		float: left;
+		display: inline-block;
+	}
+}
+
+/* Front Image */
+#front-image-container {
+// 	width: 70%;
+// 	float: left;
+}
 
 /* Footer */
 #wrap {
@@ -407,14 +470,7 @@ a.navbar-twdb {
 	z-index: 10000;
 }
 
-/* Updates */
-#updates {
 
-	time {
-	font-size: 14px;
-	display: block;
-	}
-}
 
 /* Media Breaks */
 // @media (min-width: $break-topsmall) {
@@ -430,51 +486,6 @@ a.navbar-twdb {
 // 		font-size: 28px;
 // 	}
 
-// 	#updates .media {
-// 		height: 150px;
-
-// 		p {
-
-// 		}
-// 	}
-// }
-
-
-// @media (max-width: $break-large) {
-	
-// 	/* nav bar */
-// 	.title-header a.btn.btn-tnris.pull-right.contact {
-// 		text-indent: -9999px;
-// 		padding: 6px 12px;
-// 	}
-// }
-
-ul.trainingFront {
-	margin: 0;
-	padding: 0;
-
-	li {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		font-size: 18px;
-		margin-bottom: 10px;
-				font-weight: 400;
-
-		strong {
-			font-size: 14px;
-			font-weight: 100;
-		}
-
-		a {
-			font-family: $pragmatica;
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
-	}
-}
 
 /* News Template - Single Page */
 author {
@@ -523,7 +534,7 @@ author {
 	background: $lightgrey;
 	position: relative;
 	z-index: 10000;
-	border-top: 1px solid $midgrey;
+	// border-top: 1px solid $midgrey;
 }
 
 .highlightBox {
@@ -540,6 +551,104 @@ author {
 	border-radius: 10px;
 }
 
+
+
+/* Updates */
+#updates {
+	// background-color: $lightgrey;
+	padding: 10px 0;
+
+	h2 {
+		margin-top: 0;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	img {
+	}
+
+	.media {
+		margin-top: 30px;
+		border-bottom: 1px solid $midgrey;
+		padding-bottom: 20px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			border: none;
+		}
+	}
+}
+
+time {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+
+/* training and around the state */
+#training-front {
+	background: $lightgrey;
+	margin-bottom: 20px;
+	padding: 10px;
+
+	h2 {
+		margin-top: 0;
+	}
+
+	h4 {
+		margin-top: 0;
+	}
+
+	ul{
+	margin: 0;
+	padding: 0;
+
+	li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		margin-bottom: 10px;
+
+		strong {
+			font-size: 14px;
+			font-weight: 100;
+		}
+
+		a {
+			font-family: $pragmatica;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		}
+	}
+}
+
+#around-state-front {
+	background: $lightgrey;
+	padding: 10px;
+
+	h2 {
+		margin-top: 0;
+	}
+
+	img {
+		margin-left: 10px;
+		margin-right: -10px;
+		margin-top: -10px;
+		width: 50%;
+	}
+}
+
+
 /* Common Page Elements */
 .mainBlurb {
 	font-size: 20px;
@@ -547,6 +656,7 @@ author {
 	color: $middarkgrey;
 	// max-width: 80%;
 }
+
 
 /* Side notes for calling out things
 -------------------------------------------------- */

@@ -9,15 +9,15 @@
           <div class="row">
             <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12">
             <h3>Start exploring our <strong>data</strong></h3>
-            <ul class="list-group">
-              <li class="list-group-item">
+            <ul class="list-group row">
+              <li class="list-group-item col-md-12  col-sm-3 col-xs-3">
                 <a class="training-quick" href="{{crossref['data-catalog']}}">
-                  <div class="iconContainer"><i class="fa fa-archive"></i></div> Data Catalog <small class="hidden-xs hidden-sm">Browse our Data Sets</a></small>
+                  <div class="iconContainer"><i class="fa fa-archive"></i></div> Data Catalog <small class="hidden-xs">Browse our Data Sets</a></small>
               </li>
-              <li class="list-group-item">
-                <a class="downloaddata-quick" href="{{crossref['data-catalog']}}"><div class="iconContainer"><i class="fa fa-download"></i></div> Download Data <small class="hidden-xs hidden-sm">Access digital data directly</a></small></li>
-              <li class="list-group-item"><a class="orderdata-quick" href="#"><div class="iconContainer"><span class="glyphicon glyphicon-phone-alt"></span></div> Order Data <small class="hidden-xs hidden-sm">Custom Data Requests</small></a></li>
-              <li class="list-group-item"><a class="wms-quick" href="mapsanddata/web-mapping-services"><div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div> Online Map Services <small class="hidden-xs hidden-sm">WMS Layers and more</small></a></li>
+              <li class="list-group-item col-md-12 col-sm-3 col-xs-3">
+                <a class="downloaddata-quick" href="{{crossref['data-catalog']}}"><div class="iconContainer"><i class="fa fa-download"></i></div> Download Data <small class="hidden-xs">Access digital data directly</a></small></li>
+              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="orderdata-quick" href="#"><div class="iconContainer"><span class="glyphicon glyphicon-phone-alt"></span></div> Order Data <small class="hidden-xs">Custom Data Requests</small></a></li>
+              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="wms-quick" href="mapsanddata/web-mapping-services"><div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div> Online Map Services <small class="hidden-xs ">WMS Layers and more</small></a></li>
               <!-- <li><a class="training-quick" href="training"><div class="iconContainer"></div> Training <small class="hidden-xs hidden-sm">Expand your GIS skills</small></a></li> -->
               <!-- <li><a class="hpids-quick" href="HPIDS"><div class="iconContainer"></div> HPIDS <small class="hidden-xs hidden-sm">High Priority Imagery &amp; Data Sets</small></a></li> -->
             </ul>
@@ -40,57 +40,60 @@
 
     <!-- Example row of columns -->
     <div class="row">
-      <div class="col-md-7 col-sm-7">
-        <div id="updates" class="col-lg-height">
-        <h2>Latest News</h2>
-        <ul>
-        {% for news_item in news %}
-          {% if loop.index <= 4 %}
-            <li class="media">
-              <a class="pull-left" href="{{ news_item.path }}">
-                <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
-              </a>
-              <div class="media-body">
-                <time>{{ news_item.date|date('F jS, Y') }}</time>
-                <h4 class="media-heading">
-                <a href="{{ news_item.path }}">{{ news_item.title }}</a></h4>
-                <p>
-                  {{ news_item.abstract }}
-                </p>
-              </div>
-            </li>
-          {% endif %}
-        {% endfor %}
-        </ul>
-        <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">More Updates <span class="glyphicon glyphicon-chevron-right"></a></p>
-      </div>
-      </div>
-      <div class="col-md-5 col-sm-5">
-        <div id="training-front">
-          <!-- <h2>Connect With Us</h2>
-          <a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="507648696595382272" data-tweet-limit="1">Tweets by @TNRIS</a>
-          <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p> -->
-            <h2>Accessible GIS Training</h2>
-            <ul>
-              <li><time>March 15, 2014</time><h4><a href="#">Fundamentals of ArcGIS</a></h4>Learn how to use Google Earth to attach vital information to your features including photos, videos, links to PDF files and website, text, and more.</li>
-              <li><time>March 20, 2014</time><h4><a href="#">Arc Hydro: GIS for Water Resources</a></h4>Learn about the Arc Hydro data model and tools and how to implement them from real-world examples.</li>
-              <li><time>March 27, 2014</time><h4><a href="#">Converting ArcGIS Data to Google Earth</a></h4>Visualize your existing ArcGIS data in a Google Earth viewer</li>
-            </ul>
-            <a href="#"> >>> See the full course listing</a>
-        </div>
+        <div class="col-md-3 col-sm-12">
+          <div class="row">
+            <div id="around-state-front" class="col-sm-6 col-md-12">
+                <img src="images/around-the-state/sterling_th_2.jpg" class="img-responsive pull-right">
+                <h2>Around the State</h2>
+                <h4><a href="#">Sterling Harris: Steward of Texas Land and Water</a></h4>
 
-          <div id="around-state-front">
-              <img src="images/around-the-state/sterling_th_2.jpg" class="img-responsive pull-right">
-              <h2>Around the State</h2>
-              <h4><a href="#">Sterling Harris: Steward of Texas Land and Water</a></h4>
-
-                <p>It was the Texas Hill Country near Austin that ignited a passion for the land in Sterling Harris. He grew up in a ranching family, then worked in the oil ...</p>
-             
-              <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">Read More <span class="glyphicon glyphicon-chevron-right"></a></p>
+                  <p>It was the Texas Hill Country near Austin that ignited a passion for the land in Sterling Harris. He grew up in a ranching family, then worked in the oil ...</p>
+               
+                <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">Read More <span class="glyphicon glyphicon-chevron-right"></a></p>
+            </div>
+          <div id="training-front" class="col-sm-6 col-md-12">
+            <!-- <h2>Connect With Us</h2>
+            <a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="507648696595382272" data-tweet-limit="1">Tweets by @TNRIS</a>
+            <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p> -->
+              <h2>Accessible GIS Training</h2>
+              <ul>
+                <li><time>March 15, 2014</time><h4><a href="#">Fundamentals of ArcGIS</a></h4>Learn how to use Google Earth to attach vital information to your features including photos, videos, and more.</li>
+                <li><time>March 20, 2014</time><h4><a href="#">Arc Hydro: GIS for Water Resources</a></h4>Learn about the Arc Hydro data model and tools and how to implement them from real-world examples.</li>
+                <li><time>March 27, 2014</time><h4><a href="#">Converting ArcGIS Data to Google Earth</a></h4>Visualize your existing ArcGIS data in a Google Earth viewer</li>
+              </ul>
+              <a href="#"> >>> See the full course listing</a>
           </div>
+
+          </div>
+         </div>
+     <!--   -->
+     <div class="col-md-6 col-sm-8">
+          <div id="updates" class="col-lg-height">
+          <h2>Latest News</h2>
+          <ul>
+          {% for news_item in news %}
+            {% if loop.index <= 4 %}
+              <li class="media">
+                <a class="pull-left" href="{{ news_item.path }}">
+                  <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
+                </a>
+                <div class="media-body">
+                  <time>{{ news_item.date|date('F jS, Y') }}</time>
+                  <h4 class="media-heading">
+                  <a href="{{ news_item.path }}">{{ news_item.title }}</a></h4>
+                  <p>
+                    {{ news_item.abstract }}
+                  </p>
+                </div>
+              </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+          <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">More Updates <span class="glyphicon glyphicon-chevron-right"></a></p>
+        </div>
       </div>
-      </div>
-     <!--  <div class="col-md-3 col-sm-4">
+
+      <div class="col-md-3 col-sm-4">
         <div id="dataSpot" class="col-lg-height">
         <h2>Data Spotlight</h2>
         <p class="spotText">A closer look at featured data and maps from our expansive catalog</p>
@@ -108,7 +111,8 @@
         </ul>
         <p class="text-center"><a href="http://getbootstrap.com/examples/jumbotron/#" role="button">Explore Spotlights »</a></p>
         </div>
-     </div> -->
+     </div>
+
     </div>
 
 {% endblock contents %}

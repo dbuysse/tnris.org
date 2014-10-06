@@ -531,27 +531,32 @@ author {
 
 /* Front Page Highlights */
 #highlights {
-	background: $lightgrey;
+	background: $tnrisblue;
 	position: relative;
 	z-index: 10000;
+	color: white;
 	// border-top: 1px solid $midgrey;
+
+	h2 {
+		color: $sky;
+	}
+
+	h3 {
+
+	font-weight: 100;
+	font-size: 30px;
+	}
+
+	img {
+
+	border-radius: 10px;
+	}
 }
 
 .highlightBox {
 	margin-bottom: 30px;
 	overflow: hidden;
 }
-
-#highlights h3 {
-	font-weight: 100;
-	font-size: 30px;
-}
-
-.highlightBox img {
-	border-radius: 10px;
-}
-
-
 
 /* Updates */
 #updates {
@@ -594,7 +599,6 @@ time {
 /* training and around the state */
 #training-front {
 	background: $lightgrey;
-	margin-bottom: 20px;
 	padding: 10px;
 
 	h2 {
@@ -635,6 +639,7 @@ time {
 #around-state-front {
 	background: $lightgrey;
 	padding: 10px;
+	margin-bottom: 20px;
 
 	h2 {
 		margin-top: 0;

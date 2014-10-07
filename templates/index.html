@@ -24,7 +24,7 @@
             </div>
             <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
               <img class="img-responsive" src="images/forum2.jpg">
-              <div class="forum-links hidden-sm hidden-xs">
+              <div class="forum-links hidden-xs">
                 <a href="forum-agenda"><span class="glyphicon glyphicon-info-sign"></span> More info</a>
                 <a href="forum-agenda"><span class="glyphicon glyphicon-list-alt"></span> Agenda</a>
               </div>
@@ -43,8 +43,9 @@
         <div class="col-md-3 col-sm-12">
           <div class="row">
             <div id="around-state-front" class="col-sm-6 col-md-12">
-                <img src="images/around-the-state/sterling_th_2.jpg" class="img-responsive pull-right">
                 <h2>Around the State</h2>
+                <img src="images/around-the-state/sterling_th_2.jpg" class="img-responsive pull-right">
+                
                 <h4><a href="#">Sterling Harris: Steward of Texas Land and Water</a></h4>
 
                   <p>It was the Texas Hill Country near Austin that ignited a passion for the land in Sterling Harris. He grew up in a ranching family, then worked in the oil ...</p>
@@ -93,24 +94,22 @@
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-4">
-        <div id="dataSpot" class="col-lg-height">
+      <div id="dataSpot" class="col-md-3 col-sm-4">
         <h2>Data Spotlight</h2>
-        <p class="spotText">A closer look at featured data and maps from our expansive catalog</p>
-        <ul class="media-list">
+        <p class="spotText">A closer look at featured data and maps from our own catalog and other sources.</p>
+        <ul class="media-list row">
          {% for spotlight in spotlights %}
            {% if loop.index <= 4 %}
-             <li class="media">
+             <li class="media col-sm-12 col-xs-3">
                <a href="{{ spotlight.path }}">
-                 <img class="media-object" src="{{ spotlight.image }}" alt="...">
+                 <img class="media-object" src="{{ spotlight.thumb }}" alt="...">
                  <h4>{{ spotlight.title }}</h4>
                </a>
              </li>
            {% endif %}
          {% endfor %}
         </ul>
-        <p class="text-center"><a href="http://getbootstrap.com/examples/jumbotron/#" role="button">Explore Spotlights »</a></p>
-        </div>
+        <!-- <p class="text-center"><a href="http://getbootstrap.com/examples/jumbotron/#" role="button">Explore Spotlights »</a></p> -->
      </div>
 
     </div>
@@ -127,7 +126,7 @@
         <div class="highlightBox">
           <h2>Research &amp; Distribution</h2>
           <img class="img-responsive"  src="images/highlights/staff.jpg">
-          <p>Let our hands-on team of data specialists assist you with physical map products and other datasets unavailable online.</p>
+          <p>Let our hands-on team of data specialists assist you with physical map products and other datasets, many unavailable online.</p>
           <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>
@@ -135,7 +134,7 @@
         <div class="highlightBox">
           <h2>Geographic Information Office</h2>
           <img class="img-responsive"  src="images/highlights/elpaso.jpg">
-          <p>TNRIS is the key coordinator of the State of Texas’s G.I.O (Geographic Information Office), an inter-agency initiative to collaborate and facilitate the effective use of G.I.S. in state and local government.</p>
+          <p>TNRIS hosts the State of Texas’s Geographic Information Office (GIO), an inter-agency initiative to collaborate and facilitate the effective use of G.I.S. in state and local government.</p>
           <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>

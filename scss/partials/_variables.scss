@@ -23,7 +23,9 @@ $break-med: 604px;
 $break-med-two: 768px;
 $break-topsmall: 485px;
 $break-large: 992px;
-
+$break-md: 991px;
+$break-lg: 1199px;
+$break-xs: 767px;
 
 /* transparent backgrounds */
 @mixin alpha-attribute($attribute, $color, $background) {

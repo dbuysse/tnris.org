@@ -52,6 +52,7 @@ body {
 
 #contentMain {
 	background: white;
+	margin-bottom: 30px;
 }
 
 .jumbotron {
@@ -315,6 +316,7 @@ a.navbar-twdb {
 		color: $tnrisblue;
 		font-weight: 300;
 		text-align: center;
+		font-size: 24px;
 
 		strong {
 			font-weight: 500;
@@ -328,12 +330,16 @@ a.navbar-twdb {
 		li {
 		list-style: none;
 		background: $lightgrey;
-		height: 60px;
+		height: 70px;
 
-		@media (max-width: $break-md) {
-			border-right: none;
+		// @media (max-width: $break-md) {
+		// 	border-right: none;
+
+		// }
+		@media (max-width: $break-lg) {
+			height: 60px;
+
 		}
-
 		&:first-child {
 			@media (max-width: $break-md) {
 					border-top-right-radius: 0;
@@ -352,7 +358,8 @@ a.navbar-twdb {
 	}
 
 	.list-group-item {
-		padding: 5px 10px;
+		padding: 15px;
+		padding-top: 10px;
 	}
 
 	.nav>li>a:hover, .nav>li>a:focus {
@@ -363,10 +370,20 @@ a.navbar-twdb {
 	li a {
 		font-family: $pragmatica;
 		font-weight: 500;
-		font-size: 18px;
+		font-size: 20px;
 		overflow: auto;
 		height: 60px;
 		width: 100%;
+		
+		@media (min-width: $break-md) {
+		font-size: 18px;
+
+		}
+
+		@media (max-width: $break-xs) {
+			font-size: 14px;
+		}
+
 
 		&:hover {
 			text-decoration: none;
@@ -377,17 +394,22 @@ a.navbar-twdb {
 			height: 40px;
 			float: left;
 			position: relative;
-			background: url(../images/icons/quicknav.png)  0 no-repeat;
-			margin-left: -10px;
+			font-size: 30px;
+			background: none;
+			margin-left: 0;
+
+			@media (max-width: $break-xs) {
+				width: 30px;
+				height: 30px;
+				font-size: 24px;
+			}
 		}
 
 		&.downloaddata-quick {
 			color: $auburn;
 			
-			.iconContainer {
-				font-size: 33px;
-				background: none;
-				margin-left: 0;
+			&:hover {
+				color: $auburnoutline;
 			}
 
 		}
@@ -396,39 +418,26 @@ a.navbar-twdb {
 
 			color: $successgreen;
 
-			.iconContainer {
-				font-size: 33px;
-				background: none;
-				margin-left: 0;
+			&:hover {
+				color: $successhover;
 			}
+
 		}
 
 		&.wms-quick {
 
-			color: $infoblue;
+			color: $tnrisblue;
 
-			.iconContainer {
-				font-size: 33px;
-				background: none;
-				margin-left: 0;
-			}	
+			&:hover {
+				color: $infoblue;
+			}
 		}
 
 		&.training-quick {
 			color: $darkgrey;
 
-			.iconContainer {
-				font-size: 33px;
-				background: none;
-				margin-left: 0;
-			}
-		}
-
-		&.hpids-quick {
-			color: #ba2025;
-
-			.iconContainer {
-			background-position: 0 -165px;
+			&:hover {
+				color: $middarkgrey;
 			}
 		}
 
@@ -437,7 +446,7 @@ a.navbar-twdb {
 			font-weight: 100;
 			color: $darkgrey;
 			display: block;
-			font-size: 12px;
+			font-size: 14px;
 		}
 	}
 }
@@ -458,14 +467,42 @@ a.navbar-twdb {
 	}
 }
 
+/* Social Media */
+.social-front {
+
+	i {
+		font-size: 30px;
+		margin: 0 5px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&.fa-twitter {
+			color: $tnrisblue;
+		}
+
+		&.fa-facebook {
+			color: $facebook;
+		}
+
+		@media (min-width: $break-md) {
+			font-size: 24px;
+		}
+	}
+}
+
 /* Front Image */
 #front-image-container {
-	padding-right: 0;
+	
+	@media (min-width: $break-md) {
+		padding-right: 0;
+	}	
 }
 
 /* Footer */
 #wrap {
-	min-height: 100%;
+	// min-height: 100%;
 	height: auto !important;
 	height: 100%;
 	// margin-bottom: -300px;
@@ -553,21 +590,38 @@ author {
 	position: relative;
 	z-index: 10000;
 	color: white;
-	// border-top: 1px solid $midgrey;
-
-	h2 {
-		color: $sky;
-	}
-
+	
 	h3 {
+		color: $sky;
+		font-weight: 100;
+		font-size: 30px;
 
-	font-weight: 100;
-	font-size: 30px;
+	@media (max-width: $break-xs) {
+		font-size: 24px;
+		}	
 	}
 
-	img {
+	.image-container {
+		border-radius: 10px;
+		overflow: hidden;
+		width: 100%;
+		position: relative;
 
-	border-radius: 10px;
+		h2 {
+			position: absolute;
+			text-shadow: 1px 1px 2px $darkgrey;
+			margin:0;
+			padding: 0;
+			padding-left: 15px;
+			font-weight: 300;
+			bottom: 0;
+			width: 100%;
+			color: white;
+			@include background-image(linear-gradient(to top, $darkgrey, transparent));
+		}
+
+		img {
+		}
 	}
 }
 
@@ -596,7 +650,7 @@ author {
 	.media {
 		margin-top: 30px;
 		border-bottom: 1px solid $midgrey;
-		padding-bottom: 20px;
+		padding-bottom: 30px;
 
 		&:first-child {
 			margin-top: 0;
@@ -615,60 +669,67 @@ time {
 
 
 /* training and around the state */
-#training-front {
-	background: $lightgrey;
-	padding: 10px;
+#front-sidebar {
 
-	h2 {
-		margin-top: 0;
-	}
+		border-right: 1px solid $midgrey;
 
-	h4 {
-		margin-top: 0;
-	}
+	#training-front {
+		padding-left: 0px;
 
-	ul{
-	margin: 0;
-	padding: 0;
+		h2 {
+			margin-top: 0;
+			font-size: 20px;
+		}
 
-	li {
+		h4 {
+			margin-top: 0;
+		}
+
+		ul{
 		margin: 0;
 		padding: 0;
-		list-style: none;
-		margin-bottom: 10px;
 
-		strong {
-			font-size: 14px;
-			font-weight: 100;
-		}
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			margin-bottom: 10px;
 
-		a {
-			font-family: $pragmatica;
+			strong {
+				font-size: 14px;
+				font-weight: 100;
+			}
 
-			&:hover {
-				text-decoration: none;
+			a {
+				font-family: $pragmatica;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
 			}
 		}
+	}
 
+	#around-state-front {
+		padding-left: 0px;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $midgrey;
+
+		h2 {
+			margin-top: 0;
+			font-size: 20px;
+		}
+
+		img {
+			margin-right: 10px;
+			width: 100px;
 		}
 	}
+
 }
-
-#around-state-front {
-	background: $lightgrey;
-	padding: 10px;
-	margin-bottom: 20px;
-
-	h2 {
-		margin-top: 0;
-	}
-
-	img {
-		margin-left: 10px;
-		width: 100px;
-	}
-}
-
 
 /* Common Page Elements */
 .mainBlurb {

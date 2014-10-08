@@ -1,8 +1,5 @@
 {% extends "base.html" %}
- {% block quick_nav %}
-      <!-- Quick Nav Bar -->
-    
-  {% endblock quick_nav %}
+
 {% block topcontent %}
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div id="home-top-content" class="container">
@@ -12,16 +9,25 @@
             <ul class="list-group row">
               <li class="list-group-item col-md-12  col-sm-3 col-xs-3">
                 <a class="training-quick" href="{{crossref['data-catalog']}}">
-                  <div class="iconContainer"><i class="fa fa-archive"></i></div> Data Catalog <small class="hidden-xs">Browse our Data Sets</a></small>
+                  <div class="iconContainer"><i class="fa fa-archive"></i></div> Data Catalog 
+                  <small class="hidden-xs">Browse data sets</a></small>
               </li>
               <li class="list-group-item col-md-12 col-sm-3 col-xs-3">
-                <a class="downloaddata-quick" href="{{crossref['data-catalog']}}"><div class="iconContainer"><i class="fa fa-download"></i></div> Download Data <small class="hidden-xs">Access digital data directly</a></small></li>
-              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="orderdata-quick" href="#"><div class="iconContainer"><span class="glyphicon glyphicon-phone-alt"></span></div> Order Data <small class="hidden-xs">Custom Data Requests</small></a></li>
-              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="wms-quick" href="mapsanddata/web-mapping-services"><div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div> Online Map Services <small class="hidden-xs ">WMS Layers and more</small></a></li>
-              <!-- <li><a class="training-quick" href="training"><div class="iconContainer"></div> Training <small class="hidden-xs hidden-sm">Expand your GIS skills</small></a></li> -->
-              <!-- <li><a class="hpids-quick" href="HPIDS"><div class="iconContainer"></div> HPIDS <small class="hidden-xs hidden-sm">High Priority Imagery &amp; Data Sets</small></a></li> -->
+                <a class="downloaddata-quick" href="{{crossref['data-catalog']}}"><div class="iconContainer"><i class="fa fa-download"></i></div> Download Data 
+                  <small class="hidden-xs">Access digital data directly</small></a>
+              </li>
+              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="orderdata-quick" href="#">
+                <div class="iconContainer"><span class="glyphicon glyphicon-phone-alt"></span></div> Order Data 
+                <small class="hidden-xs">Custom data requests</small></a>
+              </li>
+              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="wms-quick" href="mapsanddata/web-mapping-services">
+                <div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div> Online Map Services 
+                <small class="hidden-xs ">WMS layers and more</small></a>
+              </li>
             </ul>
+            <div class="social-front text-center">Connect With Us: <i class="fa fa-twitter"></i> <i class="fa fa-facebook"></i> <i class="fa fa-github"></i></div>
             </div>
+
             <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
               <img class="img-responsive" src="images/forum2.jpg">
               <div class="forum-links hidden-xs">
@@ -40,32 +46,27 @@
 
     <!-- Example row of columns -->
     <div class="row">
-        <div class="col-md-3 col-sm-12">
-          <div class="row">
-            <div id="around-state-front" class="col-sm-6 col-md-12">
+        <div id="front-sidebar" class="col-md-3 col-sm-12">
+            <div id="around-state-front">
                 <h2>Around the State</h2>
-                <img src="images/around-the-state/sterling_th_2.jpg" class="img-responsive pull-right">
                 
                 <h4><a href="#">Sterling Harris: Steward of Texas Land and Water</a></h4>
 
-                  <p>It was the Texas Hill Country near Austin that ignited a passion for the land in Sterling Harris. He grew up in a ranching family, then worked in the oil ...</p>
+                  <p>
+                <img src="images/around-the-state/sterling_th_2.jpg" class="img-responsive pull-left">It was the Texas Hill Country near Austin that ignited a passion for the land in Sterling Harris. He grew up in a ranching family, then worked in the oil ...</p>
                
-                <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">Read More <span class="glyphicon glyphicon-chevron-right"></a></p>
+                <p class="text-center"><a class="btn btn-tnris" href="#" role="button">Read More <span class="glyphicon glyphicon-chevron-right"></a></p>
             </div>
-          <div id="training-front" class="col-sm-6 col-md-12">
-            <!-- <h2>Connect With Us</h2>
-            <a class="twitter-timeline" href="https://twitter.com/TNRIS" data-widget-id="507648696595382272" data-tweet-limit="1">Tweets by @TNRIS</a>
-            <p>Use the <a class="tag" href="#">#txGIS</a> tag on your social media to post and follow updates on the Texas GIS and mapping community.</p> -->
+          <div id="training-front">
               <h2>Accessible GIS Training</h2>
               <ul>
                 <li><time>March 15, 2014</time><h4><a href="#">Fundamentals of ArcGIS</a></h4>Learn how to use Google Earth to attach vital information to your features including photos, videos, and more.</li>
                 <li><time>March 20, 2014</time><h4><a href="#">Arc Hydro: GIS for Water Resources</a></h4>Learn about the Arc Hydro data model and tools and how to implement them from real-world examples.</li>
                 <li><time>March 27, 2014</time><h4><a href="#">Converting ArcGIS Data to Google Earth</a></h4>Visualize your existing ArcGIS data in a Google Earth viewer</li>
               </ul>
-              <a href="#"> >>> See the full course listing</a>
+              <p class="text-center"><a class="btn btn-tnris" href="training" role="button">Full Course List <span class="glyphicon glyphicon-chevron-right"></a></p>
           </div>
 
-          </div>
          </div>
      <!--   -->
      <div class="col-md-6 col-sm-8">
@@ -100,9 +101,9 @@
         <ul class="media-list row">
          {% for spotlight in spotlights %}
            {% if loop.index <= 4 %}
-             <li class="media col-sm-12 col-xs-3">
+             <li class="media col-xs-12">
                <a href="{{ spotlight.path }}">
-                 <img class="media-object" src="{{ spotlight.thumb }}" alt="...">
+                 <img class="media-object img-responsive" src="{{ spotlight.thumb }}" alt="...">
                  <h4>{{ spotlight.title }}</h4>
                </a>
              </li>
@@ -122,26 +123,32 @@
     <div class="row">
 
       <h3 class="text-center">Providing the Highest Level of Geographic Data Services to the People of Texas</h3>
-      <div class="col-sm-4 col-xs-4">
+      <div class="col-sm-4">
         <div class="highlightBox">
-          <h2>Research &amp; Distribution</h2>
-          <img class="img-responsive"  src="images/highlights/staff.jpg">
+          <div class="image-container">
+            <h2>Research &amp; Distribution</h2>
+            <img class="img-responsive"  src="images/highlights/staff.jpg">
+          </div>
           <p>Let our hands-on team of data specialists assist you with physical map products and other datasets, many unavailable online.</p>
           <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>
-      <div class="col-sm-4 col-xs-4">
+      <div class="col-sm-4">
         <div class="highlightBox">
-          <h2>Geographic Information Office</h2>
-          <img class="img-responsive"  src="images/highlights/elpaso.jpg">
+          <div class="image-container">
+            <h2>Geographic Information Office</h2>
+            <img class="img-responsive"  src="images/highlights/elpaso.jpg">
+          </div>
           <p>TNRIS hosts the State of Texas’s Geographic Information Office (GIO), an inter-agency initiative to collaborate and facilitate the effective use of G.I.S. in state and local government.</p>
           <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
       </div>
-      <div class="col-sm-4 col-xs-4">
+      <div class="col-sm-4">
         <div class="highlightBox">
-          <h2>Texas GIS Forum</h2>
-          <img class="img-responsive" src="images/highlights/forum.jpg">
+          <div class="image-container">
+            <h2>Texas GIS Forum</h2>
+            <img class="img-responsive" src="images/highlights/forum.jpg">
+          </div>
           <p>Our annual gathering of the Texas GIS community, showcasing the latest innovations and talent in the field.</p>
           <a class="btn btn-default" href="#" role="button">View details »</a>
         </div>
@@ -151,9 +158,3 @@
   </div>
 
 {% endblock contents-two %}
-
-
-{% block scripts %}
-  {% parent %}
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-{% endblock scripts %}

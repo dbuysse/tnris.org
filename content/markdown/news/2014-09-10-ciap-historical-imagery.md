@@ -6,6 +6,8 @@ imagealt: Old-ass imagery
 thumbnail: images/maps-and-data/ciap_th.png
 author: Joey Thomas
 division: Research & Distribution
+category: data update
+tags: historical imagery, ciap, gio, coastal, internship
 abstract: Over 5,000 frames were scanned and referenced as part of a project in conjunction with the Texas General Land Office (GLO).
 tags: rdc, imagery, ciap, glo, scanning, coast, internships
 ---

@@ -65,7 +65,7 @@ swig.setFilter('urlize', function(input) {
 });
 
 function urlize(str) {
-  return str.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-');
+  return str.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-').replace(/-+/g, '-');
 }
 
 var dirs = {

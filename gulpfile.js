@@ -92,9 +92,8 @@ gulp.task('default', ['dist', 'watch', 'webserver']);
 
 gulp.task('watch', function () {
   gulp.watch(paths.content, ['dist-metal']);
-  gulp.watch(paths.templates, ['dist-metal']);
   gulp.watch(paths.scss, ['dist-scss']);
-  gulp.watch(paths.static, ['dist-static']);
+  gulp.watch(paths.templates, ['dist-metal']);
 });
 
 gulp.task('webserver', ['dist'],  function() {

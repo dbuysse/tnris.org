@@ -44,6 +44,10 @@
 			height: 170px;
 			overflow: hidden;
 
+			@media (max-width: $break-lg) {
+				height: 190px;
+			}
+
 			&:last-child {
 				margin-bottom: 0;
 			}

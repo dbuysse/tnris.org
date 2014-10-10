@@ -131,16 +131,19 @@ h2 {
 
 .title-header {
 	height: 25px;
-	// background-image: radial-gradient(80% 50%, $urgentblue, $midsky);
 	background: $tnrisblue;
 	color: $sky;
 	width: 100%;
 	z-index: 1000;
 	font-family: $pragmatica;
-	font-size: 18px;
+	font-size: 12px;
 	letter-spacing: 3px;
 	text-transform: uppercase;
 	font-weight: 100;
+
+	@media (min-width: $break-xs) {
+		font-size: 18px;
+	}
 
 	span {
 		margin-top: 3px;
@@ -215,6 +218,11 @@ a.navbar-twdb {
 
 .navbar-collapse {
 	background: $darkgrey;
+
+	@media(min-width: $break-lg) {
+		float: left;
+		width: 600px;
+	}
 }
 
 #logoCollapse {
@@ -333,22 +341,20 @@ a.navbar-twdb {
 	}
 
 	ul {
-	list-style: none;
+		list-style: none;
 		background: $lightgrey;
 
 		li {
 		list-style: none;
 		background: $lightgrey;
 		height: 70px;
+		font-size: 18px;
 
-		// @media (max-width: $break-md) {
-		// 	border-right: none;
-
-		// }
 		@media (max-width: $break-lg) {
 			height: 60px;
-
+			border-right: none;
 		}
+
 		&:first-child {
 			@media (max-width: $break-md) {
 					border-top-right-radius: 0;
@@ -363,6 +369,84 @@ a.navbar-twdb {
 					border-right: 1px solid #dddddd;
 				}
 			}
+
+			a {
+			font-family: $pragmatica;
+			font-weight: 500;
+			font-size: 17px;
+			overflow: auto;
+			height: 60px;
+			width: 100%;
+			
+			@media (min-width: $break-lg) {
+			font-size: 20px;
+			}
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			.iconContainer {
+				width: 40px;
+				height: 40px;
+				float: left;
+				position: relative;
+				font-size: 30px;
+				background: none;
+				margin-left: 0;
+
+				@media (max-width: $break-xs) {
+					width: 30px;
+					height: 30px;
+					font-size: 24px;
+				}
+			}
+
+			&.downloaddata-quick {
+				color: $auburn;
+				
+				&:hover {
+					color: $auburnoutline;
+				}
+
+			}
+
+			&.orderdata-quick {
+
+				color: $successgreen;
+
+				&:hover {
+					color: $successhover;
+				}
+
+			}
+
+			&.wms-quick {
+
+				color: $tnrisblue;
+
+				&:hover {
+					color: $infoblue;
+				}
+			}
+
+			&.training-quick {
+				color: $darkgrey;
+
+				&:hover {
+					color: $middarkgrey;
+				}
+			}
+
+			small {
+				font-family: $opensans;
+				font-weight: 100;
+				color: $darkgrey;
+				display: block;
+				font-size: 12px;
+			}
+		}
+
 		}
 	}
 
@@ -374,89 +458,6 @@ a.navbar-twdb {
 	.nav>li>a:hover, .nav>li>a:focus {
 		background: none;
 		list-style: none;
-	}
-
-	li a {
-		font-family: $pragmatica;
-		font-weight: 500;
-		font-size: 20px;
-		overflow: auto;
-		height: 60px;
-		width: 100%;
-		
-		@media (min-width: $break-md) {
-		font-size: 18px;
-
-		}
-
-		@media (max-width: $break-xs) {
-			font-size: 14px;
-		}
-
-
-		&:hover {
-			text-decoration: none;
-		}
-
-		.iconContainer {
-			width: 40px;
-			height: 40px;
-			float: left;
-			position: relative;
-			font-size: 30px;
-			background: none;
-			margin-left: 0;
-
-			@media (max-width: $break-xs) {
-				width: 30px;
-				height: 30px;
-				font-size: 24px;
-			}
-		}
-
-		&.downloaddata-quick {
-			color: $auburn;
-			
-			&:hover {
-				color: $auburnoutline;
-			}
-
-		}
-
-		&.orderdata-quick {
-
-			color: $successgreen;
-
-			&:hover {
-				color: $successhover;
-			}
-
-		}
-
-		&.wms-quick {
-
-			color: $tnrisblue;
-
-			&:hover {
-				color: $infoblue;
-			}
-		}
-
-		&.training-quick {
-			color: $darkgrey;
-
-			&:hover {
-				color: $middarkgrey;
-			}
-		}
-
-		small {
-			font-family: $opensans;
-			font-weight: 100;
-			color: $darkgrey;
-			display: block;
-			font-size: 14px;
-		}
 	}
 }
 
@@ -540,22 +541,6 @@ a.navbar-twdb {
 	position: relative;
 	z-index: 10000;
 }
-
-
-
-/* Media Breaks */
-// @media (min-width: $break-topsmall) {
-// 	.title-header a.navbar-brand {
-// 		text-indent: 0;
-// 	}
-
-// }
-
-
-// @media (min-width: $break-med) {
-// 	.title-header a.navbar-brand {
-// 		font-size: 28px;
-// 	}
 
 
 /* News Template - Single Page */
@@ -648,16 +633,20 @@ author {
 
 /* Updates */
 #updates {
-	// background-color: $lightgrey;
 		
-		@media (min-width: $break-md) {
-			border-left: 1px solid $midgrey;
-			padding-left: 15px;
-		}
-		
+	@media (min-width: $break-md) {
+		border-left: 1px solid $midgrey;
+	margin-left: 15px;
+	padding-right: 30px;
+	margin-right: -15px;	
+	}
 
 	h2 {
 		margin-top: 0;
+	}
+
+	h3 {
+		font-size: 22px;
 	}
 
 	ul {
@@ -669,9 +658,9 @@ author {
 	}
 
 	.media {
-		margin-top: 30px;
+		margin-top: 20px;
 		border-bottom: 1px solid $midgrey;
-		padding-bottom: 30px;
+		padding-bottom: 20px;
 
 		&:first-child {
 			margin-top: 0;
@@ -690,11 +679,25 @@ time {
 
 
 /* training and around the state */
+
+
 #front-sidebar {
-	padding-right: 5px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+
+	@media (min-width: $break-md) {
+			margin-top: 0px;
+		}
 
 	#training-front {
-		padding-left: 0px;
+			border-left: 1px solid $midgrey;
+			padding-left: 15px;
+		
+		@media (min-width: $break-md) {
+			border-left: none;
+			padding-left: 0px;
+			padding-right: 0;
+		}
 
 		h2 {
 			margin-top: 0;
@@ -703,6 +706,7 @@ time {
 
 		h4 {
 			margin-top: 0;
+			margin-bottom: 0;
 		}
 
 		ul{
@@ -713,7 +717,7 @@ time {
 			margin: 0;
 			padding: 0;
 			list-style: none;
-			margin-bottom: 10px;
+			margin-bottom: 20px;
 
 			strong {
 				font-size: 14px;
@@ -733,19 +737,37 @@ time {
 	}
 
 	#around-state-front {
-		padding-left: 0px;
-		padding-bottom: 20px;
+		background: url(../images/around-the-state/light_auburn_bg.png) right top no-repeat;
 		margin-bottom: 20px;
-		border-bottom: 1px solid $midgrey;
+
+		@media (min-width: $break-md) {
+			border-bottom: 1px solid $midgrey;
+			border-right: none;
+			padding-left: 0px;
+			padding-right: 0;
+			padding-bottom: 20px;
+		}
 
 		h2 {
-			margin-top: 15px;
+			margin-top: 5px;
 			font-size: 20px;
 		}
 
+		h4 {
+			padding-right: 120px;
+		}
+
 		img {
-			margin-right: 10px;
-			width: 100px;
+			float: right;
+			width: 125px;
+			margin-left: 10px;
+			padding-right: 5px;
+			
+
+			@media (min-width: $break-lg )
+			{
+				width: 150px;
+			}
 		}
 	}
 

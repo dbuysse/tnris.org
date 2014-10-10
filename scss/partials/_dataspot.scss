@@ -8,11 +8,25 @@
 	// background-image: linear-gradient(to bottom, $midgrey, #000000 25%);
 	// background-image: radial-gradient(at top right, $middarkgrey, $darkgrey 80%);
     color: white;
+    margin-bottom: -30px;
 
-
-	@media (max-width: $break-xs) {
-		margin-bottom: -30px;
+	@media (min-width: $break-md) {
+		margin-bottom: 0;
 	}	
+
+	// &.row {
+	// 	@media (max-width: $break-md) {
+	// 		margin-left: 0;
+	// 		margin-right: 0;
+
+	// 		.row {
+
+	// 		margin-left: 0;
+	// 		margin-right: 0;
+	// 		}
+
+	// 	}	
+	// }
 
     h2 {
 	    color: white;
@@ -23,15 +37,14 @@
     }
 
     p.spotText {
-    	font-size: 12px;
+    	font-size: 14px;
 
 
-		@media (max-width: $break-xs) {
-					
-    			font-size: 14px;
-				}
-
-    }
+		@media (min-width: $break-md) {
+				font-size: 12px;
+			}
+		}
+    
     ul	{
 
 	position: relative;
@@ -43,6 +56,10 @@
 			padding: 0;
 			height: 170px;
 			overflow: hidden;
+			
+			@media (min-width: $break-md) {
+			margin: 0 -15px;
+			}
 
 			@media (max-width: $break-lg) {
 				height: 190px;
@@ -54,12 +71,12 @@
 
 			img {
 				position: absolute;
+				width: 100%;
 			}
 
 			a {
 				position: relative;
 				display: block;
-				// height: 100%;
 
 				&:hover {
 				text-decoration: none;
@@ -92,6 +109,7 @@
 
 	}
 }
+/* Single Page Version */
 
 .spot-title {
 	background: $tnrisblue;

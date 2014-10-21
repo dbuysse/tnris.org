@@ -2,7 +2,7 @@
 template: spotlight.html
 title: Upper Devil's River Watershed
 author: Joey Thomas
-division: Research & Distribution
+author_division: Research & Distribution
 thumb: images/data-spotlights/upper-devils-river-watershed-th.jpg
 mainimage: images/data-spotlights/upper-devils-river-watershed.jpg
 ---

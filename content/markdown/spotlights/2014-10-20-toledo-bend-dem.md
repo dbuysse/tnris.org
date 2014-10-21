@@ -1,6 +1,8 @@
 ---
 template: spotlight.html
 title: Toledo Bend DEM
+author: Joey Thomas
+author_division: Research & Distribution
 thumb: images/data-spotlights/toledo-bend-dem-th.jpg
 mainimage: images/data-spotlights/toledo-bend-dem.jpg
 ---

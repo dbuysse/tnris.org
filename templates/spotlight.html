@@ -1,26 +1,29 @@
 {% extends "base.html" %}
-
+{% block topcontent %} 
+  <div id="spotlight-full-image">
+    <img class="media-object img-responsive center-block" src="{{ mainimage }}" alt="A large preview of the {{ title }} image">
+    <div class="spot-title">
+      <div class="container">
+        <h1><small>Data Spotlight <i class="fa fa-lightbulb-o"></i></small> {{ title }}</h1>
+      </div>
+    </div>
+  </div>
+  {% endblock topcontent %}
 {% block contents %}
-	
+
   <div class="row article">
     <div class="byline">
-      <span class="spot-title"><i class="fa fa-lightbulb-o"></i> Data Spotlight</span>
-    <h1 class="headline"> {{ title }}</h1>
+      
   
-    <strong>by <author>{{ author }}<author></strong> | <time>{{ date|date('F jS, Y') }}</time> 
+    <strong>by <author>{{ author }}<author>, {{ author_division }}</strong> | <time>{{ date|date('F jS, Y') }}</time> 
   </div>
   <div class="col-md-8 blog-main">
-  
-
-  {% if mainimage %}
-      <img class="media-object img-responsive center-block" src="{{ mainimage }}" alt="...">
-   {% endif %}
+     {{ contents|safe }}
 	</div>
 	{% block rightContent %}
   <div class="col-md-4 blog-sidebar">
     <div class="sidebar-module sidebar-module-inset">
-      <h2>What are we looking at?</h2>
-  {{ contents|safe }}
+ 
     </div>
     <div class="sidebar-module">
     </div>

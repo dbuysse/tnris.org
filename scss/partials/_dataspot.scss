@@ -111,21 +111,7 @@
 }
 /* Single Page Version */
 
-.spot-title {
-	background: $tnrisblue;
-	color: white;
-	font-size: 24px;
-	border-radius: 10px;
-	padding: 0 10px;
-	font-weight: 100;
-	font-family: $pragmatica;
-	margin-top: 10px;
-	display: block;
 
-	h1 {
-		margin-top: 5px;
-	}
-}
 
 .byline {
 	padding: 0 15px;
@@ -135,5 +121,49 @@
 	
 	h2:first-child {
 		margin-top: 0;
+	}
+}
+
+#spotlight-full-image {
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+	display: block;
+	position: relative;
+
+	img {
+		width: 100%;
+		position: absolute;
+	}
+
+	.spot-title {
+		@include alpha-attribute('background-color', rgba($tnrisblue, 0.6), white);
+		color: white;
+		position: absolute;
+		z-index: 2000;
+		bottom: 0;
+		padding: 0 10px;
+		font-weight: 100;
+		font-family: $pragmatica;
+		text-shadow: 1px 1px 2px $darkgrey;
+		width: 100%;
+
+		h1 {
+			margin-top: 5px;
+		}
+
+		small {
+			color: $lightgrey;
+			font-weight: 300;
+		}
+	}
+
+	.container {
+		position: relative;
+		bottom: 0;
+	}
+
+	@media (min-width: $break-md) {
+		height: 550px;
 	}
 }

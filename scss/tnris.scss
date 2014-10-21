@@ -236,16 +236,19 @@ a.navbar-twdb {
 	margin-top: 5px;
 }
 
-#aboutContact {
+#about-contact {
 	width: auto;
 	float: right;
+	margin-top: 15px;
 
 	ul {
 		padding: 0;
+
 		li {
 			display: inline;
 			float: left;
 			list-style: none;
+			margin-right: 20px;
 
 			a {
 				color: white;
@@ -352,7 +355,7 @@ a.navbar-twdb {
 
 		@media (max-width: $break-lg) {
 			height: 60px;
-			border-right: none;
+			// border-right: none;
 		}
 
 		&:first-child {
@@ -592,18 +595,30 @@ author {
 	z-index: 10000;
 	color: white;
 	
+	strong {
+		font-weight: 400;
+	}
+
 	h3 {
 		color: $sky;
 		font-weight: 100;
 		font-size: 30px;
+		margin-bottom: 20px;
 
-	@media (max-width: $break-xs) {
+	@media (max-width: $break-lg) {
 		font-size: 24px;
 		}	
 	}
+	p {
+		padding: 0 15px;
+	}
+
+	a {
+		margin-left: 15px;
+	}
 
 	.image-container {
-		border-radius: 10px;
+		// border-radius: 10px;
 		overflow: hidden;
 		width: 100%;
 		position: relative;
@@ -613,16 +628,20 @@ author {
 			text-shadow: 1px 1px 2px $darkgrey;
 			margin:0;
 			padding: 0;
+			padding-bottom: 5px;
 			padding-left: 15px;
 			font-weight: 300;
 			bottom: 0;
 			width: 100%;
 			color: white;
 			@include background-image(linear-gradient(to top, $darkgrey, transparent));
+
+			@media (max-width: $break-lg) {
+				font-size: 20px;
+			}	
 		}
 
-		img {
-		}
+
 	}
 }
 
@@ -635,14 +654,15 @@ author {
 #updates {
 		
 	@media (min-width: $break-md) {
-		border-left: 1px solid $midgrey;
-	margin-left: 15px;
-	padding-right: 30px;
-	margin-right: -15px;	
+		// border-left: 1px solid $midgrey;
+		margin-left: 15px;
+		padding-right: 30px;
+		margin-right: -15px;	
 	}
 
 	h2 {
 		margin-top: 0;
+		font-size: 22px;
 	}
 
 	h3 {
@@ -655,27 +675,35 @@ author {
 	}
 
 	img {
+		width: 100%;
+		height: 100px !important;
 	}
 
 	.media {
-		margin-top: 20px;
+			margin-top: 25px;	
 		border-bottom: 1px solid $midgrey;
-		padding-bottom: 20px;
+		padding-bottom: 25px;
 
 		&:first-child {
 			margin-top: 0;
+			padding-left: 0;
 		}
 
 		&:last-child {
 			border: none;
+			padding-right: 0;
+		}
+
+		time {
+			font-size: 14px;
+			color: #5c6367;
+			font-weight: 300;
+			margin-bottom: 5px;
 		}
 	}
 }
 
-time {
-	font-size: 14px;
-	font-weight: 500;
-}
+
 
 
 /* training and around the state */
@@ -727,10 +755,15 @@ time {
 			a {
 				font-family: $pragmatica;
 
-				&:hover {
-					text-decoration: none;
-				}
 			}
+
+		time {
+			font-size: 18px;
+			color: #5c6367;
+			font-weight: 300;
+			margin-bottom: 5px;
+		}
+
 
 			}
 		}
@@ -747,6 +780,7 @@ time {
 			padding-right: 0;
 			padding-bottom: 20px;
 		}
+
 
 		h2 {
 			margin-top: 5px;

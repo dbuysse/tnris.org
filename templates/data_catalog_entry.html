@@ -66,24 +66,31 @@
 
       <div id="data-access" class="col-md-4 hidden-sm hidden-xs">
           <h2>Data Access</h2>
+          {% if download=='T' %}
           <h4>Data Search &amp; Download</h4>
           <p>Use our online tool to specify the geographic area for which you would like to download the <em>{{ name }}</em> data set.</p>
           <p> <a href="#"  class="btn btn-tnris btn-lg"><span class="glyphicon glyphicon-search"></span> Launch <span class="hidden-sm hidden-xs hidden-md">Data Search &amp; </span>Download </a></p>
+          {% endif %}
+
+          {% if download_link %}
           <h4>Direct Download</h4>
           <p>The full <em>{{ name }}</em> data set can be downloaded directly.</p>
           <p> Download the <strong>{{ download_size }}</strong> file here</p>
-          <p> <a href="#"  class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Download <span class="hidden-sm hidden-xs hidden-md">Data Set</span></a></p>
+          <p> <a href="{{ download_link }}"  class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Download <span class="hidden-sm hidden-xs hidden-md">Data Set</span></a></p>
+          {% endif %}
+
           <h4>Custom Ordering</h4>
           <p><em>{{ name }}</em> is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> for the cost of reproduction.</p>
           <p> <a href="#"  class="btn btn-success btn-lg"><span class="glyphicon glyphicon-envelope"></span> Order <span class="hidden-sm hidden-xs hidden-md">Data</span></a></p>
           
-                <h4>Online Mapping Service</h4>
+          {% if wms_link %}      
+          <h4>Online Mapping Service</h4>
 
-                <p><em>{{ name }}</em> is available as an online mapping         service.</p>
-                <p>Copy the URL below and enter it into your program to access.</p>
-                <p><span class="wms-url">{{ wms_link }}</a></p>
+          <p><em>{{ name }}</em> is available as an online mapping         service.</p>
+          <p>Copy the URL below and enter it into your program to access.</p>
+          <p><span class="wms-url">{{ wms_link }}</a></p>
           <p> <a href="#"  class="btn btn-info btn-lg"><span class="glyphicon glyphicon-globe"></span> Copy Url</a></p>
-              
+          {% endif %}    
         </div>
     <div class="col-md-8 col-sm-12">
         <div class="description">

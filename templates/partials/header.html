@@ -9,7 +9,10 @@
 
     <link rel="shortcut icon" href="favicon.ico">
 
-    <base href="{{base}}">
+    {% if base %}
+      <base href="{{base}}">
+    {% endif %}
+
     <title>TNRIS - Texas Natural Resources Information System | Public Geographic Data for Texas</title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Header -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-{% include "./partials/header.html" %}
+  <head>
+    {% block header %}
+      {% include "./partials/header.html" %}
+    {% endblock header %}
 
-<!-- end Header -->
+    {% block styles %}
+      {% include "./partials/styles.html" %}
+    {% endblock styles %}
+  </head>
 
-<body>
+  <body>
     <div id="wrap">
-        <!-- Fixed navbar -->
+      <!-- Fixed navbar -->
+      {% include "./partials/navbar.html" %}
+      <!-- end navbar -->
 
-        {% include "./partials/navbar.html" %}
+      {% block quick_nav %} {% endblock quick_nav %}
 
-        <!-- end navbar -->
+      {% block topcontent %} {% endblock topcontent %}
 
-        {% block quick_nav %} {% endblock quick_nav %}
+      <!-- Main Content -->
+      <div id="contentMain" class="container">
+          {% block contents %} {% endblock contents %}
+        <!--   <hr class="push">
+          <div id="push"></div> -->
+      </div>
+      <!-- end Main Content -->
 
-        {% block topcontent %} {% endblock topcontent %}
-        <!-- Main Content -->
-        <div id="contentMain" class="container">
-            {% block contents %} {% endblock contents %}
-          <!--   <hr class="push">
-            <div id="push"></div> -->
-        </div>
-        <!-- end Main Content -->
+      <!-- full wrapper -->
 
-
-
-    <!-- full wrapper -->
-
-    {% block contents-two %} {% endblock contents-two %}
+      {% block contents-two %} {% endblock contents-two %}
     </div>
+
     {% block footer %}
       {% include "./partials/footer.html" %}
     {% endblock footer %}
@@ -38,7 +40,5 @@
     {% block scripts %}
       {% include "./partials/scripts.html" %}
     {% endblock scripts %}
-
-</body>
-
+  </body>
 </html>

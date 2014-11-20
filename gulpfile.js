@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var del = require('del');
 var extend = require('extend');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
@@ -11,11 +12,11 @@ var each = require('metalsmith-each');
 var permalinks = require('metalsmith-permalinks');
 var templates = require('metalsmith-templates');
 var replace = require('metalsmith-replace');
-var rimraf = require('gulp-rimraf');
 var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var swig = require('swig');
 var webserver = require('gulp-webserver');
+var vinylPaths = require('vinyl-paths');
 
 var autodate = require('./metalsmith-autodate');
 var based = require('./metalsmith-based');
@@ -29,7 +30,7 @@ var metadata = require('metalsmith-metadata');
 swig.setDefaults({ cache: false });
 
 // patch swig groupBy filter so it doesn't mutate lists - this is a temporary
-// workaround until patch makes it's way into a swig release. 
+// workaround until patch makes it's way into a swig release.
 // See: https://github.com/paularmstrong/swig/pull/524
 swig.setFilter('groupBy', function (input, key) {
   if (!_.isArray(input)) {
@@ -203,5 +204,5 @@ gulp.task('clean', ['clean-dist']);
 
 gulp.task('clean-dist', function() {
   return gulp.src(dirs.dist)
-    .pipe(rimraf());
+    .pipe(vinylPaths(del));
 });

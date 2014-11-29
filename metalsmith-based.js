@@ -1,5 +1,7 @@
 'use strict';
 
+var path = require('path');
+
 module.exports = based;
 
 function based() {
@@ -8,7 +10,7 @@ function based() {
 
     Object.keys(files).forEach(function(filename){
       var file = files[filename];
-      var split = filename.split('/');
+      var split = filename.split(path.sep);
       if(split[split.length-1] === 'index.html') {
         split = split.slice(0, -1);
       }

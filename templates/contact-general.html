@@ -6,15 +6,16 @@
 	<div class="col-md-8">
 		<h1>{{title}}</h1>
 		{% if abstract %}<div class="mainBlurb">{{abstract}}</div>{% endif %}
-
-
 	</div>
 
 	{% block sidebarLeft %}
 	{% endblock sidebarLeft %}
 </div>
 
+<div class="row">
+  <div class="col-xs-12">
+    {{contents|safe}}
+  </div>
+</div>
+
 {% endblock contents %}
-
-
-

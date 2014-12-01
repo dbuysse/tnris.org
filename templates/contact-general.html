@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block contents %}
+<div class="row">
+	<div class="col-md-8">
+		<h1>{{title}}</h1>
+		{% if abstract %}<div class="mainBlurb">{{abstract}}</div>{% endif %}
+
+
+	</div>
+
+	{% block sidebarLeft %}
+	{% endblock sidebarLeft %}
+</div>
+
+{% endblock contents %}
+
+
+

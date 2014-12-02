@@ -171,8 +171,7 @@ gulp.task('dist-metal', function () {
         .use(replace({
           contents: function(contents) {
             var str = contents.toString()
-              .replace(/{{.+?}}/, scapegoat.unescape);
-
+              .replace(/{{.+?}}/g, scapegoat.unescape);
             return new Buffer(str);
           }
         }))

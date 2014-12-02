@@ -19,7 +19,8 @@ function autodate(options) {
 
       if (filename.length > options.format.length) {
         var test = filename.substr(0, options.format.length);
-        var m = moment(test, options.format);
+        var m = moment(test, options.format, true);
+
         if (m.isValid()) {
           if (file.date && stringify(file.date, options.format) !== stringify(m, options.format)) {
             throw new Error("Date-named file '" + filepath + "' has a non-matching date attribute: " + stringify(file.date, options.format));

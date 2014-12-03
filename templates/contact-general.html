@@ -6,7 +6,6 @@
 {%- endmacro -%}
 
 {%- macro contactFormItemAfter(name, display, type, required) -%}
-    <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
     <div ng-show="errors.{{name}}" class="error pull-right">
       <div ng-show="form.{{name}}.$error.required">{{display|capitalize}} is required.</div>
       <div ng-show="form.{{name}}.$error.{{type}}">{{display|capitalize}} must be valid.</div>
@@ -17,6 +16,7 @@
 {%- macro contactFormInput(name, display, type, required) -%}
   {{contactFormItemBefore(name, display, type, required)}}
   <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="contact.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %}>
+  <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{contactFormItemAfter(name, display, type, required)}}
 {%- endmacro -%}
 

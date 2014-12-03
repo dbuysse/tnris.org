@@ -20,7 +20,8 @@ angular.module('ContactApp', [])
       'name',
       'email',
       'phone',
-      'address'
+      'address',
+      'industry'
     ];
 
     function updateErrorState(itemName) {

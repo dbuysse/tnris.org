@@ -23,10 +23,8 @@
 {%- macro contactFormSelect(name, display, options, required) -%}
   {% set type="select" %}
   {{contactFormItemBefore(name, display, type, required)}}
-  <select name="{{name}}" class="form-control" ng-model="contact.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %}>
-    {% for option in options %}
-      <option value="{{option}}">{{option}}</option>
-    {% endfor %}
+  <select name="{{name}}" class="form-control" ng-model="contact.{{name}}" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !contact.{{name}}}" {% if required %}required{% endif %}>
+    <option value="">Select a {{display}}</option>
   </select>
   {{contactFormItemAfter(name, display, type, required)}}
 {%- endmacro -%}

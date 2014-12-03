@@ -1,0 +1,14 @@
+@import "partials/variables";
+@import "bourbon/bourbon";
+
+.error {
+    color: $error;
+}
+
+.form-control {
+  font-weight: 400;
+
+  &.placeholder, &.ng-pristine {
+    font-weight: 100;
+  }
+}

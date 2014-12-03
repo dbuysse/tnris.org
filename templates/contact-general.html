@@ -29,6 +29,12 @@
   {{contactFormItemAfter(name, display, type, required)}}
 {%- endmacro -%}
 
+{% block styles %}
+  {% parent %}
+
+  <link href="css/contact.css" rel="stylesheet">
+{% endblock scripts %}
+
 {% block scripts %}
   {% parent %}
 

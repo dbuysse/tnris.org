@@ -1,8 +1,12 @@
 @import "partials/variables";
 @import "bourbon/bourbon";
 
-.has-error .form-control {
+.has-error {
+  color: $error;
+
+  .form-control {
     color: $error;
+  }
 }
 
 .form-control {

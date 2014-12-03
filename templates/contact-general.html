@@ -59,46 +59,62 @@
     <div ng-app="ContactApp">
       <div ng-controller="ContactController">
         <form name="form" role="form" novalidate ng-cloak>
+          {% set subjects = [
+            'TNRIS Data',
+            'TNRIS Training',
+            'Borderland Information Center',
+            'GEMSS',
+            'General Inquiry',
+            'Floodplain Mapping',
+            'Strategic Mapping Program',
+            'Texas GIS Forum'
+          ] %}
+          {{contactFormSelect("subject", "reason for contacting", subjects, true)}}
+
           {{contactFormInput("name", "name", "text", true)}}
           {{contactFormInput("email", "email address", "email", true)}}
           {{contactFormInput("phone", "phone number", "tel", false)}}
           {{contactFormInput("address", "address", "text", true)}}
 
-          {% set industries = [
-            'Agriculture',
-            'Cartography',
-            'Conservation',
-            'Construction',
-            'Consulting',
-            'Education',
-            'Emergency Management',
-            'Environmental',
-            'Forestry',
-            'Government',
-            'Insurance',
-            'Law Enforcement',
-            'Oil and Gas',
-            'Public health',
-            'Retail',
-            'Utilities',
-            'Urban Planning',
-            'Other'
-          ] %}
-          {{contactFormSelect("industry", "industry", industries, true)}}
+          <div ng-show="contact.subject == 'TNRIS Data'">
+            {% set industries = [
+              'Agriculture',
+              'Cartography',
+              'Conservation',
+              'Construction',
+              'Consulting',
+              'Education',
+              'Emergency Management',
+              'Environmental',
+              'Forestry',
+              'Government',
+              'Insurance',
+              'Law Enforcement',
+              'Oil and Gas',
+              'Public health',
+              'Retail',
+              'Utilities',
+              'Urban Planning',
+              'Other'
+            ] %}
+            {{contactFormSelect("industry", "industry", industries, true)}}
+          </div>
 
-          {% set software = [
-            'ArcMap',
-            'ENVI',
-            'ERDAS',
-            'Global Mapper',
-            'Integraph',
-            'LP360',
-            'Microstation',
-            'PostGIS',
-            'QGIS',
-            'Other'
-          ] %}
-          {{contactFormSelect("software", "software", software, true)}}
+          <div ng-show="contact.subject == 'TNRIS Data'">
+            {% set software = [
+              'ArcMap',
+              'ENVI',
+              'ERDAS',
+              'Global Mapper',
+              'Integraph',
+              'LP360',
+              'Microstation',
+              'PostGIS',
+              'QGIS',
+              'Other'
+            ] %}
+            {{contactFormSelect("software", "software", software, true)}}
+          </div>
 
           <button type="submit" class="btn btn-default" ng-click="update(contact)" ng-disabled="form.$invalid">Submit</button>
         </form>

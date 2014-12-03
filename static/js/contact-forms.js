@@ -17,6 +17,7 @@ angular.module('ContactApp', [])
     $scope.reset();
 
     var validateList = [
+      'subject',
       'name',
       'email',
       'phone',
@@ -26,7 +27,7 @@ angular.module('ContactApp', [])
 
     function updateErrorState(itemName) {
       return function () {
-          $scope.errors[itemName] = $scope.form[itemName].$dirty && $scope.form[itemName].$invalid;
+        $scope.errors[itemName] = $scope.form[itemName].$dirty && $scope.form[itemName].$invalid;
       };
     }
 

@@ -82,29 +82,27 @@
           {{contactFormInput("phone", "phone number", "tel", false)}}
           {{contactFormInput("address", "address", "text", true)}}
 
-          <div ng-show="contact.subject == 'TNRIS Data'">
-            {% set industries = [
-              'Agriculture',
-              'Cartography',
-              'Conservation',
-              'Construction',
-              'Consulting',
-              'Education',
-              'Emergency Management',
-              'Environmental',
-              'Forestry',
-              'Government',
-              'Insurance',
-              'Law Enforcement',
-              'Oil and Gas',
-              'Public health',
-              'Retail',
-              'Utilities',
-              'Urban Planning',
-              'Other'
-            ] %}
-            {{contactFormSelect("industry", "industry", industries, true)}}
-          </div>
+          {% set industries = [
+            'Agriculture',
+            'Cartography',
+            'Conservation',
+            'Construction',
+            'Consulting',
+            'Education',
+            'Emergency Management',
+            'Environmental',
+            'Forestry',
+            'Government',
+            'Insurance',
+            'Law Enforcement',
+            'Oil and Gas',
+            'Public health',
+            'Retail',
+            'Utilities',
+            'Urban Planning',
+            'Other'
+          ] %}
+          {{contactFormSelect("industry", "industry", industries, false)}}
 
           <div ng-show="contact.subject == 'TNRIS Data'">
             {% set software = [

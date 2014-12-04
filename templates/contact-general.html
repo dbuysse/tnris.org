@@ -35,6 +35,26 @@
   {{contactFormItemAfter(name, display, type, required)}}
 {%- endmacro -%}
 
+{%- macro contactFormMulti(name, display, type, options, required) -%}
+  {{contactFormItemBefore(name, display, required)}}
+  {% set model_name = "contact." + name %}
+
+  {% for option in options %}
+    {% if type === 'checkbox' %}
+      {% set model_name = "contact." + name + "_checkbox_" + option.replace(' ', '_').toLowerCase %}
+    {% endif %}
+
+    <div class="{{type}}">
+      <label>
+        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" value="{{option}}" {% if required %}required{% endif %}>
+          {{option}}
+        </input>
+      </label>
+    </div>
+  {% endfor %}
+  {{contactFormItemAfter(name, display, type, required)}}
+{%- endmacro -%}
+
 {% block styles %}
   {% parent %}
 
@@ -112,6 +132,29 @@
           {{contactFormSelect("reason", "reason for contacting", reasons, true)}}
 
           <div ng-show="contact.reason == 'TNRIS Data'">
+            {% set data_list = [
+              'Historical Imagery',
+              'LiDAR',
+              'Maps',
+              'OrthoImagery',
+              'Vector'
+            ] %}
+            {{contactFormSelect("type_of_data", "type of data", data_list, true)}}
+
+            <div ng-show="contact.type_of_data == 'Historical Imagery'">
+              {% set time_frames = [
+                'Single Year',
+                'Historical'
+              ] %}
+              {{contactFormMulti("time_frame", "time frame", 'radio', time_frames, true)}}
+
+              {% set media = [
+                'Paper',
+                'Digital'
+              ] %}
+              {{contactFormMulti("medium", "medium", 'radio', media, true)}}
+            </div>
+
             {% set software = [
               'ArcMap',
               'ENVI',

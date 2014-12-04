@@ -1,3 +1,4 @@
+@import "../static/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import "partials/variables";
 @import "bourbon/bourbon";
 
@@ -14,5 +15,13 @@
 
   &.placeholder, &.ng-pristine {
     font-weight: 100;
+  }
+}
+
+.form-group {
+  .label-col {
+    @media (min-width: $screen-sm-min) {
+      text-align: right;
+    }
   }
 }

@@ -65,17 +65,6 @@
     <div ng-app="ContactApp">
       <div ng-controller="ContactController">
         <form name="form" role="form" novalidate ng-cloak>
-          {% set subjects = [
-            'TNRIS Data',
-            'TNRIS Training',
-            'Borderland Information Center',
-            'GEMSS',
-            'General Inquiry',
-            'Floodplain Mapping',
-            'Strategic Mapping Program',
-            'Texas GIS Forum'
-          ] %}
-          {{contactFormSelect("subject", "reason for contacting", subjects, true)}}
 
           {{contactFormInput("name", "name", "text", true)}}
           {{contactFormInput("email", "email address", "email", true)}}
@@ -102,7 +91,19 @@
             'Urban Planning',
             'Other'
           ] %}
-          {{contactFormSelect("industry", "industry", industries, false)}}
+          {{contactFormSelect("industry", "industry", industries, true)}}
+
+          {% set subjects = [
+            'TNRIS Data',
+            'TNRIS Training',
+            'Borderland Information Center',
+            'GEMSS',
+            'General Inquiry',
+            'Floodplain Mapping',
+            'Strategic Mapping Program',
+            'Texas GIS Forum'
+          ] %}
+          {{contactFormSelect("subject", "reason for contacting", subjects, true)}}
 
           <div ng-show="contact.subject == 'TNRIS Data'">
             {% set software = [

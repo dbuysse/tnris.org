@@ -15,7 +15,7 @@
 
 {%- macro contactFormInput(name, display, type, required) -%}
   {{contactFormItemBefore(name, display, type, required)}}
-  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="contact.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %}>
+  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="contact.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %} />
   <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{contactFormItemAfter(name, display, type, required)}}
 {%- endmacro -%}

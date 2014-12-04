@@ -97,7 +97,7 @@
           ] %}
           {{contactFormSelect("industry", "industry", industries, true)}}
 
-          {% set subjects = [
+          {% set reasons = [
             'TNRIS Data',
             'TNRIS Training',
             'Borderland Information Center',
@@ -107,9 +107,9 @@
             'Strategic Mapping Program',
             'Texas GIS Forum'
           ] %}
-          {{contactFormSelect("subject", "reason for contacting", subjects, true)}}
+          {{contactFormSelect("reason", "reason for contacting", reasons, true)}}
 
-          <div ng-show="contact.subject == 'TNRIS Data'">
+          <div ng-show="contact.reason == 'TNRIS Data'">
             {% set software = [
               'ArcMap',
               'ENVI',

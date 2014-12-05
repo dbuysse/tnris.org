@@ -20,7 +20,12 @@
 
 {%- macro after(name, display, type, required) -%}
   {% set label = display.label || display %}
-      <div ng-show="errors.{{name}}" class="error pull-right">
+  {% if type == 'radio' || type == 'checkbox' %}
+    {% set error_side = 'pull-left' %}
+   {%- else  -%}
+    {% set error_side = 'pull-right' %}
+  {% endif %}
+      <div ng-show="errors.{{name}}" class="error {{error_side}}">
         {% if required %}
           <div ng-show="form.{{name}}.$error.required">{{label|capitalize}} is required.</div>
         {% endif %}

@@ -1,71 +1,7 @@
 {% extends "base.html" %}
 
-{%- macro contactFormItemBefore(name, display, required) -%}
-  <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}">
-    <div class="col-sm-3 label-col">
-      <label for="{{name}}" class="control-label">{{display|capitalize}} {% if required %}<span class="required-symbol">*</span>{% endif %} </label>
-    </div>
-    <div class="col-sm-9">
-{%- endmacro -%}
+{% import "_form_macros.html" as form %}
 
-{%- macro contactFormItemAfter(name, display, type, required) -%}
-      <div ng-show="errors.{{name}}" class="error pull-right">
-        {% if required %}
-          <div ng-show="form.{{name}}.$error.required">{{display|capitalize}} is required.</div>
-        {% endif %}
-        <div ng-show="form.{{name}}.$error.{{type}}">{{display|capitalize}} must be valid.</div>
-      </div>
-    </div>
-  </div>
-{%- endmacro -%}
-
-{%- macro contactFormInput(name, display, type, required) -%}
-  {{contactFormItemBefore(name, display, required)}}
-  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="contact.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %} />
-  <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-  {{contactFormItemAfter(name, display, type, required)}}
-{%- endmacro -%}
-
-{%- macro contactFormSingleCheckbox(name, label, description, required) -%}
-  {{contactFormItemBefore(name, label, required)}}
-  {% set type = 'checkbox' %}
-  <div class="checkbox">
-    <label>
-      <input type="{{type}}" name="{{name}}" ng-model="contact.{{name}}" {% if required %}required{% endif %} />
-      {{description}}
-    </label>
-  </div>
-  {{contactFormItemAfter(name, label, type, required)}}
-{%- endmacro -%}
-
-{%- macro contactFormSelect(name, display, options, required) -%}
-  {% set type="select" %}
-  {{contactFormItemBefore(name, display, required)}}
-  <select name="{{name}}" class="form-control" ng-model="contact.{{name}}" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !contact.{{name}}}" {% if required %}required{% endif %}>
-    <option value="">Select a {{display}}</option>
-  </select>
-  {{contactFormItemAfter(name, display, type, required)}}
-{%- endmacro -%}
-
-{%- macro contactFormMulti(name, display, type, options, required) -%}
-  {{contactFormItemBefore(name, display, required)}}
-  {% set model_name = "contact." + name %}
-
-  {% for option in options %}
-    {% if type === 'checkbox' %}
-      {% set model_name = "contact." + name + "_checkbox_" + option.replace(' ', '_').toLowerCase %}
-    {% endif %}
-
-    <div class="{{type}}">
-      <label>
-        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" value="{{option}}" {% if required %}required{% endif %}>
-          {{option}}
-        </input>
-      </label>
-    </div>
-  {% endfor %}
-  {{contactFormItemAfter(name, display, type, required)}}
-{%- endmacro -%}
 
 {% block styles %}
   {% parent %}
@@ -104,10 +40,10 @@
       <div ng-controller="ContactController">
         <form name="form" role="form" class="form-horizontal" novalidate ng-cloak>
 
-          {{contactFormInput("name", "name", "text", true)}}
-          {{contactFormInput("email", "email address", "email", true)}}
-          {{contactFormInput("phone", "phone number", "tel", false)}}
-          {{contactFormInput("address", "address", "text", true)}}
+          {{form.input("name", "name", "text", true)}}
+          {{form.input("email", "email address", "email", true)}}
+          {{form.input("phone", "phone number", "tel", false)}}
+          {{form.input("address", "address", "text", true)}}
 
           {% set industries = [
             'Agriculture',
@@ -129,7 +65,7 @@
             'Urban Planning',
             'Other'
           ] %}
-          {{contactFormSelect("industry", "industry", industries, true)}}
+          {{form.select("industry", "industry", industries, true)}}
 
           {% set reasons = [
             'TNRIS Data',
@@ -141,7 +77,7 @@
             'Strategic Mapping Program',
             'Texas GIS Forum'
           ] %}
-          {{contactFormSelect("reason", "reason for contacting", reasons, true)}}
+          {{form.select("reason", "reason for contacting", reasons, true)}}
 
           <div ng-show="contact.reason == 'TNRIS Data'">
             {% set data_list = [
@@ -151,23 +87,23 @@
               'OrthoImagery',
               'Vector'
             ] %}
-            {{contactFormSelect("type_of_data", "type of data", data_list, true)}}
+            {{form.select("type_of_data", "type of data", data_list, true)}}
 
             <div ng-show="contact.type_of_data == 'Historical Imagery'">
               {% set time_frames = [
                 'Single Year',
                 'Historical'
               ] %}
-              {{contactFormMulti("time_frame", "time frame", 'radio', time_frames, true)}}
+              {{multi("time_frame", "time frame", 'radio', time_frames, true)}}
 
               {% set media = [
                 'Paper',
                 'Digital'
               ] %}
-              {{contactFormMulti("medium", "medium", 'radio', media, true)}}
+              {{multi("medium", "medium", 'radio', media, true)}}
 
               <div ng-show="contact.medium == 'Digital'">
-                {{contactFormSingleCheckbox("georeference", "Georeference", "The data needs to be georefrenced.")}}
+                {{form.checkbox("georeference", "Georeference", "The data needs to be georefrenced.")}}
               </div>
             </div>
 
@@ -183,7 +119,7 @@
               'QGIS',
               'Other'
             ] %}
-            {{contactFormSelect("software", "software", software, true)}}
+            {{form.select("software", "software", software, true)}}
           </div>
 
           <button type="submit" class="btn btn-default" ng-click="update(contact)" ng-disabled="form.$invalid">Submit</button>

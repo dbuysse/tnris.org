@@ -1,0 +1,67 @@
+{%- macro before(name, display, required) -%}
+  <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}">
+    <div class="col-sm-3 label-col">
+      <label for="{{name}}" class="control-label">{{display|capitalize}} {% if required %}<span class="required-symbol">*</span>{% endif %} </label>
+    </div>
+    <div class="col-sm-9">
+{%- endmacro -%}
+
+{%- macro after(name, display, type, required) -%}
+      <div ng-show="errors.{{name}}" class="error pull-right">
+        {% if required %}
+          <div ng-show="form.{{name}}.$error.required">{{display|capitalize}} is required.</div>
+        {% endif %}
+        <div ng-show="form.{{name}}.$error.{{type}}">{{display|capitalize}} must be valid.</div>
+      </div>
+    </div>
+  </div>
+{%- endmacro -%}
+
+
+{%- macro checkbox(name, label, description, required) -%}
+  {{before(name, label, required)}}
+  {% set type = 'checkbox' %}
+  <div class="checkbox">
+    <label>
+      <input type="{{type}}" name="{{name}}" ng-model="contact.{{name}}" {% if required %}required{% endif %} />
+      {{description}}
+    </label>
+  </div>
+  {{after(name, label, type, required)}}
+{%- endmacro -%}
+
+{%- macro input(name, display, type, required) -%}
+  {{before(name, display, required)}}
+  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="contact.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %} />
+  <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+  {{after(name, display, type, required)}}
+{%- endmacro -%}
+
+{%- macro multi(name, display, type, options, required) -%}
+  {{before(name, display, required)}}
+  {% set model_name = "contact." + name %}
+
+  {% for option in options %}
+    {% if type === 'checkbox' %}
+      {% set model_name = "contact." + name + "_checkbox_" + option.replace(' ', '_').toLowerCase %}
+    {% endif %}
+
+    <div class="{{type}}">
+      <label>
+        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" value="{{option}}" {% if required %}required{% endif %}>
+          {{option}}
+        </input>
+      </label>
+    </div>
+  {% endfor %}
+  {{after(name, display, type, required)}}
+{%- endmacro -%}
+
+{%- macro select(name, display, options, required) -%}
+  {% set type="select" %}
+  {{before(name, display, required)}}
+  <select name="{{name}}" class="form-control" ng-model="contact.{{name}}" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !contact.{{name}}}" {% if required %}required{% endif %}>
+    <option value="">Select a {{display}}</option>
+  </select>
+  {{after(name, display, type, required)}}
+{%- endmacro -%}

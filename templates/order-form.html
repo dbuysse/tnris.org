@@ -38,7 +38,8 @@
               true
           )}}
 
-          <div ng-show="form_model.type_of_data == 'Historical Imagery'">
+          {% set is_historical = "form_model.type_of_data == 'Historical Imagery'" %}
+          <div ng-show="{{is_historical}}">
             {{form.multi(
                 "time_frame",
                 "time frame",
@@ -47,7 +48,7 @@
                   'Single Year',
                   'Historical'
                 ],
-                true
+                is_historical
             )}}
 
             {{form.multi(
@@ -58,33 +59,35 @@
                   'Paper',
                   'Digital'
                 ],
-                true
+                is_historical
             )}}
 
-            <div ng-show="form_model.medium == 'Digital'">
+            {% set is_digital = "form_model.medium == 'Digital'" %}
+            <div ng-show="{{is_digital}}">
               {{form.checkbox("georeference", "Georeference", "The data should be georeferenced.")}}
-            </div>
 
-            {{form.select(
-                "software",
-                "software",
-                [
-                  'ArcMap',
-                  'ENVI',
-                  'ERDAS',
-                  'Global Mapper',
-                  'Integraph',
-                  'LP360',
-                  'Microstation',
-                  'PostGIS',
-                  'QGIS',
-                  'Other'
-                ],
-                true
-            )}}
+              {{form.select(
+                  "software",
+                  "software",
+                  [
+                    'ArcMap',
+                    'ENVI',
+                    'ERDAS',
+                    'Global Mapper',
+                    'Integraph',
+                    'LP360',
+                    'Microstation',
+                    'PostGIS',
+                    'QGIS',
+                    'Other'
+                  ],
+                  is_digital
+              )}}
+            </div>
           </div>
 
-          <div ng-show="form_model.type_of_data == 'LiDAR'">
+          {% set is_lidar = "form_model.type_of_data == 'LiDAR'" %}
+          <div ng-show="{{is_lidar}}">
             {{form.multi(
                 "lidar_format",
                 "Data Format",
@@ -105,13 +108,14 @@
                   'TNRIS Drive',
                   'Customer Provided Drive'
                 ],
-                true
+                is_lidar
             )}}
 
             {{form.checkbox("lidar_site_file", "Site file", "I have a file that contains the extent of the data I am requesting.")}}
           </div>
 
-          <div ng-show="form_model.type_of_data == 'Maps'">
+          {% set is_maps  = "form_model.type_of_data == 'Maps'" %}
+          <div ng-show="{{is_maps}}">
             {{form.multi(
                 "type_of_map",
                 "type of map",
@@ -120,10 +124,11 @@
                   ['Not TNRIS', 'Maps (USGS, NWI, FEMA)'],
                   ['TNRIS', 'Custom Map (TNRIS)']
                 ],
-                false
+                is_maps
             )}}
 
-            <div ng-show="form_model.type_of_map == 'Not TNRIS'">
+            {% set is_not_tnris  = "form_model.type_of_map == 'Not TNRIS'" %}
+            <div ng-show="{{is_not_tnris}}">
               {{form.multi(
                   "map_option",
                   "map option",
@@ -133,13 +138,13 @@
                     ['NWI', 'NWI (7.5 Minute)'],
                     ['FEMA', 'FEMA (panel)']
                   ],
-                  false
+                  is_not_tnris
               )}}
 
               {{form.textarea(
                   "site_description",
                   "LIST ALL QUADS/PANELS AND SPECIFY QUANTITY FOR EACH MAPS SELECTED",
-                  false
+                  is_not_tnris
               )}}
             </div>
           </div>

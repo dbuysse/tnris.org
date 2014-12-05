@@ -46,10 +46,18 @@
       {% set model_name = "form_model." + name + "_checkbox_" + option.replace(' ', '_').toLowerCase %}
     {% endif %}
 
+    {% if option.constructor === Array %}
+      {% set value = option[0] %}
+      {% set text = option[1] %}
+     {%- else  -%}
+      {% set value = option %}
+      {% set text = option %}
+    {% endif %}
+
     <div class="{{type}}">
       <label>
-        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" value="{{option}}" {% if required %}required{% endif %}>
-          {{option}}
+        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" value="{{value}}" {% if required %}required{% endif %}>
+          {{text}}
         </input>
       </label>
     </div>
@@ -63,5 +71,12 @@
   <select name="{{name}}" class="form-control" ng-model="form_model.{{name}}" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model.{{name}}}" {% if required %}required{% endif %}>
     <option value="">Select a {{display}}</option>
   </select>
+  {{after(name, display, type, required)}}
+{%- endmacro -%}
+
+{%- macro textarea(name, display, options, required) -%}
+  {% set type="textarea" %}
+  {{before(name, display, required)}}
+  <textarea class="form-control" name="{{name}}" rows="4" ng-model="form_model.{{name}}" {% if required %}required{% endif %}></textarea>
   {{after(name, display, type, required)}}
 {%- endmacro -%}

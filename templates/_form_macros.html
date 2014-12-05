@@ -23,7 +23,7 @@
   {% set type = 'checkbox' %}
   <div class="checkbox">
     <label>
-      <input type="{{type}}" name="{{name}}" ng-model="contact.{{name}}" {% if required %}required{% endif %} />
+      <input type="{{type}}" name="{{name}}" ng-model="form_model.{{name}}" {% if required %}required{% endif %} />
       {{description}}
     </label>
   </div>
@@ -32,18 +32,18 @@
 
 {%- macro input(name, display, type, required) -%}
   {{before(name, display, required)}}
-  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="contact.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %} />
+  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="form_model.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %} />
   <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{after(name, display, type, required)}}
 {%- endmacro -%}
 
 {%- macro multi(name, display, type, options, required) -%}
   {{before(name, display, required)}}
-  {% set model_name = "contact." + name %}
+  {% set model_name = "form_model." + name %}
 
   {% for option in options %}
     {% if type === 'checkbox' %}
-      {% set model_name = "contact." + name + "_checkbox_" + option.replace(' ', '_').toLowerCase %}
+      {% set model_name = "form_model." + name + "_checkbox_" + option.replace(' ', '_').toLowerCase %}
     {% endif %}
 
     <div class="{{type}}">
@@ -60,7 +60,7 @@
 {%- macro select(name, display, options, required) -%}
   {% set type="select" %}
   {{before(name, display, required)}}
-  <select name="{{name}}" class="form-control" ng-model="contact.{{name}}" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !contact.{{name}}}" {% if required %}required{% endif %}>
+  <select name="{{name}}" class="form-control" ng-model="form_model.{{name}}" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model.{{name}}}" {% if required %}required{% endif %}>
     <option value="">Select a {{display}}</option>
   </select>
   {{after(name, display, type, required)}}

@@ -26,44 +26,63 @@
       <div ng-controller="OrderFormController">
         <form name="form" role="form" class="form-horizontal" novalidate ng-cloak>
 
-          {% set data_list = [
-            'Historical Imagery',
-            'LiDAR',
-            'Maps',
-            'OrthoImagery'
-          ] %}
-          {{form.multi("type_of_data", "type of data", "radio", data_list, true)}}
+          {{form.multi(
+              "type_of_data",
+              "type of data",
+              "radio",
+              [
+                'Historical Imagery',
+                'LiDAR',
+                'Maps',
+                'OrthoImagery'
+              ],
+              true
+          )}}
 
           <div ng-show="form_model.type_of_data == 'Historical Imagery'">
-            {% set time_frames = [
-              'Single Year',
-              'Historical'
-            ] %}
-            {{form.multi("time_frame", "time frame", 'radio', time_frames, true)}}
+            {{form.multi(
+                "time_frame",
+                "time frame",
+                "radio",
+                [
+                  'Single Year',
+                  'Historical'
+                ],
+                true
+            )}}
 
-            {% set media = [
-              'Paper',
-              'Digital'
-            ] %}
-            {{form.multi("medium", "medium", 'radio', media, true)}}
+            {{form.multi(
+                "medium",
+                "medium",
+                "radio",
+                [
+                  'Paper',
+                  'Digital'
+                ],
+                true
+            )}}
 
             <div ng-show="form_model.medium == 'Digital'">
               {{form.checkbox("georeference", "Georeference", "The data should be georeferenced.")}}
             </div>
 
-            {% set software = [
-              'ArcMap',
-              'ENVI',
-              'ERDAS',
-              'Global Mapper',
-              'Integraph',
-              'LP360',
-              'Microstation',
-              'PostGIS',
-              'QGIS',
-              'Other'
-            ] %}
-            {{form.select("software", "software", software, true)}}
+            {{form.select(
+                "software",
+                "software",
+                [
+                  'ArcMap',
+                  'ENVI',
+                  'ERDAS',
+                  'Global Mapper',
+                  'Integraph',
+                  'LP360',
+                  'Microstation',
+                  'PostGIS',
+                  'QGIS',
+                  'Other'
+                ],
+                true
+            )}}
           </div>
 
 
@@ -72,27 +91,31 @@
           {{form.input("phone", "phone number", "tel", false)}}
           {{form.input("address", "address", "text", true)}}
 
-          {% set industries = [
-            'Agriculture',
-            'Cartography',
-            'Conservation',
-            'Construction',
-            'Consulting',
-            'Education',
-            'Emergency Management',
-            'Environmental',
-            'Forestry',
-            'Government',
-            'Insurance',
-            'Law Enforcement',
-            'Oil and Gas',
-            'Public Health',
-            'Retail',
-            'Utilities',
-            'Urban Planning',
-            'Other'
-          ] %}
-          {{form.select("industry", "industry", industries, true)}}
+          {{form.select(
+              "industry",
+              "industry",
+              [
+                'Agriculture',
+                'Cartography',
+                'Conservation',
+                'Construction',
+                'Consulting',
+                'Education',
+                'Emergency Management',
+                'Environmental',
+                'Forestry',
+                'Government',
+                'Insurance',
+                'Law Enforcement',
+                'Oil and Gas',
+                'Public Health',
+                'Retail',
+                'Utilities',
+                'Urban Planning',
+                'Other'
+              ],
+              true
+          )}}
 
 
           <button type="submit" class="btn btn-default" ng-click="update(form_model)">Submit</button>

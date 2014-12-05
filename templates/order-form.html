@@ -63,7 +63,7 @@
                 is_historical
             )}}
 
-            {% set is_digital = "form_model.medium == 'Digital'" %}
+            {% set is_digital = is_historical + " && form_model.medium == 'Digital'" %}
               {{form.checkbox(
                 "georeference",
                 "Georeference",
@@ -138,7 +138,7 @@
                 is_maps
             )}}
 
-            {% set is_not_tnris  = "form_model.type_of_map == 'Not TNRIS'" %}
+            {% set is_not_tnris = is_maps + " && form_model.type_of_map == 'Not TNRIS'" %}
               {{form.multi(
                   "map_option",
                   "map option",

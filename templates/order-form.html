@@ -125,7 +125,7 @@
                 is_lidar
             )}}
 
-          {% set is_maps  = "form_model.type_of_data == 'Maps'" %}
+          {% set is_maps = "form_model.type_of_data == 'Maps'" %}
             {{form.multi(
                 "type_of_map",
                 "type of map",
@@ -153,8 +153,11 @@
               )}}
 
               {{form.textarea(
-                  "site_description",
-                  "LIST ALL QUADS/PANELS AND SPECIFY QUANTITY FOR EACH MAPS SELECTED",
+                  "map_details",
+                  {
+                    label: 'Map details',
+                    help: "List all quads/panels and specify quantity for each map"
+                  },
                   true,
                   is_not_tnris
               )}}

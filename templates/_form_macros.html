@@ -9,20 +9,26 @@
 {%- endmacro -%}
 
 {%- macro before(name, display, required, show) -%}
-  <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}" {% if show %}ng-show="{{show}}"{% endif %}>
+  {% set label = display.label || display %}
+
+  <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
     <div class="col-sm-3 label-col">
-      <label for="{{name}}" class="control-label">{{display|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
+      <label for="{{name}}" class="control-label">{{label|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
     </div>
     <div class="col-sm-9">
 {%- endmacro -%}
 
 {%- macro after(name, display, type, required) -%}
+  {% set label = display.label || display %}
       <div ng-show="errors.{{name}}" class="error pull-right">
         {% if required %}
-          <div ng-show="form.{{name}}.$error.required">{{display|capitalize}} is required.</div>
+          <div ng-show="form.{{name}}.$error.required">{{label|capitalize}} is required.</div>
         {% endif %}
-        <div ng-show="form.{{name}}.$error.{{type}}">{{display|capitalize}} must be valid.</div>
+        <div ng-show="form.{{name}}.$error.{{type}}">{{label|capitalize}} must be valid.</div>
       </div>
+      {% if display.help %}
+        <div id="help-block-{{name}}" class="help-block pull-left">{{display.help}}</div>
+      {% endif %}
     </div>
   </div>
 {%- endmacro -%}
@@ -93,9 +99,9 @@
 {%- endmacro -%}
 
 {%- macro textarea(name, display, required, show) -%}
+  {% set label = display.label || display %}
   {% set type="textarea" %}
-
-  {{before(name, display, required)}}
-    <textarea class="form-control" name="{{name}}" rows="4" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}}></textarea>
+  {{before(name, display, required, show)}}
+    <textarea class="form-control" name="{{name}}" rows="4" placeholder="Enter {{label|lower}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}}></textarea>
   {{after(name, display, type, required)}}
 {%- endmacro -%}

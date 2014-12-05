@@ -26,6 +26,18 @@
   {{contactFormItemAfter(name, display, type, required)}}
 {%- endmacro -%}
 
+{%- macro contactFormSingleCheckbox(name, label, description, required) -%}
+  {{contactFormItemBefore(name, label, required)}}
+  {% set type = 'checkbox' %}
+  <div class="checkbox">
+    <label>
+      <input type="{{type}}" name="{{name}}" ng-model="contact.{{name}}" {% if required %}required{% endif %} />
+      {{description}}
+    </label>
+  </div>
+  {{contactFormItemAfter(name, label, type, required)}}
+{%- endmacro -%}
+
 {%- macro contactFormSelect(name, display, options, required) -%}
   {% set type="select" %}
   {{contactFormItemBefore(name, display, required)}}
@@ -153,6 +165,10 @@
                 'Digital'
               ] %}
               {{contactFormMulti("medium", "medium", 'radio', media, true)}}
+
+              <div ng-show="contact.medium == 'Digital'">
+                {{contactFormSingleCheckbox("georeference", "Georeference", "The data needs to be georefrenced.")}}
+              </div>
             </div>
 
             {% set software = [

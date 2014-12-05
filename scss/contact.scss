@@ -2,6 +2,7 @@
 @import "partials/variables";
 @import "bourbon/bourbon";
 
+
 .has-error {
   color: $error;
 
@@ -19,6 +20,16 @@
 }
 
 .form-group {
+  opacity: 1;
+
+  &.ng-hide-remove {
+    @include transition(all 0.15s linear);
+  }
+
+  &.ng-hide {
+    opacity: 0;
+  }
+
   .label-col {
     @media (min-width: $screen-sm-min) {
       text-align: right;

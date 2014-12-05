@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('FormApp', [])
+angular.module('FormApp', ['ngAnimate'])
   .controller('FormController', ['$scope', function($scope) {
     $scope.master = {};
     $scope.errors = {};

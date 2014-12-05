@@ -1,5 +1,15 @@
-{%- macro before(name, display, required) -%}
-  <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}">
+{%- macro requiredAttr(required, show) -%}
+  {%- if show == undefined -%}
+    {% set requiredStr = required %}
+   {%- else  -%}
+    {% set requiredStr = show %}
+  {%- endif -%}
+
+  {% if required %}ng-required="{{requiredStr}}"{% endif %}
+{%- endmacro -%}
+
+{%- macro before(name, display, required, show) -%}
+  <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}" {% if show %}ng-show="{{show}}"{% endif %}>
     <div class="col-sm-3 label-col">
       <label for="{{name}}" class="control-label">{{display|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
     </div>
@@ -18,27 +28,27 @@
 {%- endmacro -%}
 
 
-{%- macro checkbox(name, label, description, required) -%}
-  {{before(name, label, required)}}
+{%- macro checkbox(name, label, description, required, show) -%}
+  {{before(name, label, required, show)}}
   {% set type = 'checkbox' %}
   <div class="checkbox">
     <label>
-      <input type="{{type}}" name="{{name}}" ng-model="form_model.{{name}}" ng-change="updateItem(form.{{name}})" {% if required %}ng-required="{{required}}"{% endif %} />
+      <input type="{{type}}" name="{{name}}" ng-model="form_model.{{name}}" ng-change="updateItem(form.{{name}})" {{requiredAttr(required, show)}} />
       {{description}}
     </label>
   </div>
   {{after(name, label, type, required)}}
 {%- endmacro -%}
 
-{%- macro input(name, display, type, required) -%}
-  {{before(name, display, required)}}
-  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {% if required %}ng-required="{{required}}"{% endif %} />
+{%- macro input(name, display, type, required, show) -%}
+  {{before(name, display, required, show)}}
+  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}} />
   <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{after(name, display, type, required)}}
 {%- endmacro -%}
 
-{%- macro multi(name, display, type, options, required) -%}
-  {{before(name, display, required)}}
+{%- macro multi(name, display, type, options, required, show) -%}
+  {{before(name, display, required, show)}}
   {% set model_name = "form_model." + name %}
 
   {% for option in options %}
@@ -56,7 +66,7 @@
 
     <div class="{{type}}">
       <label>
-        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" ng-click="updateItem(form.{{name}})" value="{{value}}" ng-required="{{required}}">
+        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" ng-click="updateItem(form.{{name}})" value="{{value}}" {{requiredAttr(required, show)}}>
           {{text}}
         </input>
       </label>
@@ -65,10 +75,10 @@
   {{after(name, display, type, required)}}
 {%- endmacro -%}
 
-{%- macro select(name, display, options, required) -%}
+{%- macro select(name, display, options, required, show) -%}
   {% set type="select" %}
-  {{before(name, display, required)}}
-  <select name="{{name}}" class="form-control" ng-model="form_model.{{name}}" ng-change="updateItem(form.{{name}})" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model.{{name}}}" {% if required %}ng-required="{{required}}"{% endif %}>
+  {{before(name, display, required, show)}}
+  <select name="{{name}}" class="form-control" ng-model="form_model.{{name}}" ng-change="updateItem(form.{{name}})" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model.{{name}}}" {{requiredAttr(required, show)}}>
     <option value="">Select a {{display}}</option>
   </select>
   {{after(name, display, type, required)}}
@@ -82,10 +92,10 @@
   </div>
 {%- endmacro -%}
 
-{%- macro textarea(name, display, required) -%}
+{%- macro textarea(name, display, required, show) -%}
   {% set type="textarea" %}
 
   {{before(name, display, required)}}
-  <textarea class="form-control" name="{{name}}" rows="4" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {% if required %}ng-required="{{required}}"{% endif %}></textarea>
+  <textarea class="form-control" name="{{name}}" rows="4" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}}></textarea>
   {{after(name, display, type, required)}}
 {%- endmacro -%}

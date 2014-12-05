@@ -3,7 +3,7 @@
 {%- macro contactFormItemBefore(name, display, required) -%}
   <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}">
     <div class="col-sm-3 label-col">
-      <label for="{{name}}" class="control-label">{{display|capitalize}}</label>
+      <label for="{{name}}" class="control-label">{{display|capitalize}} {% if required %}<span class="required-symbol">*</span>{% endif %} </label>
     </div>
     <div class="col-sm-9">
 {%- endmacro -%}

@@ -23,7 +23,7 @@
   {% set type = 'checkbox' %}
   <div class="checkbox">
     <label>
-      <input type="{{type}}" name="{{name}}" ng-model="form_model.{{name}}" {% if required %}required{% endif %} />
+      <input type="{{type}}" name="{{name}}" ng-model="form_model.{{name}}" ng-change="updateItem(form.{{name}})" {% if required %}required{% endif %} />
       {{description}}
     </label>
   </div>
@@ -32,7 +32,7 @@
 
 {%- macro input(name, display, type, required) -%}
   {{before(name, display, required)}}
-  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="form_model.{{name}}" ng-model-options="{updateOn: 'blur'}" {% if required %}required{% endif %} />
+  <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {% if required %}required{% endif %} />
   <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{after(name, display, type, required)}}
 {%- endmacro -%}
@@ -56,7 +56,7 @@
 
     <div class="{{type}}">
       <label>
-        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" value="{{value}}" {% if required %}required{% endif %}>
+        <input type="{{type}}" name="{{name}}" ng-model="{{model_name}}" ng-click="updateItem(form.{{name}})" value="{{value}}" {% if required %}required{% endif %}>
           {{text}}
         </input>
       </label>
@@ -68,7 +68,7 @@
 {%- macro select(name, display, options, required) -%}
   {% set type="select" %}
   {{before(name, display, required)}}
-  <select name="{{name}}" class="form-control" ng-model="form_model.{{name}}" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model.{{name}}}" {% if required %}required{% endif %}>
+  <select name="{{name}}" class="form-control" ng-model="form_model.{{name}}" ng-change="updateItem(form.{{name}})" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model.{{name}}}" {% if required %}required{% endif %}>
     <option value="">Select a {{display}}</option>
   </select>
   {{after(name, display, type, required)}}
@@ -82,10 +82,10 @@
   </div>
 {%- endmacro -%}
 
-{%- macro textarea(name, display, options, required) -%}
+{%- macro textarea(name, display, required) -%}
   {% set type="textarea" %}
 
   {{before(name, display, required)}}
-  <textarea class="form-control" name="{{name}}" rows="4" ng-model="form_model.{{name}}" {% if required %}required{% endif %}></textarea>
+  <textarea class="form-control" name="{{name}}" rows="4" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {% if required %}required{% endif %}></textarea>
   {{after(name, display, type, required)}}
 {%- endmacro -%}

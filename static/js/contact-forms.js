@@ -1,75 +1,20 @@
 'use strict';
 
 angular.module('FormApp', [])
-  .controller('ContactController', ['$scope', function($scope) {
+  .controller('FormController', ['$scope', function($scope) {
     $scope.master = {};
     $scope.errors = {};
 
-    $scope.update = function(user) {
-      $scope.master = angular.copy(user);
-      alert($scope.master);
+    $scope.update = function(form) {
+      $scope.master = angular.copy(form);
+      _($scope.form)
+        .filter(function(value, key) {return key[0] !== '$'})
+        .each(function(item) {
+          $scope.errors[item.$name] = item.$invalid;
+        });
     };
 
-    $scope.reset = function() {
-      $scope.user = angular.copy($scope.master);
+    $scope.updateItem = function (item){
+      $scope.errors[item.$name] = item.$invalid;
     };
-
-    $scope.reset();
-
-    var validateList = [
-      'subject',
-      'name',
-      'email',
-      'phone',
-      'address',
-      'industry'
-    ];
-
-    function updateErrorState(itemName) {
-      return function () {
-        $scope.errors[itemName] = $scope.form[itemName].$dirty && $scope.form[itemName].$invalid;
-      };
-    }
-
-    for (var i = 0, len = validateList.length; i < len; i++) {
-      var item = validateList[i];
-
-      $scope.$watch('form.' + item + '.$dirty && form.' + item + '.$invalid', updateErrorState(item));
-    }
-  }])
-  .controller('OrderFormController', ['$scope', function($scope) {
-    $scope.master = {};
-    $scope.errors = {};
-
-    $scope.update = function(user) {
-      $scope.master = angular.copy(user);
-      alert($scope.master);
-    };
-
-    $scope.reset = function() {
-      $scope.user = angular.copy($scope.master);
-    };
-
-    $scope.reset();
-
-    var validateList = [
-      'subject',
-      'name',
-      'email',
-      'phone',
-      'address',
-      'industry'
-    ];
-
-    function updateErrorState(itemName) {
-      return function () {
-        $scope.errors[itemName] = $scope.form[itemName].$dirty && $scope.form[itemName].$invalid;
-      };
-    }
-
-    for (var i = 0, len = validateList.length; i < len; i++) {
-      var item = validateList[i];
-
-      $scope.$watch('form.' + item + '.$dirty && form.' + item + '.$invalid', updateErrorState(item));
-    }
   }]);

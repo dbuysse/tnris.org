@@ -122,7 +122,7 @@
             {{form.select("software", "software", software, true)}}
           </div>
 
-          <button type="submit" class="btn btn-default" ng-click="update(form_model)" ng-disabled="form.$invalid">Submit</button>
+          {{form.submit()}}
         </form>
       </div>
     </div>

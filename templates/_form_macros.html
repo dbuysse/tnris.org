@@ -52,8 +52,11 @@
 {%- endmacro -%}
 
 {%- macro input(name, display, type, required, show) -%}
+  {% set label = display.label || display %}
+  {% set placeholder = display.placeholder || label %}
+
   {{before(name, display, required, show)}}
-    <input type="{{type}}" name="{{name}}" class="form-control" placeholder="Enter {{display}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}} />
+    <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder|capitalize}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}} />
     <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{after(name, display, type, required)}}
 {%- endmacro -%}
@@ -105,9 +108,11 @@
 
 {%- macro textarea(name, display, required, show) -%}
   {% set label = display.label || display %}
+  {% set placeholder = display.placeholder || label %}
+
   {% set type="textarea" %}
   {{before(name, display, required, show)}}
-    <textarea class="form-control" name="{{name}}" rows="4" placeholder="Enter {{label|lower}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}}></textarea>
+    <textarea class="form-control" name="{{name}}" rows="4" placeholder="{{placeholder|capitalize}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}}></textarea>
     <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{after(name, display, type, required)}}
 {%- endmacro -%}

@@ -56,8 +56,8 @@
                 "medium",
                 "radio",
                 [
-                  'Paper',
-                  'Digital'
+                  ['Paper', 'Paper (8.5 x 11 laser copy)'],
+                  ['Digital', 'Digital (scan of original copy)']
                 ],
                 true,
                 is_historical
@@ -125,6 +125,17 @@
                 is_lidar
             )}}
 
+            {{form.textarea(
+                "lidar_description",
+                {
+                  label: 'LiDAR Description',
+                  help: "Description of the LiDAR data you are requesting."
+                },
+                false,
+                is_lidar
+            )}}
+
+
           {% set is_maps = "form_model.type_of_data == 'Maps'" %}
             {{form.multi(
                 "type_of_map",
@@ -162,10 +173,71 @@
                   is_not_tnris
               )}}
 
+            {% set is_tnris = is_maps + " && form_model.type_of_map == 'TNRIS'" %}
+              {{form.multi(
+                  "map_size",
+                  "map size",
+                  "radio",
+                  [
+                    ['8_by_11', '8 x 11'],
+                    ['11_by_17', '11 x 17'],
+                    ['24_by_24', '24 x 24'],
+                    ['36_by_36', '36 x 36'],
+                    ['custom', 'Custom Size']
+                  ],
+                  true,
+                  is_tnris
+              )}}
+
+              {% set is_custom = is_tnris + " && form_model.map_size == 'custom'" %}
+                {{form.input(
+                    "custom_map_size",
+                    "custom size",
+                    "text",
+                    true,
+                    is_custom
+                )}}
+
+
+            {% set show_scale = "(" + is_tnris + ") || form_model.medium == 'Paper'" %}
+              {{form.input(
+                  "map_scale",
+                  {
+                    label: 'scale',
+                    help: 'For example: 1" = 500"'
+                  },
+                  "text",
+                  true,
+                  show_scale
+              )}}
+
+              {{form.input(
+                  "map_title",
+                  "map title",
+                  "text",
+                  true,
+                  is_tnris
+              )}}
+
+              {{form.input(
+                  "map_date",
+                  "map date",
+                  "text",
+                  true,
+                  is_tnris
+              )}}
+
+          {{form.textarea(
+              "additional_info",
+              {
+                label: 'Additional Information',
+                placeholder: 'Additional information or comments about your order'
+              },
+              false
+          )}}
+
           {{form.input("name", "name", "text", true)}}
-          {{form.input("email", "email address", "email", true)}}
-          {{form.input("phone", "phone number", "tel", false)}}
-          {{form.input("address", "address", "text", true)}}
+          {{form.input("organization", "organization", "text", false)}}
 
           {{form.select(
               "industry",
@@ -192,6 +264,15 @@
               ],
               true
           )}}
+
+          {{form.input("address_1", "address 1", "text", true)}}
+          {{form.input("address_2", "address 2", "text", false)}}
+          {{form.input("city", "city", "text", true)}}
+          {{form.input("state", "state", "text", true)}}
+          {{form.input("zip", "zip", "text", true)}}
+          {{form.input("email", "email address", "email", true)}}
+          {{form.input("phone", "phone number", "tel", false)}}
+          {{form.input("fax", "fax number", "tel", false)}}
 
           {{form.submit()}}
 

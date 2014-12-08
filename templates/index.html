@@ -2,8 +2,9 @@
 
 {% block topcontent %}
   <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div id="home-top-content" class="container">
-          <div class="row">
+  <div id="home-top-content">
+    <div class="container">
+          <div class="row"  >
             <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12">
             <h3>Start exploring our <strong>data</strong></h3>
             <ul class="list-group row">
@@ -24,19 +25,22 @@
                 <div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div> Online <span class="hidden-xs">Map</span> Services
                 <small class="hidden-xs hidden-sm">WMS layers and more</small></a>
               </li>
+              <li class="list-group-item col-md-12 social-front text-center  hidden-sm hidden-xs">
+                <strong>Connect With Us:</strong> <a href="https://twitter.com/tnris" title="Follow us on Twitter"><i class="fa fa-twitter"></i></a><a href="https://github.com/TNRIS/" title="Check us out on GitHub"><i class="fa fa-github"></i></a>
+              </li>
             </ul>
-            <div class="social-front text-center"><strong>Connect With Us:</strong> <i class="fa fa-twitter"></i><i class="fa fa-github"></i></div>
+            
             </div>
 
             <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
-              <img class="img-responsive" src="images/forum2.jpg">
-              <div class="forum-links hidden-xs">
-                <a href="forum-agenda"><span class="glyphicon glyphicon-info-sign"></span> More info</a>
-                <a href="forum-agenda"><span class="glyphicon glyphicon-list-alt"></span> Agenda</a>
+              <img class="img-responsive" src="images/ortho_flag_blank.jpg" alt="A Texas Flag with aerial orthoimagery in place of the red, white and blue">
+              <div class="ortho-text hidden-xs">
+                <h2><a href="2015-statewide-orthoimagery-project" class="btn btn-tnris btn-lg pull-right">Learn More</a> <strong>2015 Statewide</strong><br>Orthoimagery Project</h2>
+                <p> A collaborative initiative to capture high-quality, leaf-off imagery for the entire state, slated for public release in <strong>Winter 2015.</strong>  </p>
+
               </div>
-              <div class="forum-date-runner text-center"><strong>October 20th – 23rd, 2014 | Austin, Texas</strong><p>Texas's Premier Event for the Geospatial Community</p></div>
             </div>
-      <!-- <a class="btn btn-primary btn-lg" role="button">Learn more »</a> -->
+          </div>
         </div>
   </div>
 {% endblock topcontent %}

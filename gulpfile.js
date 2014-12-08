@@ -155,6 +155,10 @@ gulp.task('dist-metal', function () {
         }))
         .use(each(function(file, filename) {
           file.preserved = filename.slice(0, -1 * path.extname(filename).length);
+          file.id = file.preserved.replace(/\//g, '-');
+          if (file.id[0].match(/\d/)) {
+            file.id = '_' + file.id;
+          }
         }))
         .use(collector('*.md'))
         .use(autodate('YYYY-MM-DD'))

@@ -10,7 +10,7 @@
     {% endblock styles %}
   </head>
 
-  <body>
+  <body {% if id %}id="{{id}}"{% endif %}>
     <div id="wrap">
       <!-- Fixed navbar -->
       {% include "./partials/navbar.html" %}

@@ -58,32 +58,7 @@
           )}}
 
           {% set show_software = "form_model.reason == 'TNRIS Data'" %}
-            {{form.select(
-                "software",
-                "software",
-                [
-                  'ArcMap',
-                  'ENVI',
-                  'ERDAS',
-                  'Global Mapper',
-                  'Integraph',
-                  'LP360',
-                  'Microstation',
-                  'PostGIS',
-                  'QGIS',
-                  'Other'
-                ],
-                true,
-                show_software
-            )}}
-
-            {{form.input(
-                "software_version",
-                "software version",
-                "text",
-                true,
-                show_software
-            )}}
+            {{form.software_inputs(show_software)}}
 
           {{form.textarea(
               "question_or_comments",
@@ -97,28 +72,7 @@
           {{form.input("phone", "phone number", "tel", false)}}
           {{form.input("address", "address", "text", true)}}
           {{form.input("organization", "organization", "text", false)}}
-
-          {% set industries = [
-            'Agriculture',
-            'Cartography',
-            'Conservation',
-            'Construction',
-            'Consulting',
-            'Education',
-            'Emergency Management',
-            'Environmental',
-            'Forestry',
-            'Government',
-            'Insurance',
-            'Law Enforcement',
-            'Oil and Gas',
-            'Public Health',
-            'Retail',
-            'Utilities',
-            'Urban Planning',
-            'Other'
-          ] %}
-          {{form.select("industry", "industry", industries, true)}}
+          {{form.industry()}}
 
           {{form.submit()}}
         </form>

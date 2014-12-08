@@ -72,24 +72,7 @@
                 is_digital
               )}}
 
-              {{form.select(
-                  "software",
-                  "software",
-                  [
-                    'ArcMap',
-                    'ENVI',
-                    'ERDAS',
-                    'Global Mapper',
-                    'Integraph',
-                    'LP360',
-                    'Microstation',
-                    'PostGIS',
-                    'QGIS',
-                    'Other'
-                  ],
-                  true,
-                  is_digital
-              )}}
+              {{form.software_inputs(is_digital)}}
 
           {% set is_lidar = "form_model.type_of_data == 'LiDAR'" %}
             {{form.multi(
@@ -239,32 +222,7 @@
           {{form.input("name", "name", "text", true)}}
           {{form.input("organization", "organization", "text", false)}}
 
-          {{form.select(
-              "industry",
-              "industry",
-              [
-                'Agriculture',
-                'Cartography',
-                'Conservation',
-                'Construction',
-                'Consulting',
-                'Education',
-                'Emergency Management',
-                'Environmental',
-                'Forestry',
-                'Government',
-                'Insurance',
-                'Law Enforcement',
-                'Oil and Gas',
-                'Public Health',
-                'Retail',
-                'Utilities',
-                'Urban Planning',
-                'Other'
-              ],
-              true
-          )}}
-
+          {{form.industry()}}
           {{form.input("address_1", "address 1", "text", true)}}
           {{form.input("address_2", "address 2", "text", false)}}
           {{form.input("city", "city", "text", true)}}

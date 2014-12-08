@@ -6,6 +6,13 @@
 {% block styles %}
   {% parent %}
 
+  <!-- note: this rule is included here to avoid distracting flashes/glitches if css file is slow or fails to load -->
+  <style type="text/css">
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none !important;
+    }
+  </style>
+
   <link href="css/contact.css" rel="stylesheet">
 {% endblock scripts %}
 

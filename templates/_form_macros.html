@@ -34,7 +34,7 @@
     <div ng-show="form.{{name}}.$error.{{type}}">{{label|capitalize}} must be valid.</div>
   </div>
   {% if display.help %}
-    <div id="help-block-{{name}}" class="help-block pull-left">{{display.help}}</div>
+    <div id="help-block-{{name}}" class="help-block">{{display.help}}</div>
   {% endif %}
 {%- endmacro -%}
 

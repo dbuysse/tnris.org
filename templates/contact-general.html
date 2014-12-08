@@ -41,10 +41,62 @@
       <div ng-controller="FormController">
         <form name="form" role="form" class="form-horizontal" novalidate ng-cloak>
 
+          {{form.select(
+            "reason",
+            "reason for contacting",
+              [
+              'TNRIS Data',
+              'TNRIS Training',
+              'Borderland Information Center',
+              'GEMSS',
+              'General Inquiry',
+              'Floodplain Mapping',
+              'Strategic Mapping Program',
+              'Texas GIS Forum'
+            ],
+            true
+          )}}
+
+          {% set show_software = "form_model.reason == 'TNRIS Data'" %}
+            {{form.select(
+                "software",
+                "software",
+                [
+                  'ArcMap',
+                  'ENVI',
+                  'ERDAS',
+                  'Global Mapper',
+                  'Integraph',
+                  'LP360',
+                  'Microstation',
+                  'PostGIS',
+                  'QGIS',
+                  'Other'
+                ],
+                true,
+                show_software
+            )}}
+
+            {{form.input(
+                "software_version",
+                "software version",
+                "text",
+                true,
+                show_software
+            )}}
+
+          {{form.textarea(
+              "question_or_comments",
+              "Question / Comments",
+              true,
+              true
+          )}}
+
           {{form.input("name", "name", "text", true)}}
           {{form.input("email", "email address", "email", true)}}
           {{form.input("phone", "phone number", "tel", false)}}
           {{form.input("address", "address", "text", true)}}
+          {{form.input("organization", "organization", "text", false)}}
 
           {% set industries = [
             'Agriculture',
@@ -67,61 +119,6 @@
             'Other'
           ] %}
           {{form.select("industry", "industry", industries, true)}}
-
-          {% set reasons = [
-            'TNRIS Data',
-            'TNRIS Training',
-            'Borderland Information Center',
-            'GEMSS',
-            'General Inquiry',
-            'Floodplain Mapping',
-            'Strategic Mapping Program',
-            'Texas GIS Forum'
-          ] %}
-          {{form.select("reason", "reason for contacting", reasons, true)}}
-
-          <div ng-show="form_model.reason == 'TNRIS Data'">
-            {% set data_list = [
-              'Historical Imagery',
-              'LiDAR',
-              'Maps',
-              'OrthoImagery',
-              'Vector'
-            ] %}
-            {{form.select("type_of_data", "type of data", data_list, true)}}
-
-            <div ng-show="form_model.type_of_data == 'Historical Imagery'">
-              {% set time_frames = [
-                'Single Year',
-                'Historical'
-              ] %}
-              {{multi("time_frame", "time frame", 'radio', time_frames, true)}}
-
-              {% set media = [
-                'Paper',
-                'Digital'
-              ] %}
-              {{multi("medium", "medium", 'radio', media, true)}}
-
-              <div ng-show="form_model.medium == 'Digital'">
-                {{form.checkbox("georeference", "Georeference", "The data needs to be georefrenced.")}}
-              </div>
-            </div>
-
-            {% set software = [
-              'ArcMap',
-              'ENVI',
-              'ERDAS',
-              'Global Mapper',
-              'Integraph',
-              'LP360',
-              'Microstation',
-              'PostGIS',
-              'QGIS',
-              'Other'
-            ] %}
-            {{form.select("software", "software", software, true)}}
-          </div>
 
           {{form.submit()}}
         </form>

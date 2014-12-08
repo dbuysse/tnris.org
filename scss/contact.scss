@@ -3,6 +3,14 @@
 @import "bourbon/bourbon";
 
 
+label {
+  text-transform: uppercase;
+
+  .radio &, .checkbox & {
+    text-transform: none;
+  }
+}
+
 .has-error {
   color: $error;
 

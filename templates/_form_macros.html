@@ -14,7 +14,7 @@
   <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
     <label for="{{name}}" class="control-label">{{label|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
     {% if type == 'radio' || type == 'checkbox' %}
-      {{errors_and_help(name, display, type, required, 'error-top')}}
+      {{errors_and_help(name, display, type, required, 'error-' + type)}}
     {% endif %}
 {%- endmacro -%}
 

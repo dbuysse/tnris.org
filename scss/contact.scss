@@ -11,16 +11,17 @@
   }
 }
 
-.error-top {
-  margin-top: 0px;
-}
-
 .form-control {
   font-weight: 400;
 
   &.placeholder, &.ng-pristine {
     font-weight: 100;
   }
+}
+
+.radio, .checkbox, .error-radio, .error-checkbox {
+  margin-top: 0px;
+  margin-left: 20px;
 }
 
 .form-group {

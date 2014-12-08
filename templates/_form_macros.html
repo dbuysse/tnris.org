@@ -12,10 +12,7 @@
   {% set label = display.label || display %}
 
   <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
-    <div class="col-sm-3 label-col">
-      <label for="{{name}}" class="control-label">{{label|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
-    </div>
-    <div class="col-sm-9">
+    <label for="{{name}}" class="control-label">{{label|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
 {%- endmacro -%}
 
 {%- macro after(name, display, type, required) -%}
@@ -25,16 +22,15 @@
    {%- else  -%}
     {% set error_side = 'pull-right' %}
   {% endif %}
-      <div ng-show="errors.{{name}}" class="error {{error_side}}">
-        {% if required %}
-          <div ng-show="form.{{name}}.$error.required">{{label|capitalize}} is required.</div>
-        {% endif %}
-        <div ng-show="form.{{name}}.$error.{{type}}">{{label|capitalize}} must be valid.</div>
-      </div>
-      {% if display.help %}
-        <div id="help-block-{{name}}" class="help-block pull-left">{{display.help}}</div>
+    <div ng-show="errors.{{name}}" class="error {{error_side}}">
+      {% if required %}
+        <div ng-show="form.{{name}}.$error.required">{{label|capitalize}} is required.</div>
       {% endif %}
+      <div ng-show="form.{{name}}.$error.{{type}}">{{label|capitalize}} must be valid.</div>
     </div>
+    {% if display.help %}
+      <div id="help-block-{{name}}" class="help-block pull-left">{{display.help}}</div>
+    {% endif %}
   </div>
 {%- endmacro -%}
 

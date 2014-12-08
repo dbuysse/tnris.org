@@ -1,5 +1,22 @@
 {% extends "base.html" %}
 
+{% import "_form_macros.html" as form %}
+
+
+{% block styles %}
+  {% parent %}
+
+  <link href="css/contact.css" rel="stylesheet">
+{% endblock scripts %}
+
+{% block scripts %}
+  {% parent %}
+
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="js/contact-forms.js"></script>
+{% endblock scripts %}
+
 
 {% block contents %}
 <div class="row">
@@ -15,6 +32,101 @@
 <div class="row">
   <div class="col-xs-12">
     {{contents|safe}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <div id="ng-app" ng-app="FormApp">
+      <div ng-controller="FormController">
+        <form name="form" role="form" class="form-horizontal" novalidate ng-cloak>
+
+          {{form.input("name", "name", "text", true)}}
+          {{form.input("email", "email address", "email", true)}}
+          {{form.input("phone", "phone number", "tel", false)}}
+          {{form.input("address", "address", "text", true)}}
+
+          {% set industries = [
+            'Agriculture',
+            'Cartography',
+            'Conservation',
+            'Construction',
+            'Consulting',
+            'Education',
+            'Emergency Management',
+            'Environmental',
+            'Forestry',
+            'Government',
+            'Insurance',
+            'Law Enforcement',
+            'Oil and Gas',
+            'Public Health',
+            'Retail',
+            'Utilities',
+            'Urban Planning',
+            'Other'
+          ] %}
+          {{form.select("industry", "industry", industries, true)}}
+
+          {% set reasons = [
+            'TNRIS Data',
+            'TNRIS Training',
+            'Borderland Information Center',
+            'GEMSS',
+            'General Inquiry',
+            'Floodplain Mapping',
+            'Strategic Mapping Program',
+            'Texas GIS Forum'
+          ] %}
+          {{form.select("reason", "reason for contacting", reasons, true)}}
+
+          <div ng-show="form_model.reason == 'TNRIS Data'">
+            {% set data_list = [
+              'Historical Imagery',
+              'LiDAR',
+              'Maps',
+              'OrthoImagery',
+              'Vector'
+            ] %}
+            {{form.select("type_of_data", "type of data", data_list, true)}}
+
+            <div ng-show="form_model.type_of_data == 'Historical Imagery'">
+              {% set time_frames = [
+                'Single Year',
+                'Historical'
+              ] %}
+              {{multi("time_frame", "time frame", 'radio', time_frames, true)}}
+
+              {% set media = [
+                'Paper',
+                'Digital'
+              ] %}
+              {{multi("medium", "medium", 'radio', media, true)}}
+
+              <div ng-show="form_model.medium == 'Digital'">
+                {{form.checkbox("georeference", "Georeference", "The data needs to be georefrenced.")}}
+              </div>
+            </div>
+
+            {% set software = [
+              'ArcMap',
+              'ENVI',
+              'ERDAS',
+              'Global Mapper',
+              'Integraph',
+              'LP360',
+              'Microstation',
+              'PostGIS',
+              'QGIS',
+              'Other'
+            ] %}
+            {{form.select("software", "software", software, true)}}
+          </div>
+
+          {{form.submit()}}
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 

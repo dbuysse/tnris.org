@@ -1,0 +1,38 @@
+@import "../static/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "partials/variables";
+@import "bourbon/bourbon";
+
+
+.has-error {
+  color: $error;
+
+  .form-control {
+    color: $error;
+  }
+}
+
+.form-control {
+  font-weight: 400;
+
+  &.placeholder, &.ng-pristine {
+    font-weight: 100;
+  }
+}
+
+.form-group {
+  opacity: 1;
+
+  &.ng-hide-remove {
+    @include transition(all 0.15s linear);
+  }
+
+  &.ng-hide {
+    opacity: 0;
+  }
+
+  .label-col {
+    @media (min-width: $screen-sm-min) {
+      text-align: right;
+    }
+  }
+}

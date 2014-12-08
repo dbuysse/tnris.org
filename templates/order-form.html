@@ -1,0 +1,285 @@
+{% extends "contact-general.html" %}
+
+{% import "_form_macros.html" as form %}
+
+
+{% block contents %}
+<div class="row">
+	<div class="col-md-8">
+		<h1>{{title}}</h1>
+		{% if abstract %}<div class="mainBlurb">{{abstract}}</div>{% endif %}
+	</div>
+
+	{% block sidebarLeft %}
+	{% endblock sidebarLeft %}
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    {{contents|safe}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <div id="ng-app" ng-app="FormApp">
+      <div ng-controller="FormController">
+        <form name="form" role="form" class="form-horizontal" novalidate ng-cloak>
+          {{form.multi(
+              "type_of_data",
+              "type of data",
+              "radio",
+              [
+                'Historical Imagery',
+                'LiDAR',
+                'Maps',
+                'OrthoImagery'
+              ],
+              true
+          )}}
+
+          {% set is_historical = "form_model.type_of_data == 'Historical Imagery'" %}
+            {{form.multi(
+                "time_frame",
+                "time frame",
+                "radio",
+                [
+                  'Single Year',
+                  'Historical'
+                ],
+                true,
+                is_historical
+            )}}
+
+            {{form.multi(
+                "medium",
+                "medium",
+                "radio",
+                [
+                  ['Paper', 'Paper (8.5 x 11 laser copy)'],
+                  ['Digital', 'Digital (scan of original copy)']
+                ],
+                true,
+                is_historical
+            )}}
+
+            {% set is_digital = is_historical + " && form_model.medium == 'Digital'" %}
+              {{form.checkbox(
+                "georeference",
+                "Georeference",
+                "The data should be georeferenced.",
+                false,
+                is_digital
+              )}}
+
+              {{form.select(
+                  "software",
+                  "software",
+                  [
+                    'ArcMap',
+                    'ENVI',
+                    'ERDAS',
+                    'Global Mapper',
+                    'Integraph',
+                    'LP360',
+                    'Microstation',
+                    'PostGIS',
+                    'QGIS',
+                    'Other'
+                  ],
+                  true,
+                  is_digital
+              )}}
+
+          {% set is_lidar = "form_model.type_of_data == 'LiDAR'" %}
+            {{form.multi(
+                "lidar_format",
+                "Data Format",
+                "checkbox",
+                [
+                  'LAS',
+                  'DEM',
+                  ['Breaklines', 'Breaklines (if available)']
+                ],
+                false,
+                is_lidar
+            )}}
+
+            {{form.multi(
+                "harddrive",
+                "hard drive",
+                "radio",
+                [
+                  'TNRIS Drive',
+                  'Customer Provided Drive'
+                ],
+                true,
+                is_lidar
+            )}}
+
+            {{form.checkbox(
+                "lidar_site_file",
+                "Site file",
+                "I have a file that contains the extent of the data I am requesting.",
+                false,
+                is_lidar
+            )}}
+
+            {{form.textarea(
+                "lidar_description",
+                {
+                  label: 'LiDAR Description',
+                  help: "Description of the LiDAR data you are requesting."
+                },
+                false,
+                is_lidar
+            )}}
+
+
+          {% set is_maps = "form_model.type_of_data == 'Maps'" %}
+            {{form.multi(
+                "type_of_map",
+                "type of map",
+                "radio",
+                [
+                  ['Not TNRIS', 'Maps (USGS, NWI, FEMA)'],
+                  ['TNRIS', 'Custom Map (TNRIS)']
+                ],
+                true,
+                is_maps
+            )}}
+
+            {% set is_not_tnris = is_maps + " && form_model.type_of_map == 'Not TNRIS'" %}
+              {{form.multi(
+                  "map_option",
+                  "map option",
+                  "radio",
+                  [
+                    ['USGS', 'USGS (7.5 Minute)'],
+                    ['NWI', 'NWI (7.5 Minute)'],
+                    ['FEMA', 'FEMA (panel)']
+                  ],
+                  true,
+                  is_not_tnris
+              )}}
+
+              {{form.textarea(
+                  "map_description",
+                  {
+                    label: 'map description',
+                    help: "List all quads/panels and specify quantity for each map"
+                  },
+                  true,
+                  is_not_tnris
+              )}}
+
+            {% set is_tnris = is_maps + " && form_model.type_of_map == 'TNRIS'" %}
+              {{form.multi(
+                  "map_size",
+                  "map size",
+                  "radio",
+                  [
+                    ['8_by_11', '8 x 11'],
+                    ['11_by_17', '11 x 17'],
+                    ['24_by_24', '24 x 24'],
+                    ['36_by_36', '36 x 36'],
+                    ['custom', 'Custom Size']
+                  ],
+                  true,
+                  is_tnris
+              )}}
+
+              {% set is_custom = is_tnris + " && form_model.map_size == 'custom'" %}
+                {{form.input(
+                    "custom_map_size",
+                    "custom size",
+                    "text",
+                    true,
+                    is_custom
+                )}}
+
+
+            {% set show_scale = "(" + is_tnris + ") || form_model.medium == 'Paper'" %}
+              {{form.input(
+                  "map_scale",
+                  {
+                    label: 'scale',
+                    help: 'For example: 1" = 500"'
+                  },
+                  "text",
+                  true,
+                  show_scale
+              )}}
+
+              {{form.input(
+                  "map_title",
+                  "map title",
+                  "text",
+                  true,
+                  is_tnris
+              )}}
+
+              {{form.input(
+                  "map_date",
+                  "map date",
+                  "text",
+                  true,
+                  is_tnris
+              )}}
+
+          {{form.textarea(
+              "additional_info",
+              {
+                label: 'Additional Information',
+                placeholder: 'Additional information or comments about your order'
+              },
+              false
+          )}}
+
+          {{form.input("name", "name", "text", true)}}
+          {{form.input("organization", "organization", "text", false)}}
+
+          {{form.select(
+              "industry",
+              "industry",
+              [
+                'Agriculture',
+                'Cartography',
+                'Conservation',
+                'Construction',
+                'Consulting',
+                'Education',
+                'Emergency Management',
+                'Environmental',
+                'Forestry',
+                'Government',
+                'Insurance',
+                'Law Enforcement',
+                'Oil and Gas',
+                'Public Health',
+                'Retail',
+                'Utilities',
+                'Urban Planning',
+                'Other'
+              ],
+              true
+          )}}
+
+          {{form.input("address_1", "address 1", "text", true)}}
+          {{form.input("address_2", "address 2", "text", false)}}
+          {{form.input("city", "city", "text", true)}}
+          {{form.input("state", "state", "text", true)}}
+          {{form.input("zip", "zip", "text", true)}}
+          {{form.input("email", "email address", "email", true)}}
+          {{form.input("phone", "phone number", "tel", false)}}
+          {{form.input("fax", "fax number", "tel", false)}}
+
+          {{form.submit()}}
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock contents %}

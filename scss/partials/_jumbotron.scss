@@ -65,3 +65,34 @@
 		}
 	}
 }
+
+/* Statewide Ortho 2015 */
+.ortho-text {
+	position: absolute;
+	top: 5px;
+	left: 280px;
+	margin-right: 40px;
+
+	h2 {
+		margin: 0;
+		font-size: 45px;
+		font-weight: 100;
+		color: $darkgrey;
+
+		strong {
+			font-weight: 500;
+			font-size: 58px;
+		}
+
+		a {
+			margin-right: 70px;
+			margin-top: 40px;
+		}
+
+	}
+
+	p {
+		font-size: 17px;
+		font-weight: 100;
+	}
+}

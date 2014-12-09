@@ -274,6 +274,45 @@
           {{form.input("phone", "phone number", "tel", false)}}
           {{form.input("fax", "fax number", "tel", false)}}
 
+          {{form.multi(
+              "delivery_method",
+              "delivery method",
+              "radio",
+              [
+                ['USPS', 'U.S.P.S'],
+                ['FedEx', 'Fed-Ex ($10.00 - $15.00)'],
+                ['FedEx_Customer', 'Fed-Ex charged to customer number'],
+                ['FTP', 'File Transfer Protocol (FTP)']
+              ],
+              true
+          )}}
+
+          {{form.input(
+            "FedEx_Customer_Number", "Customer FedEx Account Number", "text", true,
+            "form_model.delivery_method == 'FedEx_Customer'")}}
+
+          {{form.multi(
+              "payment_method",
+              "payment method",
+              "radio",
+              [
+                ['Credit Card', 'Credit Card (A TNRIS staff member will call you to acquire your credit card information.)'],
+                'Check',
+                'Pay at Pickup',
+                ['Purchase Order', 'Purchase Order (Government agencies only)']
+              ],
+              true
+          )}}
+
+          {{form.input(
+            "check_number", "Check Number", "text", true,
+            "form_model.payment_method == 'Check'")}}
+
+          {{form.input(
+            "purchase_order_number", "Payment Order Number", "text", true,
+            "form_model.payment_method == 'Purchase Order'")}}
+
+
           {{form.submit()}}
 
         </form>

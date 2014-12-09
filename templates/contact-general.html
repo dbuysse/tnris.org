@@ -14,7 +14,7 @@
   </style>
 
   <link href="css/contact.css" rel="stylesheet">
-{% endblock scripts %}
+{% endblock styles %}
 
 {% block scripts %}
   {% parent %}
@@ -49,7 +49,7 @@
         <form name="form" role="form" novalidate ng-cloak>
 
           {{form.select(
-            "reason",
+            "Reason",
             "reason for contacting",
               [
               'TNRIS Data',
@@ -64,24 +64,24 @@
             true
           )}}
 
-          {% set show_software = "form_model.reason == 'TNRIS Data'" %}
+          {% set show_software = "form_model['Reason'] == 'TNRIS Data'" %}
             {{form.software_inputs(show_software)}}
 
           {{form.textarea(
-              "question_or_comments",
+              "Question or Comments",
               "Question / Comments",
               true,
               true
           )}}
 
-          {{form.input("name", "name", "text", true)}}
-          {{form.input("email", "email address", "email", true)}}
-          {{form.input("phone", "phone number", "tel", false)}}
-          {{form.input("address", "address", "text", true)}}
-          {{form.input("organization", "organization", "text", false)}}
+          {{form.input("Name", "name", "text", true)}}
+          {{form.input("Email", "email address", "email", true)}}
+          {{form.input("Phone", "phone number", "tel", false)}}
+          {{form.input("Address", "address", "text", true)}}
+          {{form.input("Organization", "organization", "text", false)}}
           {{form.industry()}}
 
-          {{form.submit("message")}}
+          {{form.submit("Message")}}
         </form>
       </div>
     </div>

@@ -26,7 +26,7 @@
       <div ng-controller="FormController">
         <form name="form" role="form" novalidate ng-cloak>
           {{form.multi(
-              "type_of_data",
+              "Type of Data",
               "type of data",
               "radio",
               [
@@ -38,9 +38,9 @@
               true
           )}}
 
-          {% set is_historical = "form_model.type_of_data == 'Historical Imagery'" %}
+          {% set is_historical = "form_model['Type of Data'] == 'Historical Imagery'" %}
             {{form.multi(
-                "time_frame",
+                "Historical Imagery Time Frame",
                 "time frame",
                 "radio",
                 [
@@ -52,7 +52,7 @@
             )}}
 
             {{form.multi(
-                "medium",
+                "Historical Imagery Medium",
                 "medium",
                 "radio",
                 [
@@ -63,9 +63,9 @@
                 is_historical
             )}}
 
-            {% set is_digital = is_historical + " && form_model.medium == 'Digital'" %}
+            {% set is_digital = is_historical + " && form_model['Historical Imagery Medium'] == 'Digital'" %}
               {{form.checkbox(
-                "georeference",
+                "Georeference",
                 "Georeference",
                 "The data should be georeferenced.",
                 false,
@@ -74,9 +74,9 @@
 
               {{form.software_inputs(is_digital)}}
 
-          {% set is_lidar = "form_model.type_of_data == 'LiDAR'" %}
+          {% set is_lidar = "form_model['Type of Data'] == 'LiDAR'" %}
             {{form.multi(
-                "lidar_format",
+                "LiDAR Data Format",
                 "Data Format",
                 "checkbox",
                 [
@@ -89,7 +89,7 @@
             )}}
 
             {{form.multi(
-                "harddrive",
+                "Hard Drive Option",
                 "hard drive",
                 "radio",
                 [
@@ -101,7 +101,7 @@
             )}}
 
             {{form.checkbox(
-                "lidar_site_file",
+                "LiDAR Site File",
                 "Site file",
                 "I have a file that contains the extent of the data I am requesting.",
                 false,
@@ -109,7 +109,7 @@
             )}}
 
             {{form.textarea(
-                "lidar_description",
+                "LiDAR Description",
                 {
                   label: 'LiDAR Description',
                   help: "Description of the LiDAR data you are requesting."
@@ -119,9 +119,9 @@
             )}}
 
 
-          {% set is_maps = "form_model.type_of_data == 'Maps'" %}
+          {% set is_maps = "form_model['Type of Data'] == 'Maps'" %}
             {{form.multi(
-                "type_of_map",
+                "Type of Map",
                 "type of map",
                 "radio",
                 [
@@ -132,9 +132,9 @@
                 is_maps
             )}}
 
-            {% set is_not_tnris = is_maps + " && form_model.type_of_map == 'Not TNRIS'" %}
+            {% set is_not_tnris = is_maps + " && form_model['Type of Map'] == 'Not TNRIS'" %}
               {{form.multi(
-                  "map_option",
+                  "Map Option",
                   "map option",
                   "radio",
                   [
@@ -147,7 +147,7 @@
               )}}
 
               {{form.textarea(
-                  "map_description",
+                  "Map Description",
                   {
                     label: 'map description',
                     help: "List all quads/panels and specify quantity for each map"
@@ -156,9 +156,9 @@
                   is_not_tnris
               )}}
 
-            {% set is_tnris = is_maps + " && form_model.type_of_map == 'TNRIS'" %}
+            {% set is_tnris = is_maps + " && form_model['Type of Map'] == 'TNRIS'" %}
               {{form.multi(
-                  "map_size",
+                  "Map Size",
                   "map size",
                   "radio",
                   [
@@ -172,9 +172,9 @@
                   is_tnris
               )}}
 
-              {% set is_custom = is_tnris + " && form_model.map_size == 'custom'" %}
+              {% set is_custom = is_tnris + " && form_model['Map Size'] == 'custom'" %}
                 {{form.input(
-                    "custom_map_size",
+                    "Custom Map Size",
                     "custom size",
                     "text",
                     true,
@@ -182,9 +182,9 @@
                 )}}
 
 
-            {% set show_scale = "(" + is_tnris + ") || form_model.medium == 'Paper'" %}
+            {% set show_scale = "(" + is_tnris + ") || form_model['Historical Imagery Medium'] == 'Paper'" %}
               {{form.input(
-                  "map_scale",
+                  "Map Scale",
                   {
                     label: 'scale',
                     help: 'For example: 1" = 500"'
@@ -195,7 +195,7 @@
               )}}
 
               {{form.input(
-                  "map_title",
+                  "Map Title",
                   "map title",
                   "text",
                   true,
@@ -203,7 +203,7 @@
               )}}
 
               {{form.input(
-                  "map_date",
+                  "Map Date",
                   "map date",
                   "text",
                   true,
@@ -211,7 +211,7 @@
               )}}
 
           {{form.textarea(
-              "additional_info",
+              "Additional Info",
               {
                 label: 'Additional Information',
                 placeholder: 'Additional information or comments about your order'
@@ -219,38 +219,38 @@
               false
           )}}
 
-          {{form.input("name", "name", "text", true)}}
-          {{form.input("organization", "organization", "text", false)}}
+          {{form.input("Name", "name", "text", true)}}
+          {{form.input("Organization", "organization", "text", false)}}
 
           {{form.industry()}}
-          {{form.input("address_1", "address 1", "text", true)}}
-          {{form.input("address_2", "address 2", "text", false)}}
-          {{form.input("city", "city", "text", true)}}
-          {{form.input("state", "state", "text", true)}}
-          {{form.input("zip", "zip", "text", true)}}
-          {{form.input("email", "email address", "email", true)}}
-          {{form.input("phone", "phone number", "tel", false)}}
-          {{form.input("fax", "fax number", "tel", false)}}
+          {{form.input("Address_1", "address 1", "text", true)}}
+          {{form.input("Address_2", "address 2", "text", false)}}
+          {{form.input("City", "city", "text", true)}}
+          {{form.input("State", "state", "text", true)}}
+          {{form.input("Zip", "zip", "text", true)}}
+          {{form.input("Email", "email address", "email", true)}}
+          {{form.input("Phone", "phone number", "tel", false)}}
+          {{form.input("Fax", "fax number", "tel", false)}}
 
           {{form.multi(
-              "delivery_method",
+              "Delivery Method",
               "delivery method",
               "radio",
               [
                 ['USPS', 'U.S.P.S'],
                 ['FedEx', 'Fed-Ex ($10.00 - $15.00)'],
-                ['FedEx_Customer', 'Fed-Ex charged to customer number'],
+                ['FedEx Customer Charged', 'Fed-Ex charged to customer number'],
                 ['FTP', 'File Transfer Protocol (FTP)']
               ],
               true
           )}}
 
           {{form.input(
-            "FedEx_Customer_Number", "Customer FedEx Account Number", "text", true,
-            "form_model.delivery_method == 'FedEx_Customer'")}}
+            "FedEx Customer Number", "Customer FedEx Account Number", "text", true,
+            "form_model['Delivery Method'] == 'FedEx Customer Charged'")}}
 
           {{form.multi(
-              "payment_method",
+              "Payment Method",
               "payment method",
               "radio",
               [
@@ -263,12 +263,12 @@
           )}}
 
           {{form.input(
-            "check_number", "Check Number", "text", true,
-            "form_model.payment_method == 'Check'")}}
+            "Check Number", "Check Number", "text", true,
+            "form_model['Payment Method'] == 'Check'")}}
 
           {{form.input(
-            "purchase_order_number", "Payment Order Number", "text", true,
-            "form_model.payment_method == 'Purchase Order'")}}
+            "Purchase Order Number", "Purchase Order Number", "text", true,
+            "form_model['Payment Method'] == 'Purchase Order'")}}
 
 
           {{form.submit("order")}}

@@ -101,7 +101,7 @@
   {{after(name, display, type, required)}}
 
   {% if add_other_option %}
-    {% set other_name = name + '_other' %}
+    {% set other_name = name + ' (other)' %}
     {% set other_display = display + ' (other)' %}
     {% if show %}
       {% set other_show = show + " && form_model['" + name + "'] == 'Other'" %}

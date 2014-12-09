@@ -2,7 +2,7 @@
 {% block contents %}
   <div class="row">
     <ol class="breadcrumb">
-      <li><a href="/"><span class="glyphicon glyphicon-home"> Home</a></li>
+      <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
       <li><a href="maps-and-data">Maps &amp; Data</a></li>
       <li><a href="data-catalog">Data Catalog</a></li>
       <li><a href="data-catalog">{{ category }}</a></li>
@@ -18,11 +18,19 @@
         <img class="img-responsive image-two" src="{{ urban_image }}" alt="Image preview of urban features in {{ name }} data">
         {% endif %} -->
           <div class="btn-group">
-            {% if overview_image %}<button type="button" class="btn btn-tnris {% if overview_image %}disabled{% endif %}"><span class="glyphicon glyphicon-camera"></span> overview</button>{% endif %}
-            {% if detail_image %}<button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> detail</button>{% endif %}
-            {% if urban_image %}<button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> urban</button>{% endif %}
-            {% if natural_image %}<button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> natural features</button>{% endif %}
-            <button type="button" class="btn btn-danger"><i class="fa fa-crosshairs"></i> Status Map</button>
+            {% if overview_image %}
+              <button type="button" class="btn btn-tnris {% if overview_image %}disabled{% endif %}"><span class="glyphicon glyphicon-camera"></span> overview</button>
+            {% endif %}
+            {% if detail_image %}
+              <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> detail</button>
+            {% endif %}
+            {% if urban_image %}
+              <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> urban</button>
+            {% endif %}
+            {% if natural_image %}
+              <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> natural features</button>
+            {% endif %}
+            <!-- <button type="button" class="btn btn-danger"><i class="fa fa-crosshairs"></i> Status Map</button> -->
           </div>
           <!-- <div class="caption bs-callout bs-info hidden-sm hidden-xs">
             <p>{{ overview_caption }}</p>
@@ -69,7 +77,9 @@
           {% if download=='T' %}
           <h4>Data Search &amp; Download</h4>
           <p>Use our online tool to specify the geographic area for which you would like to download the <em>{{ name }}</em> data set.</p>
-          <p> <a href="#"  class="btn btn-tnris btn-lg"><span class="glyphicon glyphicon-search"></span> Launch <span class="hidden-sm hidden-xs hidden-md">Data Search &amp; </span>Download </a></p>
+          <p> <a href="data-download"  class="btn btn-tnris btn-lg"><span class="glyphicon glyphicon-search"></span> Launch <span class="hidden-sm hidden-xs hidden-md">Data Search &amp; </span>Download </a></p>
+
+
           {% endif %}
 
           {% if download_link %}
@@ -81,7 +91,7 @@
 
           <h4>Custom Ordering</h4>
           <p><em>{{ name }}</em> is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> for the cost of reproduction.</p>
-          <p> <a href="#"  class="btn btn-success btn-lg"><span class="glyphicon glyphicon-envelope"></span> Order <span class="hidden-sm hidden-xs hidden-md">Data</span></a></p>
+          <p> <a href="order-data"  class="btn btn-success btn-lg"><span class="glyphicon glyphicon-envelope"></span> Order <span class="hidden-sm hidden-xs hidden-md">Data</span></a></p>
           
           {% if wms_link %}      
           <h4>Online Mapping Service</h4>

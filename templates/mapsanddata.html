@@ -4,8 +4,22 @@
 <div class="row">
     <div id="dataPageContent" class="col-md-12">
         <h1>{{ title }}</h1>
-        <div class="mainBlurb">{{ abstract }}
-{{ contents|safe }}
+        <div class="row">
+            <div class="col-md-8 lead">
+            {{ contents|safe }}
+            </div>
+            <div class="col-md-8">
+                <div class="bs-callout bs-callout-info">
+                    <div class="panel-body">
+                        <a href="#" class="btn btn-success btn-lg btn-center"><span class="glyphicon glyphicon-envelope"></span> Custom Data Order Form</a>
+                        <p>
+                            This is a direct link to our Custom Data Order form to obtain customer service through the <a href="research-and-distribution"><abbr title="Research & Distribution">RDC</abbr></a><p>
+                            <h4>Important Note</h4>
+                            <p> <strong>Many datasets are available online and don't require custom ordering</strong></p>
+                        <p>We recommend exploring our <a href="data-catalog">data catalog</a> if you are unfamiliar with TNRIS data or require more information.</p>
+                    </div>
+                </div>
+            </div>
         </div>
          
         {% block mapsdata_content %}
@@ -69,7 +83,7 @@
                 <a href="mapsanddata/custom-maps" class="btn btn-tnris btn-lg">Learn More</a>
             </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <!-- <div class="col-md-6 col-sm-6">
                 <h2>Educational Resources</h2>
                 <div class="media">
                     <img class="media-object pull-left" src="holder.js/200x120" alt="...">
@@ -84,7 +98,7 @@
                     <p>TNRIS incorporates many open source technologies that are available to developers with interest</p>
                     <a href="#" class="btn btn-tnris btn-lg">Learn More</a>
                 </div>
-            </div>
+            </div> -->
         </div>
         {% endblock mapsdata_content %}
     </div>

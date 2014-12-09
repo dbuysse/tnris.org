@@ -8,39 +8,39 @@
   {% if required %}ng-required="{{requiredStr}}"{% endif %}
 {%- endmacro -%}
 
-{%- macro before(name, display, required, show) -%}
+{%- macro before(name, display, type, required, show) -%}
   {% set label = display.label || display %}
 
   <div class="form-group has-feedback" ng-class="{'has-error': errors.{{name}}}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
-    <div class="col-sm-3 label-col">
-      <label for="{{name}}" class="control-label">{{label|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
-    </div>
-    <div class="col-sm-9">
+    <label for="{{name}}" class="control-label">{{label|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
+    {% if type == 'radio' || type == 'checkbox' %}
+      {{errors_and_help(name, display, type, required, 'error-' + type)}}
+    {% endif %}
 {%- endmacro -%}
 
 {%- macro after(name, display, type, required) -%}
-  {% set label = display.label || display %}
-  {% if type == 'radio' || type == 'checkbox' %}
-    {% set error_side = 'pull-left' %}
-   {%- else  -%}
-    {% set error_side = 'pull-right' %}
+  {% if type != 'radio' && type != 'checkbox' %}
+    {{errors_and_help(name, display, required, type, 'pull-right')}}
   {% endif %}
-      <div ng-show="errors.{{name}}" class="error {{error_side}}">
-        {% if required %}
-          <div ng-show="form.{{name}}.$error.required">{{label|capitalize}} is required.</div>
-        {% endif %}
-        <div ng-show="form.{{name}}.$error.{{type}}">{{label|capitalize}} must be valid.</div>
-      </div>
-      {% if display.help %}
-        <div id="help-block-{{name}}" class="help-block pull-left">{{display.help}}</div>
-      {% endif %}
-    </div>
   </div>
+{%- endmacro -%}
+
+{%- macro errors_and_help(name, display, type, required, error_side) -%}
+  {% set label = display.label || display %}
+  <div ng-show="errors.{{name}}" class="error{% if error_side %} {{error_side}}{% endif %}">
+    {% if required %}
+      <div ng-show="form.{{name}}.$error.required">{{label|capitalize}} is required.</div>
+    {% endif %}
+    <div ng-show="form.{{name}}.$error.{{type}}">{{label|capitalize}} must be valid.</div>
+  </div>
+  {% if display.help %}
+    <div id="help-block-{{name}}" class="help-block">{{display.help}}</div>
+  {% endif %}
 {%- endmacro -%}
 
 
 {%- macro checkbox(name, label, description, required, show) -%}
-  {{before(name, label, required, show)}}
+  {{before(name, label, type, required, show)}}
     {% set type = 'checkbox' %}
     <div class="checkbox">
       <label>
@@ -55,14 +55,14 @@
   {% set label = display.label || display %}
   {% set placeholder = display.placeholder || label %}
 
-  {{before(name, display, required, show)}}
+  {{before(name, display, type, required, show)}}
     <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder|capitalize}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}} />
     <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{after(name, display, type, required)}}
 {%- endmacro -%}
 
 {%- macro multi(name, display, type, options, required, show) -%}
-  {{before(name, display, required, show)}}
+  {{before(name, display, type, required, show)}}
     {% set model_name = "form_model." + name %}
 
     {% for option in options %}
@@ -89,19 +89,32 @@
   {{after(name, display, type, required)}}
 {%- endmacro -%}
 
-{%- macro select(name, display, options, required, show) -%}
+{%- macro select(name, display, options, required, show, add_other_option) -%}
   {% set type="select" %}
-  {{before(name, display, required, show)}}
+  {% if add_other_option %}
+    {% set options = options.concat('Other') %}
+  {% endif %}
+  {{before(name, display, type, required, show)}}
     <select name="{{name}}" class="form-control" ng-model="form_model.{{name}}" ng-change="updateItem(form.{{name}})" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model.{{name}}}" {{requiredAttr(required, show)}}>
       <option value="">Select a {{display}}</option>
     </select>
   {{after(name, display, type, required)}}
+
+  {% if add_other_option %}
+    {% set other_name = name + '_other' %}
+    {% set other_display = display + ' (other)' %}
+    {% set other_show = 'form_model.' + name + " == 'Other'" %}
+    {{input(other_name, other_display, 'text', true, other_show)}}
+  {% endif %}
 {%- endmacro -%}
 
-{%- macro submit() -%}
+{%- macro submit(form_name) -%}
   <div class="row">
-    <div class="col-xs-12 col-sm-offset-3 col-sm-9">
-      <button type="submit" class="btn btn-primary" ng-click="submit(form_model)">Submit</button>
+    <div class="col-xs-12 col-sm-offset-3 col-sm-9" ng-switch="status">
+      <button ng-switch-when="error" type="submit" class="btn btn-danger" ng-click="submit(form_model)">There was an error. Please try again.</button>
+      <button ng-switch-when="submitting" type="submit" class="btn btn-info" ng-click="submit(form_model)">Sending now...</button>
+      <button ng-switch-when="success" type="submit" class="btn btn-success" ng-click="submit(form_model)" disabled>Your {{form_name}} has been sent.</button>
+      <button ng-switch-default type="submit" class="btn btn-primary" ng-click="submit(form_model)">Submit</button>
     </div>
   </div>
 {%- endmacro -%}
@@ -111,8 +124,62 @@
   {% set placeholder = display.placeholder || label %}
 
   {% set type="textarea" %}
-  {{before(name, display, required, show)}}
+  {{before(name, display, type, required, show)}}
     <textarea class="form-control" name="{{name}}" rows="4" placeholder="{{placeholder|capitalize}}" ng-model="form_model.{{name}}" ng-blur="updateItem(form.{{name}})" {{requiredAttr(required, show)}}></textarea>
     <span ng-show="errors.{{name}}" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{after(name, display, type, required)}}
+{%- endmacro -%}
+
+
+{# reused input components #}}
+{%- macro industry() -%}
+  {% set industries = [
+    'Agriculture',
+    'Cartography',
+    'Conservation',
+    'Construction',
+    'Consulting',
+    'Education',
+    'Emergency Management',
+    'Environmental',
+    'Forestry',
+    'Government',
+    'Insurance',
+    'Law Enforcement',
+    'Oil and Gas',
+    'Public Health',
+    'Retail',
+    'Utilities',
+    'Urban Planning'
+  ] %}
+  {{form.select("industry", "industry", industries, true, true, true)}}
+{%- endmacro -%}
+
+{%- macro software_inputs(show_software) -%}
+  {{form.select(
+      "software",
+      "software",
+      [
+        'ArcMap',
+        'ENVI',
+        'ERDAS',
+        'Global Mapper',
+        'Integraph',
+        'LP360',
+        'Microstation',
+        'PostGIS',
+        'QGIS'
+      ],
+      true,
+      show_software,
+      true
+  )}}
+
+  {{form.input(
+      "software_version",
+      "software version",
+      "text",
+      true,
+      show_software
+  )}}
 {%- endmacro -%}

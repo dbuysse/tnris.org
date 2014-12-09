@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block contents %}
+<div class="row">
+	<div class="col-md-12">
+		<h1>{{title}}</h1>
+		{% if abstract %}<div class="lead">{{abstract}}</div>{% endif %}
+		{{ contents|safe }}
+
+	</div>
+</div>
+
+{% endblock contents %}
+
+
+

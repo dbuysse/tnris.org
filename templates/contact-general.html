@@ -6,6 +6,13 @@
 {% block styles %}
   {% parent %}
 
+  <!-- note: this rule is included here to avoid distracting flashes/glitches if css file is slow or fails to load -->
+  <style type="text/css">
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none !important;
+    }
+  </style>
+
   <link href="css/contact.css" rel="stylesheet">
 {% endblock scripts %}
 
@@ -36,94 +43,45 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-md-8">
+  <div class="col-xs-12 col-sm-10 col-md-6">
     <div id="ng-app" ng-app="FormApp">
       <div ng-controller="FormController">
-        <form name="form" role="form" class="form-horizontal" novalidate ng-cloak>
+        <form name="form" role="form" novalidate ng-cloak>
+
+          {{form.select(
+            "reason",
+            "reason for contacting",
+              [
+              'TNRIS Data',
+              'TNRIS Training',
+              'Borderland Information Center',
+              'GEMSS',
+              'General Inquiry',
+              'Floodplain Mapping',
+              'Strategic Mapping Program',
+              'Texas GIS Forum'
+            ],
+            true
+          )}}
+
+          {% set show_software = "form_model.reason == 'TNRIS Data'" %}
+            {{form.software_inputs(show_software)}}
+
+          {{form.textarea(
+              "question_or_comments",
+              "Question / Comments",
+              true,
+              true
+          )}}
 
           {{form.input("name", "name", "text", true)}}
           {{form.input("email", "email address", "email", true)}}
           {{form.input("phone", "phone number", "tel", false)}}
           {{form.input("address", "address", "text", true)}}
+          {{form.input("organization", "organization", "text", false)}}
+          {{form.industry()}}
 
-          {% set industries = [
-            'Agriculture',
-            'Cartography',
-            'Conservation',
-            'Construction',
-            'Consulting',
-            'Education',
-            'Emergency Management',
-            'Environmental',
-            'Forestry',
-            'Government',
-            'Insurance',
-            'Law Enforcement',
-            'Oil and Gas',
-            'Public Health',
-            'Retail',
-            'Utilities',
-            'Urban Planning',
-            'Other'
-          ] %}
-          {{form.select("industry", "industry", industries, true)}}
-
-          {% set reasons = [
-            'TNRIS Data',
-            'TNRIS Training',
-            'Borderland Information Center',
-            'GEMSS',
-            'General Inquiry',
-            'Floodplain Mapping',
-            'Strategic Mapping Program',
-            'Texas GIS Forum'
-          ] %}
-          {{form.select("reason", "reason for contacting", reasons, true)}}
-
-          <div ng-show="form_model.reason == 'TNRIS Data'">
-            {% set data_list = [
-              'Historical Imagery',
-              'LiDAR',
-              'Maps',
-              'OrthoImagery',
-              'Vector'
-            ] %}
-            {{form.select("type_of_data", "type of data", data_list, true)}}
-
-            <div ng-show="form_model.type_of_data == 'Historical Imagery'">
-              {% set time_frames = [
-                'Single Year',
-                'Historical'
-              ] %}
-              {{multi("time_frame", "time frame", 'radio', time_frames, true)}}
-
-              {% set media = [
-                'Paper',
-                'Digital'
-              ] %}
-              {{multi("medium", "medium", 'radio', media, true)}}
-
-              <div ng-show="form_model.medium == 'Digital'">
-                {{form.checkbox("georeference", "Georeference", "The data needs to be georefrenced.")}}
-              </div>
-            </div>
-
-            {% set software = [
-              'ArcMap',
-              'ENVI',
-              'ERDAS',
-              'Global Mapper',
-              'Integraph',
-              'LP360',
-              'Microstation',
-              'PostGIS',
-              'QGIS',
-              'Other'
-            ] %}
-            {{form.select("software", "software", software, true)}}
-          </div>
-
-          {{form.submit()}}
+          {{form.submit("message")}}
         </form>
       </div>
     </div>

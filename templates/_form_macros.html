@@ -103,7 +103,11 @@
   {% if add_other_option %}
     {% set other_name = name + '_other' %}
     {% set other_display = display + ' (other)' %}
-    {% set other_show = "form_model['" + name + "'] == 'Other'" %}
+    {% if show %}
+      {% set other_show = show + " && form_model['" + name + "'] == 'Other'" %}
+     {%- else  -%}
+      {% set other_show = "form_model['" + name + "'] == 'Other'" %}
+    {% endif %}
     {{input(other_name, other_display, 'text', true, other_show)}}
   {% endif %}
 {%- endmacro -%}

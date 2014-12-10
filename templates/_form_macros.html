@@ -114,9 +114,28 @@
 
 {%- macro submit(form_name) -%}
   <div class="row">
-    <div class="col-xs-12 col-sm-offset-3 col-sm-9" ng-switch="status">
-      <button ng-switch-when="error" type="submit" class="btn btn-danger" ng-click="submit(form_model)">There was an error. Please try again.</button>
-      <button ng-switch-when="submitting" type="submit" class="btn btn-info" ng-click="submit(form_model)">Sending now...</button>
+    <div class="col-xs-12 centered" ng-switch="status">
+      <div ng-switch-when="error">
+        <div class="row">
+          <button type="submit" class="btn btn-danger" ng-click="submit(form_model)">Not Sent</button>
+        </div>
+        <div class="row">
+          <div class="has-error col-xs-12 col-sm-8 col-sm-offset-2">
+            There was a server error. Please wait a moment and try again.
+          </div>
+        </div>
+      </div>
+      <div ng-switch-when="invalid" >
+        <div class="row">
+          <button type="submit" class="btn btn-danger" ng-click="submit(form_model)">Not Sent</button>
+        </div>
+        <div class="row">
+          <div class="has-error col-xs-12 col-sm-8 col-sm-offset-2">
+            The form is invalid due to at least one invalid or missing field. Please fix and try again.
+          </div>
+        </div>
+      </div>
+      <button ng-switch-when="submitting" type="submit" class="btn btn-info" ng-click="submit(form_model)">Sending...</button>
       <button ng-switch-when="success" type="submit" class="btn btn-success" ng-click="submit(form_model)" disabled>Your {{form_name}} has been sent.</button>
       <button ng-switch-default type="submit" class="btn btn-primary" ng-click="submit(form_model)">Submit</button>
     </div>

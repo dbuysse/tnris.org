@@ -17,7 +17,9 @@ angular.module('FormApp', ['ngAnimate'])
           $scope.errors[item.$name] = item.$invalid;
         });
 
-      if (!$scope.form.$invalid) {
+      if ($scope.form.$invalid) {
+        $scope.status = 'invalid';
+      } else {
         $scope.status = 'submitting';
 
         $http.post(contact_app_url, $scope.master)
@@ -33,4 +35,10 @@ angular.module('FormApp', ['ngAnimate'])
     $scope.updateItem = function (item){
       $scope.errors[item.$name] = item.$invalid;
     };
+
+    $scope.$watch('form.$invalid', function (value) {
+      if (!value && $scope.status === 'invalid') {
+        $scope.status = 'not submitted';
+      }
+    });
   }]);

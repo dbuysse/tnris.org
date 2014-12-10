@@ -1,6 +1,12 @@
 'use strict';
 
-angular.module('FormApp', ['ngAnimate'])
+angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
+  .config(function(grecaptchaProvider) {
+    grecaptchaProvider.setParameters({
+      sitekey: '6Lf8GP8SAAAAAFx2H53RtfDO18x7S1q_0pGNdmbd',
+      theme: 'light'
+    });
+  })
   .controller('FormController', ['$scope', '$http', function($scope, $http) {
     var contact_app_url = 'http://localhost:8001/';
 

@@ -1,4 +1,5 @@
 @import "partials/variables";
+@import "partials/mixins";
 @import "bourbon/bourbon";
 
 
@@ -33,6 +34,15 @@ label {
 .radio, .checkbox, .error-radio, .error-checkbox {
   margin-top: 0px;
   margin-left: 20px;
+}
+
+.submit {
+  margin-top: 10px;
+
+}
+
+.g-recaptcha div div {
+    @include center-block();
 }
 
 .form-group {

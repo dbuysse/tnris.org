@@ -102,8 +102,9 @@ gulp.task('watch', function () {
 gulp.task('webserver', ['dist'],  function() {
   gulp.src(dirs.dist)
     .pipe(webserver({
-      livereload: true,
-      open: true
+      livereload: true
+      //livereload: true,
+      //open: true
     }));
 });
 
@@ -172,7 +173,9 @@ gulp.task('dist-metal', function () {
           pattern: ':collection/:date/:urlEnd',
           date: 'YYYY-MM-DD'
         }))
-        .use(crossref())
+        .use(crossref({
+          'data-download': '/data-download/'
+        }))
         .use(based())
         .use(replace({
           contents: function(contents) {

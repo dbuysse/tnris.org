@@ -142,7 +142,7 @@ gulp.task('dist-metal', function () {
             file = extend(file, data);
           } else {
             file = extend(data, {
-              template: 'data_catalog_entry.html',
+              template: 'data-catalog-entry.html',
               contents: new Buffer('')
             });
           }

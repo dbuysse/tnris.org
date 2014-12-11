@@ -41,8 +41,12 @@ label {
 
 }
 
-.g-recaptcha div div {
+.recaptcha {
+  margin-top: 5px;
+
+  div div {
     @include center-block();
+  }
 }
 
 .form-group {

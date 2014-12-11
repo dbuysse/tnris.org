@@ -113,9 +113,10 @@
 {%- endmacro -%}
 
 {%- macro submit(form_name) -%}
-  <div class="form-group">
+  <div class="form-group has-feedback" ng-class="{'has-error': errors['recaptcha']}">
     <div class="col-xs-12">
-      <div grecaptcha ng-model="form_model['recaptcha']"></div>
+      <div grecaptcha class="recaptcha" ng-model="recaptcha"></div>
+      <div ng-show="errors['recaptcha']" class="centered">reCAPTCHA is required for submission</div>
     </div>
   </div>
   <div class="form-group">

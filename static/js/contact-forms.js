@@ -16,7 +16,7 @@ angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
     $scope.recaptcha = '';
 
     $scope.submit = function(form) {
-      $scope.master = angular.copy(form);
+      $scope.master = angular.copy(form) || {};
 
       _($scope.form)
         .filter(function(value, key) {return key[0] !== '$';})
@@ -24,6 +24,7 @@ angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
           $scope.errors[item.$name] = item.$invalid;
         });
 
+      $scope.master.recaptcha = $scope.recaptcha;
       $scope.errors['recaptcha'] = !$scope.recaptcha;
 
       if (_.any($scope.errors)) {
@@ -34,6 +35,11 @@ angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
         $http.post(contact_app_url, $scope.master)
           .error(function(data, status, headers, config) {
             $scope.status = 'error';
+            if (data && data.message) {
+              $scope.serverError = data.message ;
+            } else {
+              $scope.serverError = 'There was a server error. Please wait a moment and try again.';
+            }
           })
           .success(function(data, status, headers, config) {
             $scope.status = 'success';

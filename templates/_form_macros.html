@@ -113,6 +113,8 @@
 {%- endmacro -%}
 
 {%- macro submit(form_name) -%}
+  {% import '_macros.html' as macros %}
+
   <div class="form-group has-feedback" ng-class="{'has-error': errors['recaptcha']}">
     <div class="col-xs-12">
       <div grecaptcha class="recaptcha" ng-model="recaptcha"></div>
@@ -127,7 +129,7 @@
         </div>
         <div class="row">
           <div class="has-error col-xs-12">
-            There was a server error. Please wait a moment and try again.
+            {{macros.ngCurly('serverError')}}
           </div>
         </div>
       </div>

@@ -1,5 +1,52 @@
 {% extends "base.html" %}
+
 {% block contents %}
+  {%- set images = [
+    {
+      'alt': 'Overview image preview of ' + name + 'data',
+      'button': {
+        'class': 'btn-tnris',
+        'icon': 'glyphicon glyphicon-camera',
+        'label': 'overview'
+      },
+      'url': overview_image
+    }, {
+      'alt': 'Image preview of urban features in ' + name + ' data',
+      'button': {
+        'class': 'btn-tnris',
+        'icon': 'glyphicon glyphicon-camera',
+        'label': 'urban'
+      },
+      'label': 'urban',
+      'url': urban_image
+    }, {
+      'alt': 'Image preview of detailed features in ' + name + ' data',
+      'button': {
+        'class': 'btn-tnris',
+        'icon': 'glyphicon glyphicon-camera',
+        'label': 'detail'
+      },
+      'url': detail_image
+    }, {
+      'alt': 'Image preview of natural features in ' + name + ' data',
+      'button': {
+        'class': 'btn-tnris',
+        'icon': 'glyphicon glyphicon-camera',
+        'label': 'natural features'
+      },
+      'url': natural_image
+    }, {
+      'alt': 'Status map for ' + name + ' data',
+      'button': {
+        'class': 'btn-danger',
+        'icon': 'fa fa-crosshairs',
+        'label': 'status map'
+      },
+      'url': status_map_image
+    }
+  ] -%}
+
+
   <div class="row">
     <ol class="breadcrumb">
       <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
@@ -10,41 +57,29 @@
     </ol>
   </div>
   <div id="catalogEntryContent" class="row">
-      <h1>{{ name }}</h1>
-      <div id="catalog-main-image">
-       {% if overview_image %}
-        <img class="img-responsive image-one" src="{{ overview_image }}" alt="Overview image preview of {{ name }} data">
-       <!--  {% if urban_image %}
-        <img class="img-responsive image-two" src="{{ urban_image }}" alt="Image preview of urban features in {{ name }} data">
-        {% endif %} -->
-          <div class="btn-group">
-            {% if overview_image %}
-              <button type="button" class="btn btn-tnris {% if overview_image %}disabled{% endif %}"><span class="glyphicon glyphicon-camera"></span> overview</button>
+    <h1>{{ name }}</h1>
+    <div id="catalog-main-image">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          {% set active_set = false %}
+          {% for image in images %}
+            {% if image.url %}
+              <div class="item{% if !active_set %} active{% endif %}">
+                <img class="img-responsive image-one" src="{{image.url}}" alt="{{image.alt}}">
+              </div>
+              {% set active_set = true %}
             {% endif %}
-            {% if detail_image %}
-              <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> detail</button>
-            {% endif %}
-            {% if urban_image %}
-              <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> urban</button>
-            {% endif %}
-            {% if natural_image %}
-              <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> natural features</button>
-            {% endif %}
-            <!-- <button type="button" class="btn btn-danger"><i class="fa fa-crosshairs"></i> Status Map</button> -->
-          </div>
-          <!-- <div class="caption bs-callout bs-info hidden-sm hidden-xs">
-            <p>{{ overview_caption }}</p>
-          </div> -->
-        {% else %}
-        <img class="img-responsive" src="holder.js/100%x600" alt="No Preview Available"> 
+          {% endfor %}
+        </div>
+
         <div class="btn-group">
-            <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> overview</button>
-            <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> detail</button>
-            <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> urban</button>
-            <button type="button" class="btn btn-tnris"><span class="glyphicon glyphicon-camera"></span> natural features</button>
-            <button type="button" class="btn btn-danger"><i class="fa fa-crosshairs"></i> Status Map</button>
-          </div>
-        {% endif %}
+          {% set i = 0 %}
+          {% for image in images %}
+            {% if image.url %}
+              <button data-target="#carousel-example-generic" data-slide-to="{{i}}" type="button" class="btn {{image.button.class}}"><span class="{{image.button.icon}}"></span> {{image.button.label}}</button>
+              {% set i += 1 %}
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
 
@@ -161,4 +196,12 @@
   </div>
 {% endblock contents %}
 
+{% block scripts %}
+  {% parent %}
 
+  <script type="text/javascript">
+    $(function() {
+      $('.carousel').carousel();
+    });
+  </script>
+{% endblock scripts %}

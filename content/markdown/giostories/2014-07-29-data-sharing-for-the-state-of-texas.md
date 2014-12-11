@@ -1,13 +1,12 @@
 ---
 template: news.html
-title: "Forum Keynote: Scott F. Wolter, Host of 'America Unearthed'"
-author: 2014 Forum
+title: "Data Sharing for the State of Texas"
+author: Felicia Retiz, Deputy GIO
 thumbnail: images/media1.jpg
 mainimage: images/updates/wolterbig.jpg
 abstract: 
-    TNRIS is pleased to announce Forensic geologist Scott Wolter as a keynote
-    speaker at the 2014 GIS Forum! 
-tags: 2014 gis forum
+    Data Sharing is good
+tags: GIO, Data Sharing, GIS, Geospatial
 ---
 
 TNRIS is pleased to announce Forensic geologist Scott Wolter as a keynote speaker at the 2014 GIS Forum! 

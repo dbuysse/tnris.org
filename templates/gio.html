@@ -1,8 +1,24 @@
 {% extends "page.html" %}
 
 {% block extracontent %}
+{% endblock extracontent %}
 
-{% for gio_item in giostories %}
+  {% block sidebarLeft %}
+  <div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2 class="panel-title">Next Meeting</h2>
+    </div>
+    <div class="panel-body">
+      <p>January 20th, 2015<br>
+      2PM to 4PM<br>
+      Stephen F. Austin Building, Room 170<br>
+      1700 N. Congress</p>
+    </div>
+  </div>
+  <h2>Updates</h2>
+
+  {% for gio_item in giostories %}
           {% if loop.index <= 4 %}
             <div class="media">
               <div class="media-body">
@@ -17,4 +33,5 @@
           {% endif %}
         {% endfor %}
 
-{% endblock extracontent %}
+</div>
+  {% endblock sidebarLeft %}

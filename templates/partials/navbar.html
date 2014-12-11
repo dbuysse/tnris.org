@@ -5,11 +5,18 @@
     <a class="navbar-twdb hidden-xs pull-right" href="http://www.twdb.texas.gov/">part of the Texas Water Development Board</a>
   </div>
 </div>
-
-<div id="mainNav" class="navbar navbar-inverse" data-spy="affix" data-offset-top="25" data-offset-bottom="200" role="navigation">
+<!-- data-spy="affix" data-offset-top="25" data-offset-bottom="200"
+ --><div id="mainNav" class="navbar navbar-inverse"  role="navigation">
   <div class="container">
-    <a id="logoCollapse" href="{{ crossref['index'] }}">Texas Natural Resources Information System</a>
-
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a id="navbar-brand" href="{{ crossref['index'] }}">Texas Natural Resources Information System</a>
+  </div>
     <div class="navbar-collapse collapse ">
       <ul class="nav navbar-nav">
         <li>
@@ -28,32 +35,19 @@
           <a class="gio" href="gio">Geographic Information Office</a>
         </li>
       </ul>
-
-       <!--  <div class="input-group">
-        <input type="text" class="form-control" placeholder="Site &amp; Data Search">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-        </span>
-      </div> -->
-    </div><!-- .nav-collapse -->
-
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-
-    <div class="hidden-xs hidden-sm" id="about-contact">
-      <ul>
+<!--             <ul class="nav navbar-nav navbar-right" id="about-contact">
         <li>
           <a href="#"><span class="glyphicon glyphicon-user"></span> About</a>
         </li>
         <li>
           <a href="{{crossref['contact']}}" role="button"><span class="glyphicon glyphicon-comment"></span> Contact Us</a>
         </li>
-      </ul>
-    </div>
+      </ul> -->
+    </div><!-- .nav-collapse -->
+
+    
+
+
   </div>
 </div>
 

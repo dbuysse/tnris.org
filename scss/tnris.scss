@@ -3,6 +3,7 @@
 @import "partials/dataspot";
 @import "partials/mapsanddata";
 @import "partials/jumbotron";
+@import "partials/custompages";
 
 * {
 	margin: 0;
@@ -233,23 +234,27 @@ a.navbar-twdb {
 	&.affix {
 		top: 0;
 	}
+
+	.container {
+		position: relative;
+	}
 }
 
 .navbar-collapse {
 	background: $darkgrey;
 
-	@media(min-width: $break-lg) {
-		float: left;
-		width: 600px;
-	}
+	// @media(min-width: $break-lg) {
+	// 	float: left;
+	// 	width: 600px;
+	// }
 
-	@media(min-width: $break-md) {
-		float: left;
-		width: 550px;
-	}
+	// @media(min-width: $break-md) {
+	// 	float: left;
+	// 	width: 550px;
+	// }
 }
 
-#logoCollapse {
+#navbar-brand {
 	background: url(../images/sm_logo_white.png) 0 0 no-repeat;
 	width: 80px;
 	height: 36px;
@@ -261,30 +266,7 @@ a.navbar-twdb {
 }
 
 #about-contact {
-	width: auto;
-	float: right;
 	margin-top: 15px;
-
-	ul {
-		padding: 0;
-
-		li {
-			display: inline;
-			float: left;
-			list-style: none;
-			margin-right: 20px;
-
-			a {
-				color: white;
-				font-size: 14px;
-
-				&:hover {
-					text-decoration: none;
-					color: $midgrey;
-				}
-			}
-		}
-	}
 }
 
 /* navbar dropdown */
@@ -607,6 +589,12 @@ a.navbar-twdb {
 			color: $bsgrey;
 		}
 
+	.accessibility {
+		background: $lightgrey;
+		font-family: $pragmatica;
+		font-size: 14px;
+		text-align: center;
+	}
 	.copyright {
 		font-size: 11px;
 	}

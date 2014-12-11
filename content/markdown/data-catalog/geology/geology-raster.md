@@ -1,4 +1,4 @@
 ---
-template: data_catalog_entry.html
+template: data-catalog-entry.html
 ---
 testing

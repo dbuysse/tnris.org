@@ -1,4 +1,5 @@
 @import "partials/variables";
+@import "partials/mixins";
 @import "bourbon/bourbon";
 
 
@@ -12,6 +13,10 @@ label {
     font-family: $opensans;
     font-weight: 100;
   }
+}
+
+.centered {
+  text-align: center;
 }
 
 .has-error {
@@ -33,6 +38,19 @@ label {
 .radio, .checkbox, .error-radio, .error-checkbox {
   margin-top: 0px;
   margin-left: 20px;
+}
+
+.submit {
+  margin-top: 10px;
+
+}
+
+.recaptcha {
+  margin-top: 5px;
+
+  div div {
+    @include center-block();
+  }
 }
 
 .form-group {

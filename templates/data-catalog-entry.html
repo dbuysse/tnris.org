@@ -59,7 +59,7 @@
   <div id="catalogEntryContent" class="row">
     <h1>{{ name }}</h1>
     <div id="catalog-main-image">
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div id="carousel-data-catalog" class="carousel slide" data-ride="carousel" data-interval="false">
         <div class="carousel-inner" role="listbox">
           {% set active_set = false %}
           {% for image in images %}
@@ -76,7 +76,7 @@
           {% set i = 0 %}
           {% for image in images %}
             {% if image.url %}
-              <button data-target="#carousel-example-generic" data-slide-to="{{i}}" type="button" class="btn {{image.button.class}}"><span class="{{image.button.icon}}"></span> {{image.button.label}}</button>
+              <button data-target="#carousel-data-catalog" data-slide-to="{{i}}" type="button" class="btn {{image.button.class}}"><span class="{{image.button.icon}}"></span> {{image.button.label}}</button>
               {% set i += 1 %}
             {% endif %}
           {% endfor %}

@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  {% parent %}
+
+  <link rel="stylesheet" href="bower_components/selectize/dist/css/selectize.bootstrap3.css"/>
+  <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css"/>
+
+  <link rel="stylesheet" href="css/data-download.css">
+{% endblock styles %}
+
+{% block contents %}
+<div ng-app="dataDownloadApp">
+  <div ng-controller="dataDownloadCtrl">
+    <div class="container">
+      <div class="row top-row">
+        <div class="col-xs-12 col-sm-8">
+          <h1>Data Search & Download</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <p>Datasets are available at four levels: State, County, Quadrangle, and Quarter-Quadrangle.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <p>You can search by County or Quad below using auto-fill or a drop down list to identify your desired dataset.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Search</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="search search-county">
+            <h3>County</h3>
+            <form id="countyForm" class="form-inline">
+              <div ui-select ng-model="county.selected" theme="selectize">
+                <div ui-select-match placeholder="Select or search for county by name">{{$select.selected.text}}</div>
+                <div ui-select-choices repeat="item in counties | filter: $select.search">
+                  <div ng-bind-html="item.text | highlight: $select.search"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="search search-quad">
+            <h3>Quadrangle</h3>
+            <form id="quadForm" class="form-inline">
+              <div ui-select ng-model="quad.selected" theme="selectize">
+                <div ui-select-match placeholder="Search for quadrangle by name">{{$select.selected.text}}</div>
+                <div ui-select-choices repeat="quad in quads track by $index"
+                         refresh="searchQuads($select.search)"
+                         refresh-delay="0">
+                  <div ng-bind-html="quad.text | highlight: $select.search"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="return-statewide search" ng-if="!('statewide' | isState) && !('' | isState)">
+            <a ui-sref="statewide" id="linkStatewide" style="" title="Return to Statewide Dataset Download">
+              <span class="fa fa-share fa-flip-horizontal" aria-hidden="true"></span>
+              Return to Statewide
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div ui-view></div>
+
+    </div>
+  </div>
+</div>
+{% endblock contents %}
+
+
+{% block scripts %}
+  {% parent %}
+
+  <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-collection/angular-collection.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-select/dist/select.min.js"></script>
+
+  <script type="text/javascript" src="js/data-download/services/DataService.js"></script>
+  <script type="text/javascript" src="js/data-download/services/MapService.js"></script>
+  <script type="text/javascript" src="js/data-download/directives/includeMap.js"></script>
+  <script type="text/javascript" src="js/data-download/directives/resourceGroup.js"></script>
+  <script type="text/javascript" src="js/data-download/controllers/dataDownloadCtrl.js"></script>
+  <script type="text/javascript" src="js/data-download/app.js"></script>
+{% endblock scripts %}

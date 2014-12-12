@@ -8,23 +8,46 @@
 
 <div id="mainNav" class="navbar navbar-inverse" data-spy="affix" data-offset-top="25" data-offset-bottom="200" role="navigation">
   <div class="container">
-    <a id="logoCollapse" href="{{ crossref['index'] }}">Texas Natural Resources Information System</a>
+    <a id="logoCollapse" href="{{crossref['index']}}">Texas Natural Resources Information System</a>
 
     <div class="navbar-collapse collapse ">
       <ul class="nav navbar-nav">
-        <li>
+        <li {% if id === 'maps-and-data' %}class="active"{% endif %}>
           <a href="{{crossref['maps-and-data']}}">Maps &amp; Data</a>
         </li>
-        <li class="dropdown">
-        <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown"><i class="fa fa-tasks"></i> Programs</a>
+        <li class="dropdown {% if id === 'stratmap' || id === 'training' || id === 'hpids' %}active{% endif %}">
+          <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown"><i class="fa fa-tasks"></i> Programs</a>
           <ul class="dropdown-menu inverse-dropdown">
-            <li><a href="{{crossref['stratmap']}}">StratMap<br><small>Strategic Mapping Program</small></a></li>
-            <li><a href="{{crossref['training']}}">Education &amp; Training<br><small>Low-cost and accessible GIS training</small></a></li>
-            <li><a href="{{crossref['hpids']}}">HPIDS<br><small>High Priority Imagery &amp; Data Sets</small></a></li>
-            <li><a href="#">BIC<br><small>Borderlands Information Center</small></a></li>
+            {%- set programs = [
+              {
+                'id': 'stratmap',
+                'name': 'StratMap',
+                'description': 'Strategic Mapping Program'
+              }, {
+                'id': 'training',
+                'name': 'Education &amp; Training',
+                'description': 'Low-cost and accessible GIS training'
+              }, {
+                'id': 'hpids',
+                'name': 'HPIDS',
+                'description': 'High Priority Imagery &amp; Data Sets'
+              }, {
+                'id': 'bic',
+                'name': 'BIC',
+                'description': 'Borderlands Information Center'
+              }
+            ] -%}
+            {% for program in programs %}
+              <li {% if id === program.id %}class="active"{% endif %}>
+                <a href="{{crossref[program.id]}}">
+                  {{program.name}}<br>
+                  <small>{{program.description}}</small>
+                </a>
+              </li>
+            {% endfor %}
           </ul>
         </li>
-        <li>
+        <li {% if id === 'gio' %}class="active"{% endif %}>
           <a class="gio" href="{{crossref['gio']}}">Geographic Information Office</a>
         </li>
       </ul>
@@ -49,7 +72,7 @@
         <li>
           <a href="#"><span class="glyphicon glyphicon-user"></span> About</a>
         </li>
-        <li>
+        <li {% if id === 'contact' %}class="active"{% endif %}>
           <a href="{{crossref['contact']}}" role="button"><span class="glyphicon glyphicon-comment"></span> Contact Us</a>
         </li>
       </ul>

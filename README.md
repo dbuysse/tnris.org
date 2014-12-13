@@ -5,17 +5,20 @@ Mockups for tnris.org redesign
 
 ## Requirements
 
-  - ruby
-  - sass (`gem install sass`)
-  - nodejs
-  - gulp (`npm install -g gulp`)
-  - bower (`npm install -g bower`)
+ - ruby
+ - sass (`gem install sass`)
+ - nodejs
+ - gulp (`npm install -g gulp`)
+ - bower (`npm install -g bower`)
 
 
 ## Setup
 
-Make sure the required software is installed. Then run `npm install` from the
-`./site-mockup` directory, followed by `bower install`.
+Make sure the required software is installed. Then from the root directory of
+this repository:
+
+ - run `npm install`
+ - run `bower install`
 
 
 ## Usage

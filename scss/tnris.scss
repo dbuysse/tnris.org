@@ -162,7 +162,6 @@ h2 {
     text-shadow: 1px 1px 1px $urgentblue;
     margin-top: 8px;
     &:hover {
-      // background: $auburnoutline;
       color: $midgrey;
     }
   }
@@ -178,18 +177,30 @@ h2 {
         margin-left: 0;
     }
   }
-}
 
-.navbar-nav > li > a {
-  font-weight: 100;
-  &.gio {
-    background: url(../images/icons/sm_tx.png) 10px 14px no-repeat;
-    padding-left: 35px;
-    &:hover {
-      background-position: 10px -26px;
+  .navbar-nav {
+    > li > a {
+      font-weight: 100;
+
+      &.gio {
+        background: url(../images/icons/sm_tx.png) 10px 14px no-repeat;
+        padding-left: 35px;
+        &:hover {
+          background-position: 10px -26px;
+        }
+      }
+    }
+
+    &.about-contact > li > a {
+      color: #fff;
+
+      &:hover {
+        color: $midgrey;
+      }
     }
   }
 }
+
 
 a.navbar-twdb {
   font-size: 12px;
@@ -205,28 +216,6 @@ a.navbar-twdb {
   }
 }
 
-#about-contact {
-  width: auto;
-  float: right;
-  margin-top: 15px;
-  ul {
-    padding: 0;
-    li {
-      display: inline;
-      float: left;
-      list-style: none;
-      margin-right: 20px;
-      a {
-        color: white;
-        font-size: 14px;
-        &:hover {
-          text-decoration: none;
-          color: $midgrey;
-        }
-      }
-    }
-  }
-}
 
 /* navbar dropdown */
 

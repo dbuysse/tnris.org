@@ -2,22 +2,34 @@
   <div class="container">
     <span>Texas Natural Resources Information System</span>
     <a class="skip" href="#mainContentAnchor">Skip to Main Content</a>
-    <a class="navbar-twdb hidden-xs pull-right" href="http://www.twdb.texas.gov/">part of the Texas Water Development Board</a>
+    <a class="navbar-twdb hidden-xs hidden-sm pull-right" href="http://www.twdb.texas.gov/">part of the Texas Water Development Board</a>
   </div>
 </div>
 
-<div id="mainNav" class="navbar navbar-inverse" role="navigation">
+<nav id="mainNav" class="navbar navbar-inverse" role="navigation">
   <div class="container">
-    <a id="logoCollapse" href="{{crossref['index']}}">Texas Natural Resources Information System</a>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{crossref['index']}}">
+        <img alt="TNRIS logo" src="images/sm_logo_white.png">
+      </a>
 
-    <div class="navbar-collapse collapse">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li {% if id === 'maps-and-data' %}class="active"{% endif %}>
           <a href="{{crossref['maps-and-data']}}">Maps &amp; Data</a>
         </li>
+
         <li class="dropdown {% if id === 'stratmap' || id === 'training' || id === 'hpids' %}active{% endif %}">
           <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown"><i class="fa fa-tasks"></i> Programs</a>
-          <ul class="dropdown-menu inverse-dropdown">
+          <ul class="dropdown-menu inverse-dropdown" role="menu">
             {%- set programs = [
               {
                 'id': 'stratmap',
@@ -51,24 +63,7 @@
           <a class="gio" href="{{crossref['gio']}}">Geographic Information Office</a>
         </li>
       </ul>
-
-       <!--  <div class="input-group">
-        <input type="text" class="form-control" placeholder="Site &amp; Data Search">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-        </span>
-      </div> -->
-    </div><!-- .nav-collapse -->
-
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-
-    <div class="hidden-xs hidden-sm" id="about-contact">
-      <ul>
+      <ul class="nav navbar-nav navbar-right hidden-sm">
         <li>
           <a href="#"><span class="glyphicon glyphicon-user"></span> About</a>
         </li>
@@ -78,4 +73,4 @@
       </ul>
     </div>
   </div>
-</div>
+</nav>

@@ -168,6 +168,18 @@ h2 {
   }
 }
 
+.navbar {
+  border-radius: 0px;
+
+  .navbar-brand img {
+    margin: -10px 20px 0px -15px;
+
+    @media (max-width: $screen-xs-max) {
+        margin-left: 0;
+    }
+  }
+}
+
 .navbar-nav > li > a {
   font-weight: 100;
   &.gio {
@@ -191,52 +203,6 @@ a.navbar-twdb {
     text-decoration: none;
     color: white;
   }
-  // span {
-  //  display: block;
-  //  text-indent: -9999px;
-  //  background: url(../images/twdb-logo.png) 0 0 no-repeat;
-  //  position: absolute;
-  //  width: 134px;
-  //  height: 37px;
-  //  top: 0;
-  //  right: 0;
-  // }
-}
-
-#mainNav {
-  height: 51px;
-  width: 100%;
-  z-index: 10000;
-  border-radius: 0;
-  &.navbar {
-    margin-bottom: 0px;
-  }
-  &.affix {
-    top: 0;
-  }
-}
-
-.navbar-collapse {
-  background: $darkgrey;
-  @media (min-width: $break-lg) {
-    float: left;
-    width: 600px;
-  }
-  @media (min-width: $break-md) {
-    float: left;
-    width: 550px;
-  }
-}
-
-#logoCollapse {
-  background: url(../images/sm_logo_white.png) 0 0 no-repeat;
-  width: 80px;
-  height: 36px;
-  float: left;
-  z-index: 30000;
-  text-indent: -9999px;
-  margin-right: 20px;
-  margin-top: 5px;
 }
 
 #about-contact {
@@ -285,15 +251,6 @@ a.navbar-twdb {
 }
 
 /* Nav bar Form */
-#mainNav form.navbar-form {
-  &.searchForm {}
-  input.form-control {}
-  // button.btn {
-  //  margin-left: -40px;
-  //  width: 20px;
-  //  background: transparent;
-  // }
-}
 
 /* Home Top */
 #home-top-content {
@@ -460,10 +417,6 @@ a.navbar-twdb {
     background: none;
     list-style: none;
   }
-}
-
-#mainNav.affix + #quickNav {
-  margin-top: 54px;
 }
 
 #quickNav.navbar .nav > li > a:hover {

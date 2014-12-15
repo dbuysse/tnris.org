@@ -549,29 +549,24 @@ a.navbar-twdb {
 }
 
 /* Footer */
-#wrap {
-  // min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  // margin-bottom: -300px;
-  width: 100%;
-  position: relative;
+#wrap-outer {
+  min-height: 100%;
 }
 
-#push, .footer {
-  height: 300px;
-}
-
-.push {
-  border: none;
+#wrap-inner {
+  overflow:auto;
+  padding-bottom: $footer-height;
 }
 
 .footer {
   background: $lightgrey;
   color: #darkgrey;
-  position: relative;
   z-index: 10000;
-  .address-container {}
+  position: relative;
+  margin-top: -$footer-height;
+  min-height: $footer-height;
+  clear:both;
+
   a {
     color: $bsgrey;
     abbr {

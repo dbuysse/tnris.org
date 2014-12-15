@@ -65,6 +65,52 @@ swig.setFilter('urlize', function(input) {
   return urlize(input);
 });
 
+function parseCSV(options) {
+  var name = options.name;
+  var path = options.path;
+  var template = options.template;
+  var filenameKeys = options.filenameKeys;
+  var splitKeys = options.splitKeys || [];
+
+  return csv(path, function parser (data, files, metalsmith) {
+    metalsmith.data[name] = metalsmith.data[name] || [];
+
+    var obj = metalsmith.data[name];
+
+    _.map(splitKeys, function(key) {
+      if (data[key]) {
+        data[key] = data[key]
+          .split(',')
+          .map(function (s) {
+            return s.trim();
+          });
+      }
+    });
+
+    var urlKeys = _.map(filenameKeys, function(key) {
+      var urlized = urlize(data[key]);
+      data['urlized-' + key] = urlized;
+      return urlized;
+    });
+
+    data.filename = [name].concat(urlKeys).join('/') + '.md';
+
+    var file = files[data.filename];
+    if (file) {
+      file = extend(file, data);
+    } else {
+      file = extend(data, {
+        template: template,
+        contents: new Buffer('')
+      });
+    }
+
+    files[data.filename] = file;
+
+    obj.push(file);
+  });
+}
+
 function urlize(str) {
   return str.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-').replace(/-+/g, '-');
 }
@@ -121,35 +167,18 @@ gulp.task('dist-metal', function () {
       })
     .pipe(
       gulpsmith()
-        .use(csv(paths.catalog, function parser (data, files, metalsmith) {
-          metalsmith.data.catalog = metalsmith.data.catalog || [];
-          var catalog = metalsmith.data.catalog;
-
-          if (data.keywords) {
-            data.keywords = data.keywords
-              .split(',')
-              .map(function (s) {
-                return s.trim();
-              });
-          }
-
-          data.cleanName = urlize(data.name);
-          data.cleanCategory = urlize(data.category);
-          data.filename = 'data-catalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
-
-          var file = files[data.filename];
-          if (file) {
-            file = extend(file, data);
-          } else {
-            file = extend(data, {
-              template: 'data-catalog-entry.html',
-              contents: new Buffer('')
-            });
-          }
-
-          files[data.filename] = file;
-
-          catalog.push(file);
+        .use(parseCSV({
+          path: 'content/data-catalog.csv',
+          name: 'catalog',
+          template: 'data-catalog-entry.html',
+          filenameKeys: ['category', 'name'],
+          splitKeys: ['keywords']
+        }))
+        .use(parseCSV({
+          path: 'content/training.csv',
+          name: 'training',
+          template: 'training-entry.html',
+          filenameKeys: ['class_title', 'date']
         }))
         .use(metadata({
           variables: 'variables.yaml'

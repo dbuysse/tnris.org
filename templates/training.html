@@ -1,5 +1,12 @@
 {% extends "page.html" %}
 
+{% block extracontent %}
+  {% for event in training %}
+    title: <a href="{{event.path}}">{{event.class_title}}</a><br>
+    instructor: {{event.instructor}}<br>
+    description: {{event.description}}
+  {% endfor %}
+{% endblock extracontent %}
 
 {% block sidebarLeft %}
 		<h3>Training Facilities</h3>

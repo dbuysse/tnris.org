@@ -1,6 +1,6 @@
 ---
 template: wms.html
-title: Web Mapping Services
+title: Online Mapping Services
 abstract: All web services created at TNRIS are published as both ArcGIS services and OGC compliant WMS services.
 ---
 

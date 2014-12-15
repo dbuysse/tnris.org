@@ -17,18 +17,20 @@ Five additional government agencies contributed funds toward select 1-foot or 6-
 
 
 ![Organizations contributing to Buy-Up area](/images/statewide-orthoimagery/buyup_contributors.jpg)
-
+***
 ##Acquisition Season
 
 ![Leaf-on Imagery sample](/images/statewide-orthoimagery/season_leafon.jpg)
 ![Leaf-off Imagery sample](/images/statewide-orthoimagery/season_leafoff.jpg)
 All orthoimagery products are acquired during the leaf-off (fall/winter) season in TX. Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.
-
+***
 ##Pixel Resolution	
 The BASE statewide orthoimagery will be acquired and processed at 0.5-meter pixel resolution. Select BUY-UP areas will be acquired and processed at either 1-foot or 6-inch pixel resolution. The following are example features identifiable in each resolution.
-
+***
 ##Spectral Resolution
 <img style="margin-left: 30px;" src="http://www.tnris.org/sites/default/files/spectral_IR.jpg" align="right" width="200"><img style="margin-left: 50px;" src="http://www.tnris.org/sites/default/files/spectral_NC.jpg" align="right" width="200">All orthoimagery products will be available as 4-band images which may be displayed as natural color (Red, Green, Blue) or color infrared (Near Infrared, Red, Green) composites.
+
+***
 
 ##High Priority Imagery and Data Sets Contract
 

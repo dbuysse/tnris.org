@@ -1,33 +1,28 @@
-<div class="title-header">
-  <div class="container">
-    <span>Texas Natural Resources Information System</span>
-    <a class="skip" href="#mainContentAnchor">Skip to Main Content</a>
-    <a class="navbar-twdb hidden-xs hidden-sm pull-right" href="http://www.twdb.texas.gov/">part of the Texas Water Development Board</a>
+<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+  <div class="title-header">
+    <div class="container"> 
+      <span>Texas Natural Resources Information System</span>
+      <a class="skip" href="#mainContentAnchor">Skip to Main Content</a>
+      <a class="navbar-twdb pull-right hidden-xs" href="http://www.twdb.texas.gov/">part of the <span class="hidden-sm">Texas Water Development Board</span> <abbr class="hidden-md hidden-lg" title="Texas Water Development Board">TWDB</abbr></a>
+    </div>
   </div>
-</div>
 
-<nav id="mainNav" class="navbar navbar-inverse" role="navigation">
-  <div class="container">
+  <div class="container nav-bg">
     <div class="navbar-header">
-      <a class="navbar-brand" href="{{crossref['index']}}">
-        <img alt="TNRIS logo" src="images/sm_logo_white.png">
-      </a>
-
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <a href="../" class="navbar-brand">Texas Natural Resources Information System</a>
     </div>
-
-    <div class="collapse navbar-collapse">
+    <nav class="collapse navbar-collapse bs-navbar-collapse navbar-inverse" role="navigation">
       <ul class="nav navbar-nav">
         <li {% if id === 'maps-and-data' %}class="active"{% endif %}>
           <a href="{{crossref['maps-and-data']}}">Maps &amp; Data</a>
         </li>
-
-        <li class="dropdown {% if id === 'stratmap' || id === 'training' || id === 'hpids' %}active{% endif %}">
+        <li class="dropdown navbar-inverse {% if id === 'stratmap' || id === 'training' || id === 'hpids' %}active{% endif %}">
           <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown"><i class="fa fa-tasks"></i> Programs</a>
           <ul class="dropdown-menu inverse-dropdown" role="menu">
             {%- set programs = [
@@ -59,18 +54,18 @@
             {% endfor %}
           </ul>
         </li>
-        <li {% if id === 'gio' %}class="active"{% endif %}>
-          <a class="gio" href="{{crossref['gio']}}">Geographic Information Office</a>
+        <li {% if id === 'geographic-information-office' %}class="active"{% endif %}>
+          <a class="gio" href="{{crossref['geographic-information-office']}}">Geographic Information Office</a>
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right hidden-sm about-contact">
-        <li>
-          <a href="#"><span class="glyphicon glyphicon-user"></span> About</a>
+      <ul class="nav navbar-nav navbar-right">
+        <li {% if id === 'about' %}class="active"{% endif %}>
+          <a href="{{crossref['about']}}">About</a>
         </li>
         <li {% if id === 'contact' %}class="active"{% endif %}>
-          <a href="{{crossref['contact']}}" role="button"><span class="glyphicon glyphicon-comment"></span> Contact Us</a>
+          <a href="{{crossref['contact']}}"><span class="glyphicon glyphicon-comment"></span> Contact Us</a>
         </li>
       </ul>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>

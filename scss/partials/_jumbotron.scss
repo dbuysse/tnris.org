@@ -15,14 +15,14 @@
 	strong {
 		color: white;
 		font-weight: 300;
-		font-size: 28px;
+		font-size: 20px;
 
-		@media (max-width: $break-xs) {
+		@media (min-width: $screen-xs) {
 		font-size: 20px;
 		}
 	}
 
-	@media (max-width: $break-xs) {
+	@media (max-width: $screen-xs) {
 		font-size: 14px;
 	}
 }
@@ -67,32 +67,73 @@
 }
 
 /* Statewide Ortho 2015 */
-.ortho-text {
-	position: absolute;
-	top: 5px;
-	left: 280px;
-	margin-right: 40px;
+#orthofront {
+	position: relative;
+	
+	img {
+		position: relative;
+	}
 
-	h2 {
-		margin: 0;
-		font-size: 45px;
-		font-weight: 100;
-		color: $darkgrey;
+	.orthobox {
+		position: absolute;
+		width: 68%;
+		left: 30%;
+		top: 3%;
 
-		strong {
-			font-weight: 500;
-			font-size: 58px;
+		h2 {
+			margin: 0;
+			font-weight: 100;
+			color: $darkgrey;
+			font-size: 25px;
+
+			@media (min-width: $screen-xs) {
+				font-size: 30px;
+			}
+
+			@media (min-width: $screen-sm) {
+				font-size: 35px;
+			}
+
+			@media (min-width: $screen-md) {
+				font-size: 40px;
+			}
+
+			@media (min-width: $screen-lg) {
+				font-size: 50px;
+				line-height: 45px;
+			}
+
+			strong {
+				font-weight: 500;
+			}
+
+		}
+
+		p {
+			font-size: 13px;
+			font-weight: 100;
+			padding-left: 5px;
+			padding-right: 30%;
+
+			@media (min-width: $screen-lg) {
+				font-size: 17px;
+			}
 		}
 
 		a {
-			margin-right: 70px;
-			margin-top: 40px;
+			
+			&.btn {
+
+				@media (min-width: $screen-sm) {
+					position:relative;
+					float: right;
+					margin-top: -15%;
+					margin-right: 5%;
+					padding: 10px 15px;
+					font-size: 18px;
+
+				}
+			}
 		}
-
-	}
-
-	p {
-		font-size: 17px;
-		font-weight: 100;
 	}
 }

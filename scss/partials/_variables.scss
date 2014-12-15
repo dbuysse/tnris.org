@@ -7,10 +7,14 @@ $lightblue: #e8f4fa;
 $sky: #acddf4;
 $midsky: #79c9ef;
 $darkgrey: #222222;
+$darkish: #444444;
 $middarkgrey: #767676;
 $midgrey: #cccccc;
+$midlightgrey: #e3e3e3;
+$lightergrey: #eeeeee;
 $lightgrey: #f7f7fc;
 $tnrisblue: #1e8dc1;
+$darkerblue: #0b658f;
 $facebook: #3b5998;
 $bsgrey: #9d9d9d;
 
@@ -52,3 +56,58 @@ $break-xs: 768px;
       -moz-box-shadow:$top $left $blur $color #{$inset};
       box-shadow:$top $left $blur $color #{$inset};
     }
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+
+    @media (min-width: $screen-md) {
+    	width: 100%;
+    }
+
+}
+
+@media (min-width: 768px) {
+.col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+// @media (max-width: 768px) {
+//   .btn-responsive {
+//     padding:2px 4px;
+//     font-size:80%;
+//     line-height: 1;
+//   }
+// }
+
+// @media (min-width: 769px) and (max-width: 992px) {
+//   .btn-responsive {
+//     padding:4px 9px;
+//     font-size:90%;
+//     line-height: 1.2;
+//   }
+// }

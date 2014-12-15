@@ -4,42 +4,42 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div id="home-top-content">
     <div class="container">
-          <div class="row"  >
-            <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12">
-            <h3>Start exploring our <strong>data</strong></h3>
+          <div class="row">
+            <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12 ">
             <ul class="list-group row">
-              <li class="list-group-item col-md-12  col-sm-3 col-xs-3">
-                <a class="training-quick" href="{{crossref['data-catalog']}}">
-                  <div class="iconContainer"><i class="fa fa-archive"></i></div> <span class="hidden-xs">Data</span>  Catalog
+              <li class="col-xs-2 col-md-12 hidden-xs hidden-sm">
+                Start exploring our <strong>data</strong>
+              </li>
+              <li class="list-group-item col-xs-5ths col-md-12 ">
+                <a class="catalog-quick" href="{{crossref['data-catalog']}}">
+                  <div class="iconContainer"><i class="fa fa-archive"></i></div><em>Data Catalog</em>
                   <small class="hidden-xs hidden-sm">Browse data sets</a></small>
               </li>
-              <li class="list-group-item col-md-12 col-sm-3 col-xs-3">
-                <a class="downloaddata-quick" href="{{crossref['data-download']}}"><div class="iconContainer"><i class="fa fa-download"></i></div> Download <span class="hidden-xs">Data</span>
-                  <small class="hidden-xs hidden-sm">Access digital data directly</small></a>
+              <li class="list-group-item col-xs-5ths col-md-12">
+                <a class="downloaddata-quick" href="{{crossref['data-download']}}"><div class="iconContainer"><i class="fa fa-download"></i></div><em> Download Data</em>
+                  <small class="hidden-xs hidden-sm">Access digital data directly</small>
+                </a>
               </li>
-              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="orderdata-quick" href="#">
-                <div class="iconContainer"><span class="glyphicon glyphicon-phone-alt"></span></div> Order <span class="hidden-xs">Data</span> 
+              <li class="list-group-item col-xs-5ths col-md-12">
+                <a class="orderdata-quick" href="order-data">
+                <div class="iconContainer">
+                  <span class="glyphicon glyphicon-phone-alt"></span></div> <em>Order Data</em> 
                 <small class="hidden-xs hidden-sm">Custom data requests</small></a>
               </li>
-              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="wms-quick" href="mapsanddata/web-mapping-services">
-                <div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div> Online <span class="hidden-xs">Map</span> Services
+              <li class="list-group-item col-xs-5ths col-md-12 wms-width"><a class="wms-quick" href="maps-and-data/online-mapping-services">
+                <div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div><em>Online Map Services</em>
                 <small class="hidden-xs hidden-sm">WMS layers and more</small></a>
               </li>
-              <li class="list-group-item col-md-12 social-front text-center  hidden-sm hidden-xs">
-                <strong>Connect With Us:</strong> <a href="https://twitter.com/tnris" title="Follow us on Twitter"><i class="fa fa-twitter"></i></a><a href="https://github.com/TNRIS/" title="Check us out on GitHub"><i class="fa fa-github"></i></a>
+              <li class="list-group-item col-xs-2 col-md-12 social-front">
+                <strong>Connect <span class="hidden-xs hidden-sm">With Us:</span></strong> <a href="https://twitter.com/tnris" title="Follow us on Twitter"><i class="fa fa-twitter"></i></a><a href="https://github.com/TNRIS/" title="Check us out on GitHub"><i class="fa fa-github"></i></a>
               </li>
             </ul>
             
             </div>
+           
 
-            <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
-              <img class="img-responsive" src="images/ortho_flag_blank.jpg" alt="A Texas Flag with aerial orthoimagery in place of the red, white and blue">
-              <div class="ortho-text hidden-xs">
-                <h2><a href="2015-statewide-orthoimagery-project" class="btn btn-tnris btn-lg pull-right">Learn More</a> <strong>2015 Statewide</strong><br>Orthoimagery Project</h2>
-                <p> A collaborative initiative to capture high-quality, leaf-off imagery for the entire state, slated for public release in <strong>Winter 2015.</strong>  </p>
-
-              </div>
-            </div>
+              {% include "./partials/mainfeature.html" %}
+            
           </div>
         </div>
   </div>

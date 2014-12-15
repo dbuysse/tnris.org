@@ -1,3 +1,29 @@
+/* Training */
+
+#training {
+	table {
+		tr {
+			th {
+				&:first-child {
+					width: 20%;
+				}
+			}
+
+			td {
+				vertical-align: top;
+			}
+
+			&.course-description {
+				td {
+					padding-bottom: 20px;
+					border-bottom: 1px solid $lightergrey;
+				}
+			}
+		}
+	}
+}
+
+
 /* statewide orthoimagery project */
 
 #_2015-statewide-orthoimagery-project {
@@ -10,3 +36,4 @@
 		border-top: none;
 	}
 }
+

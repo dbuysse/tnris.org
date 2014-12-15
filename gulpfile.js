@@ -182,7 +182,7 @@ gulp.task('dist-metal', function () {
           path: 'content/training.csv',
           name: 'training',
           template: 'training-entry.html',
-          filenameKeys: ['class_title', 'date']
+          filenameKeys: ['class_title']
         }))
         .use(metadata({
           variables: 'variables.yaml'

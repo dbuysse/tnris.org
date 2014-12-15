@@ -101,15 +101,22 @@ img.data-thumb {
 }
 
 .nav-cat {
-	top: 150px;
+	top: 100px;
 
 	li {
-		border-bottom: 1px solid $midgrey;
 		padding-left: 0;
 		margin-top: 0;
 
 		&.active {
-			background: $lightgrey;
+		}
+
+		a {
+			padding: 5px 10px;
+
+			&:hover {
+				color: $darkgrey;
+				background: $lightblue;
+			}
 		}
 	}
 

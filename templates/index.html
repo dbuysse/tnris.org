@@ -93,9 +93,15 @@
           <div id="training-front" class="col-xs-12 col-sm-8 col-md-12">
               <h2>Accessible GIS Training <i class="fa fa-graduation-cap"></i></h2>
               <ul>
-                <li><time>March 15, 2014</time><h4><a href="#">Fundamentals of ArcGIS</a></h4>Learn how to use Google Earth to attach vital information to your features including photos, videos, and more.</li>
-                <li><time>March 20, 2014</time><h4><a href="#">Arc Hydro: GIS for Water Resources</a></h4>Learn about the Arc Hydro data model and tools and how to implement them from real-world examples.</li>
-                <li><time>March 27, 2014</time><h4><a href="#">Converting ArcGIS Data to Google Earth</a></h4>Visualize your existing ArcGIS data in a Google Earth viewer</li>
+
+              {% for event in training %}
+                {% if loop.index <= 3 %}
+                <li><time>{{event.date}}</time><h4><a href="{{ event.path }}">
+                  {{event.class_title}}</a></h4>
+                  <p>{{event.teaser}}</p>                
+                </li>
+                {% endif %}
+              {% endfor %}
               </ul>
               <p class="text-center"><a class="btn btn-tnris" href="training" role="button">Full Course List <span class="glyphicon glyphicon-chevron-right"></a></p>
           </div>

@@ -180,36 +180,9 @@ a.navbar-twdb {
     text-decoration: none;
     color: white;
   }
-  // span {
-  // 	display: block;
-  // 	text-indent: -9999px;
-  // 	background: url(../images/twdb-logo.png) 0 0 no-repeat;
-  // 	position: absolute;
-  // 	width: 134px;
-  // 	height: 37px;
-  // 	top: 0;
-  // 	right: 0;
-  // }
 }
 
-// #mainNav {
-// 	height: 51px;
-// 	width: 100%;
-// 	z-index: 10000;
-// 	border-radius: 0;
 
-// 	&.navbar {
-// 		margin-bottom: 0px;
-// 	}
-
-// 	&.affix {
-// 		top: 0;
-// 	}
-
-// 	.container {
-// 		position: relative;
-// 	}
-// }
 
 .navbar-inverse {
   .navbar-nav {
@@ -226,14 +199,6 @@ a.navbar-twdb {
 
 .navbar-collapse {
   background: $darkgrey;
-  // @media(min-width: $screen-lg) {
-  // 	float: left;
-  // 	width: 600px;
-  // }
-  // @media(min-width: $screen-md) {
-  // 	float: left;
-  // 	width: 550px;
-  // }
 }
 
 .navbar-brand {
@@ -880,5 +845,3 @@ author {
   background-color: #fcf2f2;
   border-color: #dFb5b4;
 }
-
-/* Useful Classes */

@@ -40,6 +40,8 @@ $break-lg: 1200px;
 $break-md: 992px;
 $break-xs: 768px;
 
+$footer-height: 300px;
+
 /* transparent backgrounds */
 @mixin alpha-attribute($attribute, $color, $background) {
   $percent: alpha($color) * 100%;

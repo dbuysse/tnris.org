@@ -11,27 +11,27 @@
   </head>
 
   <body {% if id %}id="{{id}}"{% endif %}>
-    <div id="wrap">
-      <!-- Fixed navbar -->
-      {% include "./partials/navbar.html" %}
-      <!-- end navbar -->
+    <div id="wrap-outer">
+      <div id="wrap-inner">
+        <!-- Fixed navbar -->
+        {% include "./partials/navbar.html" %}
+        <!-- end navbar -->
 
-      {% block quick_nav %} {% endblock quick_nav %}
+        {% block quick_nav %} {% endblock quick_nav %}
 
-        <a id="mainContentAnchor"></a>
-      {% block topcontent %} {% endblock topcontent %}
+          <a id="mainContentAnchor"></a>
+        {% block topcontent %} {% endblock topcontent %}
 
-      <!-- Main Content -->
-      <div id="contentMain" class="container">
+        <!-- Main Content -->
+        <div id="contentMain" class="container">
           {% block contents %} {% endblock contents %}
-        <!--   <hr class="push">
-          <div id="push"></div> -->
+        </div>
+        <!-- end Main Content -->
+
+        <!-- full wrapper -->
+
+        {% block contents-two %} {% endblock contents-two %}
       </div>
-      <!-- end Main Content -->
-
-      <!-- full wrapper -->
-
-      {% block contents-two %} {% endblock contents-two %}
     </div>
 
     {% block footer %}

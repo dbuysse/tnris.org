@@ -15,8 +15,9 @@ var replace = require('metalsmith-replace');
 var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var swig = require('swig');
-var webserver = require('gulp-webserver');
+var extras = require('swig-extras');
 var vinylPaths = require('vinyl-paths');
+var webserver = require('gulp-webserver');
 
 var autodate = require('./metalsmith-autodate');
 var based = require('./metalsmith-based');
@@ -64,6 +65,9 @@ swig.setFilter('sortBy', function (input, key) {
 swig.setFilter('urlize', function(input) {
   return urlize(input);
 });
+
+// add markdown filter
+extras.useFilter(swig, 'markdown');
 
 function parseCSV(options) {
   var name = options.name;

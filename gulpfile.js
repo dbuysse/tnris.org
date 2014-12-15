@@ -174,7 +174,6 @@ gulp.task('dist-metal', function () {
           date: 'YYYY-MM-DD'
         }))
         .use(crossref({
-          outfile: '.build/crossref.json',
           include: {
             'data-download': '/data-download/'
           }

@@ -1,6 +1,4 @@
 ---
 template: updates.html
-title: Updates
+title: Updates Archive
 ---
-
-Hello welcome to the updates 

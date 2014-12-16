@@ -4,7 +4,7 @@ template: news.html
 author: IS Team
 thumbnail: images/updates/new_website.jpg
 abstract: 
-    We've made some changes to our site that we hope will improve your experience and make it easier (and maybe even more fun) to find the data and services you need.
+    We've made some changes to our site that we hope will improve your experience and make it easier to find the data and services you need.
 ---
 <img class="pull-left" src="images/updates/new_website.jpg" alt="Small, 3-D pages of the new site stacked in front of each other">We're very excited to welcome you to latest version of the TNRIS site. While some of our content is similar to what you're used to, there are also new ways to explore and access TNRIS data. We hope it meets your needs and expectations. We'd love to hear from you as you browse the new site. Don't hesitate to [contact us](contact) and let us know if everything is working smoothly, if there fixes that need to happen or even if you just want to give us some virtual high-fives.
 

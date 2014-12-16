@@ -3,7 +3,7 @@
 {% block contents %}
 <div class="row">
   {% block category_nav %}
-    <div class="col-md-4">
+    <div class="col-md-4 col-lg-3">
       <ul class="nav hidden-sm hidden-xs affix nav-cat">
         <lh><h4>Browse by Category</h4></lh>
         {% for category in catalog|sortBy('category')|groupBy('category') %}
@@ -14,7 +14,7 @@
       </ul>
     </div>
   {% endblock category_nav %}
-  <div id="dataPageContent" class="col-md-8">
+  <div id="dataPageContent" class="col-md-8 col-lg-7">
     {% block catalog_content %}
       <h1>{{ title }}</h1>
       <div class="lead">{{ contents|safe }}</div>
@@ -36,6 +36,9 @@
                   <div class="media-body">
                     <h4 class="media-heading">
                       <a href="{{ item.path }}">{{ item.name }}</a>
+
+                    <a href="{{ item.path }}" class="btn btn-sm btn-tnris pull-right"><i class="fa fa-chevron-right"></i> Full Info
+                    </a>
                     </h4>
                     <p>
                       {{ item.short_description }}

@@ -582,6 +582,7 @@ author {
   .byline {
     margin-bottom: 5px;
   }
+
   h2.headline {
     margin-top: 0;
     font-size: 30px;
@@ -664,7 +665,7 @@ author {
 }
 
 /* Updates */
-#updates {
+#updates-front {
   @media (min-width: $screen-md) {
     // border-left: 1px solid $midgrey;
     margin-left: 15px;
@@ -700,8 +701,8 @@ author {
   .media {
     border-bottom: 1px solid $midgrey;
     @media (min-width: $screen-sm) {
-      margin-top: 25px;
-      padding-bottom: 25px;
+      margin-top: 15px;
+      padding-bottom: 15px;
     }
     &:first-child {
       margin-top: 0;
@@ -736,6 +737,9 @@ author {
       padding-left: 0px;
       padding-right: 0;
     }
+    p {
+    	font-size: 12px;
+    }
     h2 {
       margin-top: 0;
       font-size: 20px;
@@ -743,6 +747,7 @@ author {
     h4 {
       margin-top: 0;
       margin-bottom: 0;
+      font-size: 18px;
     }
     ul {
       margin: 0;
@@ -760,11 +765,18 @@ author {
           font-family: $pragmatica;
         }
         time {
-          font-size: 18px;
-          color: #5c6367;
-          font-weight: 300;
+          font-size: 14px;
+          text-transform: uppercase;
+          font-weight: 500;
           margin-bottom: 5px;
         }
+
+        &:last-child {
+        	@media (min-width: $screen-lg) {
+        		display: none;
+        	}
+        }
+
       }
     }
   }

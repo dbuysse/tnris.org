@@ -1,36 +1,37 @@
 {% extends "base.html" %}
 
 {% block contents %}
-  <div id="allUpdates" class="row">
-    <div class="col-sm-8 blog-main">
+  <div class="row">
+    <div class="col-sm-7" id="updates-front">
         <h2>{{ title }}</h2>
         {{ contents|safe }}
+        <ul>
         {% for news_item in news %}
-          {% if loop.index <= 5 %}
-            <div class="article">
-              <div>
-                <h2>
-                <a href="{{ news_item.path }}">{{ news_item.title }}</a></h2>
-                 <div class="byline">
-                  <strong>by <author>{{ news_item.author }}<author></strong> | <time>{{ news_item.date|date('F jS, Y') }}</time> 
+          {% if loop.index <= 10 %}
+              <li class="media">
+                <a class="pull-left" href="{{ news_item.path }}"><img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
+                </a>
+                <div class="media-body">
+                  <h3 class="media-heading">
+                    <a href="{{ news_item.path }}">{{ news_item.title }}</a>
+                  </h3>
+                   <div class="byline">
+                    by <author>{{ news_item.author }}<author> | <time>{{ news_item.date|date('F jS, Y') }}</time> 
+                   </div>
+                    <p>
+                      {{ news_item.abstract | safe }}
+                    </p>
                 </div>
-                {% if news_item.mainimage %}
-              <img class="img-responsive" src="{{ news_item.mainimage }}" alt="...">
-              
-          {% endif %}
-                <p>
-                  {{ news_item.contents | safe }}
-                </p>
-              </div>
-            </div>
+              </li>
 
           {% endif %}
         {% endfor %}
+      </ul>
     </div>
 
 {% block rightContent %}
-  <div class="col-sm-4 blog-sidebar">
-     <div class="sidebar-module sidebar-module-inset">
+  <div class="col-sm-5 blog-sidebar">
+ <!--     <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
     </div>
@@ -50,12 +51,12 @@
               <li><a href="#">May 2013</a></li>
               <li><a href="#">April 2013</a></li>
             </ol>
-          </div>
+          </div> -->
   </div>
 {% endblock rightContent %}
 </div>
 
-<ul class="pagination">
+<!-- <ul class="pagination">
   <li><a href="#">&laquo;</a></li>
   <li><a href="#">1</a></li>
   <li><a href="#">2</a></li>
@@ -63,5 +64,5 @@
   <li><a href="#">4</a></li>
   <li><a href="#">5</a></li>
   <li><a href="#">&raquo;</a></li>
-</ul>
+</ul> -->
 {% endblock contents %}

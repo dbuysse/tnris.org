@@ -20,3 +20,9 @@ The staff includes individuals trained in the natural, computer and library scie
 ## Texas Water Development Board
 
 TNRIS is a part of the [Texas Water Development Board (TWDB)](http://www.twdb.texas.gov) under the Operations and Administration division.
+
+## Texas Geographic Names Committee
+
+The Director of TNRIS acts as the coordinator of the [Texas Geographic Names Committee](texas-geographic-names-committee), the body charged with standardizing geographic names for the state of Texas 
+
+<a class="btn btn-tnris btn-lg" href="texas-geographic-names-committee">Learn More</a>

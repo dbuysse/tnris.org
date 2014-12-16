@@ -15,6 +15,12 @@
       margin-top: -50px;
     }
   }
+
+  .list-group-item {
+    &:hover {
+      background: $lightgrey;
+    }
+  }
 }
 
 img.data-thumb {

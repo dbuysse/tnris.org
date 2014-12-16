@@ -22,12 +22,12 @@
     <!-- Example row of columns -->
     <div class="row">
      <!--   -->
-     <div id="updates" class="col-md-6 col-sm-12 col-md-push-3">
+     <div id="updates-front" class="col-md-6 col-sm-12 col-md-push-3">
           
           <h2>Latest News <i class="fa fa-newspaper-o"></i></h2>
           <ul>
           {% for news_item in news %}
-            {% if loop.index <= 4 %}
+            {% if loop.index <= 5 %}
               <li class="media">
                 <a class="pull-left" href="{{ news_item.path }}">
                   <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
@@ -66,10 +66,9 @@
               <ul>
 
               {% for event in training %}
-                {% if loop.index <= 3 %}
+                {% if loop.index <= 7 %}
                 <li><time>{{event.date}}</time><h4><a href="{{ event.path }}">
-                  {{event.class_title}}</a></h4>
-                  <p>{{event.teaser}}</p>                
+                  {{event.class_title}}</a></h4>              
                 </li>
                 {% endif %}
               {% endfor %}

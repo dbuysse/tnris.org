@@ -157,6 +157,14 @@ img.data-thumb {
   }
 }
 
+.data-catalog-items {
+  @media (min-width: $screen-md-min) {
+    .media {
+      min-height: 175px;
+    }
+  }
+}
+
 .wms-url {
   padding: 5px;
   display: block;

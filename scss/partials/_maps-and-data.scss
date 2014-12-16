@@ -83,7 +83,7 @@ img.data-thumb {
 }
 
 .nav-cat {
-  top: 100px;
+
   li {
     padding-left: 0;
     margin-top: 0;
@@ -96,7 +96,10 @@ img.data-thumb {
       }
     }
   }
-  &.affix {}
+
+  &.affix {
+    top: 0px;
+  }
 }
 
 .list-group {

@@ -6,7 +6,7 @@
   <div class="row">
     {% block category_nav  %}
       <div class="col-md-4 wms-nav-container">
-        <ul class="nav hidden-sm hidden-xs affix nav-cat">
+        <ul class="nav hidden-sm hidden-xs nav-cat" data-spy="affix">
           <lh><h4>Jump to WMS Layers</h4></lh>
           {% for wms_category in catalog|sortBy('wms_category')|groupBy('wms_category') %}
             <li>

@@ -6,41 +6,12 @@
     <div class="container">
           <div class="row">
             <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12 ">
-            <ul class="list-group row">
-              <li class="col-xs-2 col-md-12 hidden-xs hidden-sm">
-                Start exploring our <strong>data</strong>
-              </li>
-              <li class="list-group-item col-xs-5ths col-md-12 ">
-                <a class="catalog-quick" href="{{crossref['data-catalog']}}">
-                  <div class="iconContainer"><i class="fa fa-archive"></i></div><em>Data Catalog</em>
-                  <small class="hidden-xs hidden-sm">Browse data sets</a></small>
-              </li>
-              <li class="list-group-item col-xs-5ths col-md-12">
-                <a class="downloaddata-quick" href="{{crossref['data-download']}}"><div class="iconContainer"><i class="fa fa-download"></i></div><em> Download Data</em>
-                  <small class="hidden-xs hidden-sm">Access digital data directly</small>
-                </a>
-              </li>
-              <li class="list-group-item col-xs-5ths col-md-12">
-                <a class="orderdata-quick" href="order-data">
-                <div class="iconContainer">
-                  <span class="glyphicon glyphicon-phone-alt"></span></div> <em>Order Data</em> 
-                <small class="hidden-xs hidden-sm">Custom data requests</small></a>
-              </li>
-              <li class="list-group-item col-xs-5ths col-md-12 wms-width"><a class="wms-quick" href="maps-and-data/online-mapping-services">
-                <div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div><em>Online Map Services</em>
-                <small class="hidden-xs hidden-sm">WMS layers and more</small></a>
-              </li>
-              <li class="list-group-item col-xs-2 col-md-12 social-front">
-                <strong>Connect <span class="hidden-xs hidden-sm">With Us:</span></strong> <a href="https://twitter.com/tnris" title="Follow us on Twitter"><i class="fa fa-twitter"></i></a><a href="https://github.com/TNRIS/" title="Check us out on GitHub"><i class="fa fa-github"></i></a>
-              </li>
-            </ul>
-            
+              {% include "./partials/quicknav.html" %}
             </div>
-           
-
-              {% include "./partials/mainfeature.html" %}
-            
+            <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
+            {% include "./partials/mainfeature.html" %}
           </div>
+           </div>
         </div>
   </div>
 {% endblock topcontent %}

@@ -81,6 +81,7 @@ h2 {
   background-color: $tnrisblue;
   border-color: $urgentblue;
   box-shadow: inset $urgentblue 0 0 7px;
+  
   &:hover {
     background: $urgentblue;
     color: white;
@@ -524,8 +525,8 @@ a.navbar-twdb {
 }
 
 .footer {
-  background: $lightgrey;
-  color: #darkgrey;
+  background: $darkgrey;
+   color: $lightgrey;
   z-index: 10000;
   position: relative;
   margin-top: -$footer-height;
@@ -533,13 +534,13 @@ a.navbar-twdb {
   clear:both;
 
   a {
-    color: $bsgrey;
+    color: $lightergrey;
     abbr {
       border: 0;
     }
   }
   .accessibility {
-    background: $darkgrey;
+    background: $darkish;
     font-size: 12px;
     text-align: center;
     padding-top: 5px;
@@ -557,8 +558,17 @@ a.navbar-twdb {
         margin-bottom: 5px;
       }
     }
+
+    h4 {
+
+    		color: $lightgrey;
+    	a {
+    		color: $lightgrey;
+    	}
+    }
+
     a {
-      color: $tnrisblue;
+      color: $bsgrey;
     }
   }
 }

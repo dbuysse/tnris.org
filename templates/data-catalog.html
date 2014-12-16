@@ -17,7 +17,7 @@
   <div id="dataPageContent" class="col-md-8">
     {% block catalog_content %}
       <h1>{{ title }}</h1>
-      <div class="mainBlurb">{{ contents|safe }}</div>
+      <div class="lead">{{ contents|safe }}</div>
         {% for category in catalog|sortBy(['category', 'name'])|groupBy('category') %}
           <div class="section">
             <h2 id="{{category|first['urlized-category']}}">{{loop.key}}</h2>

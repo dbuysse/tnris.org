@@ -3,22 +3,56 @@
 #training {
 	table {
 		tr {
+
+			&:nth-child(even) {
+				td {
+					background: $lightgrey;
+				}
+			}
+
 			th {
+				background: $tnrisblue;
+				color: white;
+				font-weight: 300;
+				padding: 5px;
+
 				&:first-child {
-					width: 20%;
+					width: 22%;
 				}
 			}
 
 			td {
 				vertical-align: top;
+				padding: 5px;
+
+				&.course-date {
+					strong {
+						text-transform: uppercase
+					}
+				}
 			}
 
 			&.course-description {
 				td {
-					padding-bottom: 20px;
+					padding-bottom: 30px;
 					border-bottom: 1px solid $lightergrey;
 				}
 			}
+
+			&:last-child {
+				&.course-description {
+					td {
+						border-bottom: none;
+					}
+				}
+			}
+
+			h3 {
+				font-size: 22px;
+				margin-top: 0;
+			}
+
+
 		}
 	}
 }

@@ -14,4 +14,4 @@ Our experienced instructors possess technical and teaching skills, which are com
 - University students
 
 
-<a href="https://www.regonline.com/register/checkin.aspx?EventId=1643373&MethodId=0&EventSessionId=&startnewreg=1" class="btn btn-tnris btn-lg pull-right">Register Online Today</a> We are dedicated to advancing the technical skills of professionals whose work revolves around geographic mapping.  Rapidly evolving technology necessitates that GIS professionals expand their knowledge to stay current with traditional software updates as well as alternative mapping methods to support business operations and policy decisions.
+<a href="https://www.regonline.com/register/checkin.aspx?EventId=1643373&MethodId=0&EventSessionId=&startnewreg=1" class="btn btn-success btn-lg pull-right">Register Online Today</a> We are dedicated to advancing the technical skills of professionals whose work revolves around geographic mapping.  Rapidly evolving technology necessitates that GIS professionals expand their knowledge to stay current with traditional software updates as well as alternative mapping methods to support business operations and policy decisions.

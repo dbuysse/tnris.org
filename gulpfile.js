@@ -97,7 +97,8 @@ function parseCSV(options) {
       return urlized;
     });
 
-    data.filename = [name].concat(urlKeys).join('/') + '.md';
+    data.filename = [urlDir].concat(urlKeys).join('/') + '.md';
+    data._collector_ignore = true;
 
     var file = files[data.filename];
     if (file) {
@@ -194,7 +195,10 @@ gulp.task('dist-metal', function () {
             file.id = '_' + file.id;
           }
         }))
-        .use(collector('*.md'))
+        .use(collector({
+          pattern: '*.md',
+          ignore: ['training']
+        }))
         .use(autodate('YYYY-MM-DD'))
         .use(markdown({
           smartypants: false

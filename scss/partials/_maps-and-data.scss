@@ -49,13 +49,13 @@ img.data-thumb {
   display: block;
   margin-bottom: 30px;
   border: 1px solid $midgrey;
+  min-height: 88px;
   h1 {
     height: 50px;
     z-index: 2000;
     padding: 0 20px;
     margin: 0;
   }
-  img {}
   .caption {
     position: absolute;
     top: 50px;

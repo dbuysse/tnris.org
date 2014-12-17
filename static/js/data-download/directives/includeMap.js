@@ -1,7 +1,7 @@
 var includeMap = function ($compile, $http) {
   return {
     restrict: 'EA',
-    template: '<div></div>',
+    template: '<img data-ng-src="{{ map.src }}" usemap="#IMap" alt="Map of {{ name }} {{ category }}">',
     link: function ($scope, $element, $attrs) {
       var url = $scope.$eval($attrs.includeMap);
 
@@ -19,7 +19,7 @@ var includeMap = function ($compile, $http) {
             });
           var compiled = $compile(mapElement)($scope);
 
-          $element.append(compiled);
+          $element.prepend(compiled);
         });
     }
   };

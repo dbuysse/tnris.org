@@ -3,15 +3,17 @@
 {% block contents %}
   <div class="row">
     <div id="dataPageContent" class="col-md-12">
-      <h1>{{ title }}</h1>
       <div class="row">
-        <div class="col-md-8 lead">
-          {{ contents|safe }}
+        <div class="col-sm-6 col-lg-8">
+            <h1>{{ title }}</h1>
+          <div class="lead">
+            {{ contents|safe }}
         </div>
-        <div class="col-md-4">
+        </div>
+        <div class="col-sm-6 col-lg-4">
           <div class="bs-callout bs-callout-info">
             <div class="panel-body">
-              <a href="#" class="btn btn-success btn-lg btn-center"><span class="glyphicon glyphicon-envelope"></span> Custom Data Order Form</a>
+              <a href="#" class="btn btn-success btn-block"><span class="glyphicon glyphicon-envelope"></span> Custom Data Order Form</a>
               <p>
                 This is a direct link to our Custom Data Order form to obtain customer service through the <a href="research-and-distribution"><abbr title="Research & Distribution">RDC</abbr></a>
               <p>
@@ -54,13 +56,13 @@
       }, {
         name: 'Data & Mapping Solutions',
         description: 'Applying design, communication, and technology skills to provide data solutions and cartographic products, both conventionally and digitally, for internal geospatial development.',
-        image: 'holder.js/200x120',
+        image: 'images/highlights/custom_maps.jpg',
         link: 'maps-and-data/data-and-mapping-solutions',
         button_text: 'Learn More'
       }, {
         name: 'Custom Map Creation',
         description: 'Our trained staff can help you create the map you need using TNRIS and public data.',
-        image: 'holder.js/200x120',
+        image: 'images/highlights/ranch_map_small.jpg',
         link: 'maps-and-data/custom-maps',
         button_text: 'Learn More'
       }
@@ -82,33 +84,16 @@
         button_text: 'Learn More'
      #}
 
-      <!--
-        <div class="col-sm-6">
-          <div class="row">
-            <div class="col-xs-12">
-              <h2>{{item.name}}</h2>
-            </div>
-            <div class="media col-sm-6 col-md-5">
-              <img class="media-object pull-left" src="{{item.image}}" alt="{{item.alt_text}}"/>
-            </div>
-            <div class="col-sm-6 col-md-7">
-              <p>{{item.description}}</p>
-              <a href="{{item.link}}" class="btn btn-tnris btn-lg">{{item.button_text}}</a>
-            </div>
-          </div>
-        </div>
-      -->
-
      <div class="row data-catalog-items">
       {% for item in content_items %}
-        <div class="media col-xs-12 col-md-6">
+        <div class="media col-xs-12 col-sm-6">
           <h2 class="media-heading">{{item.name}}</h2>
           <a class="media-left" href="{{item.link}}">
-            <img class="" src="{{item.image}}" alt="{{item.alt_text}}"/>
+            <img class="thumbnail" src="{{item.image}}" alt="{{item.alt_text}}"/>
           </a>
           <div class="media-body">
             <p>{{item.description}}</p>
-            <a href="{{item.link}}" class="btn btn-tnris btn-lg">{{item.button_text}}</a>
+            <a href="{{item.link}}" class="btn btn-tnris btn-md">{{item.button_text}}</a>
           </div>
         </div>
       {% endfor %}

@@ -1,36 +1,36 @@
 {% extends "page.html" %}
 
 {% block extracontent %}
-<div class="table-responsive">
-<table class="table">
-	<tr>
-		<th>Date and Time</th>
-		<th>Course Title</th>
-		<th>Instructor</th>
-		<th>Cost</th>
-		<th>Status</th>
-	</tr>
+<div class="training-list">
+	<div class="row hidden-xs head">
+		<div class="col-sm-2">Date and Time</div>
+		<div class="col-sm-4">Course Title</div>
+		<div class="col-sm-2">Instructor</div>
+		<div class="col-sm-2">Cost</div>
+		<div class="col-sm-2">Status</div>
+	</div>
   {% for event in training %}
-  	<tr>
-	  	<td class="course-date"><strong>{{event.date}}</strong><br>{{event.time}}</td>
-	  	<td class="course-title"><h3><a href="{{event.path}}">{{event.class_title}}</a></h3></td>
-	    <td>{{event.instructor}}</td>
-	    <td>{{event.cost}}</td>	
-	    <td>{{event.status}}</td>
-	</tr>
-	<tr class="course-description">
-		<td></td>
-    	<td colspan="2">
+  	<div class="row training-header">
+	  	<div class="col-xs-3 col-sm-2"><strong>{{event.date}}</strong><br>{{event.time}}</div>
+	  	<div class="col-xs-9 col-sm-6"><h3><a href="{{event.path}}">{{event.class_title}}</a></h3></div>
+	    <div class="col-xs-3 col-sm-2 course-info">{{event.instructor}}</div>
+	    <div class="col-xs-3 col-sm-1 course-info">{{event.cost}}</div>	
+	    <div class="col-xs-3 col-sm-1 course-info">{{event.status}}</div>
+	</div>
+	<div class="row course-description">
+    	<div class="col-xs-3 col-sm-2">
+    		<a class="btn btn-default btn-sm" href="{{event.path}}"><span class="glyphicon glyphicon-info-sign"></span> 
+    			Full Info
+    		</a>
+    	</div>
+    	<div class="col-xs-9 col-sm-8">
     		{{event.teaser}}    		
-    	</td>	
-    	<td>
-    		<a class="btn btn-default btn-sm" href="{{event.path}}"><span class="glyphicon glyphicon-info-sign"></span> Full Info</a>
-    	</td>
-    	<td></td>
-    </tr>
+    	</div>
+    	<div class="col-sm-1 hidden-xs"></div>    	
+    	<div class="col-sm-1 hidden-xs"></div>
+    </div>
   {% endfor %}
- </table>
-</div>
+ </div>
 {% endblock extracontent %}
 
 {% block sidebarLeft %}

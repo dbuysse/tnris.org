@@ -122,6 +122,7 @@ h2 {
   span {
     margin-top: 3px;
   }
+
   a.skip {
     text-indent: -9999px;
     color: $tnrisblue;
@@ -132,6 +133,14 @@ h2 {
     width: 1px;
     overflow: hidden;
     position: absolute;
+
+    &:focus {
+      text-indent: normal;
+      position: relative;
+      font-size: 8px;
+      overflow: auto;
+      color: white;
+    }
   }
 }
 
@@ -190,6 +199,7 @@ a.navbar-twdb {
     li {
       a {
         color: white;
+
         &:hover {
           color: $sky;
         }
@@ -198,17 +208,28 @@ a.navbar-twdb {
   }
 }
 
+.dropdown-menu.inverse-dropdown {
+  background: $darkgrey;
+  .navbar-nav {
+    li {
+      a {
+        background: black !important;
+      }
+    }
+  }
+
+}
+
 .navbar-collapse {
   background: $darkgrey;
 }
 
 .navbar-brand {
-  background: url(../images/sm_logo_white.png) 0 0 no-repeat;
+  background: url(../images/tnris_logo_white.png) 0 0 no-repeat;
   width: 80px;
   height: 36px;
   z-index: 30000;
   padding: 0;
-  text-indent: -9999px;
   margin-right: 0px;
   margin-left: 5px;
   margin-top: 5px;

@@ -1,7 +1,64 @@
 {% extends "base.html" %}
 
 {% block contents %}
-  title: {{class_title}}<br>
-  description: {{description|markdown}}
+<div class="row">
+    <ol class="breadcrumb">
+      <li><a href="/"><span class="glyphicon glyphicon-home"></span></a></li>
+      <li><a href="training">Education &amp; Training</a></li>
+      <li class="active">{{ class_title }}</li>
+    </ol>
+  </div>
+<div class="row">
+<div class="col-sm-8">
+  		<h1 class="training-title">{{class_title}}</h1>
+    	<div class="row training-header">
+		  	<div class="col-xs-6 col-sm-4"><strong>
+		  		<span class="glyphicon glyphicon-time"></span> {{date}}</strong>, {{time}}
+		  	</div>
+		    <div class="col-xs-6 col-sm-3">
+		    	<span class="glyphicon glyphicon-user"></span> {{instructor}}</div>
+		    <div class="col-xs-6 col-sm-3">
+		    	{{cost}}</div>	
+		    <div class="col-xs-6 col-sm-2">
+		    	{{status}}</div>
+		</div>
+  	<div class="lead">{{description|markdown}}</div>
+  	<div class="panel panel-danger">
+		<div class="panel-heading">
+			<h2 class="panel-title">Cancellation Policy</h2>
+		</div>
+		<div class="panel-body">
+			<p>We rely on your attendance to make important arrangements for the courses. Please contact us if there is any change in your reservation.</p>
+
+			<h4>Withdrawal/Cancellation</h4>
+			<p>Withdrawal from a course after registration has been submitted takes place on occasion.  Students must submit written notice no later than 10 business days prior to the first day of the scheduled session.  Email is an acceptable form of written communication.  The course fee will be refunded, minus a $60 processing fee.</p>
+
+			<h4>Refund</h4>
+			<p>Refunds cannot be made for withdrawals initiated within 10 days of the first day of the scheduled class.  However, the registration and payment may be honored for the same class topic held at a future date within the same fiscal year (09/01 - 08/31).</p>
+
+			<p>Refunds will not be granted for participant no-shows. </p>
+
+			<h4>Substitution</h4>
+			<p>Student substitutions are allowed with 3-days written notice prior to the start of the course.</p>
+		</div>
+	</div>
+</div>
+<div class="col-sm-4">
+{% block sidebarLeft %}
+		<h3>Training Facilities</h3>
+		<p>
+		<address>
+			TCEQ Computer Training Lab<br>
+			12100 Park Thirty Five Circle, Building A,
+			Room 234/235<br>
+			Austin, TX 78753 
+			</address>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.477870524737!2d-97.67512999999995!3d30.394180999999985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644c9344505c47d%3A0x1252c18c475b319d!2sTexas+Commission+on+Environmental+Quality!5e0!3m2!1sen!2sus!4v1412005665318" width="100%" height="300" frameborder="0" style="border:0"></iframe>
+		</p>
+{% endblock sidebarLeft %}
+</div>
+</div>
 {% endblock contents %}
+
+
 

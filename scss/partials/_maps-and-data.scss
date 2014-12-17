@@ -13,6 +13,10 @@
     &.service {
       padding-top: 50px;
       margin-top: -50px;
+
+      img {
+        width: 75px;
+      }
     }
   }
 
@@ -111,12 +115,6 @@ img.data-thumb {
 .list-group {
   .media {
     margin-top: 0;
-    display: block;
-    overflow: auto;
-  }
-  .media-body {
-    display: block;
-    overflow: auto;
   }
 }
 
@@ -158,9 +156,26 @@ img.data-thumb {
 }
 
 .data-catalog-items {
-  @media (min-width: $screen-md-min) {
+
+  .media-left, .media-body {
+    @media (max-width: $screen-sm) {
+      display: block !important;
+    }
+  }
+
+  img {
+    width: 300px;
+
+
+  }
+
+  @media (min-width: $screen-sm) {
     .media {
-      min-height: 175px;
+      min-height: 180px;
+
+      img {
+        width: 200px;
+      }
     }
   }
 }

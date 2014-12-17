@@ -1,58 +1,62 @@
 /* Training */
 
+h1.training-title {
+	margin-top: 0;
+}
+
+.training-header {
+		background: $lightgrey;
+		min-height: 60px;
+		line-height: 60px;
+}
+
+
+
 #training {
-	table {
-		tr {
+	.training-list {
+		.training-header {
+			background: $lightgrey;
+			line-height: normal;
+		}
 
-			&:nth-child(even) {
+		.head {
+			background: $tnrisblue;
+			color: white;
+			font-weight: 300;
+			padding: 5px;
+		}
+
+		div>div {
+			vertical-align: top;
+			padding: 5px;
+
+			.course-date {
+				strong {
+					text-transform: uppercase
+				}
+			}
+		}
+
+		.course-info {
+			font-size: 12px;
+		}
+
+		.course-description {
+			padding-bottom: 30px;
+			border-bottom: 1px solid $lightergrey;
+		}
+
+		&:last-child {
+			.course-description {
 				td {
-					background: $lightgrey;
+					border-bottom: none;
 				}
 			}
+		}
 
-			th {
-				background: $tnrisblue;
-				color: white;
-				font-weight: 300;
-				padding: 5px;
-
-				&:first-child {
-					width: 22%;
-				}
-			}
-
-			td {
-				vertical-align: top;
-				padding: 5px;
-
-				&.course-date {
-					strong {
-						text-transform: uppercase
-					}
-				}
-			}
-
-			&.course-description {
-				td {
-					padding-bottom: 30px;
-					border-bottom: 1px solid $lightergrey;
-				}
-			}
-
-			&:last-child {
-				&.course-description {
-					td {
-						border-bottom: none;
-					}
-				}
-			}
-
-			h3 {
-				font-size: 22px;
-				margin-top: 0;
-			}
-
-
+		h3 {
+			font-size: 22px;
+			margin-top: 0;
 		}
 	}
 }

@@ -3,19 +3,20 @@
 var _ = require('lodash');
 var del = require('del');
 var extend = require('extend');
+var extras = require('swig-extras');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
 var path = require('path');
 var each = require('metalsmith-each');
+var metadata = require('metalsmith-metadata');
 var permalinks = require('metalsmith-permalinks');
-var templates = require('metalsmith-templates');
 var replace = require('metalsmith-replace');
 var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var swig = require('swig');
-var extras = require('swig-extras');
+var templates = require('metalsmith-templates');
 var vinylPaths = require('vinyl-paths');
 var webserver = require('gulp-webserver');
 
@@ -28,7 +29,10 @@ var metadata = require('metalsmith-metadata');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task
-swig.setDefaults({ cache: false });
+swig.setDefaults({
+  cache: false,
+  loader: swig.loaders.fs(__dirname + '/templates')
+});
 
 swig.setFilter('find', function (collection, key) {
   return _.find(collection, key);
@@ -225,7 +229,9 @@ gulp.task('dist-metal', function () {
         .use(replace({
           contents: function(contents) {
             var str = contents.toString()
-              .replace(/{{.+?}}/g, scapegoat.unescape);
+              .replace(/{{.+?}}/g, scapegoat.unescape)
+              .replace(/{#.+?#}/g, scapegoat.unescape)
+              .replace(/{%.+?%}/g, scapegoat.unescape);
             return new Buffer(str);
           }
         }))
@@ -234,8 +240,7 @@ gulp.task('dist-metal', function () {
           inPlace: true
         }))
         .use(templates({
-          engine: 'swig',
-          directory: dirs.templates
+          engine: 'swig'
         }))
       )
     .pipe(gulp.dest(dirs.dist));

@@ -72,6 +72,7 @@ extras.useFilter(swig, 'markdown');
 function parseCSV(options) {
   var name = options.name;
   var path = options.path;
+  var urlDir = options.urlDir || options.name;
   var template = options.template;
   var filenameKeys = options.filenameKeys;
   var splitKeys = options.splitKeys || [];
@@ -173,15 +174,16 @@ gulp.task('dist-metal', function () {
     .pipe(
       gulpsmith()
         .use(parseCSV({
-          path: 'content/data-catalog.csv',
           name: 'catalog',
+          path: 'content/data-catalog.csv',
+          urlDir: 'data-catalog',
           template: 'data-catalog-entry.html',
           filenameKeys: ['category', 'name'],
           splitKeys: ['keywords']
         }))
         .use(parseCSV({
-          path: 'content/training.csv',
           name: 'training',
+          path: 'content/training.csv',
           template: 'training-entry.html',
           filenameKeys: ['class_title']
         }))

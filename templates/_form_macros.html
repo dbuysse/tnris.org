@@ -101,7 +101,7 @@
   {{after(name, display, type, required)}}
 
   {% if add_other_option %}
-    {% set other_name = name + '_other' %}
+    {% set other_name = name + ' (other)' %}
     {% set other_display = display + ' (other)' %}
     {% if show %}
       {% set other_show = show + " && form_model['" + name + "'] == 'Other'" %}
@@ -113,12 +113,39 @@
 {%- endmacro -%}
 
 {%- macro submit(form_name) -%}
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-3 col-sm-9" ng-switch="status">
-      <button ng-switch-when="error" type="submit" class="btn btn-danger" ng-click="submit(form_model)">There was an error. Please try again.</button>
-      <button ng-switch-when="submitting" type="submit" class="btn btn-info" ng-click="submit(form_model)">Sending now...</button>
-      <button ng-switch-when="success" type="submit" class="btn btn-success" ng-click="submit(form_model)" disabled>Your {{form_name}} has been sent.</button>
-      <button ng-switch-default type="submit" class="btn btn-primary" ng-click="submit(form_model)">Submit</button>
+  {% import '_macros.html' as macros %}
+
+  <div class="form-group has-feedback" ng-class="{'has-error': errors['recaptcha']}">
+    <div class="col-xs-12">
+      <div grecaptcha class="recaptcha" ng-model="recaptcha"></div>
+      <div ng-show="errors['recaptcha']" class="centered">reCAPTCHA is required for submission</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="submit col-xs-12" ng-switch="status">
+      <div ng-switch-when="error">
+        <div class="row">
+          <button type="submit" class="btn btn-block btn-danger" ng-click="submit(form_model)">Not Sent</button>
+        </div>
+        <div class="row">
+          <div class="has-error col-xs-12">
+            {{macros.ngCurly('serverError')}}
+          </div>
+        </div>
+      </div>
+      <div ng-switch-when="invalid" >
+        <div class="row">
+          <button type="submit" class="btn btn-block btn-danger" ng-click="submit(form_model)">Not Sent</button>
+        </div>
+        <div class="row">
+          <div class="has-error col-xs-12">
+            The form is invalid due to at least one invalid or missing field. Please fix and try again.
+          </div>
+        </div>
+      </div>
+      <button ng-switch-when="submitting" type="submit" class="btn btn-block btn-info" ng-click="submit(form_model)">Sending...</button>
+      <button ng-switch-when="success" type="submit" class="btn btn-block btn-success" ng-click="submit(form_model)" disabled>Your {{form_name}} has been sent.</button>
+      <button ng-switch-default type="submit" class="btn btn-block btn-primary" ng-click="submit(form_model)">Submit</button>
     </div>
   </div>
 {%- endmacro -%}

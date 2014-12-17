@@ -1,5 +1,7 @@
 {% extends "base.html" %} 
 
+{% import '_macros.html' as macros %}
+
 {% block contents %}
 <div class="row">
   {% block category_nav %}
@@ -19,32 +21,12 @@
       <h1>{{ title }}</h1>
       <div class="lead">{{ contents|safe }}</div>
         {% for category in catalog|sortBy(['category', 'name'])|groupBy('category') %}
+          {% set category_name = loop.key %}
           <div class="section">
-            <h2 id="{{category|first['urlized-category']}}">{{loop.key}}</h2>
+            <h2 id="{{category|first['urlized-category']}}">{{category_name}}</h2>
             <ul class="media-list list-group">
               {% for item in category %}
-                <li class="media list-group-item">
-                 {% if item.thumb %}
-                    <a class="pull-left" href="{{ item.path }}">
-                      <img class="media-object data-thumb" src="{{ item.thumb }}" alt="thumbnail of {{ item.name }} data set">
-                    </a>
-                   {% else %}
-                    <a class="pull-left" href="{{ item.path }}">
-                      <img class="media-object" src="holder.js/100x100" alt="...">
-                    </a>
-                  {% endif %}
-                  <div class="media-body">
-                    <h4 class="media-heading">
-                      <a href="{{ item.path }}">{{ item.name }}</a>
-
-                    <a href="{{ item.path }}" class="btn btn-sm btn-tnris pull-right"><i class="fa fa-chevron-right"></i> Full Info
-                    </a>
-                    </h4>
-                    <p>
-                      {{ item.short_description }}
-                    </p>
-                  </div>
-                </li>
+                {{macros.catalog_data_card(category_name, item.name)}}
               {% endfor %}
             </ul>
           </div>

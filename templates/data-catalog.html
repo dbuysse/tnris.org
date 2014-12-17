@@ -26,7 +26,7 @@
             <h2 id="{{category|first['urlized-category']}}">{{category_name}}</h2>
             <ul class="media-list list-group">
               {% for item in category %}
-                {{macros.catalog_data_card(category_name, item.name)}}
+                {{macros.catalog_data_card_entry(item)}}
               {% endfor %}
             </ul>
           </div>

@@ -1,5 +1,13 @@
-{%- macro catalog_data_card(category, name) -%}
-  {% set item = catalog|find({category: category, name:name}) %}
+{%- macro catalog_data_card(search) -%}
+  <ul class="media-list list-group">
+    {{catalog_data_card_entry(search)}}
+  </ul>
+{%- endmacro -%}
+
+{%- macro catalog_data_card_entry(search) -%}
+  {%- set category = search['urlized-category'] || search.split('/')[0] -%}
+  {%- set name = search['urlized-name'] || search.split('/')[1] -%}
+  {%- set item = catalog|find({'urlized-category': category, 'urlized-name':name}) -%}
 
   <li class="media list-group-item">
    {% if item.thumb %}

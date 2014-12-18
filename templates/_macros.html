@@ -1,3 +1,30 @@
+{%- macro catalog_data_card(category, name) -%}
+  {% set item = catalog|find({category: category, name:name}) %}
+
+  <li class="media list-group-item">
+   {% if item.thumb %}
+      <a class="pull-left" href="{{ item.path }}">
+        <img class="media-object data-thumb" src="{{ item.thumb }}" alt="thumbnail of {{ item.name }} data set">
+      </a>
+     {% else %}
+      <a class="pull-left" href="{{ item.path }}">
+        <img class="media-object" src="holder.js/100x100" alt="...">
+      </a>
+    {% endif %}
+    <div class="media-body">
+      <h4 class="media-heading">
+        <a href="{{ item.path }}">{{ item.name }}</a>
+
+      <a href="{{ item.path }}" class="btn btn-sm btn-tnris pull-right"><i class="fa fa-chevron-right"></i> Full Info
+      </a>
+      </h4>
+      <p>
+        {{ item.short_description }}
+      </p>
+    </div>
+  </li>
+{%- endmacro -%}
+
 {%- macro ngCurly(str) -%}
   {%- set start = '{{' -%}
   {%- set end = '}}' -%}

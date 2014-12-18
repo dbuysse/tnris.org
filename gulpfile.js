@@ -30,6 +30,10 @@ var metadata = require('metalsmith-metadata');
 // watch task
 swig.setDefaults({ cache: false });
 
+swig.setFilter('find', function (collection, key) {
+  return _.find(collection, key);
+});
+
 // patch swig groupBy filter so it doesn't mutate lists - this is a temporary
 // workaround until patch makes it's way into a swig release.
 // See: https://github.com/paularmstrong/swig/pull/524
@@ -72,6 +76,7 @@ extras.useFilter(swig, 'markdown');
 function parseCSV(options) {
   var name = options.name;
   var path = options.path;
+  var urlDir = options.urlDir || options.name;
   var template = options.template;
   var filenameKeys = options.filenameKeys;
   var splitKeys = options.splitKeys || [];
@@ -97,7 +102,8 @@ function parseCSV(options) {
       return urlized;
     });
 
-    data.filename = [name].concat(urlKeys).join('/') + '.md';
+    data.filename = [urlDir].concat(urlKeys).join('/') + '.md';
+    data._collector_ignore = true;
 
     var file = files[data.filename];
     if (file) {
@@ -172,15 +178,16 @@ gulp.task('dist-metal', function () {
     .pipe(
       gulpsmith()
         .use(parseCSV({
-          path: 'content/data-catalog.csv',
           name: 'catalog',
+          path: 'content/data-catalog.csv',
+          urlDir: 'data-catalog',
           template: 'data-catalog-entry.html',
           filenameKeys: ['category', 'name'],
           splitKeys: ['keywords']
         }))
         .use(parseCSV({
-          path: 'content/training.csv',
           name: 'training',
+          path: 'content/training.csv',
           template: 'training-entry.html',
           filenameKeys: ['class_title']
         }))
@@ -194,7 +201,10 @@ gulp.task('dist-metal', function () {
             file.id = '_' + file.id;
           }
         }))
-        .use(collector('*.md'))
+        .use(collector({
+          pattern: '*.md',
+          ignore: ['training']
+        }))
         .use(autodate('YYYY-MM-DD'))
         .use(markdown({
           smartypants: false

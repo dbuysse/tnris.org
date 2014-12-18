@@ -1,5 +1,6 @@
 'use strict';
 
+var _ = require('lodash');
 var collections = require('metalsmith-collections');
 var extend = require('extend');
 var Matcher = require('minimatch').Minimatch;
@@ -18,12 +19,16 @@ function collector(options) {
     Object.keys(files).forEach(function(filename){
       var d = dirSplit(filename);
       var dir = d[0];
+      var file = files[filename];
       var subpath = d[1];
 
-      if (matcher.match(subpath)) {
-        var pattern = dir === 'root' ? options.pattern : dir + '/' + options.pattern;
-        collectionsObj[dir] = extend({'pattern': pattern}, options.default);
+      if(!file._collector_ignore) {
+        if (matcher.match(subpath)) {
+          var pattern = dir === 'root' ? options.pattern : dir + '/' + options.pattern;
+          collectionsObj[dir] = extend({'pattern': pattern}, options.default);
+        }
       }
+
     });
 
     return collections(collectionsObj)(files, metalsmith, done);
@@ -45,11 +50,12 @@ function dirSplit(filename) {
 
 function normalize(options) {
   options = "string" === typeof options ? {pattern: options} : options || {};
-  options.pattern = options.pattern || '*';
+  options.ignore = options.ignore || [];
   options.default = {
     sortBy: 'date',
     reverse: true
   };
+  options.pattern = options.pattern || '*';
 
   return options;
 }

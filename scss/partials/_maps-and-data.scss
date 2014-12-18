@@ -82,10 +82,43 @@ img.data-thumb {
     }
     td {
       vertical-align: top;
+
+      .tags {
+        ul {
+          li {
+            float: left; 
+
+            .tag {
+                background: #eee;
+                border-radius: 3px 0 0 3px;
+                color: #999;
+                display: inline-block;
+                height: 26px;
+                line-height: 26px;
+                padding: 0 20px 0 23px;
+                position: relative;
+                margin: 0 10px 10px 0;
+                text-decoration: none;
+                -webkit-transition: color 0.2s;
+
+                &:hover {
+                  background-color: crimson;
+                  color: white;
+
+                  &::after {
+                      border-left-color: crimson; 
+                    }
+                }
+            }
+          }
+        }
+      }
     }
     a {
       color: $lightgrey;
     }
+
+
   }
   .btn-group {
     position: absolute;
@@ -210,3 +243,4 @@ img.data-thumb {
     display: none;
   }
 }
+

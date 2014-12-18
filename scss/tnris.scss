@@ -11,7 +11,7 @@
 
 html, body {
   height: 100%;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* Move down content because we have a fixed navbar that is 50px tall */
@@ -274,7 +274,7 @@ a.navbar-twdb {
 #home-top-content {
   margin-top: 10px;
   margin-bottom: 20px;
-  @include background-image(linear-gradient(to top, $lightergrey, white, white, white, white, white, transparent));
+  @include background-image(linear-gradient(to top, $lightergrey, white, white, white));
   border-bottom: 1px solid #e7e7e7;
   padding-bottom: 5px;
   @media (min-width: $screen-sm) {

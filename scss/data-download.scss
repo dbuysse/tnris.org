@@ -39,6 +39,10 @@ h2 {
 
   .download-text {
     font-size: 1.1em;
+
+    @media (max-width: $screen-lg) {
+      font-size: 1em;
+    }
   }
 
   a {

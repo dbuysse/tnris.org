@@ -3,19 +3,21 @@
 var _ = require('lodash');
 var del = require('del');
 var extend = require('extend');
+var extras = require('swig-extras');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
 var path = require('path');
 var each = require('metalsmith-each');
+var fs = require('fs');
+var metadata = require('metalsmith-metadata');
 var permalinks = require('metalsmith-permalinks');
-var templates = require('metalsmith-templates');
 var replace = require('metalsmith-replace');
 var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var swig = require('swig');
-var extras = require('swig-extras');
+var templates = require('metalsmith-templates');
 var vinylPaths = require('vinyl-paths');
 var webserver = require('gulp-webserver');
 
@@ -28,7 +30,10 @@ var metadata = require('metalsmith-metadata');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task
-swig.setDefaults({ cache: false });
+swig.setDefaults({
+  cache: false,
+  loader: swig.loaders.fs(__dirname + '/templates')
+});
 
 swig.setFilter('find', function (collection, key) {
   return _.find(collection, key);
@@ -115,6 +120,10 @@ function parseCSV(options) {
       });
     }
 
+    if (options.additional) {
+      file = options.additional(file);
+    }
+
     files[data.filename] = file;
 
     obj.push(file);
@@ -122,7 +131,7 @@ function parseCSV(options) {
 }
 
 function urlize(str) {
-  return str.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-').replace(/-+/g, '-');
+  return str.trim().toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-').replace(/-+/g, '-');
 }
 
 var dirs = {
@@ -183,7 +192,54 @@ gulp.task('dist-metal', function () {
           urlDir: 'data-catalog',
           template: 'data-catalog-entry.html',
           filenameKeys: ['category', 'name'],
-          splitKeys: ['keywords']
+          splitKeys: ['keywords'],
+          additional: function (file) {
+            var image_name = file['urlized-name'].replace(/-/g, '_');
+            var base = 'images/data-catalog/' + file['urlized-category'] + '/' + image_name;
+
+            var image_types = [
+              {
+                name: 'thumb',
+                suffix: '_th',
+                always: true
+              }, {
+                name: 'overview_image',
+                suffix: '_overview',
+                always: true
+              }, {
+                name: 'status_map',
+                suffix: '_status',
+                always: false
+              }, {
+                name: 'detail_image',
+                suffix: '_detail',
+                always: false
+              }, {
+                name: 'urban_image',
+                suffix: '_urban',
+                always: false
+              }, {
+                name: 'natural_image',
+                suffix: '_natural',
+                always: false
+              }
+            ];
+
+            _.each(image_types, function (image_type) {
+              var filename = base + image_type.suffix + '.jpg';
+
+              var staticPath = dirs.static + '/' + filename;
+              var exists = fs.existsSync(staticPath);
+
+              if (exists) {
+                file[image_type.name + '_url'] = filename;
+              } else if (image_type.always) {
+                console.log("Warning: Could not find required image for data catalog entry - " + staticPath);
+              }
+            });
+
+            return file;
+          }
         }))
         .use(parseCSV({
           name: 'training',
@@ -225,7 +281,9 @@ gulp.task('dist-metal', function () {
         .use(replace({
           contents: function(contents) {
             var str = contents.toString()
-              .replace(/{{.+?}}/g, scapegoat.unescape);
+              .replace(/{{.+?}}/g, scapegoat.unescape)
+              .replace(/{#.+?#}/g, scapegoat.unescape)
+              .replace(/{%.+?%}/g, scapegoat.unescape);
             return new Buffer(str);
           }
         }))
@@ -234,8 +292,7 @@ gulp.task('dist-metal', function () {
           inPlace: true
         }))
         .use(templates({
-          engine: 'swig',
-          directory: dirs.templates
+          engine: 'swig'
         }))
       )
     .pipe(gulp.dest(dirs.dist));

@@ -10,9 +10,9 @@
   {%- set item = catalog|find({'urlized-category': category, 'urlized-name':name}) -%}
 
   <li class="media list-group-item">
-   {% if item.thumb %}
+   {% if item.thumb_url %}
       <a class="media-left" href="{{ item.path }}">
-        <img class="media-object data-thumb" src="{{ item.thumb }}" alt="thumbnail of {{ item.name }} data set">
+        <img class="media-object data-thumb" src="{{item.thumb_url}}" alt="thumbnail of {{ item.name }} data set">
       </a>
      {% else %}
       <a class="media-left" href="{{ item.path }}">

@@ -10,6 +10,7 @@ var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
 var path = require('path');
 var each = require('metalsmith-each');
+var fs = require('fs');
 var metadata = require('metalsmith-metadata');
 var permalinks = require('metalsmith-permalinks');
 var replace = require('metalsmith-replace');
@@ -119,6 +120,10 @@ function parseCSV(options) {
       });
     }
 
+    if (options.additional) {
+      file = options.additional(file);
+    }
+
     files[data.filename] = file;
 
     obj.push(file);
@@ -187,7 +192,54 @@ gulp.task('dist-metal', function () {
           urlDir: 'data-catalog',
           template: 'data-catalog-entry.html',
           filenameKeys: ['category', 'name'],
-          splitKeys: ['keywords']
+          splitKeys: ['keywords'],
+          additional: function (file) {
+            var image_name = file['urlized-name'].replace(/-/g, '_');
+            var base = 'images/data-catalog/' + file['urlized-category'] + '/' + image_name;
+
+            var image_types = [
+              {
+                name: 'thumb',
+                suffix: '_th',
+                always: true
+              }, {
+                name: 'overview_image',
+                suffix: '_overview',
+                always: true
+              }, {
+                name: 'status_map',
+                suffix: '_status',
+                always: false
+              }, {
+                name: 'detail_image',
+                suffix: '_detail',
+                always: false
+              }, {
+                name: 'urban_image',
+                suffix: '_urban',
+                always: false
+              }, {
+                name: 'natural_image',
+                suffix: '_natural',
+                always: false
+              }
+            ];
+
+            _.each(image_types, function (image_type) {
+              var filename = base + image_type.suffix + '.jpg';
+
+              var staticPath = dirs.static + '/' + filename;
+              var exists = fs.existsSync(staticPath);
+
+              if (exists) {
+                file[image_type.name + '_url'] = filename;
+              } else if (image_type.always) {
+                console.log("Warning: Could not find required image for data catalog entry - " + staticPath);
+              }
+            });
+
+            return file;
+          }
         }))
         .use(parseCSV({
           name: 'training',

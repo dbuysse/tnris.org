@@ -36,11 +36,11 @@
       },
       'url': natural_image_url
     }, {
-      'alt': 'Status map for ' + name + ' data',
+      'alt': 'Coverage map for ' + name + ' data',
       'button': {
         'class': 'btn-danger',
         'icon': 'fa fa-crosshairs',
-        'label': 'status map'
+        'label': 'coverage map'
       },
       'url': status_map_url
     }
@@ -97,7 +97,7 @@
             <tbody>
               <tr>
                 <td class="col-sm-3"><a href="#">{{ category }}</a></td>
-                <td class="col-sm-4"><a href="#">{{ tags }}</a> </td>
+                <td class="col-sm-4">{{ tags }}</td>
                 <td class="col-sm-2">{{ date_created }}</td>
                 <td class="col-sm-3">{{ source }}</td>
               </tr>
@@ -112,12 +112,6 @@
         <div id="data-access" class="col-md-4 hidden-sm hidden-xs">
           <h2>Data Access</h2>
 
-          {% if download=='T' %}
-            <h4>Data Search &amp; Download</h4>
-            <p>Use our online tool to specify the geographic area for which you would like to download the <em>{{ name }}</em> data set.  </p>
-            <p><a href="data-download" class="btn btn-tnris btn-lg"><span class="glyphicon glyphicon-search"></span> Launch <span class="hidden-sm hidden-xs hidden-md">Data Search &amp; </span>Download </a></p>
-          {% endif %}
-
           {% if download_link %}
             <h4>Direct Download</h4>
             <p>The full <em>{{ name }}</em> data set can be downloaded directly.</p>
@@ -125,10 +119,17 @@
             <p><a href="{{ download_link }}" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Download <span class="hidden-sm hidden-xs hidden-md">Data Set</span></a></p>
           {% endif %}
 
+          {% if download %}
+            <h4>Data Search &amp; Download</h4>
+            <p>Use our online tool to specify the geographic area for which you would like to download the <em>{{ name }}</em> data set.  </p>
+            <p><a href="data-download" class="btn btn-tnris btn-lg"><span class="glyphicon glyphicon-search"></span> Launch <span class="hidden-sm hidden-xs hidden-md">Data Search &amp; </span>Download </a></p>
+          {% endif %}
+
+          {% if order %}
           <h4>Custom Ordering</h4>
           <p><em>{{ name }}</em> is in the public domain and available from the <a href="rdc">Research and Distribution Center</a> for the cost of reproduction.</p>
           <p><a href="order-data" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-envelope"></span> Order <span class="hidden-sm hidden-xs hidden-md">Data</span></a></p>
-
+          {% endif %}
           {% if wms_link %}
             <h4>Online Mapping Service</h4>
 
@@ -141,7 +142,7 @@
         <div class="col-md-8 col-sm-12">
           <div class="description">
             <h2>Description</h2>
-            <p>{{description}}</p>
+            <p>{{ description|markdown }}</p>
           </div>
 
           <p>{{ contents|safe }}</p>
@@ -166,10 +167,16 @@
                     <td><strong>Footprint:</strong></td>
                     <td>{{ footprint }}</td>
                   </tr>
+
+                      {% if download_size %}
                   <tr>
-                    <td><strong>Download Size:</strong></td>
-                    <td>{% if download_size %}{{ download_size }}{% else %}<em>N/A - Not Available for Download</em>{% endif %}</td>
+
+                    <td><strong>Dataset Size:</strong></td>
+                    <td>
+                        {{ download_size }}
+                      {% else %}<em>N/A - Not Available for Download</em></td>
                   </tr>
+                  {% endif %}
                   <tr>
                     <td><strong>Recommended Use:</strong></td>
                     <td>{{ recommended_use }}</td>

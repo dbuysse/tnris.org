@@ -17,8 +17,8 @@ html, body {
 /* Move down content because we have a fixed navbar that is 50px tall */
 
 body {
-  font-family: $opensans;
-  font-weight: 100;
+  font-family: $proxima;
+  font-weight: 400;
   position: relative;
 }
 
@@ -493,7 +493,7 @@ a.navbar-twdb {
           }
         }
         small {
-          font-family: $opensans;
+          font-family: $proxima;
           font-weight: 100;
           color: $darkgrey;
           display: block;

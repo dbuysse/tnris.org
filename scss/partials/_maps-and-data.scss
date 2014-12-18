@@ -35,7 +35,6 @@ img.data-thumb {
 
 .description {
   font-weight: 300;
-  font-family: $opensans;
   font-size: 20px;
   margin-bottom: 30px;
   h2 {
@@ -50,6 +49,9 @@ img.data-thumb {
   margin-bottom: 30px;
   border: 1px solid $midgrey;
   min-height: 88px;
+  max-height: 600px;
+  overflow: hidden;
+  background: $darkgrey;
   h1 {
     height: 50px;
     z-index: 2000;
@@ -89,6 +91,11 @@ img.data-thumb {
     position: absolute;
     top: 20px;
     left: 20px;
+  }
+
+  img {
+    max-height: 584px;
+    margin: 0 auto;
   }
 }
 

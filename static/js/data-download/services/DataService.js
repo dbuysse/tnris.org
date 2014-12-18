@@ -1,7 +1,7 @@
 var DataService = ['$collection', '$http', 'DOWNLOAD_API_PRE', function ($collection, $http, downloadAPIPre)  {
   'use strict';
 
-  var apiPre = downloadAPIPre + 'api/v1/';
+  var apiPre = downloadAPIPre + 'api/v1';
 
   DataService = {};
 

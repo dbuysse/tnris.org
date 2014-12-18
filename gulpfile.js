@@ -238,6 +238,8 @@ gulp.task('dist-metal', function () {
               }
             });
 
+            file.tags = file.tags.split(',').map(function(tag) {return tag.trim();});
+
             return file;
           }
         }))

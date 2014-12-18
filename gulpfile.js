@@ -103,7 +103,7 @@ function parseCSV(options) {
 
     var urlKeys = _.map(filenameKeys, function(key) {
       var urlized = urlize(data[key]);
-      data['urlized-' + key] = urlized;
+      data['urlized_' + key] = urlized;
       return urlized;
     });
 
@@ -194,8 +194,8 @@ gulp.task('dist-metal', function () {
           filenameKeys: ['category', 'name'],
           splitKeys: ['keywords'],
           additional: function (file) {
-            var image_name = file['urlized-name'].replace(/-/g, '_');
-            var base = 'images/data-catalog/' + file['urlized-category'] + '/' + image_name;
+            var image_name = file['urlized_name'].replace(/-/g, '_');
+            var base = 'images/data-catalog/' + file['urlized_category'] + '/' + image_name;
 
             var image_types = [
               {

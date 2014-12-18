@@ -5,9 +5,9 @@
 {%- endmacro -%}
 
 {%- macro catalog_data_card_entry(search) -%}
-  {%- set category = search['urlized-category'] || search.split('/')[0] -%}
-  {%- set name = search['urlized-name'] || search.split('/')[1] -%}
-  {%- set item = catalog|find({'urlized-category': category, 'urlized-name':name}) -%}
+  {%- set category = search['urlized_category'] || search.split('/')[0] -%}
+  {%- set name = search['urlized_name'] || search.split('/')[1] -%}
+  {%- set item = catalog|find({'urlized_category': category, 'urlized_name':name}) -%}
 
   <li class="media list-group-item">
    {% if item.thumb_url %}

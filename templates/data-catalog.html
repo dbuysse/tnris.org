@@ -10,7 +10,7 @@
         <lh><h4>Browse by Category</h4></lh>
         {% for category in catalog|sortBy('category')|groupBy('category') %}
           <li>
-            <a href="#{{category|first['urlized-category']}}">{{loop.key}} ({{Object.keys(category).length}})</a>
+            <a href="#{{category|first['urlized_category']}}">{{loop.key}} ({{Object.keys(category).length}})</a>
           </li>
         {% endfor %}
       </ul>
@@ -22,7 +22,7 @@
       <div class="lead">{{ contents|safe }}</div>
         {% for category in catalog|sortBy(['category', 'name'])|groupBy('category') %}
           <div class="section">
-            <h2 id="{{category|first['urlized-category']}}">{{loop.key}}</h2>
+            <h2 id="{{category|first['urlized_category']}}">{{loop.key}}</h2>
             <ul class="media-list list-group">
               {% for item in category %}
                 {{macros.catalog_data_card_entry(item)}}

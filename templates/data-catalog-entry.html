@@ -96,8 +96,14 @@
             </thead>
             <tbody>
               <tr>
+
                 <td class="col-sm-3"><a href="{{crossref['data-catalog']}}/#{{urlized_category}}">{{ category }}</a></td>
-                <td class="col-sm-4">{{ tags }}</td>
+                <td class="col-sm-4">
+                  <ul>
+                    {% for tag in tags %}
+                      <li>{{tag}}</li>
+                    {% endfor %}
+                  </ul>
                 <td class="col-sm-2">{{ date_created }}</td>
                 <td class="col-sm-3">{{ source }}</td>
               </tr>

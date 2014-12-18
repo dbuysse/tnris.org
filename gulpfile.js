@@ -192,7 +192,7 @@ gulp.task('dist-metal', function () {
           urlDir: 'data-catalog',
           template: 'data-catalog-entry.html',
           filenameKeys: ['category', 'name'],
-          splitKeys: ['keywords'],
+          splitKeys: ['tags'],
           additional: function (file) {
             var image_name = file['urlized_name'].replace(/-/g, '_');
             var base = 'images/data-catalog/' + file['urlized_category'] + '/' + image_name;

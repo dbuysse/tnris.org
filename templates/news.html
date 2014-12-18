@@ -3,7 +3,7 @@
 {% block contents %}
 	
   <div class="row article">
-  <div class="col-sm-8 blog-main">
+  <div class="col-sm-12 col-md-10 blog-main">
   <h1 class="headline">{{ title }}</h1>
   <div class="byline">
   	<strong>by <author>{{ author }}<author></strong> {% if division %}<em>{{ division }}</em>{% endif %} | <time>{{ date|date('F jS, Y') }}</time> 
@@ -15,8 +15,8 @@
   {{ contents|safe }}
 	</div>
 	{% block rightContent %}
-  <div class="col-sm-4 blog-sidebar">
-    <div class="sidebar-module sidebar-module-inset">
+  <div class="col-sm-2 blog-sidebar">
+<!--     <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
     </div>
@@ -36,7 +36,7 @@
               <li><a href="#">May 2013</a></li>
               <li><a href="#">April 2013</a></li>
             </ol>
-          </div>
+          </div> -->
   </div>
 {% endblock rightContent %}
 </div>

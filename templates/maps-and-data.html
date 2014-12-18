@@ -1,110 +1,102 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 {% block contents %}
-<div class="row">
+  <div class="row">
     <div id="dataPageContent" class="col-md-12">
-        <h1>{{ title }}</h1>
-        <div class="row">
-            <div class="col-md-8 lead">
+      <div class="row">
+        <div class="col-sm-6 col-lg-8">
+            <h1>{{ title }}</h1>
+          <div class="lead">
             {{ contents|safe }}
-            </div>
-            <div class="col-md-8">
-                <div class="bs-callout bs-callout-info">
-                    <div class="panel-body">
-                        <a href="#" class="btn btn-success btn-lg btn-center"><span class="glyphicon glyphicon-envelope"></span> Custom Data Order Form</a>
-                        <p>
-                            This is a direct link to our Custom Data Order form to obtain customer service through the <a href="research-and-distribution"><abbr title="Research & Distribution">RDC</abbr></a><p>
-                            <h4>Important Note</h4>
-                            <p> <strong>Many datasets are available online and don't require custom ordering</strong></p>
-                        <p>We recommend exploring our <a href="data-catalog">data catalog</a> if you are unfamiliar with TNRIS data or require more information.</p>
-                    </div>
-                </div>
-            </div>
         </div>
-         
-        {% block mapsdata_content %}
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <h2>Data Set Catalog</h2>
-                <div class="media">
-                    <img class="media-object pull-left" src="http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_historical.jpg">
-                    <p>Browse through all available TNRIS datasets, whether available Online or through ordering.</p>
-                    <a href="data-catalog" class="btn btn-tnris btn-lg">Browse the Catalog</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <h2>Research &amp; Distribution (RDC)</h2>
-                <div class="media">
-                    <img class="media-object pull-left" src="http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_custom.jpg">
-                    <div class="media-body">
-                        <p>The RDC offers a variety of additional products, support and services from our in-house staff. We provide hands-on assistance and expertise.</p>
-                    </div>
-                    <a href="maps-and-data/research-and-distribution" class="btn btn-tnris btn-lg">Order Data</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <h2>Data Download</h2>
-                <div class="media">
-                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
-                    <div class="media-body">
-                        <p>The quickest way to search and download TNRIS data that is available online.</p>
-                    </div>
-                    <a href="{{crossref['data-download']}}" class="btn btn-tnris btn-lg">Start Downloading</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <h2>Data &amp; Mapping Solutions</h2>
-                <div class="media">
-                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
-                    <div class="media-body">
-                        <p>Applying design, communication, and technology skills to provide data solutions and cartographic products, both conventionally and digitally, for internal geospatial development.</p>
-                    </div>
-                    <a href="dms" class="btn btn-tnris btn-lg">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <h2>Web Mapping Services</h2>
-                <div class="media">
-                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
-                    <div class="media-body">
-                        <p>Data sets optimized for access through WMS.</p>
-                    </div>
-                    <a href="maps-and-data/web-mapping-services" class="btn btn-tnris btn-lg">View Available WMS</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <h2>Custom Map Creation</h2>
-                <div class="media">
-                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
-                    <div class="media-body">
-                <p>Our trained staff can help you create the map you need using TNRIS and public data.</p>
-            </div>
-
-                <a href="maps-and-data/custom-maps" class="btn btn-tnris btn-lg">Learn More</a>
-            </div>
-            </div>
-            <!-- <div class="col-md-6 col-sm-6">
-                <h2>Educational Resources</h2>
-                <div class="media">
-                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
-                    <p>Online tutorials, walkthroughs and more.</p>
-                    <a href="#" class="btn btn-tnris btn-lg">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <h2>Developers</h2>
-                <div class="media">
-                    <img class="media-object pull-left" src="holder.js/200x120" alt="...">
-                    <p>TNRIS incorporates many open source technologies that are available to developers with interest</p>
-                    <a href="#" class="btn btn-tnris btn-lg">Learn More</a>
-                </div>
-            </div> -->
         </div>
-        {% endblock mapsdata_content %}
+        <div class="col-sm-6 col-lg-4">
+          <div class="bs-callout bs-callout-info">
+            <div class="panel-body">
+              <a href="#" class="btn btn-success btn-block"><span class="glyphicon glyphicon-envelope"></span> Custom Data Order Form</a>
+              <p>
+                This is a direct link to our Custom Data Order form to obtain customer service through the <a href="research-and-distribution"><abbr title="Research & Distribution">RDC</abbr></a>
+              <p>
+              <h4>Important Note</h4>
+              <p> <strong>Many datasets are available online and don't require custom ordering</strong></p>
+              <p>We recommend exploring our <a href="data-catalog">data catalog</a> if you are unfamiliar with TNRIS data or require more information.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
+  {% block mapsdata_content %}
+    {% set content_items = [
+      {
+        name: 'Data Set Catalog',
+        description: 'Browse through all available TNRIS datasets, whether available Online or through ordering.',
+        image: 'http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_historical.jpg',
+        link: 'data-catalog',
+        button_text: 'Browse the Catalog'
+      }, {
+        name: 'Research & Distribution (RDC)',
+        description: 'The RDC offers a variety of additional products, support and services from our in-house staff. We provide hands-on assistance and expertise.',
+        image: 'http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_custom.jpg',
+        link: 'maps-and-data/research-and-distribution',
+        button_text: 'Order Data'
+      }, {
+        name: 'Data Download',
+        description: 'The quickest way to search and download TNRIS data that is available online.',
+        image: 'holder.js/200x120',
+        link: crossref['data-download'],
+        button_text: 'Start Downloading'
+      }, {
+        name: 'Online Mapping Services',
+        description: 'Data sets optimized for access through WMS.',
+        image: 'holder.js/200x120',
+        link: 'maps-and-data/online-mapping-services',
+        button_text: 'View our services'
+      }, {
+        name: 'Custom Map Creation',
+        description: 'Our trained staff can help you create the map you need using TNRIS and public data.',
+        image: 'images/highlights/ranch_map_small.jpg',
+        link: 'maps-and-data/custom-maps',
+        button_text: 'Learn More'
+      }, {
+        name: 'Data & Mapping Solutions',
+        description: 'Applying design, communication, and technology skills to provide data solutions and cartographic products, both conventionally and digitally, for internal geospatial development.',
+        image: 'images/highlights/custom_maps.jpg',
+        link: 'maps-and-data/data-and-mapping-solutions',
+        button_text: 'Learn More'
+      } 
+    ] %}
 
+     {# possible future sections
 
-</div>
+      }, {
+        name: 'Educational Resources',
+        description: 'Online tutorials, walkthroughs and more.',
+        image: 'holder.js/200x120',
+        link: '#',
+        button_text: 'Learn More'
+      }, {
+        name: 'Developers',
+        description: 'TNRIS incorporates many open source technologies that are available to developers with interest.',
+        image: 'holder.js/200x120',
+        link: '#',
+        button_text: 'Learn More'
+     #}
 
+     <div class="row data-catalog-items">
+      {% for item in content_items %}
+        <div class="media col-xs-12 col-sm-6">
+          <h2 class="media-heading">{{item.name}}</h2>
+          <a class="media-left" href="{{item.link}}">
+            <img class="thumbnail" src="{{item.image}}" alt="{{item.alt_text}}"/>
+          </a>
+          <div class="media-body">
+            <p>{{item.description}}</p>
+            <a href="{{item.link}}" class="btn btn-tnris btn-md">{{item.button_text}}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endblock mapsdata_content %}
 {% endblock contents %}

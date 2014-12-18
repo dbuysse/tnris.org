@@ -6,7 +6,7 @@
   <div class="row">
     {% block category_nav  %}
       <div class="col-md-4 wms-nav-container">
-        <ul class="nav hidden-sm hidden-xs affix nav-cat">
+        <ul class="nav hidden-sm hidden-xs nav-cat" data-spy="affix">
           <lh><h4>Jump to WMS Layers</h4></lh>
           {% for wms_category in catalog|sortBy('wms_category')|groupBy('wms_category') %}
             <li>
@@ -30,25 +30,27 @@
               <ul class="media-list list-group">
                 {% for catalog_entry in wms_category %}
                   <li class="media list-group-item">
-                    {% if catalog_entry.thumbnail %}
-                       <a class="pull-left" href="{{catalog_entry.wms_link}}">
-                         <img class="media-object" src="{{catalog_entry.thumbnail}}" alt="...">
+                    {% if catalog_entry.thumb %}
+                       <a class="media-left" href="{{catalog_entry.wms_link}}">
+                         <img class="media-object" src="{{catalog_entry.thumb}}" alt="...">
                        </a>
                       {% else %}
-                       <a class="pull-left" href="{{catalog_entry.wms_link}}">
-                         <img class="media-object" src="holder.js/50x50" alt="...">
+                       <a class="media-left" href="{{catalog_entry.path}}">
+                         <img class="media-object" src="holder.js/75x75" alt="...">
                        </a>
                     {% endif %}
-                    <a class="badge copy-tip" href="#" data-toggle="tooltip" title="Copy the WMS URL">
-                      <i class="fa fa-files-o"></i>
-                      Copy URL
-                    </a>
-                    <h4 class="list-group-item-heading">
-                      <a href="#" class="wms-tip" data-toggle="tooltip" title="More about this dataset">
+                    <div class="media-body">
+                    <h3 class="list-group-item-heading">
+                      <a href="{{catalog_entry.path}}" class="wms-tip" title="More about this dataset">
                           {{catalog_entry.name}}
                       </a>
                       <small>{{catalog_entry.wms_link}}</small>
-                    </h4>
+                      <a class="badge pull-right" href="#" title="Copy the WMS URL">
+                        <i class="fa fa-files-o"></i>
+                        Copy URL
+                      </a>
+                    </h3>
+                    </div>
                   </li>
                 {% endfor %}
               </ul>

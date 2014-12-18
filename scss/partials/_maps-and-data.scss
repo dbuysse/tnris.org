@@ -1,0 +1,205 @@
+// _mapsanddata.scss
+@import "variables";
+
+/* Main */
+
+#dataPageContent {
+  // position: relative;
+  // top: 100px;
+  h2 {
+    margin-top: 20px;
+  }
+  section {
+    &.service {
+      padding-top: 50px;
+      margin-top: -50px;
+
+      img {
+        width: 75px;
+      }
+    }
+  }
+
+  .list-group-item {
+    &:hover {
+      background: $lightgrey;
+    }
+  }
+}
+
+img.data-thumb {
+  width: 100px;
+  height: 100px;
+  border: 1px solid $midgrey;
+}
+
+.description {
+  font-weight: 300;
+  font-family: $opensans;
+  font-size: 20px;
+  margin-bottom: 30px;
+  h2 {
+    margin-top: 0;
+  }
+}
+
+#catalog-main-image {
+  position: relative;
+  width: 100%;
+  display: block;
+  margin-bottom: 30px;
+  border: 1px solid $midgrey;
+  min-height: 88px;
+  h1 {
+    height: 50px;
+    z-index: 2000;
+    padding: 0 20px;
+    margin: 0;
+  }
+  .caption {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 300px;
+    background: $tnrisblue;
+  }
+  .data-callout {
+    position: absolute;
+    bottom: 0px;
+    @include alpha-attribute("background-color", rgba($tnrisblue, 0.85), white);
+    @include background(linear-gradient(#135f82, $tnrisblue) top 85%);
+    color: white;
+    padding: 0 20px;
+    padding-top: 0;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    th {
+      font-weight: 500;
+    }
+    td {
+      vertical-align: top;
+    }
+    a {
+      color: $lightgrey;
+    }
+  }
+  .btn-group {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+.nav-cat {
+
+  li {
+    padding-left: 0;
+    margin-top: 0;
+    &.active {}
+    a {
+      padding: 5px 10px;
+      &:hover {
+        color: $darkgrey;
+        background: $lightblue;
+      }
+    }
+  }
+
+  &.affix {
+    top: 0px;
+  }
+}
+
+.list-group {
+  .media {
+    margin-top: 0;
+  }
+}
+
+#data-access {
+  h2 {
+    margin-top: 0;
+  }
+  h4 {
+    text-transform: uppercase;
+  }
+  .btn {
+    margin-bottom: 40px;
+  }
+}
+
+#metadata {
+  table {
+    width: 100%;
+    tr {
+      &:nth-child(odd) {}
+      &:nth-child(even) {
+        background-color: $lightgrey;
+      }
+      td {
+        padding: 10px;
+        vertical-align: top;
+        &:first-child {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+#catalogEntryContent {
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.data-catalog-items {
+
+  .media-left, .media-body {
+    @media (max-width: $screen-sm) {
+      display: block !important;
+    }
+  }
+
+  img {
+    width: 300px;
+
+
+  }
+
+  @media (min-width: $screen-sm) {
+    .media {
+      min-height: 180px;
+
+      img {
+        width: 200px;
+      }
+    }
+  }
+}
+
+.wms-url {
+  padding: 5px;
+  display: block;
+  overflow: hidden;
+  background: white;
+  border: 1px solid $midgrey;
+  max-width: 100%;
+  color: $infoblue;
+  font-weight: 500;
+  @include box-shadow(2px, 2px, 2px, rgba(0, 0, 0, 0.075), inset);
+}
+
+@media (max-width: $break-med-two) {
+  #catalog-main-image .data-callout {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: $break-topsmall) {
+  #catalog-main-image .data-callout {
+    display: none;
+  }
+}

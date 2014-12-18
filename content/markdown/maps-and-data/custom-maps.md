@@ -27,15 +27,16 @@ Just fill out a custom map order form at (link) and include all available datase
 > 
 > Printed Dimensions:
 
-![ Custom Fishing Map produced by RDC ](images/maps-and-data/custom_fishing_map.jpg "Custom Fishing Map produced by RDC")
+<img src="images/maps-and-data/custom_fishing_map.jpg" class="img-responsive" alt="Custom Fishing produced by RDC">
+
 
 ###Ranch Map
 > Included Layers: OTLS, NHD, StratMap hypsography, county boundary, transportation and contour custom map
 > 
 > Printed Dimensions:
 
-![ Custom Ranch Map produced by RDC ](images/maps-and-data/custom_ranch_map.jpg "Custom Ranch Map produced by RDC")
+<img src="images/maps-and-data/custom_ranch_map.jpg" class="img-responsive" alt="Custom Ranch produced by RDC">
 
 ###Custom County Map
-![ Custom County produced by RDC ](images/maps-and-data/custom_county_map.jpg "Custom Fishing Map produced by RDC")
+<img src="images/maps-and-data/custom_county_map.jpg" class="img-responsive" alt="Custom County produced by RDC">
 

@@ -3,20 +3,23 @@
 var _ = require('lodash');
 var del = require('del');
 var extend = require('extend');
+var extras = require('swig-extras');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
 var markdown = require('metalsmith-markdown');
 var path = require('path');
 var each = require('metalsmith-each');
+var fs = require('fs');
+var metadata = require('metalsmith-metadata');
 var permalinks = require('metalsmith-permalinks');
-var templates = require('metalsmith-templates');
 var replace = require('metalsmith-replace');
 var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var swig = require('swig');
-var webserver = require('gulp-webserver');
+var templates = require('metalsmith-templates');
 var vinylPaths = require('vinyl-paths');
+var webserver = require('gulp-webserver');
 
 var autodate = require('./metalsmith-autodate');
 var based = require('./metalsmith-based');
@@ -27,7 +30,14 @@ var metadata = require('metalsmith-metadata');
 
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task
-swig.setDefaults({ cache: false });
+swig.setDefaults({
+  cache: false,
+  loader: swig.loaders.fs(__dirname + '/templates')
+});
+
+swig.setFilter('find', function (collection, key) {
+  return _.find(collection, key);
+});
 
 // patch swig groupBy filter so it doesn't mutate lists - this is a temporary
 // workaround until patch makes it's way into a swig release.
@@ -65,8 +75,63 @@ swig.setFilter('urlize', function(input) {
   return urlize(input);
 });
 
+// add markdown filter
+extras.useFilter(swig, 'markdown');
+
+function parseCSV(options) {
+  var name = options.name;
+  var path = options.path;
+  var urlDir = options.urlDir || options.name;
+  var template = options.template;
+  var filenameKeys = options.filenameKeys;
+  var splitKeys = options.splitKeys || [];
+
+  return csv(path, function parser (data, files, metalsmith) {
+    metalsmith.data[name] = metalsmith.data[name] || [];
+
+    var obj = metalsmith.data[name];
+
+    _.map(splitKeys, function(key) {
+      if (data[key]) {
+        data[key] = data[key]
+          .split(',')
+          .map(function (s) {
+            return s.trim();
+          });
+      }
+    });
+
+    var urlKeys = _.map(filenameKeys, function(key) {
+      var urlized = urlize(data[key]);
+      data['urlized-' + key] = urlized;
+      return urlized;
+    });
+
+    data.filename = [urlDir].concat(urlKeys).join('/') + '.md';
+    data._collector_ignore = true;
+
+    var file = files[data.filename];
+    if (file) {
+      file = extend(file, data);
+    } else {
+      file = extend(data, {
+        template: template,
+        contents: new Buffer('')
+      });
+    }
+
+    if (options.additional) {
+      file = options.additional(file);
+    }
+
+    files[data.filename] = file;
+
+    obj.push(file);
+  });
+}
+
 function urlize(str) {
-  return str.toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-').replace(/-+/g, '-');
+  return str.trim().toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-').replace(/-+/g, '-');
 }
 
 var dirs = {
@@ -121,35 +186,66 @@ gulp.task('dist-metal', function () {
       })
     .pipe(
       gulpsmith()
-        .use(csv(paths.catalog, function parser (data, files, metalsmith) {
-          metalsmith.data.catalog = metalsmith.data.catalog || [];
-          var catalog = metalsmith.data.catalog;
+        .use(parseCSV({
+          name: 'catalog',
+          path: 'content/data-catalog.csv',
+          urlDir: 'data-catalog',
+          template: 'data-catalog-entry.html',
+          filenameKeys: ['category', 'name'],
+          splitKeys: ['keywords'],
+          additional: function (file) {
+            var image_name = file['urlized-name'].replace(/-/g, '_');
+            var base = 'images/data-catalog/' + file['urlized-category'] + '/' + image_name;
 
-          if (data.keywords) {
-            data.keywords = data.keywords
-              .split(',')
-              .map(function (s) {
-                return s.trim();
-              });
-          }
+            var image_types = [
+              {
+                name: 'thumb',
+                suffix: '_th',
+                always: true
+              }, {
+                name: 'overview_image',
+                suffix: '_overview',
+                always: true
+              }, {
+                name: 'status_map',
+                suffix: '_status',
+                always: false
+              }, {
+                name: 'detail_image',
+                suffix: '_detail',
+                always: false
+              }, {
+                name: 'urban_image',
+                suffix: '_urban',
+                always: false
+              }, {
+                name: 'natural_image',
+                suffix: '_natural',
+                always: false
+              }
+            ];
 
-          data.cleanName = urlize(data.name);
-          data.cleanCategory = urlize(data.category);
-          data.filename = 'data-catalog/' + data.cleanCategory + '/'  + data.cleanName + '.md';
+            _.each(image_types, function (image_type) {
+              var filename = base + image_type.suffix + '.jpg';
 
-          var file = files[data.filename];
-          if (file) {
-            file = extend(file, data);
-          } else {
-            file = extend(data, {
-              template: 'data-catalog-entry.html',
-              contents: new Buffer('')
+              var staticPath = dirs.static + '/' + filename;
+              var exists = fs.existsSync(staticPath);
+
+              if (exists) {
+                file[image_type.name + '_url'] = filename;
+              } else if (image_type.always) {
+                console.log("Warning: Could not find required image for data catalog entry - " + staticPath);
+              }
             });
+
+            return file;
           }
-
-          files[data.filename] = file;
-
-          catalog.push(file);
+        }))
+        .use(parseCSV({
+          name: 'training',
+          path: 'content/training.csv',
+          template: 'training-entry.html',
+          filenameKeys: ['class_title']
         }))
         .use(metadata({
           variables: 'variables.yaml'
@@ -161,7 +257,10 @@ gulp.task('dist-metal', function () {
             file.id = '_' + file.id;
           }
         }))
-        .use(collector('*.md'))
+        .use(collector({
+          pattern: '*.md',
+          ignore: ['training']
+        }))
         .use(autodate('YYYY-MM-DD'))
         .use(markdown({
           smartypants: false
@@ -174,7 +273,6 @@ gulp.task('dist-metal', function () {
           date: 'YYYY-MM-DD'
         }))
         .use(crossref({
-          outfile: '.build/crossref.json',
           include: {
             'data-download': '/data-download/'
           }
@@ -183,7 +281,9 @@ gulp.task('dist-metal', function () {
         .use(replace({
           contents: function(contents) {
             var str = contents.toString()
-              .replace(/{{.+?}}/g, scapegoat.unescape);
+              .replace(/{{.+?}}/g, scapegoat.unescape)
+              .replace(/{#.+?#}/g, scapegoat.unescape)
+              .replace(/{%.+?%}/g, scapegoat.unescape);
             return new Buffer(str);
           }
         }))
@@ -192,8 +292,7 @@ gulp.task('dist-metal', function () {
           inPlace: true
         }))
         .use(templates({
-          engine: 'swig',
-          directory: dirs.templates
+          engine: 'swig'
         }))
       )
     .pipe(gulp.dest(dirs.dist));

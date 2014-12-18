@@ -4,6 +4,8 @@ template: page.html
 abstract: Echo Park try-hard Blue Bottle chillwave consectetur polaroid. Mlkshk esse aute readymade.
 ---
 
+{% import "_macros.html" as macros %}
+
 The Strategic Mapping Program (StratMap) was established in 1997 by Senate Bill 1 to develop consistent statewide digital data layers.  Its primary goal is to acquire and improve digital geographic data for statewide mapping applications.  StratMap also maintains comprehensive data standard specifications to ensure consistent, high quality data products across the State.
 
 The original StratMap layers funded by the Texas Legislature and other partners (state agencies, federal agencies, local entities) are:
@@ -13,13 +15,9 @@ The original StratMap layers funded by the Texas Legislature and other partners 
 ## Hydrography
 ## Political boundaries
 **Echo Park try-hard Blue Bottle chillwave consectetur polaroid. Mlkshk esse aute readymade.**
-<div class="bs-callout bs-info media">
-<a class="pull-left" href="data-catalog/boundary/stratmap-boundaries">
-<img class="img-responsive" src="holder.js/100x100" alt="No Preview Available"></a>
-<div class="media-body">
-<h4 class="media-heading">
-<a href="data-catalog/boundary/stratmap-boundaries">StratMap Boundaries Data Set</a>
-</h4>
+
+{{macros.catalog_data_card('boundary/stratmap-boundaries')}}
+
 <p>
 The StratMap political boundary dataset contains political jurisdictions, state boundaries, county boundaries, city boundaries, federal parks, state parks, and landmark boundaries (airports, universities, wildlife refuges, and military bases).</p>
 

@@ -4,43 +4,14 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div id="home-top-content">
     <div class="container">
-          <div class="row"  >
-            <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12">
-            <h3>Start exploring our <strong>data</strong></h3>
-            <ul class="list-group row">
-              <li class="list-group-item col-md-12  col-sm-3 col-xs-3">
-                <a class="training-quick" href="{{crossref['data-catalog']}}">
-                  <div class="iconContainer"><i class="fa fa-archive"></i></div> <span class="hidden-xs">Data</span>  Catalog
-                  <small class="hidden-xs hidden-sm">Browse data sets</a></small>
-              </li>
-              <li class="list-group-item col-md-12 col-sm-3 col-xs-3">
-                <a class="downloaddata-quick" href="{{crossref['data-download']}}"><div class="iconContainer"><i class="fa fa-download"></i></div> Download <span class="hidden-xs">Data</span>
-                  <small class="hidden-xs hidden-sm">Access digital data directly</small></a>
-              </li>
-              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="orderdata-quick" href="#">
-                <div class="iconContainer"><span class="glyphicon glyphicon-phone-alt"></span></div> Order <span class="hidden-xs">Data</span> 
-                <small class="hidden-xs hidden-sm">Custom data requests</small></a>
-              </li>
-              <li class="list-group-item col-md-12 col-sm-3 col-xs-3"><a class="wms-quick" href="mapsanddata/web-mapping-services">
-                <div class="iconContainer"><span class="glyphicon glyphicon-globe"></span></div> Online <span class="hidden-xs">Map</span> Services
-                <small class="hidden-xs hidden-sm">WMS layers and more</small></a>
-              </li>
-              <li class="list-group-item col-md-12 social-front text-center  hidden-sm hidden-xs">
-                <strong>Connect With Us:</strong> <a href="https://twitter.com/tnris" title="Follow us on Twitter"><i class="fa fa-twitter"></i></a><a href="https://github.com/TNRIS/" title="Check us out on GitHub"><i class="fa fa-github"></i></a>
-              </li>
-            </ul>
-            
+          <div class="row">
+            <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12 ">
+              {% include "./partials/quicknav.html" %}
             </div>
-
             <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
-              <img class="img-responsive" src="images/ortho_flag_blank.jpg" alt="A Texas Flag with aerial orthoimagery in place of the red, white and blue">
-              <div class="ortho-text hidden-xs">
-                <h2><a href="2015-statewide-orthoimagery-project" class="btn btn-tnris btn-lg pull-right">Learn More</a> <strong>2015 Statewide</strong><br>Orthoimagery Project</h2>
-                <p> A collaborative initiative to capture high-quality, leaf-off imagery for the entire state, slated for public release in <strong>Winter 2015.</strong>  </p>
-
-              </div>
-            </div>
+            {% include "./partials/mainfeature.html" %}
           </div>
+           </div>
         </div>
   </div>
 {% endblock topcontent %}
@@ -51,12 +22,12 @@
     <!-- Example row of columns -->
     <div class="row">
      <!--   -->
-     <div id="updates" class="col-md-6 col-sm-12 col-md-push-3">
+     <div id="updates-front" class="col-md-6 col-sm-12 col-md-push-3">
           
           <h2>Latest News <i class="fa fa-newspaper-o"></i></h2>
           <ul>
           {% for news_item in news %}
-            {% if loop.index <= 4 %}
+            {% if loop.index <= 5 %}
               <li class="media">
                 <a class="pull-left" href="{{ news_item.path }}">
                   <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
@@ -93,9 +64,14 @@
           <div id="training-front" class="col-xs-12 col-sm-8 col-md-12">
               <h2>Accessible GIS Training <i class="fa fa-graduation-cap"></i></h2>
               <ul>
-                <li><time>March 15, 2014</time><h4><a href="#">Fundamentals of ArcGIS</a></h4>Learn how to use Google Earth to attach vital information to your features including photos, videos, and more.</li>
-                <li><time>March 20, 2014</time><h4><a href="#">Arc Hydro: GIS for Water Resources</a></h4>Learn about the Arc Hydro data model and tools and how to implement them from real-world examples.</li>
-                <li><time>March 27, 2014</time><h4><a href="#">Converting ArcGIS Data to Google Earth</a></h4>Visualize your existing ArcGIS data in a Google Earth viewer</li>
+
+              {% for event in training %}
+                {% if loop.index <= 7 %}
+                <li><time>{{event.date}}</time><h4><a href="{{ event.path }}">
+                  {{event.class_title}}</a></h4>              
+                </li>
+                {% endif %}
+              {% endfor %}
               </ul>
               <p class="text-center"><a class="btn btn-tnris" href="training" role="button">Full Course List <span class="glyphicon glyphicon-chevron-right"></a></p>
           </div>

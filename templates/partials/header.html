@@ -11,4 +11,16 @@
   <base href="{{base}}">
 {% endif %}
 
+<!--[if lte IE 9]>
+  <script type="text/javascript">
+    var base = document.getElementsByTagName('base')[0];
+
+    if (base) {
+      var fullBase = document.location.href + base.getAttribute('href');
+      base.href = fullBase;
+    }
+  </script>
+<![endif]-->
+
+
 <title>TNRIS - Texas Natural Resources Information System | Public Geographic Data for Texas</title>

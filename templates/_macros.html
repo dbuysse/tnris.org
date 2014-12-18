@@ -1,3 +1,38 @@
+{%- macro catalog_data_card(search) -%}
+  <ul class="media-list list-group">
+    {{catalog_data_card_entry(search)}}
+  </ul>
+{%- endmacro -%}
+
+{%- macro catalog_data_card_entry(search) -%}
+  {%- set category = search['urlized-category'] || search.split('/')[0] -%}
+  {%- set name = search['urlized-name'] || search.split('/')[1] -%}
+  {%- set item = catalog|find({'urlized-category': category, 'urlized-name':name}) -%}
+
+  <li class="media list-group-item">
+   {% if item.thumb_url %}
+      <a class="media-left" href="{{ item.path }}">
+        <img class="media-object data-thumb" src="{{item.thumb_url}}" alt="thumbnail of {{ item.name }} data set">
+      </a>
+     {% else %}
+      <a class="media-left" href="{{ item.path }}">
+        <img class="media-object" src="holder.js/100x100" alt="...">
+      </a>
+    {% endif %}
+    <div class="media-body">
+      <h4 class="media-heading">
+        <a href="{{ item.path }}">{{ item.name }}</a>
+
+      <a href="{{ item.path }}" class="btn btn-sm btn-tnris pull-right"><i class="fa fa-chevron-right"></i> Full Info
+      </a>
+      </h4>
+      <p>
+        {{ item.short_description }}
+      </p>
+    </div>
+  </li>
+{%- endmacro -%}
+
 {%- macro ngCurly(str) -%}
   {%- set start = '{{' -%}
   {%- set end = '}}' -%}

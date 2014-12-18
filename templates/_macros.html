@@ -11,11 +11,11 @@
 
   <li class="media list-group-item">
    {% if item.thumb %}
-      <a class="pull-left" href="{{ item.path }}">
+      <a class="media-left" href="{{ item.path }}">
         <img class="media-object data-thumb" src="{{ item.thumb }}" alt="thumbnail of {{ item.name }} data set">
       </a>
      {% else %}
-      <a class="pull-left" href="{{ item.path }}">
+      <a class="media-left" href="{{ item.path }}">
         <img class="media-object" src="holder.js/100x100" alt="...">
       </a>
     {% endif %}

@@ -12,7 +12,7 @@ tags: 2014 gis forum
 
 TNRIS is pleased to announce Forensic geologist Scott Wolter as a keynote speaker at the 2014 GIS Forum! 
 
-Wolter is the host of History’s H2 network’s hit show, [America Unearthed](http://example.com/ "American Unearthed Home Page"), that follows him on his quest to uncover the truth behind historic artifacts and sites found throughout North America.
+Wolter is the host of History’s H2 network’s hit show, [America Unearthed](http://www.history.com/shows/america-unearthed/), that follows him on his quest to uncover the truth behind historic artifacts and sites found throughout North America.
 
 Scott is the author of several books including his 2013 title, Akhenaten to the Founding Fathers: The Mysteries of the Hooked X and The Hooked X: Key to the Secret History of North America. Together these books cover the story of his continuing research and resulting discoveries made over the last 12 years, beginning with his ongoing quest to uncover the mysteries of the controversial Kensington Rune Stone he studied in 2001. The Kensington stone is a medieval document carved in rock which Scott proposed is a land claim placed in Minnesota in 1362 by a group of Templar knights.
 

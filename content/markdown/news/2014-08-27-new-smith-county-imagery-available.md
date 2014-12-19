@@ -3,11 +3,13 @@ template: news.html
 title: "New Smith County Aerial Imagery Now Available"
 author: StratMap
 thumbnail: images/updates/hpidssmith_th.jpg
-mainimage: 
-abstract: 
+mainimage:
+abstract:
     High resolution RGBIR) natural color and color infrared aerial orthoimagery are now available from TNRIS for Smith County, and Lake Palestine area.
 tags: stratmap, hpids
 ---
+
+{% import '_macros.html' as m %}
 
 
 <figure>
@@ -40,7 +42,7 @@ value="r.tnris.org/arcgis/services/HPIDS/HPIDS_Smith_2014_NC/ImageServer/WMSServ
 </div>
 </div>
 <p>Additionally, the orthoimagery files (GeoTIFF, MrSID, JPEG2000) are in the public domain and available from the TNRIS Research and Distribution Center at a nominal fee for the cost of reproduction.</p>
-<p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
+<p> <a href="{{ m.link('order-data') }}"  class="btn btn-tnris btn-lg">Order Data</a></p>
 </div>
 
 High resolution 6-inch 4-band (RGBIR) natural color and color infrared aerial orthoimagery are now available from TNRIS for Smith County, including the Lake Palestine area.

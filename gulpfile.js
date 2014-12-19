@@ -32,7 +32,8 @@ var metadata = require('metalsmith-metadata');
 // watch task
 swig.setDefaults({
   cache: false,
-  loader: swig.loaders.fs(__dirname + '/templates')
+  loader: swig.loaders.fs(__dirname + '/templates'), 
+  locals: {validateLink: validateLink}
 });
 
 swig.setFilter('find', function (collection, key) {
@@ -75,7 +76,6 @@ swig.setFilter('urlize', function(input) {
   return urlize(input);
 });
 
-// add markdown filter
 extras.useFilter(swig, 'markdown');
 
 function parseCSV(options) {
@@ -132,6 +132,15 @@ function parseCSV(options) {
 
 function urlize(str) {
   return str.trim().toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-').replace(/-+/g, '-');
+}
+
+function validateLink(str, crossref, filename) {
+  if (!crossref[str]) {
+    console.log('WARNING: ', "Invalid link: " + str + " from " + filename);
+    return '#';
+  }
+
+  return crossref[str];
 }
 
 var dirs = {

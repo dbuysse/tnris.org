@@ -1,30 +1,26 @@
 {% extends "base.html" %}
 
-
 {% block contents %}
-<div class="row">
-	<div class="col-md-8">
-		<h1>{{title}}</h1>
-		{% if abstract %}
-			<div class="lead">{{abstract}}</div>
-		{% endif %}
-		
-		{% if mainimage %}
-		<img class="img-responsive center-block" src="{{ mainimage }}">
-		{% endif %}
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{title}}</h1>
+      {% if abstract %}
+        <div class="lead">{{abstract}}</div>
+      {% endif %}
 
-		{{ contents|safe }}
+      {% if mainimage %}
+        <img class="img-responsive center-block" src="{{ mainimage }}">
+      {% endif %}
 
-		{% block extracontent %}
-		{% endblock extracontent %}
-	</div>
-	<div class="col-md-4">
-		{% block sidebarLeft %}
-		{% endblock sidebarLeft %}
-	</div>
-</div>
+      {{ contents|safe }}
 
+      {% block extracontent %}
+      {% endblock extracontent %}
+    </div>
+
+    <div class="col-md-4">
+      {% block sidebarLeft %}
+      {% endblock sidebarLeft %}
+    </div>
+  </div>
 {% endblock contents %}
-
-
-

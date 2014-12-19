@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import '_macros.html' as m %}
 
 {% block topcontent %}
   <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -23,28 +24,28 @@
     <div class="row">
      <!--   -->
      <div id="updates-front" class="col-md-6 col-sm-12 col-md-push-3">
-          
+
           <h2>Latest News <i class="fa fa-newspaper-o"></i></h2>
           <ul>
           {% for news_item in news %}
             {% if loop.index <= 5 %}
               <li class="media">
-                <a class="pull-left" href="{{ news_item.path }}">
-                  <img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
+                <a class="pull-left" href="{{m.link(news_item.preserved)}}">
+                  <img class="media-object" src="{{news_item.thumbnail}}" alt="...">
                 </a>
                 <div class="media-body">
                   <time>{{ news_item.date|date('F jS, Y') }}</time>
                   <h3 class="media-heading">
-                  <a href="{{ news_item.path }}">{{ news_item.title }}</a></h3>
+                  <a href="{{m.link(news_item.preserved)}}">{{news_item.title}}</a></h3>
                   <p>
-                    {{ news_item.abstract }}
+                    {{news_item.abstract}}
                   </p>
                 </div>
               </li>
             {% endif %}
           {% endfor %}
           </ul>
-          <p class="text-center"><a class="btn btn-tnris" href="{{ crossref['updates'] }}" role="button">More Updates <span class="glyphicon glyphicon-chevron-right"></a></p>
+          <p class="text-center"><a class="btn btn-tnris" href="{{m.link('updates')}}" role="button">More Updates <span class="glyphicon glyphicon-chevron-right"></a></p>
       </div>
 
 
@@ -58,8 +59,8 @@
                 <h4><a href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water">ArcNews Profiles GLO's Sterling Harris</a></h4>
 
                   <p>Harris was profiled in ArcNews for his contributions to Texas GIS. Read the full story, available at <a href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water">esri.com</a>.</p>
-               
-                <p class="text-center"><a class="btn btn-tnris" href="#" role="button">Read More <span class="glyphicon glyphicon-chevron-right"></a></p>
+
+                <p class="text-center"><a class="btn btn-tnris" href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water" role="button">Read More <span class="glyphicon glyphicon-chevron-right"></a></p>
             </div>
           <div id="training-front" class="col-xs-12 col-sm-8 col-md-12">
               <h2>Accessible GIS Training <i class="fa fa-graduation-cap"></i></h2>
@@ -67,13 +68,13 @@
 
               {% for event in training %}
                 {% if loop.index <= 7 %}
-                <li><time>{{event.date}}</time><h4><a href="{{ event.path }}">
-                  {{event.class_title}}</a></h4>              
+                <li><time>{{event.date}}</time><h4><a href="{{m.link(event.path)}}">
+                  {{event.class_title}}</a></h4>
                 </li>
                 {% endif %}
               {% endfor %}
               </ul>
-              <p class="text-center"><a class="btn btn-tnris" href="training" role="button">Full Course List <span class="glyphicon glyphicon-chevron-right"></a></p>
+              <p class="text-center"><a class="btn btn-tnris" href="{{m.link('training')}}" role="button">Full Course List <span class="glyphicon glyphicon-chevron-right"></a></p>
           </div>
         </div>
        </div>
@@ -87,7 +88,7 @@
          {% for spotlight in spotlights %}
            {% if loop.index <= 4 %}
              <li class="media">
-               <a href="{{ spotlight.path }}">
+               <a href="{{m.link(spotlight.preserved)}}">
                  <img class="media-object img-responsive" src="{{ spotlight.thumb }}" alt="...">
                  <h4>{{ spotlight.title }}</h4>
                </a>
@@ -95,26 +96,25 @@
            {% endif %}
          {% endfor %}
         </ul>
-        <!-- <p class="text-center"><a href="http://getbootstrap.com/examples/jumbotron/#" role="button">Explore Spotlights »</a></p> -->
      </div>
 
-    </div> <!-- end row -->
+    </div>
 
 
 
 {% endblock contents %}
 
 {% block contents-two %}
-  
+
       <div id="dataSpot" class="container-fluid hidden-md hidden-lg" >
- 
+
         <h2>Data Spotlight</h2>
         <p class="spotText">A closer look at featured data and maps from our own catalog and other sources.</p>
         <ul class="media-list row">
          {% for spotlight in spotlights %}
            {% if loop.index <= 4 %}
              <li class="media col-xs-12 col-sm-3 col-md-12">
-               <a href="{{ spotlight.path }}">
+               <a href="{{m.link(spotlight.preserved)}}">
                  <img class="media-object img-responsive" src="{{ spotlight.thumb }}" alt="...">
                  <h4>{{ spotlight.title }}</h4>
                </a>
@@ -136,7 +136,7 @@
             <img class="img-responsive" src="images/highlights/staff.jpg">
           </div>
           <p>Let our hands-on team of data specialists assist you with physical map products and other datasets, many unavailable online.</p>
-          <a class="btn btn-default" href="mapsanddata/research-and-distributiond" role="button">Learn More <span class="glyphicon glyphicon-chevron-right"></a>
+          <a class="btn btn-default" href="{{m.link('maps-and-data/research-and-distribution')}}" role="button">Learn More <span class="glyphicon glyphicon-chevron-right"></a>
         </div>
       </div>
       <div class="col-sm-4">
@@ -146,7 +146,7 @@
             <img class="img-responsive" src="images/highlights/tx-flag-gis.jpg">
           </div>
           <p>TNRIS hosts the State of Texas’s Geographic Information Office (GIO), an inter-agency initiative to collaborate and facilitate the effective use of G.I.S. in state and local government.</p>
-          <a class="btn btn-default" href="#" role="button">Learn More <span class="glyphicon glyphicon-chevron-right"></a>
+          <a class="btn btn-default" href="{{m.link('geographic-information-office')}}" role="button">Learn More <span class="glyphicon glyphicon-chevron-right"></a>
         </div>
       </div>
       <div class="col-sm-4">
@@ -156,7 +156,7 @@
             <img class="img-responsive" src="images/highlights/forum-highlight.jpg">
           </div>
           <p>Our annual gathering of the Texas GIS community, showcasing the latest innovations and talent in the field.</p>
-          <a class="btn btn-default" href="#" role="button">Learn More <span class="glyphicon glyphicon-chevron-right"></a>
+          <a class="btn btn-default" href="{{m.link('2014-texas-gis-forum')}}" role="button">Learn More <span class="glyphicon glyphicon-chevron-right"></a>
         </div>
       </div>
     </div>

@@ -40,6 +40,15 @@
       {% include "./partials/footer.html" %}
     {% endblock footer %}
 
+    {% block analytics %}
+      {% block analytics-load %}
+        {% include "./partials/analytics-load.html" %}
+      {% endblock analytics-load %}
+      {% block analytics-track %}
+        {% include "./partials/analytics-track.html" %}
+      {% endblock analytics-track %}
+    {% endblock analytics %}
+
     {% block scripts %}
       {% include "./partials/scripts.html" %}
     {% endblock scripts %}

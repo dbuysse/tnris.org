@@ -1,3 +1,4 @@
+{% import '_macros.html' as m %}
 <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
   <div class="title-header">
     <div class="container"> 
@@ -15,13 +16,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="../" class="navbar-brand" title="TNRIS Logo and back home">
+      <a href="{{m.link('index')}}'" class="navbar-brand" title="TNRIS Logo and back home">
         <span class="sr-only">Texas Natural Resources Information System</span></a>
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse navbar-inverse" role="navigation">
       <ul class="nav navbar-nav">
         <li {% if id === 'maps-and-data' %}class="active"{% endif %}>
-          <a href="{{crossref['maps-and-data']}}">Maps &amp; Data</a>
+          <a href="{{m.link('maps-and-data')}}">Maps &amp; Data</a>
         </li>
         <li class="dropdown navbar-inverse {% if id === 'stratmap' || id === 'training' || id === 'hpids' %}active{% endif %}">
           <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown"><i class="fa fa-tasks"></i> Programs</a>
@@ -36,14 +37,14 @@
                 'name': 'Education &amp; Training',
                 'description': 'Low-cost and accessible GIS training'
               }, {
-                'id': 'high-priority-imagery-and-data-sets',
+                'id': 'high-priority-imagery-datasets',
                 'name': 'HPIDS',
                 'description': 'High Priority Imagery &amp; Data Sets'
               }
             ] -%}
             {% for program in programs %}
               <li {% if id === program.id %}class="active"{% endif %}>
-                <a href="{{crossref[program.id]}}">
+                <a href="{{m.link(program.id)}}">
                   {{program.name}}<br>
                   <small>{{program.description}}</small>
                 </a>
@@ -52,15 +53,15 @@
           </ul>
         </li>
         <li {% if id === 'geographic-information-office' %}class="active"{% endif %}>
-          <a class="gio" href="{{crossref['geographic-information-office']}}">Geographic Information Office</a>
+          <a class="gio" href="{{m.link('geographic-information-office')}}">Geographic Information Office</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li {% if id === 'about' %}class="active"{% endif %}>
-          <a href="{{crossref['about']}}">About</a>
+          <a href="{{m.link('about')}}">About</a>
         </li>
         <li {% if id === 'contact' %}class="active"{% endif %}>
-          <a href="{{crossref['contact']}}"><span class="glyphicon glyphicon-comment"></span> Contact Us</a>
+          <a href="{{m.link('contact')}}"><span class="glyphicon glyphicon-comment"></span> Contact Us</a>
         </li>
       </ul>
     </nav>

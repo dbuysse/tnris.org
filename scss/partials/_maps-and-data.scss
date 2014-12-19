@@ -255,11 +255,11 @@ input.wms-url {
   color: $infoblue;
   font-weight: 500;
 
-  &.form-control[disabled] {
+  &.form-control[readonly] {
     cursor: text;
     background-color: white;
   }
-  
+
   @include box-shadow(2px, 2px, 2px, rgba(0, 0, 0, 0.075), inset);
 }
 

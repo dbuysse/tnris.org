@@ -4,6 +4,7 @@ title: About TNRIS
 abstract: 
     Providing the Highest Level of Geographic Data Services to the People of Texas
 ---
+{% import '_macros.html' as m %}
 
 TNRIS was established by the Legislature in 1968 as the Texas Water-Oriented Data Bank. In 1972, after four years of growth and diversification, it was renamed the Texas Natural Resources Information System. 
 
@@ -23,6 +24,8 @@ TNRIS is a part of the [Texas Water Development Board (TWDB)](http://www.twdb.te
 
 ## Texas Geographic Names Committee
 
-The Director of TNRIS acts as the coordinator of the [Texas Geographic Names Committee](texas-geographic-names-committee), the body charged with standardizing geographic names for the state of Texas 
+{% set tgnc_url = m.link('texas-geographic-names-committee') %}
+The Director of TNRIS acts as the coordinator of the [Texas Geographic Names
+Committee]({{tgnc_url}}), the body charged with standardizing geographic names
+for the state of Texas.
 
-<a class="btn btn-tnris btn-lg" href="texas-geographic-names-committee">Learn More</a>

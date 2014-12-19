@@ -33,6 +33,10 @@
   </li>
 {%- endmacro -%}
 
+{%- macro link(str) -%}
+  {{validateLink(str, crossref, filename)}}
+{%- endmacro -%}
+
 {%- macro ngCurly(str) -%}
   {%- set start = '{{' -%}
   {%- set end = '}}' -%}

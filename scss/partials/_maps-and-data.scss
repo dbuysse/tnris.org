@@ -248,15 +248,18 @@ img.data-thumb {
   }
 }
 
-.wms-url {
+input.wms-url {
   padding: 5px;
-  display: block;
-  overflow: hidden;
-  background: white;
   border: 1px solid $midgrey;
-  max-width: 100%;
+  width: 100%;
   color: $infoblue;
   font-weight: 500;
+
+  &.form-control[disabled] {
+    cursor: text;
+    background-color: white;
+  }
+  
   @include box-shadow(2px, 2px, 2px, rgba(0, 0, 0, 0.075), inset);
 }
 

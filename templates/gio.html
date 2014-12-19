@@ -1,4 +1,5 @@
 {% extends "page.html" %}
+{% import '_macros.html' as m %}
 
 {% block extracontent %}
 {% endblock extracontent %}
@@ -12,7 +13,7 @@
       <h3>January 20th, 2015 - 2PM to 4PM</h3>
       <p>
         Stephen F. Austin Building, Room 170<br>
-        1700 N. Congress <a href="#">map</a>
+        1700 N. Congress <a href="https://goo.gl/maps/E6uZG">map</a>
       </p>
     </div>
   </div>
@@ -24,7 +25,7 @@
               <div class="media-body">
                 <time>{{ gio_item.date|date('F jS, Y') }}</time>
                 <h4 class="media-heading">
-                <a href="{{ gio_item.path }}">{{ gio_item.title }}</a></h4>
+                <a href="{{m.link(gio_item.preserved)}}">{{ gio_item.title }}</a></h4>
                 <p>
                   {{ gio_item.abstract }}
                 </p>

@@ -2,6 +2,8 @@ var dataDownloadApp = function () {
   'use strict';
 
   var dataDownloadApp = angular.module('dataDownloadApp', [
+    'angulartics',
+    'angulartics.google.analytics',
     'ngCollection',
     'ngSanitize',
     'ui.router',

@@ -49,7 +49,7 @@ img.data-thumb {
   margin-bottom: 30px;
   border: 1px solid $midgrey;
   min-height: 88px;
-  max-height: 600px;
+  max-height: 800px;
   overflow: hidden;
   background: $darkgrey;
   h1 {
@@ -67,6 +67,10 @@ img.data-thumb {
   }
   .data-callout {
     position: absolute;
+    @media (max-width: $screen-sm-max) {
+      position: relative;
+    }
+
     bottom: 0px;
     @include alpha-attribute("background-color", rgba($tnrisblue, 0.85), white);
     color: white;
@@ -259,12 +263,6 @@ img.data-thumb {
 @media (max-width: $break-med-two) {
   #catalog-main-image .data-callout {
     font-size: 14px;
-  }
-}
-
-@media (max-width: $break-topsmall) {
-  #catalog-main-image .data-callout {
-    display: none;
   }
 }
 

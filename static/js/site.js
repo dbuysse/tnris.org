@@ -1,5 +1,5 @@
 (function($) {
-
+  'use strict';
 // Image Slider
 	$("#imageCompare1, #imageCompare2, #imageCompare3, #imageCompare4, #imageCompare5, #imageCompare6, #imageCompare7").twentytwenty({default_offset_pct: .5});
 
@@ -10,6 +10,25 @@
 // Tool Tip
 	$('.copy-tip').tooltip({'placement': 'top'});
 	$('.wms-tip').tooltip({'placement': 'bottom'});
+
+//zclip + ZeroClipboard url copy buttons
+$('.copy-url-container').each(function (index, node) {
+  var $node = node;
+  var $btn = $('.copy-url-btn', $node);
+  var origInner = $btn.html();
+  var val = $('.copy-url-input', $node).val();
+  $btn.zclip({
+    path: 'bower_components/jquery-zclip/ZeroClipboard.swf',
+    copy: val,
+    afterCopy: function () {
+      $btn.html('Copied!');
+      window.setTimeout(function () {
+        $btn.html(origInner);
+      }, 4000);
+    }
+  });
+
+});
 
 $().ready(function() {
   $('.nav-cat').affix({
@@ -25,4 +44,4 @@ $().ready(function() {
   });
 });
 
-})($);
+})(jQuery);

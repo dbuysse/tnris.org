@@ -58,13 +58,13 @@
         description: 'Our trained staff can help you create the map you need using TNRIS and public data.',
         image: 'images/highlights/ranch_map_small.jpg',
         link: 'maps-and-data/custom-maps',
-        button_text: 'Learn More'
+        button_text: 'More about Custom Maps'
       }, {
-        name: 'Data & Mapping Solutions',
+        name: 'Data &amp; Mapping Solutions',
         description: 'Applying design, communication, and technology skills to provide data solutions and cartographic products for internal geospatial development.',
         image: 'images/highlights/custom_maps.jpg',
         link: 'maps-and-data/data-and-mapping-solutions',
-        button_text: 'Learn More'
+        button_text: 'Learn More <span class="sr-only">about Data &amp; Mapping Solutions</span>'
       } 
     ] %}
 
@@ -94,7 +94,7 @@
             </a>
             <div class="media-body">
               <p>{{item.description}}</p>
-              <a href="{{item.link}}" class="btn btn-tnris btn-md">{{item.button_text}}</a>
+              <a href="{{item.link}}" class="btn btn-tnris btn-md">{{item.button_text|safe}}</a>
             </div>
           </div>
         </div>

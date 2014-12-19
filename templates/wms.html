@@ -32,11 +32,7 @@
                   <li class="media list-group-item">
                     {% if catalog_entry.thumb %}
                        <a class="media-left" href="{{catalog_entry.wms_link}}">
-                         <img class="media-object" src="{{catalog_entry.thumb}}" alt="...">
-                       </a>
-                      {% else %}
-                       <a class="media-left" href="{{catalog_entry.path}}">
-                         <img class="media-object" src="holder.js/75x75" alt="...">
+                         <img class="media-object" src="{{catalog_entry.thumb_url}}" alt="Thumbnail image for {{catalog_entry.name}}">
                        </a>
                     {% endif %}
                     <div class="media-body">

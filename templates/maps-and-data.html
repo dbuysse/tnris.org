@@ -13,7 +13,7 @@
         <div class="col-sm-5 col-lg-4">
           <div class="bs-callout bs-callout-info">
             <div class="panel-body">
-              <a href="#" class="btn btn-success btn-block"><span class="glyphicon glyphicon-envelope"></span> Custom Data Order Form</a>
+              <a href="order-data" class="btn btn-success btn-block"><span class="glyphicon glyphicon-envelope"></span> Custom Data Order Form</a>
               <p>
                 This is a direct link to our Custom Data Order form to obtain customer service through the <a href="research-and-distribution"><abbr title="Research & Distribution">RDC</abbr></a>
               <p>
@@ -61,7 +61,7 @@
         button_text: 'Learn More'
       }, {
         name: 'Data & Mapping Solutions',
-        description: 'Applying design, communication, and technology skills to provide data solutions and cartographic products, both conventionally and digitally, for internal geospatial development.',
+        description: 'Applying design, communication, and technology skills to provide data solutions and cartographic products for internal geospatial development.',
         image: 'images/highlights/custom_maps.jpg',
         link: 'maps-and-data/data-and-mapping-solutions',
         button_text: 'Learn More'
@@ -86,14 +86,16 @@
 
      <div class="row data-catalog-items">
       {% for item in content_items %}
-        <div class="media col-xs-12 col-sm-6">
-          <h2 class="media-heading">{{item.name}}</h2>
-          <a class="media-left" href="{{item.link}}">
-            <img class="thumbnail" src="{{item.image}}" alt="{{item.alt_text}}"/>
-          </a>
-          <div class="media-body">
-            <p>{{item.description}}</p>
-            <a href="{{item.link}}" class="btn btn-tnris btn-md">{{item.button_text}}</a>
+        <div class="col-xs-12 col-sm-6">
+          <div class="media">
+            <h2 class="media-heading">{{item.name}}</h2>
+            <a class="media-left" href="{{item.link}}">
+              <img class="thumbnail" src="{{item.image}}" alt="{{item.alt_text}}"/>
+            </a>
+            <div class="media-body">
+              <p>{{item.description}}</p>
+              <a href="{{item.link}}" class="btn btn-tnris btn-md">{{item.button_text}}</a>
+            </div>
           </div>
         </div>
       {% endfor %}

@@ -1,25 +1,28 @@
 ---
 template: news.html
-title: "Data Sharing for the State of Texas"
+title: "To Share or Not to Share...THAT is the question"
 author: Felicia Retiz, Deputy GIO
 thumbnail: images/media1.jpg
-mainimage: images/updates/wolterbig.jpg
+mainimage:
 abstract: 
-    Data Sharing is good
+    There are a number of map analysts in Texas State Government who fully understand the power GIS brings to their organization. These GIS “enthusiasts” create maps to better visualize information related to their agency business needs.
 tags: GIO, Data Sharing, GIS, Geospatial
 ---
 
-TNRIS is pleased to announce Forensic geologist Scott Wolter as a keynote speaker at the 2014 GIS Forum! 
+There are a number of map analysts in Texas State Government who fully understand the power GIS brings to their organization. These GIS “enthusiasts” create maps to better visualize information related to their agency business needs.
 
-Wolter is the host of History’s H2 network’s hit show, [America Unearthed](http://example.com/ "American Unearthed Home Page"), that follows him on his quest to uncover the truth behind historic artifacts and sites found throughout North America.
+So you may ask, how is this geographic information being used by others outside of the originating agency? Or, maybe the real question is, are state agencies even sharing their information at all?
 
-Scott is the author of several books including his 2013 title, Akhenaten to the Founding Fathers: The Mysteries of the Hooked X and The Hooked X: Key to the Secret History of North America. Together these books cover the story of his continuing research and resulting discoveries made over the last 12 years, beginning with his ongoing quest to uncover the mysteries of the controversial Kensington Rune Stone he studied in 2001. The Kensington stone is a medieval document carved in rock which Scott proposed is a land claim placed in Minnesota in 1362 by a group of Templar knights.
+History has shown us that data sharing has been an issue among the GIS community in one form or another since the dawn of mapping. 25 years ago, there was an intrinsic feeling of data ownership whenever data was developed.
 
-Professionally, Scott, a forensic geologist, has been President of American Petrographic Services since 1990. He has been the principal petrographer in more than 5,000 material forensic investigations throughout the world, including the evaluation of fire-damaged concrete from the Pentagon following the attacks of September 11, 2001.
+There was a real fear that sharing data would somehow lessen its value or even worse, lessen the value of the owner. As a result, data sharing was limited as developers put a price on information.
 
-Books and other TV projects: 
-* Akhenaten to the Founding Fathers: The Mysteries of
-* The Hooked X: Key to the Secret History of North America
-* The Kensington Rune Stone: Compelling New Evidence
+Today, we have grown past the “I own the data” mentality only to run head-on into another issue, which is that data can be misused or misunderstood.  Rules have been created to protect data deemed to be sensitive or critical.  If an agency wants to see it, they better have a good reason. This mindset means sharing of information between Federal, State, and local public agencies is not always a smooth and cooperative activity. The catalyst for data sharing has typically been the result of an emergency event such as a hurricane or wildfires. In many cases, by the time an agency searches, requests, and receives the GIS data they need, it is often too late. This scenario is a problem even when access to data is unhindered.
 
-Holy Grail In America, a two-hour documentary that premiered on History in September 2009 that was the forerunner to the current TV series America Unearthed.
+Data sharing among public agencies does not have to follow one absolute rule.The term “data sharing” can send many public administrators running to the vaults, locking the door behind them. When we think of data sharing, we can divide the information into categories, giving specific consideration to privacy rules and regulations in order to safeguard the collected data.
+
+Ten years ago, the Federal Geographic Data Committee (FGDC) recognized these data sharing issues and in response, created a document to help guide government agencies when deciding to what degree geospatial data should be safeguarded. The guidelines, entitled “[Guidelines for Providing Appropriate Access to Geospatial Data in Response to Security Concerns](http://www.fgdc.gov/policyandplanning/Access Guidelines.pdf)”, were published in June 2005. The guidelines are based on principles taken from other State and Federal policies written primarily for public information access and related protocols. The guidelines were established for agencies to (1) use a common approach to identify sensitive geospatial information intended for restricted access and (2) weigh the risk of denying public access that information.
+
+These guidelines are still very relevant today as geospatial data are more heavily relied upon as resource for dissemination of public information. It’s time to take action on this topic. In an effort to promote geospatial data awareness and encourage data sharing in Texas, the Texas Geographic Information Officer (GIO) is pushing the topic of data sharing to the top of the priority list.
+
+Who knows?  Something amazing just might happen. We may discover geospatial datasets previously unknown to exist or we might discover the same information is being duplicated by different agencies. And during this process, evaluation of the infrastructure (physical hardware, software, and policies) for information exchange may lead to improved services. The GIS community already knows that data sharing is vital. Our goal now is to make data sharing a safe and standard practice, ensuring that any perceived risks are mitigated before sharing. To give this discussion a kick start, we encourage your thoughts and contributions on this topic. 

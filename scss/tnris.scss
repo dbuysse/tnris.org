@@ -202,6 +202,7 @@ a.navbar-twdb {
 
         &:hover {
           color: $sky;
+          background: black;
         }
       }
     }
@@ -230,7 +231,7 @@ a.navbar-twdb {
   height: 36px;
   z-index: 30000;
   padding: 0;
-  margin-right: 0px;
+  margin-right: 10px;
   margin-left: 5px;
   margin-top: 5px;
 }

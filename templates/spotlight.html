@@ -1,11 +1,10 @@
 {% extends "base.html" %}
+
 {% block topcontent %}
-  <div id="spotlight-full-image">
+  <div class="container" id="spotlight-full-image">
     <img class="media-object img-responsive center-block" src="{{ mainimage }}" alt="A large preview of the {{ title }} image">
     <div class="spot-title">
-      <div class="container">
         <h1><small>Data Spotlight <i class="fa fa-lightbulb-o"></i></small> {{ title }}</h1>
-      </div>
     </div>
   </div>
   {% endblock topcontent %}

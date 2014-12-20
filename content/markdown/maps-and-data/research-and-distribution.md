@@ -3,6 +3,8 @@ template: page.html
 title: Research & Distribution Services (RDC)
 abstract: The RDC offers a variety of additional products, support and services from our in-house staff. We provide hands-on assistance and expertise.
 ---
+{% import "_macros.html" as m %}
+{% set contact_url = m.link('contact') %}
 
 ### Some of our services include:
 
@@ -15,8 +17,4 @@ abstract: The RDC offers a variety of additional products, support and services 
 * Data support for TNRIS datasets
 * Texas Water Development Board (TWDB) Publications and map hard copies
 
-To obtain these services or data please contact us at (contact page).
-
-
-
-
+To obtain these services or data please contact us at [contact us]({{contact_url}}).

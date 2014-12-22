@@ -20,7 +20,7 @@ function crossref(options) {
       if (key === 'index') {
         value = './' + value;
       }
-      crossref[key] = value;
+      crossref[urlPath(key)] = urlPath(value);
     });
     metalsmith.data.crossref = crossref;
 
@@ -47,4 +47,8 @@ function normalize(options) {
   var normalized = _.cloneDeep(options);
   normalized.include = normalized.include || {};
   return normalized;
+}
+
+function urlPath(str) {
+  return str.replace(path.separator, '/');
 }

@@ -134,13 +134,17 @@ function urlize(str) {
   return str.trim().toLowerCase().replace(/[\(\)]/g, '').replace(/\W/g, '-').replace(/-+/g, '-');
 }
 
+function urlPath(str) {
+  return str.replace(path.separator, '/');
+}
+
 function validateLink(str, crossref, filename) {
-  if (!crossref[str]) {
-    console.log('WARNING: ', "Invalid link: " + str + " from " + filename);
+  var ref = urlPath(str);
+  if (!crossref[ref]) {
+    console.log('WARNING: ', "Invalid link: " + str + " (" + ref + ") from " + filename);
     return '#';
   }
-
-  return crossref[str];
+  return crossref[ref];
 }
 
 var dirs = {

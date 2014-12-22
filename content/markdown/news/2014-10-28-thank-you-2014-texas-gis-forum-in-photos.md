@@ -4,7 +4,7 @@ title: 2014 Texas GIS Forum
 mainimage: http://www.tnris.org/sites/default/files/banner_atrium_2.jpg
 author: Richard Wade
 abstract: TNRIS thanks everyone for another great year. Check out photos and highlights from this year's event.
-thumb: http://www.tnris.org/sites/default/files/2014_forum_thumb.jpg?1414509601
+thumbnail: images/updates/forum_recap_th.jpg
 mainimage: http://www.tnris.org/sites/default/files/banner_atrium_2.jpg
 ---
 

@@ -31,7 +31,7 @@
     {% if required %}
       <div ng-show="form['{{name}}'].$error.required">{{label|capitalize}} is required.</div>
     {% endif %}
-    <div ng-show="form['{{name}}'].$error.{{type}}">{{label|capitalize}} must be valid.</div>
+    <div ng-show="form['{{name}}'].$error.{{type}} || form['{{name}}'].$error.pattern">{{label|capitalize}} must be valid.</div>
   </div>
   {% if display.help %}
     <div id="help-block-{{name}}" class="help-block">{{display.help}}</div>
@@ -55,8 +55,12 @@
   {% set label = display.label || display %}
   {% set placeholder = display.placeholder || label %}
 
+  {% if type === "email" %}
+    {% set pattern = 'pattern=".*@.*\..*"' %}
+  {% endif %}
+
   {{before(name, display, type, required, show)}}
-    <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder|capitalize}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}} />
+    <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder|capitalize}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}} {{pattern|safe}}/>
     <span ng-show="errors['{{name}}']" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{after(name, display, type, required)}}
 {%- endmacro -%}

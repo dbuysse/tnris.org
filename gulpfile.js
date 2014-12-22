@@ -135,7 +135,7 @@ function urlize(str) {
 }
 
 function urlPath(str) {
-  return str.replace(path.separator, '/');
+  return str.replace(path.sep, '/');
 }
 
 function validateLink(str, crossref, filename) {

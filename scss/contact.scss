@@ -26,6 +26,10 @@ label {
   .form-control {
     color: $error;
   }
+
+  &.has-feedback .form-control-feedback {
+    top: 34px;
+  }
 }
 
 .form-control {

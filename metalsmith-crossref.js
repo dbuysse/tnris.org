@@ -50,5 +50,5 @@ function normalize(options) {
 }
 
 function urlPath(str) {
-  return str.replace(path.separator, '/');
+  return str.replace(path.sep, '/');
 }

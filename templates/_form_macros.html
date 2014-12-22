@@ -54,6 +54,7 @@
 {%- macro input(name, display, type, required, show) -%}
   {% set label = display.label || display %}
   {% set placeholder = display.placeholder || label %}
+  {% set pattern = '' %}
 
   {% if type === "email" %}
     {% set pattern = 'pattern=".*@.*\..*"' %}

@@ -2,7 +2,7 @@
 template: news.html
 title: TNRIS Creates High-Resolution Scans of CIAP Historical Imagery
 mainimage: images/maps-and-data/ciap_sample.jpg
-imagealt: Old-ass imagery
+imagealt: CIAP historical black and white image
 thumbnail: images/maps-and-data/ciap_th.png
 author: Joey Thomas
 division: Research & Distribution

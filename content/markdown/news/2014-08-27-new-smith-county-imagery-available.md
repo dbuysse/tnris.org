@@ -3,11 +3,13 @@ template: news.html
 title: "New Smith County Aerial Imagery Now Available"
 author: StratMap
 thumbnail: images/updates/hpidssmith_th.jpg
-mainimage: 
-abstract: 
+mainimage:
+abstract:
     High resolution RGBIR) natural color and color infrared aerial orthoimagery are now available from TNRIS for Smith County, and Lake Palestine area.
 tags: stratmap, hpids
 ---
+
+{% import '_macros.html' as m %}
 
 
 <figure>
@@ -22,16 +24,25 @@ tags: stratmap, hpids
 
 <div class="dataBox">
 <h2>Data Access</h2>
-	<p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
-	<p><strong>To access the services in ArcGIS you can use the following URL</strong></p>
-	<div id="shareLinkContainer" style="display: block;">
-		<div id="shareLinkBox">
-			<input type="text" id="shareUrl" name="shareUrl" value="r.tnris.org/arcgis/services/HPIDS/HPIDS_Smith_2014_NC/ImageServer/WMSServer" readonly="readonly">
-			<div class="hint">Press Ctrl-c to copy</div>
-		</div>
-	</div>
-	 <p>Additionally, the orthoimagery files (GeoTIFF, MrSID, JPEG2000) are in the public domain and available from the TNRIS Research and Distribution Center at a nominal fee for the cost of reproduction.</p>
-<p> <a href="https://www.tnris.org/order-form"  class="btn btn-tnris btn-lg">Order Data</a></p>
+<p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
+<p><strong>To access the services in ArcGIS you can use the following URL:</strong></p>
+<div id="shareLinkContainer" style="display: block;">
+<div id="shareLinkBox">
+<div class="input-group copy-url-container">
+<input class="wms-url copy-url-input form-control" type="text" readonly
+value="r.tnris.org/arcgis/services/HPIDS/HPIDS_Smith_2014_NC/ImageServer/WMSServer">
+
+<span class="input-group-btn">
+<button class="btn btn-info copy-url-btn" type="button">
+<i class="fa fa-clipboard"></i> Copy
+</button>
+</span>
+</div>
+
+</div>
+</div>
+<p>Additionally, the orthoimagery files (GeoTIFF, MrSID, JPEG2000) are in the public domain and available from the TNRIS Research and Distribution Center at a nominal fee for the cost of reproduction.</p>
+<p> <a href="{{ m.link('order-data') }}"  class="btn btn-tnris btn-lg">Order Data</a></p>
 </div>
 
 High resolution 6-inch 4-band (RGBIR) natural color and color infrared aerial orthoimagery are now available from TNRIS for Smith County, including the Lake Palestine area.

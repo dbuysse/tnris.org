@@ -1,6 +1,5 @@
 {% extends "data-catalog.html" %}
-
-
+{% import '_macros.html' as m %}
 
 {% block contents %}
   <div class="row">
@@ -37,7 +36,7 @@
                     {% endif %}
                     <div class="media-body">
                     <h3 class="list-group-item-heading">
-                      <a href="{{catalog_entry.path}}" class="wms-tip" title="More about this dataset">
+                      <a href="{{m.link(catalog_entry.path)}}" class="wms-tip" title="More about this dataset">
                           {{catalog_entry.name}}
                       </a>
                       <small>{{catalog_entry.wms_link}}</small>

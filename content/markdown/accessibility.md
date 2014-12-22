@@ -13,7 +13,7 @@ When you contact us, please be sure to tell us each of these points:
 - The Web address of the requested material
 - How we can contact you
 
-With this information, we will be able to respond in the most helpful way possible.			
+With this information, we will be able to respond in the most helpful way possible.
 Additional information about accessibility programs in Texas is available from the [Governor's Committee on People with Disabilities](http://www.governor.state.tx.us/disabilities/).
 
 ##Additional Resources

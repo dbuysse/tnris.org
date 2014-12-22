@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import '_macros.html' as m %}
 
 {% block contents %}
   <div class="row">
@@ -9,11 +10,11 @@
         {% for news_item in news %}
           {% if loop.index <= 10 %}
               <li class="media">
-                <a class="pull-left" href="{{ news_item.path }}"><img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
+                <a class="pull-left" href="{{m.link(news_item.preserved)}}"><img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
                 </a>
                 <div class="media-body">
                   <h3 class="media-heading">
-                    <a href="{{ news_item.path }}">{{ news_item.title }}</a>
+                    <a href="{{m.link(news_item.preserved)}}">{{ news_item.title }}</a>
                   </h3>
                    <div class="byline">
                     by <author>{{ news_item.author }}<author> | <time>{{ news_item.date|date('F jS, Y') }}</time> 
@@ -29,40 +30,9 @@
       </ul>
     </div>
 
-{% block rightContent %}
-  <div class="col-sm-5 blog-sidebar">
- <!--     <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-    </div>
-    <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
-            </ol>
-          </div> -->
+    {% block rightContent %}
+      <div class="col-sm-5 blog-sidebar">
+      </div>
+    {% endblock rightContent %}
   </div>
-{% endblock rightContent %}
-</div>
-
-<!-- <ul class="pagination">
-  <li><a href="#">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul> -->
 {% endblock contents %}

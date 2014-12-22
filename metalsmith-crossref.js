@@ -11,15 +11,14 @@ function crossref(options) {
   return function(files, metalsmith, done){
     options = normalize(options);
 
-    var crossref = options.include;
+    var crossref = _.clone(options.include);
 
     Object.keys(files).forEach(function(filename){
       var file = files[filename];
       var key = file.preserved;
       var value = file.path;
-      if (key === '') {
-        key = 'index';
-        value = '';
+      if (key === 'index') {
+        value = './' + value;
       }
       crossref[key] = value;
     });

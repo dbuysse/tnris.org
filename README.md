@@ -20,6 +20,7 @@ this repository:
  - run `npm install`
  - run `bower install`
 
+Also install the [EditorConfig plugin](http://editorconfig.org/#download) for your text editor of choice. EditorConfig helps us maintain stuff like consistent spacing and tabbing across source files.
 
 ## Usage
 

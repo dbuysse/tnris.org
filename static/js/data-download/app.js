@@ -23,6 +23,9 @@ var dataDownloadApp = function () {
       return window.location.protocol + '//beta.tnris.org/data-download/';
     })())
     .controller('dataDownloadCtrl', dataDownloadCtrl)
+    .config(function ($analyticsProvider) {
+      $analyticsProvider.withAutoBase(true);
+    })
     .config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
       $sceDelegateProvider.resourceUrlWhitelist([
         // Allow same origin resource loads

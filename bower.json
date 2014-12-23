@@ -22,7 +22,8 @@
     "angular-ui-select": "~0.9.5",
     "selectize": "~0.11.2",
     "jquery-zclip": "~1.1.5",
-    "swfobject": "*"
+    "swfobject": "*",
+    "twentytwenty": "*"
   },
   "resolutions": {
     "angular": "1.3.5"

@@ -57,10 +57,9 @@
 
   });
 
-
   $(window).load(function() {
     // Image Slider
-    $("#imageCompare1, #imageCompare2, #imageCompare3, #imageCompare4, #imageCompare5, #imageCompare6, #imageCompare7").twentytwenty({default_offset_pct: .5});
+    $(".twentytwenty-container").twentytwenty({default_offset_pct: .5});
   });
 
 })(jQuery);

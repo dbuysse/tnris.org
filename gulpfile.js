@@ -186,7 +186,12 @@ gulp.task('webserver', ['dist'],  function() {
     }));
 });
 
-gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);
+gulp.task('dist', ['dist-fonts', 'dist-metal', 'dist-scss', 'dist-static']);
+
+gulp.task('dist-fonts', function () {
+  return gulp.src(path.join(dirs.static, 'bower_components', 'bootstrap', 'fonts', '*'))
+    .pipe(gulp.dest(path.join(dirs.dist, 'fonts')));
+});
 
 gulp.task('dist-metal', function () {
   gulp.src([
@@ -321,7 +326,6 @@ gulp.task('dist-static', function () {
   return gulp.src(paths.static)
     .pipe(gulp.dest(dirs.dist));
 });
-
 
 gulp.task('clean', ['clean-dist']);
 

@@ -109,7 +109,7 @@
     {% set other_name = name + ' (other)' %}
     {% set other_display = display + ' (other)' %}
     {% if show %}
-      {% set other_show = show + " && form_model['" + name + "'] == 'Other'" %}
+      {% set other_show = "(" + show + ") && form_model['" + name + "'] == 'Other'" %}
      {%- else  -%}
       {% set other_show = "form_model['" + name + "'] == 'Other'" %}
     {% endif %}

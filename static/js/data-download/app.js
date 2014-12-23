@@ -11,9 +11,15 @@ var dataDownloadApp = function () {
     .factory('MapService', MapService)
     .directive('includeMap', includeMap)
     .directive('resourceGroup',  resourceGroup)
-    .constant('MAP_IMAGE_URL_PRE', 'http://s3.amazonaws.com/tnris-datadownload/')
-    .constant('DOWNLOAD_URL_PRE', 'http://tg-twdb-gemss.s3.amazonaws.com')
-    .constant('DOWNLOAD_API_PRE', 'http://beta.tnris.org/data-download/')
+    .constant('MAP_IMAGE_URL_PRE', (function () {
+      return window.location.protocol + '//s3.amazonaws.com/tnris-datadownload/';
+    })())
+    .constant('DOWNLOAD_URL_PRE', (function () {
+      return window.location.protocol + '//tg-twdb-gemss.s3.amazonaws.com';
+    })())
+    .constant('DOWNLOAD_API_PRE', (function () {
+      return window.location.protocol + '//beta.tnris.org/data-download/';
+    })())
     .controller('dataDownloadCtrl', dataDownloadCtrl)
     .config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
       $sceDelegateProvider.resourceUrlWhitelist([

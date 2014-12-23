@@ -74,6 +74,14 @@ label {
       text-align: right;
     }
   }
+
+  &.form-callout {
+    padding: 10px;
+
+    p:last-child {
+      margin-bottom: 0px;
+    }
+  }
 }
 
 .required-symbol {

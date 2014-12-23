@@ -1,7 +1,7 @@
 {% extends "contact-general.html" %}
 
+{% import "_macros.html" as m %}
 {% import "_form_macros.html" as form %}
-
 
 {% block contents %}
 <div class="row">
@@ -17,6 +17,10 @@
 <div class="row">
   <div class="col-xs-12">
     {{contents|safe}}
+
+    <p>Welcome to the Map Service Center's order form.</p>
+
+    <p>Please fill out the information below and TNRIS staff will begin processing your order as soon as it is received.</p>
   </div>
 </div>
 
@@ -30,13 +34,34 @@
               "type of data",
               "radio",
               [
+                'Digital Data',
                 'Historical Imagery',
                 'LiDAR',
-                'Maps',
-                'OrthoImagery'
+                'Maps'
               ],
               true
           )}}
+
+          {% set is_digital_data = "form_model['Type of Data'] == 'Digital Data'" %}
+            <div class="form-group form-callout bg-warning" ng-show="{{is_digital_data}}">
+              <p>
+                Before placing your order, try checking our <a href="{{m.link('data-download')}}">data download page</a> for free downloadable data that may fit your needs.
+              </p>
+              <p>
+                <strong>Note:</strong> Depending on the size of the data, you will receive your data via either FTP, CD, DVD or hard drive(s).
+              </p>
+            </div>
+
+            {{form.textarea(
+                "Digital Data Description",
+                {
+                  label: 'Description',
+                  placeholder: 'Briefly describe the data you would like to order.'
+                },
+                true,
+                is_digital_data
+            )}}
+
 
           {% set is_historical = "form_model['Type of Data'] == 'Historical Imagery'" %}
             {{form.multi(
@@ -63,16 +88,17 @@
                 is_historical
             )}}
 
-            {% set is_digital = is_historical + " && form_model['Historical Imagery Medium'] == 'Digital'" %}
+            {% set is_historical_digital = is_historical + " && form_model['Historical Imagery Medium'] == 'Digital'" %}
               {{form.checkbox(
                 "Georeference",
                 "Georeference",
                 "The data should be georeferenced.",
                 false,
-                is_digital
+                is_historical_digital
               )}}
 
-              {{form.software_inputs(is_digital)}}
+          {% set is_digital = is_digital_data + " || " + is_historical_digital %}
+            {{form.software_inputs(is_digital)}}
 
           {% set is_lidar = "form_model['Type of Data'] == 'LiDAR'" %}
             {{form.multi(

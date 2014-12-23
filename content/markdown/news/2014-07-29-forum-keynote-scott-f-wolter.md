@@ -4,9 +4,9 @@ title: "Forum Keynote: Scott F. Wolter, Host of 'America Unearthed'"
 author: 2014 Forum
 thumbnail: images/media1.jpg
 mainimage: images/updates/wolterbig.jpg
+imagealt: A portrait of Scott Wolter on location
 abstract: 
-    TNRIS is pleased to announce Forensic geologist Scott Wolter as a keynote
-    speaker at the 2014 GIS Forum! 
+    TNRIS is pleased to announce Forensic geologist Scott Wolter as a keynote speaker at the 2014 GIS Forum! 
 tags: 2014 gis forum
 ---
 

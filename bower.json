@@ -23,7 +23,8 @@
     "selectize": "~0.11.2",
     "jquery-zclip": "~1.1.5",
     "swfobject": "*",
-    "twentytwenty": "*"
+    "twentytwenty": "*",
+    "bourbon": "~4.0.2"
   },
   "resolutions": {
     "angular": "1.3.5"

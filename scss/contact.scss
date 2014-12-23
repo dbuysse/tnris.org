@@ -1,7 +1,6 @@
+@import "../static/bower_components/bourbon/dist/bourbon";
 @import "partials/variables";
 @import "partials/mixins";
-@import "bourbon/bourbon";
-
 
 label {
     font-family: $pragmatica;

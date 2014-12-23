@@ -14,15 +14,15 @@ tags: stratmap, hpids
 
 <figure>
 <div id="imageCompare1" class='twentytwenty-container'>
-  <img class="img-responsive" src="https://www.tnris.org/sites/default/files/rosegarden_nc.jpg">
-  <img class="img-responsive" src="https://www.tnris.org/sites/default/files/rosegarden_cir.jpg">
+  <img class="img-responsive" src="images/updates/smith-imagery/rosegarden_nc.jpg">
+  <img class="img-responsive" src="images/updates/smith-imagery/rosegarden_cir.jpg">
 </div>
 </figure>
 
 <p style="background: #222222; color: white; padding: 10px;"><strong>Preview</strong> both the natural color and infrared products by swiping the circle handles over the imagery.</p>
 
 
-<div class="dataBox">
+<div class="dataBox" style="float:right;">
 <h2>Data Access</h2>
 <p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
 <p><strong>To access the services in ArcGIS you can use the following URL:</strong></p>
@@ -62,7 +62,7 @@ The new orthoimagery were acquired in early January 2014 during leaf-off conditi
 ###Acquisition Area
 
 <figure>
-<img class="smithpreview  img-responsive" src="https://www.tnris.org/sites/default/files/2014_Smith_Ortho_Acquisition_sm.jpg" alt="Preview of Acquisition area">
+<img class="smithpreview  img-responsive" src="images/updates/smith-imagery/2014_Smith_Ortho_Acquisition_sm.jpg" alt="Preview of Acquisition area">
 <figcaption>Click the map for a larger preview of the acquisition area.</figcaption>
 </figure>
 
@@ -75,55 +75,55 @@ The new orthoimagery were acquired in early January 2014 during leaf-off conditi
 * Metadata XMLs per image tile
 
 ###Product Specification
-
+![USGS Quarter Quad Breakdown](images/updates/smith-imagery/usgs_quad.jpg)
 * 6-inch pixel resolution
 * 4-band, natural color and color infrared
 * StatePlane TX N Central 4202 NAD83 coordinate system
 * Units in feet
 * DO4Q (approx. 1 sq. mi.) image tiles, 1/64th USGS 7.5-minute quadrangle
-<img src="https://www.tnris.org/sites/default/files/usgs_quad.jpg" alt="USGS Quarter Quad Breakdown">
+
 
 ###Imagery Preview
 
 <figure>
 <div id="imageCompare2" class='twentytwenty-container'>
-  <img src="https://www.tnris.org/sites/default/files/lindalesmith_nc.jpg">
-  <img src="https://www.tnris.org/sites/default/files/lindalesmith_cir.jpg">
+  <img src="images/updates/smith-imagery/lindalesmith_nc.jpg" alt="Preview of natural color imagery">
+  <img src="images/updates/smith-imagery/lindalesmith_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Lindale, TX  SCALE 1:900</figcaption>
 </figure>
 <figure>
 <div id="imageCompare3" class='twentytwenty-container'>
-  <img src="https://www.tnris.org/sites/default/files/lakepalestine_nc.jpg">
-  <img src="https://www.tnris.org/sites/default/files/lakepalestine_cir.jpg">
+  <img src="images/updates/smith-imagery/lakepalestine_nc.jpg" alt="Preview of natural color imagery">
+  <img src="images/updates/smith-imagery/lakepalestine_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Lake Palestine Area  SCALE 1:650</figcaption>
 </figure>
 <figure>
 <div id="imageCompare4" class='twentytwenty-container'>
-  <img src="https://www.tnris.org/sites/default/files/motherfrances_nc.jpg">
-  <img src="https://www.tnris.org/sites/default/files/motherfrances_cir.jpg">
+  <img src="images/updates/smith-imagery/motherfrances_nc.jpg" alt="Preview of natural color imagery">
+  <img src="images/updates/smith-imagery/motherfrances_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Trinity Mother Frances Hospital  SCALE 1:600</figcaption>
 </figure>
 <figure>
 <div id="imageCompare5" class='twentytwenty-container'>
-  <img src="https://www.tnris.org/sites/default/files/pineplantation_nc.jpg">
-  <img src="https://www.tnris.org/sites/default/files/pineplantation_cir.jpg">
+  <img src="images/updates/smith-imagery/pineplantation_nc.jpg" alt="Preview of natural color imagery">
+  <img src="images/updates/smith-imagery/pineplantation_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Pine Plantation  SCALE 1:1550</figcaption>
 </figure>
 <figure>
 <div id="imageCompare6" class='twentytwenty-container'>
-  <img src="https://www.tnris.org/sites/default/files/downtown1_Smith_nc.jpg">
-  <img src="https://www.tnris.org/sites/default/files/downtown1_Smith_cir.jpg">
+  <img src="images/updates/smith-imagery/downtown1_Smith_nc.jpg" alt="Preview of natural color imagery">
+  <img src="images/updates/smith-imagery/downtown1_Smith_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Downtown Tyler, TX  SCALE 1:430</figcaption>
 </figure>
 <figure>
 <div id="imageCompare7" class='twentytwenty-container'>
-  <img src="https://www.tnris.org/sites/default/files/tjc_nc.jpg">
-  <img src="https://www.tnris.org/sites/default/files/tjc_cir.jpg">
+  <img src="images/updates/smith-imagery/tjc_nc.jpg" alt="Preview of natural color imagery">
+  <img src="images/updates/smith-imagery/tjc_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Tyler Junior College  SCALE 1:830</figcaption>
 </figure>

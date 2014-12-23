@@ -25,7 +25,8 @@ function collector(options) {
       if(!file._collector_ignore) {
         if (matcher.match(subpath)) {
           var pattern = dir === 'root' ? options.pattern : dir + '/' + options.pattern;
-          collectionsObj[dir] = extend({'pattern': pattern}, options.default);
+          var name = dir.replace(/-/g, '_');
+          collectionsObj[name] = extend({'pattern': pattern}, options.default);
         }
       }
 

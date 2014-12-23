@@ -4,7 +4,7 @@ title: "To Share or Not to Share...THAT is the question"
 author: Felicia Retiz, Deputy GIO
 thumbnail: images/media1.jpg
 mainimage:
-abstract: 
+abstract:
     There are a number of map analysts in Texas State Government who fully understand the power GIS brings to their organization. These GIS “enthusiasts” create maps to better visualize information related to their agency business needs.
 tags: GIO, Data Sharing, GIS, Geospatial
 ---
@@ -25,4 +25,4 @@ Ten years ago, the Federal Geographic Data Committee (FGDC) recognized these dat
 
 These guidelines are still very relevant today as geospatial data are more heavily relied upon as resource for dissemination of public information. It’s time to take action on this topic. In an effort to promote geospatial data awareness and encourage data sharing in Texas, the Texas Geographic Information Officer (GIO) is pushing the topic of data sharing to the top of the priority list.
 
-Who knows?  Something amazing just might happen. We may discover geospatial datasets previously unknown to exist or we might discover the same information is being duplicated by different agencies. And during this process, evaluation of the infrastructure (physical hardware, software, and policies) for information exchange may lead to improved services. The GIS community already knows that data sharing is vital. Our goal now is to make data sharing a safe and standard practice, ensuring that any perceived risks are mitigated before sharing. To give this discussion a kick start, we encourage your thoughts and contributions on this topic. 
+Who knows?  Something amazing just might happen. We may discover geospatial datasets previously unknown to exist or we might discover the same information is being duplicated by different agencies. And during this process, evaluation of the infrastructure (physical hardware, software, and policies) for information exchange may lead to improved services. The GIS community already knows that data sharing is vital. Our goal now is to make data sharing a safe and standard practice, ensuring that any perceived risks are mitigated before sharing. To give this discussion a kick start, we encourage your thoughts and contributions on this topic.

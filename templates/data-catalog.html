@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% import "_macros.html" as macros %}
+{% import "_macros.html" as m %}
 
 {% block contents %}
 <div class="row">
@@ -19,13 +19,26 @@
   <div id="dataPageContent" class="col-md-8 col-lg-7">
     {% block catalog_content %}
       <h1>{{ title }}</h1>
-      <div class="lead">{{ contents|safe }}</div>
+      <div class="lead">{{ contents|safe }}
+        <p>
+          Our collection of maps, photos, documents and other spatial datasets were
+          acquired from multiple sources including state, federal, and local agencies,
+          with support and donations from private sources. They encompass a wide range of
+          years, beginning all the way from the 1920s to the present-day.
+        </p>
+        <p>
+          We currently have <strong>129</strong> of our datasets represented in our online
+          data catalog and are continually updating it with new entries. If you
+          don't find what you're looking for, please <a
+          href="{{m.link('contact')}}">contact us</a>.
+        </p>
+      </div>
         {% for category in catalog|sortBy(['category', 'name'])|groupBy('category') %}
           <div class="section">
             <h2 id="{{category|first['urlized_category']}}">{{loop.key}}</h2>
             <ul class="media-list list-group">
               {% for item in category %}
-                {{macros.catalog_data_card_entry(item)}}
+                {{m.catalog_data_card_entry(item)}}
               {% endfor %}
             </ul>
           </div>

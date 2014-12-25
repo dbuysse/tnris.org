@@ -15,7 +15,7 @@
         </ul>
       </div>
     {% endblock category_nav %}
-    <div id="dataPageContent" class="col-md-8">
+    <div id="dataPageContent" class="col-md-8 wms-services">
       {% block catalog_content %}
         <h1>{{title}}</h1>
         <div class="mainBlurb">{{abstract}}</div>
@@ -27,24 +27,20 @@
                 {{loop.key}}
               </h2>
               <ul class="media-list list-group">
-                {% for catalog_entry in wms_category %}
+                {% for wms_entry in wms_category %}
                   <li class="media list-group-item">
-                    {% if catalog_entry.thumb %}
-                       <a class="media-left" href="{{catalog_entry.wms_link}}">
-                         <img class="media-object" src="{{catalog_entry.thumb_url}}" alt="Thumbnail image for {{catalog_entry.name}}">
-                       </a>
+                    {% if wms_entry.thumb %}
+                      <div class="media-left">
+                        <img class="media-object" src="{{wms_entry.thumb_url}}" alt="Thumbnail image for {{wms_entry.name}}">
+                      </div>
                     {% endif %}
                     <div class="media-body">
-                    <h3 class="list-group-item-heading">
-                      <a href="{{m.link(catalog_entry.path)}}" class="wms-tip" title="More about this dataset">
-                          {{catalog_entry.name}}
-                      </a>
-                      <small>{{catalog_entry.wms_link}}</small>
-                      <a class="badge pull-right" href="#" title="Copy the WMS URL">
-                        <i class="fa fa-files-o"></i>
-                        Copy URL
-                      </a>
-                    </h3>
+                      <h3 class="media-heading">
+                        <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset">
+                            {{wms_entry.name}}
+                        </a>
+                      </h3>
+                      {{m.wms_link(wms_entry.wms_link)}}
                     </div>
                   </li>
                 {% endfor %}

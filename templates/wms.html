@@ -30,9 +30,9 @@
                 {% for wms_entry in wms_category %}
                   <li class="media list-group-item">
                     {% if wms_entry.thumb %}
-                      <div class="media-left">
+                      <a class="media-left" href="{{wms_entry.path}}">
                         <img class="media-object" src="{{wms_entry.thumb_url}}" alt="Thumbnail image for {{wms_entry.name}}">
-                      </div>
+                      </a>
                     {% endif %}
                     <div class="media-body">
                       <h3 class="media-heading">

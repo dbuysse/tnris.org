@@ -39,6 +39,11 @@
                         <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset">
                             {{wms_entry.name}}
                         </a>
+                        {% if wms_entry.pop_link %}
+                          <a class="btn btn-tnris pull-right" role="button" href="//{{wms_entry.pop_link}}">
+                            Preview
+                          </a>
+                        {% endif %}
                       </h3>
                       {{m.wms_link(wms_entry.wms_link)}}
                     </div>

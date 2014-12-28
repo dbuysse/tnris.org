@@ -1,0 +1,208 @@
+@import "variables";
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: $proxima;
+  font-weight: 400;
+  position: relative;
+}
+
+h1, h2, h3, h4 {
+  font-family: $pragmatica;
+  font-weight: 400;
+}
+
+h2 {
+  color: $auburn;
+  font-size: 26px;
+}
+
+/* for skip links */
+#contentMain {
+  background: white;
+  margin-bottom: 30px;
+}
+
+#mainContentAnchor {
+  position: absolute;
+  top: 50px;
+}
+
+/* Buttons */
+.btn-tnris {
+  color: white;
+  background-color: $tnrisblue;
+  border-color: $urgentblue;
+  box-shadow: inset $urgentblue 0 0 7px;
+
+  &:hover {
+    background: $urgentblue;
+    color: white;
+  }
+}
+
+/* tag styling */
+.tag {
+  border-radius: 10px;
+  padding: 0 10px;
+  background: $sky;
+  border: 1px solid $tnrisblue;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* push footer to bottom of page */
+#wrap-outer {
+  min-height: 100%;
+}
+
+#wrap-inner {
+  overflow:auto;
+  padding-bottom: $footer-height;
+}
+
+.footer {
+  background: $darkgrey;
+   color: $lightgrey;
+  z-index: 10000;
+  position: relative;
+  margin-top: -$footer-height;
+  min-height: $footer-height;
+  clear:both;
+
+  a {
+    color: $lightergrey;
+    abbr {
+      border: 0;
+    }
+  }
+  .accessibility {
+    background: $darkish;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 5px;
+  }
+  .copyright {
+    font-size: 11px;
+  }
+  .sitemap {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+    }
+
+    h4 {
+
+    		color: $lightgrey;
+    	a {
+    		color: $lightgrey;
+    	}
+    }
+
+    a {
+      color: $bsgrey;
+    }
+  }
+}
+
+author {
+  text-transform: uppercase;
+}
+
+.article {
+  .byline {
+    margin-bottom: 5px;
+  }
+
+  h2.headline {
+    margin-top: 0;
+    font-size: 30px;
+  }
+  img {
+    margin-bottom: 15px;
+  }
+}
+
+/* Side notes for calling out things
+-------------------------------------------------- */
+
+/* Base styles (regardless of theme) */
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  h4 {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  code, .highlight {
+    background-color: #fff;
+  }
+}
+
+/* Themes for different contexts */
+.bs-callout-danger {
+  background-color: #fcf2f2;
+  border-color: #dFb5b4;
+  h4 {
+    color: #B94A48;
+  }
+}
+
+.bs-callout-warning {
+  background-color: #fefbed;
+  border-color: #f1e7bc;
+  h4 {
+    color: #C09853;
+  }
+}
+
+.bs-callout-info {
+  background-color: #f0f7fd;
+  border-color: #d0e3f0;
+  h4 {
+    color: #3A87AD;
+  }
+}
+
+.list-group-item.danger {
+  background-color: #fcf2f2;
+  border-color: #dFb5b4;
+}
+
+/* Article Data Box */
+.dataBox {
+  padding: 20px;
+  padding-top: 0;
+  border: 1px #ccc solid;
+  width: 300px;
+  background: #f2f2f2;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+/* Common Page Elements */
+.mainBlurb {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: $middarkgrey;
+}

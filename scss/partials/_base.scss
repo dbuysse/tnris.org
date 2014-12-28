@@ -14,6 +14,8 @@ body {
   font-weight: 400;
   position: relative;
 
+  @include transition(opacity 0.1s linear);
+
   .wf-loading & {
     opacity: 0;
   }

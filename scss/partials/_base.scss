@@ -13,6 +13,14 @@ body {
   font-family: $proxima;
   font-weight: 400;
   position: relative;
+
+  .wf-loading & {
+    opacity: 0;
+  }
+
+  .wf-active &, .wf-inactive & {
+    opacity: 1;
+  }
 }
 
 h1, h2, h3, h4 {

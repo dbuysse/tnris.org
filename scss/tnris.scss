@@ -28,36 +28,6 @@ body {
   margin-bottom: 30px;
 }
 
-.jumbotron {
-  padding: 0px;
-  // background: url(../images/bg/bluegrid.jpg) 0 0;
-  background: none;
-  margin-bottom: 0;
-  // border-bottom: 1px solid #eaf3ff;
-  a.btn {
-    position: absolute;
-    display: block;
-  }
-}
-
-@media (min-width: 767px) {
-  .jumbotron .container {
-    width: 100%;
-  }
-}
-
-@media (min-width: 992px) {
-  .jumbotron .container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .jumbotron .container {
-    width: 1170px;
-  }
-}
-
 /* Skip Content */
 
 #mainContentAnchor {

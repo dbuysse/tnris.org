@@ -36,16 +36,19 @@
                     {% endif %}
                     <div class="media-body">
                       <h3 class="media-heading">
-                        <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset">
-                            {{wms_entry.name}}
-                        </a>
-                        {% if wms_entry.pop_link %}
-                          <a class="btn btn-tnris pull-right" role="button" href="//{{wms_entry.pop_link}}">
-                            Preview
+                          {{wms_entry.name}} 
+                      </h3>
+
+                      {{m.wms_link(wms_entry.wms_link)}}
+                      <p class="wms-info pull-right">
+                          {% if wms_entry.pop_link %}
+                          <a href="//{{wms_entry.pop_link}}">
+                            <span class="glyphicon glyphicon-new-window"></span> Map Preview 
                           </a>
                         {% endif %}
-                      </h3>
-                      {{m.wms_link(wms_entry.wms_link)}}
+                        |
+                        <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset"><span class="glyphicon glyphicon-info-sign"></span> More Info</a>
+                      </p>
                     </div>
                   </li>
                 {% endfor %}

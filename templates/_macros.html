@@ -39,12 +39,13 @@
 
 {%- macro wms_link(url) -%}
   <div class="input-group copy-url-container">
-    <input class="wms-url copy-url-input form-control" type="text" readonly value="{{url}}">
-    <span class="input-group-btn">
-      <button class="btn btn-info copy-url-btn" type="button">
-        <i class="fa fa-clipboard"></i> Copy
+        <span class="input-group-btn">
+      <button class="btn btn-tnris copy-url-btn" type="button">
+        <i class="fa fa-clipboard"></i> Copy URL
       </button>
     </span>
+    <input class="wms-url copy-url-input form-control" type="text" readonly value="{{url}}">
+
   </div>
 {%- endmacro -%}
 

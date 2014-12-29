@@ -254,19 +254,37 @@ img.data-thumb {
   }
 
   .copy-url-container {
-    margin-top: 14px;
+    float: left;
   }
 }
 
 .copy-url-container {
+  width: 63%;
+
+  .copy-url-btn {
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+  }
+}
+
+#data-access {
+  .copy-url-container {
   width: 100%;
+}
+}
+
+.wms-info {
+  width: 35%;
+  line-height: 35px !important;
+  height: 35px;
+  display: inline-block;
 }
 
 input.wms-url {
   padding: 5px;
   border: 1px solid $midgrey;
   width: 100%;
-  color: $infoblue;
+  color: $tnrisblue;
   font-weight: 500;
 
   &.form-control[readonly] {

@@ -2,27 +2,24 @@
 {% import '_macros.html' as m %}
 
 {% block topcontent %}
-  <!-- Main jumbotron for a primary marketing message or call to action -->
   <div id="home-top-content">
     <div class="container">
-          <div class="row">
-            <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12 ">
-              {% include "./partials/quicknav.html" %}
-            </div>
-            <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
-            {% include "./partials/mainfeature.html" %}
-          </div>
-           </div>
+      <div class="row">
+        <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12 ">
+          {% include "./partials/quicknav.html" %}
         </div>
+        <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
+        {% include "./partials/mainfeature.html" %}
+      </div>
+       </div>
+    </div>
   </div>
 {% endblock topcontent %}
 
 
 {% block contents %}
-
-    <!-- Example row of columns -->
+    <h1 class="sr-only">Texas Natural Resources Information System</h1>
     <div class="row">
-     <!--   -->
      <div id="updates-front" class="col-md-6 col-sm-12 col-md-push-3">
 
           <h2>Latest News <i class="fa fa-newspaper-o"></i></h2>

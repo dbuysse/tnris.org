@@ -2,7 +2,7 @@
   'use strict';
 
   $(function() {
-  
+
     //check for flash
     //if flash is available, the html tag will have 'flash' as a class
     // if not, the html tag will have 'no-flash' as a class
@@ -10,8 +10,6 @@
       swfobject.getFlashPlayerVersion().major !== 0 ? 'flash' : 'no-flash'
     );
 
-    // Image Slider
-    $("#imageCompare1, #imageCompare2, #imageCompare3, #imageCompare4, #imageCompare5, #imageCompare6, #imageCompare7").twentytwenty({default_offset_pct: .5});
 
     // Nav scroll spy
     $('body').scrollspy({ target: '.wms-nav-container', offset: 130 });
@@ -57,6 +55,11 @@
       this.href=location.href.split("#")[0]+'#'+this.href.substr(this.href.indexOf('#')+1);
     });
 
+  });
+
+  $(window).load(function() {
+    // Image Slider
+    $(".twentytwenty-container").twentytwenty({default_offset_pct: .5});
   });
 
 })(jQuery);

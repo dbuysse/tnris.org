@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="favicon.ico">
 
 {% if base %}
-  <base href="{{base}}">
+  <base href="{{base}}"/>
 {% endif %}
 
 <!--[if lte IE 9]>
@@ -16,11 +16,15 @@
     var base = document.getElementsByTagName('base')[0];
 
     if (base) {
-      var fullBase = document.location.href + base.getAttribute('href');
-      base.href = fullBase;
+      var newBase = document.createElement('base');
+      newBase.setAttribute('href', base.href);
+
+      var parent = base.parentNode;
+      parent.removeChild(base);
+      parent.appendChild(newBase);
     }
   </script>
 <![endif]-->
 
 
-<title>TNRIS - Texas Natural Resources Information System | Public Geographic Data for Texas</title>
+<title>{% if title %}{{title}} | {% endif %}TNRIS - Texas Natural Resources Information System</title>

@@ -1,0 +1,146 @@
+@import "partials/variables";
+
+/* Nav bar */
+.title-header {
+  height: auto;
+  overflow: auto;
+  background: $tnrisblue;
+  color: $sky;
+  width: 100%;
+  z-index: 1000;
+  font-family: $pragmatica;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 100;
+  @media (min-width: $screen-xs) {
+    font-size: 16px;
+  }
+  @media (min-width: $screen-md) {
+    font-size: 18px;
+  }
+  span {
+    margin-top: 3px;
+  }
+
+  a.skip {
+    text-indent: -9999px;
+    color: $tnrisblue;
+    text-decoration: none;
+    text-transform: none;
+    font-size: 1px;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+
+    &:focus {
+      text-indent: normal;
+      position: relative;
+      font-size: 8px;
+      overflow: auto;
+      color: white;
+    }
+  }
+}
+
+.navbar-bg {
+  padding-right: 0px;
+}
+
+.navbar-right {
+  li:last-child a {
+      padding-right: 0px;
+  }
+}
+
+.navbar-static-top {
+  background: $darkgrey;
+  a {
+    color: white;
+  }
+  .icon-bar {
+    background: white;
+  }
+  &.navbar {
+    margin-bottom: 5px;
+  }
+}
+
+.navbar-nav > li > a {
+  font-weight: 100;
+  &.gio {
+    background: url(../images/icons/sm_tx.png) 10px 14px no-repeat;
+    padding-left: 35px;
+    &:hover {
+      background-position: 10px -26px;
+    }
+  }
+}
+
+a.navbar-twdb {
+  font-size: 12px;
+  color: white;
+  margin-right: -15px;
+  margin-top: 7px;
+  overflow: hidden;
+  color: $sky;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.navbar-inverse {
+  .navbar-nav {
+    li {
+      a {
+        color: white;
+
+        &:hover {
+          color: $sky;
+          background: black;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-menu.inverse-dropdown {
+  background: $darkgrey;
+  .navbar-nav {
+    li {
+      a {
+        background: black !important;
+      }
+    }
+  }
+
+}
+
+.navbar-collapse {
+  background: $darkgrey;
+}
+
+.navbar-brand {
+  background: url(../images/tnris_logo_white.png) 0 0 no-repeat;
+  width: 80px;
+  height: 36px;
+  z-index: 30000;
+  padding: 0;
+  margin-right: 10px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.navbar-right {
+  li {
+    a {
+      color: white !important;
+      &:hover {
+        color: $sky !important;
+      }
+    }
+  }
+}

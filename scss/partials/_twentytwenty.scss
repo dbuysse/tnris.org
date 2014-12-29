@@ -1,0 +1,23 @@
+.natural-color-infrared {
+  .twentytwenty-before-label:before {
+    content: "Natural Color";
+  }
+
+  .twentytwenty-after-label:before {
+    content: "Color Infra-red";
+  }
+}
+
+.twentytwenty-before-label, .twentytwenty-after-label {
+  &:before {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.twentytwenty-overlay {
+  background: none;
+
+  &:hover {
+    background: none;
+  }
+}

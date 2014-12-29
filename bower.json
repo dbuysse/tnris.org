@@ -22,7 +22,13 @@
     "angular-ui-select": "~0.9.5",
     "selectize": "~0.11.2",
     "jquery-zclip": "~1.1.5",
-    "swfobject": "*"
+    "swfobject": "*",
+    "twentytwenty": "*",
+    "bourbon": "~4.0.2",
+    "xdomain": "~0.6.17",
+    "holderjs": "~2.4.1",
+    "angulartics": "~0.17.1",
+    "webfontloader": "~1.5.10"
   },
   "resolutions": {
     "angular": "1.3.5"

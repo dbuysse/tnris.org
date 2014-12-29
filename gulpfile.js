@@ -155,15 +155,16 @@ var dirs = {
   templates: './templates'
 };
 
-dirs.markdown = dirs.content + '/markdown';
+dirs.markdown = path.join(dirs.content, 'markdown');
+dirs.bower = path.join(dirs.static, 'bower_components');
 
 var paths = {
   catalog: dirs.content + '/data-catalog.csv',
   content: dirs.content + '/**/*',
-  javascript: [dirs.static + '/**/*.js', '!' + dirs.static + '/bower_components/**/*.js'],
+  javascript: [dirs.static + '/**/*.js', '!' + path.join(dirs.bower, '**/*.js')],
   markdown: dirs.markdown + '/**/*.md',
   scss: dirs.scss + '/**/*.scss',
-  static: dirs.static + '/**/*',
+  static: [dirs.static + '/**/*', '!' + path.join(dirs.bower, 'bootstrap-sass-official/**'), '!' + path.join(dirs.bower, 'bourbon/**')],
   templates: dirs.templates + '/**/*',
   variables: dirs.content + '/variables.yaml'
 };
@@ -181,12 +182,15 @@ gulp.task('webserver', ['dist'],  function() {
   gulp.src(dirs.dist)
     .pipe(webserver({
       livereload: true
-      //livereload: true,
-      //open: true
     }));
 });
 
-gulp.task('dist', ['dist-metal', 'dist-scss', 'dist-static']);
+gulp.task('dist', ['dist-fonts', 'dist-metal', 'dist-scss', 'dist-static']);
+
+gulp.task('dist-fonts', function () {
+  return gulp.src(path.join(dirs.static, 'bower_components', 'bootstrap', 'fonts', '*'))
+    .pipe(gulp.dest(path.join(dirs.dist, 'fonts')));
+});
 
 gulp.task('dist-metal', function () {
   gulp.src([
@@ -321,7 +325,6 @@ gulp.task('dist-static', function () {
   return gulp.src(paths.static)
     .pipe(gulp.dest(dirs.dist));
 });
-
 
 gulp.task('clean', ['clean-dist']);
 

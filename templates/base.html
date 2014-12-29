@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="wf-loading">
   <head>
     {% block header %}
       {% include "./partials/header.html" %}
@@ -11,6 +11,10 @@
   </head>
 
   <body {% if id %}id="{{id}}"{% endif %}>
+    {% block fontload %}
+      {% include "./partials/font-load.html" %}
+    {% endblock fontload %}
+
     <div id="wrap-outer">
       <div id="wrap-inner">
         <!-- Fixed navbar -->
@@ -39,6 +43,15 @@
     {% block footer %}
       {% include "./partials/footer.html" %}
     {% endblock footer %}
+
+    {% block analytics %}
+      {% block analytics-load %}
+        {% include "./partials/analytics-load.html" %}
+      {% endblock analytics-load %}
+      {% block analytics-track %}
+        {% include "./partials/analytics-track.html" %}
+      {% endblock analytics-track %}
+    {% endblock analytics %}
 
     {% block scripts %}
       {% include "./partials/scripts.html" %}

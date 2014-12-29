@@ -13,7 +13,7 @@ tags: stratmap, hpids
 
 
 <figure>
-<div id="imageCompare1" class='twentytwenty-container'>
+<div id="imageCompare1" class='twentytwenty-container natural-color-infrared'>
   <img class="img-responsive" src="images/updates/smith-imagery/rosegarden_nc.jpg">
   <img class="img-responsive" src="images/updates/smith-imagery/rosegarden_cir.jpg">
 </div>
@@ -86,42 +86,42 @@ The new orthoimagery were acquired in early January 2014 during leaf-off conditi
 ###Imagery Preview
 
 <figure>
-<div id="imageCompare2" class='twentytwenty-container'>
+<div id="imageCompare2" class='twentytwenty-container natural-color-infrared'>
   <img src="images/updates/smith-imagery/lindalesmith_nc.jpg" alt="Preview of natural color imagery">
   <img src="images/updates/smith-imagery/lindalesmith_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Lindale, TX  SCALE 1:900</figcaption>
 </figure>
 <figure>
-<div id="imageCompare3" class='twentytwenty-container'>
+<div id="imageCompare3" class='twentytwenty-container natural-color-infrared'>
   <img src="images/updates/smith-imagery/lakepalestine_nc.jpg" alt="Preview of natural color imagery">
   <img src="images/updates/smith-imagery/lakepalestine_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Lake Palestine Area  SCALE 1:650</figcaption>
 </figure>
 <figure>
-<div id="imageCompare4" class='twentytwenty-container'>
+<div id="imageCompare4" class='twentytwenty-container natural-color-infrared'>
   <img src="images/updates/smith-imagery/motherfrances_nc.jpg" alt="Preview of natural color imagery">
   <img src="images/updates/smith-imagery/motherfrances_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Trinity Mother Frances Hospital  SCALE 1:600</figcaption>
 </figure>
 <figure>
-<div id="imageCompare5" class='twentytwenty-container'>
+<div id="imageCompare5" class='twentytwenty-container natural-color-infrared'>
   <img src="images/updates/smith-imagery/pineplantation_nc.jpg" alt="Preview of natural color imagery">
   <img src="images/updates/smith-imagery/pineplantation_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Pine Plantation  SCALE 1:1550</figcaption>
 </figure>
 <figure>
-<div id="imageCompare6" class='twentytwenty-container'>
+<div id="imageCompare6" class='twentytwenty-container natural-color-infrared'>
   <img src="images/updates/smith-imagery/downtown1_Smith_nc.jpg" alt="Preview of natural color imagery">
   <img src="images/updates/smith-imagery/downtown1_Smith_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
 <figcaption>Downtown Tyler, TX  SCALE 1:430</figcaption>
 </figure>
 <figure>
-<div id="imageCompare7" class='twentytwenty-container'>
+<div id="imageCompare7" class='twentytwenty-container natural-color-infrared'>
   <img src="images/updates/smith-imagery/tjc_nc.jpg" alt="Preview of natural color imagery">
   <img src="images/updates/smith-imagery/tjc_cir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>

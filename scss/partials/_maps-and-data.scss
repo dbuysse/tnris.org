@@ -248,6 +248,20 @@ img.data-thumb {
   }
 }
 
+#dataPageContent {
+  .media-body {
+    width: 100%;
+  }
+
+  .copy-url-container {
+    margin-top: 14px;
+  }
+}
+
+.copy-url-container {
+  width: 100%;
+}
+
 input.wms-url {
   padding: 5px;
   border: 1px solid $midgrey;
@@ -268,4 +282,3 @@ input.wms-url {
     font-size: 14px;
   }
 }
-

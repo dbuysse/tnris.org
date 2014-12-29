@@ -7,7 +7,8 @@ template: page.html
 
 ###Applicability
 
-The following is the privacy policy and notices for this Web site (all pages starting with www.tnris.state.tx.us):
+The following is the privacy policy and notices for this Web site (all pages
+starting with www.tnris.org):
 
 ###Privacy and Site Security
 

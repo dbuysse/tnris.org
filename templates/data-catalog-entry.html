@@ -142,14 +142,7 @@
 
             <p><em>{{ name }}</em> is available as an online mapping service.</p>
             <p>Copy the URL below and enter it into your program to access.</p>
-            <div class="input-group copy-url-container">
-              <input class="wms-url copy-url-input form-control" type="text" readonly value="{{ wms_link}}">
-              <span class="input-group-btn">
-                <button class="btn btn-info copy-url-btn" type="button">
-                  <i class="fa fa-clipboard"></i> Copy
-                </button>
-              </span>
-            </div>
+            {{m.wms_link(wms_link)}}
           {% endif %}
         </div>
         <div class="col-md-8 col-sm-12">

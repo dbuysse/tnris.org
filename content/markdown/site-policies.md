@@ -143,7 +143,6 @@ instructions below to find out if you're using Internet Explorer 9 or later.
 1. Check Version of Internet Explorer:
   1. From the "Help" menu select the "About Internet Explorer" menu item.
   2.  You should see that you have Internet Explorer 9.
-
 2. If you are using Internet Explorer 9, please do the following:
   1. Turn off "Compatibility View Settings"
       1. From the "Tools" menu select the "Compatibility View Settings".
@@ -151,7 +150,6 @@ instructions below to find out if you're using Internet Explorer 9 or later.
       following:
         1. Display intranet sites in Compatibility View
         2. Display all websites in Compatibility View
-
 3. Close the "Compatibility View Settings" window to save changes
   2. Make sure you're NOT running in "Compatibility View" mode
     1. Select the "Tools" menu on the Menubar

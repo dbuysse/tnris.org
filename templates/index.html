@@ -27,7 +27,7 @@
           {% if loop.index <= 5 %}
             <li class="media">
               <a class="pull-left" href="{{m.link(news_item.preserved)}}">
-                <img class="media-object" src="{{news_item.thumbnail}}" alt="...">
+                <img class="media-object" src="{{news_item.thumbnail}}" alt="{{news_item.thumbalt}}">
               </a>
               <div class="media-body">
                 <time>{{ news_item.date|date('F jS, Y') }}</time>

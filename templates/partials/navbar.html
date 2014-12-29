@@ -58,7 +58,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li {% if id === 'about' %}class="active"{% endif %}>
-          <a href="{{m.link('about')}}">About</a>
+          <a href="{{m.link('about')}}">About<span class="sr-only"> us</span></a>
         </li>
         <li {% if id === 'contact' %}class="active"{% endif %}>
           <a href="{{m.link('contact')}}"><span class="glyphicon glyphicon-comment"></span> Contact Us</a>

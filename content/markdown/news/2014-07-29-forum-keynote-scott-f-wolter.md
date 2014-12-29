@@ -3,6 +3,7 @@ template: news.html
 title: "Forum Keynote: Scott F. Wolter, Host of 'America Unearthed'"
 author: 2014 Forum
 thumbnail: images/media1.jpg
+thumbalt: Photo from the GIS Forum
 mainimage: images/updates/wolterbig.jpg
 imagealt: A portrait of Scott Wolter on location
 abstract: 

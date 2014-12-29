@@ -3,9 +3,10 @@ template: news.html
 title: "New Smith County Aerial Imagery Now Available"
 author: StratMap
 thumbnail: images/updates/hpidssmith_th.jpg
+thumbalt: Sample of new the Smith County Aerial Imagery
 mainimage:
 abstract:
-    High resolution RGBIR) natural color and color infrared aerial orthoimagery are now available from TNRIS for Smith County, and Lake Palestine area.
+    High resolution (RGBIR) natural color and color infrared aerial orthoimagery are now available from TNRIS for Smith County, and Lake Palestine area.
 tags: stratmap, hpids
 ---
 

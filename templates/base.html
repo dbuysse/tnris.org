@@ -17,24 +17,18 @@
 
     <div id="wrap-outer">
       <div id="wrap-inner">
-        <!-- Fixed navbar -->
         {% include "./partials/navbar.html" %}
-        <!-- end navbar -->
 
         {% include "./partials/browserwarnings.html" %}
 
         {% block quick_nav %} {% endblock quick_nav %}
 
-          <a id="mainContentAnchor"></a>
+        <span id="mainContentAnchor"></span>
         {% block topcontent %} {% endblock topcontent %}
 
-        <!-- Main Content -->
         <div id="contentMain" class="container">
           {% block contents %} {% endblock contents %}
         </div>
-        <!-- end Main Content -->
-
-        <!-- full wrapper -->
 
         {% block contents-two %} {% endblock contents-two %}
       </div>

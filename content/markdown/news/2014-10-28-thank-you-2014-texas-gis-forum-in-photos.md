@@ -5,6 +5,7 @@ mainimage: images/updates/forum-photos/banner_atrium_2.jpg
 author: Richard Wade
 abstract: TNRIS thanks everyone for another great year. Check out photos and highlights from this year's event.
 thumbnail: images/updates/forum_recap_th.jpg
+thumbalt: Photo from the 2014 GIS Forum
 mainimage: images/updates/forum-photos/banner_atrium_2.jpg
 ---
 

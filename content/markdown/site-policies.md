@@ -14,11 +14,12 @@ information is used.
 
 Regardless of the information being transmitted to TWDB, we will protect all
 such information consistent with applicable law.  The privacy of our customers
-and the security of this site are of utmost importance to TWDB. The TWDB
-operates other websites, but this policy is hosted at, and specifically refers
-to the TNRIS website: [www.tnris.texas.gov](//www.tnris.texas.gov),
+and the security of this site are of utmost importance to TWDB. This policy
+applies to all pages beginning with:
+[tnris.org](//tnris.org),
+[www.tnris.org](//www.tnris.org),
 [www.tnris.state.tx.us](//www.tnris.state.tx.us), and
-[www.tnris.org](//www.tnris.org).
+[www.tnris.texas.gov](//www.tnris.texas.gov).
 
 #### Note:
 

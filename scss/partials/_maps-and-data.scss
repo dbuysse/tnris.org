@@ -24,6 +24,33 @@
     &:hover {
       background: $lightgrey;
     }
+
+    .right-info {
+      display: block;
+      font-size: 14px;
+      color: $middarkgrey;
+      margin-bottom: 7px;
+
+      strong {
+        float: left;
+        margin-right: 10px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin-right: 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -234,8 +261,6 @@ img.data-thumb {
 
   img {
     width: 300px;
-
-
   }
 
   @media (min-width: $screen-sm) {
@@ -290,10 +315,10 @@ img.data-thumb {
   width: 40%;
   margin: 0;
 
-  ol {
-    margin: 0;
-    padding: 0;
-  }
+    // ol {
+    //   margin: 0;
+    //   padding: 0;
+    // }
 }
 
 .wms-info {

@@ -30,9 +30,9 @@
                 {% for wms_entry in wms_category %}
                   <li class="media list-group-item">
                     {% if wms_entry.thumb_url %}
-                      <a class="media-left" href="{{wms_entry.path}}">
+                      <div class="media-left">
                         <img class="media-object" src="{{wms_entry.thumb_url}}" alt="Thumbnail image for {{wms_entry.name}}">
-                      </a>
+                      </div>
                     {% endif %}
                     <div class="media-body">
                       <h3 class="media-heading">
@@ -42,7 +42,7 @@
                       {{m.wms_link(wms_entry.wms_link)}}
                       <p class="wms-info pull-right">
                           {% if wms_entry.pop_link %}
-                          <a href="//{{wms_entry.pop_link}}">
+                          <a href="//{{wms_entry.pop_link}}" class="wms-tip" title="Preview the service as an online map">
                             <span class="glyphicon glyphicon-new-window"></span><span class="hidden-xs"> Map Preview</span>
                           </a>
                         {% endif %}<br>

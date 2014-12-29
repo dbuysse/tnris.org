@@ -71,6 +71,7 @@
         @media (max-width: $screen-md) {
           padding: 0px;
           padding-left: 5px;
+          padding-right: 5px;
         }
         &.social-front {
           font-family: $pragmatica;
@@ -83,6 +84,7 @@
           strong {
             font-weight: 300;
             font-size: 12px;
+
             @media (min-width: $screen-sm) {
               font-size: 22px;
             }
@@ -134,10 +136,11 @@
       a {
         font-family: $pragmatica;
         font-weight: 500;
-        font-size: 11px;
+        font-size: 12px;
         overflow: auto;
         height: 30px;
         width: 100%;
+
         @media (min-width: $screen-xs) {
           font-size: 14px;
         }
@@ -157,6 +160,7 @@
           padding-left: 33%;
           font-style: normal;
           padding-top: 10%;
+
           @media (min-width: $screen-xs) {
             padding-top: 5%;
             padding-left: 23%;
@@ -185,6 +189,7 @@
           margin-left: 0;
           margin-right: 5px;
           margin-top: 10px;
+
           @media (min-width: $screen-sm) {
             margin-top: 3px;
             font-size: 24px;
@@ -224,10 +229,10 @@
         }
         small {
           font-family: $proxima;
-          font-weight: 100;
+          font-weight: 300;
           color: $darkgrey;
           display: block;
-          font-size: 12px;
+          font-size: 15px;
           padding-left: 15%;
         }
       }

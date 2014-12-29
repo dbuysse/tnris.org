@@ -43,11 +43,10 @@
                       <p class="wms-info pull-right">
                           {% if wms_entry.pop_link %}
                           <a href="//{{wms_entry.pop_link}}">
-                            <span class="glyphicon glyphicon-new-window"></span> Map Preview 
+                            <span class="glyphicon glyphicon-new-window"></span><span class="hidden-xs"> Map Preview</span>
                           </a>
-                        {% endif %}
-                        |
-                        <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset"><span class="glyphicon glyphicon-info-sign"></span> More Info</a>
+                        {% endif %}<br>
+                        <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset"><span class="glyphicon glyphicon-info-sign"></span><span class="hidden-xs"> More Info</span></a>
                       </p>
                     </div>
                   </li>

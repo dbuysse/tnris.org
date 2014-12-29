@@ -21,6 +21,7 @@
   font-family: $pragmatica;
   font-size: 20px;
   color: $lightgrey;
+
   strong {
     color: white;
     font-weight: 300;
@@ -29,6 +30,7 @@
       font-size: 20px;
     }
   }
+  
   @media (max-width: $screen-xs) {
     font-size: 14px;
   }

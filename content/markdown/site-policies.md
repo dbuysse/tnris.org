@@ -131,19 +131,19 @@ services is for informational purposes only.
 ## Browser Policy
 
 For the best user experience using TWDB websites, it is recommended to use
-Internet Explorer 8 or higher.  For a free upgrade to the latest Internet
-Explorer, please visit Microsoft website.
+Internet Explorer 9 or higher. For a free upgrade to the latest Internet
+Explorer, please visit the Microsoft website.
 
 #### Compatibility View
 
-You may be using Internet Explorer 8 in Compatibility View.  Please follow the
-instructions below to find out if you're using Internet Explorer 8 or later.
+You may be using Internet Explorer 9 in Compatibility View.  Please follow the
+instructions below to find out if you're using Internet Explorer 9 or later.
 
 1. Check Version of Internet Explorer:
   1. From the "Help" menu select the "About Internet Explorer" menu item.
-  2.  You should see that you have Internet Explorer 8.
+  2.  You should see that you have Internet Explorer 9.
 
-2. If you are using Internet Explorer 8, please do the following:
+2. If you are using Internet Explorer 9, please do the following:
   1. Turn off "Compatibility View Settings"
       1. From the "Tools" menu select the "Compatibility View Settings".
       2. In the "Compatibility View Settings" dialog window, uncheck the

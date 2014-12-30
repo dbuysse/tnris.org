@@ -283,7 +283,7 @@ gulp.task('dist-metal', function () {
         }))
         .use(autodate('YYYY-MM-DD'))
         .use(each(function(file, filename) {
-          file.contents = '{%- import "_macros.html" as m -%}' + file.contents;
+          file.contents = '{%- import "_macros.html" as m -%}\n' + file.contents;
         }))
         .use(markdown({
           renderer: (function () {

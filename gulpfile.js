@@ -3,7 +3,6 @@
 var _ = require('lodash');
 var del = require('del');
 var extend = require('extend');
-var extras = require('swig-extras');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');

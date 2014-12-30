@@ -4,60 +4,76 @@ vendors:
   - name: Northrop Grumman (Formerly 3001 International)
     url: http://www.northropgrumman.com
     thumbnail: images/vendors/northrop_logo.png
+    contractlink: documents/vendor-contracts/northrop.pdf
   - name: Aero-Metric
     url:  http://www.aerometric.com/
     thumbnail: images/vendors/aerometric_logo.png
+    contractlink: documents/vendor-contracts/aerometric.pdf
   - name: Bohannan Huston
     url:  http://www.bhinc.com/
     thumbnail: images/vendors/bohannan_logo.png
+    contractlink: documents/vendor-contracts/bohannan.pdf
   - name: Intrado, Inc.
     url:  http://www.intrado.com/
     thumbnail: images/vendors/intrado_logo.png
+    contractlink: documents/vendor-contracts/intrado.pdf
   - name: Dewberry
     url:  http://www.dewberry.com/
-    # thumbnail: images/vendors/dewberry_logo.png
+    thumbnail: images/vendors/dewberry_logo.png
+    contractlink: documents/vendor-contracts/dewberry.pdf
   - name: Digital Globe
     url:  http://www.digitalglobe.com/
-    # thumbnail: images/vendors/digitalglobe_logo.png
+    thumbnail: images/vendors/digitalglobe_logo.png
+    contractlink: documents/vendor-contracts/digitalglobe.pdf
   - name: Fugro EarthData
     url:  http://www.fugroearthdata.com/
-    # thumbnail: images/vendors/fugro_logo.png
+    thumbnail: images/vendors/fugro_logo.jpg
+    contractlink: documents/vendor-contracts/fugro.pdf
   - name: Kucera International
     url:  http://www.kucerainternational.com/
-    # thumbnail: images/vendors/kucera_logo.png
+    thumbnail: images/vendors/kucera_logo.png
+    contractlink: documents/vendor-contracts/kucera.pdf
   - name: Gorrondonna &amp; Associates
     url:  http://www.ga-inc.net
-    # thumbnail: images/vendors/ga_logo.png
-  - name: Merrick & Company
+    thumbnail: images/vendors/gorrondonna_logo.png
+    contractlink: documents/vendor-contracts/gorrondonna.pdf
+  - name: Merrick &amp; Company
     url:  http://merrick.com/
-    # thumbnail: images/vendors/merrick_logo.png
+    thumbnail: images/vendors/merrick_logo.png
+    contractlink: documents/vendor-contracts/merrick.pdf
   - name: Michael Baker
     url:  http://www.mbakercorp.com/
-    # thumbnail: images/vendors/mbaker_logo.png
-  - name: MJ Harden
-    url:  http://www2.mjharden.com/
-    # thumbnail: images/vendors/mjharden_logo.png
+    thumbnail: images/vendors/baker_logo.gif
+    contractlink: documents/vendor-contracts/michael-baker.pdf
   - name: North West Geomatics
     url:  http://www.nwgeo.com/
-    # thumbnail: images/vendors/northwest_logo.png
+    thumbnail: images/vendors/northwest_logo.png
+    contractlink: documents/vendor-contracts/northwest-geomatics.pdf
   - name: Atkins
     url:  http://northamerica.atkinsglobal.com/
-    # thumbnail: images/vendors/atkins_logo.png
+    thumbnail: images/vendors/atkins_logo.png
+    contractlink: documents/vendor-contracts/atkins.pdf
   - name: Photo Science
     url:  http://www.photoscience.com/
-    # thumbnail: images/vendors/photoscience_logo.png
+    thumbnail: images/vendors/photoscience_logo.png
+    contractlink: documents/vendor-contracts/photoscience.pdf
   - name: SAM
-    url:  http://sanborn.com/
-    # thumbnail: images/vendors/sanborn_logo.png
+    url:  http://www.sam.biz/
+    thumbnail: images/vendors/sam_logo.png
+    contractlink: documents/vendor-contracts/sam.pdf
   - name: Surdex
-    url:  http://www.surdex.com/index.aspx
-    # thumbnail: images/vendors/surdex_logo.png
+    url:  http://www.surdex.com
+    thumbnail: images/vendors/surdex_logo.jpg
+    contractlink: documents/vendor-contracts/sanborn.pdf
   - name: GeoDigital (formerly Terrapoint)
-    url:  http://www.surdex.com/index.aspx
-    # thumbnail: images/vendors/geodigital_logo.png
+    url:  http://www.geodigital.com/
+    thumbnail: images/vendors/geodigital_logo.gif
+    contractlink: documents/vendor-contracts/geodigital.pdf
   - name: URS
-    url:  http://www.surdex.com/index.aspx
-    # thumbnail: images/vendors/urs_logo.png
+    url:  http://www.urs.com/
+    thumbnail: images/vendors/urs_logo.png
+    contractlink: documents/vendor-contracts/urs.pdf
   - name: Woolpert
-    url:  http://www.surdex.com/index.aspx
-    # thumbnail: images/vendors/woolpert_logo.png
+    url:  http://woolpert.com/
+    thumbnail: images/vendors/woolpert_logo.png
+    contractlink: documents/vendor-contracts/woolpert.pdf

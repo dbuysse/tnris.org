@@ -24,17 +24,20 @@ Five additional government agencies contributed funds toward select 1-foot or 6-
 ![Leaf-off Imagery sample](/images/statewide-orthoimagery/season_leafoff.jpg)
 All orthoimagery products are acquired during the leaf-off (fall/winter) season in TX. Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.
 ***
+
 ##Pixel Resolution	
 The BASE statewide orthoimagery will be acquired and processed at 0.5-meter pixel resolution. Select BUY-UP areas will be acquired and processed at either 1-foot or 6-inch pixel resolution. The following are example features identifiable in each resolution.
 ***
 ##Spectral Resolution
-<img style="margin-left: 30px;" src="http://www.tnris.org/sites/default/files/spectral_IR.jpg" align="right" width="200"><img style="margin-left: 50px;" src="http://www.tnris.org/sites/default/files/spectral_NC.jpg" align="right" width="200">All orthoimagery products will be available as 4-band images which may be displayed as natural color (Red, Green, Blue) or color infrared (Near Infrared, Red, Green) composites.
+![Spectral IR sample](/images/statewide-orthoimagery/spectral_IR.jpg)
+![Sample of Spectral Natural Color Image](/images/statewide-orthoimagery/spectral_NC.jpg)
+All orthoimagery products will be available as 4-band images which may be displayed as natural color (Red, Green, Blue) or color infrared (Near Infrared, Red, Green) composites.
 
 ***
 
 ##High Priority Imagery and Data Sets Contract
 
-The High Priority Imagery and Data Sets (HPIDS) Contract was used to select the orthoimagery provider, Surdex Corp., from a pool of prequalified geospatial data providers. The contract is held by the Council on Competitive Government and administered by TWDB/TNRIS.
+The High Priority Imagery and Data Sets (HPIDS) Contract was used to select the orthoimagery provider, [Surdex Corp](http://www.surdex/com)., from a pool of prequalified geospatial data providers. The contract is held by the Council on Competitive Government and administered by TWDB/TNRIS.
 
 ##Project POC
 

@@ -15,8 +15,8 @@ tags: stratmap, hpids
 
 <figure>
 <div id="imageCompare1" class='twentytwenty-container natural-color-infrared'>
-  <img class="img-responsive" src="images/updates/smith-imagery/rosegarden_nc.jpg">
-  <img class="img-responsive" src="images/updates/smith-imagery/rosegarden_cir.jpg">
+  <img class="img-responsive" src="images/updates/smith-imagery/rosegarden_nc.jpg" alt="Natural Color preview of rose garden in Smith County">
+  <img class="img-responsive" src="images/updates/smith-imagery/rosegarden_cir.jpg" alt="Infra Red preview of rose garden in Smith County">
 </div>
 </figure>
 

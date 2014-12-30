@@ -7,6 +7,7 @@ var extras = require('swig-extras');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
+var marked = require('marked');
 var markdown = require('metalsmith-markdown');
 var path = require('path');
 var each = require('metalsmith-each');
@@ -279,7 +280,24 @@ gulp.task('dist-metal', function () {
           ignore: ['training']
         }))
         .use(autodate('YYYY-MM-DD'))
+        .use(each(function(file, filename) {
+          file.contents = '{%- import "_macros.html" as m -%}' + file.contents;
+        }))
         .use(markdown({
+          renderer: (function () {
+              var renderer = new marked.Renderer();
+              var re = /^(.*:.*|\/\/)/;
+
+              var originalLink = renderer.link;
+              renderer.link = function newLink(href, title, text) {
+                if (!href.match(re)) {
+                  href = "{{m.link('" + href + "', path + '.md')}}";
+                }
+                return originalLink.apply(renderer, [href, title, text]);
+              };
+
+              return renderer;
+            }()),
           smartypants: false
         }))
         .use(each(function(file, filename) {

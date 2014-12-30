@@ -7,6 +7,8 @@ thumb: images/data-spotlights/toledo-bend-dem-th.jpg
 mainimage: images/data-spotlights/toledo-bend-dem.jpg
 ---
 
+{% import '_macros.html' as m %}
+
 This Digital Elevation Model (DEM) was acquired from a 2011 [High Priority
 Imagery and Datasets](high-priority-imagery-datasets) project by TNRIS. The
 model covers the area near Gum Pond of North Toledo Bend Wildlife Management
@@ -17,4 +19,4 @@ lakes.
 
 
 ## Data Access
-{{macros.catalog_data_card('elevation-lidar/tnris-2011-50cm')}}
+{{m.catalog_data_card('elevation-lidar/tnris-2011-50cm')}}

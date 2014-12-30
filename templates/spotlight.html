@@ -2,9 +2,29 @@
 
 {% block topcontent %}
   <div class="container" id="spotlight-full-image">
-    <img class="media-object img-responsive center-block" src="{{ mainimage }}" alt="A large preview of the {{ title }} image">
+    <div class="center-block"><a href="#full-spot" data-toggle="modal"><img class="media-object img-responsive" src="{{ mainimage }}" alt="A large preview of the {{ title }} image"><div class="spot-zoom">
+      <span class="glyphicon glyphicon-zoom-in"></span> View Full Image
+    </div></a>
+  </div>
     <div class="spot-title">
         <h1><small>Data Spotlight <i class="fa fa-lightbulb-o"></i></small> {{ title }}</h1>
+    </div>
+  </div>
+
+  <div class="modal fade" id="full-spot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h3 class="modal-title" id="myModalLabel">{{ title }}</h3>
+        </div>
+        <div class="modal-body">
+          <img class="media-object img-responsive center-block" src="{{ mainimage }}" alt="A large preview of the {{ title }} image">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
   </div>
   {% endblock topcontent %}
@@ -12,8 +32,6 @@
 
   <div class="row article">
     <div class="byline">
-
-
     <strong>by <author>{{ author }}<author>, {{ author_division }}</strong> | <time>{{ date|date('F jS, Y') }}</time>
   </div>
   <div class="col-md-8 blog-main">

@@ -87,16 +87,48 @@
   display: block;
   position: relative;
   background: $darkgrey;
-  max-height: 700px;
-  img {
-    max-height: 700px;
+  max-height: 500px;
+  box-shadow: inset 0px 0px 20px black;
+  margin-top: -5px;
+
+  a {
+    width: auto;
+    height: auto;
     margin: 0 auto;
+
+    .spot-zoom {
+      color: white;
+      position: absolute;
+      right: 20%;
+      top: 15px;
+      font-size: 20px;
+      z-index: 500;
+      text-shadow: 0 0 2px black;
+      line-height: 30px;
+
+      .glyphicon {
+        font-size: 30px;
+      }
+    }
+
+    &:hover {
+      .spot-zoom {
+        color: $sky;
+      }
+    }
+
+    img {
+      max-height: 800px;
+      margin: 0 auto;
+      box-shadow: 0px 0px 20px black;
+      margin-top: -15%;
+    }
   }
   .spot-title {
     @include alpha-attribute("background-color", rgba($tnrisblue, 0.6), white);
     color: white;
     position: absolute;
-    z-index: 2000;
+    z-index: 1000;
     bottom: 0;
     left: 0;
     padding: 0 10px;
@@ -118,3 +150,36 @@
   }
 }
 
+/* Full Screen Modal */
+
+#full-spot {
+
+    .modal-header {
+      border: none;
+      padding-bottom: 0;
+
+      .close {
+        color: white;
+        font-size: 40px;
+      }
+    }
+
+    .modal-footer {
+      border: none;
+      padding-top: 0;
+    }
+
+    .modal-dialog {
+      width: 100%;
+      padding: 0;
+      background: $darkgrey;
+      color: white;
+      margin: 0;
+    }
+
+    .modal-content {
+      border-radius: 0;
+    background: $darkgrey;
+    color: white;
+    }
+}

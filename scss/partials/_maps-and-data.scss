@@ -24,6 +24,33 @@
     &:hover {
       background: $lightgrey;
     }
+
+    .right-info {
+      display: block;
+      font-size: 14px;
+      color: $middarkgrey;
+      margin-bottom: 7px;
+
+      strong {
+        float: left;
+        margin-right: 10px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin-right: 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -37,6 +64,7 @@ img.data-thumb {
   font-weight: 300;
   font-size: 20px;
   margin-bottom: 30px;
+
   h2 {
     margin-top: 0;
   }
@@ -233,8 +261,6 @@ img.data-thumb {
 
   img {
     width: 300px;
-
-
   }
 
   @media (min-width: $screen-sm) {
@@ -254,19 +280,72 @@ img.data-thumb {
   }
 
   .copy-url-container {
-    margin-top: 14px;
+    float: left;
   }
 }
 
 .copy-url-container {
+  width: 93%;
+
+  .copy-url-btn {
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+  }
+
+  @media (min-width: $screen-sm) {
+    width: 78%;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 73%;
+  }
+  
+  @media (min-width: $screen-lg) {
+    width: 78%;
+  }
+}
+
+#data-access {
+  .copy-url-container {
   width: 100%;
+  }
+}
+
+.wms-access {
+  width: 40%;
+  margin: 0;
+
+    // ol {
+    //   margin: 0;
+    //   padding: 0;
+    // }
+}
+
+.wms-info {
+  width: 5%;
+  height: 45px;
+  line-height: 25px;
+  display: inline-block;
+  margin-top: -5px;
+  
+  @media (min-width: $screen-sm) {
+    width: 20%;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 25%;
+  }
+
+  @media (min-width: $screen-lg) {
+    width: 20%;
+  }
 }
 
 input.wms-url {
   padding: 5px;
   border: 1px solid $midgrey;
   width: 100%;
-  color: $infoblue;
+  color: $tnrisblue;
   font-weight: 500;
 
   &.form-control[readonly] {

@@ -1,0 +1,86 @@
+// _statewide_ortho.scss
+@import "variables";
+
+
+#_2015-statewide-orthoimagery-project {
+  display: visible;
+
+  hr {
+    display: block;
+    clear: both;
+    height: 1px;
+    border-top: none;
+  }
+}
+
+
+#orthofront {
+  position: relative;
+  img {
+    position: relative;
+  }
+  .orthobox {
+    position: absolute;
+    width: 68%;
+    left: 30%;
+    top: 3%;
+    h2 {
+      margin: 0;
+      font-weight: 300;
+      color: $darkgrey;
+      font-size: 25px;
+      strong {
+        font-weight: 500;
+        font-size: 30px;
+      }
+      @media (min-width: $screen-xs) {
+        font-size: 30px;
+        strong {
+          font-size: 35px;
+        }
+      }
+      @media (min-width: $screen-sm) {
+        font-size: 35px;
+        strong {
+          font-size: 43px;
+        }
+      }
+      @media (min-width: $screen-lg) {
+        font-size: 50px;
+        line-height: 45px;
+        strong {
+          font-size: 60px;
+        }
+      }
+    }
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      padding-left: 5px;
+      padding-right: 30%;
+      font-family: $pragmatica;
+      @media (min-width: $screen-lg) {
+        font-size: 17px;
+      }
+    }
+    a {
+      &.btn {
+        @media (min-width: $screen-sm) {
+          position: relative;
+          float: right;
+          margin-top: -15%;
+          margin-right: 5%;
+          padding: 10px 15px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+#allUpdates .article {
+  border-bottom: 1px solid #eeeeee;
+  &:last-child {
+    border-bottom: none;
+  }
+}

@@ -30,22 +30,24 @@
                 {% for wms_entry in wms_category %}
                   <li class="media list-group-item">
                     {% if wms_entry.thumb_url %}
-                      <a class="media-left" href="{{wms_entry.path}}">
+                      <div class="media-left">
                         <img class="media-object" src="{{wms_entry.thumb_url}}" alt="Thumbnail image for {{wms_entry.name}}">
-                      </a>
+                      </div>
                     {% endif %}
                     <div class="media-body">
                       <h3 class="media-heading">
-                        <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset">
-                            {{wms_entry.name}}
-                        </a>
-                        {% if wms_entry.pop_link %}
-                          <a class="btn btn-tnris pull-right" role="button" href="//{{wms_entry.pop_link}}">
-                            Preview
-                          </a>
-                        {% endif %}
+                          {{wms_entry.name}} 
                       </h3>
+
                       {{m.wms_link(wms_entry.wms_link)}}
+                      <p class="wms-info pull-right">
+                          {% if wms_entry.pop_link %}
+                          <a href="//{{wms_entry.pop_link}}" class="wms-tip" title="Preview the service as an online map">
+                            <span class="glyphicon glyphicon-new-window"></span><span class="hidden-xs"> Map Preview</span>
+                          </a>
+                        {% endif %}<br>
+                        <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset"><span class="glyphicon glyphicon-info-sign"></span><span class="hidden-xs"> More Info</span></a>
+                      </p>
                     </div>
                   </li>
                 {% endfor %}

@@ -70,10 +70,12 @@
 .navbar-nav > li > a {
   font-weight: 100;
   &.gio {
-    background: url(../images/icons/sm_tx.png) 10px 14px no-repeat;
-    padding-left: 35px;
+    background: url(../images/icons/tx_icon.svg) 0px 13px no-repeat;
+    background-size: 25px;
+    padding-left: 28px;
+
     &:hover {
-      background-position: 10px -26px;
+      background-position: 0px -28px;
     }
   }
 }
@@ -100,23 +102,25 @@ a.navbar-twdb {
 
         &:hover {
           color: $sky;
-          background: black;
         }
       }
     }
   }
 }
 
-.dropdown-menu.inverse-dropdown {
-  background: $darkgrey;
-  .navbar-nav {
-    li {
-      a {
-        background: black !important;
-      }
-    }
-  }
+.navbar-inverse {
+  .dropdown-menu.inverse-dropdown {
+    background: $darkgrey;
 
+        li {
+          a {
+
+            &:hover {
+              background: black;
+            }
+          }
+      }
+  }
 }
 
 .navbar-collapse {
@@ -124,12 +128,12 @@ a.navbar-twdb {
 }
 
 .navbar-brand {
-  background: url(../images/tnris_logo_white.png) 0 0 no-repeat;
+  background: url(../images/tnris_logo.svg) 0 0 no-repeat;
   width: 80px;
   height: 36px;
   z-index: 30000;
   padding: 0;
-  margin-right: 10px;
+  // margin-right: 10px;
   margin-left: 5px;
   margin-top: 5px;
 }

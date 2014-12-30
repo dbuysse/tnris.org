@@ -31,7 +31,7 @@ The only folders with files or content you will be editing are the ```content```
 In order to add an image to your markdown you use the following code
 
 ```
-![alt text](https://www.tnris.org/images/FILENAME "Image Title")
+![alt text](images/FILENAME)
 ```
 
 You can also also ask the site manager to add images into your content file, but please upload your desired image into the appropriate folder within the ```static``` folder.

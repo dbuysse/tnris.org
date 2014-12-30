@@ -20,12 +20,39 @@
       </a>
     {% endif %}
     <div class="media-body">
-      <h4 class="media-heading">
+      <h3 class="media-heading">
         <a href="{{link(item.path)}}">{{item.name}}</a>
 
       <a href="{{link(item.path)}}" class="btn btn-sm btn-tnris pull-right"><i class="fa fa-chevron-right"></i> Full Info
       </a>
-      </h4>
+      </h3>
+
+      <div class="right-info">
+        <strong>Access via:</strong>
+        <ul>
+          {% if item.download %}
+            <li>
+              <span class="glyphicon glyphicon-search"></span> Data Search &amp; Download
+            </li>
+          {% endif %}
+          {% if item.download_link %}
+            <li>
+             <span class="glyphicon glyphicon-download-alt"></span> Direct Download
+            </li>
+          {% endif %}
+          {% if item.order %}
+            <li>
+              <span class="glyphicon glyphicon-phone-alt"></span> Ordering
+            </li>
+          {% endif %}
+          {% if item.wms_link %}
+            <li>
+              <span class="glyphicon glyphicon-globe"></span> Online Service
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      
       <p>
         {{item.short_description}}
       </p>
@@ -39,12 +66,13 @@
 
 {%- macro wms_link(url) -%}
   <div class="input-group copy-url-container">
-    <input class="wms-url copy-url-input form-control" type="text" readonly value="{{url}}">
-    <span class="input-group-btn">
-      <button class="btn btn-info copy-url-btn" type="button">
-        <i class="fa fa-clipboard"></i> Copy
+        <span class="input-group-btn">
+      <button class="btn btn-tnris copy-url-btn" type="button">
+        <i class="fa fa-clipboard"></i> Copy URL
       </button>
     </span>
+    <input class="wms-url copy-url-input form-control" type="text" readonly value="{{url}}">
+
   </div>
 {%- endmacro -%}
 
@@ -53,3 +81,5 @@
   {%- set end = '}}' -%}
   {{ start + str + end}}
 {%- endmacro -%}
+
+

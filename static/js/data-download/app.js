@@ -31,7 +31,7 @@ var dataDownloadApp = function () {
         // Allow same origin resource loads
         'self',
         // Allow loading from our s3 bucket
-        'http://s3.amazonaws.com/tnris-datadownload/**'
+        '//s3.amazonaws.com/tnris-datadownload/**'
       ]);
 
       // For any unmatched url, redirect to /statewide

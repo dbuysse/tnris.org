@@ -1,2 +1,6 @@
+User-agent: SortSite
+User-agent: SortSite/4.3.460.0
+Allow: /
+
 User-agent: *
 Disallow: /

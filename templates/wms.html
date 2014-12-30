@@ -36,13 +36,13 @@
                     {% endif %}
                     <div class="media-body">
                       <h3 class="media-heading">
-                          {{wms_entry.name}} 
+                          {{wms_entry.name}}
                       </h3>
 
                       {{m.wms_link(wms_entry.wms_link)}}
                       <p class="wms-info pull-right">
                           {% if wms_entry.pop_link %}
-                          <a href="//{{wms_entry.pop_link}}" class="wms-tip" title="Preview the service as an online map">
+                          <a href="http://{{wms_entry.pop_link}}" class="wms-tip" title="Preview the service as an online map">
                             <span class="glyphicon glyphicon-new-window"></span><span class="hidden-xs"> Map Preview</span>
                           </a>
                         {% endif %}<br>

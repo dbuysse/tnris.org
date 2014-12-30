@@ -31,39 +31,45 @@
   {% block mapsdata_content %}
     {% set content_items = [
       {
-        name: 'Data Set Catalog',
-        description: 'Browse through all available TNRIS datasets, whether available Online or through ordering.',
-        image: 'http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_historical.jpg',
+        name: 'Data Catalog',
+        description: 'Browse through available TNRIS datasets and map products, whether available online or through ordering.',
+        image: 'images/maps-and-data/oldphoto.jpg',
+        alt_text: 'An black and white aerial photo sticking out of a folder',
         link: 'data-catalog',
         button_text: 'Browse the Catalog'
       }, {
-        name: 'Research & Distribution (RDC)',
+        name: 'Research &amp; Distribution (RDC)',
         description: 'The RDC offers a variety of additional products, support and services from our in-house staff. We provide hands-on assistance and expertise.',
-        image: 'http://www.tnris.org/sites/all/themes/rubik/cube/images/map_svc_custom.jpg',
+        image: 'images/maps-and-data/open_folders.jpg',
+        alt_text: 'The photoset library at TNRIS',
         link: 'maps-and-data/research-and-distribution',
         button_text: 'Order Data'
       }, {
         name: 'Data Download',
         description: 'The quickest way to search and download TNRIS data that is available online.',
-        image: 'holder.js/200x120',
+        image: 'images/maps-and-data/download_grid.jpg',
+        alt_text: '',
         link: crossref['data-download'],
         button_text: 'Start Downloading'
       }, {
         name: 'Online Mapping Services',
         description: 'Data sets optimized for access through WMS.',
-        image: 'holder.js/200x120',
+        image: 'images/maps-and-data/download_grid.jpg',
+        alt_text: 'Picture symbolizing datasets being used as online services',
         link: 'maps-and-data/online-mapping-services',
         button_text: 'View our services'
       }, {
         name: 'Custom Map Creation',
         description: 'Our trained staff can help you create the map you need using TNRIS and public data.',
         image: 'images/highlights/ranch_map_small.jpg',
+        alt_text: 'An example of a custom ranch map',
         link: 'maps-and-data/custom-maps',
         button_text: 'More about Custom Maps'
       }, {
         name: 'Data &amp; Mapping Solutions',
         description: 'Applying design, communication, and technology skills to provide data solutions and cartographic products for internal geospatial development.',
         image: 'images/highlights/custom_maps.jpg',
+        alt_text: 'Staff assisting a customer with a paper map',
         link: 'maps-and-data/data-and-mapping-solutions',
         button_text: 'Learn More <span class="sr-only">about Data &amp; Mapping Solutions</span>'
       }

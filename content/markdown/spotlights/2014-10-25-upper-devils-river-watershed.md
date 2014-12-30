@@ -14,8 +14,9 @@ TNRIS staff created this image to illustrate the Upper Devil's River watershed, 
 The watershed is represented by the [USGS Water Shed Boundaries Dataset (WBD)](data-catalog/hydrography/watershed-boundaries) Upper Devil’s River Huc 8 sub-basin.
 {{macros.catalog_data_card('hydrography/watershed-boundaries')}}
 
-The extensive water network seen is represented in blue by the [National Hydrography Dataset(NHD)](data-catalog/hydrography/national-hydrography-dataset-nhd-and-texas-nhd-river-streams).
-{{macros.catalog_data_card('hydrography/nhd-texas-nhd-river-streams')}}
+
+The extensive water network seen is represented in blue by the [National Hydrography Dataset (NHD)](data-catalog/hydrography/national-hydrography-dataset-nhd-and-texas-nhd-river-streams).
+{{macros.catalog_data_card('hydrography/national-hydrography-dataset-nhd-and-texas-nhd-river-streams')}}
 
 The [National Elevation Dataset (NED)](data-catalog/elevation-image/tx-ned-2013) was used for elevations and is represented by the color ramp showing low areas in red with higher elevations in green.
 

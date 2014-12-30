@@ -22,18 +22,20 @@
 
   .list-group-item {
     &:hover {
-      background: $lightgrey;
     }
 
     .right-info {
       display: block;
-      font-size: 14px;
+      font-size: 13px;
       color: $middarkgrey;
-      margin-bottom: 7px;
+      background: $lightgrey;
+      padding: 5px;
+      margin-bottom: 5px;
+      margin-top: 10px;
 
       strong {
         float: left;
-        margin-right: 10px;
+        margin-right: 5px;
       }
 
       ul {

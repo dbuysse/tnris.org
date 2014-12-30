@@ -10,7 +10,7 @@
         {% for news_item in news %}
           {% if loop.index <= 10 %}
               <li class="media">
-                <a class="pull-left" href="{{m.link(news_item.preserved)}}"><img class="media-object" src="{{ news_item.thumbnail }}" alt="...">
+                <a class="pull-left" href="{{m.link(news_item.preserved)}}"><img class="media-object" src="{{ news_item.thumbnail }}" alt="{{news_item.thumbalt}}">
                 </a>
                 <div class="media-body">
                   <h3 class="media-heading">

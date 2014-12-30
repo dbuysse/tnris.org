@@ -7,11 +7,12 @@ abstract: TNRIS thanks everyone for another great year. Check out photos and hig
 thumbnail: images/updates/forum_recap_th.jpg
 thumbalt: Photo from the 2014 GIS Forum
 mainimage: images/updates/forum-photos/banner_atrium_2.jpg
+imagealt: A view of the Forum in the Commons Center Atrium
 ---
 
 By all accounts, the 2014 Texas GIS Forum was the best yet! Your participation and enthusiasm generated an unprecedented level of energy. We couldn’t be more pleased.
  
-Enjoy photos from the event below, and visit the Agenda page to view available presentations from this year's forum [here](http://www.tnris.org/2014gisforum#agenda).
+Enjoy photos from the event below, and [visit the Agenda page](http://www.tnris.org/2014gisforum#agenda) to view available presentations from this year's forum.
 
 We hope you had an ah-ha moment because you learned about a new idea or concept. Ideally you’ll take your projects to the next level as a result.
  

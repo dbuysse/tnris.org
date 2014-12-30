@@ -148,10 +148,9 @@
         <div class="col-md-8 col-sm-12">
           <div class="description">
             <h2>Description</h2>
-            <p>{{ description|markdown }}</p>
+            <p>{{contents|safe}}</p>
           </div>
 
-          <p>{{ contents|safe }}</p>
 
           <div id="metadata" class="panel panel-info">
             <div class="panel-heading">

@@ -77,8 +77,6 @@ swig.setFilter('urlize', function(input) {
   return urlize(input);
 });
 
-extras.useFilter(swig, 'markdown');
-
 function parseCSV(options) {
   var name = options.name;
   var path = options.path;
@@ -125,6 +123,9 @@ function parseCSV(options) {
       file = options.additional(file);
     }
 
+    if (options.contentsKey) {
+      file.contents = file[options.contentsKey];
+    }
     files[data.filename] = file;
 
     obj.push(file);
@@ -211,6 +212,7 @@ gulp.task('dist-metal', function () {
           template: 'data-catalog-entry.html',
           filenameKeys: ['category', 'name'],
           splitKeys: ['tags'],
+          contentsKey: 'description',
           additional: function (file) {
             var image_name = file['urlized_name'].replace(/-/g, '_');
             var base = 'images/data-catalog/' + file['urlized_category'] + '/' + image_name;
@@ -263,7 +265,8 @@ gulp.task('dist-metal', function () {
           name: 'training',
           path: 'content/training.csv',
           template: 'training-entry.html',
-          filenameKeys: ['class_title']
+          filenameKeys: ['class_title'],
+          contentsKey: 'description'
         }))
         .use(metadata({
           variables: 'variables.yaml'

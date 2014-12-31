@@ -1,0 +1,43 @@
+.data-cards, .wms-links {
+  .media-body {
+    width: 100%;
+  }
+
+  .list-group-item {
+    .right-info {
+      display: block;
+      font-size: 13px;
+      color: $middarkgrey;
+      background: $lightgrey;
+      padding: 5px;
+      margin-bottom: 5px;
+      margin-top: 10px;
+
+      strong {
+        float: left;
+        margin-right: 5px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+          display: inline-block;
+          margin-right: 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  img.data-thumb {
+    width: 100px;
+    height: 100px;
+    border: 1px solid $midgrey;
+  }
+}

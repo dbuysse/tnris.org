@@ -30,7 +30,7 @@
         {% for category in catalog|sortBy(['category', 'name'])|groupBy('category') %}
           <div class="section">
             <h2 id="{{category|first['urlized_category']}}">{{loop.key}}</h2>
-            <ul class="media-list list-group">
+            <ul class="data-cards media-list list-group">
               {% for item in category %}
                 {{m.catalog_data_card_entry(item)}}
               {% endfor %}

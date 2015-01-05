@@ -3,10 +3,10 @@
 var _ = require('lodash');
 var del = require('del');
 var extend = require('extend');
-var extras = require('swig-extras');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpsmith = require('gulpsmith');
+var marked = require('marked');
 var markdown = require('metalsmith-markdown');
 var path = require('path');
 var each = require('metalsmith-each');
@@ -76,8 +76,6 @@ swig.setFilter('urlize', function(input) {
   return urlize(input);
 });
 
-extras.useFilter(swig, 'markdown');
-
 function parseCSV(options) {
   var name = options.name;
   var path = options.path;
@@ -124,6 +122,9 @@ function parseCSV(options) {
       file = options.additional(file);
     }
 
+    if (options.contentsKey) {
+      file.contents = file[options.contentsKey];
+    }
     files[data.filename] = file;
 
     obj.push(file);
@@ -210,6 +211,7 @@ gulp.task('dist-metal', function () {
           template: 'data-catalog-entry.html',
           filenameKeys: ['category', 'name'],
           splitKeys: ['tags'],
+          contentsKey: 'description',
           additional: function (file) {
             var image_name = file['urlized_name'].replace(/-/g, '_');
             var base = 'images/data-catalog/' + file['urlized_category'] + '/' + image_name;
@@ -262,7 +264,8 @@ gulp.task('dist-metal', function () {
           name: 'training',
           path: 'content/training.csv',
           template: 'training-entry.html',
-          filenameKeys: ['class_title']
+          filenameKeys: ['class_title'],
+          contentsKey: 'description'
         }))
         .use(metadata({
           variables: 'variables.yaml'
@@ -279,7 +282,24 @@ gulp.task('dist-metal', function () {
           ignore: ['training']
         }))
         .use(autodate('YYYY-MM-DD'))
+        .use(each(function(file, filename) {
+          file.contents = '{%- import "_macros.html" as m -%}\n' + file.contents;
+        }))
         .use(markdown({
+          renderer: (function () {
+              var renderer = new marked.Renderer();
+              var re = /^(.*:.*|\/\/)/;
+
+              var originalLink = renderer.link;
+              renderer.link = function newLink(href, title, text) {
+                if (!href.match(re)) {
+                  href = "{{m.link('" + href + "', path + '.md')}}";
+                }
+                return originalLink.apply(renderer, [href, title, text]);
+              };
+
+              return renderer;
+            }()),
           smartypants: false
         }))
         .use(each(function(file, filename) {

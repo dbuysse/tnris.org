@@ -16,7 +16,7 @@ Orthoimagery is digital aerial photography that has been geometrically corrected
 
 Leveraging State funds from multiple agencies, the StratMap Program coordinated statewide orthoimagery acquisitions starting in the mid-1990s. Since then, the state has been refreshed with new orthoimagery in 2004, 2008/09, and 2010, all in conjunction with the National Agriculture Imagery Program (NAIP) administered by the USDA-Farm Service Agency-Aerial Photography Field Office. NAIP continues to refresh Texas statewide with new orthoimagery every two years (2012, 2014) during the leaf-on growing season (April – October acquisitions). Pooling State funds again in 2014, StratMap coordinated a new statewide leaf-off acquisition to occur during the 2014/15 winter season.
 
-Since 2009, using the [High Priority Imagery and Data Sets (HPIDS)](high-priority-imagery-and-data-sets) contract, StratMap has coordinated numerous higher resolution (6-inch/1-foot) orthoimagery regional acquisition projects within Texas.
+Since 2009, using the [High Priority Imagery and Data Sets (HPIDS)](high-priority-imagery-datasets) contract, StratMap has coordinated numerous higher resolution (6-inch/1-foot) orthoimagery regional acquisition projects within Texas.
 
 ## Elevation
 

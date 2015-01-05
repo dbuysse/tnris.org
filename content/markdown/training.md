@@ -1,6 +1,7 @@
 ---
 title: Education and Training
 template: training.html
+mainimage: images/training/training-mast.jpg
 abstract: Technical training courses bring the latest GIS technologies and skills to a range of professional skill levels in the workplace.
 ---
 Courses offered include the basic, introduction to software use and application, to intermediate skill enhanced and refinement, to more advanced skill development for increased efficiency and effective use of GIS.

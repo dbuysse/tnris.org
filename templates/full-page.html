@@ -5,10 +5,16 @@
 <div class="row">
 	<div class="col-md-12">
 		<h1>{{title}}</h1>
+		
 		{% if mainimage %}
-			<img src="{{mainimage}}" alt="Main image for {{title}}"
+			<div class="main-image">
+				<img class="img-responsive" src="{{mainimage}}" alt="Main image for {{title}}">
+			</div>	
 		{% endif %}
-		{% if abstract %}<div class="lead">{{abstract}}</div>{% endif %}
+		{% if abstract %}
+			<div class="lead">{{abstract}}</div>
+		{% endif %}
+		
 		{{ contents|safe }}
 
 	</div>

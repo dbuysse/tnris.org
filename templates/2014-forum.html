@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block contents %}
+<div id="_2014-forum-content" class="row">
+	<div class="col-md-12">
+		<h1>{{title}}</h1>
+		
+			<div class="main-image">
+				<a href="2014-texas-gis-forum">
+					<img class="img-responsive" src="{{mainimage}}" alt="Main image for {{title}}">
+				</a>
+			</div>	
+			<div class="forum-date-runner">
+				{{subtitle}}
+			</div>
+			<div class="lead">
+				{{abstract}}
+			</div>
+		<div class="_2014-forum-body row">
+			<div class="col-md-9">
+				{{ contents|safe }}
+			</div>
+			<div class="col-md-3 sponsors">
+				{% include "./partials/2014-forum-sponsors.html" %}
+				<a class="btn btn-danger btn-block" href="2014-texas-gis-forum/sponsors-and-exhibitors">Sponsor &amp; Exhibitor Information</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock contents %}
+
+
+

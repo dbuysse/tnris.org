@@ -121,9 +121,11 @@ function parseCSV(options) {
     if (options.additional) {
       file = options.additional(file);
     }
-
     if (options.contentsKey) {
       file.contents = file[options.contentsKey];
+    }
+    if (options.titleKey) {
+      file.title = file[options.titleKey];
     }
     files[data.filename] = file;
 
@@ -212,6 +214,7 @@ gulp.task('dist-metal', function () {
           filenameKeys: ['category', 'name'],
           splitKeys: ['tags'],
           contentsKey: 'description',
+          titleKey: 'name',
           additional: function (file) {
             var image_name = file['urlized_name'].replace(/-/g, '_');
             var base = 'images/data-catalog/' + file['urlized_category'] + '/' + image_name;
@@ -265,7 +268,8 @@ gulp.task('dist-metal', function () {
           path: 'content/training.csv',
           template: 'training-entry.html',
           filenameKeys: ['class_title'],
-          contentsKey: 'description'
+          contentsKey: 'description',
+          titleKey: 'class_title'
         }))
         .use(metadata({
           variables: 'variables.yaml'

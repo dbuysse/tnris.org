@@ -37,7 +37,7 @@ All orthoimagery products will be available as 4-band images which may be displa
 
 ##High Priority Imagery and Data Sets Contract
 
-The High Priority Imagery and Data Sets (HPIDS) Contract was used to select the orthoimagery provider, [Surdex Corp](http://www.surdex/com)., from a pool of prequalified geospatial data providers. The contract is held by the Council on Competitive Government and administered by TWDB/TNRIS.
+The High Priority Imagery and Data Sets (HPIDS) Contract was used to select the orthoimagery provider, [Surdex Corp](http://www.surdex.com)., from a pool of prequalified geospatial data providers. The contract is held by the Council on Competitive Government and administered by TWDB/TNRIS.
 
 ##Project POC
 

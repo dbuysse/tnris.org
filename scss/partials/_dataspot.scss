@@ -12,16 +12,13 @@
   }
   h2 {
     color: white;
-    // font-family: $pragmatica;
     font-weight: 300;
     margin-top: 10px;
   }
   p.spotText {
     font-size: 14px;
-    @media (min-width: $break-md) {
-      font-size: 12px;
-    }
   }
+
   ul {
     position: relative;
     margin-bottom: 0;
@@ -99,12 +96,20 @@
     .spot-zoom {
       color: white;
       position: absolute;
-      right: 20%;
-      top: 15px;
+      right: 5%;
+      bottom: 55px;
       font-size: 20px;
       z-index: 500;
       text-shadow: 0 0 2px black;
       line-height: 30px;
+
+      @media (min-width: $screen-md) {
+        right: 10%;
+      }
+
+      @media (min-width: $screen-lg) {
+        right: 20%;
+      }
 
       .glyphicon {
         font-size: 30px;

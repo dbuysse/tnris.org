@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import '_macros.html' as m %}
 
 {% block topcontent %}
   <div class="container" id="spotlight-full-image">
@@ -40,7 +41,21 @@
 	{% block rightContent %}
   <div class="col-md-4 blog-sidebar">
     <div class="sidebar-module sidebar-module-inset">
-
+      <h3>More Spotlights</h3>
+      <div id="dataSpot">
+      <ul class="media-list">
+        {% for spotlight in spotlights %}
+          {% if loop.index <= 4 %}
+            <li class="media">
+              <a href="{{m.link(spotlight.preserved)}}">
+                <img class="media-object img-responsive" src="{{ spotlight.thumb }}" alt="A small preview of the {{ spotlight.title }} image">
+                <h4>{{ spotlight.title }}</h4>
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
     </div>
     <div class="sidebar-module">
     </div>

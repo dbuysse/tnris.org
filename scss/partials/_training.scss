@@ -7,12 +7,22 @@ h1.training-title {
 }
 
 .training-header {
-		background: $lightgrey;
-		min-height: 60px;
-		line-height: 60px;
+	background: $lightgrey;
+	min-height: 40px;
+
+	@media (min-width: $screen-lg) {
+		line-height: 40px;
+	}
+
 }
 
 #training {
+	.btn-lg {
+		font-size: 26px;
+		margin-right: 10%;
+		margin-top: 30px;
+	}
+
 	.training-list {
 		.training-header {
 			background: $lightgrey;
@@ -58,5 +68,77 @@ h1.training-title {
 			font-size: 22px;
 			margin-top: 0;
 		}
+	}
+}
+
+/* Special Collapse */
+
+.open-collapse {
+	position: relative;
+	border: none;
+	box-shadow: none !important;
+	margin-top: 20px;
+
+ 	btn {
+		position: absolute;
+		bottom: 0;
+		z-index: 1000;
+		width: 100%;
+		text-align: center;
+		padding: 0;
+		border: none;
+		cursor: pointer;
+		margin: 0 -15px;
+
+		&[aria-expanded="true"] {
+			.close-text {
+				display: block;
+			}
+			.expand-text {
+				display: none;
+			}
+		}
+
+		.close-text {
+			display: none;
+		}
+	}
+
+	.panel-body {
+		border: none;
+	}
+
+	.collapse {
+		display: block !important;
+		visibility: visible !important;
+		overflow: hidden;
+		max-height: 200px !important;
+		position: relative;
+
+		&.in {
+			max-height: none !important;
+
+			.white-fade {
+				display: none;
+			}
+		}
+
+		.white-fade {
+			display: block;
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+		    background: linear-gradient(to top, rgba(255, 255, 255, 1),  rgba(0, 0, 0, 0));
+		    height: 150px;
+		}
+
+	}
+}
+
+/* More Specifit training entry page */
+
+.pull-right {
+	&.course-image {
+		margin: 0 0 20px 20px;
 	}
 }

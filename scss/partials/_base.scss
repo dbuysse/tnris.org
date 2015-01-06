@@ -32,7 +32,6 @@ h1, h2, h3, h4 {
 
 h2 {
   color: $auburn;
-  font-size: 26px;
 }
 
 /* for skip links */
@@ -217,7 +216,7 @@ author {
   color: $middarkgrey;
 }
 
-/* for making full images at top */
+/* for making full images at top on full-top template */
 .container-fluid.full {
   padding: 0;
   margin-top: -5px;
@@ -225,6 +224,7 @@ author {
   height: auto;
   position: relative;
     clear: both;
+    margin-bottom: 15px;
 
   img {
     min-width: 100%;
@@ -235,19 +235,30 @@ author {
     position: relative;
 
     .top-header { 
-      bottom: 0;
       color: white;
       text-shadow: 0 0 4px black;
       background: linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(0, 0, 0, 0));
-      margin-top: -120px;
-      height: 120px;
-      position:relative;
+      height: auto;
+      position: absolute;
       z-index: 100;    
+      bottom: 0;
+      margin: 0 auto;
+      width: 100%;
 
       h1 {
         margin-bottom: 0;
       }
 
     }
+  }
+}
+
+/* Custom Breadcrumb */
+
+.breadcrumb {
+  font-size: 14px;
+
+  @media (min-width: $screen-sm) {
+    font-size: 16px;
   }
 }

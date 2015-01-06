@@ -2,13 +2,16 @@
 {% import '_macros.html' as m %}
 
 {% block topcontent %}
-  <div class="container" id="spotlight-full-image">
+  <div class="container-fluid" id="spotlight-full-image">
     <div class="center-block"><a href="#full-spot" data-toggle="modal"><img class="media-object img-responsive" src="{{ mainimage }}" alt="A large preview of the {{ title }} image"><div class="spot-zoom">
       <span class="glyphicon glyphicon-zoom-in"></span> View Full Image
     </div></a>
   </div>
-    <div class="spot-title">
+
+    <div class="spot-title center-block">
+      <div class="container">
         <h1><small>Data Spotlight <i class="fa fa-lightbulb-o"></i></small> {{ title }}</h1>
+      </div>
     </div>
   </div>
 
@@ -32,14 +35,14 @@
 {% block contents %}
 
   <div class="row article">
-    <div class="byline">
+    <div class="byline container">
     <strong>by <author>{{ author }}<author>, {{ author_division }}</strong> | <time>{{ date|date('F jS, Y') }}</time>
   </div>
-  <div class="col-md-8 blog-main">
+  <div class="col-md-9 blog-main">
      {{ contents|safe }}
 	</div>
 	{% block rightContent %}
-  <div class="col-md-4 blog-sidebar">
+  <div class="col-md-3 blog-sidebar">
     <div class="sidebar-module sidebar-module-inset">
       <h3>More Spotlights</h3>
       <div id="dataSpot">

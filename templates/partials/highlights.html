@@ -15,7 +15,7 @@
     description: 'TNRIS hosts the State of Texas’s Geographic Information Office (GIO), an inter-agency initiative to collaborate and facilitate the effective use of G.I.S. in state and local government.',
     image: 'images/highlights/tx-flag-gis.jpg',
     alt_text: 'Texas flag superimposed with spatial data',
-    link: 'geographic-information-office,
+    link: 'geographic-information-office',
     button_text: 'Learn More <span class="sr-only">about the Geographic Information Office</span>'
   }, {
     name: 'Texas GIS Forum',
@@ -43,7 +43,7 @@
                 – {{item.name}}</h2>
               <img class="img-responsive" src="{{item.image}}" alt="{{item.alt_text}}">
             </div>
-            <p>{{description}}</p>
+            <p>{{item.description}}</p>
             <a class="btn btn-default" href="{{m.link(item.link)}}" role="button">{{item.button_text|safe}} <span class="glyphicon glyphicon-chevron-right"></a>
           </div>
         </div>

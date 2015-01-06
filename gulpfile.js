@@ -267,7 +267,7 @@ gulp.task('dist-metal', function () {
           name: 'training',
           path: 'content/training.csv',
           template: 'training-entry.html',
-          filenameKeys: ['class_title'],
+          filenameKeys: ['class_title', 'url_date'],
           contentsKey: 'description',
           titleKey: 'class_title'
         }))

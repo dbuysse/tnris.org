@@ -127,6 +127,10 @@ function parseCSV(options) {
     if (options.titleKey) {
       file.title = file[options.titleKey];
     }
+
+    if (files[data.filename]) {
+      console.log("WARNING: Page '" + data.filename + "' generated from " + options.path + ", but it already exists. This indicates a likely url collision and/or overwriting an existing page.");
+    }
     files[data.filename] = file;
 
     obj.push(file);

@@ -1,61 +1,54 @@
 {% extends "data-catalog.html" %}
 {% import '_macros.html' as m %}
 
-{% block contents %}
-  <div class="row">
-    {% block category_nav  %}
-      <div class="col-md-4 wms-nav-container">
-        <ul class="nav hidden-sm hidden-xs nav-cat" data-spy="affix">
-          <lh><h4>Jump to WMS Layers</h4></lh>
-          {% for wms_category in catalog|sortBy('wms_category')|groupBy('wms_category') %}
-            <li>
-              <a href="#{{loop.key|urlize}}">{{loop.key}}</a>
+{% block category_nav_list %}
+  <lh><h4>Jump to WMS Layers</h4></lh>
+
+  {% for wms_category in catalog|sortBy('wms_category')|groupBy('wms_category') %}
+    <li>
+      <a href="#{{loop.key|urlize}}">{{loop.key}}</a>
+    </li>
+  {% endfor %}
+{% endblock category_nav %}
+
+
+{% block catalog_content %}
+  <h1>{{title}}</h1>
+  <div class="mainBlurb">{{abstract}}</div>
+  {{contents|safe}}
+  {% for wms_category in catalog|sortBy(['wms_category', 'name'])|groupBy('wms_category') %}
+    {% if loop.key %}
+      <section id="{{loop.key|urlize}}" class="service">
+        <h2>
+          {{loop.key}}
+        </h2>
+        <ul class="wms-links media-list list-group">
+          {% for wms_entry in wms_category %}
+            <li class="media list-group-item">
+              {% if wms_entry.thumb_url %}
+                <div class="media-left">
+                  <img class="media-object" src="{{wms_entry.thumb_url}}" alt="Thumbnail image for {{wms_entry.name}}">
+                </div>
+              {% endif %}
+              <div class="media-body">
+                <h3 class="media-heading">
+                    {{wms_entry.name}}
+                </h3>
+
+                {{m.wms_link(wms_entry.wms_link)}}
+                <p class="wms-info pull-right">
+                    {% if wms_entry.pop_link %}
+                    <a href="http://{{wms_entry.pop_link}}" class="wms-tip" title="Preview the service as an online map">
+                      <span class="glyphicon glyphicon-new-window"></span><span class="hidden-xs"> Map Preview</span>
+                    </a>
+                  {% endif %}<br>
+                  <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset"><span class="glyphicon glyphicon-info-sign"></span><span class="hidden-xs"> More Info</span></a>
+                </p>
+              </div>
             </li>
           {% endfor %}
         </ul>
-      </div>
-    {% endblock category_nav %}
-    <div id="dataPageContent" class="col-md-8 wms-services">
-      {% block catalog_content %}
-        <h1>{{title}}</h1>
-        <div class="mainBlurb">{{abstract}}</div>
-        {{contents|safe}}
-        {% for wms_category in catalog|sortBy(['wms_category', 'name'])|groupBy('wms_category') %}
-          {% if loop.key %}
-            <section id="{{loop.key|urlize}}" class="service">
-              <h2>
-                {{loop.key}}
-              </h2>
-              <ul class="wms-links media-list list-group">
-                {% for wms_entry in wms_category %}
-                  <li class="media list-group-item">
-                    {% if wms_entry.thumb_url %}
-                      <div class="media-left">
-                        <img class="media-object" src="{{wms_entry.thumb_url}}" alt="Thumbnail image for {{wms_entry.name}}">
-                      </div>
-                    {% endif %}
-                    <div class="media-body">
-                      <h3 class="media-heading">
-                          {{wms_entry.name}}
-                      </h3>
-
-                      {{m.wms_link(wms_entry.wms_link)}}
-                      <p class="wms-info pull-right">
-                          {% if wms_entry.pop_link %}
-                          <a href="http://{{wms_entry.pop_link}}" class="wms-tip" title="Preview the service as an online map">
-                            <span class="glyphicon glyphicon-new-window"></span><span class="hidden-xs"> Map Preview</span>
-                          </a>
-                        {% endif %}<br>
-                        <a href="{{m.link(wms_entry.path)}}" class="wms-tip" title="More about this dataset"><span class="glyphicon glyphicon-info-sign"></span><span class="hidden-xs"> More Info</span></a>
-                      </p>
-                    </div>
-                  </li>
-                {% endfor %}
-              </ul>
-            </section>
-          {% endif %}
-        {% endfor %}
-      {% endblock catalog_content %}
-    </div>
-  </div>
-{% endblock contents %}
+      </section>
+    {% endif %}
+  {% endfor %}
+{% endblock catalog_content %}

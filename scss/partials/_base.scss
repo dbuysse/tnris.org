@@ -32,7 +32,6 @@ h1, h2, h3, h4 {
 
 h2 {
   color: $auburn;
-  font-size: 26px;
 }
 
 /* for skip links */
@@ -84,7 +83,7 @@ h2 {
 .footer {
   background: $darkgrey;
    color: $lightgrey;
-  z-index: 10000;
+  z-index: 500;
   position: relative;
   margin-top: -$footer-height;
   min-height: $footer-height;
@@ -215,4 +214,51 @@ author {
   font-size: 20px;
   margin-bottom: 10px;
   color: $middarkgrey;
+}
+
+/* for making full images at top on full-top template */
+.container-fluid.full {
+  padding: 0;
+  margin-top: -5px;
+  overflow: hidden;
+  height: auto;
+  position: relative;
+    clear: both;
+    margin-bottom: 15px;
+
+  img {
+    min-width: 100%;
+    display: block;
+  }
+
+  .top-container {  
+    position: relative;
+
+    .top-header { 
+      color: white;
+      text-shadow: 0 0 4px black;
+      background: linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(0, 0, 0, 0));
+      height: auto;
+      position: absolute;
+      z-index: 100;    
+      bottom: 0;
+      margin: 0 auto;
+      width: 100%;
+
+      h1 {
+        margin-bottom: 0;
+      }
+
+    }
+  }
+}
+
+/* Custom Breadcrumb */
+
+.breadcrumb {
+  font-size: 14px;
+
+  @media (min-width: $screen-sm) {
+    font-size: 16px;
+  }
 }

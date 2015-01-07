@@ -34,7 +34,7 @@
     }
     li {
       list-style: none;
-      background: $lightgrey;
+      background: white;
       height: 45px;
       border-right: none;
       box-shadow: 2px 2px 3px $midlightgrey;
@@ -148,6 +148,9 @@
           font-size: 18px;
         }
         @media (min-width: $screen-md) {
+          font-size: 20px;
+        }
+        @media (min-width: $screen-lg) {
           font-size: 22px;
         }
         em {
@@ -232,7 +235,7 @@
           font-weight: 300;
           color: $darkgrey;
           display: block;
-          font-size: 15px;
+          font-size: 14px;
           padding-left: 15%;
         }
       }
@@ -267,6 +270,10 @@
   }
   img {
     border: 2px solid white;
+
+    @media (min-width: $screen-md) {
+      min-height: 315px;
+    }
   }
 }
 
@@ -276,9 +283,12 @@
   position: relative;
   z-index: 10000;
   color: white;
+  padding: 30px 0;
+
   strong {
     font-weight: 400;
   }
+
   h3 {
     color: $sky;
     font-weight: 100;

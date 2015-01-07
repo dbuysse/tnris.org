@@ -47,8 +47,10 @@
       <h3>More Spotlights</h3>
       <div id="dataSpot">
       <ul class="media-list">
+        {% set count = 1 %}
         {% for spotlight in spotlights %}
-          {% if loop.index <= 4 %}
+          {% if (spotlight.id !== id) && count <= 3 %}
+            {% set count += 1 %}
             <li class="media">
               <a href="{{m.link(spotlight.preserved)}}">
                 <img class="media-object img-responsive" src="{{ spotlight.thumb }}" alt="A small preview of the {{ spotlight.title }} image">

@@ -42,13 +42,17 @@
       }
     });
 
-
     $('.nav-cat').affix({
       offset: {
         top: function () {
-          return (this.top = $('header').outerHeight(true));
+          return $('header').outerHeight(true);
+        },
+        bottom: function (element) {
+          return -1 * ($('footer').offset().top - $('footer').outerHeight() - element.outerHeight(true));
         }
        }
+    }).on('affixed.bs.affix', function (element) {
+      $(element.target).css('position', '');
     });
 
     $("a[href^='\#']").each(function(){

@@ -54,75 +54,89 @@
         strong {
           font-weight: 500;
         }
-        @media (min-width: $screen-lg) {
+        @media (min-width: $screen-lg-min) {
           font-size: 28px;
         }
         & + .col-xs-5ths {
-          @media (max-width: $screen-md) {
+          @media (max-width: $screen-sm-max) {
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
           }
         }
       }
       &.list-group-item {
-        @media (min-width: $screen-md) {
-          padding-top: 10px;
+        margin: 0;
+        padding: 0;
+
+        a {
+          display: block;
+          width: 100%;
+          height: 100%
         }
-        @media (max-width: $screen-md) {
+
+        @media (max-width: $screen-md-max) {
           padding: 0px;
           padding-left: 5px;
           padding-right: 5px;
+
+          em {
+            @include vertical-align;
+          }
         }
+
         &.social-front {
           font-family: $pragmatica;
           background: $lightblue;
           text-align: center;
-          @media (min-width: $screen-sm) {
-            padding-top: 5px;
+
+          @media (min-width: $screen-sm-min) {
             height: 45px;
           }
-          strong {
-            font-weight: 300;
-            font-size: 12px;
 
-            @media (min-width: $screen-sm) {
-              font-size: 22px;
-            }
-          }
-          a {
-            color: $tnrisblue;
-            &:hover {
-              color: $darkerblue;
-            }
-            i {
-              font-size: 26px;
-              margin: 0px 3px 0px 3px;
-              &.fa-github {
-                margin-right: 0;
-              }
-              @media (max-width: $screen-md) {
-                margin: 0px 2px 0px 2px;
+          div {
+            @include vertical-align;
+
+            strong {
+              font-weight: 300;
+
+              @media (min-width: $screen-sm-min) {
                 font-size: 22px;
+              }
+            }
+            a {
+              color: $tnrisblue;
+              display: inline;
+
+              &:hover {
+                color: $darkerblue;
+              }
+              i {
+                font-size: 26px;
+                margin-left: 14px;
+                @media (max-width: $screen-md-max) {
+                  margin-left: 2px;
+                  font-size: 22px;
+                }
               }
             }
           }
         }
       }
-      @media (min-width: $screen-md) {
+      @media (min-width: $screen-md-min) {
         height: 60px;
         border-right: 1px solid #dddddd;
       }
-      @media (min-width: $screen-lg) {
+      @media (min-width: $screen-lg-min) {
         height: 70px;
       }
       &:first-child {
-        @media (max-width: $screen-md) {
+        @media (max-width: $screen-xs-max) {
           border-top-right-radius: 0;
           border-bottom-left-radius: 5px;
         }
       }
       &:last-child {
-        @media (max-width: $screen-md) {
+        @media (max-width: $screen-sm-max) {
           border-top-right-radius: 5px;
           border-bottom-left-radius: 0;
           border-right: 1px solid #dddddd;
@@ -138,72 +152,63 @@
         font-weight: 500;
         font-size: 12px;
         overflow: auto;
-        height: 30px;
+        height: 100%;
         width: 100%;
 
-        @media (min-width: $screen-xs) {
+        @media (min-width: $screen-xs-min) {
           font-size: 14px;
         }
-        @media (min-width: $screen-sm) {
-          font-size: 18px;
+        @media (min-width: $screen-sm-min) {
+          font-size: 16px;
         }
-        @media (min-width: $screen-md) {
-          font-size: 20px;
-        }
-        @media (min-width: $screen-lg) {
+        @media (min-width: $screen-lg-min) {
           font-size: 22px;
+        }
+        &:hover {
+          text-decoration: none;
         }
         em {
           font-weight: 500;
           line-height: 5px;
           display: inline;
           line-height: 1em !important;
-          float: left;
           width: 100%;
-          padding-left: 33%;
           font-style: normal;
-          padding-top: 10%;
-
-          @media (min-width: $screen-xs) {
-            padding-top: 5%;
-            padding-left: 23%;
-          }
-          @media (min-width: $screen-sm) {
-            padding-left: 18%;
-            padding-top: 3%;
-          }
-          @media (min-width: $screen-md) {
-            padding-top: 0;
-            padding-left: 15%;
-          }
-          @media (min-width: $screen-lg) {
-            padding-top: 3%;
-            padding-left: 15%;
-          }
         }
-        &:hover {
-          text-decoration: none;
+        .quick-nav-text {
+          @include vertical-align;
+          position: absolute;
+          padding-left: 22px;
+
+          @media (min-width: $screen-sm-min) {
+            padding-left: 26px;
+          }
+          @media (min-width: $screen-md-min) {
+            padding-left: 37px;
+          }
+          @media (min-width: $screen-lg-min) {
+            padding-left: 50px;
+          }
         }
         .iconContainer {
+          @include vertical-align;
+
           position: absolute;
-          top: 0;
-          font-size: 16px;
           background: none;
           margin-left: 0;
           margin-right: 5px;
-          margin-top: 10px;
+          font-size: 16px;
 
-          @media (min-width: $screen-sm) {
-            margin-top: 3px;
-            font-size: 24px;
+          @media (min-width: $screen-sm-min) {
+            font-size: 18px;
           }
-          @media (min-width: $screen-md) {
-            margin-top: 10px;
+          @media (min-width: $screen-md-min) {
             font-size: 24px;
+            margin-left: 5px;
           }
-          @media (min-width: $screen-lg) {
-            margin-top: 15px;
+          @media (min-width: $screen-lg-min) {
             font-size: 30px;
+            margin-left: 10px;
           }
         }
         &.catalog-quick {
@@ -236,7 +241,6 @@
           color: $darkgrey;
           display: block;
           font-size: 14px;
-          padding-left: 15%;
         }
       }
     }

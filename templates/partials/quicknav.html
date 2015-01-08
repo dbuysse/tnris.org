@@ -34,16 +34,22 @@
   ] %}
     <li class="list-group-item col-xs-5ths col-md-12 {{item.li_class}}">
       <a class="{{item.anchor_class}}" href="{{m.link(item.link)}}">
-        <div class="iconContainer">
-          <i class="{{item.icon}}"></i>
+        <div class="quick-nav-container">
+          <div class="iconContainer">
+            <i class="{{item.icon}}"></i>
+          </div>
+          <div class="quick-nav-text">
+            <em>{{item.name}}</em>
+            <small class="hidden-xs hidden-sm">{{item.description}}</small>
+          </div>
         </div>
-        <em>{{item.name}}</em>
-        <small class="hidden-xs hidden-sm">{{item.description}}</small>
       </a>
     </li>
   {% endfor %}
   <li class="list-group-item col-xs-2 col-md-12 social-front">
-    <strong>Connect <span class="hidden-xs hidden-sm">With Us:</span></strong>
-    <a href="https://twitter.com/tnris" title="Follow us on Twitter"><i class="fa fa-twitter"><div class="sr-only">Follow us on Twitter</div></i></a>
+    <div>
+      <strong>Connect <span class="hidden-xs hidden-sm">With Us:</span></strong>
+      <a href="https://twitter.com/tnris" title="Follow us on Twitter"><i class="fa fa-twitter"><span class="sr-only">Follow us on Twitter</span></i></a>
+    </div>
   </li>
 </ul>

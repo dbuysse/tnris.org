@@ -148,11 +148,14 @@
 }
 
 .nav-cat {
+  @media (min-width: $screen-sm) {
+    max-width: 262px;
+
+  }
 
   li {
     padding-left: 0;
     margin-top: 0;
-    &.active {}
     a {
       padding: 5px 10px;
       &:hover {

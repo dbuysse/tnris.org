@@ -5,6 +5,10 @@
 	display:inline-block; 
 	height: 120px;
 
+  p {
+    @include vertical-align;
+  }
+
 	img {
 		max-width: 100%;
 		max-height: 60px;

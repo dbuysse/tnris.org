@@ -1,4 +1,5 @@
 @import "../../static/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
+@import "mixins";
 
 /* Colors */
 $auburn: #bf571f;
@@ -40,6 +41,7 @@ $break-large: 992px;
 $break-lg: 1200px;
 $break-md: 992px;
 $break-xs: 768px;
+
 
 $footer-height: 250px;
 
@@ -98,19 +100,3 @@ $footer-height: 250px;
         float: left;
     }
 }
-
-// @media (max-width: 768px) {
-//   .btn-responsive {
-//     padding:2px 4px;
-//     font-size:80%;
-//     line-height: 1;
-//   }
-// }
-
-// @media (min-width: 769px) and (max-width: 992px) {
-//   .btn-responsive {
-//     padding:4px 9px;
-//     font-size:90%;
-//     line-height: 1.2;
-//   }
-// }

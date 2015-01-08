@@ -1,0 +1,16 @@
+// _gio-page.scss
+@import "variables";
+
+.gio-stories-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li.media {
+		.media-left {
+			img {
+				width: 100px;
+			}
+		}
+	}
+}

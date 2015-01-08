@@ -1,23 +1,24 @@
 ---
-template: news.html
+template: gio-news.html
 title: "To Share or Not to Share...THAT is the question"
 author: Felicia Retiz, Deputy GIO
-thumbnail: images/media1.jpg
-mainimage:
+thumbnail: images/gio-stories/datashake.jpg
+mainimage: images/gio-stories/datashake-long.jpg
+mainimagealt: A milkshake with lidar imagery inside and straws to represent data sharing
 abstract:
-    There are a number of map analysts in Texas State Government who fully understand the power GIS brings to their organization. These GIS “enthusiasts” create maps to better visualize information related to their agency business needs.
+    History has shown us that data sharing has been an issue among the GIS community in one form or another since the origins of the field. 
 tags: GIO, Data Sharing, GIS, Geospatial
 ---
 
-There are a number of map analysts in Texas State Government who fully understand the power GIS brings to their organization. These GIS “enthusiasts” create maps to better visualize information related to their agency business needs.
+There are a number of map analysts in Texas State Government who fully understand the power GIS brings to their organization. These GIS “enthusiasts” create maps to better visualize information related to their agency business needs.</p>
 
 So you may ask, how is this geographic information being used by others outside of the originating agency? Or, maybe the real question is, are state agencies even sharing their information at all?
 
-History has shown us that data sharing has been an issue among the GIS community in one form or another since the dawn of mapping. 25 years ago, there was an intrinsic feeling of data ownership whenever data was developed.
+History has shown us that data sharing has been an issue among the GIS community in one form or another since the origins of the field. 25 years ago, there was an intrinsic feeling of data ownership whenever data was developed.
 
 There was a real fear that sharing data would somehow lessen its value or even worse, lessen the value of the owner. As a result, data sharing was limited as developers put a price on information.
 
-Today, we have grown past the “I own the data” mentality only to run head-on into another issue, which is that data can be misused or misunderstood.  Rules have been created to protect data deemed to be sensitive or critical.  If an agency wants to see it, they better have a good reason. This mindset means sharing of information between Federal, State, and local public agencies is not always a smooth and cooperative activity. The catalyst for data sharing has typically been the result of an emergency event such as a hurricane or wildfires. In many cases, by the time an agency searches, requests, and receives the GIS data they need, it is often too late. This scenario is a problem even when access to data is unhindered.
+<p><div class="pull-quote right" title="A pull quote">When we think of data sharing, we can divide the information into categories, giving specific consideration to privacy rules and regulations in order to safeguard the collected data.</div>Today, we have grown past the “I own the data” mentality only to run head-on into another issue, which is that data can be misused or misunderstood.  Rules have been created to protect data deemed to be sensitive or critical.  If an agency wants to see it, they better have a good reason. This mindset means sharing of information between Federal, State, and local public agencies is not always a smooth and cooperative activity. The catalyst for data sharing has typically been the result of an emergency event such as a hurricane or wildfires. In many cases, by the time an agency searches, requests, and receives the GIS data they need, it is often too late. This scenario is a problem even when access to data is unhindered.</p>
 
 Data sharing among public agencies does not have to follow one absolute rule.The term “data sharing” can send many public administrators running to the vaults, locking the door behind them. When we think of data sharing, we can divide the information into categories, giving specific consideration to privacy rules and regulations in order to safeguard the collected data.
 

@@ -34,6 +34,25 @@ h2 {
   color: $auburn;
 }
 
+/* custom lead */
+.lead {
+  max-width: 750px;
+}
+
+/* pull quotes for articles */
+.pull-quote {
+  padding: 30px;
+  font-size: 25px;
+  font-family: $pragmatica;
+  color: $tnrisblue;
+  line-height: normal;
+  max-width: 40%;
+
+  &.right {
+    float: right;
+  }
+}
+
 /* for skip links */
 #contentMain {
   background: white;
@@ -237,7 +256,7 @@ author {
     .top-header { 
       color: white;
       text-shadow: 0 0 4px black;
-      background: linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(0, 0, 0, 0));
+      background: rgba(0, 0, 0, .75);
       height: auto;
       position: absolute;
       z-index: 100;    

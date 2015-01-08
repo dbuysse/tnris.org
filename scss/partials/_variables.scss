@@ -44,23 +44,6 @@ $break-xs: 768px;
 
 $footer-height: 300px;
 
-/* transparent backgrounds */
-@mixin alpha-attribute($attribute, $color, $background) {
-  $percent: alpha($color) * 100%;
-  $opaque: opacify($color, 1);
-  $solid-color: mix($opaque, $background, $percent);
-  #{$attribute}: $solid-color;
-  #{$attribute}: $color;
-}
-
-/* Box Shadow */
-@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-
-      -webkit-box-shadow:$top $left $blur $color #{$inset};
-      -moz-box-shadow:$top $left $blur $color #{$inset};
-      box-shadow:$top $left $blur $color #{$inset};
-    }
-
 .col-xs-5ths,
 .col-sm-5ths,
 .col-md-5ths,

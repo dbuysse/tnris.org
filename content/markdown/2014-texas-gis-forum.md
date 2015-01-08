@@ -31,10 +31,16 @@ abstract: Once a year, take a break from your screen to go social at the Texas G
 </div>
 </div>
 
-<div class="agenda-2014">	
+<div class="agenda-2014">
 <h2>Agenda</h2>
-<p><strong>CLICK ON A PRESENTATION TITLE TO VIEW AN ONLINE VERSION OF THE SLIDES.</strong></p> 
+
+{#!
+
+---- NOTE: add this back in when speakerdeck links return
+<p><strong>CLICK ON A PRESENTATION TITLE TO VIEW AN ONLINE VERSION OF THE SLIDES.</strong></p>
 <p><strong>NOTE:</strong> Presentations without links were either not provided or not authorized for release by the speaker. Please contact the presenter directly to inquire about access.</strong></p>
+
+!#}
 
 <h3>Wednesday, October 22nd</h3>
 <table class="tg-table-plain">
@@ -285,7 +291,7 @@ Miriam Olivares - Texas A&M University - Department of Geography & College of Ar
   </tr>
   <tr class="tg-even">
     <td>1:00 - 2:00 pm&nbsp;</td>
-    <td> 
+    <td>
     <div align="center">TECH DEMO - AppGeo & Google<br><strong>Going Beyond Traditional GIS</strong><br>Presented by:<br>Rich Grady, Kate Hickey, Jim Scott - AppGeo<br>
                    Michael Evanoff - Google</div></td></td>
   </tr>
@@ -375,18 +381,18 @@ Miriam Olivares - Texas A&M University - Department of Geography & College of Ar
  Closing Remarks
     </td>
   </tr>
-</table>	
+</table>
 	</div>
 
 <div>
 <h2>Location &amp; Parking Information</h2>
 <p>
-<iframe align="right" src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d27534.156430936415!2d-97.728113!3d30.385901!3m2!1i1024!2i768!4f13.1!2m1!1s10100+Burnet+Rd+The+University+of+Texas+at+Austin%2C+J.+J.+Pickle+Research+Campus%2C+The+University+of+Texas+at+Austin+Austin%2C+TX+78758!5e0!3m2!1sen!2sus!4v1411081213895" width="400" height="250" frameborder="0" style="border:0"></iframe> 
+<iframe align="right" src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d27534.156430936415!2d-97.728113!3d30.385901!3m2!1i1024!2i768!4f13.1!2m1!1s10100+Burnet+Rd+The+University+of+Texas+at+Austin%2C+J.+J.+Pickle+Research+Campus%2C+The+University+of+Texas+at+Austin+Austin%2C+TX+78758!5e0!3m2!1sen!2sus!4v1411081213895" width="400" height="250" frameborder="0" style="border:0"></iframe>
 
 The Forum is held at <a href="http://www.utexas.edu/commons/">The Commons Center</a> at the J.J. Pickle Research Campus in North Austin.
 </p>
 <p>
-The Commons Building (#137) is located at: 
+The Commons Building (#137) is located at:
 <address>
 J.J. Pickle Research Campus<br>
 10100 Burnet Road, Austin, TX 78758<br>

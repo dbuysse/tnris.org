@@ -9,7 +9,7 @@ Courses offered include the basic, introduction to software use and application,
 Our experienced instructors possess technical and teaching skills, which are combined with industry knowledge and practical application of GIS.  Courses are offered at a lower price as compared to commercial training organizations.
 
 <h3>GIS training is offered for employees of -
-<a href="https://www.Regionalnline.com/register/checkin.aspx?EventId=1643373&MethodId=0&EventSessionId=&startnewreg=1" class="btn btn-success btn-lg pull-right">Register Online Today</a>
+<a href="https://www.regonline.com/register/checkin.aspx?EventId=1643373&MethodId=0&EventSessionId=&startnewreg=1" class="btn btn-success btn-lg pull-right">Register Online Today</a>
 </h3>
 - State agencies
 - Regional and local government

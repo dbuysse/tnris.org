@@ -54,7 +54,7 @@ abstract: Once a year, take a break from your screen to go social at the Texas G
   </tr>
   <tr class="tg-even">
     <td class="col-1">9:00 - 10:00 am</td>
-    <td>Keynote Presentation<br><strong>Jeremi Suri - Nation-Building, History, and Maps</strong> <br>Mack Brown Distinguished Chair for Leadership in Global Affairs at the University of Texas at Austin <a href="http://www.tnris.org/forum-keynote-jeremi-suri"></a></td>
+    <td>Keynote Presentation<br><strong>Jeremi Suri - Nation-Building, History, and Maps</strong> <br>Mack Brown Distinguished Chair for Leadership in Global Affairs at the University of Texas at Austin <a href="http://www.tnris.org/forum-keynote-jeremi-suri"></td>
   </tr>
   <tr>
     <td class="col-1">10:00 - 10:30 am</td>
@@ -217,6 +217,7 @@ abstract: Once a year, take a break from your screen to go social at the Texas G
   <tr>
     <td class="col-1">6:00 pm</td>
     <td>Forum Social featuring the spinning talents of DJ Spaghetti, spinning remodeled and remixed oldies for the young and young at heart!</td>
+  </tr>
 </table>
 
 <h3>Thursday, October 23rd</h3>
@@ -276,9 +277,8 @@ David McKittrick - Blue Marble Geographics</li>
                  <li><strong> From archives to people's reach: Making Historic Aerials Available Around the Clock</strong><br>
 Miriam Olivares - Texas A&M University - Department of Geography & College of Architecture<br>
  Sierra Laddusaw –  Texas A&M University - Map & GIS Library</li>
-
-             <li><strong>Color Management Standards for color printing</strong><br>
-              Efrain Carrero - Professional Plotter Technology</li>
+                 <li><strong>Color Management Standards for color printing</strong><br>
+                    Efrain Carrero - Professional Plotter Technology</li>
             </ul>
           </td>
         </tr>

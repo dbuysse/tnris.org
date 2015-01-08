@@ -4,7 +4,8 @@ title: Morris Sheppard Dam Lidar
 author: Joey Thomas
 author_division: Research & Distribution
 thumb: images/data-spotlights/morris-sheppard-dam-lidar-th.jpg
-mainimage: images/data-spotlights/morris-sheppard-dam-lidar.jpg
+mainimage: images/data-spotlights/morris-sheppard-dam-lidar-horiz.jpg
+fullimage: images/data-spotlights/morris-sheppard-dam-lidar.jpg
 ---
 {% import "_macros.html" as macros %}
 

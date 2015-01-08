@@ -4,7 +4,8 @@ title: Toledo Bend DEM
 author: Joey Thomas
 author_division: Research & Distribution
 thumb: images/data-spotlights/toledo-bend-dem-th.jpg
-mainimage: images/data-spotlights/toledo-bend-dem.jpg
+mainimage: images/data-spotlights/toledo-bend-dem-horiz.jpg
+fullimage: images/data-spotlights/toledo-bend-dem.jpg
 ---
 
 {% import '_macros.html' as m %}

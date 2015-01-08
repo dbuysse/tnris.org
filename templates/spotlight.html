@@ -3,14 +3,21 @@
 
 {% block topcontent %}
   <div class="container-fluid" id="spotlight-full-image">
-    <div class="center-block"><a href="#full-spot" data-toggle="modal"><img class="media-object img-responsive" src="{{ mainimage }}" alt="A large preview of the {{ title }} image"><div class="spot-zoom">
-      <span class="glyphicon glyphicon-zoom-in"></span> View Full Image
-    </div></a>
+    <div class="center-block"><a href="#full-spot" data-toggle="modal"><img class="media-object img-responsive" src="{{ mainimage }}" alt="A large preview of the {{ title }} image">
+  </a>
   </div>
 
     <div class="spot-title center-block">
       <div class="container">
-        <h1><small>Data Spotlight <i class="fa fa-lightbulb-o"></i></small> {{ title }}</h1>
+        <div class="spot-zoom">
+          <span class="glyphicon glyphicon-zoom-in"></span> 
+          Click Image for Full Preview
+        </div>
+        <small>Data Spotlight <i class="fa fa-lightbulb-o"></i></small>
+        <h1>{{ title }}</h1>
+        <div class="byline">
+          by <author>{{ author }}<author>, {{ author_division }} | <time>{{ date|date('F jS, Y') }}</time>
+        </div>
       </div>
     </div>
   </div>
@@ -23,7 +30,7 @@
           <h3 class="modal-title" id="myModalLabel">{{ title }}</h3>
         </div>
         <div class="modal-body">
-          <img class="media-object img-responsive center-block" src="{{ mainimage }}" alt="A large preview of the {{ title }} image">
+          <img class="media-object img-responsive center-block" src="{{ fullimage }}" alt="A large preview of the {{ title }} image">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -35,9 +42,6 @@
 {% block contents %}
 
   <div class="row article">
-    <div class="byline container">
-    <strong>by <author>{{ author }}<author>, {{ author_division }}</strong> | <time>{{ date|date('F jS, Y') }}</time>
-  </div>
   <div class="col-md-9 blog-main">
      {{ contents|safe }}
 	</div>

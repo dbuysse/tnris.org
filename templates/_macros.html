@@ -9,7 +9,7 @@
   {%- set name = search['urlized_name'] || search.split('/')[1] -%}
   {%- set item = catalog|find({'urlized_category': category, 'urlized_name':name}) -%}
 
-  <li class="media list-group-item">
+  <li class="media list-group-item data-card-single">
    {% if item.thumb_url %}
       <a class="media-left" href="{{link(item.path)}}">
         <img class="media-object data-thumb" src="{{item.thumb_url}}" alt="thumbnail of {{item.name}} data set">

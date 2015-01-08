@@ -6,18 +6,27 @@
 <div class="training-list">
 	<div class="row head">
 		<div class="col-xs-2">Date and Time</div>
-		<div class="col-xs-4">Course Title</div>
+		<div class="col-xs-6">Course Title</div>
 		<div class="col-xs-2">Instructor</div>
-		<div class="col-xs-2">Cost</div>
-		<div class="col-xs-2">Status</div>
+		<div class="col-xs-1">Cost</div>
+		<div class="col-xs-1">Status</div>
 	</div>
   {% for event in training %}
   	<div class="row training-header">
-	  	<div class="col-xs-3 col-sm-2"><strong>{{event.date}}</strong><br>{{event.time}}</div>
-	  	<div class="col-xs-9 col-sm-6"><h3><a href="{{m.link(event.path)}}">{{event.class_title}}</a></h3></div>
-	    <div class="col-xs-3 col-sm-2 course-info">{{event.instructor}}</div>
-	    <div class="col-xs-3 col-sm-1 course-info">{{event.cost}}</div>
-	    <div class="col-xs-3 col-sm-1 course-info">{{event.status}}</div>
+	  	<div class="col-xs-3 col-sm-2">
+	  		<strong>{{event.date}}</strong><br>{{event.time}}
+	  	</div>
+	  	<div class="col-xs-9 col-sm-6">
+	  		<h3><a href="{{m.link(event.path)}}">{{event.class_title}}</a></h3></div>
+	    <div class="col-xs-3 col-sm-2 course-info">
+	    	<strong>Taught by:</strong> <br>{{event.instructor}}
+	    </div>
+	    <div class="col-xs-3 col-sm-1 course-info">
+	    	{{event.cost}}
+	    </div>
+	    <div class="col-xs-3 col-sm-1 course-info">
+	    	{{event.status}}
+	    </div>
 	</div>
 	<div class="row course-description">
     	<div class="col-xs-3 col-sm-2">	

@@ -4,7 +4,8 @@ title: Upper Devil's River Watershed
 author: Joey Thomas
 author_division: Research & Distribution
 thumb: images/data-spotlights/upper-devils-river-watershed-th.jpg
-mainimage: images/data-spotlights/upper-devils-river-watershed.jpg
+mainimage: images/data-spotlights/upper-devils-river-watershed-horiz.jpg
+fullimage: images/data-spotlights/upper-devils-river-watershed.jpg
 ---
 {% import "_macros.html" as macros %}
 

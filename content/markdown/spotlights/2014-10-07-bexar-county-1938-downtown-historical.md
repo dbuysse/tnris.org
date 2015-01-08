@@ -4,7 +4,8 @@ title: Downtown San Antonio, 1938
 author: Chris Ledesma
 author_division: Information Services
 thumb: images/data-spotlights/bexar-38-downtown-th.jpg
-mainimage: images/data-spotlights/bexar-38-downtown.jpg
+mainimage: images/data-spotlights/bexar-38-downtown-horiz.jpg
+fullimage: images/data-spotlights/bexar-38-downtown.jpg
 ---
 ## What are we Looking At?
 This is an aerial photo taken in 1938 of downtown San Antonio, and is part of the Bexar County 1938 Historical Imagery aerial photos.

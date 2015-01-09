@@ -27,7 +27,7 @@ They are the [Texas Department of Transportation](http://www.txdot.gov), the [Te
 
 <p class="lead">Five additional government agencies contributed funds toward select 1-foot or 6-inch BUY-UP areas.</p>
 
-They are the National Geospatial-Intelligence Agency, the Texas Parks and Wildlife Department, University Lands, the San Antonio River Authority, and the City of Georgetown.
+They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages/default.aspx), the [Texas Parks and Wildlife Department](https://tpwd.texas.gov/), [University Lands](http://www.utlands.utsystem.edu/), the [San Antonio River Authority](https://www.sara-tx.org/), and the [City of Georgetown](https://georgetown.org/).
 
 <img class="img-responsive" src="/images/statewide-orthoimagery/buyup_contributors.jpg" alt="Organizations contributing to Buy-Up area">
 
@@ -54,6 +54,6 @@ All orthoimagery products will be available as 4-band images which may be displa
 
 ## High Priority Imagery and Data Sets Contract
 
-The High Priority Imagery and Data Sets (HPIDS) Contract was used to select the orthoimagery provider, [Surdex Corp](http://www.surdex.com)., from a pool of prequalified geospatial data providers. 
+The [High Priority Imagery and Data Sets](high-priority-imagery-data-sets) (HPIDS) Contract was used to select the orthoimagery provider, [Surdex Corp](http://www.surdex.com)., from a pool of prequalified geospatial data providers. 
 
 The contract is held by the [Council on Competitive Government](http://www.ccg.state.tx.us) and administered by TWDB/TNRIS.

@@ -62,6 +62,6 @@ Charged with fostering GeoSpatial collaboration throughout the state, you can ke
 </ul>
 
 ## ...And More to Come!
-<p class="lead">We plan on making this is just the start of enhancing and expanding our ability to serve the public and Texas's geospatial community. TNRIS's goal is to provide the highest caliber of geospatial services for the people of Texas.</p>
+<p class="lead">This is just the tip of the iceberg, we have plans to continue enhancing and expanding our ability to serve the public and Texas's geospatial community. TNRIS's goal is to provide the highest caliber of geospatial services for the people of Texas.</p>
 
 We encourage you to reach out and [Contact us](contact) and let us know how we can continually strive for excellence in that pursuit.

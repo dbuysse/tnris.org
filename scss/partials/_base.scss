@@ -364,19 +364,30 @@ author {
     a {
       color: $tnrisblue;
     }
+    
+    &.alert-dismissible {
+      .container {
+        position: relative;
+        
+        .close {
+          font-size: 14px;
+          text-transform: uppercase;
+          color: $auburn;
+          margin: 0 auto;
+          margin-left: -10px;
+          float: none;
+          right: 0;
+          top: 0;
 
-    .container {
-      position: relative;
-      .close {
-        position: absolute;
-        right: 0;
-        top: 10px;
-        font-size: 14px;
-        text-transform: uppercase;
-        color: $auburn;
+          &:hover {
+            color: $auburnoutline;
+          }
 
-        &:hover {
-          color: $auburnoutline;
+          @media (min-width: $screen-sm) {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+          }
         }
       }
     }

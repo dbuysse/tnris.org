@@ -6,6 +6,10 @@
 
 	&.horizontal {
 
+		h4.media-heading {
+			font-size: 24px;
+		}
+
 		@media (min-width: $screen-xs) {
 
 			&:first-child {

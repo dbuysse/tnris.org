@@ -81,7 +81,7 @@ Charged with fostering GeoSpatial collaboration throughout the state, you can ke
           <time>{{ gio_item.date|date('F jS, Y') }}</time>
           <h4 class="media-heading">
           <a href="{{m.link(gio_item.preserved)}}">{{ gio_item.title }}</a></h4>
-          <p class="hidden-md hidden-lg">{{ gio_item.abstract }}</p>
+          <p class="hidden-sm hidden-md hidden-lg">{{ gio_item.abstract }}</p>
         </div>
       </div>
     {% endif %}

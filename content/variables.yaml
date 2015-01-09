@@ -1,14 +1,14 @@
 ---
 # list of vendors
 vendors:
-  - name: Northrop Grumman (Formerly 3001 International)
-    url: http://www.northropgrumman.com
-    thumbnail: images/vendors/northrop_logo.png
-    contractlink: documents/vendor-contracts/northrop.pdf
   - name: Aero-Metric
     url:  http://www.aerometric.com/
     thumbnail: images/vendors/aerometric_logo.png
     contractlink: documents/vendor-contracts/aerometric.pdf
+  - name: Atkins
+    url:  http://northamerica.atkinsglobal.com/
+    thumbnail: images/vendors/atkins_logo.png
+    contractlink: documents/vendor-contracts/atkins.pdf
   - name: Bohannan Huston
     url:  http://www.bhinc.com/
     thumbnail: images/vendors/bohannan_logo.png
@@ -33,6 +33,10 @@ vendors:
     url:  http://www.kucerainternational.com/
     thumbnail: images/vendors/kucera_logo.png
     contractlink: documents/vendor-contracts/kucera.pdf
+  - name: Geocom
+    url:  http://www.geocom.ch/
+    thumbnail: images/vendors/geocom_logo.png
+    contractlink: documents/vendor-contracts/geocom.pdf
   - name: Gorrondonna &amp; Associates
     url:  http://www.ga-inc.net
     thumbnail: images/vendors/gorrondonna_logo.png
@@ -49,17 +53,21 @@ vendors:
     url:  http://www.nwgeo.com/
     thumbnail: images/vendors/northwest_logo.png
     contractlink: documents/vendor-contracts/northwest-geomatics.pdf
-  - name: Atkins
-    url:  http://northamerica.atkinsglobal.com/
-    thumbnail: images/vendors/atkins_logo.png
-    contractlink: documents/vendor-contracts/atkins.pdf
-  - name: Photo Science
-    url:  http://www.photoscience.com/
-    thumbnail: images/vendors/photoscience_logo.png
-    contractlink: documents/vendor-contracts/photoscience.pdf
+  - name: Northrop Grumman (Formerly 3001 International)
+    url: http://www.northropgrumman.com
+    thumbnail: images/vendors/northrop_logo.png
+    contractlink: documents/vendor-contracts/northrop.pdf
+  - name: Quantum
+    url:  http://quantumspatial.com/
+    thumbnail: images/vendors/quantum_logo.png
+    contractlink: documents/vendor-contracts/quantum.pdf
   - name: SAM
     url:  http://www.sam.biz/
     thumbnail: images/vendors/sam_logo.png
+    contractlink: documents/vendor-contracts/sam.pdf
+  - name: Sanborn
+    url:  http://www.sanborn.com/
+    thumbnail: images/vendors/sanborn_logo.jpg
     contractlink: documents/vendor-contracts/sam.pdf
   - name: Surdex
     url:  http://www.surdex.com

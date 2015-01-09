@@ -7,9 +7,9 @@ abstract: The Strategic Mapping Program (StratMap) was established in 1997 by Se
 
 {% import "_macros.html" as m %}
 
-StratMap's primary goal is to acquire and improve digital geographic data for statewide mapping applications. StratMap also maintains comprehensive data standard specifications to ensure consistent, high quality data products across the State.
+<p class="lead">StratMap's primary goal is to acquire and improve digital geographic data for statewide mapping applications. StratMap also maintains comprehensive data standard specifications to ensure consistent, high quality data products across the State.</p>
 
-The original StratMap layers funded by the Texas Legislature and other partners (state agencies, federal agencies, local entities) are **Orthoimagery**, **Elevation**, **Hydrography**, **Political Boundaries**, **Transportation**, **Soils**.
+<p class="lead">The original StratMap layers funded by the Texas Legislature and other partners (state agencies, federal agencies, local entities) are <strong>Orthoimagery</strong>, <strong>Elevation</strong>, <strong>Hydrography</strong>, <strong>Political Boundaries</strong>, <strong>Transportation</strong>, <strong>Soils</strong>.</p>
 
 ## Orthoimagery
 
@@ -22,7 +22,7 @@ Leveraging State funds from multiple agencies, the StratMap Program coordinated 
 
 {{m.catalog_data_card('aerial-orthoimagery-statewide/naip-2012-1m-nc-cir')}}
 
-Since 2009, using the [High Priority Imagery and Data Sets (HPIDS)](high-priority-imagery-datasets) contract, StratMap has coordinated numerous higher resolution (6-inch/1-foot) orthoimagery regional acquisition projects within Texas.
+Since 2009, using the [High Priority Imagery and Data Sets (HPIDS)](high-priority-imagery-data-sets) contract, StratMap has coordinated numerous higher resolution (6-inch/1-foot) orthoimagery regional acquisition projects within Texas.
 
 {{m.catalog_data_card('aerial-orthoimagery-hpids/hpids-smith-2014-6in-nc-cir')}}
 	

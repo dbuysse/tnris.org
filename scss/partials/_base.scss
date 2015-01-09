@@ -47,9 +47,24 @@ h2 {
   color: $tnrisblue;
   line-height: normal;
   max-width: 40%;
+  background: $lightgrey;
+  margin: 15px;
+
+  &:before {
+    content: open-quote; 
+  }
+  &:after  { 
+    content: close-quote;
+  }
 
   &.right {
     float: right;
+    margin-right: 0;
+  }
+
+  &.left {
+    float: left;
+    margin-left: 0;
   }
 }
 

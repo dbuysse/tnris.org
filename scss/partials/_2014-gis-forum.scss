@@ -30,11 +30,15 @@
     }
   }
 
-  .lead {
-  background: $lightgrey;
-  padding: 20px;
-  font-size: 22px;
-  }
+    .lead {
+    background: $lightgrey;
+    padding: 20px;
+    max-width: 100% !important;
+    }
+
+    .emphasize {
+      font-size: 20px;
+    }
 
   .sponsors {
     text-align: center;

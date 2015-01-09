@@ -13,7 +13,7 @@ tags: GIO, Data Sharing, GIS, Geospatial
 ### Some of the things we did...
 
 - Collaborated with Texas Department of Information Resources for **GIS Infrastructure Needs**.
-- Engaged with State and Federal Agency partners to reset communication.
+- Engaged with State and Federal Agency partners to **reset communication**.
 - Conducted **Community Interest Surveys**.
     - Imagery-as-a-Service Solutions
     - Priority Statewide GIS Layers
@@ -22,9 +22,8 @@ tags: GIO, Data Sharing, GIS, Geospatial
 - Conducted roundtable discussion at the Texas GIS Forum with key state agency representatives to **discuss the future of statewide GIS initiatives**.
 - Worked with the Texas Department of Resources and several state agencies to establish **Imagery-as-a-Service pilot for 6-inch Google imagery**.
 
-### And what we have planned for 2015
+### ...And what we have planned for 2015
 - Create governance council to **monitor and measure use of Google Imagery service pilot**.
-- Collaborate with State Agencies to **determine authoritative data sources**.
-- Develop process to determine and designate authoritative data source.
-- Develop State Agency Stakeholder Communication Plan
+- Develop process and collaborate with State Agencies to **determine authoritative data sources**.
+- Develop **State Agency Stakeholder Communication Plan**.
 - Work with State Agency Stakeholders to outline and develop **2016 Report to the Governor** regarding GIS in Texas.

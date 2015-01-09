@@ -1,9 +1,9 @@
 ---
-title: HPIDS - High Priority Imagery and Datasets Contract
+title: HPIDS - High Priority Imagery and Data Sets Contract
 template: hpids.html
 abstract:
 ---
-The Council on Competitive Government (CCG) established a procurement contract designed to strengthen Texas’ capabilities to purchase quality digital map data for both government and the public. The new process employs a state Master Contract commonly known as High Priority Imagery and Datasets (HPIDS).
+The Council on Competitive Government (CCG) established a procurement contract designed to strengthen Texas’ capabilities to purchase quality digital map data for both government and the public. The new process employs a state Master Contract commonly known as High Priority Imagery and Data Sets (HPIDS).
 
 New data acquisition projects are determined by identifying type of data required, location, specification, budget and timeline for delivery.  Data acquisition, production and independent quality assurance and quality control (QA/QC) responsibilities are awarded to private geospatial contractors through the Council on Competitive Government (CCG) High Priority Imagery and Data Sets Contract.  After the final deliverables are accepted, the data are placed in the public domain.
 

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block topcontent %}
+<div class="container-fluid full">
+
+      <div class="top-container">
+      {% if mainimage %}
+        <img class="img-responsive center-block" src="{{ mainimage }}">
+      {% endif %}
+
+      <div class="top-header center-block">
+          <div class="container">
+            <h1>{{title}}</h1>
+            {% if abstract %}
+              <div class="lead">{{abstract}}</div>
+            {% endif %}
+          </div>
+      </div>
+      </div>
+</div>
+{% endblock topcontent %}
+
+{% block contents %}
+<div class="row">
+	<div class="col-md-8">
+		
+		{{ contents|safe }}
+</div>
+
+    {% block rightContent %}
+      <div class="col-sm-4 blog-sidebar">
+         <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Project POC</h3>
+          </div>
+          <div class="panel-body">
+            <p>For further information or questions regarding this project, contact the project manager:
+            <strong>Gayla Mullins</strong>, StratMap<br>
+            <phone>512-463-7104</phone></p>
+          </div>
+      </div>
+      <h3>Latest Status update</h3>
+      <p><em>as of</em><date> {{ status_date }}</p>
+      <a href="#status-image" data-toggle="modal">
+        <img class="img-responsive" src="{{ status_image_preview }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
+      </a>
+
+
+      <div class="modal fade" id="status-image" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h3>Latest status Image</h3>
+           </div>
+            <div class="modal-body">
+               <img class="img-responsive" src="{{ status_image }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
+            </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+          </div>
+        </div>
+      </div>
+
+    
+    {% endblock rightContent %}
+  </div>
+
+
+</div>
+
+{% endblock contents %}
+
+
+

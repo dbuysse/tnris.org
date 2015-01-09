@@ -1,6 +1,6 @@
 ---
 template: news.html
-title: 2014 Texas GIS Forum
+title: Thank You! The 2014 Texas GIS Forum In Photos
 mainimage: images/updates/forum-photos/banner_atrium_2.jpg
 author: Richard Wade
 abstract: TNRIS thanks everyone for another great year. Check out photos and highlights from this year's event.

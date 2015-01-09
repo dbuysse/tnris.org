@@ -10,7 +10,7 @@ fullimage: images/data-spotlights/morris-sheppard-dam-lidar.jpg
 {% import "_macros.html" as macros %}
 
 ## What Are We Looking At?
-This LiDAR point cloud was acquired from a FEMA 2013 data set. The image centers over the Morris Sheppard Dam in Palo Pinto County at the South Eastern edge of Possum Kingdom Lake.
+<p class="lead">This LiDAR point cloud was acquired from a FEMA 2013 data set. The image centers over the Morris Sheppard Dam in Palo Pinto County at the South Eastern edge of Possum Kingdom Lake.</p>
 
 From [Wikipedia](http://en.wikipedia.org/wiki/Possum_Kingdom_Lake):
 

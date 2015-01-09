@@ -3,20 +3,20 @@ template: 2014-forum.html
 title: Sponsors & Exhibitors
 subtitle: October 20th-23rd | J.J. Pickle Center | Austin, Texas
 mainimage: images/forum2.jpg
-abstract: Parnter with Texas's Premiere gathering for the Geospatial Community and reach your customers.
+abstract: Partner with Texas's Premiere gathering for the Geospatial Professionals to reach your customers and your community.
 ---
 
 ## Sponsors & Exhibitors
 
-TNRIS is pleased to invite you to participate in our 2014 Texas GIS Forum in Austin, Texas. The GIS Forum is the only event in Texas that offers the network and power of nationally recognized experts in the geospatial field. This is an unparalleled opportunity to share your knowledge with a respected audience of geospatial professionals..
+<p class="emphasize">TNRIS is pleased to invite you to participate in our 2014 Texas GIS Forum in Austin, Texas. The GIS Forum is the only event in Texas that offers the network and power of nationally recognized experts in the geospatial field. This is an unparalleled opportunity to share your knowledge with a respected audience of geospatial professionals.</p>
 
-Participating as a Sponsor and Exhibitor will:
+### Participating as a Sponsor and Exhibitor will:
 
 - Extend your recognition and drive traffic to your booth
 - Introduce your new products, solutions and services
 - Reach your target market and network with the decision makers of the geospatial field
 
-Reach for maximum visibility with the geospatial and location-based service industries through:
+### Reach for maximum visibility with the geospatial and location-based service industries through:
 
 - E-mail blasts to previous attendees
 - Digital and print advertising

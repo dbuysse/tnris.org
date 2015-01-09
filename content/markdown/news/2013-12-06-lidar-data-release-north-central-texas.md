@@ -2,10 +2,9 @@
 template: news.html
 title: "LiDAR Data Release For Parts of North & Central Texas"
 author: StratMap
-thumbnail: images/media1.jpg
-thumbalt: Photo from the GIS Forum
-mainimage: images/updates/wolterbig.jpg
-imagealt: A portrait of Scott Wolter on location
+thumbnail: images/updates/lidar-release-th.png
+mainimage: 
+imagealt: 
 abstract: 
     TNRIS is releasing newly acquired high resolution lidar data for 3,090 square miles of North Texas
 tags: lidar, data

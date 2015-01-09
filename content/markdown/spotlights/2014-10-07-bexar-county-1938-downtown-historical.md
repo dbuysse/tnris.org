@@ -18,4 +18,4 @@ The Alamo complex is found in the middle right portion of the image.
 
 This is part of our historical archive. Please contact the RDC through our [order form](order-data) to inquire about this imagery and more.
 
-<a href="order-data" class="btn btn-lg btn-tnris">Order Data</a>
+{% include "./partials/order-button.html" %}

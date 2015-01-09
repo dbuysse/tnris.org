@@ -7,6 +7,13 @@
 	padding: 0;
 
 	li.media {
+
+		&.horizontal {
+			max-width: 50%;
+			padding-right: 30px;
+			float: left;
+		}
+
 		.media-left {
 			img {
 				width: 100px;

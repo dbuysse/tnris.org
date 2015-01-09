@@ -18,6 +18,26 @@
 
     {% block rightContent %}
       <div class="col-sm-4 blog-sidebar">
+        <h3>More TNRIS Updates</h3>
+        <ul class="gio-stories-list">
+        {% set count = 1 %}
+         {% for news_item in news %}
+        {% if (news_item.id !== id) && count <= 5 %}
+            {% set count += 1 %}
+          <li class="media">
+            <div class="media-left">
+              <a href="{{m.link(news_item.preserved)}}"><img  src="{{news_item.thumbnail}}" alt="Thumbnail image for {{news_item.title}}"></a>
+            </div>
+            <div class="media-body">
+              <time>{{ news_item.date|date('F jS, Y') }}</time>
+              <h4 class="media-heading">
+              <a href="{{m.link(news_item.preserved)}}">{{ news_item.title }}</a></h4>
+            </div>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+
       </div>
     {% endblock rightContent %}
   </div>

@@ -14,7 +14,7 @@
   {% for event in training %}
   	<div class="row training-header">
 	  	<div class="col-xs-3 col-sm-2">
-	  		<strong>{{event.date}}</strong><br>{{event.time}}
+	  		<strong><span class="glyphicon glyphicon-calendar"></span> {{event.date}}</strong><br> <span class="glyphicon glyphicon-time"></span> {{event.time}}
 	  	</div>
 	  	<div class="col-xs-9 col-sm-6">
 	  		<h3><a href="{{m.link(event.path)}}">{{event.class_title}}</a></h3></div>

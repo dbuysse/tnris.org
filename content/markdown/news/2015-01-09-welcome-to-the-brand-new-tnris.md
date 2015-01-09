@@ -15,7 +15,7 @@ We'd love to hear from you as you explore the new site. Don't hesitate to [conta
 
 ## Dive Deep into the Data Catalog
 
-<p class="lead"><img class="pull-right" src="images/updates/new-website/catalog-sample.jpg" alt="a sample of the data catalog">The new Data Catalog showcases TNRIS's extensive data holdings like never before.</p>
+<p class="lead"><img class="pull-right img-responsive" src="images/updates/new-website/catalog-sample.jpg" alt="a sample of the data catalog">The new Data Catalog showcases TNRIS's extensive data holdings like never before.</p>
 
 The most prominent content addition to our site is the [Data Catalog](data-catalog). While much of the data has been available at TNRIS for some time, this is the first time that all of it has been catalogued and organized for easy access and exploration online.
 

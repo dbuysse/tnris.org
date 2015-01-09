@@ -5,6 +5,12 @@
 #_2015-statewide-orthoimagery-project {
   display: visible;
 
+  hr {
+    height: 1px;
+    border: none;
+    clear: both;
+  }
+
   /* Custom Masthead title BG */
   .container-fluid.full {
     .top-container {

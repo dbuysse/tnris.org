@@ -393,3 +393,11 @@ author {
     }
   }
 }
+
+/* Side Bar on blogs */
+
+.col-md-4 {
+  .panel:first-child {
+    margin-top: 20px;
+  }
+}

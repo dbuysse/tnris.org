@@ -27,7 +27,7 @@ They are the [Texas Department of Transportation](http://www.txdot.gov), the [Te
 
 <p class="lead">Five additional government agencies contributed funds toward select 1-foot or 6-inch BUY-UP areas.</p>
 
-They are the National Geospatial-Intelligence Agency, the Texas Parks and Wildlife Department, University Lands, the San Antonio River Authority, and the City of Georgetown.
+They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages/default.aspx), the [Texas Parks and Wildlife Department](https://tpwd.texas.gov/), [University Lands](http://www.utlands.utsystem.edu/), the [San Antonio River Authority](https://www.sara-tx.org/), and the [City of Georgetown](https://georgetown.org/).
 
 <img class="img-responsive" src="/images/statewide-orthoimagery/buyup_contributors.jpg" alt="Organizations contributing to Buy-Up area">
 
@@ -37,7 +37,7 @@ They are the National Geospatial-Intelligence Agency, the Texas Parks and Wildli
 
 Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.
 
-<img class="img-responsive center-block" src="images/statewide-orthoimagery/season_leafoff_leafon.jpg" alt="Samples of leaf-off and leaf-on imagery">
+<img class="img-responsive center-block" width="500"src="images/statewide-orthoimagery/season_leafoff_leafon.jpg" alt="Samples of leaf-off and leaf-on imagery">
 
 ## Pixel Resolution	
 The BASE statewide orthoimagery will be acquired and processed at 0.5-meter pixel resolution. Select BUY-UP areas will be acquired and processed at either 1-foot or 6-inch pixel resolution. The following are example features identifiable in each resolution.
@@ -45,15 +45,13 @@ The BASE statewide orthoimagery will be acquired and processed at 0.5-meter pixe
 
 
 ## Spectral Resolution
-
 All orthoimagery products will be available as 4-band images which may be displayed as natural color (Red, Green, Blue) or color infrared (Near Infrared, Red, Green) composites.
+<img class="img-responsive center-block" src="/images/statewide-orthoimagery/spectral_samples.jpg" alt="Samples of Spectral IR and Spectral NC">
 
-![Spectral IR sample](/images/statewide-orthoimagery/spectral_IR.jpg)
-
-![Sample of Spectral Natural Color Image](/images/statewide-orthoimagery/spectral_NC.jpg)
+***
 
 ## High Priority Imagery and Data Sets Contract
 
-The High Priority Imagery and Data Sets (HPIDS) Contract was used to select the orthoimagery provider, [Surdex Corp](http://www.surdex.com)., from a pool of prequalified geospatial data providers. 
+The [High Priority Imagery and Data Sets](high-priority-imagery-data-sets) (HPIDS) Contract was used to select the orthoimagery provider, [Surdex Corp](http://www.surdex.com)., from a pool of prequalified geospatial data providers. 
 
 The contract is held by the [Council on Competitive Government](http://www.ccg.state.tx.us) and administered by TWDB/TNRIS.

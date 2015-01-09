@@ -15,11 +15,11 @@ The Texas Natural Resources Information System (TNRIS) is pleased to announce th
 This project was administered by the TNRIS Strategic Mapping Program (StratMap) and the data were procured through the Council on Competitive Government’s (CCG) High Priority Imagery and Datasets (HPIDS) contract.  Funding was provided by the U.S. Department of Agriculture Natural Resources Conservation Service (NRCS), the Texas Commission on Environmental Quality (TCEQ), the San Antonio River Authority (SARA) and the Texas Water Development Board (TWDB).</p>
 
 <div style="float: left; width: 350px; margin-right: 20px">
-<a href="https://www.tnris.org/sites/default/files/AOI_North_3090_full.jpg"><img src="https://www.tnris.org/sites/default/files/AOI_North_3090_small.jpg" ></a>
+<a href="https://www.tnris.org/sites/default/files/AOI_North_3090_full.jpg" alt="map of lidar coverage"><img src="https://www.tnris.org/sites/default/files/AOI_North_3090_small.jpg" alt="map of lidar coverage"></a>
 <caption style="font-size: 10px;">Click for Full Preview</caption>
 </div>
 <div style="float: left; width: 350px;">
-<a href="https://www.tnris.org/sites/default/files/AOI_Central.jpg"><img src="https://www.tnris.org/sites/default/files/AOI_Central_small.jpg" ></a>
+<a href="https://www.tnris.org/sites/default/files/AOI_Central.jpg" alt="Aoi Central Image"><img src="https://www.tnris.org/sites/default/files/AOI_Central_small.jpg" alt="AOI Central image"></a>
 <caption style="font-size: 10px;">Click for Full Preview</caption>
 </div>
 
@@ -52,16 +52,15 @@ This project was administered by the TNRIS Strategic Mapping Program (StratMap) 
 
 ## Sample Images
 
-<img src="https://www.tnris.org/sites/default/files/image001.jpg">
+<img src="https://www.tnris.org/sites/default/files/image001.jpg" alt="A sample of collected liDAR data">
 
 <br>
-<img src="https://www.tnris.org/sites/default/files/image002.jpg" >
+<img src="https://www.tnris.org/sites/default/files/image002.jpg" alt="A sample of collected liDAR data">
+<br>
+<img src="https://www.tnris.org/sites/default/files/image003.png" alt="A sample of collected liDAR data">
 
 <br>
-<img src="https://www.tnris.org/sites/default/files/image003.png" >
-
-<br>
-<img src="https://www.tnris.org/sites/default/files/image004.png" >
+<img src="https://www.tnris.org/sites/default/files/image004.png" alt="A sample of collected liDAR data">
 
 ## Ordering
 
@@ -69,4 +68,4 @@ This data will be available through the TNRIS Research & Distribution Center soo
 
 Lidar data and the associated geospatial products listed above are available for cost of reproduction through TNRIS.
 
-Contact our Research and Distribution Center for more information <a href="https://www.tnris.org/order-form"  style="width: 250px; clear:both; background: #ff3333; color: white; font-size: 18px; border-radius: 10px; height: 30px; text-align: center; padding: 10px; display: block; margin-top: 15px;">Order Data</a>
+{% include "./partials/order-button.html" %}

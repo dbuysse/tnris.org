@@ -11,7 +11,7 @@ The mission of TNRIS is to provide a "centralized information system incorporati
 
 The staff includes individuals trained in the natural, computer and library sciences. TNRIS supplies data to government, academia, private sector, and to the public.
 
-![Past TNRIS interns at work](images/past_gis.jpg)
+<!-- [Past TNRIS interns at work](images/past_gis.jpg) -->
 
 ## The TNRIS Data Catalog - By the Numbers
 

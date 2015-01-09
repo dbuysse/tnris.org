@@ -341,8 +341,44 @@ author {
   margin-top: 15px;
 }
 
-/* ALert Box */
-.alert {
-  font-size: 18px;
-  margin-bottom: 5px;
+/* Alert Box */
+
+.navbar-static-top {
+  .alert-custom {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: 0 2px 5px $midgrey;
+
+    strong {
+      font-family: $pragmatica;
+      font-size: 20px;
+      font-weight: 400;
+    }
+    background: $lightgrey;
+    font-size: 16px;
+    margin-bottom: -1px;
+    text-align: center;
+    position: relative;
+    color: $middarkgrey;
+
+    a {
+      color: $tnrisblue;
+    }
+
+    .container {
+      position: relative;
+      .close {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $auburn;
+
+        &:hover {
+          color: $auburnoutline;
+        }
+      }
+    }
+  }
 }

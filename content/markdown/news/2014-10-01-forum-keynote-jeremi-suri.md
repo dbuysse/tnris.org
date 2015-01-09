@@ -9,7 +9,7 @@ abstract:
 tags: 2014 gis forum
 ---
 
-Jeremi Suri holds the Mack Brown Distinguished Chair for Leadership in Global Affairs at the University of Texas at Austin. He is a professor in the University's Department of History and the Lyndon B. Johnson School of Public Affairs. Professor Suri is the author of five books on contemporary politics and foreign policy.
+<p class="lead"><img class="pull-left" src="{{thumbnail}}" alt="{{headshot}}">Jeremi Suri holds the Mack Brown Distinguished Chair for Leadership in Global Affairs at the University of Texas at Austin. He is a professor in the University's Department of History and the Lyndon B. Johnson School of Public Affairs. Professor Suri is the author of five books on contemporary politics and foreign policy.</p>
 
 In September 2011 he published a new book on the past and future of nation-building: Liberty's Surest Guardian: American Nation-Building from the Founders to Obama. Professor Suri's research and teaching have received numerous prizes. In 2007 Smithsonian Magazine named him one of America's "Top Young Innovators" in the Arts and Sciences.
 

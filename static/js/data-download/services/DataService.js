@@ -1,8 +1,5 @@
 var DataService = ['$collection', '$http', 'DOWNLOAD_API_PRE', function ($collection, $http, downloadAPIPre)  {
   'use strict';
-
-  var apiPre = downloadAPIPre + 'api/v1';
-
   DataService = {};
 
   DataService.getAreas = function (type, name) {
@@ -13,7 +10,7 @@ var DataService = ['$collection', '$http', 'DOWNLOAD_API_PRE', function ($collec
       filter += " AND name LIKE '%" + name + "%'";
     }
 
-    var promise = $http.get(apiPre + '/areas', {
+    var promise = $http.get(downloadAPIPre + '/areas', {
       params: {
         filter: filter,
         limit: 300
@@ -33,7 +30,7 @@ var DataService = ['$collection', '$http', 'DOWNLOAD_API_PRE', function ($collec
       })
       .then(function(areaID) {
         var filter = "area_id = '" + areaID + "'";
-        return $http.get(apiPre + '/resources', {
+        return $http.get(downloadAPIPre + '/resources', {
           params: {
             filter: filter,
             include: "Dataset"

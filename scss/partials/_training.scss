@@ -124,12 +124,11 @@ h1.training-title {
 		}
 
 		.white-fade {
+			@include background-image(linear-gradient(to top, rgba(255, 255, 255, 1),  rgba(255, 255, 255, 0)));
 			display: block;
 			position: absolute;
 			width: 100%;
 			bottom: 0;
-
-		    @include background-image(linear-gradient(to top, rgba(255, 255, 255, 1),  rgba(0, 0, 0, 0)));
 		    height: 150px;
 		}
 

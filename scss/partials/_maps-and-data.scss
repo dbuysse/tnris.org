@@ -218,7 +218,7 @@
   .media .media-left img {
     width: 300px;
     
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-sm) {
       width: 200px;
     }
     

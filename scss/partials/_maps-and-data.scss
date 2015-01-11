@@ -214,6 +214,15 @@
 }
 
 .data-catalog-items {
+  
+  .media .media-left img {
+    width: 300px;
+    
+    @media (min-width: $screen-md) {
+      width: 200px;
+    }
+    
+  }
 
   .media-left, .media-body {
     @media (max-width: $screen-sm) {
@@ -221,17 +230,9 @@
     }
   }
 
-  img {
-    width: 300px;
-  }
-
   @media (min-width: $screen-sm) {
     .media {
       min-height: 180px;
-
-      img {
-        width: 200px;
-      }
     }
   }
 }

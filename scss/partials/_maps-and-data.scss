@@ -225,14 +225,15 @@
   }
 
   .media-left, .media-body {
-    @media (max-width: $screen-sm) {
+    
+    @media (max-width: $screen-md) {
       display: block !important;
     }
   }
 
   @media (min-width: $screen-sm) {
     .media {
-      min-height: 180px;
+      min-height: 270px;
     }
   }
 }

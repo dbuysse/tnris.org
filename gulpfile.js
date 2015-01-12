@@ -41,7 +41,7 @@ swig.setFilter('find', function (collection, key) {
 });
 
 // patch swig groupBy filter so it doesn't mutate lists - this is a temporary
-// workaround until patch makes it's way into a swig release.
+// workaround until patch makes its way into a swig release.
 // See: https://github.com/paularmstrong/swig/pull/524
 swig.setFilter('groupBy', function (input, key) {
   if (!_.isArray(input)) {

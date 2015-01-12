@@ -214,24 +214,26 @@
 }
 
 .data-catalog-items {
+  
+  .media .media-left img {
+    width: 300px;
+    
+    @media (min-width: $screen-sm) {
+      width: 200px;
+    }
+    
+  }
 
   .media-left, .media-body {
-    @media (max-width: $screen-sm) {
+    
+    @media (max-width: $screen-md) {
       display: block !important;
     }
   }
 
-  img {
-    width: 300px;
-  }
-
   @media (min-width: $screen-sm) {
     .media {
-      min-height: 180px;
-
-      img {
-        width: 200px;
-      }
+      min-height: 270px;
     }
   }
 }

@@ -17,7 +17,7 @@
     </div>
 
     {% block rightContent %}
-      <div class="col-sm-4 blog-sidebar">
+      <div class="col-sm-12 col-md-4 blog-sidebar">
         <h3>More TNRIS Updates</h3>
         <ul class="gio-stories-list">
         {% set count = 1 %}
@@ -32,6 +32,9 @@
               <time>{{ news_item.date|date('F jS, Y') }}</time>
               <h4 class="media-heading">
               <a href="{{m.link(news_item.preserved)}}">{{ news_item.title }}</a></h4>
+              <p class="hidden-md hidden-lg">
+                {{ news_item.description }}
+              </p>
             </div>
           </li>
         {% endif %}

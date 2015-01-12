@@ -3,6 +3,19 @@
 
   $(function() {
 
+    if (window.sessionStorage) {
+      var alert = $('.alert');
+
+      var dismissed = sessionStorage.getItem("legacy-alert-dismissed") || false;
+      if (dismissed) {
+        alert.hide();
+      }
+
+      alert.on('closed.bs.alert', function () {
+        sessionStorage.setItem("legacy-alert-dismissed", true);
+      });
+    }
+
     //check for flash
     //if flash is available, the html tag will have 'flash' as a class
     // if not, the html tag will have 'no-flash' as a class

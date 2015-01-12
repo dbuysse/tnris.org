@@ -1,23 +1,34 @@
 // _gio-page.scss
 @import "variables";
 
-.gio-stories-list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 
-	li.media {
+.media {
 
-		&.horizontal {
-			max-width: 50%;
-			padding-right: 30px;
-			float: left;
+	&.horizontal {
+
+		h4.media-heading {
+			font-size: 24px;
 		}
 
-		.media-left {
-			img {
-				width: 100px;
+		@media (min-width: $screen-xs) {
+
+			&:first-child {
+				border-right: 1px solid $midgrey;
 			}
 		}
+	}
+
+	.media-left {
+		img {
+			width: 100px;
+		}
+	}
+}
+
+.blog-sidebar {
+	.gio-stories-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
 	}
 }

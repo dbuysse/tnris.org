@@ -250,6 +250,16 @@ author {
   color: $middarkgrey;
 }
 
+img {
+  &.pull-left {
+    margin: 0 20px 20px 0;
+  }
+
+  &.pull-right {
+    margin: 0 0px 20px 20px;
+  }
+}
+
 /* for making full images at top on full-top template */
 .container-fluid.full {
   padding: 0;
@@ -267,6 +277,7 @@ author {
 
   .top-container {  
     position: relative;
+    min-height: 200px;
 
     .top-header { 
       color: white;
@@ -383,7 +394,7 @@ author {
             color: $auburnoutline;
           }
 
-          @media (min-width: $screen-sm) {
+          @media (min-width: $screen-md) {
             position: absolute;
             right: 10px;
             top: 10px;

@@ -35,6 +35,8 @@ var crossref = require('./metalsmith-crossref');
 var csv = require('./metalsmith-csv');
 var metadata = require('metalsmith-metadata');
 
+var production = false;
+
 // turn off caching swig templates - so changes will propagate if re-run by a
 // watch task
 swig.setDefaults({
@@ -184,23 +186,30 @@ var paths = {
   variables: dirs.content + '/variables.yaml'
 };
 
-gulp.task('default', ['dist', 'watch', 'webserver']);
+gulp.task('default', ['dist-dev', 'watch', 'webserver']);
+gulp.task('dev-prod', ['dist', 'watch', 'webserver']);
 
 gulp.task('watch', function () {
-  gulp.watch(paths.content, ['dist-useref']);
+  gulp.watch(paths.content, ['dist-metal']);
   gulp.watch(paths.scss, ['dist-scss']);
-  gulp.watch(paths.templates, ['dist-useref']);
+  gulp.watch(paths.templates, ['dist-metal']);
   gulp.watch(paths.javascript, ['dist-static']);
 });
 
-gulp.task('webserver', ['dist'],  function() {
+gulp.task('webserver', ['dist-dev'],  function() {
   gulp.src(dirs.dist)
     .pipe(webserver({
       livereload: true
     }));
 });
 
-gulp.task('dist', ['dist-fonts', 'dist-useref', 'dist-scss', 'dist-static']);
+gulp.task('dist', ['dist-production']);
+gulp.task('dist-dev', ['dist-fonts', 'dist-metal', 'dist-scss', 'dist-static']);
+gulp.task('dist-production', ['set-production', 'dist-dev', 'dist-useref']);
+
+gulp.task('set-production', function () {
+  production = true;
+});
 
 gulp.task('dist-fonts', function () {
   return gulp.src(path.join(dirs.static, 'bower_components', 'bootstrap', 'fonts', '*'))
@@ -348,12 +357,12 @@ gulp.task('dist-metal', function () {
           engine: 'swig'
         }))
       )
-    .pipe(gulp.dest(dirs.tmp));
+    .pipe(gulpif(production, gulp.dest(dirs.tmp), gulp.dest(dirs.dist)));
 });
 
 gulp.task('dist-scss', function () {
   return gulp.src(paths.scss)
-    .pipe(scsslint())
+    .pipe(gulpif(!production, scsslint()))
     .pipe(sass())
     .pipe(gulp.dest(dirs.dist + '/css'))
     .pipe(gulp.dest(dirs.tmp + '/css'));
@@ -361,7 +370,7 @@ gulp.task('dist-scss', function () {
 
 gulp.task('dist-static', function () {
   return gulp.src(paths.static)
-    .pipe(gulp.dest(dirs.tmp))
+    .pipe(gulpif(production, gulp.dest(dirs.tmp)))
     .pipe(gulp.dest(dirs.dist));
 });
 

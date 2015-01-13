@@ -8,7 +8,7 @@ angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
     });
   })
   .controller('FormController', ['$scope', '$http', function($scope, $http) {
-    var contact_app_url = 'https://beta.tnris.org/contact-submit/';
+    var contact_app_url = 'https://tnris.org/contact-submit/';
 
     $scope.master = {};
     $scope.errors = {};

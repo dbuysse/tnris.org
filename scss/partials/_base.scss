@@ -394,7 +394,7 @@ img {
             color: $auburnoutline;
           }
 
-          @media (min-width: $screen-sm) {
+          @media (min-width: $screen-md) {
             position: absolute;
             right: 10px;
             top: 10px;
@@ -412,6 +412,7 @@ img {
     margin-top: 20px;
   }
 }
+
 
 ul.news-list {
     padding: 0;

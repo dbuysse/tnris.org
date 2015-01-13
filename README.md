@@ -1,7 +1,6 @@
-# site-mockup
+# tnris.org
 
-Mockups for tnris.org redesign
-
+Website for the Texas Natural Resources Information System: [tnris.org](http://tnris.org)
 
 ## Requirements
 

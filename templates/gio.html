@@ -3,7 +3,7 @@
 
 {% block extracontent %}
   <h2>GIO News</h2>
-  <ul class="gio-stories-list">
+  <ul class="news-list">
   {% for gio_item in geographic_information_office %}
     {% if loop.index <= 4 %}
       <li class="media">
@@ -12,8 +12,8 @@
         </div>
         <div class="media-body">
           <time>{{ gio_item.date|date('F jS, Y') }}</time>
-          <h4 class="media-heading">
-          <a href="{{m.link(gio_item.preserved)}}">{{ gio_item.title }}</a></h4>
+          <h3 class="media-heading">
+          <a href="{{m.link(gio_item.preserved)}}">{{ gio_item.title }}</a></h3>
           <p>
             {{ gio_item.abstract }}
           </p>

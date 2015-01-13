@@ -19,6 +19,7 @@ var scapegoat = require('scapegoat');
 var scsslint = require('gulp-scss-lint');
 var swig = require('swig');
 var templates = require('metalsmith-templates');
+var useref = require('gulp-useref');
 var vinylPaths = require('vinyl-paths');
 var webserver = require('gulp-webserver');
 
@@ -160,6 +161,7 @@ var dirs = {
   content: './content',
   scss: './scss',
   static: 'static',
+  tmp: './.tmp',
   templates: './templates'
 };
 
@@ -180,9 +182,9 @@ var paths = {
 gulp.task('default', ['dist', 'watch', 'webserver']);
 
 gulp.task('watch', function () {
-  gulp.watch(paths.content, ['dist-metal']);
+  gulp.watch(paths.content, ['dist-useref']);
   gulp.watch(paths.scss, ['dist-scss']);
-  gulp.watch(paths.templates, ['dist-metal']);
+  gulp.watch(paths.templates, ['dist-useref']);
   gulp.watch(paths.javascript, ['dist-static']);
 });
 
@@ -193,7 +195,7 @@ gulp.task('webserver', ['dist'],  function() {
     }));
 });
 
-gulp.task('dist', ['dist-fonts', 'dist-metal', 'dist-scss', 'dist-static']);
+gulp.task('dist', ['dist-fonts', 'dist-useref', 'dist-scss', 'dist-static']);
 
 gulp.task('dist-fonts', function () {
   return gulp.src(path.join(dirs.static, 'bower_components', 'bootstrap', 'fonts', '*'))
@@ -201,7 +203,7 @@ gulp.task('dist-fonts', function () {
 });
 
 gulp.task('dist-metal', function () {
-  gulp.src([
+  return gulp.src([
     paths.markdown,
     paths.variables
   ])
@@ -341,24 +343,36 @@ gulp.task('dist-metal', function () {
           engine: 'swig'
         }))
       )
-    .pipe(gulp.dest(dirs.dist));
+    .pipe(gulp.dest(dirs.tmp));
 });
 
 gulp.task('dist-scss', function () {
   return gulp.src(paths.scss)
     .pipe(scsslint())
     .pipe(sass())
-    .pipe(gulp.dest(dirs.dist + '/css'));
+    .pipe(gulp.dest(dirs.dist + '/css'))
+    .pipe(gulp.dest(dirs.tmp + '/css'));
 });
 
 gulp.task('dist-static', function () {
   return gulp.src(paths.static)
+    .pipe(gulp.dest(dirs.tmp))
     .pipe(gulp.dest(dirs.dist));
+});
+
+gulp.task('dist-useref', ['dist-metal', 'dist-scss', 'dist-static'], function () {
+  var assets = useref.assets();
+
+  return gulp.src(dirs.tmp + '/**/index.html')
+      .pipe(assets)
+      .pipe(assets.restore())
+      .pipe(useref())
+      .pipe(gulp.dest(dirs.dist));
 });
 
 gulp.task('clean', ['clean-dist']);
 
 gulp.task('clean-dist', function() {
-  return gulp.src(dirs.dist)
+  return gulp.src([dirs.dist, dirs.tmp, '.sass-cache/'])
     .pipe(vinylPaths(del));
 });

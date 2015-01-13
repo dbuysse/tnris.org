@@ -5,6 +5,7 @@ var del = require('del');
 var extend = require('extend');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
+var gulpif = require('gulp-if');
 var gulpsmith = require('gulpsmith');
 var marked = require('marked');
 var markdown = require('metalsmith-markdown');
@@ -12,6 +13,8 @@ var path = require('path');
 var each = require('metalsmith-each');
 var fs = require('fs');
 var metadata = require('metalsmith-metadata');
+var minifyCss = require('gulp-minify-css');
+var ngAnnotate = require('gulp-ng-annotate');
 var permalinks = require('metalsmith-permalinks');
 var replace = require('metalsmith-replace');
 var sass = require('gulp-ruby-sass');
@@ -20,6 +23,7 @@ var scsslint = require('gulp-scss-lint');
 var swig = require('swig');
 var templates = require('metalsmith-templates');
 var useref = require('gulp-useref');
+var uglify = require('gulp-uglify');
 var vinylPaths = require('vinyl-paths');
 var webserver = require('gulp-webserver');
 
@@ -365,6 +369,8 @@ gulp.task('dist-useref', ['dist-metal', 'dist-scss', 'dist-static'], function ()
 
   return gulp.src(dirs.tmp + '/**/index.html')
       .pipe(assets)
+      .pipe(gulpif('*.js', ngAnnotate(), uglify()))
+      .pipe(gulpif('*.css', minifyCss()))
       .pipe(assets.restore())
       .pipe(useref())
       .pipe(gulp.dest(dirs.dist));

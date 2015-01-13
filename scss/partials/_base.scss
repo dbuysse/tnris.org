@@ -432,12 +432,9 @@ ul.news-list {
       }
       
       p {
-        font-size: 12px;
-        @media (min-width: $screen-xs) {
-          font-size: 14px;
-        }
-      
+        font-size: 14px;      
       }
+      
       img {
         height: 75px;
         @media (min-width: $screen-xs) {

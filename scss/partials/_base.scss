@@ -432,11 +432,12 @@ ul.news-list {
       }
       
       p {
-        font-size: 14px;      
+        font-size: 15px;      
       }
-      
+
       img {
         height: 75px;
+
         @media (min-width: $screen-xs) {
           height: 100px;
         }
@@ -449,6 +450,7 @@ ul.news-list {
       &:last-child {
         border: none;
         padding-right: 0;
+        padding-bottom: 0;
       }
       time {
         font-size: 14px;

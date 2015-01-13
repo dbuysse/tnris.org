@@ -16,6 +16,7 @@ var permalinks = require('metalsmith-permalinks');
 var replace = require('metalsmith-replace');
 var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
+var scsslint = require('gulp-scss-lint');
 var swig = require('swig');
 var templates = require('metalsmith-templates');
 var vinylPaths = require('vinyl-paths');
@@ -32,7 +33,7 @@ var metadata = require('metalsmith-metadata');
 // watch task
 swig.setDefaults({
   cache: false,
-  loader: swig.loaders.fs(__dirname + '/templates'), 
+  loader: swig.loaders.fs(__dirname + '/templates'),
   locals: {validateLink: validateLink}
 });
 
@@ -345,6 +346,7 @@ gulp.task('dist-metal', function () {
 
 gulp.task('dist-scss', function () {
   return gulp.src(paths.scss)
+    .pipe(scsslint())
     .pipe(sass())
     .pipe(gulp.dest(dirs.dist + '/css'));
 });

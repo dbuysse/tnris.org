@@ -1,12 +1,12 @@
-# site-mockup
+# tnris.org
 
-Mockups for tnris.org redesign
-
+Website for the Texas Natural Resources Information System: [tnris.org](http://tnris.org)
 
 ## Requirements
 
  - ruby
  - sass (`gem install sass`)
+ - scss-lint (`gem install scss-lint`)
  - nodejs
  - gulp (`npm install -g gulp`)
  - bower (`npm install -g bower`)

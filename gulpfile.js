@@ -12,6 +12,7 @@ var markdown = require('metalsmith-markdown');
 var path = require('path');
 var each = require('metalsmith-each');
 var fs = require('fs');
+var lazypipe = require('lazypipe');
 var metadata = require('metalsmith-metadata');
 var minifyCss = require('gulp-minify-css');
 var ngAnnotate = require('gulp-ng-annotate');
@@ -367,10 +368,14 @@ gulp.task('dist-static', function () {
 gulp.task('dist-useref', ['dist-metal', 'dist-scss', 'dist-static'], function () {
   var assets = useref.assets();
 
+  var jsCompress = lazypipe()
+    .pipe(ngAnnotate)
+    .pipe(uglify);
+
   return gulp.src(dirs.tmp + '/**/index.html')
       .pipe(assets)
-      .pipe(gulpif('*.js', ngAnnotate(), uglify()))
-      .pipe(gulpif('*.css', minifyCss()))
+      .pipe(gulpif('*.min.js', jsCompress()))
+      .pipe(gulpif('*.min.css', minifyCss()))
       .pipe(assets.restore())
       .pipe(useref())
       .pipe(gulp.dest(dirs.dist));

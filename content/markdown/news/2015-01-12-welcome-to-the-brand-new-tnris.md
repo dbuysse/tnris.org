@@ -68,7 +68,7 @@ We'd also love to invite our fellow geospatial data aficionados to share maps an
 
 TNRIS, as part of it's legislative mandate, is the home of the state's [Geographic Information Office](geographic-information-office).
 
-Charged with fostering GeoSpatial collaboration throughout the state, you can keep track of the publically open meetings, as well as catch updates regarding ongoing projects from the **Director, Richard Wade**, and **Deputy Director, Felicia Retiz**.
+Charged with fostering GeoSpatial collaboration throughout the state, you can keep track of the GIS community meetings, as well as catch updates regarding ongoing projects from the **Director, Richard Wade**, and **Deputy Director, Felicia Retiz**.
 
 <div class="row">
   {% for gio_item in geographic_information_office %}

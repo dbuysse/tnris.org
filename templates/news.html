@@ -30,8 +30,8 @@
             </div>
             <div class="media-body">
               <time>{{ news_item.date|date('F jS, Y') }}</time>
-              <h4 class="media-heading">
-              <a href="{{m.link(news_item.preserved)}}">{{ news_item.title }}</a></h4>
+              <h3 class="media-heading">
+              <a href="{{m.link(news_item.preserved)}}">{{ news_item.title }}</a></h3>
               <p class="hidden-md hidden-lg">
                 {{ news_item.description }}
               </p>

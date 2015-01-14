@@ -1,6 +1,6 @@
 @import "../static/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
 
-/* transparent backgrounds */
+// transparent backgrounds //
 @mixin alpha-attribute($attribute, $color, $background) {
   $percent: alpha($color) * 100%;
   $opaque: opacify($color, 1);
@@ -9,14 +9,14 @@
   #{$attribute}: $color;
 }
 
-/* box shadow */
+// box shadow //
 @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-  -webkit-box-shadow:$top $left $blur $color #{$inset};
-  -moz-box-shadow:$top $left $blur $color #{$inset};
-  box-shadow:$top $left $blur $color #{$inset};
+  -webkit-box-shadow: $top $left $blur $color #{$inset};
+  -moz-box-shadow: $top $left $blur $color #{$inset};
+  box-shadow: $top $left $blur $color #{$inset};
 }
 
-/* vertically align elements */
+// vertically align elements //
 @mixin vertical-align {
   position: relative;
   top: 50%;

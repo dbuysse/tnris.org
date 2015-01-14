@@ -41,14 +41,15 @@ h2 {
 
 /* pull quotes for articles */
 .pull-quote {
-  padding: 30px;
-  font-size: 25px;
-  font-family: $pragmatica;
-  color: $tnrisblue;
-  line-height: normal;
-  max-width: 40%;
   background: $lightgrey;
-  margin: 15px;
+  color: $tnrisblue;
+  font-family: $pragmatica;
+  font-size: 25px;
+  line-height: normal;
+  margin: 20px;
+  margin-top: 5px;
+  max-width: 40%;
+  padding: 30px;
 
   &:before {
     content: open-quote; 
@@ -59,12 +60,22 @@ h2 {
 
   &.right {
     float: right;
+    margin-left: 25px;
     margin-right: 0;
+
+    @media (min-width: $screen-lg){
+      margin-right: -40px;
+    }
   }
 
   &.left {
     float: left;
     margin-left: 0;
+    margin-right: 25px;
+
+    @media (min-width: $screen-lg){
+      margin-left: -40px;
+    }
   }
 }
 

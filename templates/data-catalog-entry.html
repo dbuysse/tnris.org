@@ -73,11 +73,14 @@
           {% endfor %}
         </div>
 
-        <div class="btn-group">
+        <div class="btn-group" data-toggle="buttons">
           {% set i = 0 %}
           {% for image in images %}
             {% if image.url %}
-              <button data-target="#carousel-data-catalog" data-slide-to="{{i}}" type="button" class="btn {{image.button.class}} "><span class="{{image.button.icon}}"></span> {{image.button.label}}</button>
+              <label class="btn btn-primary {{image.button.class}}{% if i==0 %} active{% endif %}" data-target="#carousel-data-catalog" data-slide-to="{{i}}">
+                <input type="radio" name="options" id="option{{i}}" autocomplete="off" {% if i==0 %}checked{% endif %}>
+                <span class="{{image.button.icon}}"></span> {{image.button.label}}
+              </label>
               {% set i += 1 %}
             {% endif %}
           {% endfor %}

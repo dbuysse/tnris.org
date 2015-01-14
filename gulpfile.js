@@ -148,6 +148,10 @@ function urlPath(str) {
 }
 
 function validateLink(str, crossref, filename) {
+  if (!str) {
+    console.log('WARNING: ', "Invalid link: from " + filename);
+    return '#';
+  }
   var ref = urlPath(str);
   if (!crossref[ref]) {
     console.log('WARNING: ', "Invalid link: " + str + " (" + ref + ") from " + filename);

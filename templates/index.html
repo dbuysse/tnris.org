@@ -62,10 +62,11 @@
         </div>
 
         <div class="col-xs-12 col-sm-8 col-md-12 training-front">
-          <h2><a href="{{m.link('training')}}">Accessible GIS Training</a> <i class="fa fa-graduation-cap"></i></h2>
+          <h2><a href="{{m.link('training')}}">GIS Training</a> <i class="fa fa-graduation-cap"></i></h2>
+          <p>Courses for beginners to advanced skill levels, offered at competive prices.</p>
           <ul class="list-clean">
             {% for event in training %}
-              {% if loop.index <= 7 %}
+              {% if loop.index <= 6 %}
               <li><time>{{event.date}}</time><h4><a href="{{m.link(event.path)}}">
                 {{event.class_title}}</a></h4>
               </li>

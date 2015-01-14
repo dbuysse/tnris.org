@@ -10,19 +10,35 @@ abstract:
     The National Agriculture Imagery Program (NAIP) 2014 1-meter orthoimagery covering the entire state of Texas are now available from TNRIS.
 ---
 
-The National Agriculture Imagery Program (NAIP) 2014 1-meter orthoimagery covering the entire state of Texas are now available from TNRIS. These image products were flown April – October 2014 during leaf-on conditions and include Compressed County Mosaics (CCMs) - available now - and Digital Orthophoto Quarter Quads (DOQQs) – available February 2015. NAIP is a nationwide program administered by the USDA-Farm Service Agency-Aerial Photography Field Office.
+The National Agriculture Imagery Program (NAIP) 2014 1-meter orthoimagery covering the entire state of Texas are now available from TNRIS. 
+
+These image products were flown April – October 2014 during leaf-on conditions and include Compressed County Mosaics (CCMs) - available now - and Digital Orthophoto Quarter Quads (DOQQs) – available February 2015. 
+
+NAIP is a nationwide program administered by the USDA-Farm Service Agency-Aerial Photography Field Office.
 
 ## Data Access
 The 2014 NAIP orthoimagery are available for streaming through the APFO ArcGIS Image Service.
 
-To access the service in ArcGIS, use the following URL: http://gis.apfo.usda.gov/arcgis/services
+#### To access the service in ArcGIS, use the URL below:
 
+<div class="input-group copy-url-container">
+      <span class="input-group-btn">
+    <button class="btn btn-tnris copy-url-btn" type="button">
+      <i class="fa fa-clipboard"></i> Copy URL
+    </button>
+  </span>
+  <input class="wms-url copy-url-input form-control" type="text" readonly value="http://gis.apfo.usda.gov/arcgis/services">
+</div>
+
+****
+#### Order Through the RDC
 <div class="media">
   <div class="media-left">
     {% include "./partials/order-button.html" %}
   </div>
   <div class="media-body">
-    <p>Additionally, the orthoimagery files (CCM MrSIDs) are in the public domain and available for download from the TNRIS Research and Distribution Center. DOQQ GeoTIFFs & JPEG2000s are coming soon! </p>
+    <p>Additionally, the orthoimagery files (CCM MrSIDs) are in the public domain and available for download from the TNRIS Research and Distribution Center.</p>
+    <p>DOQQ GeoTIFFs & JPEG2000s are coming soon!</p>
   </div>
 </div>
 

@@ -103,6 +103,13 @@ h2 {
   }
 }
 
+.btn {
+  &.active {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
 /* tag styling */
 .tag {
   border-radius: 10px;

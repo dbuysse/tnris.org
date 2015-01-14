@@ -1,67 +1,75 @@
 @import "partials/variables";
 
-/* Nav bar */
+// Nav bar //
 .title-header {
-  height: auto;
-  overflow: auto;
   background: $tnrisblue;
   color: $sky;
-  width: 100%;
-  z-index: 1000;
   font-family: $pragmatica;
   font-size: 12px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
   font-weight: 100;
+  height: auto;
+  letter-spacing: 3px;
+  overflow: auto;
+  text-transform: uppercase;
+  width: 100%;
+  z-index: 1000;
+
   @media (min-width: $screen-xs) {
     font-size: 16px;
   }
+
   @media (min-width: $screen-md) {
     font-size: 18px;
   }
+
   span {
     margin-top: 3px;
   }
 
-  a.skip {
-    text-indent: -9999px;
-    color: $tnrisblue;
-    text-decoration: none;
-    text-transform: none;
-    font-size: 1px;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    position: absolute;
+  a {
+    .skip {
+      color: $tnrisblue;
+      font-size: 1px;
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      text-decoration: none;
+      text-indent: -9999px;
+      text-transform: none;
+      width: 1px;
 
-    &:focus {
-      text-indent: normal;
-      position: relative;
-      font-size: 8px;
-      overflow: auto;
-      color: white;
+      &:focus {
+        color: $white;
+        font-size: 8px;
+        overflow: auto;
+        position: relative;
+        text-indent: normal;
+      }
     }
   }
 }
 
 .navbar-bg {
-  padding-right: 0px;
+  padding-right: 0;
 }
 
 .navbar-right {
   li:last-child a {
-      padding-right: 0px;
+      padding-right: 0;
   }
 }
 
 .navbar-static-top {
   background: $darkgrey;
+
   a {
-    color: white;
+    color: $white;
   }
+
   .icon-bar {
-    background: white;
+    background: $white;
   }
+
   &.navbar {
     margin-bottom: 5px;
   }
@@ -69,28 +77,29 @@
 
 .navbar-nav > li > a {
   font-weight: 100;
+
   &.gio {
-    background: url(../images/icons/tx_icon.svg) 0px 13px no-repeat;
+    background: url(../images/icons/tx_icon.svg) 0 13px no-repeat;
     background-size: 25px;
     padding-left: 28px;
 
     &:hover {
-      background-position: 0px -28px;
+      background-position: 0 -28px;
     }
   }
 }
 
 a.navbar-twdb {
+  color: $sky;
   font-size: 12px;
-  color: white;
+  overflow: hidden;
   margin-right: -15px;
   margin-top: 7px;
-  overflow: hidden;
-  color: $sky;
   text-transform: uppercase;
+
   &:hover {
+    color: $white;
     text-decoration: none;
-    color: white;
   }
 }
 
@@ -98,7 +107,7 @@ a.navbar-twdb {
   .navbar-nav {
     li {
       a {
-        color: white;
+        color: $white;
 
         &:hover {
           color: $sky;
@@ -112,14 +121,14 @@ a.navbar-twdb {
   .dropdown-menu.inverse-dropdown {
     background: $darkgrey;
 
-        li {
-          a {
+    li {
+      a {
 
-            &:hover {
-              background: black;
-            }
-          }
+        &:hover {
+          background: $black;
+        }
       }
+    }
   }
 }
 
@@ -129,19 +138,19 @@ a.navbar-twdb {
 
 .navbar-brand {
   background: url(../images/tnris_logo.svg) 0 0 no-repeat;
-  width: 80px;
   height: 36px;
-  z-index: 30000;
-  padding: 0;
-  // margin-right: 10px;
   margin-left: 5px;
   margin-top: 5px;
+  padding: 0;
+  width: 80px;
+  z-index: 30000;
 }
 
 .navbar-right {
   li {
     a {
-      color: white !important;
+      color: $white !important;
+      
       &:hover {
         color: $sky !important;
       }

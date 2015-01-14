@@ -5,7 +5,7 @@
   <div id="home-top-content">
     <div class="container">
       <div class="row">
-        <div id="quickNav" class="col-md-3 col-sm-12 col-xs-12 ">
+        <div class="col-md-3 col-sm-12 col-xs-12 quick-nav">
         {% include "./partials/quicknav.html" %}
         </div>
         <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
@@ -22,7 +22,7 @@
   <div class="row">
     <div id="updates-front" class="col-md-6 col-sm-12 col-md-push-3">
       <h2>Latest News <i class="fa fa-newspaper-o"></i></h2>
-      <ul class="news-list">
+      <ul class="news-list list-clean">
         {% for news_item in news %}
           {% if loop.index <= 5 %}
             <li class="media">
@@ -50,7 +50,7 @@
 
     <div id="front-sidebar" class="col-md-3 col-sm-12 col-md-pull-6">
       <div class="row">
-        <div id="around-state-front" class="col-xs-12 col-sm-4 col-md-12">
+        <div class="col-xs-12 col-sm-4 col-md-12 around-state-front">
           <h2>Around the State <i class="fa fa-bullhorn"></i></h2>
           <img src="images/around-the-state/sterling_tx_th.png" alt="Sterling Harris, wearing a cowboy hat, in a thumbnail shaped like Texas">
 
@@ -61,9 +61,9 @@
           </p>
         </div>
 
-        <div id="training-front" class="col-xs-12 col-sm-8 col-md-12">
-          <h2>Accessible GIS Training <i class="fa fa-graduation-cap"></i></h2>
-          <ul>
+        <div class="col-xs-12 col-sm-8 col-md-12 training-front">
+          <h2><a href="{{m.link('training')}}">Accessible GIS Training</a> <i class="fa fa-graduation-cap"></i></h2>
+          <ul class="list-clean">
             {% for event in training %}
               {% if loop.index <= 7 %}
               <li><time>{{event.date}}</time><h4><a href="{{m.link(event.path)}}">

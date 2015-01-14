@@ -1,24 +1,25 @@
 @import "../../static/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 @import "mixins";
 
-/* Colors */
+// Colors //'
+$white: #fff;
+$black: #000;
 $auburn: #bf571f;
 $auburnoutline: #80310a;
 $lightblue: #e8f4fa;
 $sky: #d2f1ff;
 $midsky: #79c9ef;
-$darkgrey: #222222;
-$darkish: #444444;
+$darkgrey: #222;
+$darkish: #444;
 $middarkgrey: #767676;
-$midgrey: #cccccc;
+$midgrey: #ccc;
 $midlightgrey: #e3e3e3;
-$lightergrey: #eeeeee;
+$lightergrey: #eee;
 $lightgrey: #f5f5f5;
 $tnrisblue: #1e8dc1;
 $darkerblue: #0b658f;
 $facebook: #3b5998;
 $bsgrey: #9d9d9d;
-
 $urgentblue: #127cae;
 $lightyellow: #f9f8f0;
 $successgreen: #5cb85c;
@@ -27,12 +28,12 @@ $error: #a94442;
 $infoblue: #5bc0de;
 $bluegreen: #35adac;
 
-/* Font */
+// Font //
 $opensans: 'Open Sans', sans-serif;
-$pragmatica: "pragmatica-web-condensed",sans-serif;
-$proxima: "proxima-nova",sans-serif;
+$pragmatica: 'pragmatica-web-condensed', sans-serif;
+$proxima: 'proxima-nova', sans-serif;
 
-/* Media Queries */
+// Media Queries //
 $break-med: 604px;
 $break-med-two: 768px;
 $break-topsmall: 485px;
@@ -45,7 +46,7 @@ $break-xs: 768px;
 
 $footer-height: 250px;
 
-/* transparent backgrounds */
+// transparent backgrounds //
 @mixin alpha-attribute($attribute, $color, $background) {
   $percent: alpha($color) * 100%;
   $opaque: opacify($color, 1);
@@ -54,49 +55,47 @@ $footer-height: 250px;
   #{$attribute}: $color;
 }
 
-/* Box Shadow */
+// Box Shadow //
 @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-
-      -webkit-box-shadow:$top $left $blur $color #{$inset};
-      -moz-box-shadow:$top $left $blur $color #{$inset};
-      box-shadow:$top $left $blur $color #{$inset};
-    }
+  -webkit-box-shadow: $top $left $blur $color #{$inset};
+  -moz-box-shadow: $top $left $blur $color #{$inset};
+  box-shadow: $top $left $blur $color #{$inset};
+}
 
 .col-xs-5ths,
 .col-sm-5ths,
 .col-md-5ths,
 .col-lg-5ths {
-    position: relative;
-    min-height: 1px;
-    padding-right: 10px;
-    padding-left: 10px;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
 }
 
 .col-xs-5ths {
-    width: 20%;
-    float: left;
+  float: left;
+  width: 20%;
 
-    @media (min-width: $screen-md) {
-    	width: 100%;
-    }
-
+  @media (min-width: $screen-md) {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
-.col-sm-5ths {
-        width: 20%;
-        float: left;
-    }
+  .col-sm-5ths {
+    float: left;
+    width: 20%;
+  }
 }
 @media (min-width: 992px) {
-    .col-md-5ths {
-        width: 20%;
-        float: left;
-    }
+  .col-md-5ths {
+    float: left;
+    width: 20%;
+  }
 }
 @media (min-width: 1200px) {
-    .col-lg-5ths {
-        width: 20%;
-        float: left;
-    }
+  .col-lg-5ths {
+    float: left;
+    width: 20%;
+  }
 }

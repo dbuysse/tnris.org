@@ -15,7 +15,7 @@
 
 /* Quick Nav */
 /**************************************************/
-#quickNav {
+.quick-nav {
   margin-bottom: 0;
   // @include background-image(linear-gradient(to top, #e7e7e7, white, white, white, white, white, transparent));
   // border-bottom: 1px solid #e2e2e2;
@@ -23,12 +23,14 @@
   z-index: 0;
   float: left;
   padding-top: 0px;
+
   .container {
     background: $lightgrey;
   }
-  h3 {}
+
   ul {
     list-style: none;
+
     &.list-group {
       margin-bottom: 5px;
     }
@@ -357,63 +359,69 @@
 #front-sidebar {
   margin-bottom: 20px;
   margin-top: 20px;
+
   @media (min-width: $screen-md) {
     margin-top: 0px;
   }
-  #training-front {
+
+  .training-front {
     border-left: 1px solid $midgrey;
     padding-left: 15px;
+
     @media (min-width: $screen-md) {
       border-left: none;
       padding-left: 0px;
       padding-right: 0;
     }
+
     p {
     	font-size: 12px;
     }
+
     h2 {
       margin-top: 0;
       font-size: 20px;
-    }
-    h4 {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 18px;
-    }
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        margin-bottom: 20px;
-        strong {
-          font-size: 14px;
-          font-weight: 100;
-        }
-        a {
-          font-family: $pragmatica;
-        }
-        time {
-          font-size: 14px;
-          text-transform: uppercase;
-          font-weight: 500;
-          margin-bottom: 5px;
-        }
-
-        &:last-child {
-        	@media (min-width: $screen-lg) {
-        		display: none;
-        	}
-        }
-
+      
+      a {
+        color: $auburn;
       }
     }
+
+    h4 {
+      margin-top: 0;
+      font-size: 18px;
+      margin-bottom: 20px;
+
+    }
+    
+    strong {
+      font-size: 14px;
+      font-weight: 100;
+    }
+
+    a {
+      font-family: $pragmatica;
+    }
+
+    time {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    li:last-child {
+
+      @media (min-width: $screen-lg) {
+    		display: none;
+    	}
+    }
   }
-  #around-state-front {
+
+  .around-state-front {
     background: url(../images/around-the-state/light_auburn_bg.png) right top no-repeat;
     margin-bottom: 20px;
+
     @media (min-width: $screen-md) {
       border-bottom: 1px solid $midgrey;
       border-right: none;
@@ -421,13 +429,16 @@
       padding-right: 0;
       padding-bottom: 20px;
     }
+
     h2 {
       margin-top: 5px;
       font-size: 20px;
     }
+
     h4 {
       padding-right: 120px;
     }
+
     img {
       float: right;
       width: 125px;

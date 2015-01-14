@@ -1,149 +1,152 @@
 @import "variables";
 
-/* Training */
+// Training */
 
-h1.training-title {
-	margin-top: 0;
+h1 {
+  &.training-title {
+    margin-top: 0;
+  }
 }
 
 .training-header {
-	background: $lightgrey;
-	min-height: 40px;
+  background: $lightgrey;
+  min-height: 40px;
 
-	@media (min-width: $screen-lg) {
-		line-height: 40px;
-	}
+  @media (min-width: $screen-lg) {
+    line-height: 40px;
+  }
 
 }
 
 .training-date {
-	font-size: 20px;
-	margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 #training {
-	.btn-lg {
-		font-size: 26px;
-		margin-right: 10%;
-		margin-top: 30px;
-	}
+  .btn-lg {
+    font-size: 26px;
+    margin-right: 10%;
+    margin-top: 30px;
+  }
 
-	.training-list {
-		.training-header {
-			background: $lightgrey;
-			line-height: normal;
-		}
+  .training-list {
 
-		.head {
-			background: $tnrisblue;
-			color: white;
-			font-weight: 300;
-			padding: 5px;
-		}
+    .training-header {
+      background: $lightgrey;
+      line-height: normal;
+    }
 
-		div>div {
-			vertical-align: top;
-			padding: 5px;
+    .head {
+      background: $tnrisblue;
+      color: $white;
+      font-weight: 300;
+      padding: 5px;
+    }
 
-			.course-date {
-				strong {
-					text-transform: uppercase
-				}
-			}
-		}
+    div>div {
+      padding: 5px;
+      vertical-align: top;
 
-		.course-info {
-			font-size: 14px;
-		}
+      .course-date {
+        strong {
+          text-transform: uppercase;
+        }
+      }
+    }
 
-		.course-description {
-			padding-bottom: 30px;
-			border-bottom: 1px solid $lightergrey;
-		}
+    .course-info {
+      font-size: 14px;
+    }
 
-		&:last-child {
-			.course-description {
-				td {
-					border-bottom: none;
-				}
-			}
-		}
+    .course-description {
+      border-bottom: 1px solid $lightergrey;
+      padding-bottom: 30px;
+    }
 
-		h3 {
-			font-size: 22px;
-			margin-top: 0;
-		}
-	}
+    &:last-child {
+      .course-description {
+        td {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+  }
 }
 
-/* Special Collapse */
+// Special Collapse */
 
 .open-collapse {
-	position: relative;
-	border: none;
-	box-shadow: none !important;
-	margin-top: 20px;
+  border: 0;
+  box-shadow: none !important;
+  margin-top: 20px;
+  position: relative;
 
- 	btn {
-		position: absolute;
-		bottom: 0;
-		z-index: 1000;
-		width: 100%;
-		text-align: center;
-		padding: 0;
-		border: none;
-		cursor: pointer;
-		margin: 0 -15px;
+  btn {
+    border: 0;
+    bottom: 0;
+    cursor: pointer;
+    margin: 0 -15px;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
 
-		&[aria-expanded="true"] {
-			.close-text {
-				display: block;
-			}
-			.expand-text {
-				display: none;
-			}
-		}
+    &[aria-expanded="true"] {
+      .close-text {
+        display: block;
+      }
 
-		.close-text {
-			display: none;
-		}
-	}
+      .expand-text {
+        display: none;
+      }
+    }
 
-	.panel-body {
-		border: none;
-	}
+    .close-text {
+      display: none;
+    }
+  }
 
-	.collapse {
-		display: block !important;
-		visibility: visible !important;
-		overflow: hidden;
-		max-height: 200px !important;
-		position: relative;
+  .panel-body {
+    border: 0;
+  }
 
-		&.in {
-			max-height: none !important;
+  .collapse {
+    display: block !important;
+    max-height: 200px !important;
+    overflow: hidden;
+    position: relative;
+    visibility: visible !important;
 
-			.white-fade {
-				display: none;
-			}
-		}
+    &.in {
+      max-height: none !important;
 
-		.white-fade {
-			@include background-image(linear-gradient(to top, rgba(255, 255, 255, 1),  rgba(255, 255, 255, 0)));
-			display: block;
-			position: absolute;
-			width: 100%;
-			bottom: 0;
-		    height: 150px;
-		}
+      .white-fade {
+        display: none;
+      }
+    }
 
-	}
+    .white-fade {
+      @include background-image(linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)));
+      bottom: 0;
+      display: block;
+      height: 150px;
+      position: absolute;
+      width: 100%;
+    }
+  }
 }
 
-/* More Specifit training entry page */
+// More Specifit training entry page */
 
 .pull-right {
-	&.course-image {
-		margin: 0 0 20px 20px;
-	}
+  &.course-image {
+    margin: 0 0 20px 20px;
+  }
 }

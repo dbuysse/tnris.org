@@ -62,10 +62,10 @@ and refers to the change you're trying to make.
 ![Animated .gif of creating a new branch](tnris-org-create-branch.gif?raw=true)
 
 
-## Editing an existing file
+## Editing a file
 
 Editing an existing file is pretty simple from github. Then you can edit any
-file by clicking on it, then clicking the edit icon in near the top right of the
-file viewer.
+file by clicking the edit icon near the top right of the file viewer. Hit the
+"Commit changes" button at the bottom when you're done.
 
 ![Animated .gif of entering edit mode](edit-file.gif?raw=true)

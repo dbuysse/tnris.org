@@ -15,7 +15,7 @@
 
 /* Quick Nav */
 /**************************************************/
-#quickNav {
+.quick-nav {
   margin-bottom: 0;
   // @include background-image(linear-gradient(to top, #e7e7e7, white, white, white, white, white, transparent));
   // border-bottom: 1px solid #e2e2e2;
@@ -23,12 +23,14 @@
   z-index: 0;
   float: left;
   padding-top: 0px;
+
   .container {
     background: $lightgrey;
   }
-  h3 {}
+
   ul {
     list-style: none;
+
     &.list-group {
       margin-bottom: 5px;
     }
@@ -283,7 +285,7 @@
 
 /* Front Page Highlights */
 #highlights {
-  background: $tnrisblue;
+  background: $lightgrey;
   position: relative;
   z-index: 10000;
   color: white;
@@ -294,7 +296,7 @@
   }
 
   h3 {
-    color: $sky;
+    color: $middarkgrey;
     font-weight: 100;
     font-size: 30px;
     margin-top: 0;
@@ -303,17 +305,22 @@
       font-size: 24px;
     }
   }
+
   p {
     padding: 0 15px;
+    margin-top: 15px;
   }
+
   a {
     margin-left: 15px;
   }
+
   .image-container {
     // border-radius: 10px;
     overflow: hidden;
-    width: 100%;
     position: relative;
+    width: 100%;
+
     h2 {
       position: absolute;
       text-shadow: 1px 1px 2px $darkgrey;
@@ -326,6 +333,7 @@
       width: 100%;
       color: white;
       @include background-image(linear-gradient(to top, $darkgrey, transparent));
+      
       @media (max-width: $screen-lg) {
         font-size: 20px;
       }
@@ -334,8 +342,12 @@
 }
 
 .highlightBox {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   overflow: hidden;
+  background: $white;
+  border: 1px solid $midgrey;
+  color: $darkgrey;
+  height: 350px;
 }
 
 /* Updates */
@@ -343,12 +355,13 @@
   @media (min-width: $screen-md) {
     // border-left: 1px solid $midgrey;
     margin-left: 15px;
-    padding-right: 30px;
     margin-right: -15px;
+    padding-right: 30px;
   }
+
   h2 {
-    margin-top: 0;
     font-size: 22px;
+    margin-top: 5px;
   }
 }
 
@@ -357,63 +370,66 @@
 #front-sidebar {
   margin-bottom: 20px;
   margin-top: 20px;
+
   @media (min-width: $screen-md) {
     margin-top: 0px;
   }
-  #training-front {
+
+  h2 {
+    font-size: 22px;
+    margin-top: 0;
+    
+    a {
+        color: $auburn;
+      }
+  }
+
+  .training-front {
     border-left: 1px solid $midgrey;
     padding-left: 15px;
+
     @media (min-width: $screen-md) {
       border-left: none;
       padding-left: 0px;
       padding-right: 0;
     }
-    p {
-    	font-size: 12px;
-    }
-    h2 {
-      margin-top: 0;
-      font-size: 20px;
-    }
+
+
+
     h4 {
       margin-top: 0;
-      margin-bottom: 0;
       font-size: 18px;
+      margin-bottom: 20px;
+
     }
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        margin-bottom: 20px;
-        strong {
-          font-size: 14px;
-          font-weight: 100;
-        }
-        a {
-          font-family: $pragmatica;
-        }
-        time {
-          font-size: 14px;
-          text-transform: uppercase;
-          font-weight: 500;
-          margin-bottom: 5px;
-        }
+    
+    strong {
+      font-size: 14px;
+      font-weight: 100;
+    }
 
-        &:last-child {
-        	@media (min-width: $screen-lg) {
-        		display: none;
-        	}
-        }
+    a {
+      font-family: $pragmatica;
+    }
 
-      }
+    time {
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 0px;
+    }
+
+    li:last-child {
+
+      @media (min-width: $screen-lg) {
+    		display: none;
+    	}
     }
   }
-  #around-state-front {
+
+  .around-state-front {
     background: url(../images/around-the-state/light_auburn_bg.png) right top no-repeat;
     margin-bottom: 20px;
+
     @media (min-width: $screen-md) {
       border-bottom: 1px solid $midgrey;
       border-right: none;
@@ -421,13 +437,15 @@
       padding-right: 0;
       padding-bottom: 20px;
     }
+
     h2 {
       margin-top: 5px;
-      font-size: 20px;
     }
+
     h4 {
       padding-right: 120px;
     }
+
     img {
       float: right;
       width: 125px;

@@ -147,17 +147,18 @@
   }
 }
 
+
 .nav-cat {
+
   @media (min-width: $screen-sm) {
     max-width: 262px;
-
   }
 
   li {
-    padding-left: 0;
-    margin-top: 0;
+    
     a {
       padding: 5px 10px;
+      
       &:hover {
         color: $darkgrey;
         background: $lightblue;

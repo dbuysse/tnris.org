@@ -6,7 +6,7 @@
   <div class="row">
     {% block category_nav %}
       <div class="col-md-4 col-lg-3">
-        <ul class="nav hidden-sm hidden-xs affix nav-cat">
+        <ul class="nav hidden-sm hidden-xs affix nav-cat list-clean">
           {% block category_nav_list %}
             <lh><h4>Browse by Category</h4></lh>
             {% for category in catalog|sortBy('category')|groupBy('category') %}

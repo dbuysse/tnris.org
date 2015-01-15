@@ -6,7 +6,7 @@
     <div class="col-sm-7" id="updates-front">
         <h2>{{ title }}</h2>
         {{ contents|safe }}
-        <ul class="news-list">
+        <ul class="news-list list-clean">
         {% for news_item in news %}
           {% if loop.index <= 10 %}
               <li class="media">

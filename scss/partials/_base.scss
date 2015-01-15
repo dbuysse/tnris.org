@@ -41,14 +41,15 @@ h2 {
 
 /* pull quotes for articles */
 .pull-quote {
-  padding: 30px;
-  font-size: 25px;
-  font-family: $pragmatica;
-  color: $tnrisblue;
-  line-height: normal;
-  max-width: 40%;
   background: $lightgrey;
-  margin: 15px;
+  color: $tnrisblue;
+  font-family: $pragmatica;
+  font-size: 25px;
+  line-height: normal;
+  margin: 20px;
+  margin-top: 5px;
+  max-width: 40%;
+  padding: 30px;
 
   &:before {
     content: open-quote; 
@@ -59,12 +60,22 @@ h2 {
 
   &.right {
     float: right;
+    margin-left: 25px;
     margin-right: 0;
+
+    @media (min-width: $screen-lg){
+      margin-right: -40px;
+    }
   }
 
   &.left {
     float: left;
     margin-left: 0;
+    margin-right: 25px;
+
+    @media (min-width: $screen-lg){
+      margin-left: -40px;
+    }
   }
 }
 
@@ -89,6 +100,13 @@ h2 {
   &:hover {
     background: $urgentblue;
     color: white;
+  }
+}
+
+.btn {
+  &.active {
+    pointer-events: none;
+    cursor: not-allowed;
   }
 }
 
@@ -260,6 +278,10 @@ img {
   }
 }
 
+blockquote {
+  background: $lightgrey;
+}
+
 /* for making full images at top on full-top template */
 .container-fluid.full {
   padding: 0;
@@ -414,17 +436,29 @@ img {
 }
 
 /* News Lists formatting */
-ul.news-list {
+.list-clean {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
     padding: 0;
-    list-style: none;
+  }
+}
+
+ul.news-list {
+
     .media {
       border-bottom: 1px solid $midgrey;
+      
       @media (min-width: $screen-sm) {
         margin-top: 15px;
       }
       
       h3 {
         font-size: 20px;
+        
         @media (min-width: $screen-xs) {
           font-size: 22px;
         }
@@ -432,7 +466,7 @@ ul.news-list {
       
       p {
         font-size: 15px;
-        padding-bottom: 15px;      
+        margin-bottom: 15px;      
       }
 
       img {
@@ -448,13 +482,15 @@ ul.news-list {
         margin-top: 0;
         padding-left: 0;
       }
+
       &:last-child {
         border: none;
         padding-right: 0;
         padding-bottom: 0;
       }
+
       time {
-        font-size: 14px;
+        font-size: 16px;
         color: #5c6367;
         font-weight: 300;
         margin-bottom: 5px;

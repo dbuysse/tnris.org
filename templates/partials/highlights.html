@@ -38,9 +38,9 @@
             <div class="image-container">
               <h2>
                 {% if item.acronym %}
-                  <strong>{{item.acronym}}</strong>
+                  <strong>{{item.acronym}}</strong><br>
                 {% endif %} 
-                – {{item.name}}</h2>
+                {{item.name|safe}}</h2>
               <img class="img-responsive" src="{{item.image}}" alt="{{item.alt_text}}">
             </div>
             <p>{{item.description}}</p>

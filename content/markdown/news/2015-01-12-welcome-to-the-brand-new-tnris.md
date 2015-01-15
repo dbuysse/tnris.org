@@ -9,7 +9,7 @@ abstract:
 ---
 <p><img class="pull-right" src="images/updates/new_website.jpg" alt="Small, 3-D pages of the new site stacked in front of each other">You're browsing on the brand-new version of <strong>tnris.org</strong>! This is an exciting launch for us, and we sincerely hope our site redesign meets your needs and expectations. While some of the content is similar to what you're used to, we are excited to offer new ways to explore and access TNRIS data and connect with the Texas geospatial community.</p>
 
-We'd love to hear from you as you explore the new site. Don't hesitate to [contact us](contact) and let us know if everything is working smoothly, tell us any if anything isn't looking right or even if you just want to give us some virtual high-fives.
+We'd love to hear from you as you explore the new site. Don't hesitate to [contact us](contact) and let us know if everything is working smoothly, if anything isn't looking right or even if you just want to give us some virtual high-fives.
 
 **Now on to what's new!**
 

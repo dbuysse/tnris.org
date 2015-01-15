@@ -46,7 +46,7 @@ A step-by-step workflow for making changes.
 
 ### Sign in
 
-Sign in to github (if you're not signed in, there will be a "Sign in" button in
+Sign in to github (if you are not signed in, there will be a "Sign in" button in
 the top right corner).
 
 
@@ -57,15 +57,23 @@ chance to do things like review changes or work on a draft version of an article
 without publishing it to the main site.
 
 Create a new branch for your change(s). Choose a branch name that will be unique
-and refers to the change you're trying to make.
+and refers to the change you are trying to make.
 
 ![Animated .gif of creating a new branch](tnris-org-create-branch.gif?raw=true)
 
 
-## Editing a file
+#### Editing a file
 
-Editing an existing file is pretty simple from github. Then you can edit any
-file by clicking the edit icon near the top right of the file viewer. Hit the
-"Commit changes" button at the bottom when you're done.
+Editing an existing file is pretty simple from github. You can edit any file by
+clicking the edit icon near the top right of the file viewer. Hit the "Commit
+changes" button at the bottom when you are done.
 
 ![Animated .gif of entering edit mode](edit-file.gif?raw=true)
+
+
+### Pull request
+
+When you are ready to publish your changes, make a pull request. A pull request
+will alert everyone that your changes are good to go.
+
+![Animated .gif of creating a pull request](pull-request.gif?raw=true)

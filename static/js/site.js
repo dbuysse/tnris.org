@@ -36,23 +36,29 @@
       var $node = node;
       var $btn = $('.copy-url-btn', $node);
       var origInner = $btn.html();
-      var val = $('.copy-url-input', $node).val();
+      var $input = $('.copy-url-input', $node); 
+      var val = $input.val();
+
+      $input.focus(function () {
+        $input.select();
+      });
 
       if ($('html').hasClass('no-flash')) {
-        $btn.css('visibility', 'hidden');
+        $btn.hide();
+        return;
       }
-      else {
-        $btn.zclip({
-          path: 'bower_components/jquery-zclip/ZeroClipboard.swf',
-          copy: val,
-          afterCopy: function () {
-            $btn.html('Copied!');
-            window.setTimeout(function () {
-              $btn.html(origInner);
-            }, 4000);
-          }
-        });
-      }
+      //else
+      $btn.zclip({
+        path: 'bower_components/jquery-zclip/ZeroClipboard.swf',
+        copy: val,
+        afterCopy: function () {
+          $btn.html('Copied!');
+          window.setTimeout(function () {
+            $btn.html(origInner);
+          }, 4000);
+        }
+      });
+      
     });
 
     $('.nav-cat').affix({

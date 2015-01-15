@@ -2,12 +2,21 @@ var DataService = ['$collection', '$http', 'DOWNLOAD_API_PRE', function ($collec
   'use strict';
   DataService = {};
 
-  DataService.getAreas = function (type, name) {
+  DataService.getAreas = function (type, name, strict) {
     var filter = "type = '" + type + "'";
+    strict = strict || false;
 
     if (!_.isUndefined(name)) {
       // case insensitive pattern match in name
-      filter += " AND name LIKE '%" + name + "%'";
+      filter += " AND name LIKE ";
+
+      // strict matching for datasets, non-strict for search
+      if (strict) {
+        filter += "'" + name + "'";
+      }
+      else {
+        filter += "'%" + name + "%'";
+      }
     }
 
     var promise = $http.get(downloadAPIPre + '/areas', {
@@ -24,7 +33,7 @@ var DataService = ['$collection', '$http', 'DOWNLOAD_API_PRE', function ($collec
   };
 
   DataService.getAreaDatasets = function (type, name) {
-    var promise = DataService.getAreas(type, name)
+    var promise = DataService.getAreas(type, name, true)
       .then(function (areas) {
         return areas[0].id;
       })
@@ -56,7 +65,6 @@ var DataService = ['$collection', '$http', 'DOWNLOAD_API_PRE', function ($collec
 
     return promise;
   };
-
 
   return DataService;
 }];

@@ -2,9 +2,9 @@
 title: 2015 Statewide Orthoimagery Project
 template: 2015-ortho-page.html
 mainimage: images/statewide-orthoimagery/ortho_flag_lg.jpg
-status_image: images/statewide-orthoimagery/weekly-updates/statusimage-jan8.jpg
-status_image_preview: images/statewide-orthoimagery/weekly-updates/statusimage-jan8-sm.jpg
-status_date: January 8th, 2015
+status_image: images/statewide-orthoimagery/weekly-updates/Weekly_Status_Report_010915.jpg
+status_image_preview: images/statewide-orthoimagery/weekly-updates/Weekly_Status_Report_010915_sm.jpg
+status_date: January 9th, 2015
 abstract: 
     A collaborative initiative to capture high-quality, leaf-off imagery for the entire state, slated for public release in Winter 2015. 
 ---

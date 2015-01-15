@@ -230,12 +230,15 @@
       display: block !important;
     }
   }
-
-  @media (min-width: $screen-sm) {
-    .media {
-      min-height: 270px;
+  .media {
+    @media (min-width: $screen-sm) {
+        min-height: 270px;
     }
-  }
+
+    @media (min-width: $screen-md) {
+      min-height: 0;
+    }
+  } 
 }
 
 #dataPageContent {

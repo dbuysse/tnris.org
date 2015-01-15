@@ -341,6 +341,10 @@ gulp.task('dist-metal', function () {
         .use(crossref({
           include: {
             'data-download': '/data-download/'
+          },
+          includeDirs: {
+            'static/documents': 'documents',
+            'static/images': 'images'
           }
         }))
         .use(based())

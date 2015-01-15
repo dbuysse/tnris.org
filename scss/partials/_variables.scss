@@ -1,22 +1,27 @@
 @import "../../static/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 @import "mixins";
 
-// Colors //'
+// Colors //
+
+// black, white, greys //
 $white: #fff;
+$lightgrey: #f5f5f5;
+$lightergrey: #eee;
+$midlightgrey: #e3e3e3;
+$midgrey: #ccc;
+$middarkgrey: #767676;
+$darkgrey: #222;
+$darkish: #444;
 $black: #000;
+
 $auburn: #bf571f;
 $auburnoutline: #80310a;
+
+$tnrisblue: #1e8dc1;
 $lightblue: #e8f4fa;
 $sky: #d2f1ff;
 $midsky: #79c9ef;
-$darkgrey: #222;
-$darkish: #444;
-$middarkgrey: #767676;
-$midgrey: #ccc;
-$midlightgrey: #e3e3e3;
-$lightergrey: #eee;
-$lightgrey: #f5f5f5;
-$tnrisblue: #1e8dc1;
+
 $darkerblue: #0b658f;
 $facebook: #3b5998;
 $bsgrey: #9d9d9d;

@@ -364,6 +364,15 @@
     margin-top: 0px;
   }
 
+  h2 {
+    margin-top: 0;
+    font-size: 22px;
+    
+    a {
+        color: $auburn;
+      }
+  }
+
   .training-front {
     border-left: 1px solid $midgrey;
     padding-left: 15px;
@@ -374,14 +383,7 @@
       padding-right: 0;
     }
 
-    h2 {
-      margin-top: 0;
-      font-size: 20px;
-      
-      a {
-        color: $auburn;
-      }
-    }
+
 
     h4 {
       margin-top: 0;
@@ -427,7 +429,6 @@
 
     h2 {
       margin-top: 5px;
-      font-size: 20px;
     }
 
     h4 {

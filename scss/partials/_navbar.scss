@@ -27,7 +27,7 @@
   }
 
   a {
-    .skip {
+    &.skip {
       color: $tnrisblue;
       font-size: 1px;
       height: 1px;

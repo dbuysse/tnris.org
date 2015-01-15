@@ -66,7 +66,7 @@ We'd also love to invite our fellow geospatial data aficionados to share maps an
 
 ## Follow Statewide Geospatial Coordination Through the Geographic Information Office
 
-TNRIS, as part of it's legislative mandate, is the home of the state's [Geographic Information Office](geographic-information-office).
+TNRIS, as part of its legislative mandate, is the home of the state's [Geographic Information Office](geographic-information-office).
 
 Charged with fostering GeoSpatial collaboration throughout the state, you can keep track of the GIS community meetings, as well as catch updates regarding ongoing projects from the **Director, Richard Wade**, and **Deputy Director, Felicia Retiz**.
 

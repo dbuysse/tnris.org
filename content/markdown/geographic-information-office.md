@@ -2,6 +2,7 @@
 title: Texas Geographic Information Office - GIO
 template: gio.html
 abstract:
+latest_agenda: gio-meeting-agenda-jan-20.pdf
 ---
 ### State GIO – Richard A. Wade | State Deputy GIO – Felicia D. Retiz
 

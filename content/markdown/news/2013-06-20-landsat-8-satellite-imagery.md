@@ -28,7 +28,7 @@ Compare common <a href="http://landsat.usgs.gov/L8_band_combos.php">band combina
 Scene footprints that cover Texas are shown in the map. Every scene, or path/row designation, is imaged **every 16 days** by Landsat 8. Image products are available **within 12 hours** of data reception.
 ![Scene Footprints of Texas](images/updates/2013/landsat-8/TX_WRS2_graphic_v2.jpg) 
 
-**Download** the [Texas Landsat path/row shapefile](http://localhost:8000/documents/misc/landsat-8/Landsat_WRS2_TX.zip).
+<!-- **Download** the [Texas Landsat path/row shapefile](documents/misc/landsat-8/Landsat_WRS2_TX.zip). -->
 
 Further information about the [Worldwide Reference System-2](http://landsat.gsfc.nasa.gov/about/wrs.html).
 
@@ -37,10 +37,12 @@ Further information about the [Worldwide Reference System-2](http://landsat.gsfc
 ### West Texas basalt (volcanic) rock formation in Brewster County
 
 Landsat 8 path 31 row 39 | 4/21/2013 | False color bands 752 | 30m pixel resolution
-![West Texas Basalt Formation in Brewster County](/images/updates/2013/landsat-8/WTX_b752_p31r39_20130421.jpg)
+![West Texas Basalt Formation in Brewster County](images/updates/2013/landsat-8/WTX_b752_p31r39_20130421.jpg)
 
 ### The City of Houston, Trinity River, and Trinity Bay
 Landsat 8 path 25 row 39 | 5/13/2013 | Natural color bands 432 (left) and color infrared bands 543 (right) | 30m pixel resolution
+
+*Use the Image slider to preview natural color versus infrared bands*
 
 <figure>
 <div id="imageCompare1" class='twentytwenty-container natural-color-infrared'>
@@ -62,6 +64,8 @@ Landsat 8 path 30 row 36 | 6/1/2013 | False color bands 753 | 30m pixel resoluti
 The City of Brownsville near the Texas coastline and the City of Matamoros in Mexico, north and south of the Rio Grande respectively
 
 Landsat 8 path 26 row 42 | 5/4/2013 | Natural color bands 432 (left) and color infrared bands 543 (right) | 30m pixel resolution
+
+*Use the Image slider to preview natural color versus infrared bands*
 
 <figure>
 <div id="imageCompare2" class='twentytwenty-container natural-color-infrared'>

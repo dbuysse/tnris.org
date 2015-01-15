@@ -43,7 +43,7 @@ The front page will be the portal to our latest major initiatives, from data pro
 
 #### Data Spotlights Reveal the Story Behind Striking Data
 
-<p><img class="pull-right img-responsive" src="images/updates/new-website/data-spot-highlight.jpg" alt="Some highlighted images from data spotlights in perspective"> As maps and data geeks, sometimes, we just want to share interesting images or maps that looks cool and highlights the ways in which data represents and interacts with our expansive Texas geography. Data spotlights will be a new way for us to do that and share something with the TNRIS user commmunity.</p>
+<p><img class="pull-right img-responsive" src="images/updates/new-website/data-spot-highlight.jpg" alt="Some highlighted images from data spotlights in perspective"> As maps and data geeks, sometimes, we just want to share interesting images or maps that look cool and highlight the ways in which data represent and interact with our expansive Texas geography. Data spotlights will be a new way for us to do that and share something with the TNRIS user commmunity.</p>
 
 We'd also love to invite our fellow geospatial data aficionados to share maps and data that they would like to highlight, especially from across our community of state agencies. [Contact us](contact) if you have a Data Spotlight you'd like to pitch to us.
 

@@ -42,7 +42,9 @@ The orthoimagery are used for city planning, road construction projects, utiliti
 The orthoimagery were acquired between December 2012 and February 2013 during leaf-off conditions. Leaf-off imagery allows the user to see more on-the-ground features underneath deciduous tree cover. Also, it is much easier to distinguish deciduous vs. evergreen vegetation with imagery acquired during the leaf-off period.
 
 ## Acquisition Areas
-<a href="images/updates/2014/new-south-texas-aerial/2013_STX_Ortho_Acquisition_20130124_large.jpg" target="_blank"><img src="images/updates/2014/new-south-texas-aerial/2013_STX_Ortho_Acquisition_20130124_250dpi.jpg" alt="Map of Acquisition Areas of South Texas OrthoImagery"></a>
+<a href="images/updates/2014/new-south-texas-aerial/2013_STX_Ortho_Acquisition_20130124_large.jpg" target="_blank">
+  <img src="images/updates/2014/new-south-texas-aerial/2013_STX_Ortho_Acquisition_20130124_250dpi.jpg" alt="Map of Acquisition Areas of South Texas OrthoImagery">
+</a>
 
 ## Imagery Preview
 ![Sample of Orthoimagery, Texas Coast](images/updates/2014/new-south-texas-aerial/UrbanCoastal_6in_1to3000_2597_05_2_d_2_20130214.jpg)

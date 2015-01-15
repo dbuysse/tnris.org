@@ -285,7 +285,7 @@
 
 /* Front Page Highlights */
 #highlights {
-  background: $tnrisblue;
+  background: $lightgrey;
   position: relative;
   z-index: 10000;
   color: white;
@@ -296,7 +296,7 @@
   }
 
   h3 {
-    color: $sky;
+    color: $middarkgrey;
     font-weight: 100;
     font-size: 30px;
     margin-top: 0;
@@ -305,17 +305,22 @@
       font-size: 24px;
     }
   }
+
   p {
     padding: 0 15px;
+    margin-top: 15px;
   }
+
   a {
     margin-left: 15px;
   }
+
   .image-container {
     // border-radius: 10px;
     overflow: hidden;
-    width: 100%;
     position: relative;
+    width: 100%;
+
     h2 {
       position: absolute;
       text-shadow: 1px 1px 2px $darkgrey;
@@ -328,6 +333,7 @@
       width: 100%;
       color: white;
       @include background-image(linear-gradient(to top, $darkgrey, transparent));
+      
       @media (max-width: $screen-lg) {
         font-size: 20px;
       }
@@ -336,8 +342,12 @@
 }
 
 .highlightBox {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   overflow: hidden;
+  background: $white;
+  border: 1px solid $midgrey;
+  color: $darkgrey;
+  height: 350px;
 }
 
 /* Updates */
@@ -345,12 +355,13 @@
   @media (min-width: $screen-md) {
     // border-left: 1px solid $midgrey;
     margin-left: 15px;
-    padding-right: 30px;
     margin-right: -15px;
+    padding-right: 30px;
   }
+
   h2 {
-    margin-top: 0;
     font-size: 22px;
+    margin-top: 5px;
   }
 }
 
@@ -365,8 +376,8 @@
   }
 
   h2 {
-    margin-top: 0;
     font-size: 22px;
+    margin-top: 0;
     
     a {
         color: $auburn;

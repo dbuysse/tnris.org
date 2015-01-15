@@ -1,5 +1,5 @@
 ---
-title: Naip 2014 Statewide Aerial Imagery – Available Now
+title: NAIP 2014 Statewide Aerial Imagery – Available Now
 template: news.html
 author: StratMap
 thumbnail: images/updates/naip-2014-announcement/naip14_statewide_topo_th.jpg

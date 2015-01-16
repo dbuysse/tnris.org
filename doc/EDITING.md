@@ -69,7 +69,7 @@ but in most cases you won't need to worry about editing templates.
 
 # Workflow
 
-A step-by-step workflow for making changes.
+A step-by-step workflow for making changes from github.
 
 ## Sign in
 
@@ -77,7 +77,7 @@ Sign in to github (if you are not signed in, there will be a "Sign in" button in
 the top right corner).
 
 
-## Create a new branch
+## [Create a new branch](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/#creating-a-branch)
 
 Branches are how we keep different sets of changes separate. They give us a
 chance to do things like review changes or work on a draft version of an article
@@ -89,7 +89,7 @@ and refers to the change you are trying to make.
 ![Animated .gif of creating a new branch](tnris-org-create-branch.gif?raw=true)
 
 
-## Editing a file
+## [Editing a file](https://help.github.com/articles/editing-files-in-your-repository/) 
 
 Editing an existing file is pretty simple from github. You can edit any file by
 clicking the edit icon near the top right of the file viewer. Hit the "Commit
@@ -98,7 +98,7 @@ changes" button at the bottom when you are done.
 ![Animated .gif of entering edit mode](edit-file.gif?raw=true)
 
 
-## Adding a new file
+## [Adding a new file](https://help.github.com/articles/creating-new-files/)
 
 If the page you want to create doesn't already exist, then just make a new file
 for it.
@@ -112,7 +112,7 @@ its front matter as a starting point.
 
 
 
-## Pull request
+## [Pull request](https://help.github.com/articles/creating-a-pull-request/)
 
 When you are ready to publish your changes, make a pull request. A pull request
 will alert everyone that your changes are good to go.

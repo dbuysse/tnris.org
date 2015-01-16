@@ -1,6 +1,7 @@
 'use strict';
 
 var fs = require('fs');
+var glob = require('glob');
 var mkdirp = require('mkdirp');
 var path = require('path');
 var _ = require('lodash');
@@ -12,6 +13,18 @@ function crossref(options) {
     options = normalize(options);
 
     var crossref = _.clone(options.include);
+
+    if (options.includeDirs) {
+      _.forOwn(options.includeDirs, function (path, dir) {
+        var filenames = glob.sync(dir + "/**/*", {nodir: true});
+        var re = new RegExp("^" + dir);
+        var keys = filenames.map(function (filename) {
+          return filename.replace(re, path);
+        });
+        _.extend(crossref, _.zipObject(filenames, keys));
+      });
+    }
+
 
     Object.keys(files).forEach(function(filename){
       var file = files[filename];
@@ -46,6 +59,7 @@ function crossref(options) {
 function normalize(options) {
   var normalized = _.cloneDeep(options);
   normalized.include = normalized.include || {};
+  normalized.includeDirs = normalized.includeDirs || [];
   return normalized;
 }
 

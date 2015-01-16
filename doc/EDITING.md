@@ -11,8 +11,8 @@ First thing you'll need to do is get set up with an account on github:
 
   - [Register](https://github.com/join) an account if you don't already have
     one. Choose the free plan.
-  - Bug someone on the IS team to get your permissions set up - they'll need
-    your github username.
+  - Bug someone on the IS team to get your permissions set up - they will need
+    to know your github username.
 
 
 ## Markdown files
@@ -67,17 +67,17 @@ full HTML for the page. Templates are found in the `templates/` directory,
 but in most cases you won't need to worry about editing templates.
 
 
-## Workflow
+# Workflow
 
 A step-by-step workflow for making changes.
 
-### Sign in
+## Sign in
 
 Sign in to github (if you are not signed in, there will be a "Sign in" button in
 the top right corner).
 
 
-### Create a new branch
+## Create a new branch
 
 Branches are how we keep different sets of changes separate. They give us a
 chance to do things like review changes or work on a draft version of an article
@@ -89,7 +89,7 @@ and refers to the change you are trying to make.
 ![Animated .gif of creating a new branch](tnris-org-create-branch.gif?raw=true)
 
 
-#### Editing a file
+## Editing a file
 
 Editing an existing file is pretty simple from github. You can edit any file by
 clicking the edit icon near the top right of the file viewer. Hit the "Commit
@@ -98,7 +98,7 @@ changes" button at the bottom when you are done.
 ![Animated .gif of entering edit mode](edit-file.gif?raw=true)
 
 
-#### Adding a new file
+## Adding a new file
 
 If the page you want to create doesn't already exist, then just make a new file
 for it.
@@ -112,7 +112,7 @@ its front matter as a starting point.
 
 
 
-### Pull request
+## Pull request
 
 When you are ready to publish your changes, make a pull request. A pull request
 will alert everyone that your changes are good to go.

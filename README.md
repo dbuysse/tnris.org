@@ -1,30 +1,8 @@
 # tnris.org
 
-Website for the Texas Natural Resources Information System: [tnris.org](http://tnris.org)
+This repository contains the content and code used to generate Texas Natural
+Resources Information System website: [tnris.org](http://tnris.org)
 
-## Requirements
-
- - ruby
- - sass (`gem install sass`)
- - scss-lint (`gem install scss-lint`)
- - nodejs
- - gulp (`npm install -g gulp`)
- - bower (`npm install -g bower`)
-
-
-## Setup
-
-Make sure the required software is installed. Then from the root directory of
-this repository:
-
- - run `npm install`
- - run `bower install`
-
-Also install the [EditorConfig plugin](http://editorconfig.org/#download) for your text editor of choice. EditorConfig helps us maintain stuff like consistent spacing and tabbing across source files.
-
-## Usage
-
-Run `gulp` command from the `./site-mockup` directory. Then visit
-[http://localhost:8000/](http://localhost:8000/) to see the page. Any files in
-the `scss` directory that end in `.scss` will be converted to corresponding file
-in the `css` directory. For example `scss/tnris.scss` -> `css/tnris.css`
+If you're looking to edit some content, see our [editing
+documentation](doc/EDITING.md). We also have a document describing how to set up
+a complete development environment to [build](doc/BUILDING.md) the site.

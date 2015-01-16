@@ -8,7 +8,7 @@
         {{ contents|safe }}
         <ul class="news-list list-clean">
         {% for news_item in news %}
-          {% if loop.index <= 10 %}
+          {% if loop.index <= 20 %}
               <li class="media">
                 <a class="pull-left" href="{{m.link(news_item.preserved)}}"><img class="media-object" src="{{ news_item.thumbnail }}" alt="{{news_item.thumbalt}}">
                 </a>

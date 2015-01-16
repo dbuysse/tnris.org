@@ -28,7 +28,7 @@ Compare common <a href="http://landsat.usgs.gov/L8_band_combos.php">band combina
 Scene footprints that cover Texas are shown in the map. Every scene, or path/row designation, is imaged **every 16 days** by Landsat 8. Image products are available **within 12 hours** of data reception.
 ![Scene Footprints of Texas](images/updates/2013/landsat-8/TX_WRS2_graphic_v2.jpg) 
 
-**Download** the [Texas Landsat path/row shapefile](static/documents/misc/landsat-8/Landsat_WRS2_TX.zip).
+**Download** the Texas Landsat path/row shapefile: [Landsat_WRS2_TX.zip)](static/documents/misc/landsat-8/Landsat_WRS2_TX.zip).
 
 Further information about the [Worldwide Reference System-2](http://landsat.gsfc.nasa.gov/about/wrs.html).
 
@@ -53,12 +53,12 @@ Landsat 8 path 25 row 39 | 5/13/2013 | Natural color bands 432 (left) and color 
 
 ### East Beltway 8 at US 90 in Houston
 Landsat 8 path 25 row 39 | 5/13/2013 | False color bands 753 | 30m pixel resolution (left), pansharpened 15m pixel resolution (right)
-<img src="images/updates/2013/landsat-8/HoustonHwy_b753_p25r39_20130513_15m.jpg" alt="East Beltway 8 at US 90 in Houston, Full Description below" />
+![East Beltway 8 at US 90 in Houston, Full Description below](images/updates/2013/landsat-8/HoustonHwy_b753_p25r39_20130513_15m.jpg)
 
 
 ### Prairie Dog Town Fork of the Red River in Palo Duro Canyon
 Landsat 8 path 30 row 36 | 6/1/2013 | False color bands 753 | 30m pixel resolution
-<img src="images/updates/2013/landsat-8/Panhandle_b753_p30r36_20130601.jpg" alt="Prairie Dog Town Fork of the Red River in Palo Duro Canyon" />
+![Prairie Dog Town Fork of the Red River in Palo Duro Canyon](images/updates/2013/landsat-8/Panhandle_b753_p30r36_20130601.jpg)
 
 ### Brownsville and Matamoros
 The City of Brownsville near the Texas coastline and the City of Matamoros in Mexico, north and south of the Rio Grande respectively
@@ -75,4 +75,4 @@ Landsat 8 path 26 row 42 | 5/4/2013 | Natural color bands 432 (left) and color i
 </figure>
 
 ## Timelapse of El Paso Landsat starting in 1973
-<iframe width="700" height="400" src="http://www.youtube.com/embed/trigz-oDxFo?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="400" src="http://www.youtube.com/embed/trigz-oDxFo?rel=0" frameborder="0" allowfullscreen></iframe>

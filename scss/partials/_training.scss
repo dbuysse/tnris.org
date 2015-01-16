@@ -24,59 +24,58 @@ h1 {
 }
 
 #training {
-  
   .btn-lg {
     font-size: 26px;
     margin-right: 10%;
     margin-top: 30px;
+  } 
+}
+
+.training-list {
+
+  .training-header {
+    background: $lightgrey;
+    line-height: normal;
   }
 
-  .training-list {
+  .head {
+    background: $tnrisblue;
+    color: $white;
+    font-weight: 300;
+    padding: 5px;
+  }
 
-    .training-header {
-      background: $lightgrey;
-      line-height: normal;
-    }
+  div>div {
+    padding: 5px;
+    vertical-align: top;
 
-    .head {
-      background: $tnrisblue;
-      color: $white;
-      font-weight: 300;
-      padding: 5px;
-    }
-
-    div>div {
-      padding: 5px;
-      vertical-align: top;
-
-      .course-date {
-        strong {
-          text-transform: uppercase;
-        }
+    .course-date {
+      strong {
+        text-transform: uppercase;
       }
     }
+  }
 
-    .course-info {
-      font-size: 14px;
-    }
+  .course-info {
+    font-size: 14px;
+  }
 
+  .course-description {
+    border-bottom: 1px solid $lightergrey;
+    padding-bottom: 30px;
+  }
+
+  &:last-child {
     .course-description {
-      border-bottom: 1px solid $lightergrey;
-      padding-bottom: 30px;
-    }
-
-    &:last-child {
-      .course-description {
-        td {
-          border-bottom: 0;
-        }
+      td {
+        border-bottom: 0;
       }
     }
+  }
 
-    h3 {
-      font-size: 22px;
-      margin-top: 0;
-    }
+  h3 {
+    font-size: 22px;
+    margin-top: 0;
   }
 }
 
@@ -124,32 +123,32 @@ h1 {
   .panel-body {
     border: 0;
   }
+}
 
-  .collapse {
-    display: block !important;
-    max-height: 200px !important;
-    overflow: hidden;
-    position: relative;
-    visibility: visible !important;
+.collapse {
+  display: block !important;
+  max-height: 200px !important;
+  overflow: hidden;
+  position: relative;
+  visibility: visible !important;
 
-    &.in {
-      max-height: none !important;
-
-      .white-fade {
-        display: none;
-      }
-    }
+  &.in {
+    max-height: none !important;
 
     .white-fade {
-      @include background-image(linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)));
-      bottom: 0;
-      display: block;
-      height: 150px;
-      position: absolute;
-      width: 100%;
+      display: none;
     }
   }
 }
+
+.white-fade {
+  @include background-image(linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)));
+  bottom: 0;
+  display: block;
+  height: 150px;
+  position: absolute;
+  width: 100%;
+} 
 
 // More Specifit training entry page */
 

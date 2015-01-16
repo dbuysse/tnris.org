@@ -35,7 +35,7 @@ Landsat 5 path 30 row 38, 11/3/2011, False color bands 742
 ### Center-Pivot Irrigation in Collingsworth County
 Landsat 5 path 29 row 36, 8/24/2011, False color bands 742
 
-![Landsat of Center-Pivot Irrigation in Collingsworth County](images/updates/2013/landsat-launch/midland_landsat_2.JPG)
+![Landsat of Center-Pivot Irrigation in Collingsworth County](images/updates/2013/landsat-launch/pivots_landsat.jpg)
 
 ### Bastrop County Complex Wildfire Burn Scar
 Landsat 5 path 27 row 39, 9/11/2011, False color bands 743

@@ -4,23 +4,17 @@
 
 .media {
 
-	&.horizontal {
+  &.horizontal {
 
-		h4.media-heading {
-			font-size: 24px;
-		}
+    h4.media-heading {
+      font-size: 24px;
+    }
 
-		@media (min-width: $screen-xs) {
+    @media (min-width: $screen-xs) {
 
-			&:first-child {
-				border-right: 1px solid $midgrey;
-			}
-		}
-	}
-
-	.media-left {
-		img {
-			width: 100px;
-		}
-	}
+      &:first-child {
+        border-right: 1px solid $midgrey;
+      }
+    }
+  }
 }

@@ -27,20 +27,14 @@ tags: stratmap, hpids
 <h2>Data Access</h2>
 <p>The 2014 Smith County orthoimagery are available for streaming through the TNRIS Imagery WMS.</p>
 <p><strong>To access the services in ArcGIS you can use the following URL:</strong></p>
-<div id="shareLinkContainer" style="display: block;">
-<div id="shareLinkBox">
+
 <div class="input-group copy-url-container">
-<input class="wms-url copy-url-input form-control" type="text" readonly
-value="r.tnris.org/arcgis/services/HPIDS/HPIDS_Smith_2014_NC/ImageServer/WMSServer">
-
-<span class="input-group-btn">
-<button class="btn btn-info copy-url-btn" type="button">
-<i class="fa fa-clipboard"></i> Copy
-</button>
-</span>
-</div>
-
-</div>
+  <span class="input-group-btn">
+    <button class="btn btn-tnris copy-url-btn" type="button">
+      <i class="fa fa-clipboard"></i> Copy URL
+    </button>
+  </span>
+  <input class="wms-url copy-url-input form-control" type="text" readonly value="r.tnris.org/arcgis/services/HPIDS/HPIDS_Smith_2014_NC/ImageServer/WMSServer">
 </div>
 <p>Additionally, the orthoimagery files (GeoTIFF, MrSID, JPEG2000) are in the public domain and available from the TNRIS Research and Distribution Center at a nominal fee for the cost of reproduction.</p>
 <p> <a href="{{ m.link('order-data') }}"  class="btn btn-tnris btn-lg">Order Data</a></p>

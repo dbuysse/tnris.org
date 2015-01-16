@@ -40,7 +40,6 @@
       height: 45px;
       border-right: none;
       box-shadow: 2px 2px 3px $midlightgrey;
-
       &:first-child {
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
@@ -57,11 +56,9 @@
         strong {
           font-weight: 500;
         }
-
         @media (min-width: $screen-lg-min) {
           font-size: 28px;
         }
-
         & + .col-xs-5ths {
           @media (max-width: $screen-sm-max) {
             border-top-left-radius: 5px;
@@ -69,7 +66,6 @@
           }
         }
       }
-      
       &.list-group-item {
         margin: 0;
         padding: 0;
@@ -424,8 +420,8 @@
     li:last-child {
 
       @media (min-width: $screen-lg) {
-    		display: none;
-    	}
+        display: none;
+      }
     }
   }
 

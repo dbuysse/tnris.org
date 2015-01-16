@@ -7,7 +7,9 @@
  {% elseif abstract %}
   <meta name="description" content="{{abstract}}">
 {% endif %}
-<meta name="author" content="">
+{% if author %}
+  <meta name="author" content="{{author}}">
+{% endif %}
 
 <link rel="shortcut icon" href="favicon.ico">
 

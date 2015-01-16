@@ -40,6 +40,33 @@ Note that file names beginning with a date (yyyy-mm-dd) will get incorporated
 into the url.
 
 
+## Front matter
+
+At the top of any file is a section for special variables, called front
+matter. Front matter is enclosed in two lines that contain just `---`. It looks
+like this:
+
+```
+---
+title: 2015 Statewide Orthoimagery Project
+template: 2015-ortho-page.html
+mainimage: images/statewide-orthoimagery/ortho_flag_lg.jpg
+status_image: images/statewide-orthoimagery/weekly-updates/statusimage-jan8.jpg
+status_image_preview: images/statewide-orthoimagery/weekly-updates/statusimage-jan8-sm.jpg
+status_date: January 8th, 2015
+abstract:
+    A collaborative initiative to capture high-quality, leaf-off imagery for the entire state, slated for public release in Winter 2015.
+---
+```
+
+Every page will need to have `title` and `template` defined, but a lot of pages
+will have additional variables as well. The `title` should be pretty short - is
+used for things like displaying the name of the page in search engine results.
+The `template` is tells the site which of the templates to use to generate the
+full HTML for the page. Templates are found in the `templates/` directory,
+but in most cases you won't need to worry about editing templates.
+
+
 ## Workflow
 
 A step-by-step workflow for making changes.

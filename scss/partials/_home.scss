@@ -34,31 +34,36 @@
     &.list-group {
       margin-bottom: 5px;
     }
+
     li {
       list-style: none;
       background: white;
       height: 45px;
       border-right: none;
       box-shadow: 2px 2px 3px $midlightgrey;
+
       &:first-child {
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
         background: $darkgrey;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        color: $midgrey;
+        height: 40px !important;
+        font-family: $pragmatica;
+        font-size: 24px;
+        font-weight: 300;
         list-style: none;
         margin-top: 0;
-        color: $midgrey;
-        font-weight: 300;
-        text-align: center;
-        font-size: 24px;
         padding: 0;
-        font-family: $pragmatica;
-        height: 40px !important;
+        text-align: center;
+
         strong {
           font-weight: 500;
         }
+
         @media (min-width: $screen-lg-min) {
           font-size: 28px;
         }
+
         & + .col-xs-5ths {
           @media (max-width: $screen-sm-max) {
             border-top-left-radius: 5px;
@@ -66,9 +71,11 @@
           }
         }
       }
+
       &.list-group-item {
         margin: 0;
         padding: 0;
+        border-bottom: 0;
 
         a {
           display: block;
@@ -87,9 +94,10 @@
         }
 
         &.social-front {
-          font-family: $pragmatica;
           background: $lightblue;
-          text-align: center;
+          font-family: $pragmatica;
+          text-align: center;          
+          border-bottom: 1px solid $midgrey;
 
           @media (min-width: $screen-sm-min) {
             height: 45px;
@@ -124,19 +132,23 @@
           }
         }
       }
+
       @media (min-width: $screen-md-min) {
         height: 60px;
         border-right: 1px solid #dddddd;
       }
+
       @media (min-width: $screen-lg-min) {
         height: 70px;
       }
+
       &:first-child {
         @media (max-width: $screen-xs-max) {
           border-top-right-radius: 0;
           border-bottom-left-radius: 5px;
         }
       }
+
       &:last-child {
         @media (max-width: $screen-sm-max) {
           border-top-right-radius: 5px;
@@ -144,11 +156,13 @@
           border-right: 1px solid #dddddd;
         }
       }
+
       &.wms-width {
         @media (max-width: $screen-md) {
           width: 23%;
         }
       }
+
       a {
         font-family: $pragmatica;
         font-weight: 500;
@@ -163,20 +177,29 @@
         @media (min-width: $screen-sm-min) {
           font-size: 16px;
         }
+        @media (min-width: $screen-md-min) {
+          font-size: 20px;
+        }
         @media (min-width: $screen-lg-min) {
           font-size: 22px;
         }
+
         &:hover {
           text-decoration: none;
         }
+
         em {
           font-weight: 500;
-          line-height: 5px;
-          display: inline;
-          line-height: 1em !important;
           width: 100%;
           font-style: normal;
+          display: inline;
+
+          @media (min-width: $screen-lg-min) {
+            display: block;
+            line-height: 18px;
+          }
         }
+
         .quick-nav-text {
           @include vertical-align;
           position: absolute;
@@ -192,14 +215,14 @@
             padding-left: 50px;
           }
         }
+
         .iconContainer {
           @include vertical-align;
-
-          position: absolute;
           background: none;
+          font-size: 16px;
           margin-left: 0;
           margin-right: 5px;
-          font-size: 16px;
+          position: absolute;
 
           @media (min-width: $screen-sm-min) {
             font-size: 18px;
@@ -213,36 +236,45 @@
             margin-left: 10px;
           }
         }
+
         &.catalog-quick {
           color: $darkish;
           &:hover {
             color: black;
           }
         }
+
         &.downloaddata-quick {
           color: $auburn;
           &:hover {
             color: $auburnoutline;
           }
         }
+
         &.orderdata-quick {
           color: $successgreen;
           &:hover {
             color: $successhover;
           }
         }
+
         &.wms-quick {
           color: $tnrisblue;
           &:hover {
             color: $darkerblue;
           }
         }
+
         small {
-          font-family: $proxima;
-          font-weight: 300;
           color: $darkgrey;
           display: block;
+          font-family: $proxima;
           font-size: 14px;
+          font-weight: 300;
+
+          @media (min-width: $screen-md) {
+            font-size: 16px;
+          }
         }
       }
     }

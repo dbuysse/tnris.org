@@ -39,46 +39,6 @@ h2 {
   max-width: 750px;
 }
 
-/* pull quotes for articles */
-.pull-quote {
-  background: $lightgrey;
-  color: $tnrisblue;
-  font-family: $pragmatica;
-  font-size: 25px;
-  line-height: normal;
-  margin: 20px;
-  margin-top: 5px;
-  max-width: 40%;
-  padding: 30px;
-
-  &:before {
-    content: open-quote; 
-  }
-  &:after  { 
-    content: close-quote;
-  }
-
-  &.right {
-    float: right;
-    margin-left: 25px;
-    margin-right: 0;
-
-    @media (min-width: $screen-lg){
-      margin-right: -40px;
-    }
-  }
-
-  &.left {
-    float: left;
-    margin-left: 0;
-    margin-right: 25px;
-
-    @media (min-width: $screen-lg){
-      margin-left: -40px;
-    }
-  }
-}
-
 /* for skip links */
 #contentMain {
   background: white;
@@ -110,18 +70,6 @@ h2 {
   }
 }
 
-/* tag styling */
-.tag {
-  border-radius: 10px;
-  padding: 0 10px;
-  background: $sky;
-  border: 1px solid $tnrisblue;
-  font-weight: 600;
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 /* push footer to bottom of page */
 #wrap-outer {
   min-height: 100%;
@@ -134,12 +82,12 @@ h2 {
 
 .footer {
   background: $darkgrey;
-   color: $lightgrey;
-  z-index: 500;
-  position: relative;
-  margin-top: -$footer-height;
+  clear: both;
+  color: $lightgrey;
   min-height: $footer-height;
-  clear:both;
+  margin-top: -$footer-height;
+  position: relative;
+  z-index: 500;
 
   a {
     color: $lightergrey;
@@ -147,30 +95,48 @@ h2 {
       border: 0;
     }
   }
+
   .accessibility {
     background: $darkish;
     font-size: 12px;
     text-align: center;
     padding-top: 5px;
   }
+
   .copyright {
-    font-size: 11px;
+    bottom: 0;
+    font-size: 12px;
+    left: 0;
+    padding-bottom: 25px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
   }
+
+  .address-container {
+    font-size: 14px;
+
+    p {
+      margin-top: 20px;
+    }
+  }
+
   .sitemap {
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
+
       li {
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 5px;
       }
     }
 
     h4 {
-
-    		color: $lightgrey;
-    	a {
+      color: $lightgrey;
+    	
+      a {
     		color: $lightgrey;
     	}
     }
@@ -179,6 +145,10 @@ h2 {
       color: $bsgrey;
     }
   }
+}
+
+address {
+  margin-bottom: 0;
 }
 
 author {
@@ -198,9 +168,6 @@ author {
     margin-bottom: 15px;
   }
 }
-
-/* Side notes for calling out things
--------------------------------------------------- */
 
 /* Base styles (regardless of theme) */
 .bs-callout {
@@ -491,3 +458,43 @@ ul.news-list {
       }
     }
   }
+
+// pull quotes for articles //
+.pull-quote {
+  background: $lightgrey;
+  color: $tnrisblue;
+  font-family: $pragmatica;
+  font-size: 25px;
+  line-height: normal;
+  margin: 20px;
+  margin-top: 5px;
+  max-width: 40%;
+  padding: 30px;
+
+  &:before {
+    content: open-quote; 
+  }
+  &:after  { 
+    content: close-quote;
+  }
+
+  &.right {
+    float: right;
+    margin-left: 25px;
+    margin-right: 0;
+
+    @media (min-width: $screen-lg){
+      margin-right: -40px;
+    }
+  }
+
+  &.left {
+    float: left;
+    margin-left: 0;
+    margin-right: 25px;
+
+    @media (min-width: $screen-lg){
+      margin-left: -40px;
+    }
+  }
+}

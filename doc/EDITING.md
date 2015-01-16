@@ -98,6 +98,20 @@ changes" button at the bottom when you are done.
 ![Animated .gif of entering edit mode](edit-file.gif?raw=true)
 
 
+#### Adding a new file
+
+If the page you want to create doesn't already exist, then just make a new file
+for it.
+
+It's probably best to copy the front matter from another similar page - for
+example: if you are adding a news article, find another news article and use
+its front matter as a starting point.
+
+
+![Animated .gif of adding a new file](add-file.gif?raw=true)
+
+
+
 ### Pull request
 
 When you are ready to publish your changes, make a pull request. A pull request

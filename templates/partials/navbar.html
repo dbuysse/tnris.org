@@ -22,7 +22,7 @@
     <nav class="collapse navbar-collapse bs-navbar-collapse navbar-inverse" role="navigation">
       <ul class="nav navbar-nav">
         <li {% if id === 'maps-and-data' %}class="active"{% endif %}>
-          <a href="{{m.link('maps-and-data')}}">Maps &amp; Data</a>
+          <a class="maps-data-link" href="{{m.link('maps-and-data')}}">Maps &amp; Data</a>
         </li>
         <li class="dropdown navbar-inverse {% if id === 'stratmap' || id === 'training' || id === 'hpids' %}active{% endif %}">
           <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown"><i class="fa fa-tasks"></i> Programs</a>

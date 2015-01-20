@@ -11,7 +11,8 @@ fullimage: images/data-spotlights/upper-devils-river-watershed.jpg
 
 TNRIS staff created this image to illustrate the Upper Devil's River watershed, which spans across more than 3500 square miles and covers parts of Crockett, Shleicher, Sutton and Val Verde County.
 
-## What data is used?
+## Where Did the Data Come From?
+
 The watershed is represented by the [USGS Water Shed Boundaries Dataset (WBD)](data-catalog/hydrography/watershed-boundaries) Upper Devil’s River Huc 8 sub-basin.
 {{macros.catalog_data_card('hydrography/watershed-boundaries')}}
 

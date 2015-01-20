@@ -17,8 +17,8 @@ ramp with low lying areas in blue and higher elevations in red.  Various
 abandoned channels of the Sabine River can be seen here by the numerous oxbow
 lakes.
 
+## Where Did the Data Come From?
 
-## Data Access
 The TNRIS 2011 50cm LiDAR data was used to generate this image.
 
 {{m.catalog_data_card('elevation-lidar/tnris-2011-50cm')}}

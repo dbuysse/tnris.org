@@ -14,7 +14,7 @@ Interesting details include the absence of San Antonio's major highway system th
 
 The Alamo complex is found in the middle right portion of the image.
 
-## Data Access
+## Where Did the Data Come From?
 
 This is part of our historical archive. Please contact the RDC through our [order form](order-data) to inquire about this imagery and more.
 

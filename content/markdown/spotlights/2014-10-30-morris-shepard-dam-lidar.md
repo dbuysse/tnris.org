@@ -18,7 +18,8 @@ From [Wikipedia](http://en.wikipedia.org/wiki/Possum_Kingdom_Lake):
 
 The dam was completed in 1942 as a project of the Brazos River Authority and the Works Progress Administration. It stretches 820 meters in length and rises 58 meters in height.
 
-## What Data Is Used?
+## Where Did the Data Come From?
+
 This LiDAR data is from the [FEMA 2013 60cm](data-catalog/elevation-lidar/fema-2013-60cm) dataset.
 
 {{macros.catalog_data_card('elevation-lidar/fema-2013-60cm')}}

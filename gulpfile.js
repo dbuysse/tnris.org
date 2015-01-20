@@ -371,7 +371,9 @@ gulp.task('dist-metal', function () {
         .use(templates({
           engine: 'swig'
         }))
-        .use(sitemap())
+        .use(sitemap({
+          hostname: 'http://tnris.org'
+        }))
       )
     .pipe(gulpif(production, gulp.dest(dirs.tmp), gulp.dest(dirs.dist)));
 });

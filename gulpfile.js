@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var debug = require('debug')('tnris-site');
 var del = require('del');
 var extend = require('extend');
 var gulp = require('gulp');
@@ -21,6 +22,7 @@ var replace = require('metalsmith-replace');
 var sass = require('gulp-ruby-sass');
 var scapegoat = require('scapegoat');
 var scsslint = require('gulp-scss-lint');
+var sitemap = require('metalsmith-sitemap');
 var swig = require('swig');
 var templates = require('metalsmith-templates');
 var useref = require('gulp-useref');
@@ -136,6 +138,11 @@ function parseCSV(options) {
     if (options.titleKey) {
       file.title = file[options.titleKey];
     }
+   
+    //add a stats object to each file based on the stats of the source csv file
+    //the stats objects are used by the sitemap plugin
+    file.stats = fs.statSync(path);
+    debug(file.stats);
 
     if (files[data.filename]) {
       console.log("WARNING: Page '" + data.filename + "' generated from " + options.path + ", but it already exists. This indicates a likely url collision and/or overwriting an existing page.");
@@ -364,6 +371,7 @@ gulp.task('dist-metal', function () {
         .use(templates({
           engine: 'swig'
         }))
+        .use(sitemap())
       )
     .pipe(gulpif(production, gulp.dest(dirs.tmp), gulp.dest(dirs.dist)));
 });

@@ -216,7 +216,7 @@ gulp.task('webserver', ['dist-dev'],  function() {
 
 gulp.task('dist', ['dist-production']);
 gulp.task('dist-dev', ['dist-fonts', 'dist-metal', 'dist-scss', 'dist-static']);
-gulp.task('dist-production', ['set-production', 'dist-dev', 'dist-useref']);
+gulp.task('dist-production', ['set-production', 'dist-dev', 'dist-useref', 'dist-production-sitemap']);
 
 gulp.task('set-production', function () {
   production = true;
@@ -313,11 +313,11 @@ gulp.task('dist-metal', function () {
             file.id = '_' + file.id;
           }
         }))
+        .use(autodate('YYYY-MM-DD'))
         .use(collector({
           pattern: '*.md',
           ignore: ['training']
         }))
-        .use(autodate('YYYY-MM-DD'))
         .use(each(function(file, filename) {
           file.contents = '{%- import "_macros.html" as m -%}\n' + file.contents;
         }))
@@ -374,6 +374,12 @@ gulp.task('dist-metal', function () {
         .use(sitemap())
       )
     .pipe(gulpif(production, gulp.dest(dirs.tmp), gulp.dest(dirs.dist)));
+});
+
+gulp.task('dist-production-sitemap', ['dist-metal'], function () {
+  var sitemap_file = path.join(dirs.tmp, 'sitemap.xml');
+  return gulp.src(sitemap_file)
+    .pipe(gulp.dest(dirs.dist));
 });
 
 gulp.task('dist-scss', function () {

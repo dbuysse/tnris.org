@@ -38,10 +38,11 @@
             <phone>512-463-7104</phone></p>
           </div>
       </div>
-      <h3>Status updates</h3>
-      <p><em>as of</em><date> {{ status_date }}</p>
+      <h2><small>Updates for week of</small><br>{{ status_date }}</h2>
+        <h3>Latest Flightline Status Map</h3>
       <a href="#status-image" data-toggle="modal">
         <img class="img-responsive" src="{{ status_image_preview }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
+        <small class="pull-right"><span class="glyphicon glyphicon-search"></span> Click for larger view</small>
       </a>
 
 
@@ -62,6 +63,7 @@
         </div>
       </div>
 
+      {% include "./partials/ortho-update.html" %}
     
     {% endblock rightContent %}
   </div>

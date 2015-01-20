@@ -313,11 +313,11 @@ gulp.task('dist-metal', function () {
             file.id = '_' + file.id;
           }
         }))
+        .use(autodate('YYYY-MM-DD'))
         .use(collector({
           pattern: '*.md',
           ignore: ['training']
         }))
-        .use(autodate('YYYY-MM-DD'))
         .use(each(function(file, filename) {
           file.contents = '{%- import "_macros.html" as m -%}\n' + file.contents;
         }))

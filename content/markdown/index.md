@@ -1,6 +1,6 @@
 ---
 template: index.html
 abstract:
-  Site for the Texas Natural Resources Information System, the geospatial
-  data clearinghouse for the state of Texas.
+  The Texas Natural Resources Information System is the geospatial data
+  clearinghouse for the State of Texas.
 ---

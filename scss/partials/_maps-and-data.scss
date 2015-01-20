@@ -19,6 +19,18 @@
   }
 }
 
+/* tag styling */
+.tag {
+  border-radius: 10px;
+  padding: 0 10px;
+  background: $sky;
+  border: 1px solid $tnrisblue;
+  font-weight: 600;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .description {
   font-weight: 300;
   font-size: 20px;

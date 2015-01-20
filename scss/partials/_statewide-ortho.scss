@@ -19,7 +19,20 @@
         @include background-image(linear-gradient(to top, rgba(11, 101, 143, 1),  rgba(255, 255, 255, 0)));
       }
     }
+  }
+
+  .blog-sidebar {
+    date {
+      text-transform: uppercase;
+    }
   } 
+
+  .modal-dialog {
+
+    @media (min-width: $screen-md) {
+      width: 800px;
+    }
+  }
 }
 
 
@@ -31,20 +44,20 @@
   }
 
   .orthobox {
-    position: absolute;
-    width: 68%;
     left: 30%;
+    position: absolute;
     top: 3%;
+    width: 68%;
 
     h2 {
-      margin: 0;
-      font-weight: 300;
       color: $darkgrey;
       font-size: 25px;
+      font-weight: 300;
+      margin: 0;
 
       strong {
-        font-weight: 500;
         font-size: 30px;
+        font-weight: 500;
       }
 
       @media (min-width: $screen-xs) {

@@ -62,11 +62,22 @@
         </div>
 
         <div class="col-xs-12 col-sm-8 col-md-12 training-front">
-          <h2><a href="{{m.link('training')}}">2015 GIS Training</a> <i class="fa fa-graduation-cap"></i></h2>
-          <p>Courses geared towards all skill levels, from beginner to advanced, offered at affordable prices.</p>
+          <h2><a href="{{m.link('training')}}">GIS Training &amp; Education</a> <i class="fa fa-graduation-cap"></i></h2>
+          <div class="training-extra">
+            <a href="http://training.esri.com/gateway/index.cfm?fa=seminars.viewDetails&course_id=230"> 
+              <img alt="Thumb for Web Appbuilder ArcGIS link" src="images/front-page/webappbuilder_th.jpg">
+              <p>
+                <small>ESRI Live Training</small><br>
+                <strong>FREE Web AppBuilder Seminar</strong>
+                <br>Thursday, Jan. 22
+              </p>
+            </a>
+          </div>
+          <h3><a href="{{m.link('training')}}">Upcoming courses</a></h3> 
+          <p>Classes geared towards all skill levels, from beginners to advanced, offered at affordable prices.</p>
           <ul class="list-clean">
             {% for event in training %}
-              {% if loop.index <= 6 %}
+              {% if loop.index <= 4 %}
               <li><time>{{event.date}}</time><h4><a href="{{m.link(event.path)}}">
                 {{event.class_title}}</a></h4>
               </li>

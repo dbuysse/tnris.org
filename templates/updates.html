@@ -31,22 +31,24 @@
       {% if pagination %}
         <nav>
           <ul class="pager">
-            {% set prev_num = pagination.num - 1 %}
-            {% set next_num = pagination.num + 1 %}
-            <li {% if pagination.num == 1 %}class="disabled"{% endif %}>
-              {% if prev_num == 1%}
-              <a href="/updates">
-              {% else %}
-              <a href="/updates-{{prev_num}}">
-              {% endif %}
-                <span aria-hidden="true">&larr;</span> Newer
-              </a>
-            </li>
-            <li {% if pagination.num == pagination.total %}class="disabled"{% endif %}>
-              <a href="/updates-{{next_num}}">
-                Older <span aria-hidden="true">&rarr;</span>
-              </a>
-            </li>
+            {% if pagination.prev %}
+              <li>
+                <a href="/{{ pagination.prev.path }}">
+                  <span aria-hidden="true">&larr;</span> Newer
+                </a>
+              </li>
+            {% else %}
+              <li class="disabled"><a href="#"><span aria-hidden="true">&larr;</span> Newer</a></li>
+            {% endif %}
+            {% if pagination.next %}
+              <li>
+                <a href="/{{ pagination.next.path }}">
+                  Older <span aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+            {% else %}
+              <li class="disabled"><a href="#">Older <span aria-hidden="true">&rarr;</span></a></li>
+            {% endif %}
           </ul>
         </nav>
       {% endif %}

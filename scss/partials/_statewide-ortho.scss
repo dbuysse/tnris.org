@@ -23,7 +23,14 @@
     }
   }
 
-// Custom Masthead title BG */
+// Image expand //
+// .img-responsive.img-expand {
+//   @media (min-width: $screen-md) {
+//     max-width: none;
+//   }
+// }
+
+// Custom Masthead title BG //
   .container-fluid.full {
     margin-bottom: 0;
     .top-container {
@@ -183,19 +190,17 @@ ul.dash li:before {
 
 // updates header //
 .updates-header {
-  background: $darkgrey;
+  background: $midlightgrey;
   margin: 0;
   padding: 10px 0;
 
   h2 {
+    color: $darkgrey;
+    font-weight: 100;
     margin: 0;
     padding: 0;
-    color: $white;
 
     strong {
-      color: $midgrey;
-      font-size: 30px;
-      font-weight: 300;
     }
   }
 }
@@ -247,12 +252,21 @@ ul.dash li:before {
   }
 }
 
+.level-four::-webkit-progress-value {
+  background: #b8df48;
+}
+
+.level-four::-moz-progress-bar {
+  background: #b8df48;
+}
+
+
 .level-three::-webkit-progress-value {
-  background: $successgreen;
+  background: #eace23;
 }
 
 .level-three::-moz-progress-bar {
-  background: $successgreen;
+  background: #eace23;
 }
 
 .level-two::-webkit-progress-value {
@@ -264,23 +278,29 @@ ul.dash li:before {
 }
 
 .level-one::-webkit-progress-value {
-  background: $yield;
+  background: $error;
 }
 
 .level-one::-moz-progress-bar {
-  background: $yield;
+  background: $error;
 }
+
+
 
 // Color Level Classes //
 .level-zero {
   color: $error;
 }
 
-.level-one, .level-two  {
+.level-one {
+  color: #ffc3c3;
+}
+
+.level-two  {
   color: #fff4c3;
 }
 
 .level-three {
-  color: $successgreen;
+  color: $orange;
 }
 

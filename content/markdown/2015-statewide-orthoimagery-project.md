@@ -31,7 +31,7 @@ progress_5: 0
 
 <p class="lead">A generalized timeline for project goals and deliverables.</p>
 
-<img class="img-responsive" src="/images/statewide-orthoimagery/timeline_2.jpg" alt="A timeline showing project milestones and estimated dates of completion">
+<img class="img-responsive img-expand" src="/images/statewide-orthoimagery/timeline_2.jpg" alt="A timeline showing project milestones and estimated dates of completion">
 
 ## Contributors
 
@@ -39,13 +39,13 @@ progress_5: 0
 
 They are the [Texas Department of Transportation](http://www.txdot.gov), the [Texas Commission on Environmental Quality](http://www.tceq.state.tx.us), the [Railroad Commission of Texas Surface Mining and Reclamation Division](http://www.rrc.state.tx.us), and the Texas [General Land Office](http://www.glo.texas.gov).
 
-<img class="img-responsive" src="/images/statewide-orthoimagery/statewide_contributors.jpg" alt="State Agencies who contributed to the orthoimagery collection">
+<img class="img-responsive img-expand" src="/images/statewide-orthoimagery/statewide_contributors.jpg" alt="State Agencies who contributed to the orthoimagery collection">
 
 <p class="lead">Five additional government agencies contributed funds toward select 1-foot or 6-inch BUY-UP areas.</p>
 
 They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages/default.aspx), the [Texas Parks and Wildlife Department](https://tpwd.texas.gov/), [University Lands](http://www.utlands.utsystem.edu/), the [San Antonio River Authority](https://www.sara-tx.org/), and the [City of Georgetown](https://georgetown.org/).
 
-<img class="img-responsive" src="/images/statewide-orthoimagery/buyup_contributors.jpg" alt="Organizations contributing to Buy-Up area">
+<img class="img-responsive img-expand" src="/images/statewide-orthoimagery/buyup_contributors.jpg" alt="Organizations contributing to Buy-Up area">
 
 ## Acquisition Season
 

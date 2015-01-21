@@ -1,5 +1,5 @@
 ---
-template: contact-general.html
+template: contact.html
 title: Contact Us
 ---
 

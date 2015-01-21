@@ -56,9 +56,10 @@
       <div ng-controller="FormController">
         <form name="form" role="form" novalidate ng-cloak>
 
-          {{form.select(
+          {{form.multi(
             "Reason",
             "reason for contacting",
+            "radio",
               [
               'TNRIS Data',
               'TNRIS Training',

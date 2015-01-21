@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tnris/site-mockup",
   "dependencies": {
+    "clog": "^0.1.6",
     "csv": "^0.4.0",
     "csv-streamify": "^1.0.0",
     "debug": "^2.1.1",

@@ -11,12 +11,25 @@
     height: 1px;
   }
 
+  h1 {
+    font-size: 30px; 
+    
+    @media (min-width: $screen-sm){
+      font-size: 40px;
+    }
+
+    @media (min-width: $screen-md){
+      font-size: 60px;
+    }
+  }
+
   // Custom Masthead title BG */
   .container-fluid.full {
+    margin-bottom: 0;
     .top-container {
       .top-header {
         background: none;
-        @include background-image(linear-gradient(to top, rgba(11, 101, 143, 1),  rgba(255, 255, 255, 0)));
+        @include background-image(linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(255, 255, 255, 0)));
       }
     }
   }
@@ -27,7 +40,7 @@
     }
 
     strong {
-      font-size: 28px;
+      font-size: 22px;
     }
   } 
 
@@ -149,3 +162,33 @@ ul.dash li:before {
     margin-left: -1em;
 }
 
+.ortho-top {
+  background: $lightgrey;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+
+  date {
+    text-transform: uppercase;
+  }
+
+  strong {
+    font-size: 28px;
+  }
+}
+
+// Color Level Classes //
+.level-zero {
+  color: $error;
+}
+
+.level-one {
+  color: $yield;
+}
+
+.level-two {
+  color: $orange;
+}
+
+.level-three {
+  color: $successgreen;
+}

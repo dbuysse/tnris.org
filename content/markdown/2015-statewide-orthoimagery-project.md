@@ -2,6 +2,7 @@
 title: 2015 Statewide Orthoimagery Project
 template: 2015-ortho-page.html
 mainimage: images/statewide-orthoimagery/ortho_flag_lg.jpg
+author: Gayla Mullins
 status_image: images/statewide-orthoimagery/weekly-updates/Weekly_Status_Report_010915.jpg
 status_image_preview: images/statewide-orthoimagery/weekly-updates/Weekly_Status_Report_010915_sm.jpg
 status_date: January 12th, 2015

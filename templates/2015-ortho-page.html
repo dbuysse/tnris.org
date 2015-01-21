@@ -17,6 +17,14 @@
       </div>
       </div>
 </div>
+
+<div class="ortho-top">
+  <div class="container">
+    <div class="row">
+        {% include "./partials/ortho-update.html" %}
+    </div>
+  </div>
+</div>
 {% endblock topcontent %}
 
 {% block contents %}
@@ -28,8 +36,18 @@
 
     {% block rightContent %}
       <div class="col-sm-4 blog-sidebar">
+        <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Project POC</h3>
+  </div>
+  <div class="panel-body">
+      <p>For further information or questions regarding this project, contact the project manager:<br>
+      <strong>{{ author }}</strong>, <a href="{{m.link('stratmap')}}">StratMap</a><br>
+      <phone>512-463-7104</phone></p>
+      </div>
+  </div>
 
-      {% include "./partials/ortho-update.html" %}
+
     
     {% endblock rightContent %}
   </div>

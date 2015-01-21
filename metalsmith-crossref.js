@@ -5,6 +5,7 @@ var glob = require('glob');
 var mkdirp = require('mkdirp');
 var path = require('path');
 var _ = require('lodash');
+var clog = require('clog');
 
 module.exports = crossref;
 
@@ -44,7 +45,7 @@ function crossref(options) {
 
       var urlKey = urlPath(key);
       if (crossref[urlKey]) {
-        console.log('Warning: ', 'crossref already exists for "' + urlKey + '"');
+        clog.warn('crossref already exists for "' + urlKey + '"');
       }
 
       crossref[urlKey] = urlPath(value);
@@ -55,7 +56,7 @@ function crossref(options) {
       if (options.outfile.split(path.sep).length > 1) {
         mkdirp(path.dirname(options.outfile), function (err) {
           if (err) {
-            console.error(err);
+            clog.error(err);
           }
           else {
             fs.writeFile(options.outfile, JSON.stringify(crossref), done);

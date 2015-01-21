@@ -1,6 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
+var clog = require('clog');
 var debug = require('debug')('tnris-site');
 var del = require('del');
 var each = require('metalsmith-each');
@@ -148,7 +149,7 @@ function parseCSV(options) {
     debug(file.stats);
 
     if (files[data.filename]) {
-      console.log("WARNING: Page '" + data.filename + "' generated from " + options.path + ", but it already exists. This indicates a likely url collision and/or overwriting an existing page.");
+      clog.warn("Page '" + data.filename + "' generated from " + options.path + ", but it already exists. This indicates a likely url collision and/or overwriting an existing page.");
     }
     files[data.filename] = file;
 
@@ -166,12 +167,12 @@ function urlPath(str) {
 
 function validateLink(str, crossref, filename) {
   if (!str) {
-    console.log('WARNING: ', "Invalid link: from " + filename);
+    clog.warn("Invalid link: from " + filename);
     return '#';
   }
   var ref = urlPath(str);
   if (!crossref[ref]) {
-    console.log('WARNING: ', "Invalid link: " + str + " (" + ref + ") from " + filename);
+    clog.warn("Invalid link: " + str + " (" + ref + ") from " + filename);
     return '#';
   }
   return crossref[ref];
@@ -291,7 +292,7 @@ gulp.task('dist-metal', function () {
               if (exists) {
                 file[image_type.name + '_url'] = filename;
               } else if (image_type.always) {
-                console.log("Warning: Could not find required image for data catalog entry - " + staticPath);
+                clog.warn("Could not find required image for data catalog entry - " + staticPath);
               }
             });
 

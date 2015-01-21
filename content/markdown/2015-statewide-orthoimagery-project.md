@@ -14,7 +14,7 @@ updates:
   - Season 4 was opened for acquisition on 1/12. All Seasons are now open for acquisition.
   - University Lands West Texas 6-inch BUY-UP areas opened for acquisition on 1/12.
   - In-person project updates will be given at the next GIS Community Meeting on 1/20.
-progress_1: 37
+progress_1: 43
 progress_2: 25
 progress_3: 10 
 progress_4: 0

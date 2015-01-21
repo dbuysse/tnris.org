@@ -23,7 +23,7 @@
     }
   }
 
-  // Custom Masthead title BG */
+// Custom Masthead title BG */
   .container-fluid.full {
     margin-bottom: 0;
     .top-container {
@@ -31,6 +31,11 @@
         background: none;
         @include background-image(linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(255, 255, 255, 0)));
       }
+    }
+
+    a.btn {
+      text-shadow: none;
+      margin-bottom: 20px;
     }
   }
 
@@ -176,19 +181,104 @@ ul.dash li:before {
   }
 }
 
+// updates header //
+.updates-header {
+  background: $darkgrey;
+  margin: 0;
+  padding: 10px 0;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    color: $white;
+
+    small {
+      color: $midgrey;
+    }
+  }
+}
+
+
+// custom bar graph //
+.data-progress {
+
+  progress, progress[role] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: none;
+    background-size: auto;
+    height: 40px;
+    width: 100%;
+  }
+
+  progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+
+  p {
+    margin-left: 10px;
+  }
+}
+
+// The unordered list
+
+
+.status {
+  margin-bottom: 1em;
+  position: relative;
+
+  .amount {
+    float: right;
+    font-size: 1.7em;
+    margin-top: 7px;
+    position: absolute;
+    left: 10px;
+    top: 0;
+  }
+
+  ::-webkit-progress-value { 
+    -webkit-animation: bar-fill 2s;
+    width: 0px;
+  }
+}
+
+.level-three::-webkit-progress-value {
+  background: $successgreen;
+}
+
+.level-three::-moz-progress-bar {
+  background: $successgreen;
+}
+
+.level-two::-webkit-progress-value {
+  background: $orange;
+}
+
+.level-two::-moz-progress-bar {
+  background: $orange;
+}
+
+.level-one::-webkit-progress-value {
+  background: $yield;
+}
+
+.level-one::-moz-progress-bar {
+  background: $yield;
+}
+
 // Color Level Classes //
 .level-zero {
   color: $error;
 }
 
-.level-one {
-  color: $yield;
-}
-
-.level-two {
-  color: $orange;
+.level-one, .level-two  {
+  color: #fff4c3;
 }
 
 .level-three {
   color: $successgreen;
 }
+

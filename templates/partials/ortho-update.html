@@ -1,33 +1,50 @@
+
 <div class="col-sm-8">
-  <h2><small>Updates for the week of</small><br>{{ status_date }}</h2>
-  <h3>Project Announcements</h3>
-  <ul class="dash list-clean">
-    <li>
-      This project web page is now available!
-    </li>
-    <li>
-      Season 4 was opened for acquisition on 1/12. All Seasons are now open for acquisition.
-    </li>
-    <li>
-      University Lands West Texas 6-inch BUY-UP areas opened for acquisition on 1/12.
-    </li>
-    <li>
-      In-person project updates will be given at the next GIS Community Meeting on 1/20.
-    </li>
-  </ul>
+  <h3>Update Summary</h3>
+    <ul class="dash list-clean">
+    {% for update in updates %}
+      <li>{{ update }}</li>
+      {% endfor %}
+    </ul>
   <h3>Data Progress</h3>
-  <ul class="list-clean">
-    <li><strong class="level-two">37%</strong> of the state has been flown for 0.5-meter imagery</li>
-    <li><strong class="level-two">25%</strong> of the state has been surveyed for ground control</li>
-    <li><strong class="level-one">10%</strong> of the state has been begun initial image processing</li>
-    <li><strong class="level-zero">0%</strong> pilot data received</li>
-    <li><strong class="level-zero">0%</strong> final orthoimagery received</li>
+  <ul class="list-clean data-progress">
+    <li class="status">
+      <progress class="level-two" max="100" value="{{ progress_1 }}">
+      </progress> 
+        <h3 class="amount level-two">{{ progress_1 }}%</h3>
+      <p>of the state has been flown for 0.5-meter imagery</p>
+    </li>
+    <li class="status">
+      <progress class="level-two" max="100" value="{{ progress_2 }}">
+      </progress>
+        <h3 class="amount level-two">{{ progress_2 }}%</h3>
+        <p>of the state has been surveyed for ground control</p>
+    </li>
+    <li class="status">
+      <progress class="level-one" max="100" value="{{ progress_3 }}">
+      </progress> 
+        <h3 class="amount level-one">{{ progress_3 }}%</h3>
+      <p>of the state has been begun initial image processing</p>
+    </li>
+    <li class="status">
+      <progress class="level-zero" max="100" value="{{ progress_4 }}">
+      </progress>
+        <h3 class="amount level-zero">{{ progress_4 }}%</h3>
+      <p>of pilot data received</p>
+    </li>
+    <li class="status">
+      <progress class="level-zero" max="100" value="{{ progress_5 }}">
+      </progress>
+        <h3 class="amount level-zero">{{ progress_5 }}%</h3>
+      <p>of final orthoimagery received</p>
+    </li>
   </ul>
+        <a class="btn btn-default btn-lg" href="documents/2015-ortho-weekly-reports/{{latest_report}}"><span class="glyphicon glyphicon-file"></span> Download the latest full vendor report</a>
 </div>
 <div class="col-sm-4">
   <h3>Latest Flightline Status Map</h3>
   <a href="#status-image" data-toggle="modal">
-    <img class="img-responsive" src="{{ status_image_preview }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
+    <img class="img-responsive" src="images/statewide-orthoimagery/weekly-updates/{{ status_image_preview }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
     <small class="pull-right"><span class="glyphicon glyphicon-search"></span> Click for larger view</small>
   </a>
   <div class="modal fade" id="status-image" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -38,7 +55,7 @@
           <h3>Latest Flightline Status Map</h3>
         </div>
         <div class="modal-body">
-           <img class="img-responsive" src="{{ status_image }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
+           <img class="img-responsive" src="images/statewide-orthoimagery/weekly-updates/{{ status_image }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -46,4 +63,5 @@
       </div>
     </div>
   </div>
+
 </div>

@@ -13,14 +13,19 @@
             {% if abstract %}
               <div class="lead">{{abstract}}</div>
             {% endif %}
+            <a href="#a-statewide-resource" class="btn btn-default btn-lg smooth-scroll">More background about the project <i class="glyphicon glyphicon-chevron-right"></i></a>
           </div>
       </div>
       </div>
 </div>
-
+<div class="updates-header">
+  <div class="container">
+    <h2><small>Project Activity for the week of</small> {{ status_date }}</h2>
+  </div>
+</div>
 <div class="ortho-top">
   <div class="container">
-    <div class="row">
+    <div id="project-updates" class="row">
         {% include "./partials/ortho-update.html" %}
     </div>
   </div>
@@ -29,10 +34,9 @@
 
 {% block contents %}
 <div class="row">
-	<div class="col-md-8">
-		
-		{{ contents|safe }}
-</div>
+  	<div class="col-md-8">
+  		{{ contents|safe }}
+  </div>
 
     {% block rightContent %}
       <div class="col-sm-4 blog-sidebar">
@@ -46,7 +50,6 @@
       <phone>512-463-7104</phone></p>
       </div>
   </div>
-
 
     
     {% endblock rightContent %}

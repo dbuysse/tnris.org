@@ -2,18 +2,33 @@
 title: 2015 Statewide Orthoimagery Project
 template: 2015-ortho-page.html
 mainimage: images/statewide-orthoimagery/ortho_flag_lg.jpg
-author: Gayla Mullins
-status_image: images/statewide-orthoimagery/weekly-updates/Weekly_Status_Report_010915.jpg
-status_image_preview: images/statewide-orthoimagery/weekly-updates/Weekly_Status_Report_010915_sm.jpg
-status_date: January 12th, 2015
 abstract: 
-    A collaborative initiative to capture high-quality, leaf-off imagery for the entire state, slated for public release in Winter 2015. 
+    A collaborative initiative to capture high-quality, leaf-off imagery for the entire state, slated for public release in Winter 2015.
+author: Gayla Mullins
+status_image: Weekly_Status_Report_010915.jpg
+status_image_preview: Weekly_Status_Report_010915_sm.jpg
+latest_report: 
+status_date: January 12th, 2015
+updates:
+  - This project web page is now available!
+  - Season 4 was opened for acquisition on 1/12. All Seasons are now open for acquisition.
+  - University Lands West Texas 6-inch BUY-UP areas opened for acquisition on 1/12.
+  - In-person project updates will be given at the next GIS Community Meeting on 1/20.
+progress_1: 37
+progress_2: 25
+progress_3: 10 
+progress_4: 0
+progress_5: 0
 ---
+## A Statewide Resource
 <p class="lead">The 2014-2015 Statewide Texas Orthoimagery Project fulfills the charge led by TNRIS to develop aerial imagery statewide as a base map resource for state, regional, and local government entities.</p>
 
-The project regularly acquires consistent and updated aerial imagery in order to develop geospatial products throughout Texas. These data are used to identify current conditions, features, and changes on the ground serving as a base of reference for other map information.
+<p class="lead">The project regularly acquires consistent and updated aerial imagery in order to develop geospatial products throughout Texas. These data are used to identify current conditions, features, and changes on the ground serving as a base of reference for other map information.</p>
+
+<p class="lead">Follow regular updates as we continue <a class="smooth-scroll" href="#project-updates">updating this page with weekly status reports</a> and other news.</p>
 
 ## Project Timeline
+
 <p class="lead">A generalized timeline for project goals and deliverables.</p>
 
 <img class="img-responsive" src="/images/statewide-orthoimagery/timeline_2.jpg" alt="A timeline showing project milestones and estimated dates of completion">

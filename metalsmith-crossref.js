@@ -28,12 +28,26 @@ function crossref(options) {
 
     Object.keys(files).forEach(function(filename){
       var file = files[filename];
+
       var key = file.preserved;
       var value = file.path;
       if (key === 'index') {
         value = './' + value;
       }
-      crossref[urlPath(key)] = urlPath(value);
+
+      //Handle paginated pages specially
+      //This has the effect of only creating the crossref for
+      // first file in paginated collection (it returns early otherwise)
+      if (file.pagination && file.pagination.prev) { 
+        return;
+      }
+
+      var urlKey = urlPath(key);
+      if (crossref[urlKey]) {
+        console.log('Warning: ', 'crossref already exists for "' + urlKey + '"');
+      }
+
+      crossref[urlKey] = urlPath(value);
     });
     metalsmith.data.crossref = crossref;
 

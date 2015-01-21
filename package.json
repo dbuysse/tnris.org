@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tnris/site-mockup",
   "dependencies": {
+    "clog": "^0.1.6",
     "csv": "^0.4.0",
     "csv-streamify": "^1.0.0",
     "debug": "^2.1.1",
@@ -45,6 +46,7 @@
     "metalsmith-each": "0.0.1",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-metadata": "0.0.1",
+    "metalsmith-paginate": "^0.3.0",
     "metalsmith-permalinks": "^0.3.2",
     "metalsmith-replace": "0.0.6",
     "metalsmith-sitemap": "0.0.9",

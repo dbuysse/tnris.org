@@ -1,22 +1,24 @@
 'use strict';
 
 var _ = require('lodash');
+var clog = require('clog');
 var debug = require('debug')('tnris-site');
 var del = require('del');
+var each = require('metalsmith-each');
 var extend = require('extend');
+var fs = require('fs');
 var gulp = require('gulp');
 var gulp_front_matter = require('gulp-front-matter');
 var gulpif = require('gulp-if');
 var gulpsmith = require('gulpsmith');
-var marked = require('marked');
-var markdown = require('metalsmith-markdown');
-var path = require('path');
-var each = require('metalsmith-each');
-var fs = require('fs');
 var lazypipe = require('lazypipe');
+var markdown = require('metalsmith-markdown');
+var marked = require('marked');
 var metadata = require('metalsmith-metadata');
 var minifyCss = require('gulp-minify-css');
 var ngAnnotate = require('gulp-ng-annotate');
+var paginate = require('metalsmith-paginate');
+var path = require('path');
 var permalinks = require('metalsmith-permalinks');
 var replace = require('metalsmith-replace');
 var sass = require('gulp-ruby-sass');
@@ -25,8 +27,8 @@ var scsslint = require('gulp-scss-lint');
 var sitemap = require('metalsmith-sitemap');
 var swig = require('swig');
 var templates = require('metalsmith-templates');
-var useref = require('gulp-useref');
 var uglify = require('gulp-uglify');
+var useref = require('gulp-useref');
 var vinylPaths = require('vinyl-paths');
 var webserver = require('gulp-webserver');
 
@@ -44,7 +46,9 @@ var production = false;
 swig.setDefaults({
   cache: false,
   loader: swig.loaders.fs(__dirname + '/templates'),
-  locals: {validateLink: validateLink}
+  locals: {
+    validateLink: validateLink
+  }
 });
 
 swig.setFilter('find', function (collection, key) {
@@ -145,7 +149,7 @@ function parseCSV(options) {
     debug(file.stats);
 
     if (files[data.filename]) {
-      console.log("WARNING: Page '" + data.filename + "' generated from " + options.path + ", but it already exists. This indicates a likely url collision and/or overwriting an existing page.");
+      clog.warn("Page '" + data.filename + "' generated from " + options.path + ", but it already exists. This indicates a likely url collision and/or overwriting an existing page.");
     }
     files[data.filename] = file;
 
@@ -163,12 +167,12 @@ function urlPath(str) {
 
 function validateLink(str, crossref, filename) {
   if (!str) {
-    console.log('WARNING: ', "Invalid link: from " + filename);
+    clog.warn("Invalid link: from " + filename);
     return '#';
   }
   var ref = urlPath(str);
   if (!crossref[ref]) {
-    console.log('WARNING: ', "Invalid link: " + str + " (" + ref + ") from " + filename);
+    clog.warn("Invalid link: " + str + " (" + ref + ") from " + filename);
     return '#';
   }
   return crossref[ref];
@@ -288,7 +292,7 @@ gulp.task('dist-metal', function () {
               if (exists) {
                 file[image_type.name + '_url'] = filename;
               } else if (image_type.always) {
-                console.log("Warning: Could not find required image for data catalog entry - " + staticPath);
+                clog.warn("Could not find required image for data catalog entry - " + staticPath);
               }
             });
 
@@ -318,7 +322,11 @@ gulp.task('dist-metal', function () {
           pattern: '*.md',
           ignore: ['training']
         }))
-        .use(each(function(file, filename) {
+        .use(paginate({
+          perPage: 10,
+          path: 'updates'
+        }))
+        .use(each(function(file) {
           file.contents = '{%- import "_macros.html" as m -%}\n' + file.contents;
         }))
         .use(markdown({
@@ -338,7 +346,7 @@ gulp.task('dist-metal', function () {
             }()),
           smartypants: false
         }))
-        .use(each(function(file, filename) {
+        .use(each(function(file) {
           file.urlEnd = file.withoutDate || file.preserved;
         }))
         .use(permalinks({

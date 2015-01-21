@@ -79,9 +79,12 @@
   font-weight: 300;
 
   &.maps-data-link {
-    background: url(../images/icons/folded-map-4.svg) 0 14px no-repeat;
-    background-size: 30px;
-    padding-left: 30px;
+    
+    @media (min-width: $screen-md) {
+      background: url(../images/icons/folded-map-4.svg) 0 14px no-repeat;
+      background-size: 30px;
+      padding-left: 30px;
+    }
 
     &:hover {
       background-position: 0 -24px;

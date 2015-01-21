@@ -417,6 +417,7 @@
 
   .training-front {
     border-left: 1px solid $midgrey;
+    font-size: 15px;
     padding-left: 15px;
 
     @media (min-width: $screen-md) {
@@ -425,18 +426,20 @@
       padding-right: 0;
     }
 
+    h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+      margin-top: 10px;
 
+      a {
+        color: $darkgrey;
+      }
+    }
 
     h4 {
-      margin-top: 0;
       font-size: 18px;
       margin-bottom: 20px;
-
-    }
-    
-    strong {
-      font-size: 14px;
-      font-weight: 100;
+      margin-top: 0;
     }
 
     a {
@@ -479,12 +482,59 @@
 
     img {
       float: right;
-      width: 125px;
       margin-left: 10px;
       padding-right: 5px;
+      width: 125px;
+
       @media (min-width: $screen-lg) {
         width: 150px;
       }
     }
+  }
+}
+
+// Custom Box under training //
+.training-extra {
+  a {
+    background: $lightgrey;
+    border: 1px solid $midgrey;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+
+    &:hover {
+      border-color: $tnrisblue;
+      box-shadow: 0 0 2px $tnrisblue;
+      text-decoration: none;
+    }
+
+    img {
+      float: left;
+      height: 100px;
+      margin-right: 5px;
+      width: 100px;
+
+      @media (min-width: $screen-md) and (max-width: $screen-lg) {
+        width: 125px;
+        height: 125px;
+        margin-left: -35px;
+      }
+    }
+
+    small {
+      color: $tnrisblue;
+    }
+
+    p {
+      color: $darkgrey;
+      font-family: $proxima;
+      margin: 0;
+
+      strong {
+        font-family: $pragmatica;
+        font-size: 18px;
+      }
+    }
+
   }
 }

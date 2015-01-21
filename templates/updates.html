@@ -6,7 +6,7 @@
     <div class="col-sm-7" id="updates-front">
       <h2>{{ title }}</h2>
       {{ contents|safe }}
-    
+
       <ul class="news-list list-clean">
         {% set pagination_end = pagination.end + 1 %}
         {% for news_item in news.slice(pagination.start, pagination_end) %}
@@ -18,7 +18,7 @@
                 <a href="{{m.link(news_item.preserved)}}">{{ news_item.title }}</a>
               </h3>
                <div class="byline">
-                by <author>{{ news_item.author }}<author> | <time>{{ news_item.date|date('F jS, Y') }}</time> 
+                by <author>{{ news_item.author }}<author> | <time>{{ news_item.date|date('F jS, Y') }}</time>
                </div>
                 <p>
                   {{ news_item.abstract | safe }}
@@ -33,7 +33,7 @@
           <ul class="pager">
             {% if pagination.prev %}
               <li>
-                <a href="/{{ pagination.prev.path }}">
+                <a href="{{ pagination.prev.path }}">
                   <span aria-hidden="true">&larr;</span> Newer
                 </a>
               </li>
@@ -42,7 +42,7 @@
             {% endif %}
             {% if pagination.next %}
               <li>
-                <a href="/{{ pagination.next.path }}">
+                <a href="{{ pagination.next.path }}">
                   Older <span aria-hidden="true">&rarr;</span>
                 </a>
               </li>

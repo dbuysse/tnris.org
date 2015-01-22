@@ -4,43 +4,53 @@
 /* Main */
 
 #dataSpot {
-  background: $darkgrey;
-  color: white;
-  margin-bottom: -30px;
+  padding-right: 0;
+  
   @media (min-width: $break-md) {
     margin-bottom: 0;
   }
+
   h2 {
+    background: $darkgrey;
     color: white;
     font-weight: 300;
-    margin-top: 10px;
+    margin: 0;
+    padding: 0 15px;
+    padding-top: 5px;
   }
+
   p.spotText {
+    background: $darkgrey;
+    color: white;
+    margin: 0;
+    padding: 5px 15px;
     font-size: 14px;
   }
 
   ul {
-    position: relative;
     margin-bottom: 0;
+    position: relative;
+
     li.media {
       margin-top: 0;
       position: relative;
       padding: 0;
       height: 170px;
       overflow: hidden;
-      @media (min-width: $break-md) {
-        margin: 0 -15px;
-      }
+
       @media (max-width: $break-lg) {
         height: 190px;
       }
+
       &:last-child {
         margin-bottom: 0;
       }
+
       img {
         position: absolute;
         width: 100%;
       }
+
       a {
         position: relative;
         display: block;
@@ -48,21 +58,23 @@
           text-decoration: none;
         }
       }
+
       h4 {
+        @include alpha-attribute("background-color", rgba($tnrisblue, 0.75), white);
+        color: white;
+        font-family: "pragmatica-web-condensed",sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        margin-top: 0;
+        max-width: 80%;
+        padding: 5px;
         position: absolute;
         text-shadow: 1px 1px 2px $facebook;
-        max-width: 80%;
-        @include alpha-attribute("background-color", rgba($tnrisblue, 0.75), white);
-        margin-top: 0;
-        color: white;
-        z-index: 1000;
-        font-weight: 300;
-        font-size: 16px;
-        margin-bottom: 0;
-        font-family: "pragmatica-web-condensed",sans-serif;
-        letter-spacing: 1px;
         text-transform: uppercase;
-        padding: 5px;
+        z-index: 1000;
+
         @media (max-width: $break-xs) {
           font-size: 18px;
         }

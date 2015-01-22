@@ -50,7 +50,8 @@
 
     <div id="front-sidebar" class="col-md-3 col-sm-12 col-md-pull-6">
       <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-12 around-state-front">
+        <div class="col-xs-12 col-sm-4 col-md-12">
+          <div class="around-state-front">
           <h2>Around the State <i class="fa fa-bullhorn"></i></h2>
           <img src="images/around-the-state/sterling_tx_th.png" alt="Sterling Harris, wearing a cowboy hat, in a thumbnail shaped like Texas">
 
@@ -61,22 +62,24 @@
           </p>
         </div>
 
-        <div class="col-xs-12 col-sm-8 col-md-12 training-front">
           <div class="extra-box">
             <a class="hcad-job" href="http://www.hcad.org/Resources/Jobs/JobDesc.asp?pnum=80051464"> 
-              <img alt="HCAD logo and link to job" src="images/front-page/hcad_logo.png">
-              <p>
-                <small>State of Texas GIS Jobs</small><br>
+              <div class="media-left"><img alt="HCAD logo and link to job" src="images/front-page/hcad_logo.png"></div>
+              <div class="media-body">
+                <small>GIS Job Opportunities</small>
                 <strong>GIS Programming Manager</strong>
-                <br>Houston County Appraisal District - HCAD
-              </p>
+                Houston County Appraisal District - HCAD
+              </div>
             </a>
           </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-12 training-front">
           <h2><a href="{{m.link('training')}}">GIS Training &amp; Education</a> <i class="fa fa-graduation-cap"></i></h2>
           <p>Classes geared towards all skill levels, from beginners to advanced, offered at affordable prices.</p>
           <ul class="list-clean">
             {% for event in training %}
-              {% if loop.index <= 4 %}
+              {% if loop.index <= 5 %}
               <li><time>{{event.date}}</time><h4><a href="{{m.link(event.path)}}">
                 {{event.class_title}}</a></h4>
               </li>

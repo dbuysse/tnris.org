@@ -36,23 +36,19 @@
     .top-container {
       .top-header {
         background: none;
-        @include background-image(linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(255, 255, 255, 0)));
+        @include background-image(linear-gradient(to top, rgba(50, 50, 50, 1),  rgba(255, 255, 255, 0)));
       }
     }
 
     a.btn {
       text-shadow: none;
-      margin-bottom: 20px;
+      margin-bottom: 35px;
     }
   }
 
   .blog-sidebar {
     date {
       text-transform: uppercase;
-    }
-
-    strong {
-      font-size: 22px;
     }
   } 
 
@@ -182,29 +178,29 @@ ul.dash li:before {
   date {
     text-transform: uppercase;
   }
-
-  strong {
-    font-size: 28px;
-  }
 }
 
 // updates header //
-.updates-header {
-  background: $midlightgrey;
-  margin: 0;
-  padding: 10px 0;
+// .updates-header {
+//   background: $lightgrey;
+//   margin: 0;
+//   padding: 10px 0;
 
-  h2 {
-    color: $darkgrey;
-    font-weight: 100;
-    margin: 0;
-    padding: 0;
+//   h2 {
+//     font-weight: 100;
+//     margin: 0;
+//     padding: 0;
+//   }
+// }
 
-    strong {
-    }
+h2.updates-header {
+  font-size: 25px;
+  font-weight: 100;
+
+  strong { 
+    font-size: 35px;
   }
 }
-
 
 // custom bar graph //
 .data-progress {

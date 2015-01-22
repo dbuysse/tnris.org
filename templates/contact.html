@@ -51,7 +51,7 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-6">
+  <div class="col-xs-12 col-sm-10 col-md-7">
     <div id="ng-app" ng-app="FormApp">
       <div ng-controller="FormController">
         <form name="form" role="form" novalidate ng-cloak>
@@ -61,19 +61,18 @@
             "reason for contacting",
             "radio",
               [
-              'TNRIS Data',
-              'TNRIS Training',
-              'Borderland Information Center',
-              'GEMSS',
               'General Inquiry',
-              'Floodplain Mapping',
-              'Strategic Mapping Program',
-              'Texas GIS Forum'
+              'Data Question',
+              'Education &amp; Training',
+              'Strategic Mapping Program (StratMap)',
+              'Texas GIS Forum',
+              'GEMSS',
+              'Borderland Information Center'
             ],
             true
           )}}
 
-          {% set show_software = "form_model['Reason'] == 'TNRIS Data'" %}
+          {% set show_software = "form_model['Reason'] == 'Data Question'" %}
             {{form.software_inputs(show_software)}}
 
           {{form.textarea(

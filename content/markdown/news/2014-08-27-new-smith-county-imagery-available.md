@@ -122,4 +122,3 @@ The new orthoimagery were acquired in early January 2014 during leaf-off conditi
 </div>
 <figcaption>Tyler Junior College  SCALE 1:830</figcaption>
 </figure>
-<figure>

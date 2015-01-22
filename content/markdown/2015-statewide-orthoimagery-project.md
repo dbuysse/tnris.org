@@ -35,13 +35,13 @@ progress_5: 0
 
 ## Contributors
 
-<p class="lead">Four state agencies contributed funds toward the BASE 0.5-meter statewide orthoimagery collection.</p>
+<p class="lead"><strong>Four state agencies</strong> contributed funds toward the BASE 0.5-meter statewide orthoimagery collection.</p>
 
 They are the [Texas Department of Transportation](http://www.txdot.gov), the [Texas Commission on Environmental Quality](http://www.tceq.state.tx.us), the [Railroad Commission of Texas Surface Mining and Reclamation Division](http://www.rrc.state.tx.us), and the Texas [General Land Office](http://www.glo.texas.gov).
 
 <img class="img-responsive img-expand" src="/images/statewide-orthoimagery/statewide_contributors.jpg" alt="State Agencies who contributed to the orthoimagery collection">
 
-<p class="lead">Five additional government agencies contributed funds toward select 1-foot or 6-inch BUY-UP areas.</p>
+<p class="lead"><strong>Five additional government agencies</strong> contributed funds toward select 1-foot or 6-inch BUY-UP areas.</p>
 
 They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages/default.aspx), the [Texas Parks and Wildlife Department](https://tpwd.texas.gov/), [University Lands](http://www.utlands.utsystem.edu/), the [San Antonio River Authority](https://www.sara-tx.org/), and the [City of Georgetown](https://georgetown.org/).
 
@@ -49,20 +49,32 @@ They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages
 
 ## Acquisition Season
 
-<p class="lead">All orthoimagery products are acquired during the leaf-off (fall/winter) season in TX.</p>
+<p class="lead">All orthoimagery products are acquired during t<strong>he leaf-off (fall/winter) season in TX</strong>.</p>
 
 Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.
 
 <img class="img-responsive center-block" width="500"src="images/statewide-orthoimagery/season_leafoff_leafon.jpg" alt="Samples of leaf-off and leaf-on imagery">
 
 ## Pixel Resolution	
-The BASE statewide orthoimagery will be acquired and processed at 0.5-meter pixel resolution. Select BUY-UP areas will be acquired and processed at either 1-foot or 6-inch pixel resolution. The following are example features identifiable in each resolution.
+<p class="lead">The BASE statewide orthoimagery will be acquired and processed at <strong>0.5-meter pixel resolution</strong>.</p>
+
+Select BUY-UP areas will be acquired and processed at either 1-foot or 6-inch pixel resolution. The following are example features identifiable in each resolution.
 <img class="img-responsive center-block" src="images/statewide-orthoimagery/pixel_rez.jpg" alt="Samples of different Pixel resolutions and products">
 
 
 ## Spectral Resolution
-All orthoimagery products will be available as 4-band images which may be displayed as natural color (Red, Green, Blue) or color infrared (Near Infrared, Red, Green) composites.
-<img class="img-responsive center-block" src="/images/statewide-orthoimagery/spectral_samples.jpg" alt="Samples of Spectral IR and Spectral NC">
+<p class="lead">All orthoimagery products will be available as <strong>4-band images</strong>.</p>
+
+These may may be displayed as natural color (Red, Green, Blue) or color infrared (Near Infrared, Red, Green) composites, as seen in the examples below.
+
+*Grab the Image Slider to compare between Natural Color and Infrared*
+<figure>
+<div id="imageCompare7" class='twentytwenty-container natural-color-infrared'>
+  <img src="images/updates/smith-imagery/tjc_nc.jpg" alt="Preview of natural color imagery">
+  <img src="images/updates/smith-imagery/tjc_cir.jpg" alt="Preview of Color Infra Red Imagery">
+</div>
+<figcaption>Tyler Junior College  SCALE 1:830</figcaption>
+</figure>
 
 ***
 

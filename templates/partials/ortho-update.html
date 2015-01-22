@@ -1,5 +1,6 @@
 
 <div class="col-sm-8">
+  <h2 class="updates-header">Project Activity for the week of<br><strong>{{ status_date }}</strong></h2>
   <h3>Update Summary</h3>
     <ul class="dash list-clean">
     {% for update in updates %}
@@ -11,7 +12,7 @@
     <li class="status">
       <progress class="level-three" max="100" value="{{ progress_1 }}">
       </progress> 
-        <h3 class="amount level-three">{{ progress_1 }}%</h3>
+        <h3 class="amount level-two">{{ progress_1 }}%</h3>
       <p>of the state has been flown for 0.5-meter imagery</p>
     </li>
     <li class="status">

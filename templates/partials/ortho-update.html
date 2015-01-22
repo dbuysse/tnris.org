@@ -1,68 +1,77 @@
-
 <div class="col-sm-8">
-  <h2 class="updates-header">Project Activity for the week of<br><strong>{{ status_date }}</strong></h2>
-  <h3>Update Summary</h3>
+    <h2 class="updates-header">Project Activity for the week of<br><strong>{{ status_date }}</strong></h2>
+    <h3>Update Summary</h3>
     <ul class="dash list-clean">
-    {% for update in updates %}
-      <li>{{ update }}</li>
-      {% endfor %}
+        {% for update in updates %}
+        <li>{{ update }}</li>
+        {% endfor %}
     </ul>
-  <h3>Data Progress</h3>
-  <ul class="list-clean data-progress">
-    <li class="status">
-      <progress class="level-three" max="100" value="{{ progress_1 }}">
-      </progress> 
-        <h3 class="amount level-one">{{ progress_1 }}%</h3>
-      <p>of the state has been flown for 0.5-meter imagery</p>
-    </li>
-    <li class="status">
-      <progress class="level-two" max="100" value="{{ progress_2 }}">
-      </progress>
-        <h3 class="amount level-one">{{ progress_2 }}%</h3>
-        <p>of the state has been surveyed for ground control</p>
-    </li>
-    <li class="status">
-      <progress class="level-one" max="100" value="{{ progress_3 }}">
-      </progress> 
-        <h3 class="amount level-one">{{ progress_3 }}%</h3>
-      <p>of the state has been begun initial image processing</p>
-    </li>
-    <li class="status">
-      <progress class="level-zero" max="100" value="{{ progress_4 }}">
-      </progress>
-        <h3 class="amount level-zero">{{ progress_4 }}%</h3>
-      <p>of pilot data received</p>
-    </li>
-    <li class="status">
-      <progress class="level-zero" max="100" value="{{ progress_5 }}">
-      </progress>
-        <h3 class="amount level-zero">{{ progress_5 }}%</h3>
-      <p>of final orthoimagery received</p>
-    </li>
-  </ul>
-        <a class="btn btn-default btn-lg" href="documents/2015-ortho-weekly-reports/{{latest_report}}"><span class="glyphicon glyphicon-file"></span> Download the latest full vendor report</a>
+    <h3>Data Progress</h3>
+    <ul class="list-clean data-progress">
+        <li class="status">
+            <progress class="level-three" max="100" value="{{ progress_1 }}">
+            </progress>
+            <h3 class="amount level-one">{{ progress_1 }}%</h3>
+            <p>of the state has been flown for 0.5-meter imagery</p>
+        </li>
+        <li class="status">
+            <progress class="level-two" max="100" value="{{ progress_2 }}">
+            </progress>
+            <h3 class="amount level-one">{{ progress_2 }}%</h3>
+            <p>of the state has been surveyed for ground control</p>
+        </li>
+        <li class="status">
+            <progress class="level-one" max="100" value="{{ progress_3 }}">
+            </progress>
+            <h3 class="amount level-one">{{ progress_3 }}%</h3>
+            <p>of the state has been begun initial image processing</p>
+        </li>
+        <li class="status">
+            <progress class="level-zero" max="100" value="{{ progress_4 }}">
+            </progress>
+            <h3 class="amount level-zero">{{ progress_4 }}%</h3>
+            <p>of pilot data received</p>
+        </li>
+        <li class="status">
+            <progress class="level-zero" max="100" value="{{ progress_5 }}">
+            </progress>
+            <h3 class="amount level-zero">{{ progress_5 }}%</h3>
+            <p>of final orthoimagery received</p>
+        </li>
+    </ul>
+    <a class="btn btn-default btn-lg" href="documents/2015-ortho-weekly-reports/{{latest_report}}"><span class="glyphicon glyphicon-file"></span> Download the latest full vendor report</a>
 </div>
 <div class="col-sm-4">
-  <h3>Latest Flightline Status Map</h3>
-  <a href="#status-image" data-toggle="modal">
-    <img class="img-responsive" src="images/statewide-orthoimagery/weekly-updates/{{ status_image_preview }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
-    <small class="pull-right"><span class="glyphicon glyphicon-search"></span> Click for larger view</small>
-  </a>
-  <div class="modal fade" id="status-image" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3>Latest Flightline Status Map</h3>
+    <h3>Latest Flightline Status Map</h3>
+    <a href="#status-image" data-toggle="modal">
+        <img class="img-responsive" src="images/statewide-orthoimagery/weekly-updates/{{ status_image_preview }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
+        <small class="pull-right"><span class="glyphicon glyphicon-search"></span> Click for larger view</small>
+    </a>
+    <div class="modal fade" id="status-image" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3>Latest Flightline Status Map</h3>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" src="images/statewide-orthoimagery/weekly-updates/{{ status_image }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-           <img class="img-responsive" src="images/statewide-orthoimagery/weekly-updates/{{ status_image }}" alt="Latest Status Image and flightlines for the Orthoimagery Project">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
     </div>
-  </div>
-
+    <div>
+        <h3>Questions or Comments?</h3>
+        <a class="btn btn-default btn-lg smooth-scroll" href="#contact-pm">
+          <i class="glyphicon glyphicon-comment"></i> Contact the Project Manager
+        </a>
+    </div>
 </div>
+
+
+
+

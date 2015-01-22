@@ -6,30 +6,13 @@
 {% block styles %}
   {% parent %}
 
-  <!-- note: this rule is included here to avoid distracting flashes/glitches if css file is slow or fails to load -->
-  <style type="text/css">
-    [ng\:cloak], [ng-cloak], .ng-cloak {
-      display: none !important;
-    }
-  </style>
-
-  <!-- build:css css/contact.min.css -->
-    <link href="css/contact.css" rel="stylesheet">
-  <!-- endbuild -->
+  {{ form.styles() }}
 {% endblock styles %}
 
 {% block scripts %}
   {% parent %}
 
-  <!-- build:js js/contact-ng-vendor.js -->
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-grecaptcha/grecaptcha-min.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js js/contact.min.js -->
-    <script src="js/contact-forms.js"></script>
-  <!-- endbuild -->
+  {{ form.scripts() }}
 {% endblock scripts %}
 
 

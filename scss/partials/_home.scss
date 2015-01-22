@@ -119,7 +119,11 @@
 
               span {
                 font-family: $pragmatica;
-                font-size: 18px;
+                font-size: 14px;
+
+                @media (min-width: $screen-sm) {
+                  font-size: 18px;
+                }
               }
 
               &:hover {

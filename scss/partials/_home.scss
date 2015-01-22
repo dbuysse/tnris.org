@@ -462,10 +462,8 @@
 
   .around-state-front {
     background: url(../images/around-the-state/light_auburn_bg.png) right top no-repeat;
-    margin-bottom: 20px;
 
     @media (min-width: $screen-md) {
-      border-bottom: 1px solid $midgrey;
       border-right: none;
       padding-left: 0px;
       padding-right: 0;
@@ -493,19 +491,25 @@
   }
 }
 
-// Custom Box under training //
-.training-extra {
+// Custom Announcement Boxes //
+.extra-box {
+  margin-bottom: 20px;
+
   a {
-    background: $lightgrey;
     border: 1px solid $midgrey;
     display: block;
     overflow: hidden;
+    text-shadow: 0 0 2px $white;
     width: 100%;
 
     &:hover {
       border-color: $tnrisblue;
       box-shadow: 0 0 2px $tnrisblue;
       text-decoration: none;
+    }
+
+    &.hcad-job {
+      background: url(../images/front-page/light_houston_bg.jpg) right bottom no-repeat;
     }
 
     img {
@@ -538,3 +542,4 @@
 
   }
 }
+

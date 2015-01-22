@@ -62,18 +62,17 @@
         </div>
 
         <div class="col-xs-12 col-sm-8 col-md-12 training-front">
-          <h2><a href="{{m.link('training')}}">GIS Training &amp; Education</a> <i class="fa fa-graduation-cap"></i></h2>
-          <div class="training-extra">
-            <a href="http://training.esri.com/gateway/index.cfm?fa=seminars.viewDetails&course_id=230"> 
-              <img alt="Thumb for Web Appbuilder ArcGIS link" src="images/front-page/webappbuilder_th.jpg">
+          <div class="extra-box">
+            <a class="hcad-job" href="http://www.hcad.org/Resources/Jobs/JobDesc.asp?pnum=80051464"> 
+              <img alt="HCAD logo and link to job" src="images/front-page/hcad_logo.png">
               <p>
-                <small>ESRI Live Training</small><br>
-                <strong>FREE Web AppBuilder Seminar</strong>
-                <br>Thursday, Jan. 22
+                <small>State of Texas GIS Jobs</small><br>
+                <strong>GIS Programming Manager</strong>
+                <br>Houston County Appraisal District - HCAD
               </p>
             </a>
           </div>
-          <h3><a href="{{m.link('training')}}">Upcoming courses</a></h3> 
+          <h2><a href="{{m.link('training')}}">GIS Training &amp; Education</a> <i class="fa fa-graduation-cap"></i></h2>
           <p>Classes geared towards all skill levels, from beginners to advanced, offered at affordable prices.</p>
           <ul class="list-clean">
             {% for event in training %}

@@ -258,27 +258,35 @@ h2.updates-header {
 
 
 .level-three::-webkit-progress-value {
-  background: #eace23;
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $yield);
 }
 
 .level-three::-moz-progress-bar {
-  background: #eace23;
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $yield);
 }
 
 .level-two::-webkit-progress-value {
-  background: $orange;
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $orange);
+
 }
 
 .level-two::-moz-progress-bar {
-  background: $orange;
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $orange);
+
 }
 
 .level-one::-webkit-progress-value {
-  background: $error;
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44);
 }
 
 .level-one::-moz-progress-bar {
-  background: $error;
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44);
 }
 
 
@@ -289,14 +297,6 @@ h2.updates-header {
 }
 
 .level-one {
-  color: #ffc3c3;
-}
-
-.level-two  {
   color: #fff4c3;
-}
-
-.level-three {
-  color: $orange;
 }
 

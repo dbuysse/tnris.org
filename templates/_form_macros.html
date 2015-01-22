@@ -23,6 +23,18 @@
   <!-- endbuild -->
 {%- endmacro -%}
 
+{%- macro before() -%}
+<div id="ng-app" ng-app="FormApp">
+  <div ng-controller="FormController">
+    <form name="form" role="form" novalidate ng-cloak>
+{%- endmacro -%}
+
+{%- macro after() -%}
+    </form>
+  </div>
+</div>
+{%- endmacro -%}
+
 {%- macro requiredAttr(required, show) -%}
   {%- if show == undefined -%}
     {% set requiredStr = required %}
@@ -33,7 +45,7 @@
   {% if required %}ng-required="{{requiredStr}}"{% endif %}
 {%- endmacro -%}
 
-{%- macro before(name, display, type, required, show) -%}
+{%- macro _item_before(name, display, type, required, show) -%}
   {% set label = display.label || display %}
 
   <div class="form-group has-feedback" ng-class="{'has-error': errors['{{name}}']}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
@@ -43,7 +55,7 @@
     {% endif %}
 {%- endmacro -%}
 
-{%- macro after(name, display, type, required) -%}
+{%- macro _item_after(name, display, type, required) -%}
   {% if type != 'radio' && type != 'checkbox' %}
     {{errors_and_help(name, display, required, type, 'pull-right')}}
   {% endif %}
@@ -65,7 +77,7 @@
 
 
 {%- macro checkbox(name, label, description, required, show) -%}
-  {{before(name, label, type, required, show)}}
+  {{_item_before(name, label, type, required, show)}}
     {% set type = 'checkbox' %}
     <div class="checkbox">
       <label>
@@ -73,7 +85,7 @@
         {{description}}
       </label>
     </div>
-  {{after(name, label, type, required)}}
+  {{_item_after(name, label, type, required)}}
 {%- endmacro -%}
 
 {%- macro input(name, display, type, required, show) -%}
@@ -85,14 +97,14 @@
     {% set pattern = 'pattern=".*@.*\..*"' %}
   {% endif %}
 
-  {{before(name, display, type, required, show)}}
+  {{_item_before(name, display, type, required, show)}}
     <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder|capitalize}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}} {{pattern|safe}}/>
     <span ng-show="errors['{{name}}']" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-  {{after(name, display, type, required)}}
+  {{_item_after(name, display, type, required)}}
 {%- endmacro -%}
 
 {%- macro multi(name, display, type, options, required, show) -%}
-  {{before(name, display, type, required, show)}}
+  {{_item_before(name, display, type, required, show)}}
     {% set model_name = "form_model['" + name + "']" %}
 
     {% for option in options %}
@@ -116,7 +128,7 @@
         </label>
       </div>
     {% endfor %}
-  {{after(name, display, type, required)}}
+  {{_item_after(name, display, type, required)}}
 {%- endmacro -%}
 
 {%- macro select(name, display, options, required, show, add_other_option) -%}
@@ -124,11 +136,11 @@
   {% if add_other_option %}
     {% set options = options.concat('Other') %}
   {% endif %}
-  {{before(name, display, type, required, show)}}
+  {{_item_before(name, display, type, required, show)}}
     <select name="{{name}}" class="form-control" ng-model="form_model['{{name}}']" ng-change="updateItem(form['{{name}}'])" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model['{{name}}']}" {{requiredAttr(required, show)}}>
       <option value="">Select a {{display}}</option>
     </select>
-  {{after(name, display, type, required)}}
+  {{_item_after(name, display, type, required)}}
 
   {% if add_other_option %}
     {% set other_name = name + ' (other)' %}
@@ -185,10 +197,10 @@
   {% set placeholder = display.placeholder || label %}
 
   {% set type="textarea" %}
-  {{before(name, display, type, required, show)}}
+  {{_item_before(name, display, type, required, show)}}
     <textarea class="form-control" name="{{name}}" rows="4" maxlength="500" placeholder="{{placeholder|capitalize}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}}></textarea>
     <span ng-show="errors['{{name}}']" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-  {{after(name, display, type, required)}}
+  {{_item_after(name, display, type, required)}}
 {%- endmacro -%}
 
 

@@ -25,7 +25,7 @@
     {{form.before()}}
       {{form.multi(
           "Type of Data",
-          "type of data",
+          "Type of Data",
           "radio",
           [
             'Digital Data',
@@ -60,7 +60,7 @@
       {% set is_historical = "form_model['Type of Data'] == 'Historical Imagery'" %}
         {{form.multi(
             "Historical Imagery Time Frame",
-            "time frame",
+            "Time Frame",
             "radio",
             [
               'Single Year',
@@ -72,7 +72,7 @@
 
         {{form.multi(
             "Historical Imagery Medium",
-            "medium",
+            "Medium",
             "radio",
             [
               ['Paper', 'Paper (8.5 x 11 laser copy)'],
@@ -110,7 +110,7 @@
 
         {{form.multi(
             "Hard Drive Option",
-            "hard drive",
+            "Hard Drive",
             "radio",
             [
               'TNRIS Drive',
@@ -122,7 +122,7 @@
 
         {{form.checkbox(
             "LiDAR Site File",
-            "Site file",
+            "Site File",
             "I have a file that contains the extent of the data I am requesting.",
             false,
             is_lidar
@@ -142,7 +142,7 @@
       {% set is_maps = "form_model['Type of Data'] == 'Maps'" %}
         {{form.multi(
             "Type of Map",
-            "type of map",
+            "Type of Map",
             "radio",
             [
               ['Not TNRIS', 'Maps (USGS, NWI, FEMA)'],
@@ -155,7 +155,7 @@
         {% set is_not_tnris = is_maps + " && form_model['Type of Map'] == 'Not TNRIS'" %}
           {{form.multi(
               "Map Option",
-              "map option",
+              "Map Option",
               "radio",
               [
                 ['USGS', 'USGS (7.5 Minute)'],
@@ -169,7 +169,7 @@
           {{form.textarea(
               "Map Description",
               {
-                label: 'map description',
+                label: 'Map Description',
                 help: "List all quads/panels and specify quantity for each map"
               },
               true,
@@ -179,7 +179,7 @@
         {% set is_tnris = is_maps + " && form_model['Type of Map'] == 'TNRIS'" %}
           {{form.multi(
               "Map Size",
-              "map size",
+              "Map size",
               "radio",
               [
                 ['8_by_11', '8 x 11'],
@@ -195,7 +195,7 @@
           {% set is_custom = is_tnris + " && form_model['Map Size'] == 'custom'" %}
             {{form.input(
                 "Custom Map Size",
-                "custom size",
+                "Custom Size",
                 "text",
                 true,
                 is_custom
@@ -206,7 +206,7 @@
           {{form.input(
               "Map Scale",
               {
-                label: 'scale',
+                label: 'Scale',
                 help: 'For example: 1" = 500"'
               },
               "text",
@@ -216,7 +216,7 @@
 
           {{form.input(
               "Map Title",
-              "map title",
+              "Map Title",
               "text",
               true,
               is_tnris
@@ -224,7 +224,7 @@
 
           {{form.input(
               "Map Date",
-              "map date",
+              "Map Date",
               "text",
               true,
               is_tnris
@@ -239,22 +239,22 @@
           false
       )}}
 
-      {{form.input("Name", "name", "text", true)}}
-      {{form.input("Organization", "organization", "text", false)}}
+      {{form.input("Name", "Name", "text", true)}}
+      {{form.input("Organization", "Organization", "text", false)}}
 
       {{form.industry()}}
-      {{form.input("Address_1", "address 1", "text", true)}}
-      {{form.input("Address_2", "address 2", "text", false)}}
-      {{form.input("City", "city", "text", true)}}
-      {{form.input("State", "state", "text", true)}}
-      {{form.input("Zip", "zip", "text", true)}}
-      {{form.input("Email", "email address", "email", true)}}
-      {{form.input("Phone", "phone number", "tel", false)}}
-      {{form.input("Fax", "fax number", "tel", false)}}
+      {{form.input("Address_1", "Address 1", "text", true)}}
+      {{form.input("Address_2", "Address 2", "text", false)}}
+      {{form.input("City", "City", "text", true)}}
+      {{form.input("State", "State", "text", true)}}
+      {{form.input("Zip", "Zip", "text", true)}}
+      {{form.input("Email", "Email Address", "email", true)}}
+      {{form.input("Phone", "Phone Number", "tel", false)}}
+      {{form.input("Fax", "Fax Number", "tel", false)}}
 
       {{form.multi(
           "Delivery Method",
-          "delivery method",
+          "Delivery Method",
           "radio",
           [
             ['USPS', 'U.S.P.S'],
@@ -271,7 +271,7 @@
 
       {{form.multi(
           "Payment Method",
-          "payment method",
+          "Payment Method",
           "radio",
           [
             ['Credit Card', 'Credit Card (A TNRIS staff member will call you to acquire your credit card information.)'],
@@ -289,7 +289,6 @@
       {{form.input(
         "Purchase Order Number", "Purchase Order Number", "text", true,
         "form_model['Payment Method'] == 'Purchase Order'")}}
-
 
       {{form.submit("order")}}
     {{form.after()}}

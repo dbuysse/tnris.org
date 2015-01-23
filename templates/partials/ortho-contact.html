@@ -3,21 +3,37 @@
 <h2 id="contact-pm">Contact Us For More Info</h2>
 
 <p>For further information or questions, contact the project manager,
-    <strong>{{ author }}</strong>, directly using the form below:
+<strong>{{ author }}</strong>, directly using the form below:
 
-    {{form.before()}}
-      {{form.input("Name", "name", "text", true)}}
-      {{form.input("Email", "email address", "email", true)}}
-      {{form.input("Phone", "phone number", "tel", false)}}
-      {{form.input("Organization", "organization", "text", false)}}
+{{form.before()}}
+  {{form.input("Name", "Name", "text", true)}}
+  {{form.input("Email", {
+      label: "Email",
+      placeholder: "Enter email address"
+    }, "email", true)}}
+  {{form.input("Phone", {
+      label: "Phone",
+      placeholder: "Enter your phone number"
+    }, "tel", false)}}
+  {{form.input("Organization", {
+      label: "Organization",
+      placeholder: "Who are you affiliated with?"
+    }, "text", false)}}
 
-      {{form.textarea(
-          "Question or Comments",
-          "Question / Comments",
-          true,
-          true
-      )}}
+  {{form.textarea(
+      "Questions or Comments",
+      "Questions/Comments",
+      true,
+      true
+  )}}
 
-      {{form.submit("Message")}}
-    {{form.after()}}
+  {{form.checkbox(
+    "Sign up",
+    "Sign up",
+    "Please sign me up for updates from TNRIS.",
+    false,
+    true
+  )}}
 
+  {{form.submit("Message")}}
+{{form.after()}}

@@ -49,7 +49,7 @@
   {% set label = display.label || display %}
 
   <div class="form-group has-feedback" ng-class="{'has-error': errors['{{name}}']}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
-    <label for="{{name}}" class="control-label">{{label|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
+    <label for="{{name}}" class="control-label">{{label}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
     {% if type == 'radio' || type == 'checkbox' %}
       {{errors_and_help(name, display, type, required, 'error-' + type)}}
     {% endif %}
@@ -66,9 +66,9 @@
   {% set label = display.label || display %}
   <div ng-show="errors['{{name}}']" class="error{% if error_side %} {{error_side}}{% endif %}">
     {% if required %}
-      <div ng-show="form['{{name}}'].$error.required">{{label|capitalize}} is required.</div>
+      <div ng-show="form['{{name}}'].$error.required">{{label}} is required.</div>
     {% endif %}
-    <div ng-show="form['{{name}}'].$error.{{type}} || form['{{name}}'].$error.pattern">{{label|capitalize}} must be valid.</div>
+    <div ng-show="form['{{name}}'].$error.{{type}} || form['{{name}}'].$error.pattern">{{label}} must be valid.</div>
   </div>
   {% if display.help %}
     <div id="help-block-{{name}}" class="help-block">{{display.help}}</div>
@@ -98,7 +98,7 @@
   {% endif %}
 
   {{_item_before(name, display, type, required, show)}}
-    <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder|capitalize}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}} {{pattern|safe}}/>
+    <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}} {{pattern|safe}}/>
     <span ng-show="errors['{{name}}']" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{_item_after(name, display, type, required)}}
 {%- endmacro -%}
@@ -198,7 +198,7 @@
 
   {% set type="textarea" %}
   {{_item_before(name, display, type, required, show)}}
-    <textarea class="form-control" name="{{name}}" rows="4" maxlength="500" placeholder="{{placeholder|capitalize}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}}></textarea>
+    <textarea class="form-control" name="{{name}}" rows="4" maxlength="500" placeholder="{{placeholder}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}}></textarea>
     <span ng-show="errors['{{name}}']" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
   {{_item_after(name, display, type, required)}}
 {%- endmacro -%}

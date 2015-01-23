@@ -1,4 +1,21 @@
-{% extends "base.html" %} {% block topcontent %}
+{% extends "base.html" %} 
+{% import "_form_macros.html" as form %}
+
+
+{% block styles %}
+  {% parent %}
+
+  {{ form.styles() }}
+{% endblock styles %}
+
+{% block scripts %}
+  {% parent %}
+
+  {{ form.scripts() }}
+{% endblock scripts %}
+
+
+{% block topcontent %}
 <div class="container-fluid full">
 
     <div class="top-container">

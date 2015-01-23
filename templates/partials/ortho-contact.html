@@ -1,31 +1,39 @@
+{% import "_form_macros.html" as form %}
+
 <h2 id="contact-pm">Want to Know More?</h2>
+
 <p class="lead">For further information or questions about this important initiative, contact the project manager,
     <strong>{{ author }}</strong>, using the form below:
-    <form>
-        <div class="form-group">
-            <label for="exampleInputName">Name</label>
-            <input type="name" class="form-control" id="exampleInputName" placeholder="Name">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputName">Phone</label>
-            <input type="name" class="form-control" id="exampleInputName" placeholder="Enter your Phone #">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputOrg">Organization</label>
-            <input type="name" class="form-control" id="exampleInputOrg" placeholder="Who are you affiliated with?">
-        </div>
-        <div class="form-group">
-            <label for="exampleComments">Questions/Comments</label>
-            <textarea class="form-control" rows="3"></textarea>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Sign Up for TNRIS Updates <a href="#">What is this?</a>
-            </label>
-        </div>
-        <button type="submit" class="btn btn-tnris btn-lg center-block">Submit</button>
-    </form>
+
+{{form.before("orthoimagery")}}
+  {{form.input("Name", "Name", "text", true)}}
+  {{form.input("Email", {
+      label: "Email",
+      placeholder: "Enter email address"
+    }, "email", true)}}
+  {{form.input("Phone", {
+      label: "Phone",
+      placeholder: "Enter your phone number"
+    }, "tel", false)}}
+  {{form.input("Organization", {
+      label: "Organization",
+      placeholder: "Who are you affiliated with?"
+    }, "text", false)}}
+
+  {{form.textarea(
+      "Questions or Comments",
+      "Questions/Comments",
+      true,
+      true
+  )}}
+
+  {{form.checkbox(
+    "Sign up",
+    "Sign up",
+    "Please sign me up for updates from TNRIS.",
+    false,
+    true
+  )}}
+
+  {{form.submit("message")}}
+{{form.after()}}

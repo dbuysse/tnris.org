@@ -5,7 +5,7 @@
 <p>For further information or questions, contact the project manager,
 <strong>{{ author }}</strong>, directly using the form below:
 
-{{form.before()}}
+{{form.before("orthoimagery")}}
   {{form.input("Name", "Name", "text", true)}}
   {{form.input("Email", {
       label: "Email",
@@ -35,5 +35,5 @@
     true
   )}}
 
-  {{form.submit("Message")}}
+  {{form.submit("message")}}
 {{form.after()}}

@@ -315,32 +315,207 @@ h2.updates-header {
 // Intro section
 
 .ortho-intro {
-  background: url(../images/statewide-orthoimagery/pivotpoints_bg.jpg) right bottom no-repeat $darkgrey;
+  background: $darkgrey;
   color: $white;
+  padding-bottom: 30px;
+
+  @media (min-width: $screen-sm) {
+    background: url(../images/statewide-orthoimagery/pivotpoints_bg.jpg) right bottom no-repeat $darkgrey;
+  }
+
+  .lead {
+    text-shadow: 0 0 1px $darkgrey;
+  }
 
   h2 {
-    color: $lightgrey;
+    color: $canary;
+    font-weight: 300;
+    font-size: 40px;
+    text-shadow: 0 0 1px solid $darkgrey;
+  }
+
+  a {
+    color: $orange;
+
+    &:hover {
+      color: $yield;
+    }
+  }
+
+  figure {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    img {
+      border: 1px solid $midgrey;
+      max-height: 250px;
+    }
+
+    h3 {
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  }
+  
+  .modal-header {
+    h3 {
+      color: $darkgrey;
+    }
   }
 }
 
+.bar {
+  background:#eee;
+  height: 4px;
+  top: 79px;
+  margin-left: 9%;
+  margin-right: 17%;
+  position: absolute;
+  width: 75%;
+  
+  @media (min-width: $screen-md) {
+    top: 57px;
+  }
+}
+
+.bar-vertical {
+    background:#eee;
+    height: 450px;
+    top: 50px;
+    position: absolute;
+    right: 50%;
+    width: 4px;
+
+    @media (min-width: $screen-sm) {
+      display: none;
+    }
+}
+
 .timeline {
+  position: relative; 
+
+  @media (min-width: $screen-sm) {
+    height: $timelineheight;
+
+    div.col-sm-2, div.col-sm-4 {
+      height: $timelineheight;
+    }
+  }
+
+  @media (min-width: $screen-md) {    
+    height: $timelineheightsm;
+
+    div.col-sm-2, div.col-sm-4 {
+      height: $timelineheightsm;
+    }
+  }
+
+  .phase {
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px $darkgrey;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 5px 10px;
+    text-align: center;
+    width: 80%;
+
+    &.no-bottom {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-size: 20px;
+    }
+
+    @media (min-width: $screen-sm) {
+      bottom: 0;
+      margin-bottom: 0;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      height: 100px;
+
+      &:after {
+        content:'';
+        display: block;
+        background: $midgrey;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 2px solid $middarkgrey;
+        position: absolute;
+        left: 50%;
+        top: -40px;
+        margin-left: -10px;
+      }
+
+      &:before {
+        content:'';
+        display: block;
+        background: #eee;
+        width: 5px;
+        height: 20px;
+        position: absolute;
+        left: 50%;
+        top: -20px;
+        margin-left: -2px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      height: 70px;
+    }
+  }
+
   .phase-1 {
     background: $infoblue;
-    border-radius: 20px;
-    color: white;
-    padding: 20px;
   }
 
   .phase-2 {
-    background: $infoblue;
-    border-radius: 20px;
-    color: white;
-    padding: 20px;
+    background: $orange;
   }
-  .phase-2 {
-    background: $infoblue;
+  .phase-3 {
+    background: $successgreen;
+  }
+
+  .timeframe {
+    background: $darkgrey;
     border-radius: 20px;
-    color: white;
-    padding: 20px;
+    display: block;
+    font-weight: 400;
+    margin-bottom: 5px;
+    text-align: center;
+    text-shadow: 0 0 5px $black;
+
+     h4 {
+      margin: 0;
+    }
+
+    @media (min-width: $screen-sm) {
+      background: none;
+      height: 63px;
+      margin-bottom: 0;
+      position: absolute;
+      text-shadow: 0 0 1px $black;
+      top: 0;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+
+      h4.sticky {
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+    @media (min-width: $screen-md) {
+      height: 40px;
+    }
   }
 }

@@ -65,6 +65,10 @@ $footer-height: 275px;
   #{$attribute}: $color;
 }
 
+// timeline height on ortho page
+$timelineheight: 210px;
+$timelineheightsm: 160px;
+
 // Box Shadow //
 @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
   -webkit-box-shadow: $top $left $blur $color #{$inset};

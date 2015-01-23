@@ -20,7 +20,8 @@
 
     <div class="top-container">
         {% if mainimage %}
-        <img class="img-responsive center-block" src="{{ mainimage }}" alt="Main Image for Statewide Ortho project, a Texas Flag composed of imagery"> {% endif %}
+          <img class="img-responsive center-block" src="{{ mainimage }}" alt="Main Image for Statewide Ortho project, a Texas Flag composed of imagery"> 
+        {% endif %}
 
         <div class="top-header center-block">
             <div class="container">
@@ -52,10 +53,18 @@
 <div class="row">
     <div class="col-md-8">
         {{ contents|safe }} 
-        {% include "./partials/ortho-contact.html" %}
     </div>
 
-    {% block rightContent %} {% endblock rightContent %}
+       
 </div>
-
 {% endblock contents %}
+
+{% block contents-two %} 
+    <section class="ortho-top">
+      <div class="container">
+          <div class="row">
+             {% include "./partials/ortho-contact.html" %}
+           </div>
+         </div>
+    </section>
+{% endblock contents-two %}

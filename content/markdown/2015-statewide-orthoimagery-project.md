@@ -41,7 +41,14 @@ They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages
 
 Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.
 
-<img class="img-responsive center-block" width="500"src="images/statewide-orthoimagery/season_leafoff_leafon.jpg" alt="Samples of leaf-off and leaf-on imagery">
+*Grab the Image Slider to compare between Leaf-Off **(Google Earth, Nov. 9, 2011)** and Leaf-On imagery **(Smith GIS Consortium, Feb. 16, 2010)**.*
+
+<figure>
+<div id="imageCompare7" class='twentytwenty-container natural-color-infrared'>
+  <img src="images/statewide-orthoimagery/leaf_off.jpg" alt="Preview of Leaf-on imagery">
+  <img src="images/statewide-orthoimagery/leaf_on.jpg" alt="Preview of Leaf-Off Imagery">
+</div>
+</figure>
 
 ## Pixel Resolution	
 <p class="lead">The BASE statewide orthoimagery will be acquired and processed at <strong>0.5-meter pixel resolution</strong>.</p>
@@ -58,10 +65,9 @@ These may may be displayed as natural color (Red, Green, Blue) or color infrared
 *Grab the Image Slider to compare between Natural Color and Infrared*
 <figure>
 <div id="imageCompare7" class='twentytwenty-container natural-color-infrared'>
-  <img src="images/updates/smith-imagery/tjc_nc.jpg" alt="Preview of natural color imagery">
-  <img src="images/updates/smith-imagery/tjc_cir.jpg" alt="Preview of Color Infra Red Imagery">
+  <img src="images/statewide-orthoimagery/4_band_nc.jpg" alt="Preview of natural color imagery">
+  <img src="images/statewide-orthoimagery/4_band_ir.jpg" alt="Preview of Color Infra Red Imagery">
 </div>
-<figcaption>Tyler Junior College  SCALE 1:830</figcaption>
 </figure>
 
 ***

@@ -22,29 +22,54 @@ progress_5: 0
 ---
 
 ## Contributors
-
 <p class="lead"><strong>Four state agencies</strong> contributed funds toward the BASE 0.5-meter statewide orthoimagery collection.</p>
 
 They are the [Texas Department of Transportation](http://www.txdot.gov), the [Texas Commission on Environmental Quality](http://www.tceq.state.tx.us), the [Railroad Commission of Texas Surface Mining and Reclamation Division](http://www.rrc.state.tx.us), and the Texas [General Land Office](http://www.glo.texas.gov).
 
 <img class="img-responsive img-expand" src="/images/statewide-orthoimagery/statewide_contributors.jpg" alt="State Agencies who contributed to the orthoimagery collection">
 
+<figure class="buy-up">
+        <h4>Map of 1-foot to 6-Inch Buy-Ups</h4>
+        <a href="#buy-ups-map" data-toggle="modal">
+            <img src="images/statewide-orthoimagery/2015_orthos_buyups_sm.jpg" alt="thumbnail for buyup regions">
+          <figcaption class="text-right"><i class="glyphicon glyphicon-search"></i> Click for larger view</figcaption>
+        </a>
+</figure>
+<div class="modal fade" id="buy-ups-map" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h3>Map of 1-foot to 6-Inch Buy-Ups</h3>
+            </div>
+            <div class="modal-body">
+                <img class="img-responsive" src="images/statewide-orthoimagery/2015_orthos_buyups.jpg" alt="Full version of the Time Frames Acquistition Map">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <p class="lead"><strong>Five additional government agencies</strong> contributed funds toward select 1-foot or 6-inch BUY-UP areas.</p>
+
 
 They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages/default.aspx), the [Texas Parks and Wildlife Department](https://tpwd.texas.gov/), [University Lands](http://www.utlands.utsystem.edu/), the [San Antonio River Authority](https://www.sara-tx.org/), and the [City of Georgetown](https://georgetown.org/).
 
 <img class="img-responsive img-expand" src="/images/statewide-orthoimagery/buyup_contributors.jpg" alt="Organizations contributing to Buy-Up area">
 
-## Acquisition Season
+<h2>Acquisition Season</h2>
 
 <p class="lead">All orthoimagery products are acquired during t<strong>he leaf-off (fall/winter) season in TX</strong>.</p>
 
-Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.
+<p>Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.</p>
 
 *Grab the Image Slider to compare between Leaf-Off **(Google Earth, Nov. 9, 2011)** and Leaf-On imagery **(Smith GIS Consortium, Feb. 16, 2010)**.*
 
 <figure>
-<div id="imageCompare7" class='twentytwenty-container natural-color-infrared'>
+<div id="imageCompare7" class='twentytwenty-container leaf-off-on'>
   <img src="images/statewide-orthoimagery/leaf_off.jpg" alt="Preview of Leaf-on imagery">
   <img src="images/statewide-orthoimagery/leaf_on.jpg" alt="Preview of Leaf-Off Imagery">
 </div>

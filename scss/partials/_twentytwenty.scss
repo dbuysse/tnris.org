@@ -8,6 +8,17 @@
   }
 }
 
+.leaf-off-on {
+  .twentytwenty-before-label:before {
+    content: 'Leaf-Off';
+  }
+
+  .twentytwenty-after-label:before {
+    content: 'Leaf-On';
+  }
+}
+
+
 .twentytwenty-before-label, 
 .twentytwenty-after-label {
   &:before {

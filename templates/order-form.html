@@ -21,283 +21,277 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-6">
-    <div id="ng-app" ng-app="FormApp">
-      <div ng-controller="FormController">
-        <form name="form" role="form" novalidate ng-cloak>
-          {{form.multi(
-              "Type of Data",
-              "type of data",
-              "radio",
-              [
-                'Digital Data',
-                'Historical Imagery',
-                'LiDAR',
-                'Maps'
-              ],
-              true
+  <div class="col-xs-12 col-sm-10 col-md-7">
+    {{form.before("order-data")}}
+      {{form.multi(
+          "Type of Data",
+          "Type of Data",
+          "radio",
+          [
+            'Digital Data',
+            'Historical Imagery',
+            'LiDAR',
+            'Maps'
+          ],
+          true
+      )}}
+
+      {% set is_digital_data = "form_model['Type of Data'] == 'Digital Data'" %}
+        <div class="form-group form-callout bg-warning" ng-show="{{is_digital_data}}">
+          <p>
+            Before placing your order, try checking our <a href="{{m.link('data-download')}}">data download page</a> for free downloadable data that may fit your needs.
+          </p>
+          <p>
+            <strong>Note:</strong> Depending on the size of the data, you will receive your data via either FTP, CD, DVD or hard drive(s).
+          </p>
+        </div>
+
+        {{form.textarea(
+            "Digital Data Description",
+            {
+              label: 'Description',
+              placeholder: 'Briefly describe the data you would like to order.'
+            },
+            true,
+            is_digital_data
+        )}}
+
+
+      {% set is_historical = "form_model['Type of Data'] == 'Historical Imagery'" %}
+        {{form.multi(
+            "Historical Imagery Time Frame",
+            "Time Frame",
+            "radio",
+            [
+              'Single Year',
+              'Historical'
+            ],
+            true,
+            is_historical
+        )}}
+
+        {{form.multi(
+            "Historical Imagery Medium",
+            "Medium",
+            "radio",
+            [
+              ['Paper', 'Paper (8.5 x 11 laser copy)'],
+              ['Digital', 'Digital (scan of original copy)']
+            ],
+            true,
+            is_historical
+        )}}
+
+        {% set is_historical_digital = is_historical + " && form_model['Historical Imagery Medium'] == 'Digital'" %}
+          {{form.checkbox(
+            "Georeference",
+            "Georeference",
+            "The data should be georeferenced.",
+            false,
+            is_historical_digital
           )}}
 
-          {% set is_digital_data = "form_model['Type of Data'] == 'Digital Data'" %}
-            <div class="form-group form-callout bg-warning" ng-show="{{is_digital_data}}">
-              <p>
-                Before placing your order, try checking our <a href="{{m.link('data-download')}}">data download page</a> for free downloadable data that may fit your needs.
-              </p>
-              <p>
-                <strong>Note:</strong> Depending on the size of the data, you will receive your data via either FTP, CD, DVD or hard drive(s).
-              </p>
-            </div>
+      {% set is_digital = is_digital_data + " || " + is_historical_digital %}
+        {{form.software_inputs(is_digital)}}
 
-            {{form.textarea(
-                "Digital Data Description",
-                {
-                  label: 'Description',
-                  placeholder: 'Briefly describe the data you would like to order.'
-                },
-                true,
-                is_digital_data
-            )}}
+      {% set is_lidar = "form_model['Type of Data'] == 'LiDAR'" %}
+        {{form.multi(
+            "LiDAR Data Format",
+            "Data Format",
+            "checkbox",
+            [
+              'LAS',
+              'DEM',
+              ['Breaklines', 'Breaklines (if available)']
+            ],
+            false,
+            is_lidar
+        )}}
 
+        {{form.multi(
+            "Hard Drive Option",
+            "Hard Drive",
+            "radio",
+            [
+              'TNRIS Drive',
+              'Customer Provided Drive'
+            ],
+            true,
+            is_lidar
+        )}}
 
-          {% set is_historical = "form_model['Type of Data'] == 'Historical Imagery'" %}
-            {{form.multi(
-                "Historical Imagery Time Frame",
-                "time frame",
-                "radio",
-                [
-                  'Single Year',
-                  'Historical'
-                ],
-                true,
-                is_historical
-            )}}
+        {{form.checkbox(
+            "LiDAR Site File",
+            "Site File",
+            "I have a file that contains the extent of the data I am requesting.",
+            false,
+            is_lidar
+        )}}
 
-            {{form.multi(
-                "Historical Imagery Medium",
-                "medium",
-                "radio",
-                [
-                  ['Paper', 'Paper (8.5 x 11 laser copy)'],
-                  ['Digital', 'Digital (scan of original copy)']
-                ],
-                true,
-                is_historical
-            )}}
-
-            {% set is_historical_digital = is_historical + " && form_model['Historical Imagery Medium'] == 'Digital'" %}
-              {{form.checkbox(
-                "Georeference",
-                "Georeference",
-                "The data should be georeferenced.",
-                false,
-                is_historical_digital
-              )}}
-
-          {% set is_digital = is_digital_data + " || " + is_historical_digital %}
-            {{form.software_inputs(is_digital)}}
-
-          {% set is_lidar = "form_model['Type of Data'] == 'LiDAR'" %}
-            {{form.multi(
-                "LiDAR Data Format",
-                "Data Format",
-                "checkbox",
-                [
-                  'LAS',
-                  'DEM',
-                  ['Breaklines', 'Breaklines (if available)']
-                ],
-                false,
-                is_lidar
-            )}}
-
-            {{form.multi(
-                "Hard Drive Option",
-                "hard drive",
-                "radio",
-                [
-                  'TNRIS Drive',
-                  'Customer Provided Drive'
-                ],
-                true,
-                is_lidar
-            )}}
-
-            {{form.checkbox(
-                "LiDAR Site File",
-                "Site file",
-                "I have a file that contains the extent of the data I am requesting.",
-                false,
-                is_lidar
-            )}}
-
-            {{form.textarea(
-                "LiDAR Description",
-                {
-                  label: 'LiDAR Description',
-                  help: "Description of the LiDAR data you are requesting."
-                },
-                false,
-                is_lidar
-            )}}
+        {{form.textarea(
+            "LiDAR Description",
+            {
+              label: 'LiDAR Description',
+              help: "Description of the LiDAR data you are requesting."
+            },
+            false,
+            is_lidar
+        )}}
 
 
-          {% set is_maps = "form_model['Type of Data'] == 'Maps'" %}
-            {{form.multi(
-                "Type of Map",
-                "type of map",
-                "radio",
-                [
-                  ['Not TNRIS', 'Maps (USGS, NWI, FEMA)'],
-                  ['TNRIS', 'Custom Map (TNRIS)']
-                ],
-                true,
-                is_maps
-            )}}
+      {% set is_maps = "form_model['Type of Data'] == 'Maps'" %}
+        {{form.multi(
+            "Type of Map",
+            "Type of Map",
+            "radio",
+            [
+              ['Not TNRIS', 'Maps (USGS, NWI, FEMA)'],
+              ['TNRIS', 'Custom Map (TNRIS)']
+            ],
+            true,
+            is_maps
+        )}}
 
-            {% set is_not_tnris = is_maps + " && form_model['Type of Map'] == 'Not TNRIS'" %}
-              {{form.multi(
-                  "Map Option",
-                  "map option",
-                  "radio",
-                  [
-                    ['USGS', 'USGS (7.5 Minute)'],
-                    ['NWI', 'NWI (7.5 Minute)'],
-                    ['FEMA', 'FEMA (panel)']
-                  ],
-                  true,
-                  is_not_tnris
-              )}}
-
-              {{form.textarea(
-                  "Map Description",
-                  {
-                    label: 'map description',
-                    help: "List all quads/panels and specify quantity for each map"
-                  },
-                  true,
-                  is_not_tnris
-              )}}
-
-            {% set is_tnris = is_maps + " && form_model['Type of Map'] == 'TNRIS'" %}
-              {{form.multi(
-                  "Map Size",
-                  "map size",
-                  "radio",
-                  [
-                    ['8_by_11', '8 x 11'],
-                    ['11_by_17', '11 x 17'],
-                    ['24_by_24', '24 x 24'],
-                    ['36_by_36', '36 x 36'],
-                    ['custom', 'Custom Size']
-                  ],
-                  true,
-                  is_tnris
-              )}}
-
-              {% set is_custom = is_tnris + " && form_model['Map Size'] == 'custom'" %}
-                {{form.input(
-                    "Custom Map Size",
-                    "custom size",
-                    "text",
-                    true,
-                    is_custom
-                )}}
-
-
-            {% set show_scale = "(" + is_tnris + ") || form_model['Historical Imagery Medium'] == 'Paper'" %}
-              {{form.input(
-                  "Map Scale",
-                  {
-                    label: 'scale',
-                    help: 'For example: 1" = 500"'
-                  },
-                  "text",
-                  true,
-                  show_scale
-              )}}
-
-              {{form.input(
-                  "Map Title",
-                  "map title",
-                  "text",
-                  true,
-                  is_tnris
-              )}}
-
-              {{form.input(
-                  "Map Date",
-                  "map date",
-                  "text",
-                  true,
-                  is_tnris
-              )}}
+        {% set is_not_tnris = is_maps + " && form_model['Type of Map'] == 'Not TNRIS'" %}
+          {{form.multi(
+              "Map Option",
+              "Map Option",
+              "radio",
+              [
+                ['USGS', 'USGS (7.5 Minute)'],
+                ['NWI', 'NWI (7.5 Minute)'],
+                ['FEMA', 'FEMA (panel)']
+              ],
+              true,
+              is_not_tnris
+          )}}
 
           {{form.textarea(
-              "Additional Info",
+              "Map Description",
               {
-                label: 'Additional Information',
-                placeholder: 'Additional information or comments about your order'
+                label: 'Map Description',
+                help: "List all quads/panels and specify quantity for each map"
               },
-              false
+              true,
+              is_not_tnris
           )}}
 
-          {{form.input("Name", "name", "text", true)}}
-          {{form.input("Organization", "organization", "text", false)}}
-
-          {{form.industry()}}
-          {{form.input("Address_1", "address 1", "text", true)}}
-          {{form.input("Address_2", "address 2", "text", false)}}
-          {{form.input("City", "city", "text", true)}}
-          {{form.input("State", "state", "text", true)}}
-          {{form.input("Zip", "zip", "text", true)}}
-          {{form.input("Email", "email address", "email", true)}}
-          {{form.input("Phone", "phone number", "tel", false)}}
-          {{form.input("Fax", "fax number", "tel", false)}}
-
+        {% set is_tnris = is_maps + " && form_model['Type of Map'] == 'TNRIS'" %}
           {{form.multi(
-              "Delivery Method",
-              "delivery method",
+              "Map Size",
+              "Map size",
               "radio",
               [
-                ['USPS', 'U.S.P.S'],
-                ['FedEx', 'Fed-Ex ($10.00 - $15.00)'],
-                ['FedEx Customer Charged', 'Fed-Ex charged to customer number'],
-                ['FTP', 'File Transfer Protocol (FTP)']
+                ['8_by_11', '8 x 11'],
+                ['11_by_17', '11 x 17'],
+                ['24_by_24', '24 x 24'],
+                ['36_by_36', '36 x 36'],
+                ['custom', 'Custom Size']
               ],
-              true
+              true,
+              is_tnris
+          )}}
+
+          {% set is_custom = is_tnris + " && form_model['Map Size'] == 'custom'" %}
+            {{form.input(
+                "Custom Map Size",
+                "Custom Size",
+                "text",
+                true,
+                is_custom
+            )}}
+
+
+        {% set show_scale = "(" + is_tnris + ") || form_model['Historical Imagery Medium'] == 'Paper'" %}
+          {{form.input(
+              "Map Scale",
+              {
+                label: 'Scale',
+                help: 'For example: 1" = 500"'
+              },
+              "text",
+              true,
+              show_scale
           )}}
 
           {{form.input(
-            "FedEx Customer Number", "Customer FedEx Account Number", "text", true,
-            "form_model['Delivery Method'] == 'FedEx Customer Charged'")}}
-
-          {{form.multi(
-              "Payment Method",
-              "payment method",
-              "radio",
-              [
-                ['Credit Card', 'Credit Card (A TNRIS staff member will call you to acquire your credit card information.)'],
-                'Check',
-                'Pay at Pickup',
-                ['Purchase Order', 'Purchase Order (Government agencies only)']
-              ],
-              true
+              "Map Title",
+              "Map Title",
+              "text",
+              true,
+              is_tnris
           )}}
 
           {{form.input(
-            "Check Number", "Check Number", "text", true,
-            "form_model['Payment Method'] == 'Check'")}}
+              "Map Date",
+              "Map Date",
+              "text",
+              true,
+              is_tnris
+          )}}
 
-          {{form.input(
-            "Purchase Order Number", "Purchase Order Number", "text", true,
-            "form_model['Payment Method'] == 'Purchase Order'")}}
+      {{form.textarea(
+          "Additional Info",
+          {
+            label: 'Additional Information',
+            placeholder: 'Additional information or comments about your order'
+          },
+          false
+      )}}
 
+      {{form.input("Name", "Name", "text", true)}}
+      {{form.input("Organization", "Organization", "text", false)}}
 
-          {{form.submit("order")}}
+      {{form.industry()}}
+      {{form.input("Address_1", "Address 1", "text", true)}}
+      {{form.input("Address_2", "Address 2", "text", false)}}
+      {{form.input("City", "City", "text", true)}}
+      {{form.input("State", "State", "text", true)}}
+      {{form.input("Zip", "Zip", "text", true)}}
+      {{form.input("Email", "Email Address", "email", true)}}
+      {{form.input("Phone", "Phone Number", "tel", false)}}
+      {{form.input("Fax", "Fax Number", "tel", false)}}
 
-        </form>
-      </div>
-    </div>
+      {{form.multi(
+          "Delivery Method",
+          "Delivery Method",
+          "radio",
+          [
+            ['USPS', 'U.S.P.S'],
+            ['FedEx', 'Fed-Ex ($10.00 - $15.00)'],
+            ['FedEx Customer Charged', 'Fed-Ex charged to customer number'],
+            ['FTP', 'File Transfer Protocol (FTP)']
+          ],
+          true
+      )}}
+
+      {{form.input(
+        "FedEx Customer Number", "Customer FedEx Account Number", "text", true,
+        "form_model['Delivery Method'] == 'FedEx Customer Charged'")}}
+
+      {{form.multi(
+          "Payment Method",
+          "Payment Method",
+          "radio",
+          [
+            ['Credit Card', 'Credit Card (A TNRIS staff member will call you to acquire your credit card information.)'],
+            'Check',
+            'Pay at Pickup',
+            ['Purchase Order', 'Purchase Order (Government agencies only)']
+          ],
+          true
+      )}}
+
+      {{form.input(
+        "Check Number", "Check Number", "text", true,
+        "form_model['Payment Method'] == 'Check'")}}
+
+      {{form.input(
+        "Purchase Order Number", "Purchase Order Number", "text", true,
+        "form_model['Payment Method'] == 'Purchase Order'")}}
+
+      {{form.submit("order")}}
+    {{form.after()}}
   </div>
 </div>
 

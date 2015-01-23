@@ -11,23 +11,44 @@
     height: 1px;
   }
 
-  // Custom Masthead title BG */
+  h1 {
+    font-size: 30px; 
+    
+    @media (min-width: $screen-sm){
+      font-size: 40px;
+    }
+
+    @media (min-width: $screen-md){
+      font-size: 60px;
+    }
+  }
+
+// Image expand //
+// .img-responsive.img-expand {
+//   @media (min-width: $screen-md) {
+//     max-width: none;
+//   }
+// }
+
+// Custom Masthead title BG //
   .container-fluid.full {
+    margin-bottom: 0;
     .top-container {
       .top-header {
         background: none;
-        @include background-image(linear-gradient(to top, rgba(11, 101, 143, 1),  rgba(255, 255, 255, 0)));
+        @include background-image(linear-gradient(to top, rgba(50, 50, 50, 1),  rgba(255, 255, 255, 0)));
       }
+    }
+
+    a.btn {
+      text-shadow: none;
+      margin-bottom: 35px;
     }
   }
 
   .blog-sidebar {
     date {
       text-transform: uppercase;
-    }
-
-    strong {
-      font-size: 28px;
     }
   } 
 
@@ -149,3 +170,352 @@ ul.dash li:before {
     margin-left: -1em;
 }
 
+.ortho-top {
+  background: $lightgrey;
+  padding-bottom: 20px;
+
+  date {
+    text-transform: uppercase;
+  }
+}
+
+// updates header //
+// .updates-header {
+//   background: $lightgrey;
+//   margin: 0;
+//   padding: 10px 0;
+
+//   h2 {
+//     font-weight: 100;
+//     margin: 0;
+//     padding: 0;
+//   }
+// }
+
+h2.updates-header {
+  font-size: 25px;
+  font-weight: 100;
+
+  strong { 
+    font-size: 35px;
+  }
+}
+
+// custom bar graph //
+.data-progress {
+
+  progress, progress[role] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: none;
+    background-size: auto;
+    height: 40px;
+    width: 100%;
+  }
+
+  progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+
+  p {
+    margin-left: 10px;
+  }
+}
+
+// The unordered list
+
+
+.status {
+  margin-bottom: 1em;
+  position: relative;
+
+  .amount {
+    float: right;
+    font-size: 1.7em;
+    margin-top: 7px;
+    position: absolute;
+    left: 10px;
+    top: 0;
+  }
+
+  ::-webkit-progress-value { 
+    -webkit-animation: bar-fill 2s;
+    width: 0px;
+  }
+
+  .fa-plane {
+    color: $canary;
+    font-size: 30px;
+    left: 35%;
+    position: absolute;
+    text-shadow: -1px -1px 1px $orange;
+    top: 7px;
+
+    @media (min-width: $screen-sm) {
+      left: 37%;
+    }
+  }
+}
+
+.level-four::-webkit-progress-value {
+  background: #b8df48;
+}
+
+.level-four::-moz-progress-bar {
+  background: #b8df48;
+}
+
+
+.level-three::-webkit-progress-value {
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $yield);
+}
+
+.level-three::-moz-progress-bar {
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $yield);
+}
+
+.level-two::-webkit-progress-value {
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $orange);
+
+}
+
+.level-two::-moz-progress-bar {
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $orange);
+
+}
+
+.level-one::-webkit-progress-value {
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44);
+}
+
+.level-one::-moz-progress-bar {
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44);
+}
+
+
+
+// Color Level Classes //
+.level-zero {
+  color: $error;
+}
+
+.level-one {
+  color: $canary;
+}
+
+// Intro section
+
+.ortho-intro {
+  background: $darkgrey;
+  color: $white;
+  padding-bottom: 30px;
+
+  @media (min-width: $screen-sm) {
+    background: url(../images/statewide-orthoimagery/pivotpoints_bg.jpg) right bottom no-repeat $darkgrey;
+  }
+
+  .lead {
+    text-shadow: 0 0 1px $darkgrey;
+  }
+
+  h2 {
+    color: $canary;
+    font-weight: 300;
+    font-size: 40px;
+    text-shadow: 0 0 1px solid $darkgrey;
+  }
+
+  a {
+    color: $orange;
+
+    &:hover {
+      color: $yield;
+    }
+  }
+
+  figure {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    img {
+      border: 1px solid $midgrey;
+      max-height: 250px;
+    }
+
+    h3 {
+      font-weight: 300;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  }
+  
+  .modal-header {
+    h3 {
+      color: $darkgrey;
+    }
+  }
+}
+
+.bar {
+  background:#eee;
+  height: 4px;
+  top: 79px;
+  margin-left: 9%;
+  margin-right: 17%;
+  position: absolute;
+  width: 75%;
+  
+  @media (min-width: $screen-md) {
+    top: 57px;
+  }
+}
+
+.bar-vertical {
+    background:#eee;
+    height: 450px;
+    top: 50px;
+    position: absolute;
+    right: 50%;
+    width: 4px;
+
+    @media (min-width: $screen-sm) {
+      display: none;
+    }
+}
+
+.timeline {
+  position: relative; 
+
+  @media (min-width: $screen-sm) {
+    height: $timelineheight;
+
+    div.col-sm-2, div.col-sm-4 {
+      height: $timelineheight;
+    }
+  }
+
+  @media (min-width: $screen-md) {    
+    height: $timelineheightsm;
+
+    div.col-sm-2, div.col-sm-4 {
+      height: $timelineheightsm;
+    }
+  }
+
+  .phase {
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px $darkgrey;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 5px 10px;
+    text-align: center;
+    width: 80%;
+
+    &.no-bottom {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-size: 20px;
+    }
+
+    @media (min-width: $screen-sm) {
+      bottom: 0;
+      margin-bottom: 0;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      height: 100px;
+
+      &:after {
+        content:'';
+        display: block;
+        background: $midgrey;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 2px solid $middarkgrey;
+        position: absolute;
+        left: 50%;
+        top: -40px;
+        margin-left: -10px;
+      }
+
+      &:before {
+        content:'';
+        display: block;
+        background: #eee;
+        width: 5px;
+        height: 20px;
+        position: absolute;
+        left: 50%;
+        top: -20px;
+        margin-left: -2px;
+      }
+    }
+
+    @media (min-width: $screen-md) {
+      height: 70px;
+    }
+  }
+
+  .phase-1 {
+    background: $infoblue;
+  }
+
+  .phase-2 {
+    background: $orange;
+  }
+  .phase-3 {
+    background: $successgreen;
+  }
+
+  .timeframe {
+    background: $darkgrey;
+    border-radius: 20px;
+    display: block;
+    font-weight: 400;
+    margin-bottom: 5px;
+    text-align: center;
+    text-shadow: 0 0 5px $black;
+
+     h4 {
+      margin: 0;
+    }
+
+    @media (min-width: $screen-sm) {
+      background: none;
+      height: 63px;
+      margin-bottom: 0;
+      position: absolute;
+      text-shadow: 0 0 1px $black;
+      top: 0;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+
+      h4.sticky {
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+    @media (min-width: $screen-md) {
+      height: 40px;
+    }
+  }
+}

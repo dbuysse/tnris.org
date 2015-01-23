@@ -1,0 +1,40 @@
+{% import "_form_macros.html" as form %}
+<div class="col-md-6">
+<h2 id="contact-pm">Want to Know More?</h2>
+
+<p class="lead">For further information or questions about this important initiative, contact the project manager,
+    <strong>{{ author }}</strong>, using the form below:
+
+{{form.before("orthoimagery")}}
+  {{form.input("Name", "Name", "text", true)}}
+  {{form.input("Email", {
+      label: "Email",
+      placeholder: "Enter email address"
+    }, "email", true)}}
+  {{form.input("Phone", {
+      label: "Phone",
+      placeholder: "Enter your phone number"
+    }, "tel", false)}}
+  {{form.input("Organization", {
+      label: "Organization",
+      placeholder: "Who are you affiliated with?"
+    }, "text", false)}}
+
+  {{form.textarea(
+      "Questions or Comments",
+      "Questions/Comments",
+      true,
+      true
+  )}}
+
+  {{form.checkbox(
+    "Sign up",
+    "Sign up",
+    "Please sign me up for updates from TNRIS.",
+    false,
+    true
+  )}}
+
+  {{form.submit("message")}}
+{{form.after()}}
+</div>

@@ -10,8 +10,9 @@ $lightergrey: #eee;
 $midlightgrey: #e3e3e3;
 $midgrey: #ccc;
 $middarkgrey: #767676;
-$darkgrey: #222;
 $darkish: #444;
+$darkgrey: #222;
+$darkergrey: #333;
 $black: #000;
 
 $auburn: #bf571f;
@@ -32,6 +33,10 @@ $successhover: #4b8a4b;
 $error: #a94442;
 $infoblue: #5bc0de;
 $bluegreen: #35adac;
+
+$canary: #fff4c3;
+$yield: #edca26;
+$orange: #ed8426;
 
 // Font //
 $opensans: 'Open Sans', sans-serif;
@@ -59,6 +64,10 @@ $footer-height: 275px;
   #{$attribute}: $solid-color;
   #{$attribute}: $color;
 }
+
+// timeline height on ortho page
+$timelineheight: 210px;
+$timelineheightsm: 160px;
 
 // Box Shadow //
 @mixin box-shadow($top, $left, $blur, $color, $inset:"") {

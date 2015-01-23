@@ -1,46 +1,43 @@
-{%- macro requiredAttr(required, show) -%}
-  {%- if show == undefined -%}
-    {% set requiredStr = required %}
-   {%- else  -%}
-    {% set requiredStr = show %}
-  {%- endif -%}
+{%- macro styles() -%}
+  <!-- note: this rule is included here to avoid distracting flashes/glitches if css file is slow or fails to load -->
+  <style type="text/css">
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none !important;
+    }
+  </style>
 
-  {% if required %}ng-required="{{requiredStr}}"{% endif %}
+  <!-- build:css css/contact.min.css -->
+    <link href="css/contact.css" rel="stylesheet">
+  <!-- endbuild -->
 {%- endmacro -%}
 
-{%- macro before(name, display, type, required, show) -%}
-  {% set label = display.label || display %}
+{%- macro scripts() -%}
+  <!-- build:js js/contact-ng-vendor.js -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-grecaptcha/grecaptcha-min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <!-- endbuild -->
 
-  <div class="form-group has-feedback" ng-class="{'has-error': errors['{{name}}']}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
-    <label for="{{name}}" class="control-label">{{label|capitalize}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
-    {% if type == 'radio' || type == 'checkbox' %}
-      {{errors_and_help(name, display, type, required, 'error-' + type)}}
-    {% endif %}
+  <!-- build:js js/contact.min.js -->
+    <script src="js/contact-forms.js"></script>
+  <!-- endbuild -->
 {%- endmacro -%}
 
-{%- macro after(name, display, type, required) -%}
-  {% if type != 'radio' && type != 'checkbox' %}
-    {{errors_and_help(name, display, required, type, 'pull-right')}}
-  {% endif %}
+{%- macro before(form_id) -%}
+<div id="ng-app" ng-app="FormApp">
+  <div ng-controller="FormController">
+    <form name="form" role="form" novalidate ng-cloak>
+      {{hidden('form_id', form_id)}}
+{%- endmacro -%}
+
+{%- macro after() -%}
+    </form>
   </div>
+</div>
 {%- endmacro -%}
-
-{%- macro errors_and_help(name, display, type, required, error_side) -%}
-  {% set label = display.label || display %}
-  <div ng-show="errors['{{name}}']" class="error{% if error_side %} {{error_side}}{% endif %}">
-    {% if required %}
-      <div ng-show="form['{{name}}'].$error.required">{{label|capitalize}} is required.</div>
-    {% endif %}
-    <div ng-show="form['{{name}}'].$error.{{type}} || form['{{name}}'].$error.pattern">{{label|capitalize}} must be valid.</div>
-  </div>
-  {% if display.help %}
-    <div id="help-block-{{name}}" class="help-block">{{display.help}}</div>
-  {% endif %}
-{%- endmacro -%}
-
 
 {%- macro checkbox(name, label, description, required, show) -%}
-  {{before(name, label, type, required, show)}}
+  {{_item_before(name, label, type, required, show)}}
     {% set type = 'checkbox' %}
     <div class="checkbox">
       <label>
@@ -48,7 +45,11 @@
         {{description}}
       </label>
     </div>
-  {{after(name, label, type, required)}}
+  {{_item_after(name, label, type, required)}}
+{%- endmacro -%}
+
+{%- macro hidden(name, value) -%}
+  <input type="hidden" name="{{name}}" ng-value="{{value}}" ng-model="form_model['{{name}}']" ng-init="form_model['{{name}}']='{{value}}'">
 {%- endmacro -%}
 
 {%- macro input(name, display, type, required, show) -%}
@@ -60,14 +61,14 @@
     {% set pattern = 'pattern=".*@.*\..*"' %}
   {% endif %}
 
-  {{before(name, display, type, required, show)}}
-    <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder|capitalize}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}} {{pattern|safe}}/>
+  {{_item_before(name, display, type, required, show)}}
+    <input type="{{type}}" name="{{name}}" class="form-control" placeholder="{{placeholder}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}} {{pattern|safe}}/>
     <span ng-show="errors['{{name}}']" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-  {{after(name, display, type, required)}}
+  {{_item_after(name, display, type, required)}}
 {%- endmacro -%}
 
 {%- macro multi(name, display, type, options, required, show) -%}
-  {{before(name, display, type, required, show)}}
+  {{_item_before(name, display, type, required, show)}}
     {% set model_name = "form_model['" + name + "']" %}
 
     {% for option in options %}
@@ -91,7 +92,7 @@
         </label>
       </div>
     {% endfor %}
-  {{after(name, display, type, required)}}
+  {{_item_after(name, display, type, required)}}
 {%- endmacro -%}
 
 {%- macro select(name, display, options, required, show, add_other_option) -%}
@@ -99,11 +100,11 @@
   {% if add_other_option %}
     {% set options = options.concat('Other') %}
   {% endif %}
-  {{before(name, display, type, required, show)}}
+  {{_item_before(name, display, type, required, show)}}
     <select name="{{name}}" class="form-control" ng-model="form_model['{{name}}']" ng-change="updateItem(form['{{name}}'])" ng-options="option for option in ['{{ options|join("','") }}']" ng-class="{'placeholder': !form_model['{{name}}']}" {{requiredAttr(required, show)}}>
       <option value="">Select a {{display}}</option>
     </select>
-  {{after(name, display, type, required)}}
+  {{_item_after(name, display, type, required)}}
 
   {% if add_other_option %}
     {% set other_name = name + ' (other)' %}
@@ -120,37 +121,37 @@
 {%- macro submit(form_name) -%}
   {% import '_macros.html' as macros %}
 
-  <div class="form-group has-feedback" ng-class="{'has-error': errors['recaptcha']}">
+  <div class="form-group has-feedback row" ng-class="{'has-error': errors['recaptcha']}">
     <div class="col-xs-12">
       <div grecaptcha class="recaptcha" ng-model="recaptcha"></div>
       <div ng-show="errors['recaptcha']" class="centered">reCAPTCHA is required for submission</div>
     </div>
   </div>
   <div class="form-group">
-    <div class="submit col-xs-12" ng-switch="status">
+    <div class="submit center-block" ng-switch="status">
       <div ng-switch-when="error">
         <div class="row">
-          <button type="submit" class="btn btn-block btn-danger" ng-click="submit(form_model)">Not Sent</button>
+          <button type="submit" class="btn btn-lg btn-danger btn-block" ng-click="submit(form_model)">Not Sent</button>
         </div>
         <div class="row">
-          <div class="has-error col-xs-12">
+          <div class="has-error">
             {{macros.ngCurly('serverError')}}
           </div>
         </div>
       </div>
       <div ng-switch-when="invalid" >
         <div class="row">
-          <button type="submit" class="btn btn-block btn-danger" ng-click="submit(form_model)">Not Sent</button>
+          <button type="submit" class="btn btn-lg btn-danger btn-block" ng-click="submit(form_model)">Not Sent</button>
         </div>
         <div class="row">
-          <div class="has-error col-xs-12">
+          <div class="has-error">
             The form is invalid due to at least one invalid or missing field. Please fix and try again.
           </div>
         </div>
       </div>
-      <button ng-switch-when="submitting" type="submit" class="btn btn-block btn-info" ng-click="submit(form_model)">Sending...</button>
-      <button ng-switch-when="success" type="submit" class="btn btn-block btn-success" ng-click="submit(form_model)" disabled>Your {{form_name}} has been sent.</button>
-      <button ng-switch-default type="submit" class="btn btn-block btn-primary" ng-click="submit(form_model)">Submit</button>
+      <button ng-switch-when="submitting" type="submit" class="btn btn-lg btn-tnris btn-block" ng-click="submit(form_model)">Sending...</button>
+      <button ng-switch-when="success" type="submit" class="btn btn-lg btn-success btn-block" ng-click="submit(form_model)" disabled>Your {{form_name}} has been sent.</button>
+      <button ng-switch-default type="submit" class="btn btn-lg btn-tnris btn-block" ng-click="submit(form_model)">Submit</button>
     </div>
   </div>
 {%- endmacro -%}
@@ -160,14 +161,14 @@
   {% set placeholder = display.placeholder || label %}
 
   {% set type="textarea" %}
-  {{before(name, display, type, required, show)}}
-    <textarea class="form-control" name="{{name}}" rows="4" maxlength="500" placeholder="{{placeholder|capitalize}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}}></textarea>
+  {{_item_before(name, display, type, required, show)}}
+    <textarea class="form-control" name="{{name}}" rows="4" maxlength="500" placeholder="{{placeholder}}" ng-model="form_model['{{name}}']" ng-blur="updateItem(form['{{name}}'])" {{requiredAttr(required, show)}}></textarea>
     <span ng-show="errors['{{name}}']" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-  {{after(name, display, type, required)}}
+  {{_item_after(name, display, type, required)}}
 {%- endmacro -%}
 
 
-{# reused input components #}}
+{# reused input components #}
 {%- macro industry() -%}
   {% set industries = [
     'Agriculture',
@@ -219,3 +220,45 @@
       show_software
   )}}
 {%- endmacro -%}
+
+{# internal macros - these are only intended to be used by other macros in this file #}
+{%- macro requiredAttr(required, show) -%}
+  {%- if show == undefined -%}
+    {% set requiredStr = required %}
+   {%- else  -%}
+    {% set requiredStr = show %}
+  {%- endif -%}
+
+  {% if required %}ng-required="{{requiredStr}}"{% endif %}
+{%- endmacro -%}
+
+{%- macro _item_before(name, display, type, required, show) -%}
+  {% set label = display.label || display %}
+
+  <div class="form-group has-feedback" ng-class="{'has-error': errors['{{name}}']}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
+    <label for="{{name}}" class="control-label">{{label}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
+    {% if type == 'radio' || type == 'checkbox' %}
+      {{errors_and_help(name, display, type, required, 'error-' + type)}}
+    {% endif %}
+{%- endmacro -%}
+
+{%- macro _item_after(name, display, type, required) -%}
+  {% if type != 'radio' && type != 'checkbox' %}
+    {{errors_and_help(name, display, required, type, 'pull-right')}}
+  {% endif %}
+  </div>
+{%- endmacro -%}
+
+{%- macro errors_and_help(name, display, type, required, error_side) -%}
+  {% set label = display.label || display %}
+  <div ng-show="errors['{{name}}']" class="error{% if error_side %} {{error_side}}{% endif %}">
+    {% if required %}
+      <div ng-show="form['{{name}}'].$error.required">{{label}} is required.</div>
+    {% endif %}
+    <div ng-show="form['{{name}}'].$error.{{type}} || form['{{name}}'].$error.pattern">{{label}} must be valid.</div>
+  </div>
+  {% if display.help %}
+    <div id="help-block-{{name}}" class="help-block">{{display.help}}</div>
+  {% endif %}
+{%- endmacro -%}
+

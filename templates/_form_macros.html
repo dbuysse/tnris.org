@@ -36,46 +36,6 @@
 </div>
 {%- endmacro -%}
 
-{%- macro requiredAttr(required, show) -%}
-  {%- if show == undefined -%}
-    {% set requiredStr = required %}
-   {%- else  -%}
-    {% set requiredStr = show %}
-  {%- endif -%}
-
-  {% if required %}ng-required="{{requiredStr}}"{% endif %}
-{%- endmacro -%}
-
-{%- macro _item_before(name, display, type, required, show) -%}
-  {% set label = display.label || display %}
-
-  <div class="form-group has-feedback" ng-class="{'has-error': errors['{{name}}']}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
-    <label for="{{name}}" class="control-label">{{label}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
-    {% if type == 'radio' || type == 'checkbox' %}
-      {{errors_and_help(name, display, type, required, 'error-' + type)}}
-    {% endif %}
-{%- endmacro -%}
-
-{%- macro _item_after(name, display, type, required) -%}
-  {% if type != 'radio' && type != 'checkbox' %}
-    {{errors_and_help(name, display, required, type, 'pull-right')}}
-  {% endif %}
-  </div>
-{%- endmacro -%}
-
-{%- macro errors_and_help(name, display, type, required, error_side) -%}
-  {% set label = display.label || display %}
-  <div ng-show="errors['{{name}}']" class="error{% if error_side %} {{error_side}}{% endif %}">
-    {% if required %}
-      <div ng-show="form['{{name}}'].$error.required">{{label}} is required.</div>
-    {% endif %}
-    <div ng-show="form['{{name}}'].$error.{{type}} || form['{{name}}'].$error.pattern">{{label}} must be valid.</div>
-  </div>
-  {% if display.help %}
-    <div id="help-block-{{name}}" class="help-block">{{display.help}}</div>
-  {% endif %}
-{%- endmacro -%}
-
 {%- macro checkbox(name, label, description, required, show) -%}
   {{_item_before(name, label, type, required, show)}}
     {% set type = 'checkbox' %}
@@ -208,7 +168,7 @@
 {%- endmacro -%}
 
 
-{# reused input components #}}
+{# reused input components #}
 {%- macro industry() -%}
   {% set industries = [
     'Agriculture',
@@ -260,3 +220,45 @@
       show_software
   )}}
 {%- endmacro -%}
+
+{# internal macros - these are only intended to be used by other macros in this file #}
+{%- macro requiredAttr(required, show) -%}
+  {%- if show == undefined -%}
+    {% set requiredStr = required %}
+   {%- else  -%}
+    {% set requiredStr = show %}
+  {%- endif -%}
+
+  {% if required %}ng-required="{{requiredStr}}"{% endif %}
+{%- endmacro -%}
+
+{%- macro _item_before(name, display, type, required, show) -%}
+  {% set label = display.label || display %}
+
+  <div class="form-group has-feedback" ng-class="{'has-error': errors['{{name}}']}" {% if show %}ng-show="{{show|safe}}"{% endif %}>
+    <label for="{{name}}" class="control-label">{{label}} {% if required %}<span ng-show="{{required}}" class="required-symbol">*</span>{% endif %} </label>
+    {% if type == 'radio' || type == 'checkbox' %}
+      {{errors_and_help(name, display, type, required, 'error-' + type)}}
+    {% endif %}
+{%- endmacro -%}
+
+{%- macro _item_after(name, display, type, required) -%}
+  {% if type != 'radio' && type != 'checkbox' %}
+    {{errors_and_help(name, display, required, type, 'pull-right')}}
+  {% endif %}
+  </div>
+{%- endmacro -%}
+
+{%- macro errors_and_help(name, display, type, required, error_side) -%}
+  {% set label = display.label || display %}
+  <div ng-show="errors['{{name}}']" class="error{% if error_side %} {{error_side}}{% endif %}">
+    {% if required %}
+      <div ng-show="form['{{name}}'].$error.required">{{label}} is required.</div>
+    {% endif %}
+    <div ng-show="form['{{name}}'].$error.{{type}} || form['{{name}}'].$error.pattern">{{label}} must be valid.</div>
+  </div>
+  {% if display.help %}
+    <div id="help-block-{{name}}" class="help-block">{{display.help}}</div>
+  {% endif %}
+{%- endmacro -%}
+

@@ -4,10 +4,9 @@
 /* Main */
 
 #dataSpot {
-  padding-right: 0;
-  
   @media (min-width: $break-md) {
     margin-bottom: 0;
+    padding-right: 0;
   }
 
   h2 {
@@ -17,6 +16,10 @@
     margin: 0;
     padding: 0 15px;
     padding-top: 5px;
+    
+    @media (max-width: $screen-md) {
+      margin: 0 -15px;
+    }
   }
 
   p.spotText {
@@ -25,6 +28,10 @@
     margin: 0;
     padding: 5px 15px;
     font-size: 14px;
+    
+    @media (max-width: $screen-md) {
+      margin: 0 -15px;
+    }
   }
 
   ul {

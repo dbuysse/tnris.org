@@ -23,10 +23,11 @@
   <!-- endbuild -->
 {%- endmacro -%}
 
-{%- macro before() -%}
+{%- macro before(form_id) -%}
 <div id="ng-app" ng-app="FormApp">
   <div ng-controller="FormController">
     <form name="form" role="form" novalidate ng-cloak>
+      {{hidden('form_id', form_id)}}
 {%- endmacro -%}
 
 {%- macro after() -%}
@@ -75,7 +76,6 @@
   {% endif %}
 {%- endmacro -%}
 
-
 {%- macro checkbox(name, label, description, required, show) -%}
   {{_item_before(name, label, type, required, show)}}
     {% set type = 'checkbox' %}
@@ -86,6 +86,10 @@
       </label>
     </div>
   {{_item_after(name, label, type, required)}}
+{%- endmacro -%}
+
+{%- macro hidden(name, value) -%}
+  <input type="hidden" name="{{name}}" ng-value="{{value}}" ng-model="form_model['{{name}}']" ng-init="form_model['{{name}}']='{{value}}'">
 {%- endmacro -%}
 
 {%- macro input(name, display, type, required, show) -%}

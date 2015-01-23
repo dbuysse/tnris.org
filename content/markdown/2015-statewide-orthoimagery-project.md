@@ -20,18 +20,6 @@ progress_3: 10
 progress_4: 0
 progress_5: 0
 ---
-## A Statewide Resource
-<p class="lead">The 2014-2015 Statewide Texas Orthoimagery Project fulfills the charge led by TNRIS to develop aerial imagery statewide as a base map resource for state, regional, and local government entities.</p>
-
-<p class="lead">The project regularly acquires consistent and updated aerial imagery in order to develop geospatial products throughout Texas. These data are used to identify current conditions, features, and changes on the ground serving as a base of reference for other map information.</p>
-
-<p class="lead">Follow regular updates as we continue <a class="smooth-scroll" href="#project-updates">updating this page with weekly status reports</a> and other news.</p>
-
-## Project Timeline
-
-<p class="lead">A generalized timeline for project goals and deliverables.</p>
-
-<img class="img-responsive img-expand" src="/images/statewide-orthoimagery/timeline_2.jpg" alt="A timeline showing project milestones and estimated dates of completion">
 
 ## Contributors
 

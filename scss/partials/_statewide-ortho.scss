@@ -172,7 +172,6 @@ ul.dash li:before {
 
 .ortho-top {
   background: $lightgrey;
-  margin-bottom: 20px;
   padding-bottom: 20px;
 
   date {
@@ -246,6 +245,19 @@ h2.updates-header {
     -webkit-animation: bar-fill 2s;
     width: 0px;
   }
+
+  .fa-plane {
+    color: $canary;
+    font-size: 30px;
+    left: 35%;
+    position: absolute;
+    text-shadow: -1px -1px 1px $orange;
+    top: 7px;
+
+    @media (min-width: $screen-sm) {
+      left: 37%;
+    }
+  }
 }
 
 .level-four::-webkit-progress-value {
@@ -297,6 +309,38 @@ h2.updates-header {
 }
 
 .level-one {
-  color: #fff4c3;
+  color: $canary;
 }
 
+// Intro section
+
+.ortho-intro {
+  background: url(../images/statewide-orthoimagery/pivotpoints_bg.jpg) right bottom no-repeat $darkgrey;
+  color: $white;
+
+  h2 {
+    color: $lightgrey;
+  }
+}
+
+.timeline {
+  .phase-1 {
+    background: $infoblue;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+  }
+
+  .phase-2 {
+    background: $infoblue;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+  }
+  .phase-2 {
+    background: $infoblue;
+    border-radius: 20px;
+    color: white;
+    padding: 20px;
+  }
+}

@@ -10,22 +10,32 @@
                 <h1>{{title}}</h1> {% if abstract %}
                 <div class="lead">{{abstract}}</div>
                 {% endif %}
-                <a href="#a-statewide-resource" class="btn btn-default btn-lg smooth-scroll">More background about the project <i class="glyphicon glyphicon-chevron-right"></i></a>
+                <a href="#intro" class="btn btn-default btn-lg smooth-scroll">More background about the project <i class="glyphicon glyphicon-chevron-right"></i></a>
             </div>
         </div>
     </div>
 </div>
-<div class="ortho-top">
+<section class="ortho-top">
     <div class="container">
         <div id="project-updates" class="row">
-            {% include "./partials/ortho-update.html" %}
+            {% include "./partials/2015-ortho/top-update.html" %}
+        </div>
+    </div>
+</section>
+
+<div id="intro" class="ortho-intro">
+    <div class="container">
+        <div id="project-updates" class="row">
+        {% include "./partials/2015-ortho/intro.html" %}
         </div>
     </div>
 </div>
-{% endblock topcontent %} {% block contents %}
+{% endblock topcontent %} 
+{% block contents %}
 <div class="row">
     <div class="col-md-8">
-        {{ contents|safe }} {% include "./partials/ortho-contact.html" %}
+        {{ contents|safe }} 
+        {% include "./partials/ortho-contact.html" %}
     </div>
 
     {% block rightContent %} {% endblock rightContent %}

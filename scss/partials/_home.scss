@@ -117,12 +117,22 @@
               color: $tnrisblue;
               display: inline;
 
+              span {
+                font-family: $pragmatica;
+                font-size: 14px;
+
+                @media (min-width: $screen-sm) {
+                  font-size: 18px;
+                }
+              }
+
               &:hover {
                 color: $darkerblue;
               }
               i {
                 font-size: 26px;
-                margin-left: 14px;
+                margin-left: -15px;
+
                 @media (max-width: $screen-md-max) {
                   margin-left: 2px;
                   font-size: 22px;
@@ -384,7 +394,6 @@
 /* Updates */
 #updates-front {
   @media (min-width: $screen-md) {
-    // border-left: 1px solid $midgrey;
     margin-left: 15px;
     margin-right: -15px;
     padding-right: 30px;
@@ -422,8 +431,17 @@
 
     @media (min-width: $screen-md) {
       border-left: none;
-      padding-left: 0px;
-      padding-right: 0;
+      padding: 0;
+
+      li:last-child {
+        display: none;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      li:nth-child(4) {
+        display: none;
+      }
     }
 
     h3 {
@@ -451,29 +469,20 @@
       font-weight: 300;
       margin-bottom: 0px;
     }
-
-    li:last-child {
-
-      @media (min-width: $screen-lg) {
-        display: none;
-      }
-    }
   }
 
   .around-state-front {
     background: url(../images/around-the-state/light_auburn_bg.png) right top no-repeat;
-    margin-bottom: 20px;
 
     @media (min-width: $screen-md) {
-      border-bottom: 1px solid $midgrey;
       border-right: none;
-      padding-left: 0px;
-      padding-right: 0;
-      padding-bottom: 20px;
+      padding-left: 0;
+      padding-bottom: 10px;
+      margin: 0 -15px;
     }
 
     h2 {
-      margin-top: 5px;
+      padding-top: 5px;
     }
 
     h4 {
@@ -493,13 +502,26 @@
   }
 }
 
-// Custom Box under training //
-.training-extra {
+// Custom Announcement Boxes //
+.extra-box {
+  margin-bottom: 20px;
+  
+  @media (min-width: $screen-sm) {
+    margin-bottom: 0;
+    margin-left: -15px;
+  }
+  
+  @media (min-width: $screen-md) {
+    margin: 0 -15px;
+    margin-bottom: 20px;
+  }
+
   a {
-    background: $lightgrey;
     border: 1px solid $midgrey;
+    border-radius: 5px;
     display: block;
     overflow: hidden;
+    text-shadow: 0 0 3px $white;
     width: 100%;
 
     &:hover {
@@ -508,32 +530,44 @@
       text-decoration: none;
     }
 
+    &.hcad-job {
+      background: url(../images/front-page/light_houston_bg.jpg) right bottom no-repeat;
+    }
+
+    .media-left {
+      padding-right: 0;
+    }
+
     img {
       float: left;
       height: 100px;
-      margin-right: 5px;
       width: 100px;
 
       @media (min-width: $screen-md) and (max-width: $screen-lg) {
-        width: 125px;
-        height: 125px;
-        margin-left: -35px;
+        width: 75px;
+        height: 75px;
       }
     }
 
     small {
-      color: $tnrisblue;
+      clear: both;
+      color: $auburn;
+      display: block;
+      font-family: $pragmatica;
+      font-size: 14px;
+      text-transform: uppercase;
     }
 
-    p {
+    div {
       color: $darkgrey;
       font-family: $proxima;
-      margin: 0;
+      font-size: 14px;
 
       strong {
+        clear: both;
+        display: block;
         font-size: 18px;
       }
     }
-
   }
 }

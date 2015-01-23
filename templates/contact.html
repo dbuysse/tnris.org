@@ -6,30 +6,13 @@
 {% block styles %}
   {% parent %}
 
-  <!-- note: this rule is included here to avoid distracting flashes/glitches if css file is slow or fails to load -->
-  <style type="text/css">
-    [ng\:cloak], [ng-cloak], .ng-cloak {
-      display: none !important;
-    }
-  </style>
-
-  <!-- build:css css/contact.min.css -->
-    <link href="css/contact.css" rel="stylesheet">
-  <!-- endbuild -->
+  {{ form.styles() }}
 {% endblock styles %}
 
 {% block scripts %}
   {% parent %}
 
-  <!-- build:js js/contact-ng-vendor.js -->
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-grecaptcha/grecaptcha-min.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js js/contact.min.js -->
-    <script src="js/contact-forms.js"></script>
-  <!-- endbuild -->
+  {{ form.scripts() }}
 {% endblock scripts %}
 
 
@@ -52,47 +35,42 @@
 
 <div class="row">
   <div class="col-xs-12 col-sm-10 col-md-7">
-    <div id="ng-app" ng-app="FormApp">
-      <div ng-controller="FormController">
-        <form name="form" role="form" novalidate ng-cloak>
+    {{form.before("contact")}}
+      {{form.multi(
+        "Reason",
+        "Reason for contacting",
+        "radio",
+          [
+          'General Inquiry',
+          'Data Question',
+          'Education &amp; Training',
+          'Strategic Mapping Program (StratMap)',
+          'Texas GIS Forum',
+          'GEMSS',
+          'Borderland Information Center'
+        ],
+        true
+      )}}
 
-          {{form.multi(
-            "Reason",
-            "reason for contacting",
-            "radio",
-              [
-              'General Inquiry',
-              'Data Question',
-              'Education &amp; Training',
-              'Strategic Mapping Program (StratMap)',
-              'Texas GIS Forum',
-              'GEMSS',
-              'Borderland Information Center'
-            ],
-            true
-          )}}
+      {% set show_software = "form_model['Reason'] == 'Data Question'" %}
+        {{form.software_inputs(show_software)}}
 
-          {% set show_software = "form_model['Reason'] == 'Data Question'" %}
-            {{form.software_inputs(show_software)}}
+      {{form.textarea(
+          "Question or Comments",
+          "Question / Comments",
+          true,
+          true
+      )}}
 
-          {{form.textarea(
-              "Question or Comments",
-              "Question / Comments",
-              true,
-              true
-          )}}
+      {{form.input("Name", "Name", "text", true)}}
+      {{form.input("Email", "Email address", "email", true)}}
+      {{form.input("Phone", "Phone number", "tel", false)}}
+      {{form.input("Address", "Address", "text", true)}}
+      {{form.input("Organization", "Organization", "text", false)}}
+      {{form.industry()}}
 
-          {{form.input("Name", "name", "text", true)}}
-          {{form.input("Email", "email address", "email", true)}}
-          {{form.input("Phone", "phone number", "tel", false)}}
-          {{form.input("Address", "address", "text", true)}}
-          {{form.input("Organization", "organization", "text", false)}}
-          {{form.industry()}}
-
-          {{form.submit("Message")}}
-        </form>
-      </div>
-    </div>
+      {{form.submit("Message")}}
+    {{form.after()}}
   </div>
 </div>
 

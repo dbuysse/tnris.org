@@ -507,3 +507,19 @@ ul.news-list {
   }
 }
 
+// Custom Modal 
+.modal-header {
+  padding: 0 10px;
+}
+
+.modal-body {
+  padding: 0 10px;
+}
+
+.modal-backdrop {
+  background-color: $white;
+  &.in {
+    opacity: .7;
+  }
+}
+

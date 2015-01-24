@@ -79,7 +79,18 @@ They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages
 <p class="lead">The BASE statewide orthoimagery will be acquired and processed at <strong>0.5-meter pixel resolution</strong>.</p>
 
 Select BUY-UP areas will be acquired and processed at either 1-foot or 6-inch pixel resolution. The following are example features identifiable in each resolution.
-<img class="img-responsive center-block" src="images/statewide-orthoimagery/pixel_rez.jpg" alt="Samples of different Pixel resolutions and products">
+<div class="row">
+  <div class="col-xs-4">
+    <h4>O.5 Meter <strong>Base Product</strong></h4>
+  </div>
+  <div class="col-xs-4">
+    <h4>1-Foot <strong>Buy-Up Option</strong></h4>
+  </div>
+  <div class="col-xs-4">
+    <h4>6-inch <strong>Buy-Up Option</strong></h4>
+  </div>
+</div>
+<img class="img-responsive" src="images/statewide-orthoimagery/pixel_rez.jpg" alt="Samples of different Pixel resolutions and products">
 
 
 ## Spectral Resolution

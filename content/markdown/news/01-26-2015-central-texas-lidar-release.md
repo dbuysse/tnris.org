@@ -21,6 +21,7 @@ This project was administered by the TNRIS Strategic Mapping Program (StratMap) 
 - Hydro-flattening breaklines in SHP
 - File-level FGDC metadata in XML
 - 1ft contours for Fort Bend County AOI
+
 ##PRODUCT SPECIFICATION
 - Vertical accuracy (RMSEz) tested ~8.5 cm in Lampasas AOI, ~12 cm in Bandera AOI, and ~6 cm in Fort Bend for open areas. The tested accuracy in all areas meets or exceeds the project specification of 12 cm.
 - Average first-return point density is slightly over 4 points per square meter (ppsm) in All areas of interest, meeting the 4 ppsm state standard identified in the project specification.

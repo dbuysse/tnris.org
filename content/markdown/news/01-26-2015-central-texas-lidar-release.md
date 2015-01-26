@@ -1,6 +1,6 @@
 ---
 title: 2014 Central Texas and Fort Bend County LiDAR
-template: 2014-central-texas-LiDAR.html
+template: 2015-lidar-release.html
 mainimage: 
 status_image: 
 status_image_preview: 

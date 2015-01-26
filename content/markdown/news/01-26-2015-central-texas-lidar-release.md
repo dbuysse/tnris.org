@@ -1,6 +1,6 @@
 ---
 title: 2014 Central Texas and Fort Bend County LiDAR
-template: 2015-ortho-page.html
+template: 2014-central-texas-LiDAR.html
 mainimage: 
 status_image: 
 status_image_preview: 
@@ -48,4 +48,8 @@ This project was administered by the TNRIS Strategic Mapping Program (StratMap) 
 - Structure for data listed above shall conform to 1/64th USGS 7.5-minute quadrangle
 - Quarter-quarter-quarter quadrangle (DOQQQQ, or DO4Q)
 
-To obtain this dataset please fill out an 
+To Obtain this data please fill out an [order form](https://tnris.org/order-data/).
+
+
+To check exact availability please check our [LiDAR Status Map](http://tnris.maps.arcgis.com/apps/Viewer/index.html?appid=3a5712b6cc36472f8036446e7b49c52d)
+

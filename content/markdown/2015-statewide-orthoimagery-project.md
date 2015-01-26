@@ -8,15 +8,13 @@ author: Gayla Mullins
 status_image: Weekly_Status_Report_010915.jpg
 status_image_preview: Weekly_Status_Report_010915_sm.jpg
 latest_report: 
-status_date: January 12th, 2015
+status_date: January 23rd, 2015
 updates:
-  - This project web page is now available!
-  - Season 4 was opened for acquisition on 1/12. All Seasons are now open for acquisition.
-  - University Lands West Texas 6-inch BUY-UP areas opened for acquisition on 1/12.
-  - In-person project updates will be given at the next GIS Community Meeting on 1/20.
-progress_1: 43
-progress_2: 25
-progress_3: 10 
+  - Four airplanes with ADS100s acquired imagery simultaneously in Texas.
+  - Project partners identified Hockley County as first of four pilot data counties.
+progress_1: 44
+progress_2: 55
+progress_3: 40 
 progress_4: 0
 progress_5: 0
 ---

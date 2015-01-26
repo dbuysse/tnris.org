@@ -21,10 +21,44 @@ progress_5: 0
 
 ## Contributors
 <p class="lead"><strong>Four state agencies</strong> contributed funds toward the BASE 0.5-meter statewide orthoimagery collection.</p>
+<section class="base-collection">
+    <div class="row">
+      <div class="col-xs-3">
+        <a title="Visit the Texas Department of Transportation website" class="partner" href="http://www.txdot.gov">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/txdot.jpg" alt="Texas Department of Transportation (TxDOT) Logo and Link to website">
+          <small class="hidden-xs">Texas Department of Transportation (TxDOT)</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+        <div class="col-xs-3">
+        <a class="partner" href="http://www.tceq.state.tx.us">
+          <img title="Visit the Texas Commission on Environmental Quality (TCEQ) website" class="img-responsive" src="images/statewide-orthoimagery/logos/tceq_logo.jpg" alt="Texas Commission on Environmental Quality (TCEQ) Logo and Link to website">
+          <small class="hidden-xs">Texas Commission on Environmental Quality (TCEQ)</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+      <div class="col-xs-3">
+        <a class="partner" href="http://www.rrc.state.tx.us">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/rrc_logo.jpg" alt="Railroad Commission of Texas Surface Mining and Reclamation Division Logo and Link to website">
+          <small class="hidden-xs">Railroad Commission of Texas - Surface Mining and Reclamation Division</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+      <div class="col-xs-3">
+        <a class="partner" href="http://www.glo.texas.gov">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/glo_logo.jpg" alt="Texas General Land Office (GLO) Logo and Link to website">
+          <small class="hidden-xs">Texas General Land Office (GLO)</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+   </div>
+   <div class="row">
+      <div class="contributor-box">
+        Base 0.5 Meter statewide orthoimagery collection
+      </div>
+   </div>
+</section>
 
-They are the [Texas Department of Transportation](http://www.txdot.gov), the [Texas Commission on Environmental Quality](http://www.tceq.state.tx.us), the [Railroad Commission of Texas Surface Mining and Reclamation Division](http://www.rrc.state.tx.us), and the Texas [General Land Office](http://www.glo.texas.gov).
-
-<img class="img-responsive img-expand" src="/images/statewide-orthoimagery/statewide_contributors.jpg" alt="State Agencies who contributed to the orthoimagery collection">
 
 <figure class="buy-up">
         <h4>Map of 1-foot to 6-Inch Buy-Ups</h4>
@@ -49,14 +83,54 @@ They are the [Texas Department of Transportation](http://www.txdot.gov), the [Te
             </div>
         </div>
     </div>
-</div>
+  </div>
 
 <p class="lead"><strong>Five additional government agencies</strong> contributed funds toward select 1-foot or 6-inch BUY-UP areas.</p>
 
-
-They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages/default.aspx), the [Texas Parks and Wildlife Department](https://tpwd.texas.gov/), [University Lands](http://www.utlands.utsystem.edu/), the [San Antonio River Authority](https://www.sara-tx.org/), and the [City of Georgetown](https://georgetown.org/).
-
-<img class="img-responsive img-expand" src="/images/statewide-orthoimagery/buyup_contributors.jpg" alt="Organizations contributing to Buy-Up area">
+<section class="buy-ups">
+    <div class="row">
+      <div class="col-xs-5ths">
+        <a class="partner"  href="https://www.nga.mil/Pages/default.aspx">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/space_logo.jpg" alt="National Geospatial-Intelligence Agency Logo and Link to website">
+          <small class="hidden-xs">National Geospatial-Intelligence Agency</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+      <div class="col-xs-5ths">
+        <a class="partner" href="http://www.utlands.utsystem.edu">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/lands_logo.jpg" alt="University Lands Logo and Link to website">
+          <small class="hidden-xs">University Lands</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+     <div class="col-xs-5ths">
+        <a class="partner" href="https://www.sara-tx.org">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/txdot.jpg" alt="San Antonio River Authority Logo and Link to website">
+          <small class="hidden-xs">San Antonio River Authority (SARA)</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+     <div class="col-xs-5ths">
+        <a class="partner" href="http://www.glo.texas.gov">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/glo_logo.jpg" alt="Texas General Land Office - GLO Logo and Link to website">
+          <small class="hidden-xs">Texas General Land Office (GLO)</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+     <div class="col-xs-5ths">
+        <a class="partner" href="https://georgetown.org">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/georgetown_logo.jpg" alt="City of Georgetown Logo and Link to website">
+          <small class="hidden-xs">City of Georgetown</small>
+        </a>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </div>
+   </div>
+<div class="row">
+  <div class="contributor-box col-xs-12">
+    1-foot or 6-inch BUY-UP areas
+  </div>
+</div>
+</section>
 
 <h2>Acquisition Season</h2>
 
@@ -73,7 +147,7 @@ They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages
 </div>
 </figure>
 
-## Pixel Resolution	
+## Pixel Resolution 
 <p class="lead">The BASE statewide orthoimagery will be acquired and processed at <strong>0.5-meter pixel resolution</strong>.</p>
 
 Select BUY-UP areas will be acquired and processed at either 1-foot or 6-inch pixel resolution. The following are example features identifiable in each resolution.

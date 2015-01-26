@@ -49,8 +49,8 @@ This project was administered by the TNRIS Strategic Mapping Program (StratMap) 
 - Structure for data listed above shall conform to 1/64th USGS 7.5-minute quadrangle
 - Quarter-quarter-quarter quadrangle (DOQQQQ, or DO4Q)
 
-To obtain this data please fill out an [order form](https://tnris.org/order-data/).
+Please fill out an [order form](https://tnris.org/order-data/) to obtain this data. 
 
+Please check our [LiDAR status map](http://tnris.maps.arcgis.com/apps/Viewer/index.html?appid=3a5712b6cc36472f8036446e7b49c52d) for exact coverage. 
 
-To check exact availability please check our [LiDAR status map](http://tnris.maps.arcgis.com/apps/Viewer/index.html?appid=3a5712b6cc36472f8036446e7b49c52d)
 

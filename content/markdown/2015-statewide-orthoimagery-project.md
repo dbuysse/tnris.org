@@ -7,7 +7,7 @@ abstract:
 author: Gayla Mullins
 status_image: status_image_jan_23.jpg
 status_image_preview: status_image_jan_23_sm.jpg
-latest_report: 
+latest_report: Weekly_Status_Report_012315.pdf
 status_date: January 23rd, 2015
 updates:
   - Four airplanes with ADS100s acquired imagery simultaneously in Texas.

@@ -22,9 +22,35 @@ progress_5: 0
 ---
 
 ## Contributors
+
+<section>
+  <div class="row">
+    <div class="col-xs-4">
+      <a href="http://www.txdot.gov">
+        <img src="" alt="Texas Department of Transportation (TxDOT) Logo and Link to website">
+      </a>
+    </div>
+    <div class="col-xs-4">
+    </div>
+   <div class="col-xs-4">
+    </div>
+   <div class="col-xs-4">
+    </div>
+ </div>
+ <div class="row">
+    <div class="contributor-box base-collection">
+      Base 0.5 Meter statewide orthoimagery collection
+    </div>
+ </div>
+</section>
+
 <p class="lead"><strong>Four state agencies</strong> contributed funds toward the BASE 0.5-meter statewide orthoimagery collection.</p>
 
-They are the [Texas Department of Transportation](http://www.txdot.gov), the [Texas Commission on Environmental Quality](http://www.tceq.state.tx.us), the [Railroad Commission of Texas Surface Mining and Reclamation Division](http://www.rrc.state.tx.us), and the Texas [General Land Office](http://www.glo.texas.gov).
+They are:
+- [Texas Department of Transportation - TxDOT](http://www.txdot.gov)
+- [Texas Commission on Environmental Quality - TCEQ ](http://www.tceq.state.tx.us)
+- [Railroad Commission of Texas Surface Mining and Reclamation Division](http://www.rrc.state.tx.us)
+- [Texas General Land Office - GLO](http://www.glo.texas.gov).
 
 <img class="img-responsive img-expand" src="/images/statewide-orthoimagery/statewide_contributors.jpg" alt="State Agencies who contributed to the orthoimagery collection">
 
@@ -55,10 +81,37 @@ They are the [Texas Department of Transportation](http://www.txdot.gov), the [Te
 
 <p class="lead"><strong>Five additional government agencies</strong> contributed funds toward select 1-foot or 6-inch BUY-UP areas.</p>
 
-
-They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages/default.aspx), the [Texas Parks and Wildlife Department](https://tpwd.texas.gov/), [University Lands](http://www.utlands.utsystem.edu/), the [San Antonio River Authority](https://www.sara-tx.org/), and the [City of Georgetown](https://georgetown.org/).
+They are:
+- [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages/default.aspx)
+- [Texas Parks and Wildlife Department](https://tpwd.texas.gov/)
+- [University Lands](http://www.utlands.utsystem.edu/)
+- [San Antonio River Authority](https://www.sara-tx.org/)
+- [City of Georgetown](https://georgetown.org/)
 
 <img class="img-responsive img-expand" src="/images/statewide-orthoimagery/buyup_contributors.jpg" alt="Organizations contributing to Buy-Up area">
+
+<section>
+  <div class="row">
+    <div class="col-xs-5">
+      <a href="http://www.txdot.gov">
+        <img src="" alt="Texas Department of Transportation (TxDOT) Logo and Link to website">
+      </a>
+    </div>
+    <div class="col-xs-5">
+    </div>
+   <div class="col-xs-5">
+    </div>
+   <div class="col-xs-5">
+    </div>
+   <div class="col-xs-5">
+    </div>
+ </div>
+ <div class="row">
+    <div class="contributor-box buy-ups">
+      1-foot or 6-inch BUY-UP areas
+    </div>
+ </div>
+</section>
 
 <h2>Acquisition Season</h2>
 
@@ -75,7 +128,7 @@ They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages
 </div>
 </figure>
 
-## Pixel Resolution	
+## Pixel Resolution 
 <p class="lead">The BASE statewide orthoimagery will be acquired and processed at <strong>0.5-meter pixel resolution</strong>.</p>
 
 Select BUY-UP areas will be acquired and processed at either 1-foot or 6-inch pixel resolution. The following are example features identifiable in each resolution.

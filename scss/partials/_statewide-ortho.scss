@@ -12,10 +12,10 @@
   }
 
   h1 {
-    font-size: 30px; 
+    font-size: 40px; 
     
     @media (min-width: $screen-sm){
-      font-size: 40px;
+      font-size: 50px;
     }
 
     @media (min-width: $screen-md){
@@ -33,10 +33,34 @@
 // Custom Masthead title BG //
   .container-fluid.full {
     margin-bottom: 0;
+    
     .top-container {
+      min-height: 300px;
+      overflow: hidden;
+
+      @media (min-width: $screen-sm) {
+        min-height: 350px;
+      }
+
       .top-header {
         background: none;
         @include background-image(linear-gradient(to top, rgba(50, 50, 50, 1),  rgba(255, 255, 255, 0)));
+      }
+    }
+
+    img {
+      max-height: 300px;
+      margin-left: -250px;
+
+      @media (min-width: $screen-sm) {
+        margin-left: -200px;
+        max-height: 500px;
+        min-width: 100%;
+      }
+
+      @media (min-width: $screen-md) {
+        margin-left: 0;
+        max-height: 500px;
       }
     }
 
@@ -546,5 +570,23 @@ h2.updates-header {
 
   @media (min-width: $screen-md) {
     margin-right: -230px;
+  }
+}
+
+// contributors 
+.contributor-box {
+  border-radius: 25px;
+  box-shadow: 0 0 4px $midgrey inset;
+  color: $white;
+  font-size: 25px;
+  padding: 10px;
+  text-align: center;
+
+  &.base-collection {
+    background: $successgreen;
+  }
+
+  &.buy-ups {
+    background: $infoblue;
   }
 }

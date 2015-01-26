@@ -90,27 +90,10 @@ $timelineheightsm: 160px;
 .col-xs-5ths {
   float: left;
   width: 20%;
-
-  @media (min-width: $screen-md) {
-    width: 100%;
-  }
 }
 
-@media (min-width: 768px) {
-  .col-sm-5ths {
-    float: left;
-    width: 20%;
-  }
-}
 @media (min-width: 992px) {
-  .col-md-5ths {
-    float: left;
-    width: 20%;
-  }
-}
-@media (min-width: 1200px) {
-  .col-lg-5ths {
-    float: left;
-    width: 20%;
+  .col-md-12 {
+    width: 100%;
   }
 }

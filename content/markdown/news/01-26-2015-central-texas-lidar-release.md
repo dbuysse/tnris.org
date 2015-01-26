@@ -51,5 +51,5 @@ This project was administered by the TNRIS Strategic Mapping Program (StratMap) 
 To Obtain this data please fill out an [order form](https://tnris.org/order-data/).
 
 
-To check exact availability please check our [LiDAR Status Map](http://tnris.maps.arcgis.com/apps/Viewer/index.html?appid=3a5712b6cc36472f8036446e7b49c52d)
+To check exact availability please check our [LiDAR status map](http://tnris.maps.arcgis.com/apps/Viewer/index.html?appid=3a5712b6cc36472f8036446e7b49c52d)
 

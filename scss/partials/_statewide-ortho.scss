@@ -261,11 +261,13 @@ h2.updates-header {
 }
 
 .level-four::-webkit-progress-value {
-  background: #b8df48;
+    background-image:
+     -webkit-linear-gradient(left, $error, #f44, $yield, $yellowgreen);
 }
 
 .level-four::-moz-progress-bar {
-  background: #b8df48;
+    background-image:
+     -webkit-linear-gradient(left, $error, $yield, $yellowgreen);
 }
 
 

@@ -1,5 +1,5 @@
 <div class="col-sm-7">
-    <h2 class="updates-header">Project Activity for the week of<br><strong>{{ status_date }}</strong></h2>
+    <h2 class="updates-header">Project Activity for the week ending<br><strong>{{ status_date }}</strong></h2>
     <h3>Update Summary</h3>
     <ul class="dash list-clean">
         {% for update in updates %}
@@ -16,13 +16,13 @@
             <p>of the state has been flown for 0.5-meter imagery</p>
         </li>
         <li class="status">
-            <progress class="level-two" max="100" value="{{ progress_2 }}">
+            <progress class="level-three" max="100" value="{{ progress_2 }}">
             </progress>
             <h3 class="amount level-one">{{ progress_2 }}%</h3>
             <p>of the state has been surveyed for ground control</p>
         </li>
         <li class="status">
-            <progress class="level-one" max="100" value="{{ progress_3 }}">
+            <progress class="level-two" max="100" value="{{ progress_3 }}">
             </progress>
             <h3 class="amount level-one">{{ progress_3 }}%</h3>
             <p>of the state has been begun initial image processing</p>

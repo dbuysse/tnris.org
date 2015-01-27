@@ -43,6 +43,7 @@ The 2014 NAIP orthoimagery are available for streaming through the APFO ArcGIS I
 </div>
 
 ## Acquisition Area
+**NOTE** Areas along the Texas/Mexico border that were not covered in 2012 NAIP imagery are now covered in the 2014 NAIP imagery.
 
 <img class="img-responsive" alt="Acquisition Map Preview" src="images/updates/naip-2014-announcement/naip14_acquisition_map_sm.jpg">
 

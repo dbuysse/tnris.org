@@ -105,7 +105,7 @@ progress_5: 0
       </div>
      <div class="col-xs-5ths">
         <a class="partner" href="https://www.sara-tx.org">
-          <img class="img-responsive" src="images/statewide-orthoimagery/logos/txdot.jpg" alt="San Antonio River Authority Logo and Link to website">
+          <img class="img-responsive" src="images/statewide-orthoimagery/logos/sara_logo.jpg" alt="San Antonio River Authority Logo and Link to website">
           <small class="hidden-xs">San Antonio River Authority (SARA)</small>
         </a>
         <span class="glyphicon glyphicon-arrow-down"></span>

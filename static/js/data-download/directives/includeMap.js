@@ -1,26 +1,17 @@
 var includeMap = function ($compile, $http) {
   return {
     restrict: 'EA',
-    template: '<img data-ng-src="{{ map.src }}" usemap="#IMap" alt="Map of {{ name }} {{ category }}">',
-    link: function ($scope, $element, $attrs) {
-      var url = $scope.$eval($attrs.includeMap);
+    template: '<div id="map"></div>',
+    link: {
+      post: function ($scope, $element) {
+        // create a map in the "map" div, set the view to a given place and zoom
+        var map = L.map($element[0]).setView([51.505, -0.09], 13);
 
-      $http.get(url)
-        .then(function(result) {
-          var mapElement = $(result.data);
-
-          mapElement
-            .children()
-            .each(function () {
-              var areaElement = $(this);
-              var name = areaElement.attr('alt');
-              areaElement.removeAttr('href');
-              areaElement.attr('ui-sref', 'quad({name: "' + name + '"})');
-            });
-          var compiled = $compile(mapElement)($scope);
-
-          $element.prepend(compiled);
-        });
+        // add an OpenStreetMap tile layer
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+      }
     }
   };
 };

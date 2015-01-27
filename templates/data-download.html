@@ -6,6 +6,7 @@
   <!-- build:css css/data-download.min.css -->
     <link rel="stylesheet" href="bower_components/selectize/dist/css/selectize.bootstrap3.css"/>
     <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css"/>
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css"/>
     <link rel="stylesheet" href="css/data-download.css">
   <!-- endbuild -->
 
@@ -13,6 +14,8 @@
     <script src="bower_components/xdomain/dist/xdomain.min.js"
               slave="//s3.amazonaws.com/tnris-datadownload/xdomain-proxy.html"></script>
   <![endif]-->
+
+  <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.11/themes/css/cartodb.css" />
 {% endblock styles %}
 
 {% block contents %}
@@ -102,6 +105,7 @@
     <script type="text/javascript" src="bower_components/angular-ui-select/dist/select.min.js"></script>
     <script type="text/javascript" src="bower_components/angulartics/dist/angulartics.min.js"></script>
     <script type="text/javascript" src="bower_components/angulartics/dist/angulartics-ga.min.js"></script>
+    <script src="bower_components/leaflet/dist/leaflet.js"></script>
   <!-- endbuild -->
 
   <!-- build:js js/data-download.min.js -->
@@ -112,6 +116,8 @@
     <script type="text/javascript" src="js/data-download/controllers/dataDownloadCtrl.js"></script>
     <script type="text/javascript" src="js/data-download/app.js"></script>
   <!-- endbuild -->
+
+  <script src="http://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>
 {% endblock scripts %}
 
 

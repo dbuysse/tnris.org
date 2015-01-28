@@ -98,5 +98,7 @@
     }
   });
 
+  $('.carousel-inner div:first').addClass('active');
+
 })(jQuery);
 

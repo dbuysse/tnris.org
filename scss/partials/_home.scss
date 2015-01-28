@@ -4,7 +4,7 @@
 /* Home Top */
 #home-top-content {
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   @include background-image(linear-gradient(to top, $lightergrey, white, white, white));
   border-bottom: 1px solid #e7e7e7;
   padding-bottom: 5px;
@@ -394,26 +394,44 @@
 /* Updates */
 #updates-front {
   @media (min-width: $screen-md) {
-    margin-left: 15px;
-    margin-right: -15px;
-    padding-right: 30px;
+    padding-left: 0;
+    padding-right: 0;
+
+    ul.news-list .media {
+      border-bottom: 0;
+      border-right: 1px solid $midgrey;
+      margin-top: 0;
+      min-height: 150px;
+      padding-left: 15px;
+      padding-right: 15px;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+        padding-right: 0;
+      }
+    }
   }
 
   h2 {
     font-size: 22px;
     margin-top: 5px;
+
+    .btn {
+      font-family: $proxima;
+    }
   }
 }
 
 /* training and around the state */
 
 #front-sidebar {
-  margin-bottom: 20px;
-  margin-top: 20px;
-
-  @media (min-width: $screen-md) {
-    margin-top: 0px;
-  }
+  border-top: 1px solid $midgrey;
+  margin-top: 0px;
+  padding-top: 20px;
 
   h2 {
     font-size: 22px;
@@ -425,23 +443,10 @@
   }
 
   .training-front {
-    border-left: 1px solid $midgrey;
     font-size: 15px;
-    padding-left: 15px;
 
     @media (min-width: $screen-md) {
       border-left: none;
-      padding: 0;
-
-      li:last-child {
-        display: none;
-      }
-    }
-
-    @media (min-width: $screen-lg) {
-      li:nth-child(4) {
-        display: none;
-      }
     }
 
     h3 {
@@ -472,13 +477,10 @@
   }
 
   .around-state-front {
-    background: url(../images/around-the-state/light_auburn_bg.png) right top no-repeat;
+    // background: url(../images/around-the-state/light_auburn_bg.png) right top no-repeat;
 
     @media (min-width: $screen-md) {
       border-right: none;
-      padding-left: 0;
-      padding-bottom: 10px;
-      margin: 0 -15px;
     }
 
     h2 {
@@ -486,11 +488,11 @@
     }
 
     h4 {
-      padding-right: 120px;
+      font-size: 24px;
     }
 
     img {
-      float: right;
+      float: left;
       margin-left: 10px;
       padding-right: 5px;
       width: 125px;
@@ -504,15 +506,13 @@
 
 // Custom Announcement Boxes //
 .extra-box {
-  margin-bottom: 20px;
+  margin-top: 30px;
   
   @media (min-width: $screen-sm) {
     margin-bottom: 0;
-    margin-left: -15px;
   }
   
   @media (min-width: $screen-md) {
-    margin: 0 -15px;
     margin-bottom: 20px;
   }
 
@@ -520,6 +520,7 @@
     border: 1px solid $midgrey;
     border-radius: 5px;
     display: block;
+    min-height: 125px;
     overflow: hidden;
     text-shadow: 0 0 3px $white;
     width: 100%;
@@ -536,6 +537,10 @@
 
     .media-left {
       padding-right: 0;
+    }
+
+    .media-body {
+      padding-right: 5px;
     }
 
     img {

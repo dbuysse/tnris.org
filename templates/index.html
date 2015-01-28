@@ -1,135 +1,115 @@
-{% extends "base.html" %}
-{% import '_macros.html' as m %}
-
-{% block topcontent %}
-  <div id="home-top-content">
+{% extends "base.html" %} {% import '_macros.html' as m %} {% block topcontent %}
+<div id="home-top-content">
     <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-12 col-xs-12 quick-nav">
-        {% include "./partials/quicknav.html" %}
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12 quick-nav">
+                {% include "./partials/quicknav.html" %}
+            </div>
+            <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
+                {% include "./partials/mainfeature.html" %}
+            </div>
         </div>
-        <div id="front-image-container" class="col-md-9 col-sm-12 col-xs-12">
-        {% include "./partials/mainfeature.html" %}
-      </div>
-       </div>
     </div>
-  </div>
-{% endblock topcontent %}
-
-
-{% block contents %}
-  <h1 class="sr-only">Texas Natural Resources Information System</h1>
-  <div class="row">
-    <div id="updates-front" class="col-md-6 col-sm-12 col-md-push-3">
-      <h2>Latest News <i class="fa fa-newspaper-o"></i></h2>
-      <ul class="news-list list-clean">
-        {% for news_item in news %}
-          {% if loop.index <= 5 %}
-            <li class="media">
-              <a class="media-left" href="{{m.link(news_item.preserved)}}" title="Read {{news_item.title}}">
+</div>
+{% endblock topcontent %} {% block contents %}
+<h1 class="sr-only">Texas Natural Resources Information System</h1>
+<div id="updates-front" class="col-xs-12">
+    <h2>Latest News <i class="fa fa-newspaper-o"></i> <a class="btn btn-default btn-sm pull-right" href="{{m.link('updates')}}" role="button">View All <span class="sr-only">News</span> Updates <span class="glyphicon glyphicon-chevron-right"></a></h2>
+    <ul class="news-list list-clean row">
+        {% for news_item in news %} {% if loop.index
+        <=3 %} <li class="col-md-4 media">
+            <a class="media-left" href="{{m.link(news_item.preserved)}}" title="Read {{news_item.title}}">
                 <img class="media-object" src="{{news_item.thumbnail}}" alt="{{news_item.thumbalt}}">
-              </a>
-              <div class="media-body">
+            </a>
+            <div class="media-body">
                 <time>{{ news_item.date|date('F jS, Y') }}</time>
                 <h3 class="media-heading">
                   <a href="{{m.link(news_item.preserved)}}">{{news_item.title}}</a>
                 </h3>
-                <p>
-                  {{news_item.abstract}}
+                <p class="hidden-md">
+                    {{news_item.abstract}}
                 </p>
-              </div>
+            </div>
             </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-
-      <p class="text-center">
-        <a class="btn btn-tnris" href="{{m.link('updates')}}" role="button">More <span class="sr-only">News</span> Updates <span class="glyphicon glyphicon-chevron-right"></a>
-      </p>
-    </div>
-
-    <div id="front-sidebar" class="col-md-3 col-sm-12 col-md-pull-6">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-12">
-          <div class="around-state-front">
-          <h2>Around the State <i class="fa fa-bullhorn"></i></h2>
-          <img src="images/around-the-state/sterling_tx_th.png" alt="Sterling Harris, wearing a cowboy hat, in a thumbnail shaped like Texas">
-
-          <h4><a href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water">ArcNews Profiles GLO's Sterling Harris</a></h4>
-          <p>Harris was profiled in ArcNews for his contributions to Texas GIS. Read the full story, available at <a href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water">esri.com</a>.</p>
-          <p class="text-center">
-            <a class="btn btn-tnris" href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water" role="button">Read More <span class="sr-only">about Sterling Harris on esri.com</span><span class="glyphicon glyphicon-chevron-right"></a>
-          </p>
-        </div>
-
-          <div class="extra-box">
-            <a class="hcad-job" href="http://www.hcad.org/Resources/Jobs/JobDesc.asp?pnum=80051464"> 
-              <div class="media-left"><img alt="HCAD logo and link to job" src="images/front-page/hcad_logo.png"></div>
-              <div class="media-body">
-                <small>GIS Job Opportunities</small>
-                <strong>GIS Programming Manager</strong>
-                Houston County Appraisal District - HCAD
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-8 col-md-12 training-front">
-          <h2><a href="{{m.link('training')}}">GIS Training &amp; Education</a> <i class="fa fa-graduation-cap"></i></h2>
-          <p>Classes geared towards all skill levels, from beginners to advanced, offered at affordable prices.</p>
-          <ul class="list-clean">
-            {% for event in training %}
-              {% if loop.index <= 5 %}
-              <li><time>{{event.date}}</time><h4><a href="{{m.link(event.path)}}">
-                {{event.class_title}}</a></h4>
-              </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-          <p class="text-center"><a class="btn btn-tnris" href="{{m.link('training')}}" role="button">Full Course List <span class="glyphicon glyphicon-chevron-right"></a></p>
-        </div>
-      </div>
-    </div>
-
-    <div id="dataSpot" class="col-md-3 hidden-sm hidden-xs">
-      <h2>Data Spotlight</h2>
-      <p class="spotText">A closer look at featured data and maps from our own catalog and other sources.</p>
-      <ul class="media-list">
-        {% for spotlight in spotlights %}
-          {% if loop.index <= 4 %}
-            <li class="media">
-              <a href="{{m.link(spotlight.preserved)}}">
-                <img class="media-object img-responsive" src="{{ spotlight.thumb }}" alt="A small preview of the {{ spotlight.title }} image">
-                <h4>{{ spotlight.title }}</h4>
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-{% endblock contents %}
-
-{% block contents-two %}
-
-  <div id="dataSpot" class="container-fluid hidden-md hidden-lg" >
-    <h2>Data Spotlight</h2>
-    <p class="spotText">A closer look at featured data and maps from our own catalog and other sources.</p>
-
-    <ul class="media-list row">
-      {% for spotlight in spotlights %}
-        {% if loop.index <= 4 %}
-          <li class="media col-xs-12 col-sm-3 col-md-12">
-            <a href="{{m.link(spotlight.preserved)}}">
-              <img class="media-object img-responsive" src="{{ spotlight.thumb }}" alt="...">
-              <h4>{{ spotlight.title }}</h4>
-            </a>
-         </li>
-       {% endif %}
-     {% endfor %}
+            {% endif %} {% endfor %}
     </ul>
-    
-  </div>
+</div>
+<div class="row">
 
-{% include "./partials/highlights.html" %}
-{% endblock contents-two %}
+
+    <div id="front-sidebar" class="col-xs-12">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="around-state-front">
+                    <h2>Around the State <i class="fa fa-bullhorn"></i></h2>
+                    <h4><a href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water">ArcNews Profiles GLO's Sterling Harris</a></h4>
+                    <img src="images/around-the-state/sterling_tx_th.png" alt="Sterling Harris, wearing a cowboy hat, in a thumbnail shaped like Texas">
+                    <p>Harris was profiled in ArcNews for his contributions to Texas GIS. Read the full story, available at <a href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water">esri.com</a>.</p>
+                    <a class="btn btn-default btn-sm" href="http://www.esri.com/esri-news/arcnews/summer14articles/sterling-harris-steward-of-texas-land-and-water" role="button">Read More <span class="sr-only">about Sterling Harris on esri.com</span><span class="glyphicon glyphicon-chevron-right"></a>
+                </div>
+                <div class="extra-box">
+                    <a class="hcad-job" href="http://www.hcad.org/Resources/Jobs/JobDesc.asp?pnum=80051464">
+                        <div class="media-left"><img alt="HCAD logo and link to job" src="images/front-page/hcad_logo.png">
+                        </div>
+                        <div class="media-body">
+                            <small>GIS Job Opportunities</small>
+                            <strong>GIS Programming Manager</strong> Houston County Appraisal District - HCAD
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-8 col-md-4 training-front">
+                <h2><a href="{{m.link('training')}}">GIS Training &amp; Education</a> <i class="fa fa-graduation-cap"></i></h2>
+                <p>Classes geared towards all skill levels, from beginners to advanced, offered at affordable prices.</p>
+                <ul class="list-clean">
+                    {% for event in training %} {% if loop.index
+                    <=4 %} <li>
+                        <time>{{event.date}}</time>
+                        <h4><a href="{{m.link(event.path)}}">
+                {{event.class_title}}</a></h4>
+                        </li>
+                        {% endif %} {% endfor %}
+                </ul>
+                <p class="text-center"><a class="btn btn-default btn-sm" href="{{m.link('training')}}" role="button"><span class="sr-only">View the</span> Full Course List <span class="glyphicon glyphicon-chevron-right"></a>
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <div id="dataSpot">
+                    <h2>Data Spotlight</h2>
+                    <p class="spotText">A closer look at featured data and maps from our own catalog and other sources.</p>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+                      <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                        <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+                      </ol>
+                      <div class="carousel-inner" role="listbox">
+                          {% for spotlight in spotlights %} {% if loop.index
+                          <=4 %} 
+                          <div class="item">
+                              <a href="{{m.link(spotlight.preserved)}}">
+                                  <img class="media-object img-responsive" src="{{ spotlight.thumb }}" alt="...">
+                                  <h4>{{ spotlight.title }}</h4>
+                              </a>
+                          </div>
+                              {% endif %} 
+                          {% endfor %}
+                      </div>
+                      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contents %} {% block contents-two %} {% include "./partials/highlights.html" %} {% endblock contents-two %}

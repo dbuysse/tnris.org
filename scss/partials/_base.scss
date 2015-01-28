@@ -115,6 +115,11 @@ h2 {
 
   .address-container {
     font-size: 14px;
+    min-height: 200px;
+
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+      min-height: 300px;
+    }
 
     p {
       margin-top: 20px;

@@ -12,9 +12,12 @@
     <div class="navbar-header">
       <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+        <small class="pull-left">View Menu</small>
+        <div class="icon-bars">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </div>
       </button>
       <a href="{{m.link('index')}}" class="navbar-brand" title="TNRIS Logo and back home">
         <span class="sr-only">Texas Natural Resources Information System</span></a>
@@ -25,7 +28,7 @@
           <a class="maps-data-link" href="{{m.link('maps-and-data')}}">Maps &amp; Data</a>
         </li>
         <li class="dropdown navbar-inverse {% if id === 'stratmap' || id === 'training' || id === 'hpids' %}active{% endif %}">
-          <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown"><i class="fa fa-tasks hidden-xs hidden-sm"></i> Programs</a>
+          <a href="#" class="dropdown-toggle programs-nav " data-toggle="dropdown"><i class="fa fa-tasks hidden-sm"></i> Programs</a>
           <ul class="dropdown-menu inverse-dropdown" role="menu">
             {%- set programs = [
               {
@@ -58,7 +61,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li {% if id === 'about' %}class="active"{% endif %}>
-          <a href="{{m.link('about')}}">About<span class="sr-only"> us</span></a>
+          <a href="{{m.link('about')}}"><i class="fa fa-users hidden-sm"></i> About<span class="sr-only"> us</span></a>
         </li>
         <li {% if id === 'contact' %}class="active"{% endif %}>
           <a href="{{m.link('contact')}}"><span class="glyphicon glyphicon-comment"></span> Contact Us</a>

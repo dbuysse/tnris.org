@@ -79,25 +79,44 @@
   font-weight: 300;
 
   &.maps-data-link {
-    
-    @media (min-width: $screen-md) {
-      background: url(../images/icons/folded-map-4.svg) 0 14px no-repeat;
+      background: url(../images/icons/folded-map-4.svg) 5px 10px no-repeat;
       background-size: 30px;
-      padding-left: 30px;
-    }
+      padding-left: 35px;
 
     &:hover {
-      background-position: 0 -24px;
+      background-position: 5px -28px;
+    }
+
+    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+      background: none;
+      background-size: 0px;
+      padding-left: 10px;
+    }
+
+    @media (min-width: $screen-md) {
+      background-position: 5px 13px;
+
+      &:hover {
+      background-position: 5px -26px;
+      } 
     }
   }
 
   &.gio {
-    background: url(../images/icons/tx_icon.svg) 0 13px no-repeat;
-    background-size: 25px;
-    padding-left: 28px;
+    background: url(../images/icons/tx_icon.svg) 10px 9px no-repeat;
+    background-size: 23px;
+    padding-left: 35px;
 
     &:hover {
-      background-position: 0 -28px;
+      background-position: 10px -27px;
+    }
+
+    @media (min-width: $screen-sm) {
+      background-position: 10px 12px;
+
+      &:hover {
+        background-position: 10px -26px;
+      }
     }
   }
 }
@@ -169,5 +188,26 @@ a.navbar-twdb {
         color: $sky !important;
       }
     }
+  }
+}
+
+// Collapse helper text
+.navbar-toggle {
+  border: 1px solid $middarkgrey;
+  border-radius: 10px;
+  width: 110px;
+
+  .icon-bars {
+    float: right;
+  }
+
+  small {
+  color: $white;
+  float: left;
+  font-size: 12px;
+  }
+
+  &:hover {
+    background: $darkergrey;
   }
 }

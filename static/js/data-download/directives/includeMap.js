@@ -7,10 +7,12 @@ var includeMap = function ($compile, $http) {
         // create a map in the "map" div, set the view to a given place and zoom
         var map = L.map($element[0]).setView([51.505, -0.09], 13);
 
-        // add an OpenStreetMap tile layer
-        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+        // add mapquest open aerial tile layer
+        var baseLayer = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png',{
+          subdomains: '1234',
+          attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
+        });
+
       }
     }
   };

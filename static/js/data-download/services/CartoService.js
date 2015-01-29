@@ -1,13 +1,27 @@
-var CartoService = ['CARTODB_CONFIG', function (config)  {
+var CartoService = ['$http', 'CARTODB_CONFIG', function ($http, config)  {
   'use strict';
 
   CartoService = {};
 
+  var baseURL = window.location.protocol + '//' + config.account + '.cartodb.com/api/v2/';
+
   CartoService.vizURL = function (type) {
-    var protocol = window.location.protocol;
     var viz_id = config[type].viz_id;
 
-    return protocol + '//' + config.account + '.cartodb.com/api/v2/viz/' + viz_id + '/viz.json';
+    return baseURL + 'viz/' + viz_id + '/viz.json';
+  };
+
+  CartoService.sql = function (query) {
+    var url = baseURL + 'sql';
+
+    return $http.get(url, {
+      params: {
+        q: query,
+      }
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
   };
 
   CartoService.tableName = function (type) {

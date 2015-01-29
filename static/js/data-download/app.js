@@ -18,10 +18,12 @@ var dataDownloadApp = function () {
       account: 'tnris',
       county: {
         table: 'county_tx',
+        nameField: 'name',
         viz_id: 'da36f3e8-9a69-11e4-8554-0e4fddd5de28'
       },
       quad: {
-        table: 'usgs_quads',
+        table: 'usgs_quad',
+        nameField: 'quadname',
         viz_id: 'd35a1478-a668-11e4-9d7d-0e018d66dc29'
       }
     })

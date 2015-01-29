@@ -9,13 +9,22 @@ var dataDownloadApp = function () {
     'ui.router',
     'ui.select'
   ])
+    .factory('CartoService', CartoService)
     .factory('DataService', DataService)
     .factory('MapService', MapService)
     .directive('includeMap', includeMap)
     .directive('resourceGroup',  resourceGroup)
-    .constant('CARTODB_API_URL', 'http://tnris.cartodb.com/api/v2/')
-    .constant('CARTODB_COUNTY_VIZ_ID', 'da36f3e8-9a69-11e4-8554-0e4fddd5de28')
-    .constant('CARTODB_QUAD_VIZ_ID', 'd35a1478-a668-11e4-9d7d-0e018d66dc29')
+    .constant('CARTODB_CONFIG', {
+      account: 'tnris',
+      county: {
+        table: 'county_tx',
+        viz_id: 'da36f3e8-9a69-11e4-8554-0e4fddd5de28'
+      },
+      quad: {
+        table: 'usgs_quads',
+        viz_id: 'd35a1478-a668-11e4-9d7d-0e018d66dc29'
+      }
+    })
     .constant('MAP_IMAGE_URL_PRE', '//s3.amazonaws.com/tnris-datadownload/')
     .constant('DOWNLOAD_URL_PRE', '//tg-twdb-gemss.s3.amazonaws.com')
     .constant('DOWNLOAD_API_PRE', '//tnris.org/data-download/api/v1')

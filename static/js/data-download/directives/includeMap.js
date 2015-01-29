@@ -1,4 +1,4 @@
-var includeMap = function ($compile, $http, CARTODB_API_URL, CARTODB_COUNTY_VIZ_ID, CARTODB_QUAD_VIZ_ID) {
+var includeMap = function ($compile, $http, MapService, CartoService) {
   return {
     restrict: 'EA',
     template: '<div id="map"></div>',
@@ -14,14 +14,13 @@ var includeMap = function ($compile, $http, CARTODB_API_URL, CARTODB_COUNTY_VIZ_
         });
         baseLayer.addTo(map);
 
-        var cartodb_layer_url = CARTODB_API_URL  + 'viz/' + CARTODB_QUAD_VIZ_ID + '/viz.json';
 
-        cartodb.createLayer(map, cartodb_layer_url)
+        cartodb.createLayer(map, CartoService.vizURL('quad'))
           .addTo(map)
           .on('done', function(layer) {
             layer.setInteraction(true);
-            layer.on('featureOver', function(e, pos, latlng, data) {
-              cartodb.log.log(e, pos, latlng, data);
+            layer.on('featureClick', function(e, latlng, pos, data) {
+              cartodb.log.log(e, latlng, pos, data);
             });
             layer.on('error', function(err) {
               cartodb.log.log('error: ' + err);

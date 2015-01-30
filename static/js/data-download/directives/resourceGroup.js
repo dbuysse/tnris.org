@@ -4,19 +4,7 @@ var resourceGroup = ['DOWNLOAD_URL_PRE', function (downloadUrlPre) {
     scope: {
       group: '='
     },
-    template: [
-      '<div class="resourceGroup">',
-        '<h3>{{ group.name }}</h3>',
-        '<ul>',
-          '<li ng-repeat="resource in group.resources">',
-            '<a href="{{ downloadUrlPre }}{{ resource.url }}" analytics-on="click" analytics-event="download" analytics-category="download" analytics-label="{{resource.url}}">',
-              '<span class="glyphicon glyphicon-download-alt download-icon"></span>',
-              '<span class="download-text">{{ resource.name }}</span>',
-            '</a>',
-          '</li>',
-        '</ul>',
-      '</div>'
-    ].join(''),
+    templateUrl: 'partials/resourceGroup.html',
     link: function($scope) {
       $scope.downloadUrlPre = downloadUrlPre;
     }

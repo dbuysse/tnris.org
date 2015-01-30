@@ -1,4 +1,4 @@
-var includeMap = function ($compile, $http, MapService, CartoService) {
+var includeMap = function ($compile, $http, $state, MapService, CartoService) {
   return {
     restrict: 'EA',
     template: '<div id="map"></div>',
@@ -26,6 +26,7 @@ var includeMap = function ($compile, $http, MapService, CartoService) {
             layer.setInteraction(true);
             layer.on('featureClick', function(e, latlng, pos, data) {
               cartodb.log.log(e, latlng, pos, data);
+              $state.go('quad', {name: data.quadname});
             });
             layer.on('error', function(err) {
               cartodb.log.log('error: ' + err);

@@ -7,13 +7,18 @@ var includeMap = function ($compile, $http, MapService, CartoService) {
         // create a map in the "map" div, set the view to a given place and zoom
         var map = L.map($element[0]).setView([30, -97], 12);
 
-        // add mapquest open aerial tile layer
-        var baseLayer = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png',{
+        // mapquest open aerial layer
+        var openAerial = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png',{
           subdomains: '1234',
           attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
         });
-        baseLayer.addTo(map);
 
+        // positron layer
+        var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',{
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+        });
+
+        map.addLayer(positron);
 
         cartodb.createLayer(map, CartoService.vizURL('quad'))
           .addTo(map)

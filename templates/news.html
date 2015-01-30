@@ -22,7 +22,7 @@
         <ul class="news-list list-clean">
         {% set count = 1 %}
          {% for news_item in news %}
-        {% if (news_item.id !== id) && count <= 5 %}
+        {% if (news_item.id !== id) && count <= 3 %}
             {% set count += 1 %}
           <li class="media">
             <div class="media-left">
@@ -40,7 +40,7 @@
         {% endif %}
       {% endfor %}
     </ul>
-
+      <a href="{{m.link('updates')}}" class="btn btn-default btn-md center-block">View all archived news updates <i class="glyphicon glyphicon-chevron-right"></i></a>
       </div>
     {% endblock rightContent %}
   </div>

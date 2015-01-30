@@ -24,7 +24,7 @@ var dataDownloadApp = function () {
       quad: {
         table: 'usgs_quad',
         nameField: 'quadname',
-        viz_id: 'd35a1478-a668-11e4-9d7d-0e018d66dc29'
+        viz_id: '6d6032fe-a8c2-11e4-b1cd-0e4fddd5de28'
       }
     })
     .constant('MAP_IMAGE_URL_PRE', '//s3.amazonaws.com/tnris-datadownload/')

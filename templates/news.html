@@ -10,7 +10,10 @@
       </div>
 
       {% if mainimage %}
+      <figure>
         <img class="media-object img-responsive center-block" src="{{ mainimage }}" alt="{{ imagealt }}">
+        <figcaption class="text-right"><small><em>{{ imagealt }}</em></small></figcaption>
+      </figure>
       {% endif %}
 
       {{ contents|safe }}

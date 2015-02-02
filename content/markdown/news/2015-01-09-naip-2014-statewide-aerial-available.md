@@ -5,7 +5,7 @@ author: StratMap
 thumbnail: images/updates/naip-2014-announcement/naip14_statewide_topo_th.jpg
 thumbalt: Small thumb of NAIP 2014 Imagery
 mainimage: images/updates/naip-2014-announcement/naip14_statewide_topo.jpg
-mainimagealt: A photo mosaic of 2014 Imagery overlayed on topo map
+imagealt: A photo mosaic of 2014 Imagery
 abstract:
     The National Agriculture Imagery Program (NAIP) 2014 1-meter orthoimagery covering the entire state of Texas are now available from TNRIS.
 ---

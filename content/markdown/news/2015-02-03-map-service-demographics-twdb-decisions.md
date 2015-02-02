@@ -34,9 +34,9 @@ For this application, the necessary data included:
 
 Bringing all of this together, rather than referring to them in disparate systems, was the clear goal to streamline the process. After compiling the data, within a couple of weeks a Web Map Server prototype was developed.  
 
-The WSI Map Viewer includes some GIS functionality and updated Web services and basemaps from ArcGIS Online. WMS is a widely supported format for maps and GIS data accessed via the Internet and loaded into client side GIS software. Major commercial GIS and mapping software that support WMS and also it can be used with nothing more than a browser, making it highly usable. 
+The WSI Map Viewer includes some GIS functionality and updated Web services and basemaps from ArcGIS Online. WMS is a widely supported format for maps and GIS data accessed via the Internet and loaded into client side GIS software. Major commercial GIS and mapping software that support WMS and also it can be used with nothing more than a browser, making it simple to disseminate to analysts and decision-makers.
 
-This system is for the use of WSI Personnel to help them make sound decisions. So far, WSI is evaluating the prototype and will follow up with suggested modifications. Those may include updating the data every year when new ACS data becomes available. In this way TWDB can help more Texas communities in a quicker way, by processing funding applications and making decisions about the loans or grants needs faster.
+WSI Personnel will be utilizing to help them make sound decisions. So far, WSI is evaluating the prototype and will follow up with suggested modifications. Those may include updating the data every year when new ACS data becomes available. In this way TWDB can help more Texas communities in a quicker way, by processing funding applications and making decisions about the loans or grants needs faster.
 
 
 

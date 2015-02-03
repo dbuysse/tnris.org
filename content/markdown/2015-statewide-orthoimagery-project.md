@@ -8,12 +8,12 @@ author: Gayla Mullins
 status_image: status_image_jan_23.jpg
 status_image_preview: status_image_jan_23_sm.jpg
 latest_report: Weekly_Status_Report_012315.pdf
-status_date: January 23rd, 2015
+status_date: January 30th, 2015
 updates:
-  - Four airplanes with ADS100s acquired imagery simultaneously in Texas.
-  - Project partners identified Hockley County as first of four pilot data counties.
-progress_1: 44
-progress_2: 55
+  - Four airplanes with ADS100 digital camera sensors acquired imagery simultaneously in Texas.
+  - Weather and conditions this week slowed acquisition progress.
+progress_1: 46
+progress_2: 65
 progress_3: 40 
 progress_4: 0
 progress_5: 0
@@ -73,7 +73,7 @@ progress_5: 0
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h3>Map of 1-foot to 6-Inch Buy-Ups</h3>
+                <h3>Map of 1-foot to 6-inch Buy-Ups</h3>
             </div>
             <div class="modal-body">
                 <img class="img-responsive" src="images/statewide-orthoimagery/2015_orthos_buyups.jpg" alt="Full version of the Time Frames Acquistition Map">
@@ -134,7 +134,7 @@ progress_5: 0
 
 <h2>Acquisition Season</h2>
 
-<p class="lead">All orthoimagery products are acquired during t<strong>he leaf-off (fall/winter) season in TX</strong>.</p>
+<p class="lead">All orthoimagery products are acquired during the <strong>leaf-off (fall/winter) season in TX</strong>.</p>
 
 <p>Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.</p>
 

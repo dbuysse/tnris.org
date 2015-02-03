@@ -8,15 +8,13 @@ author: Gayla Mullins
 status_image: Weekly_Status_Report_010915.jpg
 status_image_preview: Weekly_Status_Report_010915_sm.jpg
 latest_report: 
-status_date: January 12th, 2015
+status_date: January 30th, 2015
 updates:
-  - This project web page is now available!
-  - Season 4 was opened for acquisition on 1/12. All Seasons are now open for acquisition.
-  - University Lands West Texas 6-inch BUY-UP areas opened for acquisition on 1/12.
-  - In-person project updates will be given at the next GIS Community Meeting on 1/20.
-progress_1: 43
-progress_2: 25
-progress_3: 10 
+  - Four airplanes with ADS100 digital camera sensors acquired imagery simultaneously in Texas.
+  - Weather and conditions this week slowed acquisition progress.
+progress_1: 46
+progress_2: 65
+progress_3: 40 
 progress_4: 0
 progress_5: 0
 ---
@@ -41,7 +39,7 @@ They are the [Texas Department of Transportation](http://www.txdot.gov), the [Te
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                <h3>Map of 1-foot to 6-Inch Buy-Ups</h3>
+                <h3>Map of 1-foot to 6-inch Buy-Ups</h3>
             </div>
             <div class="modal-body">
                 <img class="img-responsive" src="images/statewide-orthoimagery/2015_orthos_buyups.jpg" alt="Full version of the Time Frames Acquistition Map">
@@ -62,7 +60,7 @@ They are the [National Geospatial-Intelligence Agency](https://www.nga.mil/Pages
 
 <h2>Acquisition Season</h2>
 
-<p class="lead">All orthoimagery products are acquired during t<strong>he leaf-off (fall/winter) season in TX</strong>.</p>
+<p class="lead">All orthoimagery products are acquired during the <strong>leaf-off (fall/winter) season in TX</strong>.</p>
 
 <p>Leaf-off imagery allows manmade structures under deciduous tree cover to be mapped or monitored more easily than using leaf-on imagery. Vegetation mapping can also be beneficial with leaf-off imagery because evergreen vs. deciduous species are more readily identified.</p>
 

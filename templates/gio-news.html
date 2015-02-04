@@ -29,20 +29,7 @@
 
     {% block rightContent %}
       <div class="col-sm-12 col-md-4 blog-sidebar">
-          <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Next GIS Community Meeting</h3>
-          </div>
-          <div class="panel-body">
-            <h3>January 20th, 2015 - 2PM to 4PM</h3>
-            <h4>Location:</h4>
-            <address>
-              Stephen F. Austin Building, Room 170<br>
-              1700 N. Congress, 78701<br>
-            <a href="https://goo.gl/maps/PlLqD"><a href="https://goo.gl/maps/RE5BC"><i class="glyphicon glyphicon-new-window"></i> View Map</a>
-            </address>
-          </div>
-        </div>
+          {% include "./partials/gio-meeting.html" %}
 
         <h3>More GIO News</h3>
         <ul class="news-list list-clean">

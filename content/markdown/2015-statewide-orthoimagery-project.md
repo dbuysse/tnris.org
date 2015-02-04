@@ -5,9 +5,9 @@ mainimage: images/statewide-orthoimagery/ortho_flag_lg.jpg
 abstract: 
     A collaborative initiative to capture high-quality, leaf-off imagery for the entire state, slated for public release in Winter 2015.
 author: Gayla Mullins
-status_image: status_image_jan_23.jpg
-status_image_preview: status_image_jan_23_sm.jpg
-latest_report: Weekly_Status_Report_012315.pdf
+status_image: status_image_02_02_15.jpg
+status_image_preview: status_image_02_02_15_sm.jpg
+latest_report: Weekly_Status_Report_013015.pdf
 status_date: January 30th, 2015
 updates:
   - Four airplanes with ADS100 digital camera sensors acquired imagery simultaneously in Texas.

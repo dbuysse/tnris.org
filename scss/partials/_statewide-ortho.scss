@@ -285,7 +285,7 @@ h2.updates-header {
 
 .level-four::-webkit-progress-value {
     background-image:
-     -webkit-linear-gradient(left, $error, #f44, $yield, $yellowgreen);
+     -webkit-linear-gradient(left, $error, $yield, $yellowgreen);
 }
 
 .level-four::-moz-progress-bar {

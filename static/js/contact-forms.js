@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
-  .config(function(grecaptchaProvider) {
-    grecaptchaProvider.setParameters({
-      sitekey: '6Lf8GP8SAAAAAFx2H53RtfDO18x7S1q_0pGNdmbd',
-      theme: 'light'
-    });
-  })
-  .controller('FormController', ['$scope', '$http', function($scope, $http) {
+angular.module('FormApp', ['ngAnimate', 'vcRecaptcha'])
+  //.config(function(grecaptchaProvider) {
+    //grecaptchaProvider.setParameters({
+      //sitekey: '6Lf8GP8SAAAAAFx2H53RtfDO18x7S1q_0pGNdmbd',
+      //theme: 'light'
+    //});
+  //})
+  .controller('FormController', ['$scope', '$http', 'vcRecaptchaService', function($scope, $http, vcRecaptchaService) {
     var contact_app_url = 'https://tnris.org/contact-submit/';
 
     $scope.master = {};
@@ -56,6 +56,10 @@ angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
         $scope.status = 'not submitted';
       }
     });
+
+    $scope.recaptchaSuccess = function (response) {
+      $scope.recaptcha = response;
+    };
 
     $scope.$watch('recaptcha', function (value) {
       if (value && $scope.status === 'invalid') {

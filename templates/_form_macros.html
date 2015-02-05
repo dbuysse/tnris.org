@@ -6,6 +6,15 @@
     }
   </style>
 
+  <!--[if lte IE 9]>
+    <style type="text/css">
+      [ng\:cloak], [ng-cloak], .ng-cloak {
+        display: visible !important;
+      }
+    </style>
+  <![endif]-->
+
+
   <!-- build:css css/contact.min.css -->
     <link href="css/contact.css" rel="stylesheet">
   <!-- endbuild -->
@@ -29,7 +38,7 @@
 {%- macro before(form_id) -%}
 <div id="ng-app" ng-app="FormApp">
   <div ng-controller="FormController">
-    <form name="form" role="form" novalidate>
+    <form name="form" role="form" novalidate ng-cloak>
       {{hidden('form_id', form_id)}}
 {%- endmacro -%}
 

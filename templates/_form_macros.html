@@ -130,8 +130,7 @@
           vc-recaptcha
           theme="'light'"
           key="recaptchaModel.key"
-          on-create="recaptchaSetWidgetId(widgetId)"
-          on-success="recaptchaSetResponse(response)"
+          on-success="recaptchaSuccess(response)"
       ></div>
       <div ng-show="errors['recaptcha']" class="centered">reCAPTCHA is required for submission</div>
     </div>

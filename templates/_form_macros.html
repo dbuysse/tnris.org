@@ -10,11 +10,11 @@
     <link href="css/contact.css" rel="stylesheet">
   <!-- endbuild -->
 
-  <script src="//www.google.com/recaptcha/api.js?render=explicit&onload=vcRecapthaApiLoaded" async defer></script>
 
 {%- endmacro -%}
 
 {%- macro scripts() -%}
+    <script src="//www.google.com/recaptcha/api.js?render=explicit&onload=vcRecapthaApiLoaded" async defer></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-recaptcha/release/angular-recaptcha.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
@@ -29,7 +29,7 @@
 {%- macro before(form_id) -%}
 <div id="ng-app" ng-app="FormApp">
   <div ng-controller="FormController">
-    <form name="form" role="form" novalidate ng-cloak>
+    <form name="form" role="form" novalidate>
       {{hidden('form_id', form_id)}}
 {%- endmacro -%}
 
@@ -128,6 +128,7 @@
     <div class="col-xs-12">
       <div
           vc-recaptcha
+          class="recaptcha"
           theme="'light'"
           key="recaptchaModel.key"
           on-success="recaptchaSuccess(response)"

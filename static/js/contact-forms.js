@@ -13,7 +13,22 @@ angular.module('FormApp', ['ngAnimate', 'vcRecaptcha'])
     $scope.master = {};
     $scope.errors = {};
     $scope.status = 'not submitted';
-    $scope.recaptchaKey = '6Lf8GP8SAAAAAFx2H53RtfDO18x7S1q_0pGNdmbd';
+    $scope.widgetId = null;
+    $scope.recaptchaModel = {
+        key: '6Lf8GP8SAAAAAFx2H53RtfDO18x7S1q_0pGNdmbd'
+    };
+
+    $scope.recaptchaSetResponse = function (response) {
+        console.info('Response available');
+
+        $scope.recaptcharesponse = response;
+    };
+
+    $scope.recaptchaSetWidgetId = function (widgetId) {
+        console.info('Created widget ID: %s', widgetId);
+
+        $scope.recaptchawidgetId = widgetId;
+    };
 
     $scope.submit = function(form) {
       $scope.master = angular.copy(form) || {};

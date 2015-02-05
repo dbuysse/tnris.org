@@ -13,7 +13,7 @@ angular.module('FormApp', ['ngAnimate', 'vcRecaptcha'])
     $scope.master = {};
     $scope.errors = {};
     $scope.status = 'not submitted';
-    $scope.recaptcha = '';
+    $scope.recaptchaKey = '6Lf8GP8SAAAAAFx2H53RtfDO18x7S1q_0pGNdmbd';
 
     $scope.submit = function(form) {
       $scope.master = angular.copy(form) || {};
@@ -25,7 +25,7 @@ angular.module('FormApp', ['ngAnimate', 'vcRecaptcha'])
         });
 
       $scope.master.recaptcha = $scope.recaptcha;
-      $scope.errors['recaptcha'] = !$scope.recaptcha;
+      $scope.errors.recaptcha = !$scope.recaptcha;
 
       if (_.any($scope.errors)) {
         $scope.status = 'invalid';
@@ -64,7 +64,14 @@ angular.module('FormApp', ['ngAnimate', 'vcRecaptcha'])
     $scope.$watch('recaptcha', function (value) {
       if (value && $scope.status === 'invalid') {
         $scope.status = 'not submitted';
-        $scope.errors['recaptcha'] = !$scope.recaptcha;
+        $scope.errors.recaptcha = !$scope.recaptcha;
       }
     });
+
+    $scope.setRecaptchaWidgetId = function (widgetId) {
+        console.info('Created widget ID: %s', widgetId);
+
+        $scope.widgetId = widgetId;
+    };
+
   }]);

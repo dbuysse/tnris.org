@@ -1,19 +1,28 @@
 'use strict';
 
-angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
-  .config(function(grecaptchaProvider) {
-    grecaptchaProvider.setParameters({
-      sitekey: '6Lf8GP8SAAAAAFx2H53RtfDO18x7S1q_0pGNdmbd',
-      theme: 'light'
-    });
-  })
-  .controller('FormController', ['$scope', '$http', function($scope, $http) {
+angular.module('FormApp', ['ngAnimate', 'vcRecaptcha'])
+  .controller('FormController', ['$scope', '$http', 'vcRecaptchaService', function($scope, $http, vcRecaptchaService) {
     var contact_app_url = 'https://tnris.org/contact-submit/';
 
     $scope.master = {};
     $scope.errors = {};
     $scope.status = 'not submitted';
-    $scope.recaptcha = '';
+    $scope.widgetId = null;
+    $scope.recaptchaModel = {
+        key: '6Lf8GP8SAAAAAFx2H53RtfDO18x7S1q_0pGNdmbd'
+    };
+
+    $scope.recaptchaSetResponse = function (response) {
+        console.info('Response available');
+
+        $scope.recaptcharesponse = response;
+    };
+
+    $scope.recaptchaSetWidgetId = function (widgetId) {
+        console.info('Created widget ID: %s', widgetId);
+
+        $scope.recaptchawidgetId = widgetId;
+    };
 
     $scope.submit = function(form) {
       $scope.master = angular.copy(form) || {};
@@ -25,7 +34,7 @@ angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
         });
 
       $scope.master.recaptcha = $scope.recaptcha;
-      $scope.errors['recaptcha'] = !$scope.recaptcha;
+      $scope.errors.recaptcha = !$scope.recaptcha;
 
       if (_.any($scope.errors)) {
         $scope.status = 'invalid';
@@ -57,10 +66,14 @@ angular.module('FormApp', ['ngAnimate', 'grecaptcha'])
       }
     });
 
+    $scope.recaptchaSuccess = function (response) {
+      $scope.recaptcha = response;
+    };
+
     $scope.$watch('recaptcha', function (value) {
       if (value && $scope.status === 'invalid') {
         $scope.status = 'not submitted';
-        $scope.errors['recaptcha'] = !$scope.recaptcha;
+        $scope.errors.recaptcha = !$scope.recaptcha;
       }
     });
   }]);
